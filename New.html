@@ -1145,7 +1145,7 @@
         const RISK_FORM_API = (window.RISK_FORM_API || 'http://localhost:8000').replace(/\/$/, '');
         const STORAGE_KEY = 'toira.assessment.v1';
 
-        const DATA_VER = '20260814e';
+        const DATA_VER = '20260814f';
 
         // 風險矩陣與文字定義
         const riskMatrix = {
@@ -1174,12 +1174,32 @@
             return 'S4';
         }
 
+        function normalizeProbability(value) {
+            const level = String(value || '').trim().toUpperCase();
+            if (level === 'P5' || level === '5' || level.startsWith('5')) return 'P5';
+            if (level === 'P4' || level === '4' || level.startsWith('4')) return 'P4';
+            if (level === 'P3' || level === '3' || level.startsWith('3')) return 'P3';
+            if (level === 'P2' || level === '2' || level.startsWith('2')) return 'P2';
+            if (level === 'P1' || level === '1' || level.startsWith('1')) return 'P1';
+            return 'P4';
+        }
+
         function lookupRisk(s, p) {
             const sev = normalizeSeverity(s);
+            const prob = normalizeProbability(p);
             const row = riskMatrix[sev] || riskMatrix.S4;
-            const key = row[p] != null ? p : 'P4';
+            const key = row[prob] != null ? prob : 'P4';
             const riskNum = row[key];
             return { s: sev, p: key, riskNum, riskObj: riskDescriptions[riskNum] };
+        }
+
+        function probabilityFromAvoidSelection(avoidTotal, avoidSelected) {
+            const total = Number(avoidTotal) || 0;
+            const selected = Math.max(0, Number(avoidSelected) || 0);
+            if (total <= 0 || selected <= 0) return 'P5';
+            if (selected >= total) return 'P2';
+            if (selected / total >= 0.5) return 'P3';
+            return 'P4';
         }
 
         // ==========================================
@@ -1786,10 +1806,11 @@
                                     </span>
                                     <span>可能性 (P):
                                         <select id="manual-p-${index}" onchange="updateManualRisk(${tid}, ${index})">
-                                            <option value="P4" ${state.manualP === 'P4' ? 'selected' : ''}>4 (極可能)</option>
-                                            <option value="P3" ${state.manualP === 'P3' ? 'selected' : ''}>3 (可能)</option>
+                                            <option value="P5" ${state.manualP === 'P5' ? 'selected' : ''}>5 (極可能)</option>
+                                            <option value="P4" ${state.manualP === 'P4' ? 'selected' : ''}>4 (較有可能)</option>
+                                            <option value="P3" ${state.manualP === 'P3' ? 'selected' : ''}>3 (有可能)</option>
                                             <option value="P2" ${state.manualP === 'P2' ? 'selected' : ''}>2 (不太可能)</option>
-                                            <option value="P1" ${state.manualP === 'P1' ? 'selected' : ''}>1 (極不可能)</option>
+                                            <option value="P1" ${state.manualP === 'P1' ? 'selected' : ''}>1 (幾乎不可能)</option>
                                         </select>
                                     </span>
                                 </div>
@@ -1871,24 +1892,12 @@
             calculateRiskUI(taskId, groupIndex);
         }
 
-        // 計算風險核心邏輯 (S依照JSON固定，P浮動)
-        function computeRiskValues(baseSeverity, hazardTotal, hazardSelected, avoidTotal, avoidSelected) {
-            let s = normalizeSeverity(baseSeverity);
-            let p = 'P1';
-
-            if (hazardSelected === 0) {
-                p = 'P4';
-            } else if (hazardSelected > 0 && avoidSelected === 0) {
-                p = hazardSelected === hazardTotal ? 'P4' : 'P3';
-            } else if (hazardSelected > 0 && avoidSelected > 0) {
-                let avoidRatio = avoidSelected / avoidTotal;
-                if (avoidRatio === 1) p = 'P2';
-                else if (avoidRatio > 0.49) p = 'P2';
-                else p = 'P3';
-            }
-            const row = riskMatrix[s] || riskMatrix.S4;
-            const riskNum = row[p] || row.P4;
-            return { s, p, riskObj: riskDescriptions[riskNum] };
+        // S 依危害組固定；P 依現有防護勾選比例
+        // P5 全部不選；P4 選 <50%；P3 選 ≥50%；P2 全選；P1 僅手動評估
+        function computeRiskValues(baseSeverity, _hazardTotal, _hazardSelected, avoidTotal, avoidSelected) {
+            const s = normalizeSeverity(baseSeverity);
+            const p = probabilityFromAvoidSelection(avoidTotal, avoidSelected);
+            return lookupRisk(s, p);
         }
 
         function calculateRiskUI(taskId, groupIndex) {
