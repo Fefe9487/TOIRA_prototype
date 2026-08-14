@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
     <title>危害辨識與風險評估系統</title>
     <link rel="stylesheet" href="theme.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
@@ -1143,6 +1145,7 @@
         const RISK_FORM_API = (window.RISK_FORM_API || 'http://localhost:8000').replace(/\/$/, '');
         const STORAGE_KEY = 'toira.assessment.v1';
 
+        const DATA_VER = '20260814d';
         const CONTROL_TAG_RE = /[（(【]\s*(消除|取代|工程改善|行政管理|個人防護具|個人防護)\s*[）)】]\s*$/;
         const EXISTING_CONTROL_TYPES = new Set(['行政管理', '個人防護', '個人防護具']);
         const ADDITIONAL_CONTROL_TYPES = new Set(['工程改善', '消除', '取代']);
@@ -1192,8 +1195,8 @@
             document.getElementById('header-title').textContent = `${industryTitle} - 危害辨識系統`;
 
             Promise.all([
-                fetch('industryMapping.json').then(r => r.json()),
-                fetch('tasksLibrary.json').then(r => r.json())
+                fetch(`industryMapping.json?v=${DATA_VER}`, { cache: 'no-store' }).then(r => r.json()),
+                fetch(`tasksLibrary.json?v=${DATA_VER}`, { cache: 'no-store' }).then(r => r.json())
             ]).then(([mappings, library]) => {
                 const mapByTaskId = {};
                 mappings.forEach((row) => {
@@ -1235,6 +1238,10 @@
                     renderEmptyState();
                     switchTab('search-view');
                 }
+            }).catch(err => {
+                console.error('資料庫載入失敗', err);
+                renderEmptyState();
+                switchTab('search-view');
             });
         });
 
@@ -1283,10 +1290,16 @@
         function ensureSelectionState(taskId) {
             const task = hazardLibrary.find(t => t.id === taskId);
             if (!task) return;
-            task.hazardGroups.forEach((_, idx) => {
+            const groups = Array.isArray(task.hazardGroups) ? task.hazardGroups : [];
+            groups.forEach((_, idx) => {
                 const key = `${taskId}_${idx}`;
                 if (!userSelections[key]) {
                     userSelections[key] = { hazards: [], avoids: [], customHazards: [], customAvoids: [], isManual: false, manualS: 'S4', manualP: 'P4' };
+                } else {
+                    if (!Array.isArray(userSelections[key].hazards)) userSelections[key].hazards = [];
+                    if (!Array.isArray(userSelections[key].avoids)) userSelections[key].avoids = [];
+                    if (!Array.isArray(userSelections[key].customHazards)) userSelections[key].customHazards = [];
+                    if (!Array.isArray(userSelections[key].customAvoids)) userSelections[key].customAvoids = [];
                 }
             });
         }
@@ -1323,7 +1336,7 @@
                     <div class="result-card">
                         <div class="result-cat">${task.category}</div>
                         <h3 class="result-title">${task.taskName}</h3>
-                        <button class="t-btn t-btn--primary add-btn ${isAdded ? 'added' : ''}" onclick="toggleProjectTask('${task.id}', this)">
+                        <button class="t-btn t-btn--primary add-btn ${isAdded ? 'added' : ''}" onclick="toggleProjectTask(${attrArg(task.id)}, this)">
                         ${isAdded ? '✓ 已加入 (點擊移除)' : '＋ 加入評估清單'}
                         </button>
                     </div>
@@ -1605,10 +1618,10 @@
                     const activeClass = (task.id === currentActiveTaskId) ? 'active' : '';
                     const doneClass = isTaskCompleted(task.id) ? 'done' : '';
                     html += `
-                        <li class="tree-item ${activeClass} ${doneClass}" onclick="renderAssessment('${task.id}')">
+                        <li class="tree-item ${activeClass} ${doneClass}" onclick="renderAssessment(${attrArg(task.id)})">
                             <span class="status-dot"></span>
                             <span class="tree-item__label">${task.taskName}</span>
-                            <button class="del-btn" title="移除此作業" onclick="removeFromProject('${task.id}', event)">✖</button>
+                            <button class="del-btn" title="移除此作業" onclick="removeFromProject(${attrArg(task.id)}, event)">✖</button>
                         </li>
                     `;
                 });
@@ -1669,13 +1682,18 @@
 
         function renderAssessment(taskId) {
             currentActiveTaskId = taskId;
+            ensureSelectionState(taskId);
             renderSidebar();
             const task = hazardLibrary.find(t => t.id === taskId);
             const contentArea = document.getElementById('content-area');
+            if (!task || !contentArea) return;
+
+            const tid = attrArg(taskId);
+            const groups = Array.isArray(task.hazardGroups) ? task.hazardGroups : [];
 
             let editBtn = '';
             if (task.category === "自定義製程") {
-                editBtn = `<button class="t-btn t-btn--ghost t-btn--sm" onclick="openCustomTaskModal('${task.id}')">✏️ 重新調整危害類型</button>`;
+                editBtn = `<button class="t-btn t-btn--ghost t-btn--sm" onclick="openCustomTaskModal(${tid})">✏️ 重新調整危害類型</button>`;
             }
 
             let html = `
@@ -1689,17 +1707,22 @@
                 html += `<div class="t-note task-desc">${task.taskdescribe}</div>`;
             }
 
-            task.hazardGroups.forEach((group, index) => {
+            groups.forEach((group, index) => {
                 const selKey = `${taskId}_${index}`;
-                // 防呆：如果舊資料沒有自訂屬性，自動補齊
-                if (!userSelections[selKey].customHazards) userSelections[selKey].customHazards = [];
-                if (!userSelections[selKey].customAvoids) userSelections[selKey].customAvoids = [];
-                if (userSelections[selKey].isManual === undefined) {
-                    userSelections[selKey].isManual = false;
-                    userSelections[selKey].manualS = 'S4';
-                    userSelections[selKey].manualP = 'P4';
+                const state = userSelections[selKey] || {
+                    hazards: [], avoids: [], customHazards: [], customAvoids: [],
+                    isManual: false, manualS: 'S4', manualP: 'P4'
+                };
+                userSelections[selKey] = state;
+                if (!state.customHazards) state.customHazards = [];
+                if (!state.customAvoids) state.customAvoids = [];
+                if (state.isManual === undefined) {
+                    state.isManual = false;
+                    state.manualS = 'S4';
+                    state.manualP = 'P4';
                 }
-                const state = userSelections[selKey];
+                const hazardItems = Array.isArray(group.hazardItems) ? group.hazardItems : [];
+                const avoidItems = Array.isArray(group.AvoidItems) ? group.AvoidItems : [];
 
                 html += `
                     <div class="hazard-card" id="group-${index}">
@@ -1710,9 +1733,9 @@
                 `;
 
                 // 1. 渲染：JSON 預設危害項目
-                group.hazardItems.forEach((item, idx) => {
+                hazardItems.forEach((item, idx) => {
                     const isSelected = state.hazards.includes(idx) ? 'selected' : '';
-                    html += `<div class="hazard-item hazard-type ${isSelected}" data-idx="${idx}" onclick="toggleItem(this, '${taskId}', ${index}, 'hazard')"><div class="hazard-item__text">${item}</div></div>`;
+                    html += `<div class="hazard-item hazard-type ${isSelected}" data-idx="${idx}" onclick="toggleItem(this, ${tid}, ${index}, 'hazard')"><div class="hazard-item__text">${item}</div></div>`;
                 });
 
                 // 2. 渲染：使用者自訂危害項目
@@ -1720,7 +1743,7 @@
                     html += `
                         <div class="hazard-item hazard-type selected" style="align-items: center;">
                             <div class="hazard-item__text">${txt} <span class="chip-tag">(自訂)</span></div>
-                            <button class="chip-del" onclick="removeCustom('${taskId}', ${index}, 'hazard', ${cIdx}); event.stopPropagation();">✖</button>
+                            <button class="chip-del" onclick="removeCustom(${tid}, ${index}, 'hazard', ${cIdx}); event.stopPropagation();">✖</button>
                         </div>
                     `;
                 });
@@ -1730,7 +1753,7 @@
                         </div>
                         <div class="inline-add">
                             <input class="t-input" type="text" id="custom-h-${index}" placeholder="輸入其他存在的危害風險...">
-                            <button class="t-btn t-btn--outline" onclick="addCustom('${taskId}', ${index}, 'hazard')">＋ 新增</button>
+                            <button class="t-btn t-btn--outline" onclick="addCustom(${tid}, ${index}, 'hazard')">＋ 新增</button>
                         </div>
 
                         <div class="sub-group-title">🛡️ 現有防護措施（行政管理 / 個人防護）</div>
@@ -1738,9 +1761,9 @@
                 `;
 
                 // 4. 渲染：JSON 預設防護措施
-                group.AvoidItems.forEach((item, idx) => {
+                avoidItems.forEach((item, idx) => {
                     const isSelected = state.avoids.includes(idx) ? 'selected' : '';
-                    html += `<div class="hazard-item avoid-type ${isSelected}" data-idx="${idx}" onclick="toggleItem(this, '${taskId}', ${index}, 'avoid')"><div class="hazard-item__text">${item}</div></div>`;
+                    html += `<div class="hazard-item avoid-type ${isSelected}" data-idx="${idx}" onclick="toggleItem(this, ${tid}, ${index}, 'avoid')"><div class="hazard-item__text">${item}</div></div>`;
                 });
 
                 // 5. 渲染：使用者自訂防護措施
@@ -1748,7 +1771,7 @@
                     html += `
                         <div class="hazard-item avoid-type selected" style="align-items: center;">
                             <div class="hazard-item__text">${txt} <span class="chip-tag">(自訂)</span></div>
-                            <button class="chip-del" onclick="removeCustom('${taskId}', ${index}, 'avoid', ${cIdx}); event.stopPropagation();">✖</button>
+                            <button class="chip-del" onclick="removeCustom(${tid}, ${index}, 'avoid', ${cIdx}); event.stopPropagation();">✖</button>
                         </div>
                     `;
                 });
@@ -1758,7 +1781,7 @@
                         </div>
                         <div class="inline-add">
                             <input class="t-input" type="text" id="custom-a-${index}" placeholder="輸入其他已落實的防護措施...">
-                            <button class="t-btn t-btn--outline" onclick="addCustom('${taskId}', ${index}, 'avoid')">＋ 新增</button>
+                            <button class="t-btn t-btn--outline" onclick="addCustom(${tid}, ${index}, 'avoid')">＋ 新增</button>
                         </div>
 
                         <div class="advice-panel" id="advice-panel-${index}"></div>
@@ -1773,11 +1796,11 @@
 
                             <div class="manual-block">
                                 <label>
-                                    <input type="checkbox" id="manual-override-${index}" ${state.isManual ? 'checked' : ''} onchange="toggleManualOverride('${taskId}', ${index})"> 手動評估風險
+                                    <input type="checkbox" id="manual-override-${index}" ${state.isManual ? 'checked' : ''} onchange="toggleManualOverride(${tid}, ${index})"> 手動評估風險
                                 </label>
                                 <div class="manual-controls" id="manual-controls-${index}" style="display:${state.isManual ? 'flex' : 'none'};">
                                     <span>嚴重度 (S):
-                                        <select id="manual-s-${index}" onchange="updateManualRisk('${taskId}', ${index})">
+                                        <select id="manual-s-${index}" onchange="updateManualRisk(${tid}, ${index})">
                                             <option value="S5" ${state.manualS === 'S5' ? 'selected' : ''}>5 (極大)</option>
                                             <option value="S4" ${state.manualS === 'S4' ? 'selected' : ''}>4 (重大)</option>
                                             <option value="S3" ${state.manualS === 'S3' ? 'selected' : ''}>3 (高)</option>
@@ -1786,7 +1809,7 @@
                                         </select>
                                     </span>
                                     <span>可能性 (P):
-                                        <select id="manual-p-${index}" onchange="updateManualRisk('${taskId}', ${index})">
+                                        <select id="manual-p-${index}" onchange="updateManualRisk(${tid}, ${index})">
                                             <option value="P4" ${state.manualP === 'P4' ? 'selected' : ''}>4 (極可能)</option>
                                             <option value="P3" ${state.manualP === 'P3' ? 'selected' : ''}>3 (可能)</option>
                                             <option value="P2" ${state.manualP === 'P2' ? 'selected' : ''}>2 (不太可能)</option>
@@ -1804,14 +1827,19 @@
             });
 
             contentArea.innerHTML = html;
-            // 畫面生成完畢後，執行風險計算
-            task.hazardGroups.forEach((_, index) => calculateRiskUI(taskId, index));
+            groups.forEach((_, index) => {
+                try { calculateRiskUI(taskId, index); }
+                catch (err) { console.error('calculateRiskUI', taskId, index, err); }
+            });
         }
 
         // 點擊預設項目的處理函式
         function toggleItem(el, taskId, groupIndex, type) {
-            const idx = parseInt(el.getAttribute('data-idx'));
+            const idx = parseInt(el.getAttribute('data-idx'), 10);
+            if (Number.isNaN(idx)) return;
+            ensureSelectionState(taskId);
             const state = userSelections[`${taskId}_${groupIndex}`];
+            if (!state) return;
 
             if (type === 'hazard') {
                 const pos = state.hazards.indexOf(idx);
@@ -1828,9 +1856,11 @@
         // 新增自訂項目
         function addCustom(taskId, groupIndex, type) {
             const inputEl = document.getElementById(type === 'hazard' ? `custom-h-${groupIndex}` : `custom-a-${groupIndex}`);
-            const val = inputEl.value.trim();
+            const val = inputEl && inputEl.value.trim();
             if (!val) return;
+            ensureSelectionState(taskId);
             const state = userSelections[`${taskId}_${groupIndex}`];
+            if (!state) return;
             if (type === 'hazard') state.customHazards.push(val);
             else state.customAvoids.push(val);
             inputEl.value = '';
@@ -1886,16 +1916,27 @@
         }
 
         function calculateRiskUI(taskId, groupIndex) {
-            const groupData = hazardLibrary.find(t => t.id === taskId).hazardGroups[groupIndex];
+            const sLevelEl = document.getElementById(`s-level-${groupIndex}`);
+            const pLevelEl = document.getElementById(`p-level-${groupIndex}`);
+            const badgeEl = document.getElementById(`risk-badge-${groupIndex}`);
+            const descEl = document.getElementById(`risk-desc-${groupIndex}`);
+            const noteEl = document.getElementById(`risk-note-${groupIndex}`);
+            const advicePanel = document.getElementById(`advice-panel-${groupIndex}`);
+
+            const task = hazardLibrary.find(t => t.id === taskId);
+            const groupData = task && Array.isArray(task.hazardGroups) ? task.hazardGroups[groupIndex] : null;
             const state = userSelections[`${taskId}_${groupIndex}`];
+            if (!groupData || !state) return;
 
-            const customHCount = state.customHazards ? state.customHazards.length : 0;
-            const customACount = state.customAvoids ? state.customAvoids.length : 0;
+            const hazardItems = Array.isArray(groupData.hazardItems) ? groupData.hazardItems : [];
+            const avoidItems = Array.isArray(groupData.AvoidItems) ? groupData.AvoidItems : [];
+            const customHCount = Array.isArray(state.customHazards) ? state.customHazards.length : 0;
+            const customACount = Array.isArray(state.customAvoids) ? state.customAvoids.length : 0;
 
-            const totalH = groupData.hazardItems.length + customHCount;
-            const checkedH = state.hazards.length + customHCount;
-            const totalA = groupData.AvoidItems.length + customACount;
-            const checkedA = state.avoids.length + customACount;
+            const totalH = hazardItems.length + customHCount;
+            const checkedH = (state.hazards || []).length + customHCount;
+            const totalA = avoidItems.length + customACount;
+            const checkedA = (state.avoids || []).length + customACount;
 
             let res = computeRiskValues(
                 groupData.severitylevel,
@@ -1904,54 +1945,52 @@
             );
 
             if (state.isManual) {
-                const s = normalizeSeverity(state.manualS);
-                const p = state.manualP;
-                const row = riskMatrix[s] || riskMatrix.S4;
-                const riskNum = row[p] || row.P4;
-                res = { s, p, riskObj: riskDescriptions[riskNum] };
+                res = lookupRisk(state.manualS, state.manualP);
             }
 
-            // 更新 UI
-            const sLevelEl = document.getElementById(`s-level-${groupIndex}`);
-            const pLevelEl = document.getElementById(`p-level-${groupIndex}`);
+            const riskObj = (res && res.riskObj) || riskDescriptions[4];
 
-            sLevelEl.textContent = res.s.replace('S', '');
-            pLevelEl.textContent = res.p.replace('P', '');
+            if (sLevelEl) sLevelEl.textContent = String(res.s || '').replace('S', '') || '-';
+            if (pLevelEl) pLevelEl.textContent = String(res.p || '').replace('P', '') || '-';
 
-            if (state.isManual) {
-                sLevelEl.style.color = 'var(--danger)';
-                pLevelEl.style.color = 'var(--danger)';
-                sLevelEl.style.fontWeight = 'bold';
-                pLevelEl.style.fontWeight = 'bold';
-            } else {
-                sLevelEl.style.color = '';
-                pLevelEl.style.color = '';
-                sLevelEl.style.fontWeight = '';
-                pLevelEl.style.fontWeight = '';
+            if (sLevelEl && pLevelEl) {
+                if (state.isManual) {
+                    sLevelEl.style.color = 'var(--danger)';
+                    pLevelEl.style.color = 'var(--danger)';
+                    sLevelEl.style.fontWeight = 'bold';
+                    pLevelEl.style.fontWeight = 'bold';
+                } else {
+                    sLevelEl.style.color = '';
+                    pLevelEl.style.color = '';
+                    sLevelEl.style.fontWeight = '';
+                    pLevelEl.style.fontWeight = '';
+                }
             }
 
-            const badgeEl = document.getElementById(`risk-badge-${groupIndex}`);
-            badgeEl.className = `risk-badge ${res.riskObj.class}`;
-            badgeEl.textContent = res.riskObj.label;
+            if (badgeEl && riskObj) {
+                badgeEl.className = `risk-badge ${riskObj.class}`;
+                badgeEl.textContent = riskObj.label;
+            }
 
-            const descEl = document.getElementById(`risk-desc-${groupIndex}`);
-            descEl.style.display = 'block';
-            descEl.style.borderLeftColor = window.getComputedStyle(badgeEl).backgroundColor;
-            descEl.innerHTML = `<strong>處置方針：</strong>${res.riskObj.desc}`;
-            document.getElementById(`risk-note-${groupIndex}`).textContent = `備註：${res.riskObj.note}`;
+            if (descEl && riskObj) {
+                descEl.style.display = 'block';
+                if (badgeEl) descEl.style.borderLeftColor = window.getComputedStyle(badgeEl).backgroundColor;
+                descEl.innerHTML = `<strong>處置方針：</strong>${riskObj.desc}`;
+            }
+            if (noteEl && riskObj) noteEl.textContent = `備註：${riskObj.note}`;
 
-            // 降低風險措施（工程改善/消除/取代）
-            const advicePanel = document.getElementById(`advice-panel-${groupIndex}`);
-            const { additional } = splitSourceControls(groupData.AvoidItems || []);
-            const additionalLines = additional.filter(item => {
-                const idx = groupData.AvoidItems.indexOf(item);
-                return idx === -1 || !state.avoids.includes(idx);
-            });
-            if (additionalLines.length) {
-                advicePanel.innerHTML = `<strong>💡 降低風險措施（工程/消除/取代）：</strong><ul>${additionalLines.map(x => `<li>${x}</li>`).join('')}</ul>`;
-                advicePanel.style.display = 'block';
-            } else {
-                advicePanel.style.display = 'none';
+            if (advicePanel) {
+                const { additional } = splitSourceControls(avoidItems);
+                const additionalLines = additional.filter(item => {
+                    const idx = avoidItems.indexOf(item);
+                    return idx === -1 || !(state.avoids || []).includes(idx);
+                });
+                if (additionalLines.length) {
+                    advicePanel.innerHTML = `<strong>💡 降低風險措施（工程/消除/取代）：</strong><ul>${additionalLines.map(x => `<li>${x}</li>`).join('')}</ul>`;
+                    advicePanel.style.display = 'block';
+                } else {
+                    advicePanel.style.display = 'none';
+                }
             }
         }
 
