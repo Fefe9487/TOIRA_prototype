@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>風險評估系統 - 選擇行業</title>
+    <title>職安衛危害辨識評估系統</title>
     <link rel="stylesheet" href="theme.css">
     <style>
         body {
@@ -12,7 +12,7 @@
         }
 
         .page {
-            max-width: 1060px;
+            max-width: 960px;
             margin: 0 auto;
         }
 
@@ -32,7 +32,6 @@
             color: var(--brand-800);
         }
 
-        /* 讓標題在左側返回鍵存在時仍維持視覺置中 */
         .page-head__spacer {
             width: 148px;
             flex-shrink: 0;
@@ -42,52 +41,107 @@
             padding: 30px 32px 36px;
         }
 
-        .sheet-divider {
-            margin: 34px 0 30px;
-            border: none;
-            border-top: 1px solid var(--line);
+        .industry-accordion {
+            display: grid;
+            gap: 14px;
         }
 
-        .subsection+.subsection {
-            margin-top: 26px;
+        .industry-accordion__item {
+            border: 1px solid var(--line);
+            border-radius: var(--r-lg);
+            background: var(--surface);
+            overflow: hidden;
         }
 
-        .subsection__title {
-            margin: 0;
-            font-size: 16px;
-            font-weight: 700;
+        .industry-accordion__item.is-open {
+            border-color: var(--brand-100);
+            box-shadow: var(--sh-1);
+        }
+
+        .industry-accordion__header {
+            display: flex;
+            width: 100%;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 18px 20px;
+            border: 0;
+            background: transparent;
+            color: inherit;
+            cursor: pointer;
+            text-align: left;
+            font-family: inherit;
+        }
+
+        .industry-accordion__header:hover {
+            background: var(--surface-2);
+        }
+
+        .industry-accordion__chevron {
+            display: inline-flex;
+            flex: 0 0 auto;
+            width: 1.1em;
+            margin-top: 1px;
             color: var(--brand-700);
+            font-size: 22px;
+            font-weight: 700;
+            line-height: 1;
+            transform: rotate(0deg);
+            transition: transform .18s ease;
         }
 
-        .subsection__hint {
-            margin: 5px 0 12px;
+        .industry-accordion__item.is-open .industry-accordion__chevron {
+            transform: rotate(90deg);
+        }
+
+        .industry-accordion__titles {
+            display: grid;
+            gap: 6px;
+            min-width: 0;
+        }
+
+        .industry-accordion__titles strong {
+            color: var(--brand-700);
+            font-size: 17px;
+            font-weight: 700;
+            line-height: 1.35;
+        }
+
+        .industry-accordion__titles span {
+            color: var(--muted);
             font-size: 13px;
             line-height: 1.7;
-            color: var(--muted);
         }
 
-        .grid-container {
+        .industry-accordion__panel {
+            padding: 0 16px 16px;
+        }
+
+        .industry-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(268px, 1fr));
-            gap: 18px;
-            padding: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 16px;
+            padding: 18px;
             border: 1px solid var(--line);
-            border-radius: var(--r-md);
+            border-radius: var(--r-lg);
             background: var(--surface-2);
         }
 
         .industry-card {
             display: flex;
-            flex-direction: column;
-            gap: 10px;
-            min-height: 138px;
+            min-height: 150px;
             padding: 22px 20px;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            gap: 10px;
             border: 1px solid var(--line);
             border-radius: var(--r-md);
             background: var(--surface);
-            text-align: center;
+            color: var(--ink);
             cursor: pointer;
-            transition: border-color .2s, box-shadow .2s, transform .2s;
+            text-align: center;
+            font-family: inherit;
+            transition: border-color .18s, box-shadow .18s, transform .18s;
         }
 
         .industry-card:hover {
@@ -96,29 +150,46 @@
             transform: translateY(-3px);
         }
 
-        .industry-card h3 {
-            margin: 0;
-            font-size: 17px;
-            font-weight: 700;
+        .industry-card strong {
             color: var(--brand-700);
+            font-size: 17px;
         }
 
-        .industry-card p {
-            margin: 0;
+        .industry-card span {
+            color: var(--muted);
             font-size: 13px;
             line-height: 1.7;
-            color: var(--muted);
         }
 
-        .custom-hint {
-            margin: 0 0 26px;
+        .industry-card small {
+            color: var(--brand-600);
+            font-weight: 700;
+        }
+
+        .sheet-divider {
+            margin: 34px 0 28px;
+            border: none;
+            border-top: 1px solid var(--line);
+        }
+
+        .custom-block h2 {
+            margin: 0 0 10px;
+            color: var(--brand-800);
+            font-size: 22px;
+        }
+
+        .custom-block p {
+            margin: 0 0 24px;
+            color: var(--ink-2);
             font-size: 15px;
             line-height: 1.8;
-            color: var(--ink-2);
+        }
+
+        .custom-block__action {
+            text-align: center;
         }
 
         .grid-state {
-            grid-column: 1 / -1;
             padding: 28px 0;
             text-align: center;
             color: var(--muted);
@@ -127,11 +198,29 @@
         .grid-state--error {
             color: var(--danger);
         }
+
+        @media (max-width: 720px) {
+            .page-head {
+                flex-wrap: wrap;
+            }
+
+            .page-head h1 {
+                order: -1;
+                flex-basis: 100%;
+            }
+
+            .page-head__spacer {
+                display: none;
+            }
+
+            .sheet {
+                padding: 22px 16px 28px;
+            }
+        }
     </style>
 </head>
 
 <body>
-
     <div class="page">
         <div class="page-head">
             <button class="t-btn t-btn--outline" onclick="location.href='index.html'">← 返回基本資料</button>
@@ -141,23 +230,36 @@
 
         <div class="t-panel sheet">
             <h2 class="t-section-title">1. 選擇行業別模板</h2>
-            <div id="sector-list">
+            <div id="sector-list" class="industry-accordion">
                 <div class="grid-state">讀取資料中...</div>
             </div>
 
             <hr class="sheet-divider">
 
-            <h2 class="t-section-title">2. 自行組裝製程（不限行業）</h2>
-            <p class="custom-hint">進入資料庫後，可依需求自由跨行業挑選與組合製程。</p>
-            <div style="text-align: center;">
-                <button class="t-btn t-btn--primary t-btn--pill t-btn--lg" onclick="startCustom()">開始執行風險評估 →</button>
+            <div class="custom-block">
+                <h2 class="t-section-title">2. 自行組裝製程（不限行業）</h2>
+                <p>進入資料庫後，可依需求自由跨行業挑選與組合製程。</p>
+                <div class="custom-block__action">
+                    <button class="t-btn t-btn--primary t-btn--pill t-btn--lg" onclick="startCustom()">開始執行風險評估 →</button>
+                </div>
             </div>
         </div>
     </div>
 
     <script>
-        // 大類別區塊由 industrySectors.json 決定；各行業歸屬由 industryMapping.json 的 sector 欄位決定。
         const DEFAULT_SECTOR = '製造業';
+        const CONSTRUCTION_TRADE_ORDER = [
+            '土方與深基礎工種',
+            '主體結構工種',
+            '假設工程與吊運工種',
+            '外牆與高處防護工種',
+            '室內裝修與包護工種',
+            '機電與設備工種（MEP）',
+            '景觀與公設工種',
+            '共用支援與收尾工種',
+        ];
+
+        let openSectorId = null;
 
         Promise.all([
             fetch('industrySectors.json').then(res => res.json()),
@@ -172,18 +274,19 @@
             renderIndustrySections(sectors, combinedData);
         })
         .catch(err => {
-            console.error("錯誤:", err);
-            document.getElementById('sector-list').innerHTML = '<div class="grid-state grid-state--error">無法讀取資料檔案，請確認 industrySectors.json、industryMapping.json 與 tasksLibrary.json 狀態。</div>';
+            console.error(err);
+            document.getElementById('sector-list').innerHTML = '<div class="grid-state grid-state--error">無法讀取資料檔案，請確認 JSON 狀態。</div>';
         });
 
         function resolveIndustrySector(industryName, data) {
             const sectors = [...new Set(
                 data.filter(i => i.Industry === industryName).map(i => i.sector).filter(Boolean)
             )];
-            if (sectors.length > 1) {
-                console.warn(`行業「${industryName}」的 sector 不一致：${sectors.join('、')}，採用「${sectors[0]}」`);
-            }
             return sectors[0] || DEFAULT_SECTOR;
+        }
+
+        function uniqueTaskIds(rows) {
+            return [...new Set(rows.map(i => i.taskId).filter(Boolean))];
         }
 
         function renderIndustrySections(sectors, data) {
@@ -200,55 +303,78 @@
                 industriesBySector[sectorId].push(ind);
             });
 
-            const knownSectorIds = new Set(sortedSectors.map(s => s.id));
-            Object.keys(industriesBySector).forEach(sectorId => {
-                if (!knownSectorIds.has(sectorId)) {
-                    console.warn(`未知大類別「${sectorId}」，相關行業將不顯示。請更新 industrySectors.json。`);
-                }
-            });
-
             sortedSectors.forEach(sector => {
                 const members = industriesBySector[sector.id] || [];
                 if (members.length === 0) return;
+                if (sector.id === '營造業') {
+                    members.sort((left, right) => {
+                        const leftRank = CONSTRUCTION_TRADE_ORDER.indexOf(left);
+                        const rightRank = CONSTRUCTION_TRADE_ORDER.indexOf(right);
+                        const a = leftRank === -1 ? Number.MAX_SAFE_INTEGER : leftRank;
+                        const b = rightRank === -1 ? Number.MAX_SAFE_INTEGER : rightRank;
+                        return a - b || left.localeCompare(right, 'zh-Hant');
+                    });
+                }
 
-                const section = document.createElement('section');
-                section.className = 'subsection';
-                section.innerHTML = `
-                    <h3 class="subsection__title">${sector.title}</h3>
-                    <p class="subsection__hint">${sector.hint || ''}</p>
-                    <div class="grid-container"></div>
+                const item = document.createElement('div');
+                item.className = 'industry-accordion__item';
+                item.dataset.sectorId = sector.id;
+                item.innerHTML = `
+                    <button class="industry-accordion__header" type="button">
+                        <span class="industry-accordion__chevron" aria-hidden="true">›</span>
+                        <span class="industry-accordion__titles">
+                            <strong>${sector.title}</strong>
+                            <span>${sector.hint || ''}</span>
+                        </span>
+                    </button>
+                    <div class="industry-accordion__panel" hidden>
+                        <div class="industry-grid"></div>
+                    </div>
                 `;
-
-                const grid = section.querySelector('.grid-container');
+                item.querySelector('.industry-accordion__header').onclick = () => toggleSector(sector.id);
+                const grid = item.querySelector('.industry-grid');
                 members.forEach(ind => grid.appendChild(createIndustryCard(ind, data)));
-                host.appendChild(section);
+                host.appendChild(item);
+            });
+        }
+
+        function toggleSector(sectorId) {
+            openSectorId = openSectorId === sectorId ? null : sectorId;
+            document.querySelectorAll('.industry-accordion__item').forEach(item => {
+                const open = item.dataset.sectorId === openSectorId;
+                item.classList.toggle('is-open', open);
+                const panel = item.querySelector('.industry-accordion__panel');
+                if (panel) panel.hidden = !open;
             });
         }
 
         function createIndustryCard(industryName, data) {
             const rows = data.filter(i => i.Industry === industryName);
-            const taskPreview = rows.map(i => i.taskName).slice(0, 3).join('、');
-
-            const card = document.createElement('div');
+            const taskIds = uniqueTaskIds(rows);
+            const names = [...new Set(rows.map(i => i.taskName).filter(Boolean))];
+            const preview = names.slice(0, 3).join('、');
+            const card = document.createElement('button');
             card.className = 'industry-card';
-            card.innerHTML = `<h3>${industryName}</h3><p>包含：${taskPreview} 等...</p>`;
-            card.onclick = () => startAssessment([...new Set(rows.map(i => i.taskId).filter(Boolean))], industryName);
+            card.type = 'button';
+            card.innerHTML = `
+                <strong>${industryName}</strong>
+                <span>包含：${preview}${names.length > 3 ? ' 等…' : ''}</span>
+                <small>${taskIds.length} 項作業</small>
+            `;
+            card.onclick = () => startAssessment(taskIds, industryName);
             return card;
         }
 
-        // 自選製程點擊事件：傳遞空陣列與標題
         function startCustom() {
             startAssessment([], '自選製程');
         }
 
-        // 跳轉核心邏輯
         function startAssessment(idArray, industryName) {
             sessionStorage.setItem('initTasks', JSON.stringify(idArray));
             sessionStorage.setItem('industryName', industryName);
             window.location.href = 'New.html';
         }
     </script>
-
 </body>
 
 </html>
