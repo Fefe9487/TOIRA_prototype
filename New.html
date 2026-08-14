@@ -1149,18 +1149,38 @@
 
         // 風險矩陣與文字定義
         const riskMatrix = {
-            'S4': { 'P4': 5, 'P3': 4, 'P2': 4, 'P1': 3 },
-            'S3': { 'P4': 4, 'P3': 4, 'P2': 3, 'P1': 3 },
-            'S2': { 'P4': 4, 'P3': 3, 'P2': 3, 'P1': 2 },
-            'S1': { 'P4': 3, 'P3': 3, 'P2': 2, 'P1': 1 }
+            'S5': { 'P5': 5, 'P4': 4, 'P3': 4, 'P2': 3, 'P1': 2 },
+            'S4': { 'P5': 4, 'P4': 4, 'P3': 3, 'P2': 3, 'P1': 2 },
+            'S3': { 'P5': 4, 'P4': 3, 'P3': 3, 'P2': 2, 'P1': 1 },
+            'S2': { 'P5': 3, 'P4': 3, 'P3': 2, 'P2': 2, 'P1': 1 },
+            'S1': { 'P5': 2, 'P4': 2, 'P3': 1, 'P2': 1, 'P1': 1 }
         };
         const riskDescriptions = {
-            5: { label: "重大", class: "risk-5", desc: "須立即採取風險降低設施，在風險降低前不應開始或繼續作業。", note: "不可接受風險" },
-            4: { label: "高", class: "risk-4", desc: "須在一定期限內採取風險控制設施，在風險降低前不可開始作業。", note: "不可接受風險" },
-            3: { label: "中", class: "risk-3", desc: "宜逐步採取風險降低設施，或進一步評估發生的可能性。", note: "須致力於風險降低" },
-            2: { label: "低", class: "risk-2", desc: "暫時無須採取風險降低設施，但須確保現有防護設施之有效性。", note: "可接受風險" },
-            1: { label: "輕", class: "risk-1", desc: "不須採取風險降低設施，但須確保現有防護設施之有效性。", note: "可接受風險" }
+            5: { label: "重大風險", class: "risk-5", desc: "須採取風險降低設施，如需較長時間進行改善，應考量採取臨時控制措施之必要性。", note: "不可接受風險" },
+            4: { label: "高度風險", class: "risk-4", desc: "須採取風險降低設施，如需較長時間進行改善，應考量採取臨時控制措施之必要性。", note: "不可接受風險" },
+            3: { label: "中度風險", class: "risk-3", desc: "須致力於風險的降低或提升職安衛績效之機會，例如：對於後果嚴重度高之風險項目，進一步評估可降低發生可能性之機會；調整工作順序或速率、減低單調工作等以降低風險發生可能性或提升工作效率；加強監督查核或強化管制措施，以提升落實度或管理成效等。", note: "須致力於風險降低" },
+            2: { label: "低度風險", class: "risk-2", desc: "須致力於風險的降低或提升職安衛績效之機會，例如：對於後果嚴重度高之風險項目，進一步評估可降低發生可能性之機會；調整工作順序或速率、減低單調工作等以降低風險發生可能性或提升工作效率；加強監督查核或強化管制措施，以提升落實度或管理成效等。", note: "須致力於風險降低" },
+            1: { label: "輕度風險", class: "risk-1", desc: "暫時無須採取風險降低之設施，但須確保現有防護設施之有效性及落實度。", note: "可接受風險" }
         };
+
+        function normalizeSeverity(value) {
+            const level = String(value || '').split(':')[0].trim().toUpperCase();
+            if (riskMatrix[level]) return level;
+            if (level === '5' || level.startsWith('5')) return 'S5';
+            if (level === '4' || level.startsWith('4')) return 'S4';
+            if (level === '3' || level.startsWith('3')) return 'S3';
+            if (level === '2' || level.startsWith('2')) return 'S2';
+            if (level === '1' || level.startsWith('1')) return 'S1';
+            return 'S4';
+        }
+
+        function lookupRisk(s, p) {
+            const sev = normalizeSeverity(s);
+            const row = riskMatrix[sev] || riskMatrix.S4;
+            const key = row[p] != null ? p : 'P4';
+            const riskNum = row[key];
+            return { s: sev, p: key, riskNum, riskObj: riskDescriptions[riskNum] };
+        }
 
         // ==========================================
         // 1. 初始化與讀取 JSON 資料
@@ -1444,8 +1464,7 @@
                 );
 
                 if (state.isManual) {
-                    const riskNum = riskMatrix[state.manualS][state.manualP];
-                    cur = { s: state.manualS, p: state.manualP, riskObj: riskDescriptions[riskNum] };
+                    cur = lookupRisk(state.manualS, state.manualP);
                 }
 
                 let residualP = 'P3';
@@ -1454,7 +1473,7 @@
                 const pNum = parseInt(cur.p.replace('P', ''), 10);
                 const rNum = parseInt(residualP.replace('P', ''), 10);
                 if (rNum > pNum) residualP = cur.p;
-                const residualRiskNum = riskMatrix[cur.s][residualP];
+                const residualRiskNum = lookupRisk(cur.s, residualP).riskNum;
 
                 const scenarioLines = hazards.map((h, i) => `${i + 1}. ${h}`);
                 rows.push({
@@ -1468,7 +1487,7 @@
                     initialSeverity: cur.s,
                     initialProbability: cur.p,
                     initialRiskLevel: cur.riskObj.label,
-                    initialRiskNum: riskMatrix[cur.s][cur.p],
+                    initialRiskNum: lookupRisk(cur.s, cur.p).riskNum,
                     residualSeverity: cur.s,
                     residualProbability: residualP,
                     residualRiskLevel: riskDescriptions[residualRiskNum].label,
@@ -1759,6 +1778,7 @@
                                 <div class="manual-controls" id="manual-controls-${index}" style="display:${state.isManual ? 'flex' : 'none'};">
                                     <span>嚴重度 (S):
                                         <select id="manual-s-${index}" onchange="updateManualRisk('${taskId}', ${index})">
+                                            <option value="S5" ${state.manualS === 'S5' ? 'selected' : ''}>5 (極大)</option>
                                             <option value="S4" ${state.manualS === 'S4' ? 'selected' : ''}>4 (重大)</option>
                                             <option value="S3" ${state.manualS === 'S3' ? 'selected' : ''}>3 (高)</option>
                                             <option value="S2" ${state.manualS === 'S2' ? 'selected' : ''}>2 (中)</option>
@@ -1847,7 +1867,7 @@
 
         // 計算風險核心邏輯 (S依照JSON固定，P浮動)
         function computeRiskValues(baseSeverity, hazardTotal, hazardSelected, avoidTotal, avoidSelected) {
-            let s = baseSeverity;
+            let s = normalizeSeverity(baseSeverity);
             let p = 'P1';
 
             if (hazardSelected === 0) {
@@ -1860,7 +1880,8 @@
                 else if (avoidRatio > 0.49) p = 'P2';
                 else p = 'P3';
             }
-            const riskNum = riskMatrix[s][p];
+            const row = riskMatrix[s] || riskMatrix.S4;
+            const riskNum = row[p] || row.P4;
             return { s, p, riskObj: riskDescriptions[riskNum] };
         }
 
@@ -1877,15 +1898,16 @@
             const checkedA = state.avoids.length + customACount;
 
             let res = computeRiskValues(
-                groupData.severitylevel.split(':')[0].trim(),
+                groupData.severitylevel,
                 totalH, checkedH,
                 totalA, checkedA
             );
 
             if (state.isManual) {
-                const s = state.manualS;
+                const s = normalizeSeverity(state.manualS);
                 const p = state.manualP;
-                const riskNum = riskMatrix[s][p];
+                const row = riskMatrix[s] || riskMatrix.S4;
+                const riskNum = row[p] || row.P4;
                 res = { s, p, riskObj: riskDescriptions[riskNum] };
             }
 
@@ -1991,7 +2013,7 @@
                     : row.initialRiskLevel;
 
                 const initRiskClass = riskDescriptions[row.initialRiskNum]?.class || 'risk-0';
-                const resRiskClass = riskDescriptions[riskMatrix[row.residualSeverity][row.residualProbability]]?.class || 'risk-0';
+                const resRiskClass = riskDescriptions[lookupRisk(row.residualSeverity, row.residualProbability).riskNum]?.class || 'risk-0';
 
                 const scenarioHtml = `
                     <div style="color:var(--brand-700); font-weight:bold; margin-bottom:6px;">【${row.hazardCategory}】</div>
