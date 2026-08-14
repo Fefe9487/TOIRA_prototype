@@ -1192,6 +1192,9 @@
                     };
                 });
 
+                // 從行業／工種模板帶入時，左側只顯示該模板一段製程
+                applyTemplateCategory(industryTitle, mappings);
+
                 // 檢查是否有首頁傳遞過來的 ID
                 const savedInit = sessionStorage.getItem('initTasks');
                 if (savedInit) {
@@ -1268,6 +1271,15 @@
                 if (!userSelections[key]) {
                     userSelections[key] = { hazards: [], avoids: [], customHazards: [], customAvoids: [], isManual: false, manualS: 'S4', manualP: 'P4' };
                 }
+            });
+        }
+
+        function applyTemplateCategory(industryName, mappings) {
+            if (!industryName || industryName === '自選製程') return;
+            mappings.forEach((row) => {
+                if (row.Industry !== industryName || !row.taskId) return;
+                const task = hazardLibrary.find(t => t.id === row.taskId);
+                if (task) task.category = industryName;
             });
         }
 
