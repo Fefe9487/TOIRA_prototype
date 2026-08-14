@@ -1145,10 +1145,7 @@
         const RISK_FORM_API = (window.RISK_FORM_API || 'http://localhost:8000').replace(/\/$/, '');
         const STORAGE_KEY = 'toira.assessment.v1';
 
-        const DATA_VER = '20260814d';
-        const CONTROL_TAG_RE = /[（(【]\s*(消除|取代|工程改善|行政管理|個人防護具|個人防護)\s*[）)】]\s*$/;
-        const EXISTING_CONTROL_TYPES = new Set(['行政管理', '個人防護', '個人防護具']);
-        const ADDITIONAL_CONTROL_TYPES = new Set(['工程改善', '消除', '取代']);
+        const DATA_VER = '20260814e';
 
         // 風險矩陣與文字定義
         const riskMatrix = {
@@ -1417,33 +1414,14 @@
             }
         }
 
-        function splitSourceControls(items) {
-            const easy = [];
-            const additional = [];
-            (items || []).forEach(item => {
-                const text = String(item || '').trim();
-                if (!text) return;
-                const m = text.match(CONTROL_TAG_RE);
-                const level = m ? m[1] : null;
-                if (ADDITIONAL_CONTROL_TYPES.has(level)) additional.push(text);
-                else easy.push(text);
-            });
-            return { easy, additional };
+        function getAdditionalControlAdvice(items, selectedIndexes) {
+            const selected = new Set(selectedIndexes || []);
+            return (items || []).filter((item, index) => !selected.has(index) && String(item || '').trim());
         }
 
         function formatRiskLabel(value, prefix) {
             const v = String(value || '').replace(/^[SP]/i, '').trim();
             return v ? `${prefix}${v}` : '';
-        }
-
-        function pickExistingControls(selectedAvoids, pool) {
-            const { easy } = splitSourceControls(pool);
-            const easySet = new Set(easy);
-            const picked = selectedAvoids.filter(x => easySet.has(x) || !CONTROL_TAG_RE.test(x));
-            if (picked.length >= 2) return picked.slice(0, 4);
-            const fallback = easy.filter(x => selectedAvoids.includes(x));
-            const merged = [...new Set([...picked, ...fallback])];
-            return merged.length ? merged.slice(0, 4) : selectedAvoids.slice(0, 4);
         }
 
         function buildExportRowsForTask(taskId) {
@@ -1459,13 +1437,11 @@
                     || (state.customAvoids && state.customAvoids.length);
                 if (!hasData) return;
 
-                const hazards = state.hazards.map(i => group.hazardItems[i])
+                const hazards = (state.hazards || []).map(i => (group.hazardItems || [])[i]).filter(Boolean)
                     .concat(state.customHazards || []);
-                const selectedAvoids = state.avoids.map(i => group.AvoidItems[i])
+                const existingControls = (state.avoids || []).map(i => (group.AvoidItems || [])[i]).filter(Boolean)
                     .concat(state.customAvoids || []);
-                const { easy, additional } = splitSourceControls(group.AvoidItems || []);
-                const existingControls = pickExistingControls(selectedAvoids, group.AvoidItems || []);
-                const additionalControls = additional.length ? additional : easy.filter(x => !selectedAvoids.includes(x));
+                const additionalControls = getAdditionalControlAdvice(group.AvoidItems || [], state.avoids);
 
                 const baseS = group.severitylevel.split(':')[0].trim();
                 let cur = computeRiskValues(
@@ -1980,13 +1956,9 @@
             if (noteEl && riskObj) noteEl.textContent = `備註：${riskObj.note}`;
 
             if (advicePanel) {
-                const { additional } = splitSourceControls(avoidItems);
-                const additionalLines = additional.filter(item => {
-                    const idx = avoidItems.indexOf(item);
-                    return idx === -1 || !(state.avoids || []).includes(idx);
-                });
+                const additionalLines = getAdditionalControlAdvice(avoidItems, state.avoids);
                 if (additionalLines.length) {
-                    advicePanel.innerHTML = `<strong>💡 降低風險措施（工程/消除/取代）：</strong><ul>${additionalLines.map(x => `<li>${x}</li>`).join('')}</ul>`;
+                    advicePanel.innerHTML = `<strong>💡 降低風險措施：</strong><ul>${additionalLines.map(x => `<li>${x}</li>`).join('')}</ul>`;
                     advicePanel.style.display = 'block';
                 } else {
                     advicePanel.style.display = 'none';
