@@ -1,0 +1,2263 @@
+[
+  {
+    "id": "I-001",
+    "Industry": "醃製食品製造業",
+    "sector": "製造業",
+    "category": "原料處理",
+    "taskId": "食材清洗與切塊作業"
+  },
+  {
+    "id": "I-002",
+    "Industry": "醃製食品製造業",
+    "sector": "製造業",
+    "category": "發酵醃漬",
+    "taskId": "食材揉鹽醃製作業"
+  },
+  {
+    "id": "I-003",
+    "Industry": "醃製食品製造業",
+    "sector": "製造業",
+    "category": "發酵醃漬",
+    "taskId": "食材取出、曝曬與換缸作業"
+  },
+  {
+    "id": "I-004",
+    "Industry": "醃製食品製造業",
+    "sector": "製造業",
+    "category": "包裝倉儲",
+    "taskId": "食材包裝作業"
+  },
+  {
+    "id": "I-005",
+    "Industry": "醃製食品製造業",
+    "sector": "製造業",
+    "category": "製程加工",
+    "taskId": "食材烹煮作業"
+  },
+  {
+    "id": "I-006",
+    "Industry": "醃製食品製造業",
+    "sector": "製造業",
+    "category": "發酵醃漬",
+    "taskId": "局限空間與缺氧危害預防作業"
+  },
+  {
+    "id": "I-007",
+    "Industry": "醃製食品製造業",
+    "sector": "製造業",
+    "category": "發酵醃漬",
+    "taskId": "固定式起重機吊掛物料作業"
+  },
+  {
+    "id": "I-008",
+    "Industry": "醃製食品製造業",
+    "sector": "製造業",
+    "category": "製程加工",
+    "taskId": "食品乾燥作業"
+  },
+  {
+    "id": "I-009",
+    "Industry": "醃製食品製造業",
+    "sector": "製造業",
+    "category": "包裝倉儲",
+    "taskId": "堆高機駕駛與搬運作業"
+  },
+  {
+    "id": "I-010",
+    "Industry": "醃製食品製造業",
+    "sector": "製造業",
+    "category": "通用作業補充",
+    "taskId": "高溫環境操作與維護作業"
+  },
+  {
+    "id": "I-011",
+    "Industry": "醃製食品製造業",
+    "sector": "製造業",
+    "category": "包裝倉儲",
+    "taskId": "人工搬運作業"
+  },
+  {
+    "id": "I-012",
+    "Industry": "醃製食品製造業",
+    "sector": "製造業",
+    "category": "一般例行作業",
+    "taskId": "生產環境一般巡檢與維護作業"
+  },
+  {
+    "id": "I-013",
+    "Industry": "醃製食品製造業",
+    "sector": "製造業",
+    "category": "一般例行作業",
+    "taskId": "設備維修、檢查、調整與復歸作業"
+  },
+  {
+    "id": "I-014",
+    "Industry": "醃製食品製造業",
+    "sector": "製造業",
+    "category": "一般例行作業",
+    "taskId": "設備安裝作業"
+  },
+  {
+    "id": "I-015",
+    "Industry": "醃製食品製造業",
+    "sector": "製造業",
+    "category": "一般例行作業",
+    "taskId": "消防設備維護檢點作業"
+  },
+  {
+    "id": "I-016",
+    "Industry": "醃製食品製造業",
+    "sector": "製造業",
+    "category": "一般例行作業",
+    "taskId": "電氣設備及線路操作與維護作業"
+  },
+  {
+    "id": "I-017",
+    "Industry": "醃製食品製造業",
+    "sector": "製造業",
+    "category": "一般例行作業",
+    "taskId": "傳動馬達維修作業"
+  },
+  {
+    "id": "I-018",
+    "Industry": "醃製食品製造業",
+    "sector": "製造業",
+    "category": "一般例行作業",
+    "taskId": "排風設備維修作業"
+  },
+  {
+    "id": "I-019",
+    "Industry": "醃製食品製造業",
+    "sector": "製造業",
+    "category": "一般例行作業",
+    "taskId": "重型設備維修作業"
+  },
+  {
+    "id": "I-020",
+    "Industry": "醃製食品製造業",
+    "sector": "製造業",
+    "category": "製程加工",
+    "taskId": "食品原料攪拌作業"
+  },
+  {
+    "id": "FD-001",
+    "Industry": "食品製造業",
+    "sector": "製造業",
+    "category": "原料處理",
+    "taskId": "食品原料投料作業"
+  },
+  {
+    "id": "FD-002",
+    "Industry": "食品製造業",
+    "sector": "製造業",
+    "category": "製程加工",
+    "taskId": "食材烹煮作業"
+  },
+  {
+    "id": "FD-003",
+    "Industry": "食品製造業",
+    "sector": "製造業",
+    "category": "原料處裡",
+    "taskId": "原料清洗與去皮作業"
+  },
+  {
+    "id": "FD-004",
+    "Industry": "食品製造業",
+    "sector": "製造業",
+    "category": "原料處裡",
+    "taskId": "食材清洗與切塊作業"
+  },
+  {
+    "id": "FD-005",
+    "Industry": "食品製造業",
+    "sector": "製造業",
+    "category": "加熱處裡",
+    "taskId": "食品乾燥作業"
+  },
+  {
+    "id": "FD-006",
+    "Industry": "食品製造業",
+    "sector": "製造業",
+    "category": "包裝倉儲",
+    "taskId": "食品包裝作業"
+  },
+  {
+    "id": "FD-007",
+    "Industry": "食品製造業",
+    "sector": "製造業",
+    "category": "包裝倉儲",
+    "taskId": "低溫環境作業"
+  },
+  {
+    "id": "FD-008",
+    "Industry": "食品製造業",
+    "sector": "製造業",
+    "category": "包裝倉儲",
+    "taskId": "高噪音環境設備操作與巡檢作業"
+  },
+  {
+    "id": "FD-009",
+    "Industry": "食品製造業",
+    "sector": "製造業",
+    "category": "包裝倉儲",
+    "taskId": "人工搬運作業"
+  },
+  {
+    "id": "FD-010",
+    "Industry": "食品製造業",
+    "sector": "製造業",
+    "category": "包裝倉儲",
+    "taskId": "木材與木板入庫作業"
+  },
+  {
+    "id": "FD-011",
+    "Industry": "食品製造業",
+    "sector": "製造業",
+    "category": "包裝倉儲",
+    "taskId": "堆高機駕駛與搬運作業"
+  },
+  {
+    "id": "FD-012",
+    "Industry": "食品製造業",
+    "sector": "製造業",
+    "category": "設備清潔與倉儲",
+    "taskId": "局限空間與缺氧危害預防作業"
+  },
+  {
+    "id": "FD-013",
+    "Industry": "食品製造業",
+    "sector": "製造業",
+    "category": "加熱處裡",
+    "taskId": "高溫環境操作與維護作業"
+  },
+  {
+    "id": "FD-014",
+    "Industry": "食品製造業",
+    "sector": "製造業",
+    "category": "設備清潔與倉儲",
+    "taskId": "CIP原地清洗作業"
+  },
+  {
+    "id": "FD-015",
+    "Industry": "食品製造業",
+    "sector": "製造業",
+    "category": "包裝倉儲",
+    "taskId": "低溫環境作業"
+  },
+  {
+    "id": "FD-016",
+    "Industry": "食品製造業",
+    "sector": "製造業",
+    "category": "一般例行作業",
+    "taskId": "生產環境一般巡檢與維護作業"
+  },
+  {
+    "id": "FD-017",
+    "Industry": "食品製造業",
+    "sector": "製造業",
+    "category": "一般例行作業",
+    "taskId": "設備維修、檢查、調整與復歸作業"
+  },
+  {
+    "id": "FD-018",
+    "Industry": "食品製造業",
+    "sector": "製造業",
+    "category": "一般例行作業",
+    "taskId": "設備安裝作業"
+  },
+  {
+    "id": "FD-019",
+    "Industry": "食品製造業",
+    "sector": "製造業",
+    "category": "一般例行作業",
+    "taskId": "消防設備維護檢點作業"
+  },
+  {
+    "id": "FD-020",
+    "Industry": "食品製造業",
+    "sector": "製造業",
+    "category": "一般例行作業",
+    "taskId": "電氣設備及線路操作與維護作業"
+  },
+  {
+    "id": "FD-021",
+    "Industry": "食品製造業",
+    "sector": "製造業",
+    "category": "一般例行作業",
+    "taskId": "傳動馬達維修作業"
+  },
+  {
+    "id": "FD-022",
+    "Industry": "食品製造業",
+    "sector": "製造業",
+    "category": "一般例行作業",
+    "taskId": "高壓氣體容器操作與檢修作業"
+  },
+  {
+    "id": "FD-023",
+    "Industry": "食品製造業",
+    "sector": "製造業",
+    "category": "製程加工",
+    "taskId": "食品原料攪拌作業"
+  },
+  {
+    "id": "F-001",
+    "Industry": "木竹製品及非金屬家具製造業",
+    "sector": "製造業",
+    "category": "包裝倉儲",
+    "taskId": "堆高機駕駛與搬運作業"
+  },
+  {
+    "id": "F-002",
+    "Industry": "木竹製品及非金屬家具製造業",
+    "sector": "製造業",
+    "category": "木材加工",
+    "taskId": "多片縱鋸機操作作業"
+  },
+  {
+    "id": "F-003",
+    "Industry": "木竹製品及非金屬家具製造業",
+    "sector": "製造業",
+    "category": "木材加工",
+    "taskId": "自動雙面壓刨床操作作業"
+  },
+  {
+    "id": "F-004",
+    "Industry": "木竹製品及非金屬家具製造業",
+    "sector": "製造業",
+    "category": "包裝倉儲",
+    "taskId": "固定式起重機吊掛物料作業"
+  },
+  {
+    "id": "F-005",
+    "Industry": "木竹製品及非金屬家具製造業",
+    "sector": "製造業",
+    "category": "木材加工",
+    "taskId": "手持式研磨機操作作業"
+  },
+  {
+    "id": "F-006",
+    "Industry": "木竹製品及非金屬家具製造業",
+    "sector": "製造業",
+    "category": "塑膠射出成形",
+    "taskId": "射出成型作業"
+  },
+  {
+    "id": "F-007",
+    "Industry": "木竹製品及非金屬家具製造業",
+    "sector": "製造業",
+    "category": "塑膠射出成形",
+    "taskId": "射出成型模具更換作業"
+  },
+  {
+    "id": "F-008",
+    "Industry": "木竹製品及非金屬家具製造業",
+    "sector": "製造業",
+    "category": "塑膠射出成形",
+    "taskId": "射出成型品取出作業"
+  },
+  {
+    "id": "F-009",
+    "Industry": "木竹製品及非金屬家具製造業",
+    "sector": "製造業",
+    "category": "組裝與回收",
+    "taskId": "木竹製品裝訂機裝訂作業"
+  },
+  {
+    "id": "F-010",
+    "Industry": "木竹製品及非金屬家具製造業",
+    "sector": "製造業",
+    "category": "組裝與回收",
+    "taskId": "高溫環境操作與維護作業"
+  },
+  {
+    "id": "F-011",
+    "Industry": "木竹製品及非金屬家具製造業",
+    "sector": "製造業",
+    "category": "組裝與回收",
+    "taskId": "不良品破碎作業"
+  },
+  {
+    "id": "F-012",
+    "Industry": "木竹製品及非金屬家具製造業",
+    "sector": "製造業",
+    "category": "木材加工",
+    "taskId": "粉塵投料、攪拌與包裝作業"
+  },
+  {
+    "id": "F-013",
+    "Industry": "木竹製品及非金屬家具製造業",
+    "sector": "製造業",
+    "category": "木材加工",
+    "taskId": "高噪音環境設備操作與巡檢作業"
+  },
+  {
+    "id": "F-014",
+    "Industry": "木竹製品及非金屬家具製造業",
+    "sector": "製造業",
+    "category": "木材加工",
+    "taskId": "有機溶劑使用與塗裝作業"
+  },
+  {
+    "id": "F-016",
+    "Industry": "木竹製品及非金屬家具製造業",
+    "sector": "製造業",
+    "category": "表面處理",
+    "taskId": "噴漆及上漆作業"
+  },
+  {
+    "id": "F-017",
+    "Industry": "木竹製品及非金屬家具製造業",
+    "sector": "製造業",
+    "category": "一般例行性作業",
+    "taskId": "木材粉塵集塵設備清空與維護作業"
+  },
+  {
+    "id": "F-018",
+    "Industry": "木竹製品及非金屬家具製造業",
+    "sector": "製造業",
+    "category": "表面處裡",
+    "taskId": "手工具修整料件作業"
+  },
+  {
+    "id": "F-019",
+    "Industry": "木竹製品及非金屬家具製造業",
+    "sector": "製造業",
+    "category": "一般例行作業",
+    "taskId": "生產環境一般巡檢與維護作業"
+  },
+  {
+    "id": "F-020",
+    "Industry": "木竹製品及非金屬家具製造業",
+    "sector": "製造業",
+    "category": "一般例行作業",
+    "taskId": "設備維修、檢查、調整與復歸作業"
+  },
+  {
+    "id": "F-021",
+    "Industry": "木竹製品及非金屬家具製造業",
+    "sector": "製造業",
+    "category": "一般例行作業",
+    "taskId": "設備安裝作業"
+  },
+  {
+    "id": "F-022",
+    "Industry": "木竹製品及非金屬家具製造業",
+    "sector": "製造業",
+    "category": "一般例行作業",
+    "taskId": "消防設備維護檢點作業"
+  },
+  {
+    "id": "F-023",
+    "Industry": "木竹製品及非金屬家具製造業",
+    "sector": "製造業",
+    "category": "包裝倉儲",
+    "taskId": "人工搬運作業"
+  },
+  {
+    "id": "F-024",
+    "Industry": "木竹製品及非金屬家具製造業",
+    "sector": "製造業",
+    "category": "包裝倉儲",
+    "taskId": "木材與木板入庫作業"
+  },
+  {
+    "id": "F-025",
+    "Industry": "木竹製品及非金屬家具製造業",
+    "sector": "製造業",
+    "category": "包裝倉儲",
+    "taskId": "商品包裝作業"
+  },
+  {
+    "id": "F-026",
+    "Industry": "木竹製品及非金屬家具製造業",
+    "sector": "製造業",
+    "category": "一般例行性作業",
+    "taskId": "電氣設備及線路操作與維護作業"
+  },
+  {
+    "id": "F-027",
+    "Industry": "木竹製品及非金屬家具製造業",
+    "sector": "製造業",
+    "category": "一般例行性作業",
+    "taskId": "傳動馬達維修作業"
+  },
+  {
+    "id": "F-028",
+    "Industry": "木竹製品及非金屬家具製造業",
+    "sector": "製造業",
+    "category": "木材加工",
+    "taskId": "油壓升降平台作業"
+  },
+  {
+    "id": "F-029",
+    "Industry": "木竹製品及非金屬家具製造業",
+    "sector": "製造業",
+    "category": "一般例行性作業",
+    "taskId": "重型設備維修作業"
+  },
+  {
+    "id": "F-030",
+    "Industry": "木竹製品及非金屬家具製造業",
+    "sector": "製造業",
+    "category": "木材加工",
+    "taskId": "木竹製品熱處理作業"
+  },
+  {
+    "id": "C-001",
+    "Industry": "化學品製造業",
+    "sector": "製造業",
+    "category": "槽車裝卸",
+    "taskId": "槽車入場作業"
+  },
+  {
+    "id": "C-002",
+    "Industry": "化學品製造業",
+    "sector": "製造業",
+    "category": "槽車裝卸",
+    "taskId": "槽車接地作業"
+  },
+  {
+    "id": "C-003",
+    "Industry": "化學品製造業",
+    "sector": "製造業",
+    "category": "槽車裝卸",
+    "taskId": "槽車卸料作業"
+  },
+  {
+    "id": "C-004",
+    "Industry": "化學品製造業",
+    "sector": "製造業",
+    "category": "槽車裝卸",
+    "taskId": "槽車卸料管閥連接作業"
+  },
+  {
+    "id": "C-005",
+    "Industry": "化學品製造業",
+    "sector": "製造業",
+    "category": "槽車裝卸",
+    "taskId": "槽車卸料後管線卸除與復原作業"
+  },
+  {
+    "id": "C-006",
+    "Industry": "化學品製造業",
+    "sector": "製造業",
+    "category": "反應與儲存",
+    "taskId": "原料投料作業"
+  },
+  {
+    "id": "C-007",
+    "Industry": "化學品製造業",
+    "sector": "製造業",
+    "category": "反應與儲存",
+    "taskId": "管線配置作業"
+  },
+  {
+    "id": "C-008",
+    "Industry": "化學品製造業",
+    "sector": "製造業",
+    "category": "反應與儲存",
+    "taskId": "可燃性化學品管線液位監測作業"
+  },
+  {
+    "id": "C-009",
+    "Industry": "化學品製造業",
+    "sector": "製造業",
+    "category": "反應與儲存",
+    "taskId": "槽車或儲槽洩壓閥開啟作業"
+  },
+  {
+    "id": "C-010",
+    "Industry": "化學品製造業",
+    "sector": "製造業",
+    "category": "巡檢、維修與測試",
+    "taskId": "化學品入料作業"
+  },
+  {
+    "id": "C-011",
+    "Industry": "化學品製造業",
+    "sector": "製造業",
+    "category": "巡檢、維修與測試",
+    "taskId": "反應爐清洗作業"
+  },
+  {
+    "id": "C-012",
+    "Industry": "化學品製造業",
+    "sector": "製造業",
+    "category": "巡檢、維修與測試",
+    "taskId": "管線維修及抄表作業"
+  },
+  {
+    "id": "C-013",
+    "Industry": "化學品製造業",
+    "sector": "製造業",
+    "category": "巡檢、維修與測試",
+    "taskId": "排氣設備維修作業"
+  },
+  {
+    "id": "C-014",
+    "Industry": "化學品製造業",
+    "sector": "製造業",
+    "category": "巡檢、維修與測試",
+    "taskId": "局限空間與缺氧危害預防作業"
+  },
+  {
+    "id": "C-015",
+    "Industry": "化學品製造業",
+    "sector": "製造業",
+    "category": "巡檢、維修與測試",
+    "taskId": "特定化學物質操作作業"
+  },
+  {
+    "id": "C-016",
+    "Industry": "化學品製造業",
+    "sector": "製造業",
+    "category": "巡檢、維修與測試",
+    "taskId": "高噪音環境設備操作與巡檢作業"
+  },
+  {
+    "id": "C-017",
+    "Industry": "化學品製造業",
+    "sector": "製造業",
+    "category": "巡檢、維修與測試",
+    "taskId": "高壓氣體容器操作與檢修作業"
+  },
+  {
+    "id": "C-018",
+    "Industry": "化學品製造業",
+    "sector": "製造業",
+    "category": "巡檢、維修與測試",
+    "taskId": "高度2公尺以上開口周邊作業"
+  },
+  {
+    "id": "C-019",
+    "Industry": "化學品製造業",
+    "sector": "製造業",
+    "category": "包裝倉儲",
+    "taskId": "粉塵投料、攪拌與包裝作業"
+  },
+  {
+    "id": "C-020",
+    "Industry": "化學品製造業",
+    "sector": "製造業",
+    "category": "包裝倉儲",
+    "taskId": "堆高機駕駛與搬運作業"
+  },
+  {
+    "id": "C-021",
+    "Industry": "化學品製造業",
+    "sector": "製造業",
+    "category": "包裝倉儲",
+    "taskId": "液態化學品分裝與包裝作業"
+  },
+  {
+    "id": "C-022",
+    "Industry": "化學品製造業",
+    "sector": "製造業",
+    "category": "包裝倉儲",
+    "taskId": "固定式起重機吊掛物料作業"
+  },
+  {
+    "id": "C-023",
+    "Industry": "化學品製造業",
+    "sector": "製造業",
+    "category": "一般例行作業",
+    "taskId": "生產環境一般巡檢與維護作業"
+  },
+  {
+    "id": "C-024",
+    "Industry": "化學品製造業",
+    "sector": "製造業",
+    "category": "一般例行作業",
+    "taskId": "設備維修、檢查、調整與復歸作業"
+  },
+  {
+    "id": "C-025",
+    "Industry": "化學品製造業",
+    "sector": "製造業",
+    "category": "一般例行作業",
+    "taskId": "設備安裝作業"
+  },
+  {
+    "id": "C-026",
+    "Industry": "化學品製造業",
+    "sector": "製造業",
+    "category": "一般例行作業",
+    "taskId": "消防設備維護檢點作業"
+  },
+  {
+    "id": "C-027",
+    "Industry": "化學品製造業",
+    "sector": "製造業",
+    "category": "一般例行作業",
+    "taskId": "電氣設備及線路操作與維護作業"
+  },
+  {
+    "id": "C-028",
+    "Industry": "化學品製造業",
+    "sector": "製造業",
+    "category": "一般例行作業",
+    "taskId": "傳動馬達維修作業"
+  },
+  {
+    "id": "C-029",
+    "Industry": "化學品製造業",
+    "sector": "製造業",
+    "category": "一般例行作業",
+    "taskId": "重型設備維修作業"
+  },
+  {
+    "id": "C-030",
+    "Industry": "化學品製造業",
+    "sector": "製造業",
+    "category": "反應與儲存",
+    "taskId": "原料攪拌與加熱作業"
+  },
+  {
+    "id": "M-001",
+    "Industry": "金屬製品製造業(鐵管零件加工)",
+    "sector": "製造業",
+    "category": "機械加工",
+    "taskId": "車床及銑床操作作業"
+  },
+  {
+    "id": "M-002",
+    "Industry": "金屬製品製造業(鐵管零件加工)",
+    "sector": "製造業",
+    "category": "機械加工",
+    "taskId": "鑽孔機操作作業"
+  },
+  {
+    "id": "M-003",
+    "Industry": "金屬製品製造業(鐵管零件加工)",
+    "sector": "製造業",
+    "category": "機械加工",
+    "taskId": "衝床操作作業"
+  },
+  {
+    "id": "M-004",
+    "Industry": "金屬製品製造業(鐵管零件加工)",
+    "sector": "製造業",
+    "category": "機械加工",
+    "taskId": "研磨輪操作作業"
+  },
+  {
+    "id": "M-004",
+    "Industry": "金屬製品製造業(鐵管零件加工)",
+    "sector": "製造業",
+    "category": "機械加工",
+    "taskId": "料件暫存作業"
+  },
+  {
+    "id": "M-005",
+    "Industry": "金屬製品製造業(鐵管零件加工)",
+    "sector": "製造業",
+    "category": "焊接與組立",
+    "taskId": "電弧焊接作業"
+  },
+  {
+    "id": "M-006",
+    "Industry": "金屬製品製造業(鐵管零件加工)",
+    "sector": "製造業",
+    "category": "焊接與組立",
+    "taskId": "氣焊操作作業"
+  },
+  {
+    "id": "M-007",
+    "Industry": "金屬製品製造業(鐵管零件加工)",
+    "sector": "製造業",
+    "category": "焊接與組立",
+    "taskId": "設備轉輪組立作業"
+  },
+  {
+    "id": "M-008",
+    "Industry": "金屬製品製造業(鐵管零件加工)",
+    "sector": "製造業",
+    "category": "焊接與組立",
+    "taskId": "金屬箱體製造作業"
+  },
+  {
+    "id": "M-009",
+    "Industry": "金屬製品製造業(鐵管零件加工)",
+    "sector": "製造業",
+    "category": "表面研磨",
+    "taskId": "料件研磨作業"
+  },
+  {
+    "id": "M-010",
+    "Industry": "金屬製品製造業(鐵管零件加工)",
+    "sector": "製造業",
+    "category": "表面研磨",
+    "taskId": "料件細部研磨作業"
+  },
+  {
+    "id": "M-011",
+    "Industry": "金屬製品製造業(鐵管零件加工)",
+    "sector": "製造業",
+    "category": "表面研磨",
+    "taskId": "表面研磨作業"
+  },
+  {
+    "id": "M-012",
+    "Industry": "金屬製品製造業(鐵管零件加工)",
+    "sector": "製造業",
+    "category": "表面研磨",
+    "taskId": "手持式研磨機操作作業"
+  },
+  {
+    "id": "M-013",
+    "Industry": "金屬製品製造業(鐵管零件加工)",
+    "sector": "製造業",
+    "category": "表面處理",
+    "taskId": "電鍍作業"
+  },
+  {
+    "id": "M-014",
+    "Industry": "金屬製品製造業(鐵管零件加工)",
+    "sector": "製造業",
+    "category": "表面處裡",
+    "taskId": "噴漆及上漆作業"
+  },
+  {
+    "id": "M-015",
+    "Industry": "金屬製品製造業(鐵管零件加工)",
+    "sector": "製造業",
+    "category": "表面研磨",
+    "taskId": "高噪音環境設備操作與巡檢作業"
+  },
+  {
+    "id": "M-016",
+    "Industry": "金屬製品製造業(鐵管零件加工)",
+    "sector": "製造業",
+    "category": "表面研磨",
+    "taskId": "粉塵投料、攪拌與包裝作業"
+  },
+  {
+    "id": "M-017",
+    "Industry": "金屬製品製造業(鐵管零件加工)",
+    "sector": "製造業",
+    "category": "收料及包裝出貨",
+    "taskId": "固定式起重機吊掛物料作業"
+  },
+  {
+    "id": "M-018",
+    "Industry": "金屬製品製造業(鐵管零件加工)",
+    "sector": "製造業",
+    "category": "收料及包裝出貨",
+    "taskId": "堆高機駕駛與搬運作業"
+  },
+  {
+    "id": "M-020",
+    "Industry": "金屬製品製造業(鐵管零件加工)",
+    "sector": "製造業",
+    "category": "表面研磨",
+    "taskId": "手工具修整料件作業"
+  },
+  {
+    "id": "M-021",
+    "Industry": "金屬製品製造業(鐵管零件加工)",
+    "sector": "製造業",
+    "category": "一般例行作業",
+    "taskId": "生產環境一般巡檢與維護作業"
+  },
+  {
+    "id": "M-022",
+    "Industry": "金屬製品製造業(鐵管零件加工)",
+    "sector": "製造業",
+    "category": "一般例行作業",
+    "taskId": "設備維修、檢查、調整與復歸作業"
+  },
+  {
+    "id": "M-023",
+    "Industry": "金屬製品製造業(鐵管零件加工)",
+    "sector": "製造業",
+    "category": "一般例行作業",
+    "taskId": "設備安裝作業"
+  },
+  {
+    "id": "M-024",
+    "Industry": "金屬製品製造業(鐵管零件加工)",
+    "sector": "製造業",
+    "category": "一般例行作業",
+    "taskId": "消防設備維護檢點作業"
+  },
+  {
+    "id": "M-025",
+    "Industry": "金屬製品製造業(鐵管零件加工)",
+    "sector": "製造業",
+    "category": "一般例行作業",
+    "taskId": "電氣設備及線路操作與維護作業"
+  },
+  {
+    "id": "M-026",
+    "Industry": "金屬製品製造業(鐵管零件加工)",
+    "sector": "製造業",
+    "category": "一般例行作業",
+    "taskId": "傳動馬達維修作業"
+  },
+  {
+    "id": "M-027",
+    "Industry": "金屬製品製造業(鐵管零件加工)",
+    "sector": "製造業",
+    "category": "一般例行作業",
+    "taskId": "重型設備維修作業"
+  },
+  {
+    "id": "M-028",
+    "Industry": "金屬製品製造業(鐵管零件加工)",
+    "sector": "製造業",
+    "category": "收料及包裝出貨",
+    "taskId": "人工搬運作業"
+  },
+  {
+    "id": "M-029",
+    "Industry": "金屬製品製造業(鐵管零件加工)",
+    "sector": "製造業",
+    "category": "收料及包裝出貨",
+    "taskId": "木材與木板入庫作業"
+  },
+  {
+    "id": "P-001",
+    "Industry": "塑膠製品製造業",
+    "sector": "製造業",
+    "category": "射出成型",
+    "taskId": "射出成型作業"
+  },
+  {
+    "id": "P-002",
+    "Industry": "塑膠製品製造業",
+    "sector": "製造業",
+    "category": "射出成型",
+    "taskId": "射出成型品取出作業"
+  },
+  {
+    "id": "P-003",
+    "Industry": "塑膠製品製造業",
+    "sector": "製造業",
+    "category": "射出成型",
+    "taskId": "射出成型模具更換作業"
+  },
+  {
+    "id": "P-004",
+    "Industry": "塑膠製品製造業",
+    "sector": "製造業",
+    "category": "二次加工處裡",
+    "taskId": "射出成品修邊作業"
+  },
+  {
+    "id": "P-005",
+    "Industry": "塑膠製品製造業",
+    "sector": "製造業",
+    "category": "二次加工處裡",
+    "taskId": "射出成品包裝出貨作業"
+  },
+  {
+    "id": "P-006",
+    "Industry": "塑膠製品製造業",
+    "sector": "製造業",
+    "category": "二次加工處裡",
+    "taskId": "射出成品堆疊作業"
+  },
+  {
+    "id": "P-007",
+    "Industry": "塑膠製品製造業",
+    "sector": "製造業",
+    "category": "射出成型",
+    "taskId": "塑料原料搬運與倒料作業"
+  },
+  {
+    "id": "P-008",
+    "Industry": "塑膠製品製造業",
+    "sector": "製造業",
+    "category": "二次加工處裡",
+    "taskId": "不良品破碎作業"
+  },
+  {
+    "id": "P-009",
+    "Industry": "塑膠製品製造業",
+    "sector": "製造業",
+    "category": "包裝出貨",
+    "taskId": "固定式起重機吊掛物料作業"
+  },
+  {
+    "id": "P-010",
+    "Industry": "塑膠製品製造業",
+    "sector": "製造業",
+    "category": "包裝出貨",
+    "taskId": "高溫環境操作與維護作業"
+  },
+  {
+    "id": "P-011",
+    "Industry": "塑膠製品製造業",
+    "sector": "製造業",
+    "category": "一般例行作業",
+    "taskId": "排風設備維修作業"
+  },
+  {
+    "id": "P-012",
+    "Industry": "塑膠製品製造業",
+    "sector": "製造業",
+    "category": "射出成型",
+    "taskId": "模具保養與防鏽作業"
+  },
+  {
+    "id": "P-013",
+    "Industry": "塑膠製品製造業",
+    "sector": "製造業",
+    "category": "二次加工處裡",
+    "taskId": "手工具修整料件作業"
+  },
+  {
+    "id": "P-014",
+    "Industry": "塑膠製品製造業",
+    "sector": "製造業",
+    "category": "一般例行作業",
+    "taskId": "生產環境一般巡檢與維護作業"
+  },
+  {
+    "id": "P-015",
+    "Industry": "塑膠製品製造業",
+    "sector": "製造業",
+    "category": "一般例行作業",
+    "taskId": "設備維修、檢查、調整與復歸作業"
+  },
+  {
+    "id": "P-016",
+    "Industry": "塑膠製品製造業",
+    "sector": "製造業",
+    "category": "一般例行作業",
+    "taskId": "設備安裝作業"
+  },
+  {
+    "id": "P-017",
+    "Industry": "塑膠製品製造業",
+    "sector": "製造業",
+    "category": "一般例行作業",
+    "taskId": "消防設備維護檢點作業"
+  },
+  {
+    "id": "P-018",
+    "Industry": "塑膠製品製造業",
+    "sector": "製造業",
+    "category": "一般例行作業",
+    "taskId": "電氣設備及線路操作與維護作業"
+  },
+  {
+    "id": "P-019",
+    "Industry": "塑膠製品製造業",
+    "sector": "製造業",
+    "category": "一般例行作業",
+    "taskId": "傳動馬達維修作業"
+  },
+  {
+    "id": "P-020",
+    "Industry": "塑膠製品製造業",
+    "sector": "製造業",
+    "category": "一般例行作業",
+    "taskId": "重型設備維修作業"
+  },
+  {
+    "id": "P-021",
+    "Industry": "塑膠製品製造業",
+    "sector": "製造業",
+    "category": "投料作業",
+    "taskId": "粉塵投料、攪拌與包裝作業"
+  },
+  {
+    "id": "P-022",
+    "Industry": "塑膠製品製造業",
+    "sector": "製造業",
+    "category": "包裝出貨",
+    "taskId": "堆高機駕駛與搬運作業"
+  },
+  {
+    "id": "P-023",
+    "Industry": "塑膠製品製造業",
+    "sector": "製造業",
+    "category": "包裝出貨",
+    "taskId": "人工搬運作業"
+  },
+  {
+    "id": "P-024",
+    "Industry": "塑膠製品製造業",
+    "sector": "製造業",
+    "category": "包裝出貨",
+    "taskId": "木材與木板入庫作業"
+  },
+  {
+    "id": "P-025",
+    "Industry": "塑膠製品製造業",
+    "sector": "製造業",
+    "category": "射出成型",
+    "taskId": "高噪音環境設備操作與巡檢作業"
+  },
+  {
+    "id": "P-025",
+    "Industry": "塑膠製品製造業",
+    "sector": "製造業",
+    "category": "投料作業",
+    "taskId": "化學品入料作業"
+  },
+  {
+    "id": "E-001",
+    "Industry": "污染防治設備製造業",
+    "sector": "製造業",
+    "category": "框架焊接",
+    "taskId": "電弧焊接作業"
+  },
+  {
+    "id": "E-002",
+    "Industry": "污染防治設備製造業",
+    "sector": "製造業",
+    "category": "框架焊接",
+    "taskId": "氣焊操作作業"
+  },
+  {
+    "id": "E-003",
+    "Industry": "污染防治設備製造業",
+    "sector": "製造業",
+    "category": "框架焊接",
+    "taskId": "設備安裝作業"
+  },
+  {
+    "id": "E-004",
+    "Industry": "污染防治設備製造業",
+    "sector": "製造業",
+    "category": "包裝出貨",
+    "taskId": "固定式起重機吊掛物料作業"
+  },
+  {
+    "id": "E-005",
+    "Industry": "污染防治設備製造業",
+    "sector": "製造業",
+    "category": "客戶設備組裝",
+    "taskId": "施工架組拆與高處作業"
+  },
+  {
+    "id": "E-006",
+    "Industry": "污染防治設備製造業",
+    "sector": "製造業",
+    "category": "客戶設備組裝",
+    "taskId": "高空作業車作業"
+  },
+  {
+    "id": "E-007",
+    "Industry": "污染防治設備製造業",
+    "sector": "製造業",
+    "category": "客戶設備組裝",
+    "taskId": "合梯使用作業"
+  },
+  {
+    "id": "E-008",
+    "Industry": "污染防治設備製造業",
+    "sector": "製造業",
+    "category": "客戶設備組裝",
+    "taskId": "局限空間與缺氧危害預防作業"
+  },
+  {
+    "id": "E-009",
+    "Industry": "污染防治設備製造業",
+    "sector": "製造業",
+    "category": "客戶設備組裝",
+    "taskId": "研磨輪操作作業"
+  },
+  {
+    "id": "E-010",
+    "Industry": "污染防治設備製造業",
+    "sector": "製造業",
+    "category": "測試與塗裝",
+    "taskId": "高壓氣體容器操作與檢修作業"
+  },
+  {
+    "id": "E-011",
+    "Industry": "污染防治設備製造業",
+    "sector": "製造業",
+    "category": "測試與塗裝",
+    "taskId": "噴漆及上漆作業"
+  },
+  {
+    "id": "E-012",
+    "Industry": "污染防治設備製造業",
+    "sector": "製造業",
+    "category": "測試與塗裝",
+    "taskId": "高噪音環境設備操作與巡檢作業"
+  },
+  {
+    "id": "E-013",
+    "Industry": "污染防治設備製造業",
+    "sector": "製造業",
+    "category": "一般例行作業",
+    "taskId": "生產環境一般巡檢與維護作業"
+  },
+  {
+    "id": "E-014",
+    "Industry": "污染防治設備製造業",
+    "sector": "製造業",
+    "category": "一般例行作業",
+    "taskId": "設備維修、檢查、調整與復歸作業"
+  },
+  {
+    "id": "E-015",
+    "Industry": "污染防治設備製造業",
+    "sector": "製造業",
+    "category": "一般例行作業",
+    "taskId": "設備安裝作業"
+  },
+  {
+    "id": "E-016",
+    "Industry": "污染防治設備製造業",
+    "sector": "製造業",
+    "category": "一般例行作業",
+    "taskId": "消防設備維護檢點作業"
+  },
+  {
+    "id": "E-017",
+    "Industry": "污染防治設備製造業",
+    "sector": "製造業",
+    "category": "一般例行作業",
+    "taskId": "電氣設備及線路操作與維護作業"
+  },
+  {
+    "id": "E-018",
+    "Industry": "污染防治設備製造業",
+    "sector": "製造業",
+    "category": "一般例行作業",
+    "taskId": "傳動馬達維修作業"
+  },
+  {
+    "id": "E-019",
+    "Industry": "污染防治設備製造業",
+    "sector": "製造業",
+    "category": "一般例行作業",
+    "taskId": "重型設備維修作業"
+  },
+  {
+    "id": "E-020",
+    "Industry": "污染防治設備製造業",
+    "sector": "製造業",
+    "category": "包裝出貨",
+    "taskId": "堆高機駕駛與搬運作業"
+  },
+  {
+    "id": "E-021",
+    "Industry": "污染防治設備製造業",
+    "sector": "製造業",
+    "category": "包裝出貨",
+    "taskId": "人工搬運作業"
+  },
+  {
+    "id": "E-022",
+    "Industry": "污染防治設備製造業",
+    "sector": "製造業",
+    "category": "包裝出貨",
+    "taskId": "木材與木板入庫作業"
+  },
+  {
+    "id": "E-023",
+    "Industry": "污染防治設備製造業",
+    "sector": "製造業",
+    "category": "客戶設備組裝",
+    "taskId": "手工具修整料件作業"
+  },
+  {
+    "id": "PP-001",
+    "Industry": "紙材印刷業",
+    "sector": "製造業",
+    "category": "裁切包裝",
+    "taskId": "紙材裁切作業"
+  },
+  {
+    "id": "PP-002",
+    "Industry": "紙材印刷業",
+    "sector": "製造業",
+    "category": "印刷製程",
+    "taskId": "紙材印刷作業"
+  },
+  {
+    "id": "PP-003",
+    "Industry": "紙材印刷業",
+    "sector": "製造業",
+    "category": "裁切包裝",
+    "taskId": "紙材成品修邊作業"
+  },
+  {
+    "id": "PP-004",
+    "Industry": "紙材印刷業",
+    "sector": "製造業",
+    "category": "印刷製程",
+    "taskId": "油墨調配與廢液回收作業"
+  },
+  {
+    "id": "PP-005",
+    "Industry": "紙材印刷業",
+    "sector": "製造業",
+    "category": "裁切包裝",
+    "taskId": "商品包裝作業"
+  },
+  {
+    "id": "PP-006",
+    "Industry": "紙材印刷業",
+    "sector": "製造業",
+    "category": "印刷製程",
+    "taskId": "有機溶劑使用與塗裝作業"
+  },
+  {
+    "id": "PP-007",
+    "Industry": "紙材印刷業",
+    "sector": "製造業",
+    "category": "印刷製程",
+    "taskId": "印刷機滾筒清潔與保養作業"
+  },
+  {
+    "id": "PP-008",
+    "Industry": "紙材印刷業",
+    "sector": "製造業",
+    "category": "原料運輸",
+    "taskId": "固定式起重機吊掛物料作業"
+  },
+  {
+    "id": "PP-009",
+    "Industry": "紙材印刷業",
+    "sector": "製造業",
+    "category": "印刷製程",
+    "taskId": "UV乾燥與烘烤設備操作作業"
+  },
+  {
+    "id": "PP-010",
+    "Industry": "紙材印刷業",
+    "sector": "製造業",
+    "category": "原料運輸",
+    "taskId": "高噪音環境設備操作與巡檢作業"
+  },
+  {
+    "id": "PP-011",
+    "Industry": "紙材印刷業",
+    "sector": "製造業",
+    "category": "裁切包裝",
+    "taskId": "人工搬運作業"
+  },
+  {
+    "id": "PP-012",
+    "Industry": "紙材印刷業",
+    "sector": "製造業",
+    "category": "裁切包裝",
+    "taskId": "木材與木板入庫作業"
+  },
+  {
+    "id": "PP-013",
+    "Industry": "紙材印刷業",
+    "sector": "製造業",
+    "category": "一般例行作業",
+    "taskId": "生產環境一般巡檢與維護作業"
+  },
+  {
+    "id": "PP-014",
+    "Industry": "紙材印刷業",
+    "sector": "製造業",
+    "category": "一般例行作業",
+    "taskId": "設備維修、檢查、調整與復歸作業"
+  },
+  {
+    "id": "PP-015",
+    "Industry": "紙材印刷業",
+    "sector": "製造業",
+    "category": "一般例行作業",
+    "taskId": "設備安裝作業"
+  },
+  {
+    "id": "PP-016",
+    "Industry": "紙材印刷業",
+    "sector": "製造業",
+    "category": "一般例行作業",
+    "taskId": "消防設備維護檢點作業"
+  },
+  {
+    "id": "PP-017",
+    "Industry": "紙材印刷業",
+    "sector": "製造業",
+    "category": "一般例行作業",
+    "taskId": "電氣設備及線路操作與維護作業"
+  },
+  {
+    "id": "PP-018",
+    "Industry": "紙材印刷業",
+    "sector": "製造業",
+    "category": "一般例行作業",
+    "taskId": "傳動馬達維修作業"
+  },
+  {
+    "id": "PP-019",
+    "Industry": "紙材印刷業",
+    "sector": "製造業",
+    "category": "一般例行作業",
+    "taskId": "重型設備維修作業"
+  },
+  {
+    "id": "PP-020",
+    "Industry": "紙材印刷業",
+    "sector": "製造業",
+    "category": "原料運輸",
+    "taskId": "堆高機駕駛與搬運作業"
+  },
+  {
+    "id": "PP-021",
+    "Industry": "紙材印刷業",
+    "sector": "製造業",
+    "category": "原料運輸",
+    "taskId": "氣動傳動裝置維修作業"
+  },
+  {
+    "id": "PP-022",
+    "Industry": "紙材印刷業",
+    "sector": "製造業",
+    "category": "裁切包裝",
+    "taskId": "印裁機操作作業"
+  },
+  {
+    "id": "PC-001",
+    "Industry": "紙容器製造業",
+    "sector": "製造業",
+    "category": "成型製程",
+    "taskId": "平軋機操作作業"
+  },
+  {
+    "id": "PC-002",
+    "Industry": "紙容器製造業",
+    "sector": "製造業",
+    "category": "成型製程",
+    "taskId": "紙材裁切作業"
+  },
+  {
+    "id": "PC-003",
+    "Industry": "紙容器製造業",
+    "sector": "製造業",
+    "category": "成型製程",
+    "taskId": "釘車與打孔機操作作業"
+  },
+  {
+    "id": "PC-004",
+    "Industry": "紙容器製造業",
+    "sector": "製造業",
+    "category": "成型製程",
+    "taskId": "紙材裝訂作業"
+  },
+  {
+    "id": "PC-005",
+    "Industry": "紙容器製造業",
+    "sector": "製造業",
+    "category": "制漿作業",
+    "taskId": "造紙製糊作業"
+  },
+  {
+    "id": "PC-006",
+    "Industry": "紙容器製造業",
+    "sector": "製造業",
+    "category": "瓦楞紙複瓦製程",
+    "taskId": "瓦楞紙複瓦機成型作業"
+  },
+  {
+    "id": "PC-007",
+    "Industry": "紙容器製造業",
+    "sector": "製造業",
+    "category": "瓦楞紙複瓦製程",
+    "taskId": "瓦楞紙複瓦機裁切作業"
+  },
+  {
+    "id": "PC-008",
+    "Industry": "紙容器製造業",
+    "sector": "製造業",
+    "category": "瓦楞紙複瓦製程",
+    "taskId": "瓦楞紙複瓦機備料與入料作業"
+  },
+  {
+    "id": "PC-009",
+    "Industry": "紙容器製造業",
+    "sector": "製造業",
+    "category": "瓦楞紙複瓦製程",
+    "taskId": "瓦楞紙複瓦機貼合作業"
+  },
+  {
+    "id": "PC-010",
+    "Industry": "紙容器製造業",
+    "sector": "製造業",
+    "category": "瓦楞紙複瓦製程",
+    "taskId": "瓦楞紙複瓦機輸送帶維修作業"
+  },
+  {
+    "id": "PC-011",
+    "Industry": "紙容器製造業",
+    "sector": "製造業",
+    "category": "包裝出貨",
+    "taskId": "木材與木板入庫作業"
+  },
+  {
+    "id": "PC-012",
+    "Industry": "紙容器製造業",
+    "sector": "製造業",
+    "category": "瓦楞紙複瓦製程",
+    "taskId": "高噪音環境設備操作與巡檢作業"
+  },
+  {
+    "id": "PC-013",
+    "Industry": "紙容器製造業",
+    "sector": "製造業",
+    "category": "制漿作業",
+    "taskId": "高溫環境操作與維護作業"
+  },
+  {
+    "id": "PC-014",
+    "Industry": "紙容器製造業",
+    "sector": "製造業",
+    "category": "成型製程",
+    "taskId": "廢紙壓縮打包機操作作業"
+  },
+  {
+    "id": "PC-015",
+    "Industry": "紙容器製造業",
+    "sector": "製造業",
+    "category": "成型製程",
+    "taskId": "手工具修整料件作業"
+  },
+  {
+    "id": "PC-016",
+    "Industry": "紙容器製造業",
+    "sector": "製造業",
+    "category": "制漿作業",
+    "taskId": "木漿碎紙作業"
+  },
+  {
+    "id": "PC-017",
+    "Industry": "紙容器製造業",
+    "sector": "製造業",
+    "category": "原料運輸",
+    "taskId": "堆高機駕駛與搬運作業"
+  },
+  {
+    "id": "PC-018",
+    "Industry": "紙容器製造業",
+    "sector": "製造業",
+    "category": "制漿作業",
+    "taskId": "局限空間與缺氧危害預防作業"
+  },
+  {
+    "id": "PC-019",
+    "Industry": "紙容器製造業",
+    "sector": "製造業",
+    "category": "制漿作業",
+    "taskId": "有機溶劑使用與塗裝作業"
+  },
+  {
+    "id": "PC-020",
+    "Industry": "紙容器製造業",
+    "sector": "製造業",
+    "category": "一般例行作業",
+    "taskId": "生產環境一般巡檢與維護作業"
+  },
+  {
+    "id": "PC-021",
+    "Industry": "紙容器製造業",
+    "sector": "製造業",
+    "category": "一般例行作業",
+    "taskId": "設備維修、檢查、調整與復歸作業"
+  },
+  {
+    "id": "PC-022",
+    "Industry": "紙容器製造業",
+    "sector": "製造業",
+    "category": "一般例行作業",
+    "taskId": "設備安裝作業"
+  },
+  {
+    "id": "PC-023",
+    "Industry": "紙容器製造業",
+    "sector": "製造業",
+    "category": "一般例行作業",
+    "taskId": "消防設備維護檢點作業"
+  },
+  {
+    "id": "PC-024",
+    "Industry": "紙容器製造業",
+    "sector": "製造業",
+    "category": "一般例行作業",
+    "taskId": "電氣設備及線路操作與維護作業"
+  },
+  {
+    "id": "PC-025",
+    "Industry": "紙容器製造業",
+    "sector": "製造業",
+    "category": "一般例行作業",
+    "taskId": "傳動馬達維修作業"
+  },
+  {
+    "id": "PC-026",
+    "Industry": "紙容器製造業",
+    "sector": "製造業",
+    "category": "一般例行作業",
+    "taskId": "重型設備維修作業"
+  },
+  {
+    "id": "PC-027",
+    "Industry": "紙容器製造業",
+    "sector": "製造業",
+    "category": "一般例行作業",
+    "taskId": "高度2公尺以上開口周邊作業"
+  },
+  {
+    "id": "PC-028",
+    "Industry": "紙容器製造業",
+    "sector": "製造業",
+    "category": "成型製程",
+    "taskId": "印裁機操作作業"
+  },
+  {
+    "id": "S-001",
+    "Industry": "鋼鐵鑄造業",
+    "sector": "製造業",
+    "category": "熔煉澆鑄",
+    "taskId": "鑄造與翻砂澆鑄作業"
+  },
+  {
+    "id": "S-002",
+    "Industry": "鋼鐵鑄造業",
+    "sector": "製造業",
+    "category": "熔煉澆鑄",
+    "taskId": "吊掛熔融金屬澆鑄桶作業"
+  },
+  {
+    "id": "S-003",
+    "Industry": "鋼鐵鑄造業",
+    "sector": "製造業",
+    "category": "澆鑄後處裡",
+    "taskId": "鑄造模具脫模作業"
+  },
+  {
+    "id": "S-004",
+    "Industry": "鋼鐵鑄造業",
+    "sector": "製造業",
+    "category": "造模作業",
+    "taskId": "鑄造模具吊掛作業"
+  },
+  {
+    "id": "S-005",
+    "Industry": "鋼鐵鑄造業",
+    "sector": "製造業",
+    "category": "造模作業",
+    "taskId": "翻砂鑄造造模作業"
+  },
+  {
+    "id": "S-006",
+    "Industry": "鋼鐵鑄造業",
+    "sector": "製造業",
+    "category": "熔煉澆鑄",
+    "taskId": "鑄造鋁錠入料作業"
+  },
+  {
+    "id": "S-007",
+    "Industry": "鋼鐵鑄造業",
+    "sector": "製造業",
+    "category": "造模作業",
+    "taskId": "鑄造塗模作業"
+  },
+  {
+    "id": "S-008",
+    "Industry": "鋼鐵鑄造業",
+    "sector": "製造業",
+    "category": "澆鑄後處理",
+    "taskId": "澆鑄件熱處理（退火、回火）作業"
+  },
+  {
+    "id": "S-009",
+    "Industry": "鋼鐵鑄造業",
+    "sector": "製造業",
+    "category": "熔煉澆鑄",
+    "taskId": "高溫環境操作與維護作業"
+  },
+  {
+    "id": "S-010",
+    "Industry": "鋼鐵鑄造業",
+    "sector": "製造業",
+    "category": "造模作業",
+    "taskId": "粉塵投料、攪拌與包裝作業"
+  },
+  {
+    "id": "S-011",
+    "Industry": "鋼鐵鑄造業",
+    "sector": "製造業",
+    "category": "表面處裡",
+    "taskId": "高噪音環境設備操作與巡檢作業"
+  },
+  {
+    "id": "S-013",
+    "Industry": "鋼鐵鑄造業",
+    "sector": "製造業",
+    "category": "熔煉澆鑄",
+    "taskId": "廢渣／爐渣撈取與清運作業"
+  },
+  {
+    "id": "S-014",
+    "Industry": "鋼鐵鑄造業",
+    "sector": "製造業",
+    "category": "造模作業",
+    "taskId": "砂心製作與烘烤作業"
+  },
+  {
+    "id": "S-015",
+    "Industry": "鋼鐵鑄造業",
+    "sector": "製造業",
+    "category": "表面處理",
+    "taskId": "手工具修整料件作業"
+  },
+  {
+    "id": "S-016",
+    "Industry": "鋼鐵鑄造業",
+    "sector": "製造業",
+    "category": "表面處裡",
+    "taskId": "手持式研磨機操作作業"
+  },
+  {
+    "id": "S-017",
+    "Industry": "鋼鐵鑄造業",
+    "sector": "製造業",
+    "category": "表面處裡",
+    "taskId": "有機溶劑使用與塗裝作業"
+  },
+  {
+    "id": "S-018",
+    "Industry": "鋼鐵鑄造業",
+    "sector": "製造業",
+    "category": "包裝出貨",
+    "taskId": "固定式起重機吊掛物料作業"
+  },
+  {
+    "id": "S-019",
+    "Industry": "鋼鐵鑄造業",
+    "sector": "製造業",
+    "category": "包裝出貨",
+    "taskId": "堆高機駕駛與搬運作業"
+  },
+  {
+    "id": "S-020",
+    "Industry": "鋼鐵鑄造業",
+    "sector": "製造業",
+    "category": "包裝出貨",
+    "taskId": "木材與木板入庫作業"
+  },
+  {
+    "id": "S-021",
+    "Industry": "鋼鐵鑄造業",
+    "sector": "製造業",
+    "category": "包裝出貨",
+    "taskId": "人工搬運作業"
+  },
+  {
+    "id": "S-022",
+    "Industry": "鋼鐵鑄造業",
+    "sector": "製造業",
+    "category": "一般例行作業",
+    "taskId": "生產環境一般巡檢與維護作業"
+  },
+  {
+    "id": "S-023",
+    "Industry": "鋼鐵鑄造業",
+    "sector": "製造業",
+    "category": "一般例行作業",
+    "taskId": "設備維修、檢查、調整與復歸作業"
+  },
+  {
+    "id": "S-024",
+    "Industry": "鋼鐵鑄造業",
+    "sector": "製造業",
+    "category": "一般例行作業",
+    "taskId": "設備安裝作業"
+  },
+  {
+    "id": "S-025",
+    "Industry": "鋼鐵鑄造業",
+    "sector": "製造業",
+    "category": "一般例行作業",
+    "taskId": "消防設備維護檢點作業"
+  },
+  {
+    "id": "S-026",
+    "Industry": "鋼鐵鑄造業",
+    "sector": "製造業",
+    "category": "一般例行作業",
+    "taskId": "電氣設備及線路操作與維護作業"
+  },
+  {
+    "id": "S-027",
+    "Industry": "鋼鐵鑄造業",
+    "sector": "製造業",
+    "category": "一般例行作業",
+    "taskId": "傳動馬達維修作業"
+  },
+  {
+    "id": "S-028",
+    "Industry": "鋼鐵鑄造業",
+    "sector": "製造業",
+    "category": "一般例行作業",
+    "taskId": "重型設備維修作業"
+  },
+  {
+    "id": "S-029",
+    "Industry": "鋼鐵鑄造業",
+    "sector": "製造業",
+    "category": "澆鑄後處裡",
+    "taskId": "滾輪／鍛轤操作作業"
+  },
+  {
+    "id": "S-030",
+    "Industry": "鋼鐵鑄造業",
+    "sector": "製造業",
+    "category": "澆鑄後處裡",
+    "taskId": "滾修機作業"
+  },
+  {
+    "id": "HH-001",
+    "Industry": "危險性作業",
+    "sector": "危險性作業",
+    "category": "墜落危害作業",
+    "taskId": "於石綿板、鐵皮板、瓦、木板、茅草、塑膠等易踏穿材料構築之屋頂從事作業"
+  },
+  {
+    "id": "HH-002",
+    "Industry": "危險性作業",
+    "sector": "危險性作業",
+    "category": "墜落危害作業",
+    "taskId": "繩索與吊索吊掛作業"
+  },
+  {
+    "id": "HH-003",
+    "Industry": "危險性作業",
+    "sector": "危險性作業",
+    "category": "墜落危害作業",
+    "taskId": "營建用升降機組裝、拆卸及維修作業"
+  },
+  {
+    "id": "HH-004",
+    "Industry": "危險性作業",
+    "sector": "危險性作業",
+    "category": "墜落危害作業",
+    "taskId": "吊籠作業"
+  },
+  {
+    "id": "HH-005",
+    "Industry": "危險性作業",
+    "sector": "危險性作業",
+    "category": "墜落危害作業",
+    "taskId": "高度兩公尺以上工作場所邊緣及開口臨時拆除護欄護蓋之影視拍攝作業"
+  },
+  {
+    "id": "HH-006",
+    "Industry": "危險性作業",
+    "sector": "危險性作業",
+    "category": "倒塌崩塌作業",
+    "taskId": "模板支撐灌漿作業"
+  },
+  {
+    "id": "HH-007",
+    "Industry": "危險性作業",
+    "sector": "危險性作業",
+    "category": "倒塌崩塌作業",
+    "taskId": "施工架組立及拆除作業"
+  },
+  {
+    "id": "HH-008",
+    "Industry": "危險性作業",
+    "sector": "危險性作業",
+    "category": "倒塌崩塌作業",
+    "taskId": "開挖擋土支撐組立及拆除作業"
+  },
+  {
+    "id": "HH-009",
+    "Industry": "危險性作業",
+    "sector": "危險性作業",
+    "category": "火災爆炸作業",
+    "taskId": "石化業製程區歲修作業"
+  },
+  {
+    "id": "HH-010",
+    "Industry": "危險性作業",
+    "sector": "危險性作業",
+    "category": "火災爆炸作業",
+    "taskId": "石化業壓力容器、儲槽及管線歲修作業"
+  },
+  {
+    "id": "HH-011",
+    "Industry": "危險性作業",
+    "sector": "危險性作業",
+    "category": "火災爆炸作業",
+    "taskId": "使用爆炸性物質、易燃液體及可燃性氣體從事影視拍攝作業"
+  },
+  {
+    "id": "HH-012",
+    "Industry": "危險性作業",
+    "sector": "危險性作業",
+    "category": "物體飛落危險作業",
+    "taskId": "塔式起重機升高及拆卸作業"
+  },
+  {
+    "id": "HH-013",
+    "Industry": "危險性作業",
+    "sector": "危險性作業",
+    "category": "物體飛落危險作業",
+    "taskId": "人字臂起重機組裝與拆卸作業"
+  },
+  {
+    "id": "HH-014",
+    "Industry": "危險性作業",
+    "sector": "危險性作業",
+    "category": "溺斃危險作業",
+    "taskId": "水域影視拍攝作業"
+  },
+  {
+    "id": "HH-015",
+    "Industry": "危險性作業",
+    "sector": "危險性作業",
+    "category": "缺氧中毒作業",
+    "taskId": "局限空間與缺氧危害預防作業"
+  },
+  {
+    "Industry": "假設工程與吊運工種",
+    "sector": "營造業",
+    "category": "假設工程與吊運工種",
+    "taskId": "人字臂起重機組裝與拆卸作業",
+    "id": "CY-001"
+  },
+  {
+    "Industry": "共用支援與收尾工種",
+    "sector": "營造業",
+    "category": "共用支援與收尾工種",
+    "taskId": "人工搬運作業",
+    "id": "CY-002"
+  },
+  {
+    "Industry": "外牆與高處防護工種",
+    "sector": "營造業",
+    "category": "外牆與高處防護工種",
+    "taskId": "吊籠作業",
+    "id": "CY-003"
+  },
+  {
+    "Industry": "共用支援與收尾工種",
+    "sector": "營造業",
+    "category": "共用支援與收尾工種",
+    "taskId": "商品包裝作業",
+    "id": "CY-004"
+  },
+  {
+    "Industry": "室內裝修與包護工種",
+    "sector": "營造業",
+    "category": "室內裝修與包護工種",
+    "taskId": "噴漆及上漆作業",
+    "id": "CY-005"
+  },
+  {
+    "Industry": "景觀與公設工種",
+    "sector": "營造業",
+    "category": "景觀與公設工種",
+    "taskId": "固定式起重機吊掛物料作業",
+    "id": "CY-006"
+  },
+  {
+    "Industry": "共用支援與收尾工種",
+    "sector": "營造業",
+    "category": "共用支援與收尾工種",
+    "taskId": "堆高機駕駛與搬運作業",
+    "id": "CY-007"
+  },
+  {
+    "Industry": "假設工程與吊運工種",
+    "sector": "營造業",
+    "category": "假設工程與吊運工種",
+    "taskId": "塔式起重機升高及拆卸作業",
+    "id": "CY-008"
+  },
+  {
+    "Industry": "景觀與公設工種",
+    "sector": "營造業",
+    "category": "景觀與公設工種",
+    "taskId": "外牆造景美化作業",
+    "id": "CY-009"
+  },
+  {
+    "Industry": "外牆與高處防護工種",
+    "sector": "營造業",
+    "category": "外牆與高處防護工種",
+    "taskId": "外牆飾材安裝作業",
+    "id": "CY-010"
+  },
+  {
+    "Industry": "室內裝修與包護工種",
+    "sector": "營造業",
+    "category": "室內裝修與包護工種",
+    "taskId": "天花板輕鋼架組立作業",
+    "id": "CY-011"
+  },
+  {
+    "Industry": "機電與設備工種（MEP）",
+    "sector": "營造業",
+    "category": "機電與設備工種（MEP）",
+    "taskId": "局限空間與缺氧危害預防作業",
+    "id": "CY-012"
+  },
+  {
+    "Industry": "共用支援與收尾工種",
+    "sector": "營造業",
+    "category": "共用支援與收尾工種",
+    "taskId": "工區材料進場及堆置作業",
+    "id": "CY-013"
+  },
+  {
+    "Industry": "機電與設備工種（MEP）",
+    "sector": "營造業",
+    "category": "機電與設備工種（MEP）",
+    "taskId": "弱電安裝作業",
+    "id": "CY-014"
+  },
+  {
+    "Industry": "室內裝修與包護工種",
+    "sector": "營造業",
+    "category": "室內裝修與包護工種",
+    "taskId": "手工具修整料件作業",
+    "id": "CY-015"
+  },
+  {
+    "Industry": "機電與設備工種（MEP）",
+    "sector": "營造業",
+    "category": "機電與設備工種（MEP）",
+    "taskId": "排風設備維修作業",
+    "id": "CY-016"
+  },
+  {
+    "Industry": "土方與深基礎工種",
+    "sector": "營造業",
+    "category": "土方與深基礎工種",
+    "taskId": "整地工程及汙染防治施作",
+    "id": "CY-017"
+  },
+  {
+    "Industry": "外牆與高處防護工種",
+    "sector": "營造業",
+    "category": "外牆與高處防護工種",
+    "taskId": "於石綿板、鐵皮板、瓦、木板、茅草、塑膠等易踏穿材料構築之屋頂從事作業",
+    "id": "CY-018"
+  },
+  {
+    "Industry": "室內裝修與包護工種",
+    "sector": "營造業",
+    "category": "室內裝修與包護工種",
+    "taskId": "施工架組拆與高處作業",
+    "id": "CY-019"
+  },
+  {
+    "Industry": "假設工程與吊運工種",
+    "sector": "營造業",
+    "category": "假設工程與吊運工種",
+    "taskId": "施工架組立及拆除作業",
+    "id": "CY-020"
+  },
+  {
+    "Industry": "假設工程與吊運工種",
+    "sector": "營造業",
+    "category": "假設工程與吊運工種",
+    "taskId": "施工構台組立與拆除作業",
+    "id": "CY-021"
+  },
+  {
+    "Industry": "室內裝修與包護工種",
+    "sector": "營造業",
+    "category": "室內裝修與包護工種",
+    "taskId": "有機溶劑使用與塗裝作業",
+    "id": "CY-022"
+  },
+  {
+    "Industry": "土方與深基礎工種",
+    "sector": "營造業",
+    "category": "土方與深基礎工種",
+    "taskId": "柱狀基礎建構作業(連續壁)",
+    "id": "CY-023"
+  },
+  {
+    "Industry": "景觀與公設工種",
+    "sector": "營造業",
+    "category": "景觀與公設工種",
+    "taskId": "植栽作業",
+    "id": "CY-024"
+  },
+  {
+    "Industry": "土方與深基礎工種",
+    "sector": "營造業",
+    "category": "土方與深基礎工種",
+    "taskId": "樁式基礎作業",
+    "id": "CY-025"
+  },
+  {
+    "Industry": "主體結構工種",
+    "sector": "營造業",
+    "category": "主體結構工種",
+    "taskId": "模板支撐灌漿作業",
+    "id": "CY-026"
+  },
+  {
+    "Industry": "主體結構工種",
+    "sector": "營造業",
+    "category": "主體結構工種",
+    "taskId": "氣焊操作作業",
+    "id": "CY-027"
+  },
+  {
+    "Industry": "機電與設備工種（MEP）",
+    "sector": "營造業",
+    "category": "機電與設備工種（MEP）",
+    "taskId": "消防設備維護檢點作業",
+    "id": "CY-028"
+  },
+  {
+    "Industry": "假設工程與吊運工種",
+    "sector": "營造業",
+    "category": "假設工程與吊運工種",
+    "taskId": "營建用升降機組裝、拆卸及維修作業",
+    "id": "CY-029"
+  },
+  {
+    "Industry": "共用支援與收尾工種",
+    "sector": "營造業",
+    "category": "共用支援與收尾工種",
+    "taskId": "生產現場通行與作業環境維持作業",
+    "id": "CY-030"
+  },
+  {
+    "Industry": "假設工程與吊運工種",
+    "sector": "營造業",
+    "category": "假設工程與吊運工種",
+    "taskId": "移動式起重機吊掛作業",
+    "id": "CY-031"
+  },
+  {
+    "Industry": "機電與設備工種（MEP）",
+    "sector": "營造業",
+    "category": "機電與設備工種（MEP）",
+    "taskId": "管線配置作業",
+    "id": "CY-032"
+  },
+  {
+    "Industry": "假設工程與吊運工種",
+    "sector": "營造業",
+    "category": "假設工程與吊運工種",
+    "taskId": "繩索與吊索吊掛作業",
+    "id": "CY-033"
+  },
+  {
+    "Industry": "景觀與公設工種",
+    "sector": "營造業",
+    "category": "景觀與公設工種",
+    "taskId": "設備安裝作業",
+    "id": "CY-034"
+  },
+  {
+    "Industry": "主體結構工種",
+    "sector": "營造業",
+    "category": "主體結構工種",
+    "taskId": "鋼構地面預組作業",
+    "id": "CY-035"
+  },
+  {
+    "Industry": "主體結構工種",
+    "sector": "營造業",
+    "category": "主體結構工種",
+    "taskId": "鋼構構件進場卸運作業",
+    "id": "CY-036"
+  },
+  {
+    "Industry": "主體結構工種",
+    "sector": "營造業",
+    "category": "主體結構工種",
+    "taskId": "鋼筋吊運作業",
+    "id": "CY-037"
+  },
+  {
+    "Industry": "主體結構工種",
+    "sector": "營造業",
+    "category": "主體結構工種",
+    "taskId": "鋼筋綁紮作業",
+    "id": "CY-038"
+  },
+  {
+    "Industry": "土方與深基礎工種",
+    "sector": "營造業",
+    "category": "土方與深基礎工種",
+    "taskId": "開挖擋土支撐組立及拆除作業",
+    "id": "CY-039"
+  },
+  {
+    "Industry": "機電與設備工種（MEP）",
+    "sector": "營造業",
+    "category": "機電與設備工種（MEP）",
+    "taskId": "電力系統安裝作業",
+    "id": "CY-040"
+  },
+  {
+    "Industry": "共用支援與收尾工種",
+    "sector": "營造業",
+    "category": "共用支援與收尾工種",
+    "taskId": "電動台車及搬運設備操作作業",
+    "id": "CY-041"
+  },
+  {
+    "Industry": "主體結構工種",
+    "sector": "營造業",
+    "category": "主體結構工種",
+    "taskId": "電弧焊接作業",
+    "id": "CY-042"
+  },
+  {
+    "Industry": "機電與設備工種（MEP）",
+    "sector": "營造業",
+    "category": "機電與設備工種（MEP）",
+    "taskId": "電梯安裝作業",
+    "id": "CY-043"
+  },
+  {
+    "Industry": "機電與設備工種（MEP）",
+    "sector": "營造業",
+    "category": "機電與設備工種（MEP）",
+    "taskId": "電氣設備及線路操作與維護作業",
+    "id": "CY-044"
+  },
+  {
+    "Industry": "土方與深基礎工種",
+    "sector": "營造業",
+    "category": "土方與深基礎工種",
+    "taskId": "露天開挖作業",
+    "id": "CY-045"
+  },
+  {
+    "Industry": "土方與深基礎工種",
+    "sector": "營造業",
+    "category": "土方與深基礎工種",
+    "taskId": "高噪音環境設備操作與巡檢作業",
+    "id": "CY-046"
+  },
+  {
+    "Industry": "機電與設備工種（MEP）",
+    "sector": "營造業",
+    "category": "機電與設備工種（MEP）",
+    "taskId": "高壓氣體容器操作與檢修作業",
+    "id": "CY-047"
+  },
+  {
+    "Industry": "外牆與高處防護工種",
+    "sector": "營造業",
+    "category": "外牆與高處防護工種",
+    "taskId": "高度2公尺以上開口周邊作業",
+    "id": "CY-048"
+  },
+  {
+    "Industry": "景觀與公設工種",
+    "sector": "營造業",
+    "category": "景觀與公設工種",
+    "taskId": "高空作業車作業",
+    "id": "CY-049"
+  }
+]

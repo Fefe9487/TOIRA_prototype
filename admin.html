@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>系統資料管理後臺 - 風險評估系統</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="theme.css">
+    <style>
+        /* 後臺沿用前端的 theme.css 色票，此處僅做語意別名 */
+        :root {
+            --primary: var(--brand-700);
+            --primary-hover: var(--brand-800);
+            --secondary: var(--success);
+            --secondary-hover: #0e6d4b;
+            --bg-color: var(--bg);
+            --text-main: var(--ink);
+            --text-muted: var(--muted);
+            --border: var(--line);
+            --danger-hover: #a8342a;
+            --warning: var(--warn);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', var(--font-sans);
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background-color: var(--surface);
+            padding: 1.25rem 2rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .header-title i {
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+
+        main {
+            flex: 1;
+            padding: 2rem;
+            max-width: 1600px; /* Wider for tables */
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .tabs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        .tab-btn {
+            padding: 0.75rem 1.5rem;
+            background: none;
+            border: none;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            cursor: pointer;
+            position: relative;
+            transition: color 0.2s;
+        }
+
+        .tab-btn:hover {
+            color: var(--primary);
+        }
+
+        .tab-btn.active {
+            color: var(--primary);
+        }
+
+        .tab-btn.active::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--primary);
+            border-radius: 2px 2px 0 0;
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card {
+            background: var(--surface);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .controls {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            border: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+            box-shadow: var(--sh-1);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+        }
+
+        .btn-secondary {
+            background-color: var(--surface);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--bg-color);
+        }
+
+        .btn-danger {
+            background-color: #fee2e2;
+            color: var(--danger);
+            padding: 0.4rem 0.75rem;
+        }
+
+        .btn-danger:hover {
+            background-color: var(--danger);
+            color: white;
+        }
+
+        .btn-success {
+            background-color: var(--secondary);
+            color: white;
+        }
+
+        .btn-success:hover {
+            background-color: var(--secondary-hover);
+        }
+
+        /* Table Styles */
+        .table-container {
+            width: 100%;
+            overflow-x: auto;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            max-height: 600px;
+            overflow-y: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: var(--surface);
+            text-align: left;
+            font-size: 0.875rem;
+        }
+
+        thead {
+            position: sticky;
+            top: 0;
+            background-color: var(--surface-2);
+            z-index: 10;
+            box-shadow: 0 1px 0 var(--border);
+        }
+
+        th, td {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+        }
+
+        th {
+            font-weight: 600;
+            color: var(--text-muted);
+            white-space: nowrap;
+        }
+
+        tbody tr:hover {
+            background-color: var(--brand-50);
+        }
+
+        /* Form Inputs inside Table */
+        input.form-control, textarea.form-control, select.form-control {
+            width: 100%;
+            padding: 8px 12px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-size: 0.875rem;
+            color: var(--text-main);
+            background-color: var(--surface);
+            transition: border-color 0.2s, box-shadow 0.2s;
+            resize: vertical;
+        }
+
+        textarea.form-control {
+            min-height: 80px;
+            line-height: 1.5;
+            white-space: pre-wrap;
+        }
+
+        input.form-control:focus, textarea.form-control:focus, select.form-control:focus {
+            outline: none;
+            border-color: var(--brand-600);
+            box-shadow: var(--focus-ring);
+        }
+        
+        .column-id { width: 120px; }
+        .column-name { width: 150px; }
+        .column-group { width: 150px; }
+        .column-severity { width: 130px; }
+        .column-hazards { width: 250px; }
+        .column-avoids { width: 250px; }
+        .column-actions { width: 80px; text-align: center; }
+
+        .add-row-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--surface-2);
+            border: 1px dashed var(--border);
+            color: var(--primary);
+            font-weight: 600;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            border-radius: 0 0 8px 8px;
+        }
+
+        .add-row-btn:hover {
+            background-color: var(--brand-50);
+        }
+
+        .toast-container {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 50;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .toast {
+            background: white;
+            border-left: 4px solid var(--primary);
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transform: translateX(120%);
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .toast.show { transform: translateX(0); }
+        .toast.success { border-color: var(--secondary); }
+        .toast.success i { color: var(--secondary); }
+        .toast.error { border-color: var(--danger); }
+        .toast.error i { color: var(--danger); }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-main);
+            font-size: 0.875rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: color 0.2s;
+        }
+        
+        .nav-link:hover { color: var(--primary); }
+
+        .help-text {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 4px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-title">
+            <i class="fa-solid fa-table-list"></i>
+            系統資料管理後臺 (表格化介面)
+        </div>
+        <a href="index.html" class="nav-link">
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+            返回前端系統
+        </a>
+    </header>
+
+    <main>
+        <div class="tabs">
+            <button class="tab-btn active" onclick="switchTab('tasks')">
+                <i class="fa-solid fa-list-check"></i> 作業庫 (tasksLibrary)
+            </button>
+            <button class="tab-btn" onclick="switchTab('industry')">
+                <i class="fa-solid fa-industry"></i> 產業映射 (industryMapping)
+            </button>
+        </div>
+
+        <!-- Tasks Library Tab -->
+        <div id="tab-tasks" class="tab-content active">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">
+                        作業庫內容編輯
+                    </div>
+                    <div class="controls">
+                        <button class="btn btn-primary" onclick="downloadTasksJSON()">
+                            <i class="fa-solid fa-download"></i> 產生更新檔 (tasksLibrary.json)
+                        </button>
+                    </div>
+                </div>
+
+                <div class="table-container">
+                    <table id="tasks-table">
+                        <thead>
+                            <tr>
+                                <th class="column-id">作業 ID (Key)</th>
+                                <th class="column-name">作業名稱</th>
+                                <th class="column-group">危害類型群組</th>
+                                <th class="column-severity">風險等級</th>
+                                <th class="column-hazards">危害情境 (每行一項)</th>
+                                <th class="column-avoids">防護對策 (每行一項)</th>
+                                <th class="column-actions">操作</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tasks-tbody">
+                            <!-- Rows will be injected here -->
+                        </tbody>
+                    </table>
+                    <div class="add-row-btn" onclick="addTasksRow()">
+                        <i class="fa-solid fa-plus"></i> 新增一列危害群組
+                    </div>
+                </div>
+                
+                <div style="margin-top: 1rem; color: var(--text-muted); font-size: 0.875rem;">
+                    <i class="fa-solid fa-circle-info text-primary"></i> 提示：若同一個「作業 ID」有多個危害類型，請在表格中建立多列，並輸入相同的「作業 ID」與「作業名稱」，系統下載時會自動將它們合併在一起。危害情境與對策請使用<b>換行 (Enter)</b>來分隔不同項目。
+                </div>
+            </div>
+        </div>
+
+        <!-- Industry Mapping Tab -->
+        <div id="tab-industry" class="tab-content">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">
+                        產業映射內容編輯
+                    </div>
+                    <div class="controls">
+                        <button class="btn btn-primary" onclick="downloadIndustryJSON()">
+                            <i class="fa-solid fa-download"></i> 產生更新檔 (industryMapping.json)
+                        </button>
+                    </div>
+                </div>
+
+                <div class="table-container">
+                    <table id="industry-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 12%;">映射 ID</th>
+                                <th style="width: 20%;">產業名稱 (Industry)</th>
+                                <th style="width: 14%;">大類別 (sector)</th>
+                                <th style="width: 20%;">作業類別 (category)</th>
+                                <th style="width: 24%;">作業名稱 (taskId)</th>
+                                <th style="width: 10%; text-align: center;">操作</th>
+                            </tr>
+                        </thead>
+                        <tbody id="industry-tbody">
+                            <!-- Rows will be injected here -->
+                        </tbody>
+                    </table>
+                    <div class="add-row-btn" onclick="addIndustryRow()">
+                        <i class="fa-solid fa-plus"></i> 新增一筆產業對應
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="toast-container" id="toast-container"></div>
+
+    <script>
+        // Tab Switching
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+            document.getElementById(`tab-${tabId}`).classList.add('active');
+        }
+
+        let sectorOptions = ['製造業', '營造業', '危險性作業'];
+
+        // Auto-load existing JSON files on page load
+        window.addEventListener('DOMContentLoaded', async () => {
+            try {
+                const sectorsRes = await fetch('industrySectors.json');
+                if (sectorsRes.ok) {
+                    const sectorsData = await sectorsRes.json();
+                    if (Array.isArray(sectorsData) && sectorsData.length) {
+                        sectorOptions = sectorsData
+                            .slice()
+                            .sort((a, b) => (a.order || 0) - (b.order || 0))
+                            .map(s => s.id)
+                            .filter(Boolean);
+                    }
+                }
+            } catch (e) {
+                console.error('Fetch industrySectors.json failed:', e);
+            }
+
+            try {
+                const tasksRes = await fetch('tasksLibrary.json');
+                if (tasksRes.ok) {
+                    const tasksData = await tasksRes.json();
+                    renderTasksTable(tasksData);
+                } else {
+                    renderTasksTable({}); // Empty state
+                }
+            } catch (e) {
+                console.error('Fetch tasksLibrary.json failed:', e);
+                renderTasksTable({});
+            }
+
+            try {
+                const industryRes = await fetch('industryMapping.json');
+                if (industryRes.ok) {
+                    const industryData = await industryRes.json();
+                    renderIndustryTable(industryData);
+                } else {
+                    renderIndustryTable([]);
+                }
+            } catch (e) {
+                console.error('Fetch industryMapping.json failed:', e);
+                renderIndustryTable([]);
+            }
+        });
+
+        // ------------------ Tasks Library Logic ------------------
+
+        function renderTasksTable(jsonData) {
+            const tbody = document.getElementById('tasks-tbody');
+            tbody.innerHTML = '';
+            
+            // Flatten the JSON
+            let rowCount = 0;
+            for (const [taskId, taskInfo] of Object.entries(jsonData)) {
+                if (!taskInfo.hazardGroups || taskInfo.hazardGroups.length === 0) {
+                    // Task with no groups
+                    appendTasksRow(tbody, taskId, taskInfo.taskName, '', '', [], []);
+                    rowCount++;
+                } else {
+                    for (const group of taskInfo.hazardGroups) {
+                        appendTasksRow(
+                            tbody, 
+                            taskId, 
+                            taskInfo.taskName || taskId, 
+                            group.groupName || '', 
+                            group.severitylevel || '', 
+                            group.hazardItems || [], 
+                            group.AvoidItems || []
+                        );
+                        rowCount++;
+                    }
+                }
+            }
+
+            if (rowCount === 0) {
+                addTasksRow(); // Add one empty row by default
+            }
+        }
+
+        function appendTasksRow(tbody, id, name, group, severity, hazards, avoids) {
+            const hazardOptions = ["被夾被捲", "墜落滾落", "被刺、割、擦傷", "跌倒", "物體倒塌崩塌", "感電", "火災", "爆炸", "有害物接觸", "物體飛落", "被撞", "不當動作", "高低溫接觸", "其他類別風險", "衝撞", "溺水", "踩踏", "物體破裂", "職業病"];
+            
+            let groupSelectHTML = `<select class="form-control t-group">
+                <option value="" disabled ${!group ? 'selected' : ''}>請選擇危害類型...</option>
+                ${hazardOptions.map(opt => `<option value="${opt}" ${group === opt ? 'selected' : ''}>${opt}</option>`).join('')}
+            `;
+            // 處理不在預設清單內的既有舊資料
+            if (group && !hazardOptions.includes(group)) {
+                groupSelectHTML += `<option value="${escapeHtml(group)}" selected>${escapeHtml(group)} (舊資料)</option>`;
+            }
+            groupSelectHTML += `</select>`;
+
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+                <td><input type="text" class="form-control t-id" value="${escapeHtml(id)}" placeholder="例如: T001"></td>
+                <td><input type="text" class="form-control t-name" value="${escapeHtml(name)}" placeholder="例如: 搬運作業"></td>
+                <td>${groupSelectHTML}</td>
+                <td>
+                    <select class="form-control t-sev">
+                        <option value="S1: 輕度風險" ${severity.includes('S1') ? 'selected' : ''}>S1: 輕度風險</option>
+                        <option value="S2: 中度風險" ${severity.includes('S2') ? 'selected' : ''}>S2: 中度風險</option>
+                        <option value="S3: 高度風險" ${severity.includes('S3') ? 'selected' : ''}>S3: 高度風險</option>
+                        <option value="S4: 重大風險" ${severity.includes('S4') ? 'selected' : ''}>S4: 重大風險</option>
+                    </select>
+                </td>
+                <td><textarea class="form-control t-hazards" placeholder="一項佔一行...">${escapeHtml(hazards.join('\n'))}</textarea></td>
+                <td><textarea class="form-control t-avoids" placeholder="一項佔一行...">${escapeHtml(avoids.join('\n'))}</textarea></td>
+                <td class="column-actions">
+                    <button class="btn btn-danger" onclick="this.closest('tr').remove()"><i class="fa-solid fa-trash"></i></button>
+                </td>
+            `;
+            tbody.appendChild(tr);
+        }
+
+        function addTasksRow() {
+            const tbody = document.getElementById('tasks-tbody');
+            appendTasksRow(tbody, '', '', '', 'S2: 中度風險', [], []);
+        }
+
+        function downloadTasksJSON() {
+            const tbody = document.getElementById('tasks-tbody');
+            const rows = tbody.querySelectorAll('tr');
+            const result = {};
+
+            rows.forEach(row => {
+                const id = row.querySelector('.t-id').value.trim();
+                const name = row.querySelector('.t-name').value.trim();
+                const groupName = row.querySelector('.t-group').value.trim();
+                const severity = row.querySelector('.t-sev').value;
+                const hazardsText = row.querySelector('.t-hazards').value;
+                const avoidsText = row.querySelector('.t-avoids').value;
+
+                if (!id) return; // Skip empty IDs
+
+                if (!result[id]) {
+                    result[id] = {
+                        taskName: name || id,
+                        hazardGroups: []
+                    };
+                }
+
+                // Split textareas by newline and filter empty lines
+                const hazardItems = hazardsText.split('\n').map(s => s.trim()).filter(s => s);
+                const AvoidItems = avoidsText.split('\n').map(s => s.trim()).filter(s => s);
+
+                if (groupName || hazardItems.length > 0 || AvoidItems.length > 0) {
+                    result[id].hazardGroups.push({
+                        groupName: groupName,
+                        severitylevel: severity,
+                        hazardItems: hazardItems,
+                        AvoidItems: AvoidItems
+                    });
+                }
+            });
+
+            downloadFile(JSON.stringify(result, null, 4), 'tasksLibrary.json');
+        }
+
+        // ------------------ Industry Mapping Logic ------------------
+
+        function renderIndustryTable(jsonData) {
+            const tbody = document.getElementById('industry-tbody');
+            tbody.innerHTML = '';
+            
+            let rowCount = 0;
+            if (Array.isArray(jsonData)) {
+                jsonData.forEach(item => {
+                    appendIndustryRow(
+                        tbody,
+                        item.id || '',
+                        item.Industry || '',
+                        item.sector || sectorOptions[0] || '製造業',
+                        item.category || '',
+                        item.taskId || ''
+                    );
+                    rowCount++;
+                });
+            }
+
+            if (rowCount === 0) addIndustryRow();
+        }
+
+        function buildSectorSelect(selected) {
+            const options = [...sectorOptions];
+            if (selected && !options.includes(selected)) options.push(selected);
+            return `<select class="form-control i-sector">
+                ${options.map(opt => `<option value="${escapeHtml(opt)}" ${opt === selected ? 'selected' : ''}>${escapeHtml(opt)}</option>`).join('')}
+            </select>`;
+        }
+
+        function appendIndustryRow(tbody, id, industry, sector, category, taskId) {
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+                <td><input type="text" class="form-control i-id" value="${escapeHtml(id)}" placeholder="例如: T-001"></td>
+                <td><input type="text" class="form-control i-ind" value="${escapeHtml(industry)}" placeholder="例如: 金屬製品製造業"></td>
+                <td>${buildSectorSelect(sector || sectorOptions[0] || '製造業')}</td>
+                <td><input type="text" class="form-control i-cat" value="${escapeHtml(category)}" placeholder="例如: 底座製造"></td>
+                <td><input type="text" class="form-control i-task" value="${escapeHtml(taskId)}" placeholder="例如: 吊運鐵材"></td>
+                <td style="text-align: center;">
+                    <button class="btn btn-danger" onclick="this.closest('tr').remove()"><i class="fa-solid fa-trash"></i></button>
+                </td>
+            `;
+            tbody.appendChild(tr);
+        }
+
+        function addIndustryRow() {
+            const tbody = document.getElementById('industry-tbody');
+            appendIndustryRow(tbody, '', '', sectorOptions[0] || '製造業', '', '');
+        }
+
+        function downloadIndustryJSON() {
+            const tbody = document.getElementById('industry-tbody');
+            const rows = tbody.querySelectorAll('tr');
+            const result = [];
+
+            rows.forEach(row => {
+                const id = row.querySelector('.i-id').value.trim();
+                const industry = row.querySelector('.i-ind').value.trim();
+                const sector = row.querySelector('.i-sector').value.trim();
+                const category = row.querySelector('.i-cat').value.trim();
+                const taskId = row.querySelector('.i-task').value.trim();
+                
+                if (!id && !industry && !taskId) return; // Skip completely empty rows
+                
+                result.push({
+                    id: id,
+                    Industry: industry,
+                    sector: sector,
+                    category: category,
+                    taskId: taskId
+                });
+            });
+
+            downloadFile(JSON.stringify(result, null, 4), 'industryMapping.json');
+        }
+
+        // ------------------ Utilities ------------------
+
+        function downloadFile(content, filename) {
+            const blob = new Blob([content], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            showToast(`${filename} 已下載！請將它覆蓋到專案資料夾。`, 'success');
+        }
+
+        function escapeHtml(unsafe) {
+            if (!unsafe) return '';
+            return unsafe
+                .toString()
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        }
+
+        function showToast(message, type = 'success') {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = `toast ${type}`;
+            const icon = type === 'success' ? 'fa-check-circle' : 'fa-circle-exclamation';
+            toast.innerHTML = `
+                <i class="fa-solid ${icon} fa-lg"></i>
+                <div style="font-weight: 500; font-size: 0.875rem;">${message}</div>
+            `;
+            container.appendChild(toast);
+            setTimeout(() => toast.classList.add('show'), 10);
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
+        }
+    </script>
+</body>
+</html>

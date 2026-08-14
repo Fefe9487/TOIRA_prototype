@@ -1,0 +1,2195 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>危害辨識與風險評估系統</title>
+    <link rel="stylesheet" href="theme.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <style>
+        .container {
+            max-width: 1400px;
+            margin: 24px auto 0;
+            padding: 0 24px;
+        }
+
+        .view-section {
+            display: none;
+        }
+
+        .view-section.active {
+            display: block;
+        }
+
+        /* --------------------------------------------------- 適用範圍警示 */
+
+        .scope-warning {
+            display: flex;
+            gap: 14px;
+            padding: 16px 20px;
+            margin-bottom: 22px;
+            background: var(--warn-tint);
+            border: 1px solid var(--warn-line);
+            border-left: 4px solid var(--warn);
+            border-radius: var(--r-md);
+            font-size: 14px;
+            line-height: 1.9;
+            color: var(--warn-ink);
+        }
+
+        .scope-warning__icon {
+            flex-shrink: 0;
+            font-size: 18px;
+        }
+
+        .scope-warning__title {
+            display: block;
+            margin-bottom: 4px;
+            font-size: 15px;
+            font-weight: 700;
+        }
+
+        .scope-warning p {
+            margin: 0;
+        }
+
+        .scope-warning details {
+            margin-top: 10px;
+        }
+
+        .scope-warning summary {
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--brand-800);
+        }
+
+        .scope-warning summary:hover {
+            text-decoration: underline;
+        }
+
+        .scope-warning ul {
+            margin: 10px 0 0;
+            padding-left: 20px;
+        }
+
+        .scope-warning li+li {
+            margin-top: 9px;
+        }
+
+        /* --------------------------------------------------- 資料庫查詢 */
+
+        .search-bar {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 22px;
+        }
+
+        .search-input {
+            flex-grow: 1;
+            padding: 15px 18px;
+            font-size: 17px;
+        }
+
+        .result-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+            gap: 18px;
+        }
+
+        .result-card {
+            display: flex;
+            flex-direction: column;
+            padding: 22px;
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: var(--r-lg);
+            box-shadow: var(--sh-1);
+            transition: border-color .2s, box-shadow .2s;
+        }
+
+        .result-card:hover {
+            border-color: var(--brand-100);
+            box-shadow: var(--sh-2);
+        }
+
+        .result-cat {
+            margin-bottom: 6px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: .5px;
+            color: var(--brand-600);
+        }
+
+        .result-title {
+            margin: 0 0 20px;
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 1.5;
+            color: var(--brand-800);
+        }
+
+        .add-btn {
+            width: 100%;
+            margin-top: auto;
+        }
+
+        .add-btn.added {
+            background: var(--success);
+            border-color: var(--success);
+        }
+
+        .add-btn.added:hover {
+            background: var(--danger);
+            border-color: var(--danger);
+        }
+
+        .grid-state {
+            grid-column: 1 / -1;
+            padding: 34px 0;
+            text-align: center;
+            color: var(--muted);
+        }
+
+        /* --------------------------------------------------- 評估頁：側欄 */
+
+        .assessment-container {
+            display: flex;
+            gap: 22px;
+            align-items: flex-start;
+        }
+
+        .sidebar {
+            position: sticky;
+            top: 122px;
+            width: 272px;
+            flex-shrink: 0;
+            max-height: calc(100vh - 160px);
+            overflow-y: auto;
+            padding: 18px;
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: var(--r-lg);
+            box-shadow: var(--sh-2);
+        }
+
+        .sidebar__title {
+            margin: 0 0 16px;
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--brand-800);
+        }
+
+        .sidebar__empty {
+            padding: 16px 4px;
+            font-size: 14px;
+            line-height: 1.7;
+            text-align: center;
+            color: var(--muted);
+        }
+
+        .main-content {
+            flex-grow: 1;
+            min-width: 0;
+        }
+
+        .tree-node,
+        .tree-children {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .tree-group {
+            margin-bottom: 10px;
+        }
+
+        .tree-group-title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 14px;
+            border: 1px solid var(--line);
+            border-radius: var(--r-md);
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--brand-800);
+            cursor: pointer;
+            transition: background-color .18s, border-color .18s;
+        }
+
+        .tree-group-title:hover {
+            background: var(--brand-50);
+            border-color: var(--brand-100);
+        }
+
+        .tree-group-title .count {
+            margin-left: auto;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--muted);
+        }
+
+        .tree-group-title .chevron {
+            font-size: 11px;
+            color: var(--muted);
+            transition: transform .2s;
+        }
+
+        .tree-children {
+            display: none;
+            padding: 8px 0 2px 6px;
+        }
+
+        .tree-group.open .tree-children {
+            display: block;
+        }
+
+        .tree-group.open .chevron {
+            transform: rotate(90deg);
+        }
+
+        .tree-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 9px 10px;
+            margin-bottom: 2px;
+            border-radius: var(--r-md);
+            font-size: 14px;
+            line-height: 1.5;
+            color: var(--ink-2);
+            cursor: pointer;
+            transition: background-color .18s, color .18s;
+        }
+
+        .tree-item:hover {
+            background: var(--brand-50);
+        }
+
+        .tree-item.active {
+            background: var(--brand-700);
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .tree-item__label {
+            flex-grow: 1;
+        }
+
+        /* 圓形狀態點：已填寫評估內容時顯示勾號 */
+        .status-dot {
+            display: grid;
+            place-items: center;
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+            border: 2px solid var(--line-strong);
+            border-radius: 50%;
+            background: var(--surface-2);
+            font-size: 11px;
+            font-weight: 700;
+            color: transparent;
+            transition: background-color .18s, border-color .18s, color .18s;
+        }
+
+        .status-dot::after {
+            content: '✓';
+        }
+
+        .tree-item.done .status-dot {
+            background: var(--brand-600);
+            border-color: var(--brand-600);
+            color: #fff;
+        }
+
+        .tree-item.active .status-dot {
+            border-color: rgba(255, 255, 255, .55);
+            background: rgba(255, 255, 255, .16);
+        }
+
+        .tree-item.active.done .status-dot {
+            background: #fff;
+            border-color: #fff;
+            color: var(--brand-700);
+        }
+
+        .del-btn {
+            flex-shrink: 0;
+            padding: 0 2px;
+            border: none;
+            background: none;
+            font-size: 13px;
+            color: var(--line-strong);
+            cursor: pointer;
+            transition: color .18s;
+        }
+
+        .del-btn:hover {
+            color: var(--danger);
+        }
+
+        .tree-item.active .del-btn {
+            color: rgba(255, 255, 255, .7);
+        }
+
+        .tree-item.active .del-btn:hover {
+            color: #fff;
+        }
+
+        /* --------------------------------------------------- 評估頁：內容 */
+
+        .content-head {
+            margin-bottom: 22px;
+        }
+
+        .content-title {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 0 0 16px;
+            font-size: 21px;
+            font-weight: 700;
+            line-height: 1.5;
+            color: var(--brand-800);
+        }
+
+        .content-actions {
+            display: flex;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .task-desc {
+            margin-bottom: 22px;
+        }
+
+        .empty-state {
+            padding: 58px 30px;
+            text-align: center;
+            color: var(--muted);
+            background: var(--surface);
+            border: 1px dashed var(--line-strong);
+            border-radius: var(--r-lg);
+        }
+
+        .empty-state h2 {
+            margin: 0 0 10px;
+            font-size: 19px;
+            color: var(--ink-2);
+        }
+
+        .empty-state p {
+            margin: 0;
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        .hazard-card {
+            padding: 24px 26px;
+            margin-bottom: 20px;
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: var(--r-lg);
+            box-shadow: var(--sh-1);
+        }
+
+        .hazard-group-title {
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 12px;
+            margin-bottom: 4px;
+            border-bottom: 1px solid var(--line);
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--brand-800);
+        }
+
+        .sub-group-title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin: 22px 0 12px;
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--ink-2);
+        }
+
+        /* 勾選項目 */
+        .hazard-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 12px 15px;
+            margin-bottom: 8px;
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: var(--r-sm);
+            font-size: 14px;
+            line-height: 1.75;
+            cursor: pointer;
+            transition: background-color .18s, border-color .18s, color .18s;
+        }
+
+        .hazard-item::before {
+            content: '';
+            width: 18px;
+            height: 18px;
+            margin-top: 4px;
+            flex-shrink: 0;
+            border: 2px solid var(--line-strong);
+            border-radius: 5px;
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: background-color .18s, border-color .18s;
+        }
+
+        .hazard-item__text {
+            flex-grow: 1;
+        }
+
+        .hazard-type:hover {
+            border-color: var(--danger);
+            background: var(--danger-tint);
+        }
+
+        .hazard-type.selected {
+            background: var(--danger-tint);
+            border-color: var(--danger);
+            color: #96271c;
+        }
+
+        .hazard-type.selected::before {
+            background-color: var(--danger);
+            border-color: var(--danger);
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white' width='14px' height='14px'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
+        }
+
+        .avoid-type:hover {
+            border-color: var(--success);
+            background: var(--success-tint);
+        }
+
+        .avoid-type.selected {
+            background: var(--success-tint);
+            border-color: var(--success);
+            color: #0d6244;
+        }
+
+        .avoid-type.selected::before {
+            background-color: var(--success);
+            border-color: var(--success);
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white' width='14px' height='14px'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
+        }
+
+        .chip-tag {
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .chip-del {
+            padding: 0 2px;
+            border: none;
+            background: none;
+            font-size: 15px;
+            font-weight: 700;
+            color: inherit;
+            cursor: pointer;
+            opacity: .7;
+        }
+
+        .chip-del:hover {
+            opacity: 1;
+        }
+
+        .inline-add {
+            display: flex;
+            gap: 10px;
+            margin-top: 12px;
+        }
+
+        .inline-add .t-input {
+            padding: 10px 14px;
+            font-size: 14px;
+        }
+
+        /* 風險評估面板 */
+        .risk-panel {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 26px;
+            padding: 18px 20px;
+            background: var(--surface-2);
+            border: 1px solid var(--line);
+            border-radius: var(--r-md);
+        }
+
+        .risk-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .risk-factors {
+            display: flex;
+            gap: 18px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--ink-2);
+        }
+
+        .risk-badge {
+            padding: 6px 18px;
+            border-radius: var(--r-pill);
+            font-size: 15px;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .risk-5 {
+            background: var(--risk-5);
+        }
+
+        .risk-4 {
+            background: var(--risk-4);
+        }
+
+        .risk-3 {
+            background: var(--risk-3);
+            color: #4a3c00;
+        }
+
+        .risk-2 {
+            background: var(--risk-2);
+            color: #24344f;
+        }
+
+        .risk-1 {
+            background: var(--risk-1);
+        }
+
+        .risk-0 {
+            background: var(--risk-0);
+            color: var(--muted);
+        }
+
+        .risk-desc {
+            display: none;
+            padding: 12px 14px;
+            background: var(--surface);
+            border-radius: var(--r-sm);
+            border-left: 4px solid var(--line-strong);
+            font-size: 14px;
+            line-height: 1.75;
+            color: var(--ink-2);
+        }
+
+        .risk-note {
+            font-size: 13px;
+            font-style: italic;
+            color: var(--muted);
+        }
+
+        .manual-block {
+            padding-top: 14px;
+            border-top: 1px dashed var(--line-strong);
+            font-size: 14px;
+        }
+
+        .manual-block label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 700;
+            color: var(--danger);
+            cursor: pointer;
+        }
+
+        .manual-controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+            margin-top: 12px;
+            padding: 12px 14px;
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: var(--r-sm);
+        }
+
+        .manual-controls select {
+            padding: 6px 10px;
+            border: 1px solid var(--line-strong);
+            border-radius: var(--r-sm);
+            font-family: inherit;
+            font-size: 14px;
+            color: var(--ink);
+        }
+
+        .advice-panel {
+            display: none;
+            margin-top: 18px;
+            padding: 14px 18px;
+            background: var(--brand-50);
+            border: 1px solid var(--brand-100);
+            border-left: 4px solid var(--brand-600);
+            border-radius: var(--r-sm);
+            font-size: 14px;
+            color: var(--ink-2);
+        }
+
+        .advice-panel strong {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 15px;
+            color: var(--brand-800);
+        }
+
+        .advice-panel ul {
+            margin: 0;
+            padding-left: 20px;
+            line-height: 1.85;
+        }
+
+        /* --------------------------------------------------- 報表 */
+
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 999;
+            display: none;
+            justify-content: center;
+            align-items: flex-start;
+            overflow-y: auto;
+            padding: 40px 20px;
+            background: rgba(6, 63, 65, .55);
+        }
+
+        .report-container {
+            width: 100%;
+            max-width: 1200px;
+            padding: 40px;
+            background: var(--surface);
+            border-radius: var(--r-lg);
+            box-shadow: var(--sh-3);
+        }
+
+        .report-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .report-title-bar {
+            margin: 32px 0 18px;
+            padding-left: 15px;
+            border-left: 5px solid var(--brand-600);
+            font-size: 21px;
+            font-weight: 700;
+            color: var(--brand-900);
+        }
+
+        .report-meta {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            padding: 18px 24px;
+            margin-bottom: 20px;
+            background: var(--surface-2);
+            border: 1px solid var(--line);
+            border-radius: var(--r-md);
+            font-size: 14px;
+        }
+
+        table.report-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 40px;
+            font-size: 13px;
+        }
+
+        table.report-table th,
+        table.report-table td {
+            border: 1px solid var(--line-strong);
+            padding: 10px;
+            vertical-align: middle;
+        }
+
+        table.report-table th {
+            background: var(--brand-800);
+            color: #fff;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        table.report-table tbody td.text-center {
+            text-align: center;
+        }
+
+        table.report-table tbody td ul {
+            margin: 0;
+            padding-left: 16px;
+            line-height: 1.7;
+        }
+
+        .report-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+        .report-card {
+            display: flex;
+            gap: 15px;
+            padding: 20px;
+            background: var(--surface-2);
+            border: 1px solid var(--line);
+            border-radius: var(--r-md);
+        }
+
+        .report-card .icon {
+            display: grid;
+            place-items: center;
+            width: 40px;
+            height: 40px;
+            flex-shrink: 0;
+            border-radius: var(--r-sm);
+            background: var(--brand-700);
+            color: #fff;
+            font-size: 20px;
+        }
+
+        .report-card.card-orange .icon {
+            background: var(--warn);
+        }
+
+        .report-card h4 {
+            margin: 0 0 8px;
+            font-size: 16px;
+            color: var(--ink);
+        }
+
+        .report-card p {
+            margin: 0;
+            font-size: 14px;
+            line-height: 1.7;
+            color: var(--muted);
+        }
+
+        .report-scope-note {
+            padding: 12px 18px;
+            margin-bottom: 22px;
+            background: var(--warn-tint);
+            border: 1px solid var(--warn-line);
+            border-left: 4px solid var(--warn);
+            border-radius: var(--r-md);
+            font-size: 13px;
+            line-height: 1.8;
+            color: var(--warn-ink);
+        }
+
+        .report-disclaimer {
+            padding: 18px 22px;
+            background: var(--surface-2);
+            border: 1px solid var(--line);
+            border-radius: var(--r-md);
+            font-size: 13px;
+            line-height: 1.9;
+            color: var(--ink-2);
+        }
+
+        .report-disclaimer p {
+            margin: 0 0 10px;
+        }
+
+        .report-disclaimer p:last-child {
+            margin-bottom: 0;
+        }
+
+        .report-disclaimer .disclaimer-highlight {
+            font-weight: 600;
+            color: var(--danger);
+        }
+
+        .modal-note {
+            margin-bottom: 22px;
+        }
+
+        .modal-note label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--ink-2);
+        }
+
+        .custom-hazard-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            max-height: 300px;
+            overflow-y: auto;
+            padding: 14px;
+            border: 1px solid var(--line);
+            border-radius: var(--r-md);
+            background: var(--surface-2);
+        }
+
+        .custom-hazard-list label {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--ink-2);
+            cursor: pointer;
+        }
+
+        .site-disclaimer {
+            max-width: 1400px;
+            margin: 40px auto 60px;
+            padding: 22px 26px 24px;
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: var(--r-lg);
+            font-size: 12.5px;
+            line-height: 1.95;
+            color: var(--muted);
+        }
+
+        .site-disclaimer h2 {
+            margin: 0 0 14px;
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--ink-2);
+        }
+
+        .site-disclaimer h3 {
+            margin: 16px 0 4px;
+            font-size: 12.5px;
+            font-weight: 700;
+            color: var(--ink-2);
+        }
+
+        .site-disclaimer section:first-of-type h3 {
+            margin-top: 0;
+        }
+
+        .site-disclaimer p {
+            margin: 0;
+        }
+
+        .site-disclaimer ul {
+            margin: 6px 0 0;
+            padding-left: 18px;
+        }
+
+        .site-disclaimer li+li {
+            margin-top: 6px;
+        }
+
+        .site-disclaimer strong {
+            color: var(--ink-2);
+        }
+
+        .site-disclaimer .hl {
+            font-weight: 600;
+            color: var(--danger);
+        }
+
+        @media print {
+            body {
+                background: #fff;
+            }
+
+            .container,
+            .report-actions,
+            .site-disclaimer,
+            .t-toast-host,
+            header {
+                display: none !important;
+            }
+
+            .modal-overlay {
+                position: static;
+                display: block;
+                padding: 0;
+                background: #fff;
+            }
+
+            .report-container {
+                box-shadow: none;
+                padding: 0;
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="t-app-bar">
+        <div class="t-app-bar__row">
+            <h1 class="t-app-bar__title" id="header-title">自選製程 - 危害辨識系統</h1>
+            <div class="t-badge t-badge--onbrand" id="company-header-display" hidden></div>
+        </div>
+        <div class="t-tabs">
+            <button class="t-tab" id="tab-search" onclick="switchTab('search-view')">🔍 資料庫查詢</button>
+            <button class="t-tab active" id="tab-assess" onclick="switchTab('assessment-view')">📝 我的評估專案 <span
+                    id="project-count">(0)</span></button>
+        </div>
+    </header>
+
+    <div class="container">
+        <aside class="scope-warning">
+            <span class="scope-warning__icon" aria-hidden="true">⚠️</span>
+            <div>
+                <strong class="scope-warning__title">使用前請先確認適用範圍</strong>
+                <p>
+                    本系統係專為<strong>中小企業</strong>設計之<strong>初步、定性</strong>危害辨識輔助工具，以簡化之嚴重度／可能性對照矩陣推算風險等級，僅供事業單位自主管理之作業篩選與教育訓練參考。<strong>一定規模以上或具特殊危害之事業單位，應改採更詳細之系統化風險評估方法，不得以本系統之輸出作為唯一依據。</strong>
+                </p>
+                <details>
+                    <summary>哪些事業單位不宜僅使用本系統？</summary>
+                    <ul>
+                        <li><strong>第一類事業勞工人數 200 人以上、第二類事業勞工人數 500 人以上者：</strong>依職業安全衛生管理辦法第 12 條之 2，應依國家標準 CNS 45001 同等以上規定建置職業安全衛生管理系統，並據以執行風險評估、管理審查及紀錄保存。</li>
+                        <li><strong>從事石油裂解之石化工業，或製造、處置、使用危害性化學品達中央主管機關規定量以上之工作場所：</strong>依職業安全衛生法第 15 條及製程安全評估定期實施辦法，應每 5 年實施製程安全評估，並採用檢核表、如果－結果分析、危害及可操作性分析（HazOp）、失誤模式及影響分析（FMEA）、故障樹分析（FTA）等一種以上之方法。</li>
+                        <li><strong>作業具高度複雜性、連續製程、多重能量來源，或曾發生重大職業災害者：</strong>建議另行實施作業安全分析（JSA／JHA）、HazOp、FMEA、保護層分析（LOPA）或量化風險評估，並由具相關專業能力之人員主持。</li>
+                    </ul>
+                </details>
+            </div>
+        </aside>
+
+        <div id="search-view" class="view-section">
+            <div class="search-bar">
+                <input type="text" id="search-input" class="t-input search-input"
+                    placeholder="請輸入關鍵字 (支援模糊搜尋，例如：電銲、吊掛)..." onkeyup="handleSearch()">
+                <button class="t-btn t-btn--outline" onclick="openCustomTaskModal()">＋ 自定義製程</button>
+            </div>
+            <div id="result-grid" class="result-grid"></div>
+        </div>
+
+        <div id="assessment-view" class="view-section active">
+            <div class="assessment-container">
+                <aside class="sidebar">
+                    <div class="sidebar__title">評估清單</div>
+                    <div id="sidebar-tree"></div>
+                </aside>
+                <main class="main-content" id="content-area"></main>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-disclaimer" id="site-disclaimer">
+        <h2>免責聲明與使用警示</h2>
+
+        <section>
+            <h3>一、適用對象與工具定位</h3>
+            <p>本系統為中小企業安全衛生資訊網提供之危害辨識與風險評估輔助工具，適用對象為<strong>中小企業</strong>（依中小企業認定標準第 2
+                條，指依法辦理公司、有限合夥或商業登記，實收資本額或出資額在新臺幣 1 億元以下，或經常僱用員工數未滿 200 人之事業）。其目的在於協助尚未建立完整風險評估制度之事業單位，以較低門檻完成<strong>初步</strong>危害辨識與改善方向盤點，並非提供符合各行業、各法規要求之完整風險評估方案。
+            </p>
+        </section>
+
+        <section>
+            <h3>二、評估方法之限制</h3>
+            <p>本系統採<strong>定性</strong>評估，係依內建參考資料庫與使用者勾選內容，以固定之嚴重度／可能性矩陣推算風險等級，<span class="hl">並非量化測量、統計推估或現場查核之結果，亦不得視為已完成法定風險評估程序</span>。系統於可能性判定上傾向保守，<span
+                    class="hl">容易高估</span>實際情形，宜作為篩選高風險作業、排定改善優先順序之參考，不宜作為資源配置或法規申報之唯一依據。</p>
+        </section>
+
+        <section>
+            <h3>三、一定規模以上或具特殊危害之事業單位</h3>
+            <p>下列事業單位<span class="hl">不應以本系統作為風險評估之依據</span>，應另依法採行更詳細之系統化評估方法：</p>
+            <ul>
+                <li>第一類事業勞工人數 200 人以上、第二類事業勞工人數 500 人以上者，依職業安全衛生管理辦法第 12 條之 2，應依國家標準 CNS 45001 同等以上規定建置職業安全衛生管理系統，並據以執行。</li>
+                <li>從事石油裂解之石化工業，或製造、處置、使用危害性化學品數量達中央主管機關規定量以上之工作場所，依職業安全衛生法第 15 條及製程安全評估定期實施辦法，應每 5
+                    年實施製程安全評估，並採用檢核表、如果－結果分析、危害及可操作性分析（HazOp）、失誤模式及影響分析（FMEA）、故障樹分析（FTA）等一種以上之方法，報請勞動檢查機構備查。</li>
+                <li>作業具高度複雜性、連續製程、多重能量來源，或曾發生重大職業災害者，建議另行實施作業安全分析（JSA／JHA）、HazOp、FMEA、保護層分析（LOPA）或量化風險評估。</li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>四、使用者責任</h3>
+            <p>使用者應由具備職業安全衛生專業能力之人員，依現場實況、設備條件、作業頻率、人員配置及既有防護措施之有效性，覆核並修正評估內容後方得使用。報表中以紅色字體標示者為使用者手動調整之風險值，其正確性由使用者自行負責。
+            </p>
+        </section>
+
+        <section>
+            <h3>五、責任排除</h3>
+            <p>本系統產出之內容僅供事業單位內部職業安全衛生管理參考，<strong>不構成法律、工程或職業安全衛生之專業意見，亦不作為法規遵循之保證</strong>。使用本系統或依其結果所為之決策而生之任何直接或間接損害，本網站及其提供單位不負賠償責任。相關法規以主管機關公告之最新版本為準。
+            </p>
+        </section>
+    </footer>
+
+    <div class="t-toast-host" id="toast-host"></div>
+
+    <div class="modal-overlay" id="report-modal">
+        <div class="report-container">
+            <div class="report-actions">
+                <button class="t-btn t-btn--ghost" onclick="closeReport()">關閉</button>
+                <button class="t-btn t-btn--success" onclick="downloadPDF()">💾 下載 PDF</button>
+                <button class="t-btn t-btn--primary" onclick="window.print()">列印 / 存成 PDF</button>
+            </div>
+
+            <div class="report-scope-note">
+                <strong>使用警示：</strong>本報告由中小企業適用之危害辨識輔助工具產出，採<strong>定性</strong>評估，僅供初步篩選與內部管理參考。<span
+                    class="disclaimer-highlight">一定規模以上或具特殊危害之事業單位，應另依法採行更詳細之風險評估方法</span>，詳見文末免責聲明。
+            </div>
+
+            <div class="report-title-bar" style="margin-top: 0;">一、公司基本資訊</div>
+            <div class="report-meta">
+                <div><strong>公司名稱：</strong><span id="report-company-name">-</span></div>
+                <div><strong>統一編號：</strong><span id="report-company-ubn">-</span></div>
+                <div style="grid-column: span 2;"><strong>行業別：</strong><span id="report-company-industry">-</span></div>
+            </div>
+
+            <div class="report-title-bar">二、風險評估表</div>
+            <div id="report-task-meta" style="margin-bottom: 16px; font-size: 14px; line-height: 1.8;"></div>
+            <table class="report-table">
+                <thead>
+                    <tr>
+                        <th rowspan="2" style="width: 11%;">1. 作業/流程名稱</th>
+                        <th rowspan="2" style="width: 22%;">2. 危害辨識及後果</th>
+                        <th rowspan="2" style="width: 16%;">3. 現有防護措施</th>
+                        <th colspan="3" style="width: 12%;">4. 風險評估</th>
+                        <th rowspan="2" style="width: 18%;">5. 降低風險措施</th>
+                        <th colspan="3" style="width: 12%;">6. 控制後風險</th>
+                    </tr>
+                    <tr>
+                        <th>嚴重度</th>
+                        <th>可能性</th>
+                        <th>等級</th>
+                        <th>嚴重度</th>
+                        <th>可能性</th>
+                        <th>等級</th>
+                    </tr>
+                </thead>
+                <tbody id="report-tbody"></tbody>
+            </table>
+            <div id="manual-override-note"
+                style="color:var(--danger); font-size:14px; font-weight:bold; text-align:right; margin-top:-30px; margin-bottom:30px; display:none;">
+                * 表格中紅色字體代表該欄位風險為使用者手動更動過</div>
+            <div class="report-title-bar">三、整體改善建議</div>
+            <div class="report-cards">
+                <div class="report-card">
+                    <div class="icon">⚙️</div>
+                    <div>
+                        <h4>工程控制</h4>
+                        <p>（依據企業狀況與選擇項目動態生成，此處暫時留空）</p>
+                    </div>
+                </div>
+                <div class="report-card">
+                    <div class="icon">⚙️</div>
+                    <div>
+                        <h4>管理控制</h4>
+                        <p>（依據企業狀況與選擇項目動態生成，此處暫時留空）</p>
+                    </div>
+                </div>
+                <div class="report-card card-orange">
+                    <div class="icon">📖</div>
+                    <div>
+                        <h4>個人防護具</h4>
+                        <p>（依據企業狀況與選擇項目動態生成，此處暫時留空）</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="report-title-bar">四、免責聲明</div>
+            <div class="report-disclaimer">
+                <p><strong>1. 適用對象：</strong>本系統之適用對象為<strong>中小企業</strong>（依中小企業認定標準第 2 條，指實收資本額或出資額在新臺幣 1 億元以下，或經常僱用員工數未滿 200
+                    人之事業），目的在協助尚未建立完整風險評估制度之事業單位完成<strong>初步</strong>危害辨識，並非提供符合各行業、各法規要求之完整風險評估方案。</p>
+                <p><strong>2. 方法限制：</strong>本系統為<strong>定性</strong>風險評估輔助工具，係依參考資料庫與使用者勾選內容，以簡化之嚴重度／可能性矩陣產出風險等級，<span
+                        class="disclaimer-highlight">並非量化測量、統計推估或現場查核之結果，亦不得視為已完成法定風險評估程序</span>。系統傾向以較保守方式呈現風險，<span
+                        class="disclaimer-highlight">容易高估</span>實際情形，宜作為篩選高風險作業、優先加強管理之參考，不宜直接作為資源配置或法規申報之唯一依據。</p>
+                <p><strong>3. 一定規模以上事業單位：</strong>第一類事業勞工人數 200 人以上、第二類事業勞工人數 500 人以上者，應依職業安全衛生管理辦法第 12 條之 2 建置符合國家標準 CNS 45001
+                    同等以上規定之職業安全衛生管理系統；從事石油裂解之石化工業，或製造、處置、使用危害性化學品達中央主管機關規定量以上之工作場所，應依職業安全衛生法第 15 條及製程安全評估定期實施辦法，每 5
+                    年採用檢核表、如果－結果分析、危害及可操作性分析（HazOp）、失誤模式及影響分析（FMEA）、故障樹分析（FTA）等一種以上方法實施製程安全評估。<span
+                        class="disclaimer-highlight">上述事業單位不得以本報告作為風險評估之依據。</span></p>
+                <p><strong>4. 使用者責任：</strong>使用者應依現場實況、設備條件、作業頻率及具相關專業能力之人員判斷，覆核並修正內容後方得使用。表格中紅色字體表示該欄位為使用者手動調整，其正確性由使用者自行負責。內容僅供內部職安管理參考，<strong>不構成法律、工程或職業安全衛生之專業意見，亦不作為法規遵循之保證</strong>。
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="custom-task-modal">
+        <div class="report-container" style="max-width: 620px;">
+            <div class="report-title-bar" style="margin-top: 0;">新增自定義製程</div>
+            <div class="modal-note">
+                <label for="custom-task-name">製程名稱</label>
+                <input class="t-input" type="text" id="custom-task-name" placeholder="請輸入製程名稱...">
+            </div>
+            <div class="modal-note">
+                <label>選擇危害類型 (可多選)</label>
+                <div id="custom-hazard-list" class="custom-hazard-list"></div>
+            </div>
+            <div class="report-actions" style="margin-bottom: 0;">
+                <button class="t-btn t-btn--ghost" onclick="closeCustomTaskModal()">取消</button>
+                <button class="t-btn t-btn--primary" onclick="createCustomTask()">確定新增</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ==========================================
+        // 核心狀態變數宣告
+        // ==========================================
+        let hazardLibrary = [];
+        let myProjectTasks = [];
+        let currentActiveTaskId = null;
+        const userSelections = {};
+        const expandedCategories = new Set();
+        const RISK_FORM_API = (window.RISK_FORM_API || 'http://localhost:8000').replace(/\/$/, '');
+        const STORAGE_KEY = 'toira.assessment.v1';
+
+        const CONTROL_TAG_RE = /[（(【]\s*(消除|取代|工程改善|行政管理|個人防護具|個人防護)\s*[）)】]\s*$/;
+        const EXISTING_CONTROL_TYPES = new Set(['行政管理', '個人防護', '個人防護具']);
+        const ADDITIONAL_CONTROL_TYPES = new Set(['工程改善', '消除', '取代']);
+
+        // 風險矩陣與文字定義
+        const riskMatrix = {
+            'S4': { 'P4': 5, 'P3': 4, 'P2': 4, 'P1': 3 },
+            'S3': { 'P4': 4, 'P3': 4, 'P2': 3, 'P1': 3 },
+            'S2': { 'P4': 4, 'P3': 3, 'P2': 3, 'P1': 2 },
+            'S1': { 'P4': 3, 'P3': 3, 'P2': 2, 'P1': 1 }
+        };
+        const riskDescriptions = {
+            5: { label: "重大", class: "risk-5", desc: "須立即採取風險降低設施，在風險降低前不應開始或繼續作業。", note: "不可接受風險" },
+            4: { label: "高", class: "risk-4", desc: "須在一定期限內採取風險控制設施，在風險降低前不可開始作業。", note: "不可接受風險" },
+            3: { label: "中", class: "risk-3", desc: "宜逐步採取風險降低設施，或進一步評估發生的可能性。", note: "須致力於風險降低" },
+            2: { label: "低", class: "risk-2", desc: "暫時無須採取風險降低設施，但須確保現有防護設施之有效性。", note: "可接受風險" },
+            1: { label: "輕", class: "risk-1", desc: "不須採取風險降低設施，但須確保現有防護設施之有效性。", note: "可接受風險" }
+        };
+
+        // ==========================================
+        // 1. 初始化與讀取 JSON 資料
+        // ==========================================
+        document.addEventListener('DOMContentLoaded', () => {
+            applyCompanyInfo(sessionStorage.getItem('companyInfo'));
+
+            const industryTitle = sessionStorage.getItem('industryName') || '自選製程';
+            document.getElementById('header-title').textContent = `${industryTitle} - 危害辨識系統`;
+
+            Promise.all([
+                fetch('industryMapping.json').then(r => r.json()),
+                fetch('tasksLibrary.json').then(r => r.json())
+            ]).then(([mappings, library]) => {
+                const mapByTaskId = {};
+                mappings.forEach((row) => {
+                    if (!row?.taskId || mapByTaskId[row.taskId]) return;
+                    mapByTaskId[row.taskId] = row;
+                });
+                hazardLibrary = Object.keys(library).map((taskId) => {
+                    const task = library[taskId] || {};
+                    const mapped = mapByTaskId[taskId] || {};
+                    return {
+                        ...mapped,
+                        ...task,
+                        id: taskId,
+                        taskId,
+                        category: mapped.category || task.category || '未分類',
+                    };
+                });
+
+                // 檢查是否有首頁傳遞過來的 ID
+                const savedInit = sessionStorage.getItem('initTasks');
+                if (savedInit) {
+                    try {
+                        const initIds = JSON.parse(savedInit);
+                        initIds.forEach(id => addTaskToProject(id));
+                        sessionStorage.removeItem('initTasks');
+                    } catch (e) { console.error("預載入失敗", e); }
+                } else if (restoreProject()) {
+                    showToast('已載入上次儲存的評估資料');
+                }
+
+                updateProjectCount();
+                renderSidebar();
+                handleSearch();
+
+                // 預設渲染第一個項目，如果沒有，切換到查詢頁
+                if (myProjectTasks.length > 0) {
+                    renderAssessment(myProjectTasks[0]);
+                } else {
+                    renderEmptyState();
+                    switchTab('search-view');
+                }
+            });
+        });
+
+        function applyCompanyInfo(companyInfoStr) {
+            if (!companyInfoStr) return;
+            const companyInfo = JSON.parse(companyInfoStr);
+            const badge = document.getElementById('company-header-display');
+            badge.textContent = `🏢 ${companyInfo.companyName}`;
+            badge.hidden = false;
+            document.getElementById('report-company-name').textContent = companyInfo.companyName;
+            document.getElementById('report-company-ubn').textContent = companyInfo.companyUBN;
+            document.getElementById('report-company-industry').textContent = companyInfo.companyIndustry;
+        }
+
+        // ==========================================
+        // 2. 視窗與分頁控制
+        // ==========================================
+        function switchTab(tabId) {
+            document.querySelectorAll('.view-section').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.t-tab').forEach(el => el.classList.remove('active'));
+
+            document.getElementById(tabId).classList.add('active');
+            if (tabId === 'search-view') document.getElementById('tab-search').classList.add('active');
+            else document.getElementById('tab-assess').classList.add('active');
+        }
+
+        function showToast(message, type = 'success') {
+            const toast = document.createElement('div');
+            toast.className = `t-toast t-toast--${type}`;
+            toast.textContent = message;
+            document.getElementById('toast-host').appendChild(toast);
+            setTimeout(() => toast.classList.add('show'), 10);
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => toast.remove(), 320);
+            }, 3000);
+        }
+
+        // ==========================================
+        // 3. 搜尋與專案管理
+        // ==========================================
+        function updateProjectCount() {
+            document.getElementById('project-count').textContent = `(${myProjectTasks.length})`;
+        }
+
+        function ensureSelectionState(taskId) {
+            const task = hazardLibrary.find(t => t.id === taskId);
+            if (!task) return;
+            task.hazardGroups.forEach((_, idx) => {
+                const key = `${taskId}_${idx}`;
+                if (!userSelections[key]) {
+                    userSelections[key] = { hazards: [], avoids: [], customHazards: [], customAvoids: [], isManual: false, manualS: 'S4', manualP: 'P4' };
+                }
+            });
+        }
+
+        function addTaskToProject(taskId) {
+            if (myProjectTasks.includes(taskId)) return;
+            if (!hazardLibrary.some(t => t.id === taskId)) return;
+            myProjectTasks.push(taskId);
+            ensureSelectionState(taskId);
+        }
+
+        function handleSearch() {
+            const query = document.getElementById('search-input').value.trim();
+            const grid = document.getElementById('result-grid');
+            grid.innerHTML = '';
+
+            let results = hazardLibrary;
+            if (query) {
+                const regex = new RegExp(query.split('').join('.*?'), 'i');
+                results = hazardLibrary.filter(task => {
+                    const text = `${task.category} ${task.taskName} ${task.hazardGroups.map(g => g.groupName).join(' ')}`;
+                    return regex.test(text);
+                });
+            }
+
+            if (results.length === 0) {
+                grid.innerHTML = '<div class="grid-state">查無結果</div>';
+                return;
+            }
+
+            results.forEach(task => {
+                const isAdded = myProjectTasks.includes(task.id);
+                grid.innerHTML += `
+                    <div class="result-card">
+                        <div class="result-cat">${task.category}</div>
+                        <h3 class="result-title">${task.taskName}</h3>
+                        <button class="t-btn t-btn--primary add-btn ${isAdded ? 'added' : ''}" onclick="toggleProjectTask('${task.id}', this)">
+                        ${isAdded ? '✓ 已加入 (點擊移除)' : '＋ 加入評估清單'}
+                        </button>
+                    </div>
+                `;
+            });
+        }
+
+        function toggleProjectTask(taskId, btnElement) {
+            if (myProjectTasks.includes(taskId)) {
+                myProjectTasks = myProjectTasks.filter(id => id !== taskId);
+                btnElement.classList.remove('added');
+                btnElement.textContent = '＋ 加入評估清單';
+                if (currentActiveTaskId === taskId) {
+                    currentActiveTaskId = null;
+                    renderEmptyState();
+                }
+            } else {
+                addTaskToProject(taskId);
+                btnElement.classList.add('added');
+                btnElement.textContent = '✓ 已加入 (點擊移除)';
+            }
+            updateProjectCount();
+            renderSidebar();
+        }
+
+        function removeFromProject(taskId, event) {
+            event.stopPropagation();
+            myProjectTasks = myProjectTasks.filter(id => id !== taskId);
+            updateProjectCount();
+            if (currentActiveTaskId === taskId) {
+                currentActiveTaskId = null;
+                renderEmptyState();
+            }
+            renderSidebar();
+            handleSearch(); // 更新搜尋頁面的按鈕狀態
+        }
+
+        // ==========================================
+        // 4. 資料保存
+        // ==========================================
+        function saveProject() {
+            const snapshot = {
+                savedAt: new Date().toISOString(),
+                companyInfo: sessionStorage.getItem('companyInfo'),
+                industryName: sessionStorage.getItem('industryName'),
+                myProjectTasks,
+                userSelections,
+                customTasks: hazardLibrary.filter(t => t.category === '自定義製程')
+            };
+            try {
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(snapshot));
+                showToast('評估資料已儲存於此瀏覽器');
+            } catch (e) {
+                showToast(`儲存失敗：${e.message}`, 'error');
+            }
+        }
+
+        function restoreProject() {
+            const raw = localStorage.getItem(STORAGE_KEY);
+            if (!raw) return false;
+            try {
+                const snapshot = JSON.parse(raw);
+                (snapshot.customTasks || []).forEach(task => {
+                    if (!hazardLibrary.some(t => t.id === task.id)) hazardLibrary.push(task);
+                });
+                myProjectTasks = (snapshot.myProjectTasks || []).filter(id => hazardLibrary.some(t => t.id === id));
+                Object.assign(userSelections, snapshot.userSelections || {});
+                myProjectTasks.forEach(ensureSelectionState);
+
+                if (!sessionStorage.getItem('companyInfo') && snapshot.companyInfo) {
+                    sessionStorage.setItem('companyInfo', snapshot.companyInfo);
+                    applyCompanyInfo(snapshot.companyInfo);
+                }
+                return myProjectTasks.length > 0;
+            } catch (e) {
+                console.error('讀取儲存資料失敗', e);
+                return false;
+            }
+        }
+
+        function splitSourceControls(items) {
+            const easy = [];
+            const additional = [];
+            (items || []).forEach(item => {
+                const text = String(item || '').trim();
+                if (!text) return;
+                const m = text.match(CONTROL_TAG_RE);
+                const level = m ? m[1] : null;
+                if (ADDITIONAL_CONTROL_TYPES.has(level)) additional.push(text);
+                else easy.push(text);
+            });
+            return { easy, additional };
+        }
+
+        function formatRiskLabel(value, prefix) {
+            const v = String(value || '').replace(/^[SP]/i, '').trim();
+            return v ? `${prefix}${v}` : '';
+        }
+
+        function pickExistingControls(selectedAvoids, pool) {
+            const { easy } = splitSourceControls(pool);
+            const easySet = new Set(easy);
+            const picked = selectedAvoids.filter(x => easySet.has(x) || !CONTROL_TAG_RE.test(x));
+            if (picked.length >= 2) return picked.slice(0, 4);
+            const fallback = easy.filter(x => selectedAvoids.includes(x));
+            const merged = [...new Set([...picked, ...fallback])];
+            return merged.length ? merged.slice(0, 4) : selectedAvoids.slice(0, 4);
+        }
+
+        function buildExportRowsForTask(taskId) {
+            const task = hazardLibrary.find(t => t.id === taskId);
+            if (!task) return [];
+            const rows = [];
+
+            task.hazardGroups.forEach((group, index) => {
+                const state = userSelections[`${taskId}_${index}`];
+                if (!state) return;
+                const hasData = state.hazards.length > 0 || state.avoids.length > 0
+                    || (state.customHazards && state.customHazards.length)
+                    || (state.customAvoids && state.customAvoids.length);
+                if (!hasData) return;
+
+                const hazards = state.hazards.map(i => group.hazardItems[i])
+                    .concat(state.customHazards || []);
+                const selectedAvoids = state.avoids.map(i => group.AvoidItems[i])
+                    .concat(state.customAvoids || []);
+                const { easy, additional } = splitSourceControls(group.AvoidItems || []);
+                const existingControls = pickExistingControls(selectedAvoids, group.AvoidItems || []);
+                const additionalControls = additional.length ? additional : easy.filter(x => !selectedAvoids.includes(x));
+
+                const baseS = group.severitylevel.split(':')[0].trim();
+                let cur = computeRiskValues(
+                    baseS,
+                    group.hazardItems.length + (state.customHazards || []).length,
+                    state.hazards.length + (state.customHazards || []).length,
+                    group.AvoidItems.length + (state.customAvoids || []).length,
+                    state.avoids.length + (state.customAvoids || []).length
+                );
+
+                if (state.isManual) {
+                    const riskNum = riskMatrix[state.manualS][state.manualP];
+                    cur = { s: state.manualS, p: state.manualP, riskObj: riskDescriptions[riskNum] };
+                }
+
+                let residualP = 'P3';
+                if (additionalControls.length >= 2 && existingControls.length >= 2) residualP = 'P2';
+                else if (additionalControls.length >= 1 || existingControls.length >= 2) residualP = 'P3';
+                const pNum = parseInt(cur.p.replace('P', ''), 10);
+                const rNum = parseInt(residualP.replace('P', ''), 10);
+                if (rNum > pNum) residualP = cur.p;
+                const residualRiskNum = riskMatrix[cur.s][residualP];
+
+                const scenarioLines = hazards.map((h, i) => `${i + 1}. ${h}`);
+                rows.push({
+                    taskName: task.taskName,
+                    taskdescribe: task.taskdescribe || '',
+                    processStepLabel: `步驟1：${task.taskName}`,
+                    hazardCategory: group.groupName,
+                    hazardScenario: scenarioLines.join('\n'),
+                    existingControls,
+                    additionalControls,
+                    initialSeverity: cur.s,
+                    initialProbability: cur.p,
+                    initialRiskLevel: cur.riskObj.label,
+                    initialRiskNum: riskMatrix[cur.s][cur.p],
+                    residualSeverity: cur.s,
+                    residualProbability: residualP,
+                    residualRiskLevel: riskDescriptions[residualRiskNum].label,
+                    isManual: !!state.isManual,
+                });
+            });
+            return rows;
+        }
+
+        function buildHazardGroupsPayload(taskId) {
+            const task = hazardLibrary.find(t => t.id === taskId);
+            if (!task) return null;
+            const hazardGroups = [];
+            task.hazardGroups.forEach((group, index) => {
+                const state = userSelections[`${taskId}_${index}`];
+                if (!state) return;
+                const hazards = state.hazards.map(i => group.hazardItems[i])
+                    .concat(state.customHazards || []);
+                if (!hazards.length && !state.avoids.length) return;
+                hazardGroups.push({
+                    groupName: group.groupName,
+                    severitylevel: group.severitylevel,
+                    hazarditems: hazards,
+                    AvoidItems: group.AvoidItems || [],
+                });
+            });
+            if (!hazardGroups.length) return null;
+            return {
+                taskName: task.taskName,
+                taskdescribe: task.taskdescribe || '',
+                hazardGroups,
+            };
+        }
+
+        function numberedList(items) {
+            return (items || []).map(item => `<li>${item}</li>`).join('');
+        }
+
+        async function downloadStandardXlsx() {
+            if (!myProjectTasks.length) return;
+            const payloads = myProjectTasks.map(buildHazardGroupsPayload).filter(Boolean);
+            if (!payloads.length) {
+                alert('請先勾選危害情境或防護措施');
+                return;
+            }
+            const payload = payloads.length === 1 ? payloads[0] : {
+                taskName: '綜合風險評估',
+                taskdescribe: payloads.map(p => p.taskName).join('、'),
+                hazardGroups: payloads.flatMap(p => p.hazardGroups),
+            };
+            try {
+                const res = await fetch(`${RISK_FORM_API}/api/risk-form/convert`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ data: payload }),
+                });
+                const data = await res.json();
+                if (!res.ok || data.status !== 'success') throw new Error(data.message || '轉換失敗');
+                const taskId = data.task_id;
+                const poll = async () => {
+                    const st = await fetch(`${RISK_FORM_API}/api/risk-form/status/${taskId}`);
+                    const result = await st.json();
+                    if (result.status === 'running') {
+                        setTimeout(poll, 1500);
+                        return;
+                    }
+                    if (result.status === 'success') {
+                        window.location.href = `${RISK_FORM_API}/api/risk-form/download/${taskId}`;
+                        return;
+                    }
+                    throw new Error(result.message || '轉換失敗');
+                };
+                await poll();
+            } catch (err) {
+                alert(`無法連線後端智慧轉換（${RISK_FORM_API}）。已改為開啟 PDF 報表預覽。\n${err.message}`);
+                openReport();
+            }
+        }
+
+        // ==========================================
+        // 5. 左側清單渲染
+        // ==========================================
+        function renderSidebar() {
+            const tree = document.getElementById('sidebar-tree');
+            if (myProjectTasks.length === 0) {
+                tree.innerHTML = '<div class="sidebar__empty">請先從資料庫加入作業項目</div>';
+                return;
+            }
+
+            const treeMap = {};
+            myProjectTasks.forEach(taskId => {
+                const task = hazardLibrary.find(t => t.id === taskId);
+                if (!task) return;
+                if (!treeMap[task.category]) treeMap[task.category] = [];
+                treeMap[task.category].push(task);
+            });
+
+            // 目前檢視中的作業所屬類別一律展開
+            const activeTask = hazardLibrary.find(t => t.id === currentActiveTaskId);
+            if (activeTask) expandedCategories.add(activeTask.category);
+
+            let html = '<ul class="tree-node">';
+            for (let cat in treeMap) {
+                const isOpen = expandedCategories.has(cat);
+                html += `
+                    <li class="tree-group ${isOpen ? 'open' : ''}">
+                        <div class="tree-group-title" onclick="toggleCategory(${attrArg(cat)})">
+                            <span>${cat}</span>
+                            <span class="count">(${treeMap[cat].length})</span>
+                            <span class="chevron">›</span>
+                        </div>
+                        <ul class="tree-children">
+                `;
+                treeMap[cat].forEach(task => {
+                    const activeClass = (task.id === currentActiveTaskId) ? 'active' : '';
+                    const doneClass = isTaskCompleted(task.id) ? 'done' : '';
+                    html += `
+                        <li class="tree-item ${activeClass} ${doneClass}" onclick="renderAssessment('${task.id}')">
+                            <span class="status-dot"></span>
+                            <span class="tree-item__label">${task.taskName}</span>
+                            <button class="del-btn" title="移除此作業" onclick="removeFromProject('${task.id}', event)">✖</button>
+                        </li>
+                    `;
+                });
+                html += `</ul></li>`;
+            }
+            html += '</ul>';
+            tree.innerHTML = html;
+        }
+
+        // 把字串包成可安全放進雙引號 onclick 屬性的 JS 字面值
+        function attrArg(value) {
+            return JSON.stringify(String(value)).replace(/"/g, '&quot;');
+        }
+
+        function toggleCategory(cat) {
+            if (expandedCategories.has(cat)) expandedCategories.delete(cat);
+            else expandedCategories.add(cat);
+            renderSidebar();
+        }
+
+        function isTaskCompleted(taskId) {
+            const task = hazardLibrary.find(t => t.id === taskId);
+            if (!task) return false;
+            return task.hazardGroups.some((_, idx) => {
+                const state = userSelections[`${taskId}_${idx}`];
+                return state && (
+                    state.hazards.length > 0 ||
+                    state.avoids.length > 0 ||
+                    (state.customHazards && state.customHazards.length > 0) ||
+                    (state.customAvoids && state.customAvoids.length > 0)
+                );
+            });
+        }
+
+        // ==========================================
+        // 6. 右側評估內容渲染與計算
+        // ==========================================
+        function contentActionsHtml() {
+            if (myProjectTasks.length === 0) return '';
+            return `
+                <div class="content-actions">
+                    <button class="t-btn t-btn--outline" onclick="saveProject()">🗎 儲存資料</button>
+                    <button class="t-btn t-btn--ghost" onclick="downloadStandardXlsx()">📊 下載標準 XLSX</button>
+                    <button class="t-btn t-btn--primary" onclick="openReport()">🗎 匯出評估報告</button>
+                </div>
+            `;
+        }
+
+        function renderEmptyState() {
+            document.getElementById('content-area').innerHTML = `
+                <div class="content-head">${contentActionsHtml()}</div>
+                <div class="empty-state">
+                    <h2>尚未選擇評估項目</h2>
+                    <p>請從左側「評估清單」選擇作業，或回到「資料庫查詢」加入新的作業程序。</p>
+                </div>
+            `;
+        }
+
+        function renderAssessment(taskId) {
+            currentActiveTaskId = taskId;
+            renderSidebar();
+            const task = hazardLibrary.find(t => t.id === taskId);
+            const contentArea = document.getElementById('content-area');
+
+            let editBtn = '';
+            if (task.category === "自定義製程") {
+                editBtn = `<button class="t-btn t-btn--ghost t-btn--sm" onclick="openCustomTaskModal('${task.id}')">✏️ 重新調整危害類型</button>`;
+            }
+
+            let html = `
+                <div class="content-head">
+                    <h2 class="content-title">${task.category} &gt; ${task.taskName} ${editBtn}</h2>
+                    ${contentActionsHtml()}
+                </div>
+            `;
+
+            if (task.taskdescribe) {
+                html += `<div class="t-note task-desc">${task.taskdescribe}</div>`;
+            }
+
+            task.hazardGroups.forEach((group, index) => {
+                const selKey = `${taskId}_${index}`;
+                // 防呆：如果舊資料沒有自訂屬性，自動補齊
+                if (!userSelections[selKey].customHazards) userSelections[selKey].customHazards = [];
+                if (!userSelections[selKey].customAvoids) userSelections[selKey].customAvoids = [];
+                if (userSelections[selKey].isManual === undefined) {
+                    userSelections[selKey].isManual = false;
+                    userSelections[selKey].manualS = 'S4';
+                    userSelections[selKey].manualP = 'P4';
+                }
+                const state = userSelections[selKey];
+
+                html += `
+                    <div class="hazard-card" id="group-${index}">
+                        <div class="hazard-group-title"><span>${group.groupName}</span></div>
+
+                        <div class="sub-group-title">⚠️ 存在的危害風險</div>
+                        <div class="hazard-list">
+                `;
+
+                // 1. 渲染：JSON 預設危害項目
+                group.hazardItems.forEach((item, idx) => {
+                    const isSelected = state.hazards.includes(idx) ? 'selected' : '';
+                    html += `<div class="hazard-item hazard-type ${isSelected}" data-idx="${idx}" onclick="toggleItem(this, '${taskId}', ${index}, 'hazard')"><div class="hazard-item__text">${item}</div></div>`;
+                });
+
+                // 2. 渲染：使用者自訂危害項目
+                state.customHazards.forEach((txt, cIdx) => {
+                    html += `
+                        <div class="hazard-item hazard-type selected" style="align-items: center;">
+                            <div class="hazard-item__text">${txt} <span class="chip-tag">(自訂)</span></div>
+                            <button class="chip-del" onclick="removeCustom('${taskId}', ${index}, 'hazard', ${cIdx}); event.stopPropagation();">✖</button>
+                        </div>
+                    `;
+                });
+
+                // 3. 自訂危害輸入框
+                html += `
+                        </div>
+                        <div class="inline-add">
+                            <input class="t-input" type="text" id="custom-h-${index}" placeholder="輸入其他存在的危害風險...">
+                            <button class="t-btn t-btn--outline" onclick="addCustom('${taskId}', ${index}, 'hazard')">＋ 新增</button>
+                        </div>
+
+                        <div class="sub-group-title">🛡️ 現有防護措施（行政管理 / 個人防護）</div>
+                        <div class="hazard-list">
+                `;
+
+                // 4. 渲染：JSON 預設防護措施
+                group.AvoidItems.forEach((item, idx) => {
+                    const isSelected = state.avoids.includes(idx) ? 'selected' : '';
+                    html += `<div class="hazard-item avoid-type ${isSelected}" data-idx="${idx}" onclick="toggleItem(this, '${taskId}', ${index}, 'avoid')"><div class="hazard-item__text">${item}</div></div>`;
+                });
+
+                // 5. 渲染：使用者自訂防護措施
+                state.customAvoids.forEach((txt, cIdx) => {
+                    html += `
+                        <div class="hazard-item avoid-type selected" style="align-items: center;">
+                            <div class="hazard-item__text">${txt} <span class="chip-tag">(自訂)</span></div>
+                            <button class="chip-del" onclick="removeCustom('${taskId}', ${index}, 'avoid', ${cIdx}); event.stopPropagation();">✖</button>
+                        </div>
+                    `;
+                });
+
+                // 6. 自訂措施輸入框
+                html += `
+                        </div>
+                        <div class="inline-add">
+                            <input class="t-input" type="text" id="custom-a-${index}" placeholder="輸入其他已落實的防護措施...">
+                            <button class="t-btn t-btn--outline" onclick="addCustom('${taskId}', ${index}, 'avoid')">＋ 新增</button>
+                        </div>
+
+                        <div class="advice-panel" id="advice-panel-${index}"></div>
+                        <div class="risk-panel">
+                            <div class="risk-header">
+                                <div class="risk-factors">
+                                    <span>嚴重度 (S): <span id="s-level-${index}">-</span></span>
+                                    <span>可能性 (P): <span id="p-level-${index}">-</span></span>
+                                </div>
+                                <div class="risk-badge risk-0" id="risk-badge-${index}">請勾選上方項目</div>
+                            </div>
+
+                            <div class="manual-block">
+                                <label>
+                                    <input type="checkbox" id="manual-override-${index}" ${state.isManual ? 'checked' : ''} onchange="toggleManualOverride('${taskId}', ${index})"> 手動評估風險
+                                </label>
+                                <div class="manual-controls" id="manual-controls-${index}" style="display:${state.isManual ? 'flex' : 'none'};">
+                                    <span>嚴重度 (S):
+                                        <select id="manual-s-${index}" onchange="updateManualRisk('${taskId}', ${index})">
+                                            <option value="S4" ${state.manualS === 'S4' ? 'selected' : ''}>4 (重大)</option>
+                                            <option value="S3" ${state.manualS === 'S3' ? 'selected' : ''}>3 (高)</option>
+                                            <option value="S2" ${state.manualS === 'S2' ? 'selected' : ''}>2 (中)</option>
+                                            <option value="S1" ${state.manualS === 'S1' ? 'selected' : ''}>1 (輕)</option>
+                                        </select>
+                                    </span>
+                                    <span>可能性 (P):
+                                        <select id="manual-p-${index}" onchange="updateManualRisk('${taskId}', ${index})">
+                                            <option value="P4" ${state.manualP === 'P4' ? 'selected' : ''}>4 (極可能)</option>
+                                            <option value="P3" ${state.manualP === 'P3' ? 'selected' : ''}>3 (可能)</option>
+                                            <option value="P2" ${state.manualP === 'P2' ? 'selected' : ''}>2 (不太可能)</option>
+                                            <option value="P1" ${state.manualP === 'P1' ? 'selected' : ''}>1 (極不可能)</option>
+                                        </select>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="risk-desc" id="risk-desc-${index}"></div>
+                            <div class="risk-note" id="risk-note-${index}"></div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            contentArea.innerHTML = html;
+            // 畫面生成完畢後，執行風險計算
+            task.hazardGroups.forEach((_, index) => calculateRiskUI(taskId, index));
+        }
+
+        // 點擊預設項目的處理函式
+        function toggleItem(el, taskId, groupIndex, type) {
+            const idx = parseInt(el.getAttribute('data-idx'));
+            const state = userSelections[`${taskId}_${groupIndex}`];
+
+            if (type === 'hazard') {
+                const pos = state.hazards.indexOf(idx);
+                if (pos > -1) state.hazards.splice(pos, 1);
+                else state.hazards.push(idx);
+            } else {
+                const pos = state.avoids.indexOf(idx);
+                if (pos > -1) state.avoids.splice(pos, 1);
+                else state.avoids.push(idx);
+            }
+            renderAssessment(taskId);
+        }
+
+        // 新增自訂項目
+        function addCustom(taskId, groupIndex, type) {
+            const inputEl = document.getElementById(type === 'hazard' ? `custom-h-${groupIndex}` : `custom-a-${groupIndex}`);
+            const val = inputEl.value.trim();
+            if (!val) return;
+            const state = userSelections[`${taskId}_${groupIndex}`];
+            if (type === 'hazard') state.customHazards.push(val);
+            else state.customAvoids.push(val);
+            inputEl.value = '';
+            renderAssessment(taskId);
+        }
+
+        // 刪除自訂項目
+        function removeCustom(taskId, groupIndex, type, cIdx) {
+            const state = userSelections[`${taskId}_${groupIndex}`];
+            if (type === 'hazard') state.customHazards.splice(cIdx, 1);
+            else state.customAvoids.splice(cIdx, 1);
+            renderAssessment(taskId);
+        }
+
+        // 手動調整切換
+        function toggleManualOverride(taskId, groupIndex) {
+            const state = userSelections[`${taskId}_${groupIndex}`];
+            const checkbox = document.getElementById(`manual-override-${groupIndex}`);
+            state.isManual = checkbox.checked;
+
+            const controls = document.getElementById(`manual-controls-${groupIndex}`);
+            controls.style.display = state.isManual ? 'flex' : 'none';
+
+            calculateRiskUI(taskId, groupIndex);
+        }
+
+        function updateManualRisk(taskId, groupIndex) {
+            const state = userSelections[`${taskId}_${groupIndex}`];
+            state.manualS = document.getElementById(`manual-s-${groupIndex}`).value;
+            state.manualP = document.getElementById(`manual-p-${groupIndex}`).value;
+
+            calculateRiskUI(taskId, groupIndex);
+        }
+
+        // 計算風險核心邏輯 (S依照JSON固定，P浮動)
+        function computeRiskValues(baseSeverity, hazardTotal, hazardSelected, avoidTotal, avoidSelected) {
+            let s = baseSeverity;
+            let p = 'P1';
+
+            if (hazardSelected === 0) {
+                p = 'P4';
+            } else if (hazardSelected > 0 && avoidSelected === 0) {
+                p = hazardSelected === hazardTotal ? 'P4' : 'P3';
+            } else if (hazardSelected > 0 && avoidSelected > 0) {
+                let avoidRatio = avoidSelected / avoidTotal;
+                if (avoidRatio === 1) p = 'P2';
+                else if (avoidRatio > 0.49) p = 'P2';
+                else p = 'P3';
+            }
+            const riskNum = riskMatrix[s][p];
+            return { s, p, riskObj: riskDescriptions[riskNum] };
+        }
+
+        function calculateRiskUI(taskId, groupIndex) {
+            const groupData = hazardLibrary.find(t => t.id === taskId).hazardGroups[groupIndex];
+            const state = userSelections[`${taskId}_${groupIndex}`];
+
+            const customHCount = state.customHazards ? state.customHazards.length : 0;
+            const customACount = state.customAvoids ? state.customAvoids.length : 0;
+
+            const totalH = groupData.hazardItems.length + customHCount;
+            const checkedH = state.hazards.length + customHCount;
+            const totalA = groupData.AvoidItems.length + customACount;
+            const checkedA = state.avoids.length + customACount;
+
+            let res = computeRiskValues(
+                groupData.severitylevel.split(':')[0].trim(),
+                totalH, checkedH,
+                totalA, checkedA
+            );
+
+            if (state.isManual) {
+                const s = state.manualS;
+                const p = state.manualP;
+                const riskNum = riskMatrix[s][p];
+                res = { s, p, riskObj: riskDescriptions[riskNum] };
+            }
+
+            // 更新 UI
+            const sLevelEl = document.getElementById(`s-level-${groupIndex}`);
+            const pLevelEl = document.getElementById(`p-level-${groupIndex}`);
+
+            sLevelEl.textContent = res.s.replace('S', '');
+            pLevelEl.textContent = res.p.replace('P', '');
+
+            if (state.isManual) {
+                sLevelEl.style.color = 'var(--danger)';
+                pLevelEl.style.color = 'var(--danger)';
+                sLevelEl.style.fontWeight = 'bold';
+                pLevelEl.style.fontWeight = 'bold';
+            } else {
+                sLevelEl.style.color = '';
+                pLevelEl.style.color = '';
+                sLevelEl.style.fontWeight = '';
+                pLevelEl.style.fontWeight = '';
+            }
+
+            const badgeEl = document.getElementById(`risk-badge-${groupIndex}`);
+            badgeEl.className = `risk-badge ${res.riskObj.class}`;
+            badgeEl.textContent = res.riskObj.label;
+
+            const descEl = document.getElementById(`risk-desc-${groupIndex}`);
+            descEl.style.display = 'block';
+            descEl.style.borderLeftColor = window.getComputedStyle(badgeEl).backgroundColor;
+            descEl.innerHTML = `<strong>處置方針：</strong>${res.riskObj.desc}`;
+            document.getElementById(`risk-note-${groupIndex}`).textContent = `備註：${res.riskObj.note}`;
+
+            // 降低風險措施（工程改善/消除/取代）
+            const advicePanel = document.getElementById(`advice-panel-${groupIndex}`);
+            const { additional } = splitSourceControls(groupData.AvoidItems || []);
+            const additionalLines = additional.filter(item => {
+                const idx = groupData.AvoidItems.indexOf(item);
+                return idx === -1 || !state.avoids.includes(idx);
+            });
+            if (additionalLines.length) {
+                advicePanel.innerHTML = `<strong>💡 降低風險措施（工程/消除/取代）：</strong><ul>${additionalLines.map(x => `<li>${x}</li>`).join('')}</ul>`;
+                advicePanel.style.display = 'block';
+            } else {
+                advicePanel.style.display = 'none';
+            }
+        }
+
+        // ==========================================
+        // 7. 匯出報表邏輯
+        // ==========================================
+        function openReport() {
+            const tbody = document.getElementById('report-tbody');
+            const meta = document.getElementById('report-task-meta');
+            tbody.innerHTML = '';
+            meta.innerHTML = '';
+            let hasAnyManualOverride = false;
+            const allRows = [];
+
+            myProjectTasks.forEach(taskId => {
+                allRows.push(...buildExportRowsForTask(taskId));
+            });
+
+            if (!allRows.length) {
+                alert('請先勾選危害情境或防護措施');
+                return;
+            }
+
+            const taskNames = [...new Set(allRows.map(r => r.taskName))];
+            meta.innerHTML = `
+                <div><strong>作業名稱：</strong>${taskNames.join('、')}</div>
+                <div><strong>作業說明：</strong>${allRows.map(r => r.taskdescribe).filter(Boolean).join(' ') || '—'}</div>
+            `;
+
+            // 依作業步驟合併第一欄
+            const stepRuns = [];
+            allRows.forEach((row, idx) => {
+                const key = `${row.taskName}::${row.processStepLabel}`;
+                if (!stepRuns.length || stepRuns[stepRuns.length - 1].key !== key) {
+                    stepRuns.push({ key, start: idx, label: row.processStepLabel });
+                }
+            });
+            for (let i = 0; i < stepRuns.length; i++) {
+                const end = (i + 1 < stepRuns.length) ? stepRuns[i + 1].start : allRows.length;
+                stepRuns[i].count = end - stepRuns[i].start;
+            }
+
+            allRows.forEach((row, idx) => {
+                if (row.isManual) hasAnyManualOverride = true;
+
+                const run = stepRuns.find(r => r.start === idx);
+                const stepCell = run
+                    ? `<td rowspan="${run.count}" style="text-align:center; vertical-align:middle; font-weight:bold;">${row.processStepLabel}</td>`
+                    : '';
+
+                const sDisplay = row.isManual
+                    ? `<span style="color:red;">${row.initialSeverity.replace('S', '')}</span>`
+                    : row.initialSeverity.replace('S', '');
+                const pDisplay = row.isManual
+                    ? `<span style="color:red;">${row.initialProbability.replace('P', '')}</span>`
+                    : row.initialProbability.replace('P', '');
+                const levelDisplay = row.isManual
+                    ? `<span style="color:red;">${row.initialRiskLevel}</span>`
+                    : row.initialRiskLevel;
+
+                const initRiskClass = riskDescriptions[row.initialRiskNum]?.class || 'risk-0';
+                const resRiskClass = riskDescriptions[riskMatrix[row.residualSeverity][row.residualProbability]]?.class || 'risk-0';
+
+                const scenarioHtml = `
+                    <div style="color:var(--brand-700); font-weight:bold; margin-bottom:6px;">【${row.hazardCategory}】</div>
+                    ${row.hazardScenario ? `<ul>${numberedList(row.hazardScenario.split('\n').map(l => l.replace(/^\d+\.\s*/, '')))}</ul>` : '無'}
+                `;
+                const existingHtml = row.existingControls.length
+                    ? `<ul>${numberedList(row.existingControls)}</ul>` : '無';
+                const additionalHtml = row.additionalControls.length
+                    ? `<ul>${numberedList(row.additionalControls)}</ul>` : '無';
+
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    ${stepCell}
+                    <td>${scenarioHtml}</td>
+                    <td>${existingHtml}</td>
+                    <td class="text-center">${sDisplay}</td>
+                    <td class="text-center">${pDisplay}</td>
+                    <td class="text-center" style="background-color:${getRiskColor(initRiskClass)}; font-weight:bold;">${levelDisplay}</td>
+                    <td>${additionalHtml}</td>
+                    <td class="text-center">${row.residualSeverity.replace('S', '')}</td>
+                    <td class="text-center">${row.residualProbability.replace('P', '')}</td>
+                    <td class="text-center" style="background-color:${getRiskColor(resRiskClass)}; font-weight:bold;">${row.residualRiskLevel}</td>
+                `;
+                tbody.appendChild(tr);
+            });
+
+            const noteEl = document.getElementById('manual-override-note');
+            if (noteEl) noteEl.style.display = hasAnyManualOverride ? 'block' : 'none';
+
+            document.getElementById('report-modal').style.display = 'flex';
+        }
+
+        function closeReport() { document.getElementById('report-modal').style.display = 'none'; }
+
+        function getRiskColor(className) {
+            const styles = getComputedStyle(document.documentElement);
+            const value = styles.getPropertyValue(`--${className}`).trim();
+            return value || '#fff';
+        }
+
+        function downloadPDF() {
+            const element = document.querySelector('#report-modal .report-container');
+            const companyName = document.getElementById('report-company-name').textContent || '風險評估報告';
+            const opt = {
+                margin: 10,
+                filename: `${companyName}_風險評估報告_${new Date().toLocaleDateString()}.pdf`,
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2, useCORS: true },
+                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+
+            // 暫時隱藏按鈕區塊避免出現在 PDF 中
+            const actions = element.querySelector('.report-actions');
+            actions.style.display = 'none';
+
+            html2pdf().set(opt).from(element).save().then(() => {
+                actions.style.display = 'flex';
+            });
+        }
+
+        // ==========================================
+        // 8. 自定義製程邏輯
+        // ==========================================
+        const customHazardTypes = [
+            { name: "被夾被捲", s: "S4" },
+            { name: "墜落滾落", s: "S4" },
+            { name: "被刺、割、擦傷", s: "S4" },
+            { name: "跌倒", s: "S4" },
+            { name: "物體倒塌崩塌", s: "S4" },
+            { name: "感電", s: "S4" },
+            { name: "火災", s: "S4" },
+            { name: "爆炸", s: "S4" },
+            { name: "有害物接觸", s: "S4" },
+            { name: "物體飛落", s: "S3" },
+            { name: "被撞", s: "S3" },
+            { name: "不當動作", s: "S3" },
+            { name: "高低溫接觸", s: "S3" },
+            { name: "其他類別風險", s: "S3" },
+            { name: "衝撞", s: "S3" },
+            { name: "溺水", s: "S3" },
+            { name: "踩踏", s: "S2" },
+            { name: "物體破裂", s: "S2" },
+            { name: "職業病", s: "S3" }
+        ];
+
+        function openCustomTaskModal(editTaskId = null) {
+            const listDiv = document.getElementById('custom-hazard-list');
+            listDiv.innerHTML = '';
+            let existingTask = null;
+
+            if (editTaskId && typeof editTaskId === 'string') {
+                existingTask = hazardLibrary.find(t => t.id === editTaskId);
+                document.getElementById('custom-task-name').value = existingTask.taskName;
+                document.getElementById('custom-task-modal').setAttribute('data-edit-id', editTaskId);
+                document.querySelector('#custom-task-modal .report-title-bar').textContent = "重新調整自定義製程";
+            } else {
+                document.getElementById('custom-task-name').value = '';
+                document.getElementById('custom-task-modal').removeAttribute('data-edit-id');
+                document.querySelector('#custom-task-modal .report-title-bar').textContent = "新增自定義製程";
+            }
+
+            customHazardTypes.forEach((h, i) => {
+                let isChecked = false;
+                if (existingTask) {
+                    isChecked = existingTask.hazardGroups.some(g => g.groupName === h.name);
+                }
+                listDiv.innerHTML += `
+                    <label>
+                        <input type="checkbox" value="${i}" class="custom-hazard-checkbox" ${isChecked ? 'checked' : ''}>
+                        ${h.name} (${h.s})
+                    </label>
+                `;
+            });
+            document.getElementById('custom-task-modal').style.display = 'flex';
+        }
+
+        function closeCustomTaskModal() {
+            document.getElementById('custom-task-modal').style.display = 'none';
+        }
+
+        function createCustomTask() {
+            const taskName = document.getElementById('custom-task-name').value.trim();
+            if (!taskName) {
+                alert('請輸入製程名稱');
+                return;
+            }
+            const checkboxes = document.querySelectorAll('.custom-hazard-checkbox:checked');
+            if (checkboxes.length === 0) {
+                alert('請至少選擇一種危害類型');
+                return;
+            }
+
+            const selectedHazards = Array.from(checkboxes).map(cb => customHazardTypes[cb.value]);
+            const editTaskId = document.getElementById('custom-task-modal').getAttribute('data-edit-id');
+
+            if (editTaskId) {
+                const task = hazardLibrary.find(t => t.id === editTaskId);
+                task.taskName = taskName;
+
+                const newHazardGroups = [];
+                const newUserSelections = {};
+
+                selectedHazards.forEach((h, newIdx) => {
+                    const existingGroupIdx = task.hazardGroups.findIndex(g => g.groupName === h.name);
+
+                    if (existingGroupIdx !== -1) {
+                        newHazardGroups.push(task.hazardGroups[existingGroupIdx]);
+                        newUserSelections[`${editTaskId}_${newIdx}`] = userSelections[`${editTaskId}_${existingGroupIdx}`];
+                    } else {
+                        newHazardGroups.push({
+                            groupName: h.name,
+                            severitylevel: `${h.s} : ${h.name}`,
+                            hazardItems: [],
+                            AvoidItems: []
+                        });
+                        newUserSelections[`${editTaskId}_${newIdx}`] = { hazards: [], avoids: [], customHazards: [], customAvoids: [], isManual: false, manualS: 'S4', manualP: 'P4' };
+                    }
+                });
+
+                // Clear old selections
+                Object.keys(userSelections).forEach(k => {
+                    if (k.startsWith(`${editTaskId}_`)) {
+                        delete userSelections[k];
+                    }
+                });
+                Object.assign(userSelections, newUserSelections);
+
+                task.hazardGroups = newHazardGroups;
+
+                closeCustomTaskModal();
+                renderSidebar();
+                renderAssessment(editTaskId);
+
+            } else {
+                const newTaskId = `custom_${Date.now()}`;
+                const newTask = {
+                    id: newTaskId,
+                    category: "自定義製程",
+                    taskName: taskName,
+                    hazardGroups: selectedHazards.map(h => ({
+                        groupName: h.name,
+                        severitylevel: `${h.s} : ${h.name}`,
+                        hazardItems: [],
+                        AvoidItems: []
+                    }))
+                };
+
+                hazardLibrary.push(newTask);
+                addTaskToProject(newTaskId);
+
+                closeCustomTaskModal();
+                updateProjectCount();
+                renderSidebar();
+                switchTab('assessment-view');
+                renderAssessment(newTaskId);
+            }
+        }
+    </script>
+</body>
+
+</html>

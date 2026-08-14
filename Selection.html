@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>風險評估系統 - 選擇行業</title>
+    <link rel="stylesheet" href="theme.css">
+    <style>
+        body {
+            padding: 36px 20px 60px;
+        }
+
+        .page {
+            max-width: 1060px;
+            margin: 0 auto;
+        }
+
+        .page-head {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 28px;
+        }
+
+        .page-head h1 {
+            flex-grow: 1;
+            margin: 0;
+            font-size: 26px;
+            font-weight: 700;
+            text-align: center;
+            color: var(--brand-800);
+        }
+
+        /* 讓標題在左側返回鍵存在時仍維持視覺置中 */
+        .page-head__spacer {
+            width: 148px;
+            flex-shrink: 0;
+        }
+
+        .sheet {
+            padding: 30px 32px 36px;
+        }
+
+        .sheet-divider {
+            margin: 34px 0 30px;
+            border: none;
+            border-top: 1px solid var(--line);
+        }
+
+        .subsection+.subsection {
+            margin-top: 26px;
+        }
+
+        .subsection__title {
+            margin: 0;
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--brand-700);
+        }
+
+        .subsection__hint {
+            margin: 5px 0 12px;
+            font-size: 13px;
+            line-height: 1.7;
+            color: var(--muted);
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(268px, 1fr));
+            gap: 18px;
+            padding: 20px;
+            border: 1px solid var(--line);
+            border-radius: var(--r-md);
+            background: var(--surface-2);
+        }
+
+        .industry-card {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            min-height: 138px;
+            padding: 22px 20px;
+            border: 1px solid var(--line);
+            border-radius: var(--r-md);
+            background: var(--surface);
+            text-align: center;
+            cursor: pointer;
+            transition: border-color .2s, box-shadow .2s, transform .2s;
+        }
+
+        .industry-card:hover {
+            border-color: var(--brand-600);
+            box-shadow: var(--sh-2);
+            transform: translateY(-3px);
+        }
+
+        .industry-card h3 {
+            margin: 0;
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--brand-700);
+        }
+
+        .industry-card p {
+            margin: 0;
+            font-size: 13px;
+            line-height: 1.7;
+            color: var(--muted);
+        }
+
+        .custom-hint {
+            margin: 0 0 26px;
+            font-size: 15px;
+            line-height: 1.8;
+            color: var(--ink-2);
+        }
+
+        .grid-state {
+            grid-column: 1 / -1;
+            padding: 28px 0;
+            text-align: center;
+            color: var(--muted);
+        }
+
+        .grid-state--error {
+            color: var(--danger);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="page">
+        <div class="page-head">
+            <button class="t-btn t-btn--outline" onclick="location.href='index.html'">← 返回基本資料</button>
+            <h1>職安衛危害辨識評估系統</h1>
+            <div class="page-head__spacer"></div>
+        </div>
+
+        <div class="t-panel sheet">
+            <h2 class="t-section-title">1. 選擇行業別模板</h2>
+            <div id="sector-list">
+                <div class="grid-state">讀取資料中...</div>
+            </div>
+
+            <hr class="sheet-divider">
+
+            <h2 class="t-section-title">2. 自行組裝製程（不限行業）</h2>
+            <p class="custom-hint">進入資料庫後，可依需求自由跨行業挑選與組合製程。</p>
+            <div style="text-align: center;">
+                <button class="t-btn t-btn--primary t-btn--pill t-btn--lg" onclick="startCustom()">開始執行風險評估 →</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 大類別區塊由 industrySectors.json 決定；各行業歸屬由 industryMapping.json 的 sector 欄位決定。
+        const DEFAULT_SECTOR = '製造業';
+
+        Promise.all([
+            fetch('industrySectors.json').then(res => res.json()),
+            fetch('industryMapping.json').then(res => res.json()),
+            fetch('tasksLibrary.json').then(res => res.json())
+        ])
+        .then(([sectors, mappings, library]) => {
+            const combinedData = mappings.map(m => ({
+                ...m,
+                ...library[m.taskId]
+            }));
+            renderIndustrySections(sectors, combinedData);
+        })
+        .catch(err => {
+            console.error("錯誤:", err);
+            document.getElementById('sector-list').innerHTML = '<div class="grid-state grid-state--error">無法讀取資料檔案，請確認 industrySectors.json、industryMapping.json 與 tasksLibrary.json 狀態。</div>';
+        });
+
+        function resolveIndustrySector(industryName, data) {
+            const sectors = [...new Set(
+                data.filter(i => i.Industry === industryName).map(i => i.sector).filter(Boolean)
+            )];
+            if (sectors.length > 1) {
+                console.warn(`行業「${industryName}」的 sector 不一致：${sectors.join('、')}，採用「${sectors[0]}」`);
+            }
+            return sectors[0] || DEFAULT_SECTOR;
+        }
+
+        function renderIndustrySections(sectors, data) {
+            const host = document.getElementById('sector-list');
+            host.innerHTML = '';
+
+            const sortedSectors = [...sectors].sort((a, b) => (a.order || 0) - (b.order || 0));
+            const industries = [...new Set(data.map(item => item.Industry).filter(Boolean))];
+            const industriesBySector = {};
+
+            industries.forEach(ind => {
+                const sectorId = resolveIndustrySector(ind, data);
+                if (!industriesBySector[sectorId]) industriesBySector[sectorId] = [];
+                industriesBySector[sectorId].push(ind);
+            });
+
+            const knownSectorIds = new Set(sortedSectors.map(s => s.id));
+            Object.keys(industriesBySector).forEach(sectorId => {
+                if (!knownSectorIds.has(sectorId)) {
+                    console.warn(`未知大類別「${sectorId}」，相關行業將不顯示。請更新 industrySectors.json。`);
+                }
+            });
+
+            sortedSectors.forEach(sector => {
+                const members = industriesBySector[sector.id] || [];
+                if (members.length === 0) return;
+
+                const section = document.createElement('section');
+                section.className = 'subsection';
+                section.innerHTML = `
+                    <h3 class="subsection__title">${sector.title}</h3>
+                    <p class="subsection__hint">${sector.hint || ''}</p>
+                    <div class="grid-container"></div>
+                `;
+
+                const grid = section.querySelector('.grid-container');
+                members.forEach(ind => grid.appendChild(createIndustryCard(ind, data)));
+                host.appendChild(section);
+            });
+        }
+
+        function createIndustryCard(industryName, data) {
+            const rows = data.filter(i => i.Industry === industryName);
+            const taskPreview = rows.map(i => i.taskName).slice(0, 3).join('、');
+
+            const card = document.createElement('div');
+            card.className = 'industry-card';
+            card.innerHTML = `<h3>${industryName}</h3><p>包含：${taskPreview} 等...</p>`;
+            card.onclick = () => startAssessment([...new Set(rows.map(i => i.taskId).filter(Boolean))], industryName);
+            return card;
+        }
+
+        // 自選製程點擊事件：傳遞空陣列與標題
+        function startCustom() {
+            startAssessment([], '自選製程');
+        }
+
+        // 跳轉核心邏輯
+        function startAssessment(idArray, industryName) {
+            sessionStorage.setItem('initTasks', JSON.stringify(idArray));
+            sessionStorage.setItem('industryName', industryName);
+            window.location.href = 'New.html';
+        }
+    </script>
+
+</body>
+
+</html>

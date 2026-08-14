@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>線上風險評估精靈</title>
+    <link rel="stylesheet" href="theme.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 0 20px 60px;
+        }
+
+        header {
+            width: 100%;
+            max-width: 960px;
+            padding: 44px 0 26px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--brand-800);
+        }
+
+        header p {
+            margin: 8px 0 0;
+            font-size: 15px;
+            color: var(--muted);
+        }
+
+        .card {
+            width: 100%;
+            max-width: 960px;
+            padding: 36px 40px 40px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px 28px;
+            margin-top: 28px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 9px;
+        }
+
+        .form-group label {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--ink-2);
+        }
+
+        .input-with-btn {
+            display: flex;
+            gap: 10px;
+        }
+
+        select.t-input {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%236f8a8c' width='20' height='20'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 12px center;
+            padding-right: 40px;
+        }
+
+        .full-width {
+            grid-column: span 2;
+        }
+
+        .footer-actions {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 38px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>線上風險評估精靈</h1>
+        <p>中小企業安全衛生資訊網</p>
+    </header>
+
+    <div class="t-panel card">
+        <h2 class="t-section-title">基本資料</h2>
+
+        <div class="t-note">
+            <span>ℹ️</span>
+            <span>請輸入公司統一編號，系統將自動帶入行業資料以縮短前置作業時間。</span>
+        </div>
+
+        <div class="form-grid">
+            <div class="form-group">
+                <label for="ubn">統一編號</label>
+                <div class="input-with-btn">
+                    <input class="t-input" type="text" id="ubn" placeholder="例如：31445632" oninput="checkForm()">
+                    <button class="t-btn t-btn--primary" onclick="mockQuery()">🔍 查詢</button>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="companyName">公司名稱</label>
+                <input class="t-input" type="text" id="companyName" placeholder="例如：範例製造股份有限公司" oninput="checkForm()">
+            </div>
+
+            <div class="form-group full-width">
+                <label for="industry">行業別</label>
+                <select class="t-input" id="industry" onchange="checkForm()">
+                    <option value="" disabled selected>請選擇行業別...</option>
+                    <option value="農、林、漁、牧業">農、林、漁、牧業</option>
+                    <option value="礦業及土石採取業">礦業及土石採取業</option>
+                    <option value="製造業">製造業</option>
+                    <option value="電力及燃氣供應業">電力及燃氣供應業</option>
+                    <option value="用水供應及污染整治業">用水供應及污染整治業</option>
+                    <option value="營建工程業">營建工程業</option>
+                    <option value="批發及零售業">批發及零售業</option>
+                    <option value="運輸及倉儲業">運輸及倉儲業</option>
+                    <option value="住宿及餐飲業">住宿及餐飲業</option>
+                    <option value="出版、影音製作、傳播及資通訊服務業">出版、影音製作、傳播及資通訊服務業</option>
+                    <option value="金融及保險業">金融及保險業</option>
+                    <option value="不動產業">不動產業</option>
+                    <option value="專業、科學及技術服務業">專業、科學及技術服務業</option>
+                    <option value="支援服務業">支援服務業</option>
+                    <option value="公共行政及國防；強制性社會安全">公共行政及國防；強制性社會安全</option>
+                    <option value="教育業">教育業</option>
+                    <option value="醫療保健及社會工作服務業">醫療保健及社會工作服務業</option>
+                    <option value="藝術、娛樂及休閒服務業">藝術、娛樂及休閒服務業</option>
+                    <option value="其他服務業">其他服務業</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="footer-actions">
+            <button class="t-btn t-btn--primary t-btn--lg" id="btnNext" disabled onclick="nextStep()">下一步 →</button>
+        </div>
+    </div>
+
+    <script>
+        function checkForm() {
+            const ubn = document.getElementById('ubn').value.trim();
+            const companyName = document.getElementById('companyName').value.trim();
+            const industry = document.getElementById('industry').value;
+
+            const btn = document.getElementById('btnNext');
+            btn.disabled = !(ubn && companyName && industry);
+        }
+
+        function mockQuery() {
+            const ubn = document.getElementById('ubn').value.trim();
+            if (ubn === '31445632') {
+                document.getElementById('companyName').value = '範例製造股份有限公司';
+                document.getElementById('industry').value = '製造業';
+                checkForm();
+            } else if (ubn) {
+                alert('查無資料，請手動輸入');
+            }
+        }
+
+        function nextStep() {
+            const data = {
+                companyUBN: document.getElementById('ubn').value.trim(),
+                companyName: document.getElementById('companyName').value.trim(),
+                companyIndustry: document.getElementById('industry').value
+            };
+
+            sessionStorage.setItem('companyInfo', JSON.stringify(data));
+            window.location.href = 'Selection.html';
+        }
+
+        // 初始化檢查
+        window.onload = () => {
+            const saved = sessionStorage.getItem('companyInfo');
+            if (saved) {
+                const data = JSON.parse(saved);
+                document.getElementById('ubn').value = data.companyUBN || '';
+                document.getElementById('companyName').value = data.companyName || '';
+                document.getElementById('industry').value = data.companyIndustry || '';
+                checkForm();
+            }
+        }
+    </script>
+</body>
+
+</html>
