@@ -2259,5 +2259,887 @@
     "category": "景觀與公設工種",
     "taskId": "高空作業車作業",
     "id": "CY-049"
+  },
+  {
+    "id": "I-021",
+    "Industry": "醃製食品製造業",
+    "sector": "製造業",
+    "category": "辦公作業",
+    "taskId": "文書辦公作業"
+  },
+  {
+    "id": "I-022",
+    "Industry": "醃製食品製造業",
+    "sector": "製造業",
+    "category": "辦公作業",
+    "taskId": "行政文書檔案整理作業"
+  },
+  {
+    "id": "I-023",
+    "Industry": "醃製食品製造業",
+    "sector": "製造業",
+    "category": "辦公作業",
+    "taskId": "辦公室電腦文書作業"
+  },
+  {
+    "id": "I-024",
+    "Industry": "醃製食品製造業",
+    "sector": "製造業",
+    "category": "辦公作業",
+    "taskId": "行政文書檔案歸檔銷毀作業"
+  },
+  {
+    "id": "I-025",
+    "Industry": "醃製食品製造業",
+    "sector": "製造業",
+    "category": "辦公作業",
+    "taskId": "辦公區域環境清潔作業"
+  },
+  {
+    "id": "I-026",
+    "Industry": "醃製食品製造業",
+    "sector": "製造業",
+    "category": "辦公作業",
+    "taskId": "辦公區域燈具更換作業"
+  },
+  {
+    "id": "I-027",
+    "Industry": "醃製食品製造業",
+    "sector": "製造業",
+    "category": "辦公作業",
+    "taskId": "研討會場地佈置作業"
+  },
+  {
+    "id": "I-028",
+    "Industry": "食品製造業",
+    "sector": "製造業",
+    "category": "辦公作業",
+    "taskId": "文書辦公作業"
+  },
+  {
+    "id": "I-029",
+    "Industry": "食品製造業",
+    "sector": "製造業",
+    "category": "辦公作業",
+    "taskId": "行政文書檔案整理作業"
+  },
+  {
+    "id": "I-030",
+    "Industry": "食品製造業",
+    "sector": "製造業",
+    "category": "辦公作業",
+    "taskId": "辦公室電腦文書作業"
+  },
+  {
+    "id": "I-031",
+    "Industry": "食品製造業",
+    "sector": "製造業",
+    "category": "辦公作業",
+    "taskId": "行政文書檔案歸檔銷毀作業"
+  },
+  {
+    "id": "I-032",
+    "Industry": "食品製造業",
+    "sector": "製造業",
+    "category": "辦公作業",
+    "taskId": "辦公區域環境清潔作業"
+  },
+  {
+    "id": "I-033",
+    "Industry": "食品製造業",
+    "sector": "製造業",
+    "category": "辦公作業",
+    "taskId": "辦公區域燈具更換作業"
+  },
+  {
+    "id": "I-034",
+    "Industry": "食品製造業",
+    "sector": "製造業",
+    "category": "辦公作業",
+    "taskId": "研討會場地佈置作業"
+  },
+  {
+    "id": "I-035",
+    "Industry": "木竹製品及非金屬家具製造業",
+    "sector": "製造業",
+    "category": "辦公作業",
+    "taskId": "文書辦公作業"
+  },
+  {
+    "id": "I-036",
+    "Industry": "木竹製品及非金屬家具製造業",
+    "sector": "製造業",
+    "category": "辦公作業",
+    "taskId": "行政文書檔案整理作業"
+  },
+  {
+    "id": "I-037",
+    "Industry": "木竹製品及非金屬家具製造業",
+    "sector": "製造業",
+    "category": "辦公作業",
+    "taskId": "辦公室電腦文書作業"
+  },
+  {
+    "id": "I-038",
+    "Industry": "木竹製品及非金屬家具製造業",
+    "sector": "製造業",
+    "category": "辦公作業",
+    "taskId": "行政文書檔案歸檔銷毀作業"
+  },
+  {
+    "id": "I-039",
+    "Industry": "木竹製品及非金屬家具製造業",
+    "sector": "製造業",
+    "category": "辦公作業",
+    "taskId": "辦公區域環境清潔作業"
+  },
+  {
+    "id": "I-040",
+    "Industry": "木竹製品及非金屬家具製造業",
+    "sector": "製造業",
+    "category": "辦公作業",
+    "taskId": "辦公區域燈具更換作業"
+  },
+  {
+    "id": "I-041",
+    "Industry": "木竹製品及非金屬家具製造業",
+    "sector": "製造業",
+    "category": "辦公作業",
+    "taskId": "研討會場地佈置作業"
+  },
+  {
+    "id": "I-042",
+    "Industry": "化學品製造業",
+    "sector": "製造業",
+    "category": "辦公作業",
+    "taskId": "文書辦公作業"
+  },
+  {
+    "id": "I-043",
+    "Industry": "化學品製造業",
+    "sector": "製造業",
+    "category": "辦公作業",
+    "taskId": "行政文書檔案整理作業"
+  },
+  {
+    "id": "I-044",
+    "Industry": "化學品製造業",
+    "sector": "製造業",
+    "category": "辦公作業",
+    "taskId": "辦公室電腦文書作業"
+  },
+  {
+    "id": "I-045",
+    "Industry": "化學品製造業",
+    "sector": "製造業",
+    "category": "辦公作業",
+    "taskId": "行政文書檔案歸檔銷毀作業"
+  },
+  {
+    "id": "I-046",
+    "Industry": "化學品製造業",
+    "sector": "製造業",
+    "category": "辦公作業",
+    "taskId": "辦公區域環境清潔作業"
+  },
+  {
+    "id": "I-047",
+    "Industry": "化學品製造業",
+    "sector": "製造業",
+    "category": "辦公作業",
+    "taskId": "辦公區域燈具更換作業"
+  },
+  {
+    "id": "I-048",
+    "Industry": "化學品製造業",
+    "sector": "製造業",
+    "category": "辦公作業",
+    "taskId": "研討會場地佈置作業"
+  },
+  {
+    "id": "I-049",
+    "Industry": "金屬製品製造業(鐵管零件加工)",
+    "sector": "製造業",
+    "category": "辦公作業",
+    "taskId": "文書辦公作業"
+  },
+  {
+    "id": "I-050",
+    "Industry": "金屬製品製造業(鐵管零件加工)",
+    "sector": "製造業",
+    "category": "辦公作業",
+    "taskId": "行政文書檔案整理作業"
+  },
+  {
+    "id": "I-051",
+    "Industry": "金屬製品製造業(鐵管零件加工)",
+    "sector": "製造業",
+    "category": "辦公作業",
+    "taskId": "辦公室電腦文書作業"
+  },
+  {
+    "id": "I-052",
+    "Industry": "金屬製品製造業(鐵管零件加工)",
+    "sector": "製造業",
+    "category": "辦公作業",
+    "taskId": "行政文書檔案歸檔銷毀作業"
+  },
+  {
+    "id": "I-053",
+    "Industry": "金屬製品製造業(鐵管零件加工)",
+    "sector": "製造業",
+    "category": "辦公作業",
+    "taskId": "辦公區域環境清潔作業"
+  },
+  {
+    "id": "I-054",
+    "Industry": "金屬製品製造業(鐵管零件加工)",
+    "sector": "製造業",
+    "category": "辦公作業",
+    "taskId": "辦公區域燈具更換作業"
+  },
+  {
+    "id": "I-055",
+    "Industry": "金屬製品製造業(鐵管零件加工)",
+    "sector": "製造業",
+    "category": "辦公作業",
+    "taskId": "研討會場地佈置作業"
+  },
+  {
+    "id": "I-056",
+    "Industry": "塑膠製品製造業",
+    "sector": "製造業",
+    "category": "辦公作業",
+    "taskId": "文書辦公作業"
+  },
+  {
+    "id": "I-057",
+    "Industry": "塑膠製品製造業",
+    "sector": "製造業",
+    "category": "辦公作業",
+    "taskId": "行政文書檔案整理作業"
+  },
+  {
+    "id": "I-058",
+    "Industry": "塑膠製品製造業",
+    "sector": "製造業",
+    "category": "辦公作業",
+    "taskId": "辦公室電腦文書作業"
+  },
+  {
+    "id": "I-059",
+    "Industry": "塑膠製品製造業",
+    "sector": "製造業",
+    "category": "辦公作業",
+    "taskId": "行政文書檔案歸檔銷毀作業"
+  },
+  {
+    "id": "I-060",
+    "Industry": "塑膠製品製造業",
+    "sector": "製造業",
+    "category": "辦公作業",
+    "taskId": "辦公區域環境清潔作業"
+  },
+  {
+    "id": "I-061",
+    "Industry": "塑膠製品製造業",
+    "sector": "製造業",
+    "category": "辦公作業",
+    "taskId": "辦公區域燈具更換作業"
+  },
+  {
+    "id": "I-062",
+    "Industry": "塑膠製品製造業",
+    "sector": "製造業",
+    "category": "辦公作業",
+    "taskId": "研討會場地佈置作業"
+  },
+  {
+    "id": "I-063",
+    "Industry": "污染防治設備製造業",
+    "sector": "製造業",
+    "category": "辦公作業",
+    "taskId": "文書辦公作業"
+  },
+  {
+    "id": "I-064",
+    "Industry": "污染防治設備製造業",
+    "sector": "製造業",
+    "category": "辦公作業",
+    "taskId": "行政文書檔案整理作業"
+  },
+  {
+    "id": "I-065",
+    "Industry": "污染防治設備製造業",
+    "sector": "製造業",
+    "category": "辦公作業",
+    "taskId": "辦公室電腦文書作業"
+  },
+  {
+    "id": "I-066",
+    "Industry": "污染防治設備製造業",
+    "sector": "製造業",
+    "category": "辦公作業",
+    "taskId": "行政文書檔案歸檔銷毀作業"
+  },
+  {
+    "id": "I-067",
+    "Industry": "污染防治設備製造業",
+    "sector": "製造業",
+    "category": "辦公作業",
+    "taskId": "辦公區域環境清潔作業"
+  },
+  {
+    "id": "I-068",
+    "Industry": "污染防治設備製造業",
+    "sector": "製造業",
+    "category": "辦公作業",
+    "taskId": "辦公區域燈具更換作業"
+  },
+  {
+    "id": "I-069",
+    "Industry": "污染防治設備製造業",
+    "sector": "製造業",
+    "category": "辦公作業",
+    "taskId": "研討會場地佈置作業"
+  },
+  {
+    "id": "I-070",
+    "Industry": "紙材印刷業",
+    "sector": "製造業",
+    "category": "辦公作業",
+    "taskId": "文書辦公作業"
+  },
+  {
+    "id": "I-071",
+    "Industry": "紙材印刷業",
+    "sector": "製造業",
+    "category": "辦公作業",
+    "taskId": "行政文書檔案整理作業"
+  },
+  {
+    "id": "I-072",
+    "Industry": "紙材印刷業",
+    "sector": "製造業",
+    "category": "辦公作業",
+    "taskId": "辦公室電腦文書作業"
+  },
+  {
+    "id": "I-073",
+    "Industry": "紙材印刷業",
+    "sector": "製造業",
+    "category": "辦公作業",
+    "taskId": "行政文書檔案歸檔銷毀作業"
+  },
+  {
+    "id": "I-074",
+    "Industry": "紙材印刷業",
+    "sector": "製造業",
+    "category": "辦公作業",
+    "taskId": "辦公區域環境清潔作業"
+  },
+  {
+    "id": "I-075",
+    "Industry": "紙材印刷業",
+    "sector": "製造業",
+    "category": "辦公作業",
+    "taskId": "辦公區域燈具更換作業"
+  },
+  {
+    "id": "I-076",
+    "Industry": "紙材印刷業",
+    "sector": "製造業",
+    "category": "辦公作業",
+    "taskId": "研討會場地佈置作業"
+  },
+  {
+    "id": "I-077",
+    "Industry": "紙容器製造業",
+    "sector": "製造業",
+    "category": "辦公作業",
+    "taskId": "文書辦公作業"
+  },
+  {
+    "id": "I-078",
+    "Industry": "紙容器製造業",
+    "sector": "製造業",
+    "category": "辦公作業",
+    "taskId": "行政文書檔案整理作業"
+  },
+  {
+    "id": "I-079",
+    "Industry": "紙容器製造業",
+    "sector": "製造業",
+    "category": "辦公作業",
+    "taskId": "辦公室電腦文書作業"
+  },
+  {
+    "id": "I-080",
+    "Industry": "紙容器製造業",
+    "sector": "製造業",
+    "category": "辦公作業",
+    "taskId": "行政文書檔案歸檔銷毀作業"
+  },
+  {
+    "id": "I-081",
+    "Industry": "紙容器製造業",
+    "sector": "製造業",
+    "category": "辦公作業",
+    "taskId": "辦公區域環境清潔作業"
+  },
+  {
+    "id": "I-082",
+    "Industry": "紙容器製造業",
+    "sector": "製造業",
+    "category": "辦公作業",
+    "taskId": "辦公區域燈具更換作業"
+  },
+  {
+    "id": "I-083",
+    "Industry": "紙容器製造業",
+    "sector": "製造業",
+    "category": "辦公作業",
+    "taskId": "研討會場地佈置作業"
+  },
+  {
+    "id": "I-084",
+    "Industry": "鋼鐵鑄造業",
+    "sector": "製造業",
+    "category": "辦公作業",
+    "taskId": "文書辦公作業"
+  },
+  {
+    "id": "I-085",
+    "Industry": "鋼鐵鑄造業",
+    "sector": "製造業",
+    "category": "辦公作業",
+    "taskId": "行政文書檔案整理作業"
+  },
+  {
+    "id": "I-086",
+    "Industry": "鋼鐵鑄造業",
+    "sector": "製造業",
+    "category": "辦公作業",
+    "taskId": "辦公室電腦文書作業"
+  },
+  {
+    "id": "I-087",
+    "Industry": "鋼鐵鑄造業",
+    "sector": "製造業",
+    "category": "辦公作業",
+    "taskId": "行政文書檔案歸檔銷毀作業"
+  },
+  {
+    "id": "I-088",
+    "Industry": "鋼鐵鑄造業",
+    "sector": "製造業",
+    "category": "辦公作業",
+    "taskId": "辦公區域環境清潔作業"
+  },
+  {
+    "id": "I-089",
+    "Industry": "鋼鐵鑄造業",
+    "sector": "製造業",
+    "category": "辦公作業",
+    "taskId": "辦公區域燈具更換作業"
+  },
+  {
+    "id": "I-090",
+    "Industry": "鋼鐵鑄造業",
+    "sector": "製造業",
+    "category": "辦公作業",
+    "taskId": "研討會場地佈置作業"
+  },
+  {
+    "id": "CY-050",
+    "Industry": "假設工程與吊運工種",
+    "sector": "營造業",
+    "category": "辦公作業",
+    "taskId": "文書辦公作業"
+  },
+  {
+    "id": "CY-051",
+    "Industry": "假設工程與吊運工種",
+    "sector": "營造業",
+    "category": "辦公作業",
+    "taskId": "行政文書檔案整理作業"
+  },
+  {
+    "id": "CY-052",
+    "Industry": "假設工程與吊運工種",
+    "sector": "營造業",
+    "category": "辦公作業",
+    "taskId": "辦公室電腦文書作業"
+  },
+  {
+    "id": "CY-053",
+    "Industry": "假設工程與吊運工種",
+    "sector": "營造業",
+    "category": "辦公作業",
+    "taskId": "行政文書檔案歸檔銷毀作業"
+  },
+  {
+    "id": "CY-054",
+    "Industry": "假設工程與吊運工種",
+    "sector": "營造業",
+    "category": "辦公作業",
+    "taskId": "辦公區域環境清潔作業"
+  },
+  {
+    "id": "CY-055",
+    "Industry": "假設工程與吊運工種",
+    "sector": "營造業",
+    "category": "辦公作業",
+    "taskId": "辦公區域燈具更換作業"
+  },
+  {
+    "id": "CY-056",
+    "Industry": "假設工程與吊運工種",
+    "sector": "營造業",
+    "category": "辦公作業",
+    "taskId": "研討會場地佈置作業"
+  },
+  {
+    "id": "CY-057",
+    "Industry": "共用支援與收尾工種",
+    "sector": "營造業",
+    "category": "辦公作業",
+    "taskId": "文書辦公作業"
+  },
+  {
+    "id": "CY-058",
+    "Industry": "共用支援與收尾工種",
+    "sector": "營造業",
+    "category": "辦公作業",
+    "taskId": "行政文書檔案整理作業"
+  },
+  {
+    "id": "CY-059",
+    "Industry": "共用支援與收尾工種",
+    "sector": "營造業",
+    "category": "辦公作業",
+    "taskId": "辦公室電腦文書作業"
+  },
+  {
+    "id": "CY-060",
+    "Industry": "共用支援與收尾工種",
+    "sector": "營造業",
+    "category": "辦公作業",
+    "taskId": "行政文書檔案歸檔銷毀作業"
+  },
+  {
+    "id": "CY-061",
+    "Industry": "共用支援與收尾工種",
+    "sector": "營造業",
+    "category": "辦公作業",
+    "taskId": "辦公區域環境清潔作業"
+  },
+  {
+    "id": "CY-062",
+    "Industry": "共用支援與收尾工種",
+    "sector": "營造業",
+    "category": "辦公作業",
+    "taskId": "辦公區域燈具更換作業"
+  },
+  {
+    "id": "CY-063",
+    "Industry": "共用支援與收尾工種",
+    "sector": "營造業",
+    "category": "辦公作業",
+    "taskId": "研討會場地佈置作業"
+  },
+  {
+    "id": "CY-064",
+    "Industry": "外牆與高處防護工種",
+    "sector": "營造業",
+    "category": "辦公作業",
+    "taskId": "文書辦公作業"
+  },
+  {
+    "id": "CY-065",
+    "Industry": "外牆與高處防護工種",
+    "sector": "營造業",
+    "category": "辦公作業",
+    "taskId": "行政文書檔案整理作業"
+  },
+  {
+    "id": "CY-066",
+    "Industry": "外牆與高處防護工種",
+    "sector": "營造業",
+    "category": "辦公作業",
+    "taskId": "辦公室電腦文書作業"
+  },
+  {
+    "id": "CY-067",
+    "Industry": "外牆與高處防護工種",
+    "sector": "營造業",
+    "category": "辦公作業",
+    "taskId": "行政文書檔案歸檔銷毀作業"
+  },
+  {
+    "id": "CY-068",
+    "Industry": "外牆與高處防護工種",
+    "sector": "營造業",
+    "category": "辦公作業",
+    "taskId": "辦公區域環境清潔作業"
+  },
+  {
+    "id": "CY-069",
+    "Industry": "外牆與高處防護工種",
+    "sector": "營造業",
+    "category": "辦公作業",
+    "taskId": "辦公區域燈具更換作業"
+  },
+  {
+    "id": "CY-070",
+    "Industry": "外牆與高處防護工種",
+    "sector": "營造業",
+    "category": "辦公作業",
+    "taskId": "研討會場地佈置作業"
+  },
+  {
+    "id": "CY-071",
+    "Industry": "室內裝修與包護工種",
+    "sector": "營造業",
+    "category": "辦公作業",
+    "taskId": "文書辦公作業"
+  },
+  {
+    "id": "CY-072",
+    "Industry": "室內裝修與包護工種",
+    "sector": "營造業",
+    "category": "辦公作業",
+    "taskId": "行政文書檔案整理作業"
+  },
+  {
+    "id": "CY-073",
+    "Industry": "室內裝修與包護工種",
+    "sector": "營造業",
+    "category": "辦公作業",
+    "taskId": "辦公室電腦文書作業"
+  },
+  {
+    "id": "CY-074",
+    "Industry": "室內裝修與包護工種",
+    "sector": "營造業",
+    "category": "辦公作業",
+    "taskId": "行政文書檔案歸檔銷毀作業"
+  },
+  {
+    "id": "CY-075",
+    "Industry": "室內裝修與包護工種",
+    "sector": "營造業",
+    "category": "辦公作業",
+    "taskId": "辦公區域環境清潔作業"
+  },
+  {
+    "id": "CY-076",
+    "Industry": "室內裝修與包護工種",
+    "sector": "營造業",
+    "category": "辦公作業",
+    "taskId": "辦公區域燈具更換作業"
+  },
+  {
+    "id": "CY-077",
+    "Industry": "室內裝修與包護工種",
+    "sector": "營造業",
+    "category": "辦公作業",
+    "taskId": "研討會場地佈置作業"
+  },
+  {
+    "id": "CY-078",
+    "Industry": "景觀與公設工種",
+    "sector": "營造業",
+    "category": "辦公作業",
+    "taskId": "文書辦公作業"
+  },
+  {
+    "id": "CY-079",
+    "Industry": "景觀與公設工種",
+    "sector": "營造業",
+    "category": "辦公作業",
+    "taskId": "行政文書檔案整理作業"
+  },
+  {
+    "id": "CY-080",
+    "Industry": "景觀與公設工種",
+    "sector": "營造業",
+    "category": "辦公作業",
+    "taskId": "辦公室電腦文書作業"
+  },
+  {
+    "id": "CY-081",
+    "Industry": "景觀與公設工種",
+    "sector": "營造業",
+    "category": "辦公作業",
+    "taskId": "行政文書檔案歸檔銷毀作業"
+  },
+  {
+    "id": "CY-082",
+    "Industry": "景觀與公設工種",
+    "sector": "營造業",
+    "category": "辦公作業",
+    "taskId": "辦公區域環境清潔作業"
+  },
+  {
+    "id": "CY-083",
+    "Industry": "景觀與公設工種",
+    "sector": "營造業",
+    "category": "辦公作業",
+    "taskId": "辦公區域燈具更換作業"
+  },
+  {
+    "id": "CY-084",
+    "Industry": "景觀與公設工種",
+    "sector": "營造業",
+    "category": "辦公作業",
+    "taskId": "研討會場地佈置作業"
+  },
+  {
+    "id": "CY-085",
+    "Industry": "機電與設備工種（MEP）",
+    "sector": "營造業",
+    "category": "辦公作業",
+    "taskId": "文書辦公作業"
+  },
+  {
+    "id": "CY-086",
+    "Industry": "機電與設備工種（MEP）",
+    "sector": "營造業",
+    "category": "辦公作業",
+    "taskId": "行政文書檔案整理作業"
+  },
+  {
+    "id": "CY-087",
+    "Industry": "機電與設備工種（MEP）",
+    "sector": "營造業",
+    "category": "辦公作業",
+    "taskId": "辦公室電腦文書作業"
+  },
+  {
+    "id": "CY-088",
+    "Industry": "機電與設備工種（MEP）",
+    "sector": "營造業",
+    "category": "辦公作業",
+    "taskId": "行政文書檔案歸檔銷毀作業"
+  },
+  {
+    "id": "CY-089",
+    "Industry": "機電與設備工種（MEP）",
+    "sector": "營造業",
+    "category": "辦公作業",
+    "taskId": "辦公區域環境清潔作業"
+  },
+  {
+    "id": "CY-090",
+    "Industry": "機電與設備工種（MEP）",
+    "sector": "營造業",
+    "category": "辦公作業",
+    "taskId": "辦公區域燈具更換作業"
+  },
+  {
+    "id": "CY-091",
+    "Industry": "機電與設備工種（MEP）",
+    "sector": "營造業",
+    "category": "辦公作業",
+    "taskId": "研討會場地佈置作業"
+  },
+  {
+    "id": "CY-092",
+    "Industry": "土方與深基礎工種",
+    "sector": "營造業",
+    "category": "辦公作業",
+    "taskId": "文書辦公作業"
+  },
+  {
+    "id": "CY-093",
+    "Industry": "土方與深基礎工種",
+    "sector": "營造業",
+    "category": "辦公作業",
+    "taskId": "行政文書檔案整理作業"
+  },
+  {
+    "id": "CY-094",
+    "Industry": "土方與深基礎工種",
+    "sector": "營造業",
+    "category": "辦公作業",
+    "taskId": "辦公室電腦文書作業"
+  },
+  {
+    "id": "CY-095",
+    "Industry": "土方與深基礎工種",
+    "sector": "營造業",
+    "category": "辦公作業",
+    "taskId": "行政文書檔案歸檔銷毀作業"
+  },
+  {
+    "id": "CY-096",
+    "Industry": "土方與深基礎工種",
+    "sector": "營造業",
+    "category": "辦公作業",
+    "taskId": "辦公區域環境清潔作業"
+  },
+  {
+    "id": "CY-097",
+    "Industry": "土方與深基礎工種",
+    "sector": "營造業",
+    "category": "辦公作業",
+    "taskId": "辦公區域燈具更換作業"
+  },
+  {
+    "id": "CY-098",
+    "Industry": "土方與深基礎工種",
+    "sector": "營造業",
+    "category": "辦公作業",
+    "taskId": "研討會場地佈置作業"
+  },
+  {
+    "id": "CY-099",
+    "Industry": "主體結構工種",
+    "sector": "營造業",
+    "category": "辦公作業",
+    "taskId": "文書辦公作業"
+  },
+  {
+    "id": "CY-100",
+    "Industry": "主體結構工種",
+    "sector": "營造業",
+    "category": "辦公作業",
+    "taskId": "行政文書檔案整理作業"
+  },
+  {
+    "id": "CY-101",
+    "Industry": "主體結構工種",
+    "sector": "營造業",
+    "category": "辦公作業",
+    "taskId": "辦公室電腦文書作業"
+  },
+  {
+    "id": "CY-102",
+    "Industry": "主體結構工種",
+    "sector": "營造業",
+    "category": "辦公作業",
+    "taskId": "行政文書檔案歸檔銷毀作業"
+  },
+  {
+    "id": "CY-103",
+    "Industry": "主體結構工種",
+    "sector": "營造業",
+    "category": "辦公作業",
+    "taskId": "辦公區域環境清潔作業"
+  },
+  {
+    "id": "CY-104",
+    "Industry": "主體結構工種",
+    "sector": "營造業",
+    "category": "辦公作業",
+    "taskId": "辦公區域燈具更換作業"
+  },
+  {
+    "id": "CY-105",
+    "Industry": "主體結構工種",
+    "sector": "營造業",
+    "category": "辦公作業",
+    "taskId": "研討會場地佈置作業"
   }
 ]
