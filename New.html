@@ -345,6 +345,55 @@
             margin-bottom: 22px;
         }
 
+        .content-head__row {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .group-jump-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            flex: 1;
+            min-width: 180px;
+        }
+
+        .group-jump-tag {
+            display: inline-flex;
+            align-items: center;
+            padding: 6px 12px;
+            border: 1px solid var(--line-strong);
+            border-radius: 999px;
+            background: var(--surface);
+            color: var(--ink-2);
+            font-family: inherit;
+            font-size: 13px;
+            font-weight: 600;
+            line-height: 1.3;
+            cursor: pointer;
+        }
+
+        .group-jump-tag:hover {
+            border-color: var(--brand-600);
+            color: var(--brand-800);
+            background: var(--brand-50);
+        }
+
+        .group-jump-tag.is-core {
+            border: 1.5px solid var(--danger);
+            background: var(--danger-tint);
+            color: var(--danger);
+        }
+
+        .group-jump-tag.is-core:hover {
+            background: #f9d6d2;
+            border-color: var(--danger);
+            color: var(--danger);
+        }
+
         .content-title {
             display: flex;
             align-items: center;
@@ -399,6 +448,7 @@
             border: 1px solid var(--line);
             border-radius: var(--r-lg);
             box-shadow: var(--sh-1);
+            scroll-margin-top: 16px;
         }
 
         .hazard-group-title {
@@ -431,9 +481,10 @@
             display: inline-flex;
             align-items: center;
             padding: 2px 8px;
+            border: 1.5px solid var(--danger);
             border-radius: 999px;
-            background: var(--brand-100);
-            color: var(--brand-800);
+            background: var(--danger-tint);
+            color: var(--danger);
             font-size: 12px;
             font-weight: 700;
         }
@@ -446,7 +497,7 @@
         }
 
         .hazard-card.is-core {
-            border-color: var(--brand-100);
+            border: 1.5px solid var(--danger);
             box-shadow: var(--sh-1);
         }
 
@@ -1223,7 +1274,7 @@
         const RISK_FORM_API = (window.RISK_FORM_API || 'http://localhost:8000').replace(/\/$/, '');
         const STORAGE_KEY = 'toira.assessment.v2';
 
-        const DATA_VER = '20260824a';
+        const DATA_VER = '20260824b';
 
         // 風險矩陣與文字定義
         const riskMatrix = {
@@ -1569,6 +1620,18 @@
             card.classList.toggle('is-collapsed');
         }
 
+        function jumpToGroup(groupIndex) {
+            const card = document.getElementById(`group-${groupIndex}`);
+            if (!card) return;
+            if (card.classList.contains('is-collapsed')) {
+                card.classList.remove('is-collapsed');
+                if (currentActiveTaskId) {
+                    cardFoldState[`${currentActiveTaskId}_${groupIndex}`] = 'open';
+                }
+            }
+            card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
         function formatRiskLabel(value, prefix) {
             const v = String(value || '').replace(/^[SP]/i, '').trim();
             return v ? `${prefix}${v}` : '';
@@ -1818,23 +1881,6 @@
 
             const tid = attrArg(taskId);
             const groups = Array.isArray(task.hazardGroups) ? task.hazardGroups : [];
-
-            let editBtn = '';
-            if (task.category === "自定義製程") {
-                editBtn = `<button class="t-btn t-btn--ghost t-btn--sm" onclick="openCustomTaskModal(${tid})">✏️ 重新調整危害類型</button>`;
-            }
-
-            let html = `
-                <div class="content-head">
-                    <h2 class="content-title">${task.category} &gt; ${task.taskName} ${editBtn}</h2>
-                    ${contentActionsHtml()}
-                </div>
-            `;
-
-            if (task.taskdescribe) {
-                html += `<div class="t-note task-desc">${escapeHtml(task.taskdescribe)}</div>`;
-            }
-
             const displayGroups = groups.map((group, index) => ({ group, index }));
             const hasCore = groups.some(isCoreGroup);
             displayGroups.sort((a, b) => {
@@ -1843,6 +1889,30 @@
                 if (ac !== bc) return ac - bc;
                 return a.index - b.index;
             });
+
+            let editBtn = '';
+            if (task.category === "自定義製程") {
+                editBtn = `<button class="t-btn t-btn--ghost t-btn--sm" onclick="openCustomTaskModal(${tid})">✏️ 重新調整危害類型</button>`;
+            }
+
+            const jumpTags = displayGroups.map(({ group, index }) => {
+                const core = isCoreGroup(group);
+                return `<button type="button" class="group-jump-tag${core ? ' is-core' : ''}" onclick="jumpToGroup(${index})">${escapeHtml(group.groupName)}</button>`;
+            }).join('');
+
+            let html = `
+                <div class="content-head">
+                    <h2 class="content-title">${escapeHtml(task.category)} &gt; ${escapeHtml(task.taskName)} ${editBtn}</h2>
+                    <div class="content-head__row">
+                        <div class="group-jump-tags">${jumpTags}</div>
+                        ${contentActionsHtml()}
+                    </div>
+                </div>
+            `;
+
+            if (task.taskdescribe) {
+                html += `<div class="t-note task-desc">${escapeHtml(task.taskdescribe)}</div>`;
+            }
 
             displayGroups.forEach(({ group, index }) => {
                 const selKey = `${taskId}_${index}`;
