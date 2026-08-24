@@ -366,6 +366,9 @@
 
         .task-desc {
             margin-bottom: 22px;
+            font-size: 15px;
+            line-height: 1.85;
+            color: var(--ink-2);
         }
 
         .empty-state {
@@ -401,12 +404,74 @@
         .hazard-group-title {
             display: flex;
             justify-content: space-between;
-            padding-bottom: 12px;
-            margin-bottom: 4px;
+            align-items: center;
+            gap: 12px;
+            width: 100%;
+            padding: 0 0 12px;
+            margin: 0 0 4px;
+            border: 0;
             border-bottom: 1px solid var(--line);
+            background: transparent;
+            font-family: inherit;
             font-size: 18px;
             font-weight: 700;
             color: var(--brand-800);
+            text-align: left;
+            cursor: pointer;
+        }
+
+        .hazard-group-title__meta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+
+        .core-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 2px 8px;
+            border-radius: 999px;
+            background: var(--brand-100);
+            color: var(--brand-800);
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .core-reason {
+            margin: 0 0 12px;
+            font-size: 13px;
+            line-height: 1.7;
+            color: var(--ink-2);
+        }
+
+        .hazard-card.is-core {
+            border-color: var(--brand-100);
+            box-shadow: var(--sh-1);
+        }
+
+        .hazard-card.is-collapsed .hazard-card__body {
+            display: none;
+        }
+
+        .hazard-card .hazard-group-title .chevron {
+            display: inline-block;
+            color: var(--brand-700);
+            font-size: 20px;
+            line-height: 1;
+            transform: rotate(90deg);
+            transition: transform .18s ease;
+        }
+
+        .hazard-card.is-collapsed .hazard-group-title .chevron {
+            transform: rotate(0deg);
+        }
+
+        .control-lane-title {
+            margin: 16px 0 10px;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--brand-700);
         }
 
         .sub-group-title {
@@ -654,6 +719,18 @@
             margin: 0;
             padding-left: 20px;
             line-height: 1.85;
+        }
+
+        .advice-lane {
+            margin-top: 8px;
+        }
+
+        .advice-lane em {
+            display: block;
+            margin-bottom: 4px;
+            font-style: normal;
+            font-weight: 700;
+            color: var(--brand-700);
         }
 
         /* --------------------------------------------------- 報表 */
@@ -1078,21 +1155,21 @@
                 <div class="report-card">
                     <div class="icon">⚙️</div>
                     <div>
-                        <h4>工程控制</h4>
+                        <h4>工程改善</h4>
                         <p>（依據企業狀況與選擇項目動態生成，此處暫時留空）</p>
                     </div>
                 </div>
                 <div class="report-card">
                     <div class="icon">⚙️</div>
                     <div>
-                        <h4>管理控制</h4>
+                        <h4>行政管理</h4>
                         <p>（依據企業狀況與選擇項目動態生成，此處暫時留空）</p>
                     </div>
                 </div>
                 <div class="report-card card-orange">
                     <div class="icon">📖</div>
                     <div>
-                        <h4>個人防護具</h4>
+                        <h4>個人防護</h4>
                         <p>（依據企業狀況與選擇項目動態生成，此處暫時留空）</p>
                     </div>
                 </div>
@@ -1141,11 +1218,12 @@
         let myProjectTasks = [];
         let currentActiveTaskId = null;
         const userSelections = {};
+        const cardFoldState = {};
         const expandedCategories = new Set();
         const RISK_FORM_API = (window.RISK_FORM_API || 'http://localhost:8000').replace(/\/$/, '');
-        const STORAGE_KEY = 'toira.assessment.v1';
+        const STORAGE_KEY = 'toira.assessment.v2';
 
-        const DATA_VER = '20260814f';
+        const DATA_VER = '20260824a';
 
         // 風險矩陣與文字定義
         const riskMatrix = {
@@ -1221,7 +1299,7 @@
                     mapByTaskId[row.taskId] = row;
                 });
                 hazardLibrary = Object.keys(library).map((taskId) => {
-                    const task = library[taskId] || {};
+                    const task = slimLibraryTask(taskId, library[taskId] || {});
                     const mapped = mapByTaskId[taskId] || {};
                     return {
                         ...mapped,
@@ -1439,6 +1517,58 @@
             return (items || []).filter((item, index) => !selected.has(index) && String(item || '').trim());
         }
 
+        const CONTROL_LANES = ['工程改善', '行政管理', '個人防護'];
+
+        function escapeHtml(value) {
+            return String(value || '')
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;');
+        }
+
+        function controlLane(item) {
+            const m = String(item || '').match(/[（(【]\s*(消除|取代|工程改善|行政管理|管理控制|個人防護具|個人防護)\s*[）)】]\s*$/);
+            const raw = m ? m[1] : '';
+            if (raw === '工程改善' || raw === '消除' || raw === '取代') return '工程改善';
+            if (raw === '個人防護' || raw === '個人防護具') return '個人防護';
+            return '行政管理';
+        }
+
+        function displayControlText(item) {
+            return String(item || '')
+                .replace(/[（(【]\s*管理控制\s*[）)】]\s*$/, '(行政管理)')
+                .replace(/[（(【]\s*個人防護具\s*[）)】]\s*$/, '(個人防護)');
+        }
+
+        function isCoreGroup(group) {
+            return !!(group && group['核心重點'] === true);
+        }
+
+        function slimLibraryTask(taskId, task) {
+            return {
+                taskName: task.taskName || taskId,
+                taskdescribe: String(task.taskdescribe || '').trim(),
+                hazardGroups: (Array.isArray(task.hazardGroups) ? task.hazardGroups : []).map((g) => ({
+                    groupName: g.groupName || '',
+                    severitylevel: g.severitylevel || 'S4',
+                    hazardItems: Array.isArray(g.hazardItems) ? g.hazardItems : (Array.isArray(g.hazarditems) ? g.hazarditems : []),
+                    AvoidItems: Array.isArray(g.AvoidItems) ? g.AvoidItems : [],
+                    核心重點: g['核心重點'] === true,
+                    優先評估: g['優先評估'] === true,
+                    核心理由: String(g['核心理由'] || '').trim(),
+                })),
+            };
+        }
+
+        function toggleHazardCard(groupIndex) {
+            const card = document.getElementById(`group-${groupIndex}`);
+            if (!card || !currentActiveTaskId) return;
+            const willOpen = card.classList.contains('is-collapsed');
+            cardFoldState[`${currentActiveTaskId}_${groupIndex}`] = willOpen ? 'open' : 'closed';
+            card.classList.toggle('is-collapsed');
+        }
+
         function formatRiskLabel(value, prefix) {
             const v = String(value || '').replace(/^[SP]/i, '').trim();
             return v ? `${prefix}${v}` : '';
@@ -1460,8 +1590,10 @@
                 const hazards = (state.hazards || []).map(i => (group.hazardItems || [])[i]).filter(Boolean)
                     .concat(state.customHazards || []);
                 const existingControls = (state.avoids || []).map(i => (group.AvoidItems || [])[i]).filter(Boolean)
-                    .concat(state.customAvoids || []);
-                const additionalControls = getAdditionalControlAdvice(group.AvoidItems || [], state.avoids);
+                    .concat(state.customAvoids || [])
+                    .map(displayControlText);
+                const additionalControls = getAdditionalControlAdvice(group.AvoidItems || [], state.avoids)
+                    .map(displayControlText);
 
                 const baseS = group.severitylevel.split(':')[0].trim();
                 let cur = computeRiskValues(
@@ -1700,10 +1832,19 @@
             `;
 
             if (task.taskdescribe) {
-                html += `<div class="t-note task-desc">${task.taskdescribe}</div>`;
+                html += `<div class="t-note task-desc">${escapeHtml(task.taskdescribe)}</div>`;
             }
 
-            groups.forEach((group, index) => {
+            const displayGroups = groups.map((group, index) => ({ group, index }));
+            const hasCore = groups.some(isCoreGroup);
+            displayGroups.sort((a, b) => {
+                const ac = isCoreGroup(a.group) ? 0 : 1;
+                const bc = isCoreGroup(b.group) ? 0 : 1;
+                if (ac !== bc) return ac - bc;
+                return a.index - b.index;
+            });
+
+            displayGroups.forEach(({ group, index }) => {
                 const selKey = `${taskId}_${index}`;
                 const state = userSelections[selKey] || {
                     hazards: [], avoids: [], customHazards: [], customAvoids: [],
@@ -1719,32 +1860,43 @@
                 }
                 const hazardItems = Array.isArray(group.hazardItems) ? group.hazardItems : [];
                 const avoidItems = Array.isArray(group.AvoidItems) ? group.AvoidItems : [];
+                const core = isCoreGroup(group);
+                const reason = String(group['核心理由'] || '').trim();
+                const foldKey = `${taskId}_${index}`;
+                const folded = (cardFoldState[foldKey] || ((core || !hasCore) ? 'open' : 'closed')) === 'closed';
+                const cardClass = `hazard-card${core ? ' is-core' : ''}${folded ? ' is-collapsed' : ''}`;
 
                 html += `
-                    <div class="hazard-card" id="group-${index}">
-                        <div class="hazard-group-title"><span>${group.groupName}</span></div>
+                    <div class="${cardClass}" id="group-${index}">
+                        <button type="button" class="hazard-group-title" onclick="toggleHazardCard(${index})">
+                            <span>${escapeHtml(group.groupName)}</span>
+                            <span class="hazard-group-title__meta">
+                                ${core ? '<span class="core-badge">核心重點</span>' : ''}
+                                <span class="chevron">›</span>
+                            </span>
+                        </button>
+                        ${core && reason ? `<p class="core-reason">${escapeHtml(reason)}</p>` : ''}
+                        <div class="hazard-card__body">
+                            ${!core && reason ? `<p class="core-reason">${escapeHtml(reason)}</p>` : ''}
 
                         <div class="sub-group-title">⚠️ 存在的危害風險</div>
                         <div class="hazard-list">
                 `;
 
-                // 1. 渲染：JSON 預設危害項目
                 hazardItems.forEach((item, idx) => {
                     const isSelected = state.hazards.includes(idx) ? 'selected' : '';
-                    html += `<div class="hazard-item hazard-type ${isSelected}" data-idx="${idx}" onclick="toggleItem(this, ${tid}, ${index}, 'hazard')"><div class="hazard-item__text">${item}</div></div>`;
+                    html += `<div class="hazard-item hazard-type ${isSelected}" data-idx="${idx}" onclick="toggleItem(this, ${tid}, ${index}, 'hazard')"><div class="hazard-item__text">${escapeHtml(item)}</div></div>`;
                 });
 
-                // 2. 渲染：使用者自訂危害項目
                 state.customHazards.forEach((txt, cIdx) => {
                     html += `
                         <div class="hazard-item hazard-type selected" style="align-items: center;">
-                            <div class="hazard-item__text">${txt} <span class="chip-tag">(自訂)</span></div>
+                            <div class="hazard-item__text">${escapeHtml(txt)} <span class="chip-tag">(自訂)</span></div>
                             <button class="chip-del" onclick="removeCustom(${tid}, ${index}, 'hazard', ${cIdx}); event.stopPropagation();">✖</button>
                         </div>
                     `;
                 });
 
-                // 3. 自訂危害輸入框
                 html += `
                         </div>
                         <div class="inline-add">
@@ -1752,29 +1904,32 @@
                             <button class="t-btn t-btn--outline" onclick="addCustom(${tid}, ${index}, 'hazard')">＋ 新增</button>
                         </div>
 
-                        <div class="sub-group-title">🛡️ 現有防護措施（行政管理 / 個人防護）</div>
-                        <div class="hazard-list">
+                        <div class="sub-group-title">🛡️ 現有防護措施</div>
                 `;
 
-                // 4. 渲染：JSON 預設防護措施
-                avoidItems.forEach((item, idx) => {
-                    const isSelected = state.avoids.includes(idx) ? 'selected' : '';
-                    html += `<div class="hazard-item avoid-type ${isSelected}" data-idx="${idx}" onclick="toggleItem(this, ${tid}, ${index}, 'avoid')"><div class="hazard-item__text">${item}</div></div>`;
+                CONTROL_LANES.forEach((lane) => {
+                    const laneItems = avoidItems
+                        .map((item, idx) => ({ item, idx }))
+                        .filter((row) => controlLane(row.item) === lane);
+                    html += `<div class="control-lane-title">${lane}</div><div class="hazard-list">`;
+                    laneItems.forEach(({ item, idx }) => {
+                        const isSelected = state.avoids.includes(idx) ? 'selected' : '';
+                        html += `<div class="hazard-item avoid-type ${isSelected}" data-idx="${idx}" onclick="toggleItem(this, ${tid}, ${index}, 'avoid')"><div class="hazard-item__text">${escapeHtml(displayControlText(item))}</div></div>`;
+                    });
+                    if (lane === '行政管理') {
+                        state.customAvoids.forEach((txt, cIdx) => {
+                            html += `
+                                <div class="hazard-item avoid-type selected" style="align-items: center;">
+                                    <div class="hazard-item__text">${escapeHtml(txt)} <span class="chip-tag">(自訂)</span></div>
+                                    <button class="chip-del" onclick="removeCustom(${tid}, ${index}, 'avoid', ${cIdx}); event.stopPropagation();">✖</button>
+                                </div>
+                            `;
+                        });
+                    }
+                    html += `</div>`;
                 });
 
-                // 5. 渲染：使用者自訂防護措施
-                state.customAvoids.forEach((txt, cIdx) => {
-                    html += `
-                        <div class="hazard-item avoid-type selected" style="align-items: center;">
-                            <div class="hazard-item__text">${txt} <span class="chip-tag">(自訂)</span></div>
-                            <button class="chip-del" onclick="removeCustom(${tid}, ${index}, 'avoid', ${cIdx}); event.stopPropagation();">✖</button>
-                        </div>
-                    `;
-                });
-
-                // 6. 自訂措施輸入框
                 html += `
-                        </div>
                         <div class="inline-add">
                             <input class="t-input" type="text" id="custom-a-${index}" placeholder="輸入其他已落實的防護措施...">
                             <button class="t-btn t-btn--outline" onclick="addCustom(${tid}, ${index}, 'avoid')">＋ 新增</button>
@@ -1818,6 +1973,7 @@
 
                             <div class="risk-desc" id="risk-desc-${index}"></div>
                             <div class="risk-note" id="risk-note-${index}"></div>
+                        </div>
                         </div>
                     </div>
                 `;
@@ -1967,7 +2123,12 @@
             if (advicePanel) {
                 const additionalLines = getAdditionalControlAdvice(avoidItems, state.avoids);
                 if (additionalLines.length) {
-                    advicePanel.innerHTML = `<strong>💡 降低風險措施：</strong><ul>${additionalLines.map(x => `<li>${x}</li>`).join('')}</ul>`;
+                    const blocks = CONTROL_LANES.map((lane) => {
+                        const items = additionalLines.filter((item) => controlLane(item) === lane);
+                        if (!items.length) return '';
+                        return `<div class="advice-lane"><em>${lane}</em><ul>${items.map((x) => `<li>${escapeHtml(displayControlText(x))}</li>`).join('')}</ul></div>`;
+                    }).join('');
+                    advicePanel.innerHTML = `<strong>💡 降低風險措施：</strong>${blocks}`;
                     advicePanel.style.display = 'block';
                 } else {
                     advicePanel.style.display = 'none';
@@ -1996,10 +2157,19 @@
             }
 
             const taskNames = [...new Set(allRows.map(r => r.taskName))];
-            meta.innerHTML = `
-                <div><strong>作業名稱：</strong>${taskNames.join('、')}</div>
-                <div><strong>作業說明：</strong>${allRows.map(r => r.taskdescribe).filter(Boolean).join(' ') || '—'}</div>
-            `;
+            const describeByTask = [];
+            const seenDesc = new Set();
+            allRows.forEach((row) => {
+                if (seenDesc.has(row.taskName)) return;
+                seenDesc.add(row.taskName);
+                describeByTask.push({ name: row.taskName, desc: row.taskdescribe || '' });
+            });
+            meta.innerHTML = describeByTask.map((row) => `
+                <div style="margin-bottom:12px;">
+                    <div><strong>${escapeHtml(row.name)}</strong></div>
+                    <div>${escapeHtml(row.desc) || '—'}</div>
+                </div>
+            `).join('') || `<div><strong>作業名稱：</strong>${escapeHtml(taskNames.join('、'))}</div>`;
 
             // 依作業步驟合併第一欄
             const stepRuns = [];
