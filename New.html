@@ -626,11 +626,17 @@
             display: flex;
             gap: 10px;
             margin-top: 12px;
+            align-items: stretch;
         }
 
         .inline-add .t-input {
             padding: 10px 14px;
             font-size: 14px;
+        }
+
+        .inline-add__lane {
+            flex: 0 0 148px;
+            min-width: 148px;
         }
 
         /* 風險評估面板 */
@@ -1274,7 +1280,7 @@
         const RISK_FORM_API = (window.RISK_FORM_API || 'http://localhost:8000').replace(/\/$/, '');
         const STORAGE_KEY = 'toira.assessment.v2';
 
-        const DATA_VER = '20260824g';
+        const DATA_VER = '20260826a';
 
         // 風險矩陣與文字定義
         const riskMatrix = {
@@ -1986,22 +1992,27 @@
                         const isSelected = state.avoids.includes(idx) ? 'selected' : '';
                         html += `<div class="hazard-item avoid-type ${isSelected}" data-idx="${idx}" onclick="toggleItem(this, ${tid}, ${index}, 'avoid')"><div class="hazard-item__text">${escapeHtml(displayControlText(item))}</div></div>`;
                     });
-                    if (lane === '行政管理') {
-                        state.customAvoids.forEach((txt, cIdx) => {
-                            html += `
-                                <div class="hazard-item avoid-type selected" style="align-items: center;">
-                                    <div class="hazard-item__text">${escapeHtml(txt)} <span class="chip-tag">(自訂)</span></div>
-                                    <button class="chip-del" onclick="removeCustom(${tid}, ${index}, 'avoid', ${cIdx}); event.stopPropagation();">✖</button>
-                                </div>
-                            `;
-                        });
-                    }
+                    state.customAvoids.forEach((txt, cIdx) => {
+                        if (controlLane(txt) !== lane) return;
+                        html += `
+                            <div class="hazard-item avoid-type selected" style="align-items: center;">
+                                <div class="hazard-item__text">${escapeHtml(displayControlText(txt))} <span class="chip-tag">(自訂)</span></div>
+                                <button class="chip-del" onclick="removeCustom(${tid}, ${index}, 'avoid', ${cIdx}); event.stopPropagation();">✖</button>
+                            </div>
+                        `;
+                    });
                     html += `</div>`;
                 });
 
                 html += `
                         <div class="inline-add">
                             <input class="t-input" type="text" id="custom-a-${index}" placeholder="輸入其他已落實的防護措施...">
+                            <select class="t-input inline-add__lane" id="custom-a-lane-${index}" aria-label="防護類型">
+                                <option value="">選擇類型</option>
+                                <option value="工程改善">工程改善</option>
+                                <option value="行政管理">行政管理</option>
+                                <option value="個人防護">個人防護</option>
+                            </select>
                             <button class="t-btn t-btn--outline" onclick="addCustom(${tid}, ${index}, 'avoid')">＋ 新增</button>
                         </div>
 
@@ -2084,8 +2095,21 @@
             ensureSelectionState(taskId);
             const state = userSelections[`${taskId}_${groupIndex}`];
             if (!state) return;
-            if (type === 'hazard') state.customHazards.push(val);
-            else state.customAvoids.push(val);
+            if (type === 'hazard') {
+                state.customHazards.push(val);
+            } else {
+                const laneEl = document.getElementById(`custom-a-lane-${groupIndex}`);
+                const lane = laneEl && CONTROL_LANES.includes(laneEl.value) ? laneEl.value : '';
+                if (!lane) {
+                    showToast('請先選擇防護類型', 'error');
+                    if (laneEl) laneEl.focus();
+                    return;
+                }
+                const body = val.replace(/[（(【]\s*(消除|取代|工程改善|行政管理|管理控制|個人防護具|個人防護)\s*[）)】]\s*$/, '').trim();
+                if (!body) return;
+                state.customAvoids.push(`${body}(${lane})`);
+                laneEl.value = '';
+            }
             inputEl.value = '';
             renderAssessment(taskId);
         }
