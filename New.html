@@ -1280,7 +1280,7 @@
         const RISK_FORM_API = (window.RISK_FORM_API || 'http://localhost:8000').replace(/\/$/, '');
         const STORAGE_KEY = 'toira.assessment.v2';
 
-        const DATA_VER = '20260826a';
+        const DATA_VER = '20260827a';
 
         // 風險矩陣與文字定義
         const riskMatrix = {
@@ -1585,9 +1585,9 @@
         }
 
         function controlLane(item) {
-            const m = String(item || '').match(/[（(【]\s*(消除|取代|工程改善|行政管理|管理控制|個人防護具|個人防護)\s*[）)】]\s*$/);
+            const m = String(item || '').match(/[（(【]\s*(消除|取代|工程改善|工程控制|行政管理|管理控制|個人防護具|個人防護)\s*[）)】]\s*$/);
             const raw = m ? m[1] : '';
-            if (raw === '工程改善' || raw === '消除' || raw === '取代') return '工程改善';
+            if (raw === '工程改善' || raw === '工程控制' || raw === '消除' || raw === '取代') return '工程改善';
             if (raw === '個人防護' || raw === '個人防護具') return '個人防護';
             return '行政管理';
         }
@@ -1658,7 +1658,8 @@
 
                 const hazards = (state.hazards || []).map(i => (group.hazardItems || [])[i]).filter(Boolean)
                     .concat(state.customHazards || []);
-                const existingControls = (state.avoids || []).map(i => (group.AvoidItems || [])[i]).filter(Boolean)
+                const libraryExisting = (state.avoids || []).map(i => (group.AvoidItems || [])[i]).filter(Boolean);
+                const existingControls = libraryExisting
                     .concat(state.customAvoids || [])
                     .map(displayControlText);
                 const additionalControls = getAdditionalControlAdvice(group.AvoidItems || [], state.avoids)
@@ -1669,8 +1670,8 @@
                     baseS,
                     group.hazardItems.length + (state.customHazards || []).length,
                     state.hazards.length + (state.customHazards || []).length,
-                    group.AvoidItems.length + (state.customAvoids || []).length,
-                    state.avoids.length + (state.customAvoids || []).length
+                    group.AvoidItems.length,
+                    state.avoids.length
                 );
 
                 if (state.isManual) {
@@ -1678,8 +1679,8 @@
                 }
 
                 let residualP = 'P3';
-                if (additionalControls.length >= 2 && existingControls.length >= 2) residualP = 'P2';
-                else if (additionalControls.length >= 1 || existingControls.length >= 2) residualP = 'P3';
+                if (additionalControls.length >= 2 && libraryExisting.length >= 2) residualP = 'P2';
+                else if (additionalControls.length >= 1 || libraryExisting.length >= 2) residualP = 'P3';
                 const pNum = parseInt(cur.p.replace('P', ''), 10);
                 const rNum = parseInt(residualP.replace('P', ''), 10);
                 if (rNum > pNum) residualP = cur.p;
@@ -2105,7 +2106,7 @@
                     if (laneEl) laneEl.focus();
                     return;
                 }
-                const body = val.replace(/[（(【]\s*(消除|取代|工程改善|行政管理|管理控制|個人防護具|個人防護)\s*[）)】]\s*$/, '').trim();
+                const body = val.replace(/[（(【]\s*(消除|取代|工程改善|工程控制|行政管理|管理控制|個人防護具|個人防護)\s*[）)】]\s*$/, '').trim();
                 if (!body) return;
                 state.customAvoids.push(`${body}(${lane})`);
                 laneEl.value = '';
@@ -2142,7 +2143,7 @@
             calculateRiskUI(taskId, groupIndex);
         }
 
-        // S 依危害組固定；P 依現有防護勾選比例
+        // S 依危害組固定；P 只依庫內現有防護勾選比例（自訂新增不列入）
         // P5 全部不選；P4 選 <50%；P3 選 ≥50%；P2 全選；P1 僅手動評估
         function computeRiskValues(baseSeverity, _hazardTotal, _hazardSelected, avoidTotal, avoidSelected) {
             const s = normalizeSeverity(baseSeverity);
@@ -2166,12 +2167,11 @@
             const hazardItems = Array.isArray(groupData.hazardItems) ? groupData.hazardItems : [];
             const avoidItems = Array.isArray(groupData.AvoidItems) ? groupData.AvoidItems : [];
             const customHCount = Array.isArray(state.customHazards) ? state.customHazards.length : 0;
-            const customACount = Array.isArray(state.customAvoids) ? state.customAvoids.length : 0;
 
             const totalH = hazardItems.length + customHCount;
             const checkedH = (state.hazards || []).length + customHCount;
-            const totalA = avoidItems.length + customACount;
-            const checkedA = (state.avoids || []).length + customACount;
+            const totalA = avoidItems.length;
+            const checkedA = (state.avoids || []).length;
 
             let res = computeRiskValues(
                 groupData.severitylevel,
