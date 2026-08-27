@@ -234,8 +234,8 @@
 
         Promise.all([
             fetch('industrySectors.json').then(res => res.json()),
-            fetch('industryMapping.json').then(res => res.json()),
-            fetch('tasksLibrary.json').then(res => res.json())
+            fetch('industryMapping.json?v=20260827d').then(res => res.json()),
+            fetch('tasksLibrary.json?v=20260827d').then(res => res.json())
         ])
         .then(([sectors, mappings, library]) => {
             const combinedData = mappings.map(m => ({
@@ -343,7 +343,7 @@
         function startAssessment(idArray, industryName) {
             sessionStorage.setItem('initTasks', JSON.stringify(idArray));
             sessionStorage.setItem('industryName', industryName);
-            window.location.href = 'New.html?v=20260827c';
+            window.location.href = 'New.html?v=20260827d';
         }
     </script>
 </body>
