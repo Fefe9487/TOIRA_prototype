@@ -217,6 +217,13 @@
     "taskId": "油壓升降平台作業"
   },
   {
+    "id": "I-106",
+    "Industry": "醃製食品製造業",
+    "sector": "製造業",
+    "category": "包裝倉儲",
+    "taskId": "使用升降機上下料件作業"
+  },
+  {
     "id": "I-101",
     "Industry": "醃製食品製造業",
     "sector": "製造業",
@@ -504,6 +511,13 @@
     "taskId": "低溫環境作業"
   },
   {
+    "id": "FD-042",
+    "Industry": "食品製造業",
+    "sector": "製造業",
+    "category": "包裝倉儲",
+    "taskId": "使用升降機上下料件作業"
+  },
+  {
     "id": "FD-034",
     "Industry": "食品製造業",
     "sector": "製造業",
@@ -782,6 +796,13 @@
     "sector": "製造業",
     "category": "包裝倉儲",
     "taskId": "繩索與吊索吊掛作業"
+  },
+  {
+    "id": "F-049",
+    "Industry": "木竹製品及非金屬家具製造業",
+    "sector": "製造業",
+    "category": "包裝倉儲",
+    "taskId": "使用升降機上下料件作業"
   },
   {
     "id": "F-036",
@@ -1099,13 +1120,6 @@
     "taskId": "辦公區域燈具更換作業"
   },
   {
-    "id": "I-048",
-    "Industry": "化學品製造業",
-    "sector": "製造業",
-    "category": "辦公作業",
-    "taskId": "研討會場地佈置作業"
-  },
-  {
     "id": "C-032",
     "Industry": "化學品製造業",
     "sector": "製造業",
@@ -1181,6 +1195,13 @@
     "sector": "製造業",
     "category": "包裝倉儲",
     "taskId": "酸鹼化學品操作作業"
+  },
+  {
+    "id": "C-050",
+    "Industry": "化學品製造業",
+    "sector": "製造業",
+    "category": "包裝倉儲",
+    "taskId": "使用升降機上下料件作業"
   },
   {
     "id": "C-044",
@@ -1421,6 +1442,13 @@
     "taskId": "多片縱鋸機操作作業"
   },
   {
+    "id": "M-045",
+    "Industry": "金屬製品製造業(鐵管零件加工)",
+    "sector": "製造業",
+    "category": "機械加工",
+    "taskId": "滾輪／鍛轤操作作業"
+  },
+  {
     "id": "M-031",
     "Industry": "金屬製品製造業(鐵管零件加工)",
     "sector": "製造業",
@@ -1456,6 +1484,13 @@
     "taskId": "模具保養與防鏽作業"
   },
   {
+    "id": "M-044",
+    "Industry": "金屬製品製造業(鐵管零件加工)",
+    "sector": "製造業",
+    "category": "表面處理",
+    "taskId": "電鍍作業"
+  },
+  {
     "id": "M-035",
     "Industry": "金屬製品製造業(鐵管零件加工)",
     "sector": "製造業",
@@ -1482,6 +1517,13 @@
     "sector": "製造業",
     "category": "收料及包裝出貨",
     "taskId": "繩索與吊索吊掛作業"
+  },
+  {
+    "id": "M-046",
+    "Industry": "金屬製品製造業(鐵管零件加工)",
+    "sector": "製造業",
+    "category": "收料及包裝出貨",
+    "taskId": "使用升降機上下料件作業"
   },
   {
     "id": "M-039",
@@ -1778,6 +1820,13 @@
     "taskId": "油墨調配與廢液回收作業"
   },
   {
+    "id": "P-052",
+    "Industry": "塑膠製品製造業",
+    "sector": "製造業",
+    "category": "二次加工處理",
+    "taskId": "滾輪／鍛轤操作作業"
+  },
+  {
     "id": "P-035",
     "Industry": "塑膠製品製造業",
     "sector": "製造業",
@@ -1804,6 +1853,13 @@
     "sector": "製造業",
     "category": "包裝出貨",
     "taskId": "油壓升降平台作業"
+  },
+  {
+    "id": "P-053",
+    "Industry": "塑膠製品製造業",
+    "sector": "製造業",
+    "category": "包裝出貨",
+    "taskId": "使用升降機上下料件作業"
   },
   {
     "id": "P-039",
@@ -2126,6 +2182,13 @@
     "sector": "製造業",
     "category": "包裝出貨",
     "taskId": "商品包裝作業"
+  },
+  {
+    "id": "E-051",
+    "Industry": "污染防治設備製造業",
+    "sector": "製造業",
+    "category": "包裝出貨",
+    "taskId": "使用升降機上下料件作業"
   },
   {
     "id": "E-034",
@@ -2471,6 +2534,13 @@
     "taskId": "料件暫存作業"
   },
   {
+    "id": "PP-035",
+    "Industry": "紙材印刷業",
+    "sector": "製造業",
+    "category": "原料運輸",
+    "taskId": "使用升降機上下料件作業"
+  },
+  {
     "id": "PP-031",
     "Industry": "紙材印刷業",
     "sector": "製造業",
@@ -2749,6 +2819,13 @@
     "sector": "製造業",
     "category": "包裝出貨",
     "taskId": "人工搬運作業"
+  },
+  {
+    "id": "PC-048",
+    "Industry": "紙容器製造業",
+    "sector": "製造業",
+    "category": "包裝出貨",
+    "taskId": "使用升降機上下料件作業"
   },
   {
     "id": "PC-039",
@@ -3129,6 +3206,13 @@
     "taskId": "鑄造模具吊掛作業"
   },
   {
+    "id": "S-053",
+    "Industry": "鋼鐵鑄造業",
+    "sector": "製造業",
+    "category": "包裝出貨",
+    "taskId": "使用升降機上下料件作業"
+  },
+  {
     "id": "S-047",
     "Industry": "鋼鐵鑄造業",
     "sector": "製造業",
@@ -3160,106 +3244,106 @@
     "id": "HH-001",
     "Industry": "危險性作業",
     "sector": "危險性作業",
-    "category": "墜落危害作業",
+    "category": "具墜落危險之作業",
     "taskId": "於石綿板、鐵皮板、瓦、木板、茅草、塑膠等易踏穿材料構築之屋頂從事作業"
-  },
-  {
-    "id": "HH-002",
-    "Industry": "危險性作業",
-    "sector": "危險性作業",
-    "category": "墜落危害作業",
-    "taskId": "繩索與吊索吊掛作業"
   },
   {
     "id": "HH-003",
     "Industry": "危險性作業",
     "sector": "危險性作業",
-    "category": "墜落危害作業",
+    "category": "具墜落危險之作業",
     "taskId": "營建用升降機組裝、拆卸及維修作業"
   },
   {
     "id": "HH-004",
     "Industry": "危險性作業",
     "sector": "危險性作業",
-    "category": "墜落危害作業",
+    "category": "具墜落危險之作業",
     "taskId": "吊籠作業"
   },
   {
     "id": "HH-005",
     "Industry": "危險性作業",
     "sector": "危險性作業",
-    "category": "墜落危害作業",
+    "category": "具墜落危險之作業",
     "taskId": "高度二公尺以上邊緣及開口無法設置防墜設施之影視拍攝作業"
   },
   {
-    "id": "HH-006",
+    "id": "HH-016",
     "Industry": "危險性作業",
     "sector": "危險性作業",
-    "category": "倒塌崩塌作業",
-    "taskId": "模板支撐灌漿作業"
-  },
-  {
-    "id": "HH-007",
-    "Industry": "危險性作業",
-    "sector": "危險性作業",
-    "category": "倒塌崩塌作業",
-    "taskId": "施工架組拆與高處作業"
-  },
-  {
-    "id": "HH-008",
-    "Industry": "危險性作業",
-    "sector": "危險性作業",
-    "category": "倒塌崩塌作業",
-    "taskId": "開挖擋土支撐組立及拆除作業"
-  },
-  {
-    "id": "HH-009",
-    "Industry": "危險性作業",
-    "sector": "危險性作業",
-    "category": "火災爆炸作業",
-    "taskId": "石化業製程區歲修作業"
-  },
-  {
-    "id": "HH-010",
-    "Industry": "危險性作業",
-    "sector": "危險性作業",
-    "category": "火災爆炸作業",
-    "taskId": "石化業壓力容器、儲槽及管線歲修作業"
-  },
-  {
-    "id": "HH-011",
-    "Industry": "危險性作業",
-    "sector": "危險性作業",
-    "category": "火災爆炸作業",
-    "taskId": "使用爆炸性物質、易燃液體及可燃性氣體從事影視拍攝作業"
+    "category": "具墜落危險之作業",
+    "taskId": "威亞吊飛作業"
   },
   {
     "id": "HH-012",
     "Industry": "危險性作業",
     "sector": "危險性作業",
-    "category": "物體飛落危險作業",
+    "category": "具墜落危險之作業",
     "taskId": "塔式起重機升高及拆卸作業"
   },
   {
     "id": "HH-013",
     "Industry": "危險性作業",
     "sector": "危險性作業",
-    "category": "物體飛落危險作業",
+    "category": "具墜落危險之作業",
     "taskId": "人字臂起重機組裝與拆卸作業"
   },
   {
-    "id": "HH-014",
+    "id": "HH-006",
     "Industry": "危險性作業",
     "sector": "危險性作業",
-    "category": "溺斃危險作業",
-    "taskId": "水域影視拍攝作業"
+    "category": "具倒塌、崩塌危險之作業",
+    "taskId": "模板支撐灌漿作業"
+  },
+  {
+    "id": "HH-007",
+    "Industry": "危險性作業",
+    "sector": "危險性作業",
+    "category": "具倒塌、崩塌危險之作業",
+    "taskId": "施工架組拆與高處作業"
+  },
+  {
+    "id": "HH-008",
+    "Industry": "危險性作業",
+    "sector": "危險性作業",
+    "category": "具倒塌、崩塌危險之作業",
+    "taskId": "開挖擋土支撐組立及拆除作業"
+  },
+  {
+    "id": "HH-009",
+    "Industry": "危險性作業",
+    "sector": "危險性作業",
+    "category": "具火災、爆炸危險之作業",
+    "taskId": "石化業製程區歲修作業"
+  },
+  {
+    "id": "HH-010",
+    "Industry": "危險性作業",
+    "sector": "危險性作業",
+    "category": "具火災、爆炸危險之作業",
+    "taskId": "石化業壓力容器、儲槽及管線歲修作業"
+  },
+  {
+    "id": "HH-011",
+    "Industry": "危險性作業",
+    "sector": "危險性作業",
+    "category": "具火災、爆炸危險之作業",
+    "taskId": "使用爆炸性物質、易燃液體及可燃性氣體從事影視拍攝作業"
   },
   {
     "id": "HH-015",
     "Industry": "危險性作業",
     "sector": "危險性作業",
-    "category": "缺氧中毒作業",
+    "category": "具缺氧、中毒危險之作業",
     "taskId": "局限空間作業"
+  },
+  {
+    "id": "HH-014",
+    "Industry": "危險性作業",
+    "sector": "危險性作業",
+    "category": "具溺水危險之作業",
+    "taskId": "水域影視拍攝作業"
   },
   {
     "id": "CY-001",
@@ -3311,48 +3395,6 @@
     "taskId": "繩索與吊索吊掛作業"
   },
   {
-    "id": "CY-050",
-    "Industry": "假設工程與吊運工種",
-    "sector": "營造業",
-    "category": "辦公作業",
-    "taskId": "辦公室電腦文書作業"
-  },
-  {
-    "id": "CY-051",
-    "Industry": "假設工程與吊運工種",
-    "sector": "營造業",
-    "category": "辦公作業",
-    "taskId": "行政文書檔案整理作業"
-  },
-  {
-    "id": "CY-053",
-    "Industry": "假設工程與吊運工種",
-    "sector": "營造業",
-    "category": "辦公作業",
-    "taskId": "行政文書檔案歸檔銷毀作業"
-  },
-  {
-    "id": "CY-054",
-    "Industry": "假設工程與吊運工種",
-    "sector": "營造業",
-    "category": "辦公作業",
-    "taskId": "辦公區域環境清潔作業"
-  },
-  {
-    "id": "CY-055",
-    "Industry": "假設工程與吊運工種",
-    "sector": "營造業",
-    "category": "辦公作業",
-    "taskId": "辦公區域燈具更換作業"
-  },
-  {
-    "id": "CY-056",
-    "Industry": "假設工程與吊運工種",
-    "sector": "營造業",
-    "category": "辦公作業",
-    "taskId": "研討會場地佈置作業"
-  },
-  {
     "id": "CY-002",
     "Industry": "共用支援與收尾工種",
     "sector": "營造業",
@@ -3395,48 +3437,6 @@
     "taskId": "電動台車及搬運設備操作作業"
   },
   {
-    "id": "CY-057",
-    "Industry": "共用支援與收尾工種",
-    "sector": "營造業",
-    "category": "辦公作業",
-    "taskId": "辦公室電腦文書作業"
-  },
-  {
-    "id": "CY-058",
-    "Industry": "共用支援與收尾工種",
-    "sector": "營造業",
-    "category": "辦公作業",
-    "taskId": "行政文書檔案整理作業"
-  },
-  {
-    "id": "CY-060",
-    "Industry": "共用支援與收尾工種",
-    "sector": "營造業",
-    "category": "辦公作業",
-    "taskId": "行政文書檔案歸檔銷毀作業"
-  },
-  {
-    "id": "CY-061",
-    "Industry": "共用支援與收尾工種",
-    "sector": "營造業",
-    "category": "辦公作業",
-    "taskId": "辦公區域環境清潔作業"
-  },
-  {
-    "id": "CY-062",
-    "Industry": "共用支援與收尾工種",
-    "sector": "營造業",
-    "category": "辦公作業",
-    "taskId": "辦公區域燈具更換作業"
-  },
-  {
-    "id": "CY-063",
-    "Industry": "共用支援與收尾工種",
-    "sector": "營造業",
-    "category": "辦公作業",
-    "taskId": "研討會場地佈置作業"
-  },
-  {
     "id": "CY-003",
     "Industry": "外牆與高處防護工種",
     "sector": "營造業",
@@ -3463,48 +3463,6 @@
     "sector": "營造業",
     "category": "外牆與高處防護工種",
     "taskId": "高度2公尺以上開口周邊作業"
-  },
-  {
-    "id": "CY-064",
-    "Industry": "外牆與高處防護工種",
-    "sector": "營造業",
-    "category": "辦公作業",
-    "taskId": "辦公室電腦文書作業"
-  },
-  {
-    "id": "CY-065",
-    "Industry": "外牆與高處防護工種",
-    "sector": "營造業",
-    "category": "辦公作業",
-    "taskId": "行政文書檔案整理作業"
-  },
-  {
-    "id": "CY-067",
-    "Industry": "外牆與高處防護工種",
-    "sector": "營造業",
-    "category": "辦公作業",
-    "taskId": "行政文書檔案歸檔銷毀作業"
-  },
-  {
-    "id": "CY-068",
-    "Industry": "外牆與高處防護工種",
-    "sector": "營造業",
-    "category": "辦公作業",
-    "taskId": "辦公區域環境清潔作業"
-  },
-  {
-    "id": "CY-069",
-    "Industry": "外牆與高處防護工種",
-    "sector": "營造業",
-    "category": "辦公作業",
-    "taskId": "辦公區域燈具更換作業"
-  },
-  {
-    "id": "CY-070",
-    "Industry": "外牆與高處防護工種",
-    "sector": "營造業",
-    "category": "辦公作業",
-    "taskId": "研討會場地佈置作業"
   },
   {
     "id": "CY-005",
@@ -3542,46 +3500,11 @@
     "taskId": "有機溶劑使用與塗裝作業"
   },
   {
-    "id": "CY-071",
+    "id": "CY-050",
     "Industry": "室內裝修與包護工種",
     "sector": "營造業",
-    "category": "辦公作業",
-    "taskId": "辦公室電腦文書作業"
-  },
-  {
-    "id": "CY-072",
-    "Industry": "室內裝修與包護工種",
-    "sector": "營造業",
-    "category": "辦公作業",
-    "taskId": "行政文書檔案整理作業"
-  },
-  {
-    "id": "CY-074",
-    "Industry": "室內裝修與包護工種",
-    "sector": "營造業",
-    "category": "辦公作業",
-    "taskId": "行政文書檔案歸檔銷毀作業"
-  },
-  {
-    "id": "CY-075",
-    "Industry": "室內裝修與包護工種",
-    "sector": "營造業",
-    "category": "辦公作業",
-    "taskId": "辦公區域環境清潔作業"
-  },
-  {
-    "id": "CY-076",
-    "Industry": "室內裝修與包護工種",
-    "sector": "營造業",
-    "category": "辦公作業",
-    "taskId": "辦公區域燈具更換作業"
-  },
-  {
-    "id": "CY-077",
-    "Industry": "室內裝修與包護工種",
-    "sector": "營造業",
-    "category": "辦公作業",
-    "taskId": "研討會場地佈置作業"
+    "category": "室內裝修與包護工種",
+    "taskId": "廳舍修繕作業"
   },
   {
     "id": "CY-006",
@@ -3617,48 +3540,6 @@
     "sector": "營造業",
     "category": "景觀與公設工種",
     "taskId": "高空作業車作業"
-  },
-  {
-    "id": "CY-078",
-    "Industry": "景觀與公設工種",
-    "sector": "營造業",
-    "category": "辦公作業",
-    "taskId": "辦公室電腦文書作業"
-  },
-  {
-    "id": "CY-079",
-    "Industry": "景觀與公設工種",
-    "sector": "營造業",
-    "category": "辦公作業",
-    "taskId": "行政文書檔案整理作業"
-  },
-  {
-    "id": "CY-081",
-    "Industry": "景觀與公設工種",
-    "sector": "營造業",
-    "category": "辦公作業",
-    "taskId": "行政文書檔案歸檔銷毀作業"
-  },
-  {
-    "id": "CY-082",
-    "Industry": "景觀與公設工種",
-    "sector": "營造業",
-    "category": "辦公作業",
-    "taskId": "辦公區域環境清潔作業"
-  },
-  {
-    "id": "CY-083",
-    "Industry": "景觀與公設工種",
-    "sector": "營造業",
-    "category": "辦公作業",
-    "taskId": "辦公區域燈具更換作業"
-  },
-  {
-    "id": "CY-084",
-    "Industry": "景觀與公設工種",
-    "sector": "營造業",
-    "category": "辦公作業",
-    "taskId": "研討會場地佈置作業"
   },
   {
     "id": "CY-012",
@@ -3724,48 +3605,6 @@
     "taskId": "高壓氣體容器操作與檢修作業"
   },
   {
-    "id": "CY-085",
-    "Industry": "機電與設備工種（MEP）",
-    "sector": "營造業",
-    "category": "辦公作業",
-    "taskId": "辦公室電腦文書作業"
-  },
-  {
-    "id": "CY-086",
-    "Industry": "機電與設備工種（MEP）",
-    "sector": "營造業",
-    "category": "辦公作業",
-    "taskId": "行政文書檔案整理作業"
-  },
-  {
-    "id": "CY-088",
-    "Industry": "機電與設備工種（MEP）",
-    "sector": "營造業",
-    "category": "辦公作業",
-    "taskId": "行政文書檔案歸檔銷毀作業"
-  },
-  {
-    "id": "CY-089",
-    "Industry": "機電與設備工種（MEP）",
-    "sector": "營造業",
-    "category": "辦公作業",
-    "taskId": "辦公區域環境清潔作業"
-  },
-  {
-    "id": "CY-090",
-    "Industry": "機電與設備工種（MEP）",
-    "sector": "營造業",
-    "category": "辦公作業",
-    "taskId": "辦公區域燈具更換作業"
-  },
-  {
-    "id": "CY-091",
-    "Industry": "機電與設備工種（MEP）",
-    "sector": "營造業",
-    "category": "辦公作業",
-    "taskId": "研討會場地佈置作業"
-  },
-  {
     "id": "CY-017",
     "Industry": "土方與深基礎工種",
     "sector": "營造業",
@@ -3808,46 +3647,11 @@
     "taskId": "高噪音環境設備操作與巡檢作業"
   },
   {
-    "id": "CY-092",
+    "id": "CY-051",
     "Industry": "土方與深基礎工種",
     "sector": "營造業",
-    "category": "辦公作業",
-    "taskId": "辦公室電腦文書作業"
-  },
-  {
-    "id": "CY-093",
-    "Industry": "土方與深基礎工種",
-    "sector": "營造業",
-    "category": "辦公作業",
-    "taskId": "行政文書檔案整理作業"
-  },
-  {
-    "id": "CY-095",
-    "Industry": "土方與深基礎工種",
-    "sector": "營造業",
-    "category": "辦公作業",
-    "taskId": "行政文書檔案歸檔銷毀作業"
-  },
-  {
-    "id": "CY-096",
-    "Industry": "土方與深基礎工種",
-    "sector": "營造業",
-    "category": "辦公作業",
-    "taskId": "辦公區域環境清潔作業"
-  },
-  {
-    "id": "CY-097",
-    "Industry": "土方與深基礎工種",
-    "sector": "營造業",
-    "category": "辦公作業",
-    "taskId": "辦公區域燈具更換作業"
-  },
-  {
-    "id": "CY-098",
-    "Industry": "土方與深基礎工種",
-    "sector": "營造業",
-    "category": "辦公作業",
-    "taskId": "研討會場地佈置作業"
+    "category": "土方與深基礎工種",
+    "taskId": "道路維護作業"
   },
   {
     "id": "CY-026",
@@ -3897,47 +3701,5 @@
     "sector": "營造業",
     "category": "主體結構工種",
     "taskId": "電弧焊接作業"
-  },
-  {
-    "id": "CY-099",
-    "Industry": "主體結構工種",
-    "sector": "營造業",
-    "category": "辦公作業",
-    "taskId": "辦公室電腦文書作業"
-  },
-  {
-    "id": "CY-100",
-    "Industry": "主體結構工種",
-    "sector": "營造業",
-    "category": "辦公作業",
-    "taskId": "行政文書檔案整理作業"
-  },
-  {
-    "id": "CY-102",
-    "Industry": "主體結構工種",
-    "sector": "營造業",
-    "category": "辦公作業",
-    "taskId": "行政文書檔案歸檔銷毀作業"
-  },
-  {
-    "id": "CY-103",
-    "Industry": "主體結構工種",
-    "sector": "營造業",
-    "category": "辦公作業",
-    "taskId": "辦公區域環境清潔作業"
-  },
-  {
-    "id": "CY-104",
-    "Industry": "主體結構工種",
-    "sector": "營造業",
-    "category": "辦公作業",
-    "taskId": "辦公區域燈具更換作業"
-  },
-  {
-    "id": "CY-105",
-    "Industry": "主體結構工種",
-    "sector": "營造業",
-    "category": "辦公作業",
-    "taskId": "研討會場地佈置作業"
   }
 ]
