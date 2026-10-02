@@ -1319,7 +1319,7 @@
         const RISK_FORM_API = (window.RISK_FORM_API || 'http://localhost:8000').replace(/\/$/, '');
         const STORAGE_KEY = 'toira.assessment.v2';
 
-        const DATA_VER = '20261002d';
+        const DATA_VER = '20261002e';
 
         // 風險矩陣與文字定義
         const riskMatrix = {
@@ -1397,29 +1397,23 @@
 
         function probabilityFromLinkedControls(controls, checked) {
             const list = controls || [];
+            const isOn = (c) => !!checked[c.key];
+            const eng = list.filter((c) => c.scoreLane === 'E');
+            const adm = list.filter((c) => c.scoreLane === 'M');
+            const engOn = eng.filter(isOn).length;
+            const admOn = adm.filter(isOn).length;
+            const engAll = eng.length > 0 && engOn === eng.length;
+            const admAll = adm.length > 0 && admOn === adm.length;
+            if (engAll) return 'P2';
             const cores = list.filter((c) => c.core);
             if (cores.length) {
-                const isOn = (c) => !!checked[c.key];
                 if (!list.some(isOn)) return 'P5';
                 if (cores.some((c) => !isOn(c))) return 'P4';
                 const supports = list.filter((c) => !c.core);
                 if (!supports.length || supports.filter(isOn).length / supports.length >= 0.5) return 'P2';
                 return 'P3';
             }
-            const eng = list.filter((c) => c.scoreLane === 'E');
-            const adm = (controls || []).filter((c) => c.scoreLane === 'M');
-            const isOn = (c) => !!checked[c.key];
-            const engOn = eng.filter(isOn).length;
-            const admOn = adm.filter(isOn).length;
-            const engAll = eng.length > 0 && engOn === eng.length;
-            const admAll = adm.length > 0 && admOn === adm.length;
-            if (adm.length && admAll && eng.length && engAll) return 'P2';
-            if (adm.length && admAll) return 'P3';
-            if (!adm.length) {
-                if (engAll) return 'P3';
-                if (engOn > 0) return 'P4';
-                return 'P5';
-            }
+            if (admAll) return 'P3';
             if (engOn + admOn > 0) return 'P4';
             return 'P5';
         }
