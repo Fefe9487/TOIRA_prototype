@@ -481,10 +481,10 @@
             display: inline-flex;
             align-items: center;
             padding: 2px 8px;
-            border: 1.5px solid var(--danger);
+            border: 1px solid var(--brand-100);
             border-radius: 999px;
-            background: var(--danger-tint);
-            color: var(--danger);
+            background: var(--brand-50);
+            color: var(--brand-800);
             font-size: 12px;
             font-weight: 700;
         }
@@ -502,7 +502,7 @@
         }
 
         .hazard-card.is-core {
-            border: 1.5px solid var(--danger);
+            border: 1px solid var(--brand-100);
             box-shadow: var(--sh-1);
         }
 
@@ -796,11 +796,89 @@
         }
 
         .scenario-block {
-            margin: 0 0 16px;
-            padding: 14px 14px 4px;
-            border: 1px solid var(--line);
-            border-radius: var(--r-sm);
-            background: var(--bg);
+            margin: 0 0 18px;
+            padding: 12px 0 16px;
+            border: 0;
+            border-bottom: 1px solid var(--line);
+            border-radius: 0;
+            background: transparent;
+        }
+
+        .scenario-controls-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 12px;
+            margin: 18px 0 4px;
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--ink-2);
+        }
+
+        .scenario-controls-count {
+            flex-shrink: 0;
+            color: var(--muted);
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .scenario-controls-help {
+            margin: 0 0 10px;
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .scenario-control .hazard-item__text {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 6px 12px;
+        }
+
+        .scenario-control:not(.selected) {
+            background: var(--surface);
+            border-color: var(--line);
+            color: var(--ink);
+        }
+
+        .scenario-control.is-pending:hover {
+            border-color: var(--danger);
+            background: var(--danger-tint);
+        }
+
+        .control-status {
+            display: inline-flex;
+            align-items: center;
+            padding: 1px 8px;
+            border-radius: 999px;
+            font-size: 12px;
+            font-weight: 700;
+            line-height: 1.6;
+            white-space: nowrap;
+        }
+
+        .control-status--done {
+            background: var(--success-tint);
+            color: var(--success);
+        }
+
+        .control-status--pending {
+            background: #f3f4f6;
+            color: #59636e;
+        }
+
+        .control-status--pending-core {
+            background: var(--danger-tint);
+            color: var(--danger);
+        }
+
+        @media (max-width: 640px) {
+            .scenario-controls-heading {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 2px;
+            }
         }
 
         .scenario-type {
@@ -2338,25 +2416,29 @@
 
         function mappedScenarioSections(taskId, group, index, state, tid) {
             const checked = checkedControls(taskId);
-            let html = `<p class="scenario-hint">勾選危害情境後，才顯示處理風險或機會之措施。自訂情境請自行填寫措施，並手動選擇嚴重度與可能性。</p>`;
+            const hasSelectedScenario = state.scenarios.length > 0 || (state.customScenarios || []).some((item) => item.selected);
+            let html = hasSelectedScenario ? '' : `<p class="scenario-hint">選擇符合現場的危害情境後，即可查看改善措施與風險評估。自訂情境需自行填寫改善措施，並評估嚴重度與可能性。</p>`;
             group.scenarios.forEach((scenario, si) => {
                 const picked = state.scenarios.includes(si);
                 const selected = picked ? 'selected' : '';
                 const manual = state.scenarioManual[si] || { isManual: false, manualS: scenario.severity || 'S4', manualP: 'P4' };
                 html += `
                     <div class="scenario-block${picked ? ' is-open' : ''}" id="scenario-${index}-${si}">
-                        <div class="scenario-type">${escapeHtml(group.groupName)}</div>
+                        
                         <div class="hazard-item hazard-type ${selected} scenario-hit" onclick="toggleScenario(${tid}, ${index}, ${si})">
                             <div class="hazard-item__text">${escapeHtml(scenario.text)}</div>
                         </div>
                         <div class="scenario-detail">
-                        <div class="sub-group-title">處理風險或機會之措施(改善建議)</div>
+                        <div class="scenario-controls-heading"><span>處理風險或機會之措施(改善建議)</span><span class="scenario-controls-count">${scenario.controls.filter((control) => checked[control.key]).length} / ${scenario.controls.length} 項已做到</span></div><p class="scenario-controls-help">勾選代表現場已做到；未勾選代表尚未做到，會列為待改善。</p>
                         <div class="hazard-list">
                 `;
                 scenario.controls.forEach((control) => {
-                    const on = checked[control.key] ? 'selected' : '';
+                    const on = !!checked[control.key];
+                    const stateClass = on ? 'selected' : 'is-pending';
                     const ckey = encodeURIComponent(control.key);
-                    html += `<div class="hazard-item avoid-type ${on}" data-ckey="${ckey}" onclick="toggleLinkedControl(event, ${tid}, '${ckey}')"><div class="hazard-item__text">${escapeHtml(plainControlText(control.text))} ${controlMark(control)}</div></div>`;
+                    const statusClass = on ? 'control-status--done' : (control.core ? 'control-status--pending-core' : 'control-status--pending');
+                    const statusText = on ? '✓ 已做到' : (control.core ? '核心措施未做到' : '尚未做到');
+                    html += `<div class="hazard-item avoid-type scenario-control ${stateClass}" data-ckey="${ckey}" data-core="${control.core ? 'true' : 'false'}" onclick="toggleLinkedControl(event, ${tid}, '${ckey}')"><div class="hazard-item__text"><span>${escapeHtml(plainControlText(control.text))} ${controlMark(control)}</span><span class="control-status ${statusClass}">${statusText}</span></div></div>`;
                 });
                 html += `
                         </div>
@@ -2413,7 +2495,7 @@
                 const score = item.manualS && item.manualP ? lookupRisk(item.manualS, item.manualP) : null;
                 html += `
                     <div class="scenario-block${open ? ' is-open' : ''}" id="custom-scenario-block-${index}-${cIdx}">
-                        <div class="scenario-type">${escapeHtml(group.groupName)} <span class="chip-tag">自訂</span></div>
+                        <div class="scenario-type">自訂危害情境</div>
                         <div class="hazard-item hazard-type ${open ? 'selected' : ''} scenario-hit" onclick="toggleCustomScenario(${tid}, ${index}, ${cIdx})">
                             <div class="hazard-item__text">${escapeHtml(item.text)}</div>
                             <button class="chip-del" onclick="removeCustomScenario(event, ${tid}, ${index}, ${cIdx})">✖</button>
@@ -2578,12 +2660,26 @@
             checked[key] = !checked[key];
             document.querySelectorAll(`[data-ckey="${encodedKey}"]`).forEach((el) => {
                 el.classList.toggle('selected', !!checked[key]);
+                const status = el.querySelector('.control-status');
+                if (status) {
+                    const done = !!checked[key];
+                    const core = el.dataset.core === 'true';
+                    status.className = 'control-status ' + (done ? 'control-status--done' : (core ? 'control-status--pending-core' : 'control-status--pending'));
+                    status.textContent = done ? '✓ 已做到' : (core ? '核心措施未做到' : '尚未做到');
+                }
             });
             const task = hazardLibrary.find(t => t.id === taskId);
             if (!task) return;
             task.hazardGroups.forEach((group, gi) => {
                 if (!group.scenarios) return;
-                group.scenarios.forEach((_, si) => calculateScenarioUI(taskId, gi, si));
+                group.scenarios.forEach((scenario, si) => {
+                    calculateScenarioUI(taskId, gi, si);
+                    const count = document.querySelector('#scenario-' + gi + '-' + si + ' .scenario-controls-count');
+                    if (count) {
+                        const completed = scenario.controls.filter((control) => checked[control.key]).length;
+                        count.textContent = completed + ' / ' + scenario.controls.length + ' 項已做到';
+                    }
+                });
             });
         }
 
@@ -2655,8 +2751,8 @@
                 const checked = checkedControls(taskId);
                 const pending = scenario.controls.filter((c) => !checked[c.key]);
                 const anyChecked = scenario.controls.some((c) => checked[c.key]);
-                if (pending.length && anyChecked) {
-                    advicePanel.innerHTML = `<strong>降低風險措施：</strong><ul>${pending.map((c) => `<li>${escapeHtml(controlLine(c))}</li>`).join('')}</ul>`;
+                if (pending.length) {
+                    advicePanel.innerHTML = `<strong>尚待改善 ${pending.length} 項</strong><p>完成下列措施後，系統會重新評估可能性。</p><ul>${pending.map((c) => `<li>${escapeHtml(controlLine(c))}</li>`).join('')}</ul>`;
                     advicePanel.style.display = 'block';
                 } else {
                     advicePanel.style.display = 'none';
