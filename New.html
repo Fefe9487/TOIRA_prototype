@@ -1319,7 +1319,7 @@
         const RISK_FORM_API = (window.RISK_FORM_API || 'http://localhost:8000').replace(/\/$/, '');
         const STORAGE_KEY = 'toira.assessment.v2';
 
-        const DATA_VER = '20261002e';
+        const DATA_VER = '20261002f';
 
         // 風險矩陣與文字定義
         const riskMatrix = {
@@ -1400,20 +1400,21 @@
             const isOn = (c) => !!checked[c.key];
             const eng = list.filter((c) => c.scoreLane === 'E');
             const adm = list.filter((c) => c.scoreLane === 'M');
+            const cores = list.filter((c) => c.core);
             const engOn = eng.filter(isOn).length;
             const admOn = adm.filter(isOn).length;
             const engAll = eng.length > 0 && engOn === eng.length;
             const admAll = adm.length > 0 && admOn === adm.length;
-            if (engAll) return 'P2';
-            const cores = list.filter((c) => c.core);
+            const coreAll = cores.length > 0 && cores.every(isOn);
+            const countedOn = engOn + admOn > 0 || cores.some(isOn);
             if (cores.length) {
-                if (!list.some(isOn)) return 'P5';
-                if (cores.some((c) => !isOn(c))) return 'P4';
-                const supports = list.filter((c) => !c.core);
-                if (!supports.length || supports.filter(isOn).length / supports.length >= 0.5) return 'P2';
+                if (!countedOn) return 'P5';
+                if (!coreAll) return 'P4';
+                if (engAll) return 'P2';
                 return 'P3';
             }
-            if (admAll) return 'P3';
+            if (engAll) return 'P3';
+            if (!eng.length && admAll) return 'P3';
             if (engOn + admOn > 0) return 'P4';
             return 'P5';
         }
