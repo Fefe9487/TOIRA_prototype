@@ -489,6 +489,11 @@
             font-weight: 700;
         }
 
+        .core-badge--inline {
+            margin-left: 6px;
+            vertical-align: middle;
+        }
+
         .core-reason {
             margin: 0 0 12px;
             font-size: 13px;
@@ -1319,7 +1324,7 @@
         const RISK_FORM_API = (window.RISK_FORM_API || 'http://localhost:8000').replace(/\/$/, '');
         const STORAGE_KEY = 'toira.assessment.v2';
 
-        const DATA_VER = '20261002f';
+        const DATA_VER = '20261002g';
 
         // 風險矩陣與文字定義
         const riskMatrix = {
@@ -1758,10 +1763,21 @@
                 .replace(/[（(【]\s*個人防護具\s*[）)】]\s*$/, '(個人防護)');
         }
 
+        function controlMark(control) {
+            const lane = `<span class="chip-tag">${escapeHtml(control.lane)}</span>`;
+            if (!control.core) return lane;
+            return `${lane}<span class="core-badge core-badge--inline">核心改善</span>`;
+        }
+
         function plainControlText(item) {
             return displayControlText(item)
                 .replace(/[（(【]\s*(消除|取代|工程改善|工程控制|行政管理|管理控制|個人防護具|個人防護)\s*[）)】]\s*$/, '')
                 .trim();
+        }
+
+        function controlLine(control, keepLane) {
+            const text = keepLane ? displayControlText(control.text) : plainControlText(control.text);
+            return control.core ? `${text}（核心改善）` : text;
         }
 
         function isCoreGroup(group) {
@@ -1887,8 +1903,8 @@
                 const manual = (state.scenarioManual || {})[si] || {};
                 let cur = lookupRisk(scenario.severity, probabilityFromLinkedControls(scenario.controls, checked));
                 if (manual.isManual) cur = lookupRisk(manual.manualS || 'S4', manual.manualP || 'P4');
-                const existingControls = scenario.controls.filter((c) => checked[c.key]).map((c) => displayControlText(c.text));
-                const additionalControls = scenario.controls.filter((c) => !checked[c.key]).map((c) => displayControlText(c.text));
+                const existingControls = scenario.controls.filter((c) => checked[c.key]).map((c) => controlLine(c, true));
+                const additionalControls = scenario.controls.filter((c) => !checked[c.key]).map((c) => controlLine(c, true));
                 let residualP = probabilityIfAddressed(scenario.controls);
                 const pNum = parseInt(String(cur.p).replace('P', ''), 10);
                 const rNum = parseInt(String(residualP).replace('P', ''), 10);
@@ -2341,7 +2357,7 @@
                 scenario.controls.forEach((control) => {
                     const on = checked[control.key] ? 'selected' : '';
                     const ckey = encodeURIComponent(control.key);
-                    html += `<div class="hazard-item avoid-type ${on}" data-ckey="${ckey}" onclick="toggleLinkedControl(event, ${tid}, '${ckey}')"><div class="hazard-item__text">${escapeHtml(plainControlText(control.text))} <span class="chip-tag">${escapeHtml(control.lane)}</span></div></div>`;
+                    html += `<div class="hazard-item avoid-type ${on}" data-ckey="${ckey}" onclick="toggleLinkedControl(event, ${tid}, '${ckey}')"><div class="hazard-item__text">${escapeHtml(plainControlText(control.text))} ${controlMark(control)}</div></div>`;
                 });
                 html += `
                         </div>
@@ -2641,7 +2657,7 @@
                 const pending = scenario.controls.filter((c) => !checked[c.key]);
                 const anyChecked = scenario.controls.some((c) => checked[c.key]);
                 if (pending.length && anyChecked) {
-                    advicePanel.innerHTML = `<strong>降低風險措施：</strong><ul>${pending.map((c) => `<li>${escapeHtml(plainControlText(c.text))}</li>`).join('')}</ul>`;
+                    advicePanel.innerHTML = `<strong>降低風險措施：</strong><ul>${pending.map((c) => `<li>${escapeHtml(controlLine(c))}</li>`).join('')}</ul>`;
                     advicePanel.style.display = 'block';
                 } else {
                     advicePanel.style.display = 'none';
