@@ -218,6 +218,8 @@
     </div>
 
     <script>
+        // 與 New.html 使用相同版本網址，兩頁可重用同一份 JSON 快取。
+        const DATA_VER = '20261002l';
         const DEFAULT_SECTOR = '製造業';
         const CONSTRUCTION_TRADE_ORDER = [
             '土方與深基礎工種',
@@ -233,9 +235,9 @@
         let openSectorId = null;
 
         Promise.all([
-            fetch('industrySectors.json').then(res => res.json()),
-            fetch('industryMapping.json?v=20261002l').then(res => res.json()),
-            fetch('tasksLibrary.json?v=20261002l').then(res => res.json())
+            fetch(`industrySectors.json?v=${DATA_VER}`, { cache: 'default' }).then(res => res.json()),
+            fetch(`industryMapping.json?v=${DATA_VER}`, { cache: 'default' }).then(res => res.json()),
+            fetch(`tasksLibrary.json?v=${DATA_VER}`, { cache: 'default' }).then(res => res.json())
         ])
         .then(([sectors, mappings, library]) => {
             const combinedData = mappings.map(m => ({
@@ -343,7 +345,7 @@
         function startAssessment(idArray, industryName) {
             sessionStorage.setItem('initTasks', JSON.stringify(idArray));
             sessionStorage.setItem('industryName', industryName);
-            window.location.href = 'New.html?v=20261002l';
+            window.location.href = `New.html?v=${DATA_VER}`;
         }
     </script>
 </body>
