@@ -790,6 +790,41 @@
             color: var(--brand-700);
         }
 
+        .scenario-block {
+            margin: 0 0 16px;
+            padding: 14px 14px 4px;
+            border: 1px solid var(--line);
+            border-radius: var(--r-sm);
+            background: var(--bg);
+        }
+
+        .scenario-type {
+            margin-bottom: 8px;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--brand-700);
+        }
+
+        .scenario-hint {
+            margin: 0 0 14px;
+            font-size: 13px;
+            line-height: 1.7;
+            color: var(--muted);
+        }
+
+        .scenario-block .risk-panel {
+            margin-top: 12px;
+        }
+
+        .scenario-detail {
+            display: none;
+            margin-top: 12px;
+        }
+
+        .scenario-block.is-open .scenario-detail {
+            display: block;
+        }
+
         /* --------------------------------------------------- 報表 */
 
         .modal-overlay {
@@ -1275,12 +1310,16 @@
         let myProjectTasks = [];
         let currentActiveTaskId = null;
         const userSelections = {};
+        const taskControlChecks = {};
+        const SCENARIO_MAP_URLS = [
+            'scenarioMaps.json'
+        ];
         const cardFoldState = {};
         const expandedCategories = new Set();
         const RISK_FORM_API = (window.RISK_FORM_API || 'http://localhost:8000').replace(/\/$/, '');
         const STORAGE_KEY = 'toira.assessment.v2';
 
-        const DATA_VER = '20260908a';
+        const DATA_VER = '20261002a';
 
         // 風險矩陣與文字定義
         const riskMatrix = {
@@ -1337,6 +1376,101 @@
             return 'P4';
         }
 
+        function controlBodyKey(text) {
+            return String(text || '')
+                .replace(/[（(【]\s*(消除|取代|工程改善|工程控制|行政管理|管理控制|個人防護具|個人防護)\s*[）)】]\s*$/, '')
+                .replace(/\s+/g, '')
+                .trim();
+        }
+
+        function scoreLaneOf(item) {
+            const lane = controlLane(item);
+            if (lane === '工程改善') return 'E';
+            if (lane === '行政管理') return 'M';
+            return 'P';
+        }
+
+        function checkedControls(taskId) {
+            if (!taskControlChecks[taskId]) taskControlChecks[taskId] = {};
+            return taskControlChecks[taskId];
+        }
+
+        function probabilityFromLinkedControls(controls, checked) {
+            const eng = (controls || []).filter((c) => c.scoreLane === 'E');
+            const adm = (controls || []).filter((c) => c.scoreLane === 'M');
+            const isOn = (c) => !!checked[c.key];
+            const engOn = eng.filter(isOn).length;
+            const admOn = adm.filter(isOn).length;
+            const engAll = eng.length > 0 && engOn === eng.length;
+            const admAll = adm.length > 0 && admOn === adm.length;
+            if (adm.length && admAll && eng.length && engAll) return 'P2';
+            if (adm.length && admAll) return 'P3';
+            if (!adm.length) {
+                if (engAll) return 'P3';
+                if (engOn > 0) return 'P4';
+                return 'P5';
+            }
+            if (engOn + admOn > 0) return 'P4';
+            return 'P5';
+        }
+
+        function probabilityIfAddressed(controls) {
+            const fake = {};
+            (controls || []).forEach((c) => {
+                if (c.scoreLane === 'E' || c.scoreLane === 'M') fake[c.key] = true;
+            });
+            return probabilityFromLinkedControls(controls, fake);
+        }
+
+        function scenariosFromMapDoc(group, doc) {
+            const rows = Array.isArray(doc && doc.hazardControlMap) ? doc.hazardControlMap : [];
+            return rows.map((row) => {
+                const sevNum = parseInt(row.severity, 10);
+                const severity = sevNum >= 1 && sevNum <= 5 ? `S${sevNum}` : (group.severitylevel || 'S4');
+                const controls = (row.controlRefs || []).map((cr) => {
+                    const text = String(cr.text || '').trim();
+                    return {
+                        key: controlBodyKey(text),
+                        lane: controlLane(text),
+                        scoreLane: scoreLaneOf(text),
+                        text,
+                    };
+                }).filter((c) => c.key);
+                return { text: String(row.hazardItem || '').trim(), severity, controls };
+            }).filter((s) => s.text);
+        }
+
+        function attachScenarioMaps(task, docs) {
+            const byGroup = {};
+            (docs || []).forEach((doc) => {
+                if (!doc || doc.taskName !== task.taskName) return;
+                byGroup[doc.groupName] = doc;
+            });
+            (task.hazardGroups || []).forEach((group) => {
+                const doc = byGroup[group.groupName];
+                if (!doc) return;
+                const scenarios = scenariosFromMapDoc(group, doc);
+                if (scenarios.length) group.scenarios = scenarios;
+            });
+        }
+
+        async function loadScenarioMapDocs() {
+            const docs = [];
+            for (const url of SCENARIO_MAP_URLS) {
+                try {
+                    const res = await fetch(`${url}?v=${DATA_VER}`, { cache: 'no-store' });
+                    if (!res.ok) continue;
+                    const data = await res.json();
+                    if (data && Array.isArray(data.maps)) docs.push(...data.maps);
+                    else if (Array.isArray(data)) docs.push(...data);
+                    else if (data && data.taskName) docs.push(data);
+                } catch (err) {
+                    console.warn('情境映射未載入', url, err);
+                }
+            }
+            return docs;
+        }
+
         // ==========================================
         // 1. 初始化與讀取 JSON 資料
         // ==========================================
@@ -1348,8 +1482,9 @@
 
             Promise.all([
                 fetch(`industryMapping.json?v=${DATA_VER}`, { cache: 'no-store' }).then(r => r.json()),
-                fetch(`tasksLibrary.json?v=${DATA_VER}`, { cache: 'no-store' }).then(r => r.json())
-            ]).then(([mappings, library]) => {
+                fetch(`tasksLibrary.json?v=${DATA_VER}`, { cache: 'no-store' }).then(r => r.json()),
+                loadScenarioMapDocs()
+            ]).then(([mappings, library, mapDocs]) => {
                 const mapByTaskId = {};
                 mappings.forEach((row) => {
                     if (!row?.taskId || mapByTaskId[row.taskId]) return;
@@ -1358,13 +1493,15 @@
                 hazardLibrary = Object.keys(library).map((taskId) => {
                     const task = slimLibraryTask(taskId, library[taskId] || {});
                     const mapped = mapByTaskId[taskId] || {};
-                    return {
+                    const merged = {
                         ...mapped,
                         ...task,
                         id: taskId,
                         taskId,
                         category: mapped.category || task.category || '未分類',
                     };
+                    attachScenarioMaps(merged, mapDocs);
+                    return merged;
                 });
 
                 // 檢查是否有首頁傳遞過來的 ID
@@ -1389,6 +1526,16 @@
                 } else {
                     renderEmptyState();
                     switchTab('search-view');
+                }
+
+                if (new URLSearchParams(location.search).get('demo') === 'scenario') {
+                    addTaskToProject('化學品入料作業');
+                    updateProjectCount();
+                    switchTab('assessment-view');
+                    renderAssessment('化學品入料作業');
+                    const demoTask = hazardLibrary.find(t => t.id === '化學品入料作業');
+                    const demoIndex = demoTask ? demoTask.hazardGroups.findIndex(g => g.scenarios && g.scenarios.length) : -1;
+                    if (demoIndex >= 0) jumpToGroup(demoIndex);
                 }
             }).catch(err => {
                 console.error('資料庫載入失敗', err);
@@ -1446,12 +1593,15 @@
             groups.forEach((_, idx) => {
                 const key = `${taskId}_${idx}`;
                 if (!userSelections[key]) {
-                    userSelections[key] = { hazards: [], avoids: [], customHazards: [], customAvoids: [], isManual: false, manualS: 'S4', manualP: 'P4' };
+                    userSelections[key] = { hazards: [], avoids: [], scenarios: [], scenarioManual: {}, customHazards: [], customAvoids: [], customScenarios: [], isManual: false, manualS: 'S4', manualP: 'P4' };
                 } else {
                     if (!Array.isArray(userSelections[key].hazards)) userSelections[key].hazards = [];
                     if (!Array.isArray(userSelections[key].avoids)) userSelections[key].avoids = [];
+                    if (!Array.isArray(userSelections[key].scenarios)) userSelections[key].scenarios = [];
+                    if (!userSelections[key].scenarioManual) userSelections[key].scenarioManual = {};
                     if (!Array.isArray(userSelections[key].customHazards)) userSelections[key].customHazards = [];
                     if (!Array.isArray(userSelections[key].customAvoids)) userSelections[key].customAvoids = [];
+                    if (!Array.isArray(userSelections[key].customScenarios)) userSelections[key].customScenarios = [];
                 }
             });
         }
@@ -1536,6 +1686,7 @@
                 industryName: sessionStorage.getItem('industryName'),
                 myProjectTasks,
                 userSelections,
+                taskControlChecks,
                 customTasks: hazardLibrary.filter(t => t.category === '自定義製程')
             };
             try {
@@ -1556,6 +1707,7 @@
                 });
                 myProjectTasks = (snapshot.myProjectTasks || []).filter(id => hazardLibrary.some(t => t.id === id));
                 Object.assign(userSelections, snapshot.userSelections || {});
+                Object.assign(taskControlChecks, snapshot.taskControlChecks || {});
                 myProjectTasks.forEach(ensureSelectionState);
 
                 if (!sessionStorage.getItem('companyInfo') && snapshot.companyInfo) {
@@ -1596,6 +1748,12 @@
             return String(item || '')
                 .replace(/[（(【]\s*管理控制\s*[）)】]\s*$/, '(行政管理)')
                 .replace(/[（(【]\s*個人防護具\s*[）)】]\s*$/, '(個人防護)');
+        }
+
+        function plainControlText(item) {
+            return displayControlText(item)
+                .replace(/[（(【]\s*(消除|取代|工程改善|工程控制|行政管理|管理控制|個人防護具|個人防護)\s*[）)】]\s*$/, '')
+                .trim();
         }
 
         function isCoreGroup(group) {
@@ -1651,6 +1809,10 @@
             task.hazardGroups.forEach((group, index) => {
                 const state = userSelections[`${taskId}_${index}`];
                 if (!state) return;
+                if (group.scenarios && group.scenarios.length) {
+                    rows.push(...buildMappedExportRows(task, group, state));
+                    return;
+                }
                 const hasData = state.hazards.length > 0 || state.avoids.length > 0
                     || (state.customHazards && state.customHazards.length)
                     || (state.customAvoids && state.customAvoids.length);
@@ -1703,6 +1865,65 @@
                     residualProbability: residualP,
                     residualRiskLevel: riskDescriptions[residualRiskNum].label,
                     isManual: !!state.isManual,
+                });
+            });
+            return rows;
+        }
+
+        function buildMappedExportRows(task, group, state) {
+            const checked = checkedControls(task.id);
+            const selected = new Set(state.scenarios || []);
+            const rows = [];
+            group.scenarios.forEach((scenario, si) => {
+                if (!selected.has(si)) return;
+                const manual = (state.scenarioManual || {})[si] || {};
+                let cur = lookupRisk(scenario.severity, probabilityFromLinkedControls(scenario.controls, checked));
+                if (manual.isManual) cur = lookupRisk(manual.manualS || 'S4', manual.manualP || 'P4');
+                const existingControls = scenario.controls.filter((c) => checked[c.key]).map((c) => displayControlText(c.text));
+                const additionalControls = scenario.controls.filter((c) => !checked[c.key]).map((c) => displayControlText(c.text));
+                let residualP = probabilityIfAddressed(scenario.controls);
+                const pNum = parseInt(String(cur.p).replace('P', ''), 10);
+                const rNum = parseInt(String(residualP).replace('P', ''), 10);
+                if (rNum > pNum) residualP = cur.p;
+                const residualRiskNum = lookupRisk(cur.s, residualP).riskNum;
+                rows.push({
+                    taskName: task.taskName,
+                    taskdescribe: task.taskdescribe || '',
+                    processStepLabel: task.taskName,
+                    hazardCategory: group.groupName,
+                    hazardScenario: scenario.text,
+                    existingControls,
+                    additionalControls,
+                    initialSeverity: cur.s,
+                    initialProbability: cur.p,
+                    initialRiskLevel: cur.riskObj.label,
+                    initialRiskNum: lookupRisk(cur.s, cur.p).riskNum,
+                    residualSeverity: cur.s,
+                    residualProbability: residualP,
+                    residualRiskLevel: riskDescriptions[residualRiskNum].label,
+                    isManual: !!manual.isManual,
+                });
+            });
+            (state.customScenarios || []).forEach((item) => {
+                if (!item.selected) return;
+                const scored = item.manualS && item.manualP ? lookupRisk(item.manualS, item.manualP) : null;
+                rows.push({
+                    taskName: task.taskName,
+                    taskdescribe: task.taskdescribe || '',
+                    processStepLabel: task.taskName,
+                    hazardCategory: group.groupName,
+                    hazardScenario: item.text,
+                    existingControls: [],
+                    additionalControls: item.measures || [],
+                    initialSeverity: scored ? scored.s : '',
+                    initialProbability: scored ? scored.p : '',
+                    initialRiskLevel: scored ? scored.riskObj.label : '未評估',
+                    initialRiskNum: scored ? scored.riskNum : 0,
+                    residualSeverity: scored ? scored.s : '',
+                    residualProbability: scored ? scored.p : '',
+                    residualRiskLevel: scored ? scored.riskObj.label : '未評估',
+                    isManual: !!scored,
+                    unscored: !scored,
                 });
             });
             return rows;
@@ -1848,8 +2069,10 @@
                 return state && (
                     state.hazards.length > 0 ||
                     state.avoids.length > 0 ||
+                    (state.scenarios && state.scenarios.length > 0) ||
                     (state.customHazards && state.customHazards.length > 0) ||
-                    (state.customAvoids && state.customAvoids.length > 0)
+                    (state.customAvoids && state.customAvoids.length > 0) ||
+                    (state.customScenarios && state.customScenarios.length > 0)
                 );
             });
         }
@@ -1928,8 +2151,11 @@
                     isManual: false, manualS: 'S4', manualP: 'P4'
                 };
                 userSelections[selKey] = state;
+                if (!state.scenarios) state.scenarios = [];
+                if (!state.scenarioManual) state.scenarioManual = {};
                 if (!state.customHazards) state.customHazards = [];
                 if (!state.customAvoids) state.customAvoids = [];
+                if (!state.customScenarios) state.customScenarios = [];
                 if (state.isManual === undefined) {
                     state.isManual = false;
                     state.manualS = 'S4';
@@ -1940,7 +2166,8 @@
                 const core = isCoreGroup(group);
                 const reason = String(group['核心理由'] || '').trim();
                 const foldKey = `${taskId}_${index}`;
-                const folded = (cardFoldState[foldKey] || ((core || !hasCore) ? 'open' : 'closed')) === 'closed';
+                const mappedOpen = group.scenarios && group.scenarios.length;
+                const folded = mappedOpen ? false : (cardFoldState[foldKey] || ((core || !hasCore) ? 'open' : 'closed')) === 'closed';
                 const cardClass = `hazard-card${core ? ' is-core' : ''}${folded ? ' is-collapsed' : ''}`;
 
                 html += `
@@ -1949,13 +2176,20 @@
                             <span>${escapeHtml(group.groupName)}</span>
                             <span class="hazard-group-title__meta">
                                 ${core ? '<span class="core-badge">核心重點</span>' : ''}
+                                ${group.scenarios && group.scenarios.length ? '<span class="core-badge">一則一列</span>' : ''}
                                 <span class="chevron">›</span>
                             </span>
                         </button>
                         ${core && reason ? `<p class="core-reason">${escapeHtml(reason)}</p>` : ''}
                         <div class="hazard-card__body">
                             ${!core && reason ? `<p class="core-reason">${escapeHtml(reason)}</p>` : ''}
+                `;
 
+                if (group.scenarios && group.scenarios.length) {
+                    html += mappedScenarioSections(taskId, group, index, state, tid);
+                    html += `</div></div>`;
+                } else {
+                html += `
                         <div class="sub-group-title">⚠️ 存在的危害風險</div>
                         <div class="hazard-list">
                 `;
@@ -2059,13 +2293,352 @@
                         </div>
                     </div>
                 `;
+                }
             });
 
             contentArea.innerHTML = html;
-            groups.forEach((_, index) => {
-                try { calculateRiskUI(taskId, index); }
+            groups.forEach((group, index) => {
+                try {
+                    if (group.scenarios && group.scenarios.length) {
+                        group.scenarios.forEach((_, si) => calculateScenarioUI(taskId, index, si));
+                    } else {
+                        calculateRiskUI(taskId, index);
+                    }
+                }
                 catch (err) { console.error('calculateRiskUI', taskId, index, err); }
             });
+        }
+
+        function optionList(values, labels, current) {
+            return values.map((value, i) => `<option value="${value}" ${current === value ? 'selected' : ''}>${labels[i]}</option>`).join('');
+        }
+
+        function mappedScenarioSections(taskId, group, index, state, tid) {
+            const checked = checkedControls(taskId);
+            let html = `<p class="scenario-hint">勾選危害情境後，才顯示處理風險或機會之措施。自訂情境請自行填寫措施，並手動選擇嚴重度與可能性。</p>`;
+            group.scenarios.forEach((scenario, si) => {
+                const picked = state.scenarios.includes(si);
+                const selected = picked ? 'selected' : '';
+                const manual = state.scenarioManual[si] || { isManual: false, manualS: scenario.severity || 'S4', manualP: 'P4' };
+                html += `
+                    <div class="scenario-block${picked ? ' is-open' : ''}" id="scenario-${index}-${si}">
+                        <div class="scenario-type">${escapeHtml(group.groupName)}</div>
+                        <div class="hazard-item hazard-type ${selected} scenario-hit" onclick="toggleScenario(${tid}, ${index}, ${si})">
+                            <div class="hazard-item__text">${escapeHtml(scenario.text)}</div>
+                        </div>
+                        <div class="scenario-detail">
+                        <div class="sub-group-title">處理風險或機會之措施(改善建議)</div>
+                        <div class="hazard-list">
+                `;
+                scenario.controls.forEach((control) => {
+                    const on = checked[control.key] ? 'selected' : '';
+                    const ckey = encodeURIComponent(control.key);
+                    html += `<div class="hazard-item avoid-type ${on}" data-ckey="${ckey}" onclick="toggleLinkedControl(event, ${tid}, '${ckey}')"><div class="hazard-item__text">${escapeHtml(plainControlText(control.text))} <span class="chip-tag">${escapeHtml(control.lane)}</span></div></div>`;
+                });
+                html += `
+                        </div>
+                        <div class="advice-panel" id="advice-panel-${index}-${si}"></div>
+                        <div class="risk-panel">
+                            <div class="risk-header">
+                                <div class="risk-factors">
+                                    <span>嚴重度 (S): <span id="s-level-${index}-${si}">-</span></span>
+                                    <span>可能性 (P): <span id="p-level-${index}-${si}">-</span></span>
+                                </div>
+                                <div class="risk-badge risk-0" id="risk-badge-${index}-${si}">計算中</div>
+                            </div>
+                            <div class="manual-block">
+                                <label>
+                                    <input type="checkbox" id="manual-override-${index}-${si}" ${manual.isManual ? 'checked' : ''} onchange="toggleScenarioManual(${tid}, ${index}, ${si})"> 手動評估風險
+                                </label>
+                                <div class="manual-controls" id="manual-controls-${index}-${si}" style="display:${manual.isManual ? 'flex' : 'none'};">
+                                    <span>嚴重度 (S):
+                                        <select id="manual-s-${index}-${si}" onchange="updateScenarioManual(${tid}, ${index}, ${si})">
+                                            ${optionList(['S5', 'S4', 'S3', 'S2', 'S1'], ['5 (極大)', '4 (重大)', '3 (高)', '2 (中)', '1 (輕)'], manual.manualS || scenario.severity || 'S4')}
+                                        </select>
+                                    </span>
+                                    <span>可能性 (P):
+                                        <select id="manual-p-${index}-${si}" onchange="updateScenarioManual(${tid}, ${index}, ${si})">
+                                            ${optionList(['P5', 'P4', 'P3', 'P2', 'P1'], ['5 (極可能)', '4 (較有可能)', '3 (有可能)', '2 (不太可能)', '1 (幾乎不可能)'], manual.manualP || 'P4')}
+                                        </select>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="risk-desc" id="risk-desc-${index}-${si}"></div>
+                            <div class="risk-note" id="risk-note-${index}-${si}"></div>
+                        </div>
+                        </div>
+                    </div>
+                `;
+            });
+            html += customScenarioSections(taskId, group, index, state, tid);
+            return html;
+        }
+
+        function blankScoreOptions(prefix, labels, current) {
+            const head = `<option value="" ${current ? '' : 'selected'}>請選擇</option>`;
+            const rest = ['5', '4', '3', '2', '1'].map((n, i) => {
+                const value = `${prefix}${n}`;
+                return `<option value="${value}" ${current === value ? 'selected' : ''}>${labels[i]}</option>`;
+            }).join('');
+            return head + rest;
+        }
+
+        function customScenarioSections(taskId, group, index, state, tid) {
+            let html = '';
+            (state.customScenarios || []).forEach((item, cIdx) => {
+                const open = !!item.selected;
+                const score = item.manualS && item.manualP ? lookupRisk(item.manualS, item.manualP) : null;
+                html += `
+                    <div class="scenario-block${open ? ' is-open' : ''}" id="custom-scenario-block-${index}-${cIdx}">
+                        <div class="scenario-type">${escapeHtml(group.groupName)} <span class="chip-tag">自訂</span></div>
+                        <div class="hazard-item hazard-type ${open ? 'selected' : ''} scenario-hit" onclick="toggleCustomScenario(${tid}, ${index}, ${cIdx})">
+                            <div class="hazard-item__text">${escapeHtml(item.text)}</div>
+                            <button class="chip-del" onclick="removeCustomScenario(event, ${tid}, ${index}, ${cIdx})">✖</button>
+                        </div>
+                        <div class="scenario-detail">
+                            <div class="sub-group-title">處理風險或機會之措施(改善建議)</div>
+                            <div class="hazard-list" id="custom-measures-${index}-${cIdx}">
+                `;
+                (item.measures || []).forEach((text, mIdx) => {
+                    html += `
+                        <div class="hazard-item avoid-type selected" style="align-items: center;">
+                            <div class="hazard-item__text">${escapeHtml(text)} <span class="chip-tag">自訂</span></div>
+                            <button class="chip-del" onclick="removeCustomScenarioMeasure(event, ${tid}, ${index}, ${cIdx}, ${mIdx})">✖</button>
+                        </div>
+                    `;
+                });
+                html += `
+                            </div>
+                            <div class="inline-add">
+                                <input class="t-input" type="text" id="custom-measure-${index}-${cIdx}" placeholder="輸入這則情境的改善措施..." onkeydown="if(event.key==='Enter'){event.preventDefault();addCustomScenarioMeasure(${tid}, ${index}, ${cIdx});}">
+                                <button class="t-btn t-btn--outline" onclick="addCustomScenarioMeasure(${tid}, ${index}, ${cIdx})">＋ 新增措施</button>
+                            </div>
+                            <div class="risk-panel">
+                                <div class="risk-header">
+                                    <div class="risk-factors">
+                                        <span>嚴重度 (S): <span id="cs-s-${index}-${cIdx}">${score ? String(score.s).replace('S', '') : '—'}</span></span>
+                                        <span>可能性 (P): <span id="cs-p-${index}-${cIdx}">${score ? String(score.p).replace('P', '') : '—'}</span></span>
+                                    </div>
+                                    <div class="risk-badge ${score ? score.riskObj.class : 'risk-0'}" id="cs-badge-${index}-${cIdx}">${score ? score.riskObj.label : '請手動評估'}</div>
+                                </div>
+                                <div class="manual-controls" style="display:flex;">
+                                    <span>嚴重度 (S):
+                                        <select id="cs-select-s-${index}-${cIdx}" onchange="updateCustomScenarioScore(${tid}, ${index}, ${cIdx})">
+                                            ${blankScoreOptions('S', ['5 (極大)', '4 (重大)', '3 (高)', '2 (中)', '1 (輕)'], item.manualS || '')}
+                                        </select>
+                                    </span>
+                                    <span>可能性 (P):
+                                        <select id="cs-select-p-${index}-${cIdx}" onchange="updateCustomScenarioScore(${tid}, ${index}, ${cIdx})">
+                                            ${blankScoreOptions('P', ['5 (極可能)', '4 (較有可能)', '3 (有可能)', '2 (不太可能)', '1 (幾乎不可能)'], item.manualP || '')}
+                                        </select>
+                                    </span>
+                                </div>
+                                <p class="scenario-hint">自訂情境不自動評分，請自行選擇嚴重度與可能性。</p>
+                                <div class="risk-desc" id="cs-desc-${index}-${cIdx}" style="display:${score ? 'block' : 'none'};">${score ? `<strong>處置方針：</strong>${score.riskObj.desc}` : ''}</div>
+                                <div class="risk-note" id="cs-note-${index}-${cIdx}">${score ? `備註：${score.riskObj.note}` : ''}</div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+            html += `
+                <div class="inline-add">
+                    <input class="t-input" type="text" id="custom-scenario-${index}" placeholder="輸入其他危害情境..." onkeydown="if(event.key==='Enter'){event.preventDefault();addCustomScenario(${tid}, ${index});}">
+                    <button class="t-btn t-btn--outline" onclick="addCustomScenario(${tid}, ${index})">＋ 新增情境</button>
+                </div>
+            `;
+            return html;
+        }
+
+        function addCustomScenario(taskId, groupIndex) {
+            const inputEl = document.getElementById(`custom-scenario-${groupIndex}`);
+            const val = inputEl && inputEl.value.trim();
+            if (!val) return;
+            ensureSelectionState(taskId);
+            const state = userSelections[`${taskId}_${groupIndex}`];
+            if (!state) return;
+            if (!state.customScenarios) state.customScenarios = [];
+            state.customScenarios.push({ text: val, selected: false, measures: [], manualS: '', manualP: '' });
+            renderAssessment(taskId);
+            const block = document.getElementById(`custom-scenario-block-${groupIndex}-${state.customScenarios.length - 1}`);
+            if (block) block.scrollIntoView({ block: 'nearest' });
+        }
+
+        function toggleCustomScenario(taskId, groupIndex, cIdx) {
+            const state = userSelections[`${taskId}_${groupIndex}`];
+            const item = state && state.customScenarios && state.customScenarios[cIdx];
+            if (!item) return;
+            item.selected = !item.selected;
+            const block = document.getElementById(`custom-scenario-block-${groupIndex}-${cIdx}`);
+            if (block) block.classList.toggle('is-open', item.selected);
+            const hit = block ? block.querySelector('.scenario-hit') : null;
+            if (hit) hit.classList.toggle('selected', item.selected);
+            renderSidebar();
+        }
+
+        function removeCustomScenario(event, taskId, groupIndex, cIdx) {
+            if (event) event.stopPropagation();
+            const state = userSelections[`${taskId}_${groupIndex}`];
+            if (!state || !state.customScenarios) return;
+            state.customScenarios.splice(cIdx, 1);
+            renderAssessment(taskId);
+        }
+
+        function addCustomScenarioMeasure(taskId, groupIndex, cIdx) {
+            const inputEl = document.getElementById(`custom-measure-${groupIndex}-${cIdx}`);
+            const val = inputEl && inputEl.value.trim();
+            if (!val) return;
+            const state = userSelections[`${taskId}_${groupIndex}`];
+            const item = state && state.customScenarios && state.customScenarios[cIdx];
+            if (!item) return;
+            item.measures.push(val);
+            renderAssessment(taskId);
+            const block = document.getElementById(`custom-scenario-block-${groupIndex}-${cIdx}`);
+            if (block) block.scrollIntoView({ block: 'nearest' });
+        }
+
+        function removeCustomScenarioMeasure(event, taskId, groupIndex, cIdx, mIdx) {
+            if (event) event.stopPropagation();
+            const state = userSelections[`${taskId}_${groupIndex}`];
+            const item = state && state.customScenarios && state.customScenarios[cIdx];
+            if (!item) return;
+            item.measures.splice(mIdx, 1);
+            renderAssessment(taskId);
+        }
+
+        function updateCustomScenarioScore(taskId, groupIndex, cIdx) {
+            const state = userSelections[`${taskId}_${groupIndex}`];
+            const item = state && state.customScenarios && state.customScenarios[cIdx];
+            if (!item) return;
+            const sEl = document.getElementById(`cs-select-s-${groupIndex}-${cIdx}`);
+            const pEl = document.getElementById(`cs-select-p-${groupIndex}-${cIdx}`);
+            item.manualS = sEl ? sEl.value : '';
+            item.manualP = pEl ? pEl.value : '';
+            const score = item.manualS && item.manualP ? lookupRisk(item.manualS, item.manualP) : null;
+            const sText = document.getElementById(`cs-s-${groupIndex}-${cIdx}`);
+            const pText = document.getElementById(`cs-p-${groupIndex}-${cIdx}`);
+            const badge = document.getElementById(`cs-badge-${groupIndex}-${cIdx}`);
+            const desc = document.getElementById(`cs-desc-${groupIndex}-${cIdx}`);
+            const note = document.getElementById(`cs-note-${groupIndex}-${cIdx}`);
+            if (sText) sText.textContent = score ? String(score.s).replace('S', '') : '—';
+            if (pText) pText.textContent = score ? String(score.p).replace('P', '') : '—';
+            if (badge) {
+                badge.className = `risk-badge ${score ? score.riskObj.class : 'risk-0'}`;
+                badge.textContent = score ? score.riskObj.label : '請手動評估';
+            }
+            if (desc) {
+                desc.style.display = score ? 'block' : 'none';
+                desc.innerHTML = score ? `<strong>處置方針：</strong>${score.riskObj.desc}` : '';
+            }
+            if (note) note.textContent = score ? `備註：${score.riskObj.note}` : '';
+        }
+
+        function toggleScenario(taskId, groupIndex, scenarioIndex) {
+            ensureSelectionState(taskId);
+            const state = userSelections[`${taskId}_${groupIndex}`];
+            if (!state) return;
+            const pos = state.scenarios.indexOf(scenarioIndex);
+            if (pos > -1) state.scenarios.splice(pos, 1);
+            else state.scenarios.push(scenarioIndex);
+            const block = document.getElementById(`scenario-${groupIndex}-${scenarioIndex}`);
+            const open = state.scenarios.includes(scenarioIndex);
+            if (block) block.classList.toggle('is-open', open);
+            const hit = block ? block.querySelector('.scenario-hit') : null;
+            if (hit) hit.classList.toggle('selected', open);
+            renderSidebar();
+        }
+
+        function toggleLinkedControl(event, taskId, encodedKey) {
+            if (event) event.stopPropagation();
+            const key = decodeURIComponent(encodedKey);
+            const checked = checkedControls(taskId);
+            checked[key] = !checked[key];
+            document.querySelectorAll(`[data-ckey="${encodedKey}"]`).forEach((el) => {
+                el.classList.toggle('selected', !!checked[key]);
+            });
+            const task = hazardLibrary.find(t => t.id === taskId);
+            if (!task) return;
+            task.hazardGroups.forEach((group, gi) => {
+                if (!group.scenarios) return;
+                group.scenarios.forEach((_, si) => calculateScenarioUI(taskId, gi, si));
+            });
+        }
+
+        function scenarioManualState(state, scenarioIndex, fallbackS) {
+            if (!state.scenarioManual[scenarioIndex]) {
+                state.scenarioManual[scenarioIndex] = { isManual: false, manualS: fallbackS || 'S4', manualP: 'P4' };
+            }
+            return state.scenarioManual[scenarioIndex];
+        }
+
+        function toggleScenarioManual(taskId, groupIndex, scenarioIndex) {
+            const task = hazardLibrary.find(t => t.id === taskId);
+            const scenario = task && task.hazardGroups[groupIndex] && task.hazardGroups[groupIndex].scenarios[scenarioIndex];
+            const state = userSelections[`${taskId}_${groupIndex}`];
+            if (!state || !scenario) return;
+            const manual = scenarioManualState(state, scenarioIndex, scenario.severity);
+            const box = document.getElementById(`manual-override-${groupIndex}-${scenarioIndex}`);
+            manual.isManual = !!(box && box.checked);
+            const panel = document.getElementById(`manual-controls-${groupIndex}-${scenarioIndex}`);
+            if (panel) panel.style.display = manual.isManual ? 'flex' : 'none';
+            calculateScenarioUI(taskId, groupIndex, scenarioIndex);
+        }
+
+        function updateScenarioManual(taskId, groupIndex, scenarioIndex) {
+            const state = userSelections[`${taskId}_${groupIndex}`];
+            if (!state) return;
+            const manual = scenarioManualState(state, scenarioIndex, 'S4');
+            const sEl = document.getElementById(`manual-s-${groupIndex}-${scenarioIndex}`);
+            const pEl = document.getElementById(`manual-p-${groupIndex}-${scenarioIndex}`);
+            if (sEl) manual.manualS = sEl.value;
+            if (pEl) manual.manualP = pEl.value;
+            calculateScenarioUI(taskId, groupIndex, scenarioIndex);
+        }
+
+        function calculateScenarioUI(taskId, groupIndex, scenarioIndex) {
+            const task = hazardLibrary.find(t => t.id === taskId);
+            const group = task && task.hazardGroups[groupIndex];
+            const scenario = group && group.scenarios && group.scenarios[scenarioIndex];
+            const state = userSelections[`${taskId}_${groupIndex}`];
+            if (!scenario || !state) return;
+            const manual = (state.scenarioManual || {})[scenarioIndex] || {};
+            let res = lookupRisk(scenario.severity, probabilityFromLinkedControls(scenario.controls, checkedControls(taskId)));
+            if (manual.isManual) res = lookupRisk(manual.manualS, manual.manualP);
+            const riskObj = (res && res.riskObj) || riskDescriptions[4];
+            const sLevelEl = document.getElementById(`s-level-${groupIndex}-${scenarioIndex}`);
+            const pLevelEl = document.getElementById(`p-level-${groupIndex}-${scenarioIndex}`);
+            const badgeEl = document.getElementById(`risk-badge-${groupIndex}-${scenarioIndex}`);
+            const descEl = document.getElementById(`risk-desc-${groupIndex}-${scenarioIndex}`);
+            const noteEl = document.getElementById(`risk-note-${groupIndex}-${scenarioIndex}`);
+            const advicePanel = document.getElementById(`advice-panel-${groupIndex}-${scenarioIndex}`);
+            if (sLevelEl) sLevelEl.textContent = String(res.s || '').replace('S', '') || '-';
+            if (pLevelEl) pLevelEl.textContent = String(res.p || '').replace('P', '') || '-';
+            if (sLevelEl && pLevelEl) {
+                sLevelEl.style.color = manual.isManual ? 'var(--danger)' : '';
+                pLevelEl.style.color = manual.isManual ? 'var(--danger)' : '';
+                sLevelEl.style.fontWeight = manual.isManual ? 'bold' : '';
+                pLevelEl.style.fontWeight = manual.isManual ? 'bold' : '';
+            }
+            if (badgeEl && riskObj) {
+                badgeEl.className = `risk-badge ${riskObj.class}`;
+                badgeEl.textContent = riskObj.label;
+            }
+            if (descEl && riskObj) {
+                descEl.style.display = 'block';
+                descEl.innerHTML = `<strong>處置方針：</strong>${riskObj.desc}`;
+            }
+            if (noteEl && riskObj) noteEl.textContent = `備註：${riskObj.note}`;
+            if (advicePanel) {
+                const checked = checkedControls(taskId);
+                const pending = scenario.controls.filter((c) => !checked[c.key]);
+                const anyChecked = scenario.controls.some((c) => checked[c.key]);
+                if (pending.length && anyChecked) {
+                    advicePanel.innerHTML = `<strong>降低風險措施：</strong><ul>${pending.map((c) => `<li>${escapeHtml(plainControlText(c.text))}</li>`).join('')}</ul>`;
+                    advicePanel.style.display = 'block';
+                } else {
+                    advicePanel.style.display = 'none';
+                }
+            }
         }
 
         // 點擊預設項目的處理函式
@@ -2286,18 +2859,27 @@
                     ? `<td rowspan="${run.count}" style="text-align:center; vertical-align:middle; font-weight:bold;">${row.processStepLabel}</td>`
                     : '';
 
-                const sDisplay = row.isManual
-                    ? `<span style="color:red;">${row.initialSeverity.replace('S', '')}</span>`
-                    : row.initialSeverity.replace('S', '');
-                const pDisplay = row.isManual
-                    ? `<span style="color:red;">${row.initialProbability.replace('P', '')}</span>`
-                    : row.initialProbability.replace('P', '');
-                const levelDisplay = row.isManual
-                    ? `<span style="color:red;">${row.initialRiskLevel}</span>`
-                    : row.initialRiskLevel;
+                const sDisplay = row.unscored
+                    ? '—'
+                    : (row.isManual
+                        ? `<span style="color:red;">${row.initialSeverity.replace('S', '')}</span>`
+                        : row.initialSeverity.replace('S', ''));
+                const pDisplay = row.unscored
+                    ? '—'
+                    : (row.isManual
+                        ? `<span style="color:red;">${row.initialProbability.replace('P', '')}</span>`
+                        : row.initialProbability.replace('P', ''));
+                const levelDisplay = row.unscored
+                    ? '未評估'
+                    : (row.isManual
+                        ? `<span style="color:red;">${row.initialRiskLevel}</span>`
+                        : row.initialRiskLevel);
 
-                const initRiskClass = riskDescriptions[row.initialRiskNum]?.class || 'risk-0';
-                const resRiskClass = riskDescriptions[lookupRisk(row.residualSeverity, row.residualProbability).riskNum]?.class || 'risk-0';
+                const initRiskClass = row.unscored ? 'risk-0' : (riskDescriptions[row.initialRiskNum]?.class || 'risk-0');
+                const resRiskClass = row.unscored ? 'risk-0' : (riskDescriptions[lookupRisk(row.residualSeverity, row.residualProbability).riskNum]?.class || 'risk-0');
+                const resS = row.unscored ? '—' : row.residualSeverity.replace('S', '');
+                const resP = row.unscored ? '—' : row.residualProbability.replace('P', '');
+                const resLevel = row.unscored ? '未評估' : row.residualRiskLevel;
 
                 const scenarioHtml = `
                     <div style="color:var(--brand-700); font-weight:bold; margin-bottom:6px;">【${row.hazardCategory}】</div>
@@ -2317,9 +2899,9 @@
                     <td class="text-center">${pDisplay}</td>
                     <td class="text-center" style="background-color:${getRiskColor(initRiskClass)}; font-weight:bold;">${levelDisplay}</td>
                     <td>${additionalHtml}</td>
-                    <td class="text-center">${row.residualSeverity.replace('S', '')}</td>
-                    <td class="text-center">${row.residualProbability.replace('P', '')}</td>
-                    <td class="text-center" style="background-color:${getRiskColor(resRiskClass)}; font-weight:bold;">${row.residualRiskLevel}</td>
+                    <td class="text-center">${resS}</td>
+                    <td class="text-center">${resP}</td>
+                    <td class="text-center" style="background-color:${getRiskColor(resRiskClass)}; font-weight:bold;">${resLevel}</td>
                 `;
                 tbody.appendChild(tr);
             });
