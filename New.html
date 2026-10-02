@@ -1402,6 +1402,7 @@
         const RISK_FORM_API = (window.RISK_FORM_API || 'http://localhost:8000').replace(/\/$/, '');
         const STORAGE_KEY = 'toira.assessment.v2';
 
+        // JSON 使用一般 HTTP 快取；資料改版時同步更新 Selection.html 的版本號。
         const DATA_VER = '20261002l';
 
         // 風險矩陣與文字定義
@@ -1549,7 +1550,7 @@
             const docs = [];
             for (const url of SCENARIO_MAP_URLS) {
                 try {
-                    const res = await fetch(`${url}?v=${DATA_VER}`, { cache: 'no-store' });
+                    const res = await fetch(`${url}?v=${DATA_VER}`, { cache: 'default' });
                     if (!res.ok) continue;
                     const data = await res.json();
                     if (data && Array.isArray(data.maps)) docs.push(...data.maps);
@@ -1572,8 +1573,8 @@
             document.getElementById('header-title').textContent = `${industryTitle} - 危害辨識系統`;
 
             Promise.all([
-                fetch(`industryMapping.json?v=${DATA_VER}`, { cache: 'no-store' }).then(r => r.json()),
-                fetch(`tasksLibrary.json?v=${DATA_VER}`, { cache: 'no-store' }).then(r => r.json()),
+                fetch(`industryMapping.json?v=${DATA_VER}`, { cache: 'default' }).then(r => r.json()),
+                fetch(`tasksLibrary.json?v=${DATA_VER}`, { cache: 'default' }).then(r => r.json()),
                 loadScenarioMapDocs()
             ]).then(([mappings, library, mapDocs]) => {
                 const mapByTaskId = {};
