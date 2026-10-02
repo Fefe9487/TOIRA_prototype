@@ -1259,7 +1259,7 @@
                 <div class="report-card">
                     <div class="icon">⚙️</div>
                     <div>
-                        <h4>行政管理</h4>
+                        <h4>管理控制</h4>
                         <p>（依據企業狀況與選擇項目動態生成，此處暫時留空）</p>
                     </div>
                 </div>
@@ -1324,7 +1324,7 @@
         const RISK_FORM_API = (window.RISK_FORM_API || 'http://localhost:8000').replace(/\/$/, '');
         const STORAGE_KEY = 'toira.assessment.v2';
 
-        const DATA_VER = '20261002k';
+        const DATA_VER = '20261002l';
 
         // 風險矩陣與文字定義
         const riskMatrix = {
@@ -1391,7 +1391,7 @@
         function scoreLaneOf(item) {
             const lane = controlLane(item);
             if (lane === '工程改善') return 'E';
-            if (lane === '行政管理') return 'M';
+            if (lane === '管理控制' || lane === '行政管理') return 'M';
             return 'P';
         }
 
@@ -1739,7 +1739,7 @@
             return (items || []).filter((item, index) => !selected.has(index) && String(item || '').trim());
         }
 
-        const CONTROL_LANES = ['工程改善', '行政管理', '個人防護'];
+        const CONTROL_LANES = ['工程改善', '管理控制', '個人防護'];
 
         function escapeHtml(value) {
             return String(value || '')
@@ -1754,12 +1754,12 @@
             const raw = m ? m[1] : '';
             if (raw === '工程改善' || raw === '工程控制' || raw === '消除' || raw === '取代') return '工程改善';
             if (raw === '個人防護' || raw === '個人防護具') return '個人防護';
-            return '行政管理';
+            return '管理控制';
         }
 
         function displayControlText(item) {
             return String(item || '')
-                .replace(/[（(【]\s*管理控制\s*[）)】]\s*$/, '(行政管理)')
+                .replace(/[（(【]\s*行政管理\s*[）)】]\s*$/, '(管理控制)')
                 .replace(/[（(【]\s*個人防護具\s*[）)】]\s*$/, '(個人防護)');
         }
 
@@ -2268,7 +2268,7 @@
                             <select class="t-input inline-add__lane" id="custom-a-lane-${index}" aria-label="防護類型">
                                 <option value="">選擇類型</option>
                                 <option value="工程改善">工程改善</option>
-                                <option value="行政管理">行政管理</option>
+                                <option value="管理控制">管理控制</option>
                                 <option value="個人防護">個人防護</option>
                             </select>
                             <button class="t-btn t-btn--outline" onclick="addCustom(${tid}, ${index}, 'avoid')">＋ 新增</button>
