@@ -1319,7 +1319,7 @@
         const RISK_FORM_API = (window.RISK_FORM_API || 'http://localhost:8000').replace(/\/$/, '');
         const STORAGE_KEY = 'toira.assessment.v2';
 
-        const DATA_VER = '20261002b';
+        const DATA_VER = '20261002d';
 
         // 風險矩陣與文字定義
         const riskMatrix = {
@@ -1396,7 +1396,17 @@
         }
 
         function probabilityFromLinkedControls(controls, checked) {
-            const eng = (controls || []).filter((c) => c.scoreLane === 'E');
+            const list = controls || [];
+            const cores = list.filter((c) => c.core);
+            if (cores.length) {
+                const isOn = (c) => !!checked[c.key];
+                if (!list.some(isOn)) return 'P5';
+                if (cores.some((c) => !isOn(c))) return 'P4';
+                const supports = list.filter((c) => !c.core);
+                if (!supports.length || supports.filter(isOn).length / supports.length >= 0.5) return 'P2';
+                return 'P3';
+            }
+            const eng = list.filter((c) => c.scoreLane === 'E');
             const adm = (controls || []).filter((c) => c.scoreLane === 'M');
             const isOn = (c) => !!checked[c.key];
             const engOn = eng.filter(isOn).length;
@@ -1417,7 +1427,7 @@
         function probabilityIfAddressed(controls) {
             const fake = {};
             (controls || []).forEach((c) => {
-                if (c.scoreLane === 'E' || c.scoreLane === 'M') fake[c.key] = true;
+                if (c.core || c.scoreLane === 'E' || c.scoreLane === 'M') fake[c.key] = true;
             });
             return probabilityFromLinkedControls(controls, fake);
         }
@@ -1427,13 +1437,16 @@
             return rows.map((row) => {
                 const sevNum = parseInt(row.severity, 10);
                 const severity = sevNum >= 1 && sevNum <= 5 ? `S${sevNum}` : (group.severitylevel || 'S4');
+                const coreIds = new Set((row.coreControlRefs || []).map((id) => String(id || '').trim()));
                 const controls = (row.controlRefs || []).map((cr) => {
                     const text = String(cr.text || '').trim();
+                    const controlId = String(cr.controlId || '').trim();
                     return {
                         key: controlBodyKey(text),
                         lane: controlLane(text),
                         scoreLane: scoreLaneOf(text),
                         text,
+                        core: cr.role === 'core' || coreIds.has(controlId),
                     };
                 }).filter((c) => c.key);
                 return { text: String(row.hazardItem || '').trim(), severity, controls };

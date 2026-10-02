@@ -1,11 +1,12 @@
 {
   "schema": "toira-scenario-maps",
-  "generatedAt": "2026-10-02T00:08:23Z",
-  "note": "已對上的危害與控制。沒有核心控制的危害未收入。",
+  "generatedAt": "2026-10-02T00:37:33Z",
+  "note": "已對上的危害與控制。有核心控制的危害帶 coreControlRefs。",
   "counts": {
     "groups": 1398,
-    "hazards": 6039,
-    "gapOmitted": 47,
+    "hazards": 6086,
+    "coreHazards": 57,
+    "gapOmitted": 0,
     "codexEmptyOmitted": 0,
     "unmatchedLibraryGroups": 0
   },
@@ -90,6 +91,40 @@
               "controlId": "A4",
               "text": "清洗或潮濕環境將水源與電氣設備分開，設備及手部未乾燥前不得操作或送電。(行政管理)"
             }
+          ]
+        },
+        {
+          "hazardId": "H5",
+          "hazardItem": "電氣維修或開啟控制箱前未停機隔離，突送電或電容殘電造成電擊。",
+          "severity": 5,
+          "controlRefs": [
+            {
+              "pool": "AvoidItems",
+              "controlId": "A1",
+              "text": "控制箱端子及帶電部位設置固定絕緣護罩，門體保持完整閉合，護罩破損時先停用。(工程改善)",
+              "role": "support"
+            },
+            {
+              "pool": "AvoidItems",
+              "controlId": "A2",
+              "text": "設備機殼確實接地，臨時供電依負載使用合格配電設備，並配置及測試漏電斷路器與過載保護。(工程改善)",
+              "role": "support"
+            },
+            {
+              "pool": "AvoidItems",
+              "controlId": "A3",
+              "text": "控制箱開啟、電氣故障排除及感測器或馬達維修由具電氣資格人員執行，其他人員不得拆箱或接觸端子。(行政管理)",
+              "role": "support"
+            },
+            {
+              "pool": "addedControls",
+              "controlId": "N1",
+              "text": "電氣維修或開啟控制箱前，逐一辨識並上鎖隔離所有電源及回送點，釋放電容器殘能並驗電確認無電後才作業。(管理控制)",
+              "role": "core"
+            }
+          ],
+          "coreControlRefs": [
+            "N1"
           ]
         }
       ]
@@ -1788,6 +1823,34 @@
               "text": "拆除鐵帶或束帶使用專用剪具，依回彈方向保持安全站位，禁止徒手硬扯。(行政管理)"
             }
           ]
+        },
+        {
+          "hazardId": "H4",
+          "hazardItem": "取用工具或整理材料時，因外露刀片、鋸片、金屬碎片及廢料未妥善收存，造成割傷或擦傷。",
+          "severity": 3,
+          "controlRefs": [
+            {
+              "pool": "AvoidItems",
+              "controlId": "A4",
+              "text": "清除鐵屑、碎片或切屑前先停機並隔離動力，使用刷具或鉤具處理，禁止徒手清除。(行政管理)",
+              "role": "support"
+            },
+            {
+              "pool": "AvoidItems",
+              "controlId": "A6",
+              "text": "搬運、穿索及對孔時戴防割或皮製手套，避免手部直接接觸鋼構件銳邊及鋼索斷絲。(個人防護)",
+              "role": "support"
+            },
+            {
+              "pool": "addedControls",
+              "controlId": "N1",
+              "text": "外露刀片及鋸片使用後立即裝上護套並存入指定封閉工具櫃，金屬碎片及廢料投入有蓋銳物容器並定時清運。(工程改善)",
+              "role": "core"
+            }
+          ],
+          "coreControlRefs": [
+            "N1"
+          ]
         }
       ]
     },
@@ -2142,6 +2205,34 @@
               "controlId": "A3",
               "text": "發現破袋逸塵時立即停止搬運，隔離破袋並改裝二次容器後再移動，避免逸散粉塵在呼吸區累積。(行政管理)"
             }
+          ]
+        },
+        {
+          "hazardId": "H4",
+          "hazardItem": "在通風不良區域搬運揮發性化學品時，短時間大量逸散蒸氣可能造成頭痛、暈眩、噁心或黏膜刺激。",
+          "severity": 3,
+          "controlRefs": [
+            {
+              "pool": "AvoidItems",
+              "controlId": "A1",
+              "text": "發現破損、滲漏、殘留或標示不明容器時停止一般搬運，隔離後由受訓人員依SDS並穿戴化學防護手套與護目鏡處理。(行政管理)",
+              "role": "support"
+            },
+            {
+              "pool": "AvoidItems",
+              "controlId": "A4",
+              "text": "備妥吸附材、圍堵器材及洗眼器，發生少量外洩或接觸時依現場步驟立即隔離與沖洗。(行政管理)",
+              "role": "support"
+            },
+            {
+              "pool": "addedControls",
+              "controlId": "N1",
+              "text": "將揮發性化學品置入密閉防漏二次容器後搬運，並以可移動局部排氣設備控制指定搬運區域的蒸氣；排氣失效時立即停止搬運。(工程改善)",
+              "role": "core"
+            }
+          ],
+          "coreControlRefs": [
+            "N1"
           ]
         }
       ]
@@ -2872,6 +2963,50 @@
           ]
         },
         {
+          "hazardId": "H2",
+          "hazardItem": "門檻高低差、照明不足、貨物遮蔽視線或物料占道時，行走或搬運可能絆倒失衡。",
+          "severity": 3,
+          "controlRefs": [
+            {
+              "pool": "AvoidItems",
+              "controlId": "A3",
+              "text": "改善作業區照明，並以醒目標線標示門檻、高低差、排水溝及月台邊緣。(工程改善)",
+              "role": "support"
+            },
+            {
+              "pool": "addedControls",
+              "controlId": "N1",
+              "text": "以醒目標線劃設連續行走通道並維持淨空，移除占道物料；搬運貨物遮蔽前方視線時調整裝載、改用機械搬運或安排引導，禁止盲行。(管理控制)",
+              "role": "core"
+            }
+          ],
+          "coreControlRefs": [
+            "N1"
+          ]
+        },
+        {
+          "hazardId": "H3",
+          "hazardItem": "設備巡檢、除霜或取放貨物使用升降平台、梯具時，平台未固定、護欄或門檔缺失，或梯具架設不穩，可能失足受傷。",
+          "severity": 3,
+          "controlRefs": [
+            {
+              "pool": "AvoidItems",
+              "controlId": "A4",
+              "text": "除霜、巡檢使用升降平台前確認固定或煞車、護欄與門檔完整，防護不完整或未固定不得使用。(工程改善)",
+              "role": "support"
+            },
+            {
+              "pool": "addedControls",
+              "controlId": "N2",
+              "text": "使用升降平台前確認支腿及煞車鎖定、護欄與門檔完整；使用梯具前確認梯腳止滑、角度及固定狀況，檢查不合格不得登高。(管理控制)",
+              "role": "core"
+            }
+          ],
+          "coreControlRefs": [
+            "N2"
+          ]
+        },
+        {
           "hazardId": "H4",
           "hazardItem": "裝卸月台、車廂銜接處因積水結冰未清除，取放貨物時可能同一平面滑倒失衡，造成骨折或頭部外傷。",
           "severity": 3,
@@ -3239,6 +3374,28 @@
               "controlId": "A4",
               "text": "大型或偏心料件使用推料工具或定位輔具調整，禁止徒手將料件推向夾點。(行政管理)"
             }
+          ]
+        },
+        {
+          "hazardId": "H4",
+          "hazardItem": "手推車或拖板車未煞車止輪，或載荷未固定時滑移傾倒，可能將人員夾在載荷、車廂壁或固定物間。",
+          "severity": 4,
+          "controlRefs": [
+            {
+              "pool": "AvoidItems",
+              "controlId": "A4",
+              "text": "大型或偏心料件使用推料工具或定位輔具調整，禁止徒手將料件推向夾點。(行政管理)",
+              "role": "support"
+            },
+            {
+              "pool": "addedControls",
+              "controlId": "N1",
+              "text": "推車或拖板車停放及裝卸前踩下煞車並加止輪器，將載荷固定在車架內；在固定及煞車確認前不得進入載荷與牆面間。(管理控制)",
+              "role": "core"
+            }
+          ],
+          "coreControlRefs": [
+            "N1"
           ]
         }
       ]
@@ -4682,6 +4839,34 @@
               "text": "平台晃動、控制異常或載荷位移時，應停止推車並先固定載荷，禁止強行拉出。(行政管理)"
             }
           ]
+        },
+        {
+          "hazardId": "H4",
+          "hazardItem": "人員搭乘升降機或停留在平台、樓層開口及運行範圍時，可能被平台、推車或物料撞擊。",
+          "severity": 5,
+          "controlRefs": [
+            {
+              "pool": "AvoidItems",
+              "controlId": "A3",
+              "text": "進出料時操作員應保持門口與行進方向可視，確認淨空後才推車。(行政管理)",
+              "role": "support"
+            },
+            {
+              "pool": "AvoidItems",
+              "controlId": "A4",
+              "text": "平台晃動、控制異常或載荷位移時，應停止推車並先固定載荷，禁止強行拉出。(行政管理)",
+              "role": "support"
+            },
+            {
+              "pool": "addedControls",
+              "controlId": "N1",
+              "text": "以固定護欄及門禁聯鎖隔離升降平台運行區與樓層開口，禁止人員搭乘貨用平台或停留在平台行程及吊運範圍內。(工程改善)",
+              "role": "core"
+            }
+          ],
+          "coreControlRefs": [
+            "N1"
+          ]
         }
       ]
     },
@@ -4744,6 +4929,56 @@
               "controlId": "A3",
               "text": "負載偏移或需要突然加力時，立即停止並重新定位支點與站姿，不以身體硬擋或扭身接物。(行政管理)"
             }
+          ]
+        },
+        {
+          "hazardId": "H2",
+          "hazardItem": "於設備周邊或狹小空間進行接線、對心、張力調整及螺栓鎖固時，可達性不足而長時間蹲跪、前傾、扭轉或過度伸手，可能造成肩頸、腰背、膝部及上肢傷害。",
+          "severity": 3,
+          "controlRefs": [
+            {
+              "pool": "AvoidItems",
+              "controlId": "A3",
+              "text": "負載偏移或需要突然加力時，立即停止並重新定位支點與站姿，不以身體硬擋或扭身接物。(行政管理)",
+              "role": "support"
+            },
+            {
+              "pool": "addedControls",
+              "controlId": "N1",
+              "text": "維修前以可調支架、升降工作台或移位工件提供正面可達的接線與鎖固位置，避免在狹小處長時間蹲跪、扭轉或過度伸手。(工程改善)",
+              "role": "core"
+            }
+          ],
+          "coreControlRefs": [
+            "N1"
+          ]
+        },
+        {
+          "hazardId": "H3",
+          "hazardItem": "反覆進行端子鎖固、對心微調、潤滑及手工具操作時，持續施力或工具振動可能造成上肢肌腱、手腕及其他肌肉骨骼傷害。",
+          "severity": 3,
+          "controlRefs": [
+            {
+              "pool": "AvoidItems",
+              "controlId": "A2",
+              "text": "拆卸卡死件前，由作業人員先確認固定支點穩固且受力方向正確，再於安全站位使用工具施力。(行政管理)",
+              "role": "support"
+            },
+            {
+              "pool": "AvoidItems",
+              "controlId": "A3",
+              "text": "負載偏移或需要突然加力時，立即停止並重新定位支點與站姿，不以身體硬擋或扭身接物。(行政管理)",
+              "role": "support"
+            },
+            {
+              "pool": "addedControls",
+              "controlId": "N2",
+              "text": "選用具扭矩反力支撐及低振動設計的手工具完成鎖固與微調，並按持續施力時間安排短暫恢復及作業輪替。(工程改善)",
+              "role": "core"
+            }
+          ],
+          "coreControlRefs": [
+            "N2"
           ]
         },
         {
@@ -5189,6 +5424,28 @@
               "controlId": "A3",
               "text": "拆卸鏽蝕螺栓前先使用滲透潤滑劑，採用匹配工具及受控施力，站位避開工具脫離與反作用力方向。(行政管理)"
             }
+          ]
+        },
+        {
+          "hazardId": "H4",
+          "hazardItem": "通道、緊急出口或退避區遭備品、零件及工具占用，作業人員閃避或後退時可能撞擊固定構件。",
+          "severity": 3,
+          "controlRefs": [
+            {
+              "pool": "AvoidItems",
+              "controlId": "A2",
+              "text": "狹窄區域搬運長件、推車或零件前，由一人說明移動路線、口令及退避位置，移動時保持視線可見。(行政管理)",
+              "role": "support"
+            },
+            {
+              "pool": "addedControls",
+              "controlId": "N1",
+              "text": "維持通道、緊急出口及退避區淨空，備品、零件和工具使用指定架位收存，巡查發現占用立即移除後再作業。(管理控制)",
+              "role": "core"
+            }
+          ],
+          "coreControlRefs": [
+            "N1"
           ]
         }
       ]
@@ -6195,6 +6452,34 @@
           ]
         },
         {
+          "hazardId": "H3",
+          "hazardItem": "化學品辨識、接管或槽內殘留確認錯誤時，不相容物料混合會產生氣體或劇烈反應，造成爆炸性超壓。",
+          "severity": 5,
+          "controlRefs": [
+            {
+              "pool": "AvoidItems",
+              "controlId": "A5",
+              "text": "依設備設計確認通氣、壓力及真空釋放功能可用，遇管線受阻或壓力異常立即停止入料。(行政管理)",
+              "role": "support"
+            },
+            {
+              "pool": "AvoidItems",
+              "controlId": "A6",
+              "text": "反應性或放熱性物料入料前確認冷卻或攪拌可用，依配方控制加料速率，超溫超壓立即停料。(行政管理)",
+              "role": "support"
+            },
+            {
+              "pool": "addedControls",
+              "controlId": "N1",
+              "text": "入料前以標籤、批次文件及管線識別核對物料與接收槽，確認槽內殘留物相容並完成必要清線或沖洗後，才連接及開閥入料。(管理控制)",
+              "role": "core"
+            }
+          ],
+          "coreControlRefs": [
+            "N1"
+          ]
+        },
+        {
           "hazardId": "H4",
           "hazardItem": "反應性或放熱性物料加料過快且冷卻不足時，溫度與壓力會急升，造成爆炸性超壓。",
           "severity": 5,
@@ -6486,6 +6771,28 @@
           ]
         },
         {
+          "hazardId": "H2",
+          "hazardItem": "堆高機、槽車等車輛於靠站、倒車、轉彎或盲區行駛時，人員進入行進或迴轉範圍可能遭撞擊。",
+          "severity": 5,
+          "controlRefs": [
+            {
+              "pool": "AvoidItems",
+              "controlId": "A1",
+              "text": "卸料靠站位置設置止擋、導引設施及定位標線，車輛停妥後才連接管線，避免撞擊管線與槽體。(工程改善)",
+              "role": "support"
+            },
+            {
+              "pool": "addedControls",
+              "controlId": "N1",
+              "text": "以實體護欄及車道隔離柱分隔車輛行駛區與人員通道，並設置遠離倒車及迴轉區的行人出入口。(工程改善)",
+              "role": "core"
+            }
+          ],
+          "coreControlRefs": [
+            "N1"
+          ]
+        },
+        {
           "hazardId": "H3",
           "hazardItem": "槽車或堆高機靠站、卸料與搬運時，定位、止擋或導引失效可能撞擊平台、管線或槽體，造成設備損壞、洩漏及人員受傷。",
           "severity": 3,
@@ -6577,6 +6884,28 @@
               "controlId": "A2",
               "text": "堆高機、油壓拖板車及槽車由合格人員操作，倒車、靠站或視線受阻時由指揮員確認盲區無人，槽車停妥後加輪擋。(行政管理)"
             }
+          ]
+        },
+        {
+          "hazardId": "H2",
+          "hazardItem": "輸送設備、升降平台及其他移動機構運轉時，人員誤入運動範圍或防護、聯鎖失效可能遭設備撞擊。",
+          "severity": 5,
+          "controlRefs": [
+            {
+              "pool": "AvoidItems",
+              "controlId": "A1",
+              "text": "入料區設置指定出入口，以護欄或警戒線分隔人行與車行動線，並維持作業通道及逃生路線暢通。(工程改善)",
+              "role": "support"
+            },
+            {
+              "pool": "addedControls",
+              "controlId": "N1",
+              "text": "輸送設備及升降平台的運動範圍設置固定護欄及門聯鎖，防護門開啟或聯鎖失效時停止機構並禁止運轉。(工程改善)",
+              "role": "core"
+            }
+          ],
+          "coreControlRefs": [
+            "N1"
           ]
         },
         {
@@ -6735,6 +7064,28 @@
       "taskName": "印刷機滾筒清潔與保養作業",
       "groupName": "有害物接觸",
       "hazardControlMap": [
+        {
+          "hazardId": "H1",
+          "hazardItem": "通風不足、半密閉罩體內或頭部靠近清潔區使用揮發性清潔劑，溶劑蒸氣累積造成頭暈、呼吸不適或急性中毒。",
+          "severity": 3,
+          "controlRefs": [
+            {
+              "pool": "AvoidItems",
+              "controlId": "A1",
+              "text": "清潔前依SDS選用低揮發、低毒且與設備相容的清潔劑，並在清潔點或半密閉罩體開啟局部排氣及確認功能正常。(工程改善)",
+              "role": "core"
+            },
+            {
+              "pool": "AvoidItems",
+              "controlId": "A6",
+              "text": "除墨、噴灑或分裝時佩戴防化手套與護目鏡或面罩，作業點確認洗眼器或沖淋可用，濺到眼臉立即沖洗，避免眼皮膚化學傷害。(個人防護)",
+              "role": "support"
+            }
+          ],
+          "coreControlRefs": [
+            "A1"
+          ]
+        },
         {
           "hazardId": "H2",
           "hazardItem": "清潔劑、油墨或潤滑材料在噴灑反彈、管線未洩壓或接頭破損時潑灑，造成眼睛或皮膚接觸並吸入蒸氣。",
@@ -9634,6 +9985,34 @@
           ]
         },
         {
+          "hazardId": "H4",
+          "hazardItem": "可燃液體或半液體轉移時若流速過快、飛濺或未跨接接地，可能產生靜電並點燃可燃蒸氣造成爆炸。",
+          "severity": 5,
+          "controlRefs": [
+            {
+              "pool": "AvoidItems",
+              "controlId": "A4",
+              "text": "含溶劑設備啟動或投料前，於投料口、槽內及低窪處測定可燃氣體，濃度低於爆炸下限30%為合格；不合格時強制通風後重測合格，才可啟動或投料。(行政管理)",
+              "role": "support"
+            },
+            {
+              "pool": "AvoidItems",
+              "controlId": "A3",
+              "text": "投料、輸送及集塵設備應使用適用危險區域的防爆電氣設備。(工程改善)",
+              "role": "support"
+            },
+            {
+              "pool": "addedControls",
+              "controlId": "N1",
+              "text": "可燃液體或半液體轉移前，將來源容器與接收槽以導電夾跨接並確認接地連續，使用浸入式導管及低流速平穩輸送以避免飛濺帶電。(工程改善)",
+              "role": "core"
+            }
+          ],
+          "coreControlRefs": [
+            "N1"
+          ]
+        },
+        {
           "hazardId": "H5",
           "hazardItem": "原料辨識或相容性確認失效而誤投不相容物料時，可能因劇烈放熱、產氣或超壓造成槽體爆裂。",
           "severity": 5,
@@ -11962,6 +12341,29 @@
               "controlId": "A4",
               "text": "重型內件搬移時使用合格吊具、機械輔助及穩固支架，避免構件翻倒或突然脫落。(工程改善)"
             }
+          ]
+        },
+        {
+          "hazardId": "H4",
+          "hazardItem": "高壓清洗時軟管、接頭、噴槍或鬆動結垢失效飛散，可能造成眼面部及身體打擊傷害。",
+          "severity": 4,
+          "controlRefs": [
+            {
+              "pool": "AvoidItems",
+              "controlId": "A5",
+              "text": "敲擊除垢及高壓水洗時加裝防飛散罩或隔離屏，阻擋鬆動殘渣與碎片飛散。(工程改善)",
+              "role": "core"
+            },
+            {
+              "pool": "addedControls",
+              "controlId": "N1",
+              "text": "高壓清洗前檢查軟管、接頭及噴槍耐壓與磨損狀況，使用額定壓力相符的防脫接頭及軟管防甩繫留；拆接前關閉壓源並確認完全洩壓。(工程改善)",
+              "role": "core"
+            }
+          ],
+          "coreControlRefs": [
+            "N1",
+            "A5"
           ]
         }
       ]
@@ -15710,6 +16112,28 @@
           ]
         },
         {
+          "hazardId": "H3",
+          "hazardItem": "調配、分裝、清洗及塗佈時，皮膚長期接觸塗料、硬化劑或清洗劑，可能造成接觸性皮膚炎、濕疹或皮膚敏感化。",
+          "severity": 4,
+          "controlRefs": [
+            {
+              "pool": "AvoidItems",
+              "controlId": "A3",
+              "text": "調配、分裝及清洗後使用清水及適當清潔用品洗手，禁止以有機溶劑清潔皮膚並提供皮膚保養用品。(行政管理)",
+              "role": "support"
+            },
+            {
+              "pool": "addedControls",
+              "controlId": "N1",
+              "text": "調配、分裝、清洗及塗佈時依化學品SDS穿戴相容的防化手套與防護袖套，污染或破損時立即更換。(個人防護)",
+              "role": "core"
+            }
+          ],
+          "coreControlRefs": [
+            "N1"
+          ]
+        },
+        {
           "hazardId": "H4",
           "hazardItem": "長期暴露於空壓機、送風機及噴塗設備產生的高噪音，可能造成噪音性聽力損失。",
           "severity": 5,
@@ -17590,6 +18014,62 @@
           ]
         },
         {
+          "hazardId": "H2",
+          "hazardItem": "上下堆高機時未使用踏階、扶手或保持三點接觸，或跨越貨叉、棧板及其他障礙物，造成失足跌倒。",
+          "severity": 3,
+          "controlRefs": [
+            {
+              "pool": "AvoidItems",
+              "controlId": "A3",
+              "text": "離車時將貨叉降至最低並收妥，禁止貨叉伸入或占用步行通道。(行政管理)",
+              "role": "support"
+            },
+            {
+              "pool": "AvoidItems",
+              "controlId": "A1",
+              "text": "在出入口及裝卸區改善排水與止滑條件，補足照明、修復磨損標線並處理地面高低差。(工程改善)",
+              "role": "support"
+            },
+            {
+              "pool": "AvoidItems",
+              "controlId": "A2",
+              "text": "當班即時清除油污、積水與包材碎片，並禁止占用通道。(行政管理)",
+              "role": "support"
+            },
+            {
+              "pool": "addedControls",
+              "controlId": "N1",
+              "text": "上下堆高機一律面向車體使用踏階與扶手，保持三點接觸，禁止攀爬貨叉或棧板。(管理控制)",
+              "role": "core"
+            }
+          ],
+          "coreControlRefs": [
+            "N1"
+          ]
+        },
+        {
+          "hazardId": "H3",
+          "hazardItem": "月台、車斗與地面存在高低差或間隙，且車輛、登車板或月台未固定，裝卸通行時可能踩空、滑落或跌倒。",
+          "severity": 3,
+          "controlRefs": [
+            {
+              "pool": "AvoidItems",
+              "controlId": "A1",
+              "text": "在出入口及裝卸區改善排水與止滑條件，補足照明、修復磨損標線並處理地面高低差。(工程改善)",
+              "role": "support"
+            },
+            {
+              "pool": "addedControls",
+              "controlId": "N2",
+              "text": "裝卸通行前以止輪器固定車輛並鎖定登車板或月台接板，確認接合穩固後才開放通行。(工程改善)",
+              "role": "core"
+            }
+          ],
+          "coreControlRefs": [
+            "N2"
+          ]
+        },
+        {
           "hazardId": "H4",
           "hazardItem": "堆高機停放或離車時貨叉未降至最低、未收妥或突出通道，行經人員可能遭絆倒。",
           "severity": 3,
@@ -18021,6 +18501,41 @@
               "controlId": "A3",
               "text": "粉塵作業需使用密合式呼吸防護具時，應完成密合度測試並依週期更換濾材。(個人防護)"
             }
+          ]
+        },
+        {
+          "hazardId": "H2",
+          "hazardItem": "含殘留單體、增塑劑、刺激性或致敏性成分的原料於拆封、倒料或清理時反覆吸入或接觸，可能造成職業性皮膚炎、過敏及慢性黏膜傷害。",
+          "severity": 4,
+          "controlRefs": [
+            {
+              "pool": "AvoidItems",
+              "controlId": "A1",
+              "text": "粉塵、殘料及設備表面應以適用工業吸塵器或濕式清掃，禁止使用壓縮空氣吹掃，避免粉塵再揚而長期吸入。(行政管理)",
+              "role": "support"
+            },
+            {
+              "pool": "AvoidItems",
+              "controlId": "A2",
+              "text": "投料點應使用密閉罩及局部排氣，作業前確認排氣正常，風量不足時停止投料並修復。(工程改善)",
+              "role": "core"
+            },
+            {
+              "pool": "AvoidItems",
+              "controlId": "A3",
+              "text": "粉塵作業需使用密合式呼吸防護具時，應完成密合度測試並依週期更換濾材。(個人防護)",
+              "role": "support"
+            },
+            {
+              "pool": "addedControls",
+              "controlId": "N1",
+              "text": "拆封、倒料及清理時穿戴依SDS選定的耐化學手套與長袖防護衣，破損或污染後立即更換。(個人防護)",
+              "role": "core"
+            }
+          ],
+          "coreControlRefs": [
+            "A2",
+            "N1"
           ]
         },
         {
@@ -21918,6 +22433,28 @@
               "text": "依粉塵、噪音及肌肉骨骼暴露結果辦理必要的特殊健康檢查與健康追蹤。(行政管理)"
             }
           ]
+        },
+        {
+          "hazardId": "H3",
+          "hazardItem": "長期進行上料、接料、搬運及堆置等重複性作業，工作站高度、物料位置或作業安排不當，可能造成肩頸、上肢及下背部肌肉骨骼疾病。",
+          "severity": 3,
+          "controlRefs": [
+            {
+              "pool": "AvoidItems",
+              "controlId": "A7",
+              "text": "依粉塵、噪音及肌肉骨骼暴露結果辦理必要的特殊健康檢查與健康追蹤。(行政管理)",
+              "role": "support"
+            },
+            {
+              "pool": "addedControls",
+              "controlId": "N1",
+              "text": "依物料尺寸與作業頻率調整上料、接料工作臺高度及料箱位置，並使用滾輪或機械輔具減少反覆搬舉。(工程改善)",
+              "role": "core"
+            }
+          ],
+          "coreControlRefs": [
+            "N1"
+          ]
         }
       ]
     },
@@ -24861,6 +25398,28 @@
       "groupName": "職業病",
       "hazardControlMap": [
         {
+          "hazardId": "H1",
+          "hazardItem": "長時間站立彎腰或高重複捏剪施力修邊，可能造成下背、肩頸傷病、腕隧道症候群或肌腱炎。",
+          "severity": 4,
+          "controlRefs": [
+            {
+              "pool": "AvoidItems",
+              "controlId": "A1",
+              "text": "定期以肌肉骨骼與皮膚、呼吸道症狀紀錄追蹤修邊人員，發現異常時安排工作調整或就醫。(行政管理)",
+              "role": "support"
+            },
+            {
+              "pool": "addedControls",
+              "controlId": "N1",
+              "text": "將修邊工作面調整至肘高並配置工件固定具與省力修邊工具，減少彎腰、捏剪握力及重複施力。(工程改善)",
+              "role": "core"
+            }
+          ],
+          "coreControlRefs": [
+            "N1"
+          ]
+        },
+        {
           "hazardId": "H2",
           "hazardItem": "修邊時粉塵、塑膠微粒及玻纖細屑長期吸入，可能造成鼻炎、咳嗽或其他呼吸道疾病。",
           "severity": 4,
@@ -26474,6 +27033,28 @@
               "controlId": "A2",
               "text": "清理高處、低處及狹窄區域時配置長柄工具、可移動工作平台或抽吸設備，避免長時間蹲跪、彎腰及過度伸手。(工程改善)"
             }
+          ]
+        },
+        {
+          "hazardId": "H5",
+          "hazardItem": "夜班、連續作業、休息不足或趕工造成疲勞時，姿勢控制及動作協調下降，可能增加拉傷、失衡及碰撞風險。",
+          "severity": 3,
+          "controlRefs": [
+            {
+              "pool": "AvoidItems",
+              "controlId": "A1",
+              "text": "將取件、修邊及裝箱工作臺設為可調高度，配置轉盤與適當高度料箱以縮短取放距離。(工程改善)",
+              "role": "support"
+            },
+            {
+              "pool": "addedControls",
+              "controlId": "N1",
+              "text": "依班次限制連續作業時數並安排固定休息與輪替，夜班及加班後確保足夠恢復時間。(管理控制)",
+              "role": "core"
+            }
+          ],
+          "coreControlRefs": [
+            "N1"
           ]
         }
       ]
@@ -28717,6 +29298,40 @@
               "controlId": "A8",
               "text": "上下梯具及搬運工具時維持三點接觸，工具以工具袋或吊掛方式傳遞，禁止攀爬管線或跨越未防護開口。(行政管理)"
             }
+          ]
+        },
+        {
+          "hazardId": "H3",
+          "hazardItem": "姿勢不適、疲勞、脫水或悶熱造成失衡，作業人員在高低差或狹窄空間內可能跌倒並受到二次碰撞。",
+          "severity": 3,
+          "controlRefs": [
+            {
+              "pool": "AvoidItems",
+              "controlId": "A8",
+              "text": "上下梯具及搬運工具時維持三點接觸，工具以工具袋或吊掛方式傳遞，禁止攀爬管線或跨越未防護開口。(行政管理)",
+              "role": "support"
+            },
+            {
+              "pool": "AvoidItems",
+              "controlId": "A7",
+              "text": "鏽蝕、鬆動、變形或承載不足的梯具、平台及踏板應修復或汰換，臨時設施應固定並加設防滑措施。(工程改善)",
+              "role": "support"
+            },
+            {
+              "pool": "AvoidItems",
+              "controlId": "A9",
+              "text": "局限空間入口及周邊設置警戒區，限制無關人員進入並維持撤離路線可通行。(行政管理)",
+              "role": "support"
+            },
+            {
+              "pool": "addedControls",
+              "controlId": "N1",
+              "text": "局限空間作業排定休息、補水與熱負荷監測，出現疲勞、脫水或不適時先撤至安全處休息。(管理控制)",
+              "role": "core"
+            }
+          ],
+          "coreControlRefs": [
+            "N1"
           ]
         },
         {
@@ -31990,6 +32605,28 @@
               "controlId": "A8",
               "text": "依振動暴露評估限制連續作業時間，並追蹤作業人員健康狀況。(行政管理)"
             }
+          ]
+        },
+        {
+          "hazardId": "H4",
+          "hazardItem": "潤滑油霧、清潔劑揮發物或作業飛濺在通風不足及防護不當時，可能造成呼吸道刺激、皮膚炎及眼部傷害。",
+          "severity": 3,
+          "controlRefs": [
+            {
+              "pool": "AvoidItems",
+              "controlId": "A6",
+              "text": "依作業負荷安排工作輪替、休息及伸展，定期檢討肌肉骨骼危害。(行政管理)",
+              "role": "support"
+            },
+            {
+              "pool": "addedControls",
+              "controlId": "N1",
+              "text": "在潤滑與清潔作業點設置局部排氣及防濺屏，排氣運轉時進行作業並清除設備表面積油與清潔劑殘留。(工程改善)",
+              "role": "core"
+            }
+          ],
+          "coreControlRefs": [
+            "N1"
           ]
         },
         {
@@ -36141,6 +36778,28 @@
       "groupName": "職業病",
       "hazardControlMap": [
         {
+          "hazardId": "H1",
+          "hazardItem": "長時間以高重複、高用力或不良姿勢操作銼刀、刮刀、手鋸、扳手及鉗具，可能造成上肢及下背肌肉骨骼疾病。",
+          "severity": 3,
+          "controlRefs": [
+            {
+              "pool": "AvoidItems",
+              "controlId": "A1",
+              "text": "手錘敲擊優先改用低振動手錘，並維持握柄及錘頭連接狀態良好。(工程改善)",
+              "role": "support"
+            },
+            {
+              "pool": "addedControls",
+              "controlId": "N1",
+              "text": "依工件形狀設置可調支撐與虎鉗，選用低握力、省力手工具並調整作業高度，使手腕保持中立姿勢。(工程改善)",
+              "role": "core"
+            }
+          ],
+          "coreControlRefs": [
+            "N1"
+          ]
+        },
+        {
           "hazardId": "H2",
           "hazardItem": "長時間使用手錘敲擊時，振動與握持負荷未受控制，可能造成手部麻木、循環障礙或手臂振動症候群。",
           "severity": 5,
@@ -36885,6 +37544,34 @@
               "controlId": "A1",
               "text": "依機型確認砂輪片、切割片及鋼絲刷的尺寸、用途、額定轉速與完整性，研磨機及砂輪片須有安全標示（TS），無標示不得使用，並依原廠程序安裝固定。(行政管理)"
             }
+          ]
+        },
+        {
+          "hazardId": "H3",
+          "hazardItem": "更換耗材、調整護罩或維修時未隔離能源，誤觸開關使主軸突然轉動，可能造成手指或手部切割。",
+          "severity": 4,
+          "controlRefs": [
+            {
+              "pool": "AvoidItems",
+              "controlId": "A1",
+              "text": "依機型確認砂輪片、切割片及鋼絲刷的尺寸、用途、額定轉速與完整性，研磨機及砂輪片須有安全標示（TS），無標示不得使用，並依原廠程序安裝固定。(行政管理)",
+              "role": "support"
+            },
+            {
+              "pool": "AvoidItems",
+              "controlId": "A6",
+              "text": "砂輪護罩應調整至遮蔽上半部且開口朝向工件，禁止拆除護罩後進行研磨或切割作業。(工程改善)",
+              "role": "support"
+            },
+            {
+              "pool": "addedControls",
+              "controlId": "N1",
+              "text": "更換耗材、調整護罩或維修前切斷研磨機電源並上鎖掛牌，確認主軸完全停止後才作業。(管理控制)",
+              "role": "core"
+            }
+          ],
+          "coreControlRefs": [
+            "N1"
           ]
         },
         {
@@ -45905,6 +46592,35 @@
               "text": "地面積水或濕滑尚未改善時停止該區作業，確認乾燥止滑後才復工。(行政管理)"
             }
           ]
+        },
+        {
+          "hazardId": "H4",
+          "hazardItem": "搬運長尺或大型板材遮蔽前方視線，或拖板車輪組、把手及煞車異常時，作業人員推拉可能失去平衡跌倒。",
+          "severity": 3,
+          "controlRefs": [
+            {
+              "pool": "AvoidItems",
+              "controlId": "A2",
+              "text": "搬運負載不得高過視線，遮蔽視線時改用機械搬運或安排引導，禁止倒退行走。(行政管理)",
+              "role": "core"
+            },
+            {
+              "pool": "AvoidItems",
+              "controlId": "A4",
+              "text": "修補通道坑洞及高低差並改善排水與照明，使作業面保持平整、乾燥且容易辨識。(工程改善)",
+              "role": "support"
+            },
+            {
+              "pool": "addedControls",
+              "controlId": "N1",
+              "text": "每班使用前檢查拖板車輪組、把手及煞車，任一異常立即停用並維修或更換。(管理控制)",
+              "role": "core"
+            }
+          ],
+          "coreControlRefs": [
+            "A2",
+            "N1"
+          ]
         }
       ]
     },
@@ -47658,6 +48374,28 @@
               "controlId": "A2",
               "text": "甲醛與揮發性有機物作業依暴露風險使用適用氣體或蒸氣濾罐呼吸防護具，完成密合度測試，禁止以一般防塵口罩替代。(個人防護)"
             }
+          ]
+        },
+        {
+          "hazardId": "H2",
+          "hazardItem": "清理焦油冷凝物、樹脂殘留或刺激性清潔劑時，皮膚接觸污染物可能造成慢性接觸性皮膚炎。",
+          "severity": 4,
+          "controlRefs": [
+            {
+              "pool": "AvoidItems",
+              "controlId": "A1",
+              "text": "在裝卸、清掃及排氣源設置有效局部排氣與整體換氣，排氣異常時先停止相關作業。(工程改善)",
+              "role": "support"
+            },
+            {
+              "pool": "addedControls",
+              "controlId": "N1",
+              "text": "清除焦油、樹脂殘留及清潔劑時穿戴依安全資料表選定的耐化學手套與防護袖套，破損或污染後立即更換。(個人防護)",
+              "role": "core"
+            }
+          ],
+          "coreControlRefs": [
+            "N1"
           ]
         },
         {
@@ -50886,6 +51624,28 @@
           ]
         },
         {
+          "hazardId": "H3",
+          "hazardItem": "物料或接收槽確認錯誤造成不相容化學品混合，放熱、產氣或超壓可能引發爆炸。",
+          "severity": 5,
+          "controlRefs": [
+            {
+              "pool": "AvoidItems",
+              "controlId": "A4",
+              "text": "卸料前確認呼吸閥、阻火器及高液位防護可用，發現堵塞或失效時不得開始卸料。(行政管理)",
+              "role": "support"
+            },
+            {
+              "pool": "addedControls",
+              "controlId": "N1",
+              "text": "卸料前核對物料名稱、接收槽及管線標示與相容性清單，完成雙人確認後才接管卸料。(管理控制)",
+              "role": "core"
+            }
+          ],
+          "coreControlRefs": [
+            "N1"
+          ]
+        },
+        {
           "hazardId": "H4",
           "hazardItem": "呼吸閥、阻火器或高液位防護失效，過量充填造成槽體超壓、破裂或可燃蒸氣劇烈釋放並爆炸。",
           "severity": 5,
@@ -51471,6 +52231,34 @@
       "taskName": "槽車卸料後管線卸除與復原作業",
       "groupName": "職業病",
       "hazardControlMap": [
+        {
+          "hazardId": "H1",
+          "hazardItem": "拆卸含有害、揮發性或致癌及致突變物料的管線時，殘液或蒸氣經吸入或皮膚接觸，長期可能造成呼吸、神經、肝腎或皮膚健康損害。",
+          "severity": 5,
+          "controlRefs": [
+            {
+              "pool": "AvoidItems",
+              "controlId": "A1",
+              "text": "依物料危害與暴露評估建立呼吸防護計畫，辦理醫療評估、適任性判定、密合度測試及濾材更換管理。(行政管理)",
+              "role": "support"
+            },
+            {
+              "pool": "AvoidItems",
+              "controlId": "A2",
+              "text": "對含致癌、致突變或其他高危害成分的物料，依暴露特性實施作業環境監測、特殊健康檢查及異常結果追蹤。(行政管理)",
+              "role": "support"
+            },
+            {
+              "pool": "addedControls",
+              "controlId": "N1",
+              "text": "拆卸前隔離管線兩端並確認隔離有效，排空、洩壓後以相容介質沖洗或置換並確認符合安全拆卸條件，再拆卸管線並立即封堵敞開管口、以密閉容器收容殘液。(管理控制)",
+              "role": "core"
+            }
+          ],
+          "coreControlRefs": [
+            "N1"
+          ]
+        },
         {
           "hazardId": "H2",
           "hazardItem": "反覆搬運卸料軟管、法蘭及盲板時，負重過大、姿勢不良或缺乏輪替可能造成下背、肩部及腕部肌肉骨骼傷害。",
@@ -54298,6 +55086,34 @@
           ]
         },
         {
+          "hazardId": "H2",
+          "hazardItem": "於通風不良處大量使用含有機溶劑的清洗劑、防鏽劑或進行噴塗，造成蒸氣及油霧累積而吸入不適。",
+          "severity": 3,
+          "controlRefs": [
+            {
+              "pool": "AvoidItems",
+              "controlId": "A1",
+              "text": "溶劑清洗與防鏽噴塗須在局部排氣運轉下進行，排風未開或故障立即停止清洗及噴塗。(工程改善)",
+              "role": "core"
+            },
+            {
+              "pool": "AvoidItems",
+              "controlId": "A2",
+              "text": "清洗、研磨及噴塗點位設置並維持局部排氣，作業時確認通風正常，未確認不得開始。(工程改善)",
+              "role": "support"
+            },
+            {
+              "pool": "AvoidItems",
+              "controlId": "A6",
+              "text": "接觸清洗劑、防鏽劑或噴霧時穿戴防化手套、護目鏡或面罩；作業點備妥洗眼器，濺入眼睛立即沖洗。(個人防護)",
+              "role": "support"
+            }
+          ],
+          "coreControlRefs": [
+            "A1"
+          ]
+        },
+        {
           "hazardId": "H3",
           "hazardItem": "以壓縮空氣吹除模具孔穴殘液、積垢及金屬屑時，含溶劑液滴、油霧及微粒飛散，接觸眼睛、皮膚或呼吸道。",
           "severity": 3,
@@ -54384,6 +55200,28 @@
               "controlId": "A4",
               "text": "依暴露評估選用適用濾材的呼吸防護具及聽力防護具，完成密合或佩戴確認並按期更換。(個人防護)"
             }
+          ]
+        },
+        {
+          "hazardId": "H2",
+          "hazardItem": "研磨、鋼刷、除垢及清理作業產生金屬粉塵、鏽蝕微粒與油霧，捕集、通風及清潔不良時，長期吸入可能造成呼吸道傷害。",
+          "severity": 4,
+          "controlRefs": [
+            {
+              "pool": "AvoidItems",
+              "controlId": "A1",
+              "text": "依實際暴露量執行有機溶劑、粉塵或油霧及噪音監測，超標時調整作業並安排健康檢查與追蹤。(行政管理)",
+              "role": "support"
+            },
+            {
+              "pool": "AvoidItems",
+              "controlId": "A4",
+              "text": "依暴露評估選用適用濾材的呼吸防護具及聽力防護具，完成密合或佩戴確認並按期更換。(個人防護)",
+              "role": "core"
+            }
+          ],
+          "coreControlRefs": [
+            "A4"
           ]
         },
         {
@@ -55254,6 +56092,28 @@
               "controlId": "A2",
               "text": "依泵車最大伸臂作業包絡設置實體隔離或限位設施，維持與模板支撐、臨時構件、管線及樓板邊緣的安全淨空。(工程改善)"
             }
+          ]
+        },
+        {
+          "hazardId": "H3",
+          "hazardItem": "高壓泵管、軟管、彎頭及接頭因固定不良、泵送脈動、堵塞或接頭脫落而突然甩動；清堵或拆接時若仍帶壓，可能擊傷鄰近人員。",
+          "severity": 5,
+          "controlRefs": [
+            {
+              "pool": "AvoidItems",
+              "controlId": "A1",
+              "text": "人車動線採分流及單向通行，狹窄區設置實體隔離、等待或會車位置，禁止人車混流。(工程改善)",
+              "role": "support"
+            },
+            {
+              "pool": "addedControls",
+              "controlId": "N1",
+              "text": "泵送前以額定固定件及防甩鏈鎖固泵管、軟管和接頭，清堵或拆接前停泵、隔離並確認管線壓力歸零。(管理控制)",
+              "role": "core"
+            }
+          ],
+          "coreControlRefs": [
+            "N1"
           ]
         },
         {
@@ -59440,6 +60300,29 @@
           ]
         },
         {
+          "hazardId": "H2",
+          "hazardItem": "低照度、閃光、監視畫面切換及長時間固定視線或坐姿，可能造成視覺疲勞、頭痛及頸肩腕部不適。",
+          "severity": 2,
+          "controlRefs": [
+            {
+              "pool": "AvoidItems",
+              "controlId": "A3",
+              "text": "調低閃光亮度與頻率並限制畫面切換，另設不眩光的安全引導照明。(工程改善)",
+              "role": "core"
+            },
+            {
+              "pool": "AvoidItems",
+              "controlId": "A4",
+              "text": "突進、蹲伏及固定姿勢依橋段設定次數與時間，安排輪替、伸展及恢復時間。(行政管理)",
+              "role": "core"
+            }
+          ],
+          "coreControlRefs": [
+            "A3",
+            "A4"
+          ]
+        },
+        {
           "hazardId": "H3",
           "hazardItem": "長時間站立、蹲伏、姿勢固定、反覆突進及肢體表演，可能造成腰背、關節及肌腱的累積性傷害。",
           "severity": 3,
@@ -60234,6 +61117,34 @@
               "controlId": "A2",
               "text": "危險區域內的攪拌機、泵浦、開關及其他電氣設備使用符合區域需求的防爆型式。(工程改善)"
             }
+          ]
+        },
+        {
+          "hazardId": "H2",
+          "hazardItem": "倒料、攪拌或轉注時設備與容器未等電位連結，靜電放電可能引燃可燃蒸氣並造成爆炸。",
+          "severity": 5,
+          "controlRefs": [
+            {
+              "pool": "AvoidItems",
+              "controlId": "A1",
+              "text": "調配、清洗及轉注位置維持有效通風，清洗或拆洗前排空殘液並以適當方式通風或置換，降低可燃蒸氣累積。(工程改善)",
+              "role": "support"
+            },
+            {
+              "pool": "AvoidItems",
+              "controlId": "A2",
+              "text": "危險區域內的攪拌機、泵浦、開關及其他電氣設備使用符合區域需求的防爆型式。(工程改善)",
+              "role": "support"
+            },
+            {
+              "pool": "addedControls",
+              "controlId": "N1",
+              "text": "轉注前以導電跨接線連結設備與容器並可靠接地，確認夾具接觸金屬後才開始作業。(工程改善)",
+              "role": "core"
+            }
+          ],
+          "coreControlRefs": [
+            "N1"
           ]
         },
         {
@@ -62360,6 +63271,28 @@
           ]
         },
         {
+          "hazardId": "H4",
+          "hazardItem": "化學品身分確認、管線清線或容器標示不足，造成不同化學品、氧化性物質或殘液誤混而因放熱反應起火。",
+          "severity": 4,
+          "controlRefs": [
+            {
+              "pool": "AvoidItems",
+              "controlId": "A4",
+              "text": "分裝區配置乾粉或泡沫等適用於液體火的滅火器及必要的緊急切斷設備，禁止用水直接澆灑可燃液體火，並保持取用路徑不被包材擋住。(行政管理)",
+              "role": "support"
+            },
+            {
+              "pool": "addedControls",
+              "controlId": "N1",
+              "text": "分裝前逐批核對化學品身分、容器標示與管線清線紀錄，確認相容後才開始分裝。(管理控制)",
+              "role": "core"
+            }
+          ],
+          "coreControlRefs": [
+            "N1"
+          ]
+        },
+        {
           "hazardId": "H5",
           "hazardItem": "污染吸附材、沾污包材及殘液廢棄物未依相容性密閉分區暫存，因蒸氣逸散、相容性不良或自熱而起火。",
           "severity": 4,
@@ -63855,6 +64788,28 @@
               "controlId": "A9",
               "text": "依噪音、有害物、振動及熱冷暴露結果安排法定或特殊健康檢查，並追蹤異常結果。(行政管理)"
             }
+          ]
+        },
+        {
+          "hazardId": "H4",
+          "hazardItem": "輪班、長工時、趕工及高專注負荷造成疲勞累積，可能引發注意力下降及慢性身心健康危害。",
+          "severity": 3,
+          "controlRefs": [
+            {
+              "pool": "AvoidItems",
+              "controlId": "A7",
+              "text": "依振動暴露時間安排輪替與休息，出現麻木或疼痛時調整作業並追蹤症狀。(行政管理)",
+              "role": "support"
+            },
+            {
+              "pool": "addedControls",
+              "controlId": "N1",
+              "text": "依班表限制連續及夜間工時，安排足夠班間恢復與定時休息，疲勞時停止高專注危險操作並調整作業。(管理控制)",
+              "role": "core"
+            }
+          ],
+          "coreControlRefs": [
+            "N1"
           ]
         },
         {
@@ -65563,8 +66518,12 @@
             {
               "pool": "AvoidItems",
               "controlId": "N1",
-              "text": "烘爐前檢測爐襯含水量，依核定升溫曲線分段升溫並按規定時間保溫後再進入下一階段。(管理控制)"
+              "text": "烘爐前檢測爐襯含水量並確認符合烘爐條件，依核定曲線分段升溫及保溫，確認本階段達標後才進入下一階段。(管理控制)",
+              "role": "core"
             }
+          ],
+          "coreControlRefs": [
+            "N1"
           ]
         },
         {
@@ -65609,8 +66568,12 @@
             {
               "pool": "AvoidItems",
               "controlId": "N2",
-              "text": "吊掛前核對吊耳、鋼索及卸扣的額定荷重與吊物重量，檢查裂紋、磨耗及脆化並報廢不合格件。(管理控制)"
+              "text": "吊掛前核對吊耳、鋼索及卸扣的額定荷重與吊物重量，檢查裂紋、磨耗及脆化並報廢不合格件。(管理控制)",
+              "role": "core"
             }
+          ],
+          "coreControlRefs": [
+            "N2"
           ]
         }
       ]
@@ -67324,6 +68287,34 @@
               "controlId": "A6",
               "text": "禁止在秤量、配製、轉注區飲食、抽菸或以污染手套碰觸口鼻；離開作業點前徹底洗手。(行政管理)"
             }
+          ]
+        },
+        {
+          "hazardId": "H4",
+          "hazardItem": "處理苯、氯乙烯或甲醛等致癌性物質時，因密閉或排氣失效且暴露追蹤不足，增加職業癌症風險。",
+          "severity": 5,
+          "controlRefs": [
+            {
+              "pool": "AvoidItems",
+              "controlId": "A1",
+              "text": "開封、秤量、轉注須在密閉或排氣罩有效捕捉範圍內，吸力不足或未開排氣時禁止開封。(工程改善)",
+              "role": "core"
+            },
+            {
+              "pool": "AvoidItems",
+              "controlId": "A2",
+              "text": "儲槽、管線、泵浦軸封及攪拌機於保養或開工前檢查可見洩漏，異常時先停用隔離再修復。(行政管理)",
+              "role": "support"
+            },
+            {
+              "pool": "AvoidItems",
+              "controlId": "A5",
+              "text": "開封、秤量、轉注或排氣不足時選用有機蒸氣或酸鹼霧濾罐並密合測試，禁止以防塵口罩替代。(個人防護)",
+              "role": "support"
+            }
+          ],
+          "coreControlRefs": [
+            "A1"
           ]
         }
       ]
@@ -73340,6 +74331,28 @@
           ]
         },
         {
+          "hazardId": "H2",
+          "hazardItem": "高處或地面拆卸物、工具、零件、門蓋、盲板及鋼材未固定或支撐失效，滑落、傾倒或掉落而擊中人員。",
+          "severity": 5,
+          "controlRefs": [
+            {
+              "pool": "AvoidItems",
+              "controlId": "A1",
+              "text": "吊掛、叉車及車輛作業區以護欄或車阻分隔人車，並劃設吊物下方及回轉交會禁入範圍。(工程改善)",
+              "role": "support"
+            },
+            {
+              "pool": "addedControls",
+              "controlId": "N1",
+              "text": "拆卸前以額定支撐架、止擋或固定件穩固門蓋、盲板及鋼材，並將工具與小零件繫掛或置於防墜容器內。(工程改善)",
+              "role": "core"
+            }
+          ],
+          "coreControlRefs": [
+            "N1"
+          ]
+        },
+        {
           "hazardId": "H3",
           "hazardItem": "管線或設備拆卸、試壓及吹除時，因殘壓未釋放、固定失效或支撐不足，造成管件、盲板、堵頭或軟管突然移動而撞擊人員。",
           "severity": 5,
@@ -74430,6 +75443,28 @@
               "controlId": "A6",
               "text": "現場應依噪音及振動暴露量安排工作輪替與休息，禁止長時間連續操作同一研磨機具。(行政管理)"
             }
+          ]
+        },
+        {
+          "hazardId": "H4",
+          "hazardItem": "工作台或工件支撐不當，作業人員長期彎腰、扭轉、前傾、腕部偏斜或反覆施力，可能造成下背、肩頸及上肢肌肉骨骼疾病。",
+          "severity": 3,
+          "controlRefs": [
+            {
+              "pool": "AvoidItems",
+              "controlId": "A6",
+              "text": "現場應依噪音及振動暴露量安排工作輪替與休息，禁止長時間連續操作同一研磨機具。(行政管理)",
+              "role": "support"
+            },
+            {
+              "pool": "addedControls",
+              "controlId": "N1",
+              "text": "將工件支撐與工作台調整至適合作業高度，使用夾具固定工件並配置可調托架，保持手腕中立並減少前傾扭轉。(工程改善)",
+              "role": "core"
+            }
+          ],
+          "coreControlRefs": [
+            "N1"
           ]
         }
       ]
@@ -88361,8 +89396,12 @@
             {
               "pool": "AvoidItems",
               "controlId": "N1",
-              "text": "於低矮樑柱、突出管件及設備邊角設置醒目反光標示並加裝防撞軟墊，提示通行間隙並緩衝碰撞。(工程改善)"
+              "text": "於低矮樑柱、突出管件及設備邊角設置醒目反光標示並加裝防撞軟墊，提示通行間隙並緩衝碰撞。(工程改善)",
+              "role": "core"
             }
+          ],
+          "coreControlRefs": [
+            "N1"
           ]
         },
         {
@@ -102088,6 +103127,28 @@
           ]
         },
         {
+          "hazardId": "H2",
+          "hazardItem": "熔解、扒渣、澆注、燃燒設備及樹脂砂或塗模劑熱分解產生金屬煙霧、一氧化碳及有機蒸氣，排氣或燃燒控制失效時可能造成中毒、過敏或肺功能損害。",
+          "severity": 5,
+          "controlRefs": [
+            {
+              "pool": "AvoidItems",
+              "controlId": "A1",
+              "text": "落砂、清砂及修整作業應在集塵或局部排氣運轉下進行，以吸塵或濕式方式清理，禁止乾掃及以壓縮空氣吹掃矽砂粉塵。(工程改善)",
+              "role": "support"
+            },
+            {
+              "pool": "addedControls",
+              "controlId": "N1",
+              "text": "於熔解、扒渣、澆注及樹脂砂熱分解源設置局部排氣，維持燃燒設備有效燃燒，排氣或燃燒控制失效時停止相關作業。(工程改善)",
+              "role": "core"
+            }
+          ],
+          "coreControlRefs": [
+            "N1"
+          ]
+        },
+        {
           "hazardId": "H3",
           "hazardItem": "樹脂砂、塗模劑及有機溶劑於搬運、轉裝、清潔或洩漏時接觸皮膚，可能造成接觸性皮膚炎或其他化學性健康危害。",
           "severity": 4,
@@ -104781,8 +105842,12 @@
             {
               "pool": "AvoidItems",
               "controlId": "N1",
-              "text": "起吊前核對吊點、吊具、固定件及盤架符合承載需求，逐件檢查裂損並以防脫方式固定盤件與大型構件。(管理控制)"
+              "text": "起吊前核對吊點、吊具、固定件、盤架及支撐符合承載需求，逐件檢查裂損並以防脫方式固定盤件與大型構件。(管理控制)",
+              "role": "core"
             }
+          ],
+          "coreControlRefs": [
+            "N1"
           ]
         }
       ]
@@ -107127,6 +108192,28 @@
           ]
         },
         {
+          "hazardId": "H3",
+          "hazardItem": "清潔、潤滑及試運轉使用清潔劑、潤滑油或溶劑，可能造成蒸氣吸入及皮膚接觸暴露。",
+          "severity": 3,
+          "controlRefs": [
+            {
+              "pool": "AvoidItems",
+              "controlId": "A4",
+              "text": "清潔、潤滑及試運轉應使用適用的化學防護手套或護目具，接觸物質後立即清潔皮膚。(個人防護)",
+              "role": "support"
+            },
+            {
+              "pool": "addedControls",
+              "controlId": "N1",
+              "text": "清潔、潤滑及試運轉的化學品作業點設置有效局部排氣，使用封閉式加注器具及接液盤限制蒸氣與液體逸散。(工程改善)",
+              "role": "core"
+            }
+          ],
+          "coreControlRefs": [
+            "N1"
+          ]
+        },
+        {
           "hazardId": "H4",
           "hazardItem": "鑽孔、研磨、切割及試運轉產生噪音，近距離及長時間暴露可能造成聽力損傷。",
           "severity": 5,
@@ -107653,8 +108740,12 @@
             {
               "pool": "AvoidItems",
               "controlId": "N1",
-              "text": "高能量開關設備採用具內部電弧耐受能力的封閉盤體並設壓力洩放導道，將壓力波及金屬碎片導離人員作業面。(工程改善)"
+              "text": "高能量開關設備採用具內部電弧耐受能力的封閉盤體並設壓力洩放導道，將壓力波及金屬碎片導離人員作業面。(工程改善)",
+              "role": "core"
             }
+          ],
+          "coreControlRefs": [
+            "N1"
           ]
         },
         {
@@ -107665,8 +108756,12 @@
             {
               "pool": "AvoidItems",
               "controlId": "N2",
-              "text": "檢修前逐一辨識並上鎖隔離所有電源及回送點，依設備程序釋放電容器、蓄電池與變頻器殘能後驗電確認無電。(管理控制)"
+              "text": "檢修前逐一辨識並上鎖隔離所有電源及回送點，隔離蓄電池端子並加裝絕緣護蓋；電容器及變頻器殘能依原廠程序洩放後驗電確認。(管理控制)",
+              "role": "core"
             }
+          ],
+          "coreControlRefs": [
+            "N2"
           ]
         }
       ]
@@ -108198,8 +109293,12 @@
             {
               "pool": "AvoidItems",
               "controlId": "N1",
-              "text": "設置可調高度工作台及物料架並依作業者身高調整，使掛卸、檢驗及槽邊操作在適當高度完成，減少過度伸取、扭轉與久站負荷。(工程改善)"
+              "text": "設置可調坐站工位、腳靠及近取物料架，依掛卸、檢驗與槽邊作業調整高度及物料位置，安排坐站交替以降低久站與過度伸取負荷。(工程改善)",
+              "role": "core"
             }
+          ],
+          "coreControlRefs": [
+            "N1"
           ]
         },
         {
@@ -109777,8 +110876,12 @@
             {
               "pool": "AvoidItems",
               "controlId": "N1",
-              "text": "電熱元件設置獨立過溫感測器並連鎖切斷加熱電源，溫度異常時停止加熱並警報以避免熱分解煙霧持續產生。(工程改善)"
+              "text": "電熱元件設置獨立過溫感測器並連鎖切斷加熱電源，溫度異常時停止加熱並警報以避免熱分解煙霧持續產生。(工程改善)",
+              "role": "core"
             }
+          ],
+          "coreControlRefs": [
+            "N1"
           ]
         },
         {
@@ -109981,8 +111084,12 @@
             {
               "pool": "AvoidItems",
               "controlId": "N1",
-              "text": "在乾燥機熱風出口與物料層設置過溫監測並連鎖切斷熱源及供料，溫升異常時停機排除陰燃積料。(工程改善)"
+              "text": "在乾燥機熱風出口與物料層設置過溫監測並連鎖切斷熱源及供料，溫升異常時停機排除陰燃積料。(工程改善)",
+              "role": "core"
             }
+          ],
+          "coreControlRefs": [
+            "N1"
           ]
         }
       ]
@@ -111942,6 +113049,29 @@
               "controlId": "A4",
               "text": "依粉塵與噪音暴露評估使用適用的防塵呼吸防護具及聽力防護具，並依密合度與耗損情形更換。(個人防護)"
             }
+          ]
+        },
+        {
+          "hazardId": "H2",
+          "hazardItem": "反覆搬運、彎腰扭轉投料、清槽及長時間站立作業，可能造成下背痛、肩頸與肌腱傷害。",
+          "severity": 3,
+          "controlRefs": [
+            {
+              "pool": "AvoidItems",
+              "controlId": "A2",
+              "text": "長時間站立工位應配置可調高度工作面或腳踏墊，減少固定姿勢造成的下肢與腰背負荷。(工程改善)",
+              "role": "core"
+            },
+            {
+              "pool": "addedControls",
+              "controlId": "N1",
+              "text": "投料與清槽配置升降及傾倒輔具、旋轉定位台與可達的工件支撐，降低人工搬抬及彎腰扭轉。(工程改善)",
+              "role": "core"
+            }
+          ],
+          "coreControlRefs": [
+            "A2",
+            "N1"
           ]
         },
         {
@@ -114583,6 +115713,28 @@
               "controlId": "A1",
               "text": "針對高頻切配及久站作業安排工作輪替、微休息及暴露時間管理。(行政管理)"
             }
+          ]
+        },
+        {
+          "hazardId": "H2",
+          "hazardItem": "反覆接觸清潔劑、消毒劑及其揮發氣體或水霧，可能引起接觸性皮膚炎、呼吸道刺激或氣喘症狀惡化。",
+          "severity": 4,
+          "controlRefs": [
+            {
+              "pool": "AvoidItems",
+              "controlId": "A1",
+              "text": "針對高頻切配及久站作業安排工作輪替、微休息及暴露時間管理。(行政管理)",
+              "role": "support"
+            },
+            {
+              "pool": "addedControls",
+              "controlId": "N1",
+              "text": "清潔劑及消毒劑採封閉稀釋與定量供液，投藥點設局部排氣並於洗滌槽加裝防濺屏，降低蒸氣、水霧與皮膚接觸。(工程改善)",
+              "role": "core"
+            }
+          ],
+          "coreControlRefs": [
+            "N1"
           ]
         },
         {
@@ -118347,6 +119499,44 @@
               "text": "依安全資料表選用化學防護手套、護目具及必要呼吸防護具，並依規定檢查、清潔及更換。(個人防護)"
             }
           ]
+        },
+        {
+          "hazardId": "H4",
+          "hazardItem": "夜間、長工時、連續拍攝及輪班造成疲勞，可能降低動作控制。",
+          "severity": 5,
+          "controlRefs": [
+            {
+              "pool": "AvoidItems",
+              "controlId": "A2",
+              "text": "依器材重量、搬運距離及拍攝時程安排人員輪替、姿勢變換與休息；肌肉骨骼不適時立即停止或調整作業。(行政管理)",
+              "role": "core"
+            }
+          ],
+          "coreControlRefs": [
+            "A2"
+          ]
+        },
+        {
+          "hazardId": "H5",
+          "hazardItem": "低照度環境長時間監看螢幕、精細對焦及追蹤畫面，因照明不足、螢幕反光或休息不足造成視覺疲勞。",
+          "severity": 2,
+          "controlRefs": [
+            {
+              "pool": "AvoidItems",
+              "controlId": "A2",
+              "text": "依器材重量、搬運距離及拍攝時程安排人員輪替、姿勢變換與休息；肌肉骨骼不適時立即停止或調整作業。(行政管理)",
+              "role": "support"
+            },
+            {
+              "pool": "addedControls",
+              "controlId": "N1",
+              "text": "於監看及對焦位置配置均勻可調的工作照明，調整螢幕亮度與角度避免反光，並安排定時離開螢幕看遠休息。(工程改善)",
+              "role": "core"
+            }
+          ],
+          "coreControlRefs": [
+            "N1"
+          ]
         }
       ]
     },
@@ -119865,8 +121055,12 @@
             {
               "pool": "AvoidItems",
               "controlId": "N1",
-              "text": "將懸吊作業安排為限時工作週期並定時休息，讓作業員落地解除懸吊負荷、輪替姿勢並恢復後再續作。(管理控制)"
+              "text": "將懸吊作業安排為限時工作週期並定時休息，讓作業員落地解除懸吊負荷、輪替姿勢並恢復後再續作。(管理控制)",
+              "role": "core"
             }
+          ],
+          "coreControlRefs": [
+            "N1"
           ]
         },
         {
