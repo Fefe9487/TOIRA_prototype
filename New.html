@@ -2438,7 +2438,7 @@
                     const ckey = encodeURIComponent(control.key);
                     const statusClass = on ? 'control-status--done' : (control.core ? 'control-status--pending-core' : 'control-status--pending');
                     const statusText = on ? '✓ 已做到' : (control.core ? '核心措施未做到' : '尚未做到');
-                    html += `<div class="hazard-item avoid-type scenario-control ${stateClass}" data-ckey="${ckey}" onclick="toggleLinkedControl(event, ${tid}, '${ckey}')"><div class="hazard-item__text"><span>${escapeHtml(plainControlText(control.text))} ${controlMark(control)}</span><span class="control-status ${statusClass}">${statusText}</span></div></div>`;
+                    html += `<div class="hazard-item avoid-type scenario-control ${stateClass}" data-ckey="${ckey}" data-core="${control.core ? 'true' : 'false'}" onclick="toggleLinkedControl(event, ${tid}, '${ckey}')"><div class="hazard-item__text"><span>${escapeHtml(plainControlText(control.text))} ${controlMark(control)}</span><span class="control-status ${statusClass}">${statusText}</span></div></div>`;
                 });
                 html += `
                         </div>
@@ -2660,12 +2660,26 @@
             checked[key] = !checked[key];
             document.querySelectorAll(`[data-ckey="${encodedKey}"]`).forEach((el) => {
                 el.classList.toggle('selected', !!checked[key]);
+                const status = el.querySelector('.control-status');
+                if (status) {
+                    const done = !!checked[key];
+                    const core = el.dataset.core === 'true';
+                    status.className = 'control-status ' + (done ? 'control-status--done' : (core ? 'control-status--pending-core' : 'control-status--pending'));
+                    status.textContent = done ? '✓ 已做到' : (core ? '核心措施未做到' : '尚未做到');
+                }
             });
             const task = hazardLibrary.find(t => t.id === taskId);
             if (!task) return;
             task.hazardGroups.forEach((group, gi) => {
                 if (!group.scenarios) return;
-                group.scenarios.forEach((_, si) => calculateScenarioUI(taskId, gi, si));
+                group.scenarios.forEach((scenario, si) => {
+                    calculateScenarioUI(taskId, gi, si);
+                    const count = document.querySelector('#scenario-' + gi + '-' + si + ' .scenario-controls-count');
+                    if (count) {
+                        const completed = scenario.controls.filter((control) => checked[control.key]).length;
+                        count.textContent = completed + ' / ' + scenario.controls.length + ' 項已做到';
+                    }
+                });
             });
         }
 
