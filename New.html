@@ -1324,7 +1324,7 @@
         const RISK_FORM_API = (window.RISK_FORM_API || 'http://localhost:8000').replace(/\/$/, '');
         const STORAGE_KEY = 'toira.assessment.v2';
 
-        const DATA_VER = '20261002j';
+        const DATA_VER = '20261002k';
 
         // 風險矩陣與文字定義
         const riskMatrix = {
@@ -2200,7 +2200,6 @@
                             <span>${escapeHtml(group.groupName)}</span>
                             <span class="hazard-group-title__meta">
                                 ${core ? '<span class="core-badge">核心重點</span>' : ''}
-                                ${group.scenarios && group.scenarios.length ? '<span class="core-badge">一則一列</span>' : ''}
                                 <span class="chevron">›</span>
                             </span>
                         </button>
@@ -2846,21 +2845,6 @@
                 alert('請先勾選危害情境或防護措施');
                 return;
             }
-
-            const taskNames = [...new Set(allRows.map(r => r.taskName))];
-            const describeByTask = [];
-            const seenDesc = new Set();
-            allRows.forEach((row) => {
-                if (seenDesc.has(row.taskName)) return;
-                seenDesc.add(row.taskName);
-                describeByTask.push({ name: row.taskName, desc: row.taskdescribe || '' });
-            });
-            meta.innerHTML = describeByTask.map((row) => `
-                <div style="margin-bottom:12px;">
-                    <div><strong>${escapeHtml(row.name)}</strong></div>
-                    <div>${escapeHtml(row.desc) || '—'}</div>
-                </div>
-            `).join('') || `<div><strong>作業名稱：</strong>${escapeHtml(taskNames.join('、'))}</div>`;
 
             // 依作業步驟合併第一欄
             const stepRuns = [];
