@@ -1409,7 +1409,7 @@
         const STORAGE_KEY = 'toira.assessment.v2';
 
         // JSON 使用一般 HTTP 快取；資料改版時同步更新 Selection.html 的版本號。
-        const DATA_VER = '20261002m';
+        const DATA_VER = '20261002n';
 
         // 風險矩陣與文字定義
         const riskMatrix = {
@@ -1527,7 +1527,7 @@
                     const text = String(cr.text || '').trim();
                     const controlId = String(cr.controlId || '').trim();
                     return {
-                        key: controlBodyKey(text),
+                        key: String(cr.sourceControlKey || '').trim() || controlBodyKey(text),
                         lane: controlLane(text),
                         scoreLane: scoreLaneOf(text),
                         text,
@@ -3192,3 +3192,4 @@
 </body>
 
 </html>
+
