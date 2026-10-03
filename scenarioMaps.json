@@ -1,8 +1,8 @@
 {
   "schema": "toira-scenario-maps",
-  "version": "20261003c",
+  "version": "20261003d",
   "generatedAt": "2026-10-02T03:05:52Z",
-  "note": "已對上的危害與控制。核心來自挑選說明或 Luna 補標；只有一條措施的已補到最多三條。 沒掛上的對策已再判斷；掛不上的寫在 unlinkedControls。 2026-10-02 核心標記按原核心候選與原順序收斂：工程最多二條，否則管理一條，再否則個人防護一條；分類與事故路徑例外待人工校正，詳見 CORE_CONTROL_POLICY.md。 2026-10-02 控制措施正文限制50字，複合長句精簡或拆分；依原核心來源保留最對應情境的主要短句，其他為支撐，核心數及上限不變，詳見CONTROL_TEXT_REVISIONS.json。 2026-10-03 三張作業的群組核心重點改對法規點名的危害；局限空間新增物體倒塌、崩塌，三則情境依現行格式掛對策並通過同一套核心與50字檢查。 2026-10-03 職業病嚴重度改為可恢復 S4、不可恢復 S5。",
+  "note": "已對上的危害與控制。核心來自挑選說明或 Luna 補標；只有一條措施的已補到最多三條。 沒掛上的對策已再判斷；掛不上的寫在 unlinkedControls。 2026-10-02 核心標記按原核心候選與原順序收斂：工程最多二條，否則管理一條，再否則個人防護一條；分類與事故路徑例外待人工校正，詳見 CORE_CONTROL_POLICY.md。 2026-10-02 控制措施正文限制50字，複合長句精簡或拆分；依原核心來源保留最對應情境的主要短句，其他為支撐，核心數及上限不變，詳見CONTROL_TEXT_REVISIONS.json。 2026-10-03 三張作業的群組核心重點改對法規點名的危害；局限空間新增物體倒塌、崩塌，三則情境依現行格式掛對策並通過同一套核心與50字檢查。 2026-10-03 職業病嚴重度改為可恢復 S4、不可恢復 S5。 2026-10-03 補上 41 則原本沒有嚴重度的情境。",
   "counts": {
     "groups": 1399,
     "hazards": 6089,
@@ -136474,7 +136474,7 @@
         {
           "hazardId": "H1",
           "hazardItem": "清洗藥液準備與接管時，徒手搬運藥桶、長距離拖拉軟管或在潮濕狹窄區域彎腰接管，因搬運重量、姿勢及作業空間不當，可能造成下背、肩臂或手腕肌肉骨骼傷害。",
-          "severity": null,
+          "severity": 3,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -136538,7 +136538,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "配藥、接管及拆裝作業過程中，工作高度、工具配置或人員協作不適當，反覆伸展、扭轉身體或突然施力，可能導致姿勢性肌肉骨骼傷害。",
-          "severity": null,
+          "severity": 3,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -136677,7 +136677,7 @@
         {
           "hazardId": "H1",
           "hazardItem": "作業前確認時，泵浦馬達、控制盤或接線盒若受潮、密封破損、接地不良或漏電保護失效，接觸設備外殼可能發生電擊或電弧灼傷。",
-          "severity": null,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -136705,7 +136705,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "停機、能源隔離與管路切換時，未完成斷電、驗電及上鎖掛牌即接近端子、控制元件或自動閥電氣回路，可能誤觸帶電部位而感電。",
-          "severity": null,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -136733,7 +136733,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "循環清洗期間，以水柱沖洗控制盤、接線盒或電氣設備，或使臨時電纜、插頭浸水，水分侵入可能造成短路、漏電及電擊。",
-          "severity": null,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -136774,7 +136774,7 @@
         {
           "hazardId": "H4",
           "hazardItem": "清洗藥液或藥霧濺入、滯留於電氣設備及臨時電源，造成外殼、電纜或端子腐蝕、絕緣劣化及漏電；人員接近或觸碰時可能感電或遭電弧灼傷。",
-          "severity": null,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -136815,7 +136815,7 @@
         {
           "hazardId": "H5",
           "hazardItem": "設備復歸及試運轉前，若人員或工具尚未撤離、盤箱及接線盒未乾燥、護蓋封板未復原或保護裝置未復歸即送電，可能因絕緣失效、外殼帶電或短路而造成感電及電弧灼傷。",
-          "severity": null,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -136918,7 +136918,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "酸、鹼或含氯清洗劑辨識、相容性或投加順序錯誤，混合後可能產生刺激性或有毒氣體，造成急性吸入危害。",
-          "severity": null,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -136982,7 +136982,7 @@
         {
           "hazardId": "H1",
           "hazardItem": "清洗前管路配置、流向或閥位錯誤，封閉段、盲端或隔離不當遭加壓，可能造成管路、閥件、軟管或接頭破裂。",
-          "severity": null,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -137017,7 +137017,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "管路、軟管或接頭因高溫劣化、腐蝕減薄、脆化、墊片失效或反覆壓力循環，於循環清洗時破裂並噴出清洗液。",
-          "severity": null,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -137046,7 +137046,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "泵浦啟動、閥件快速切換或管路堵塞造成水擊、壓力瞬升及管路反力，可能導致管件破裂、接頭脫離或軟管甩動。",
-          "severity": null,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -137075,7 +137075,7 @@
         {
           "hazardId": "H4",
           "hazardItem": "取樣與補藥時因取樣點、補藥管路堵塞或閥件誤關造成局部升壓，可能使取樣容器、軟管或接頭破裂並噴濺液體。",
-          "severity": null,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -137110,7 +137110,7 @@
         {
           "hazardId": "H5",
           "hazardItem": "降溫洩壓及排液時，排放管堵塞、軟管耐溫耐壓不足或壓力尚未歸零，可能造成軟管破裂、甩動或殘液噴出。",
-          "severity": null,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -137223,7 +137223,7 @@
         {
           "hazardId": "H1",
           "hazardItem": "必要部位拆檢時，濾網、噴頭、視鏡及金屬管件邊緣可能存在銳利毛邊或尖角；人員抓握、搬移及清潔時可能割傷手部。",
-          "severity": null,
+          "severity": 3,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -137350,7 +137350,7 @@
         {
           "hazardId": "H1",
           "hazardItem": "停機、能源隔離與管路切換時，泵浦、攪拌器或自動閥未完全斷能、釋放殘壓或防止回動，誤啟動可能造成手部夾傷或肢體捲入。",
-          "severity": null,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -137372,7 +137372,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "啟動循環清洗時，泵浦聯軸器、旋轉軸或連桿護罩失效，巡檢或擦拭人員接近運轉部位可能遭夾捲。",
-          "severity": null,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -137394,7 +137394,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "拆接軟管、法蘭、快拆接頭、濾網或重型閥件時，殘壓未釋放、支撐不足或構件偏移回彈，可能夾壓手部及肢體。",
-          "severity": null,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -137422,7 +137422,7 @@
         {
           "hazardId": "H4",
           "hazardItem": "設備復歸及試運轉前，工具、零件或人員未撤離，或護罩、人孔蓋及夾具未復原，啟動後可能造成捲入、夾壓或壓傷。",
-          "severity": null,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -137520,7 +137520,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "拆檢、復歸及場地整理時，拆下零件、工具、軟管或廢棄物占用通道，且視線可能受設備或物料遮蔽，行走時可能絆倒。",
-          "severity": null,
+          "severity": 2,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -137549,7 +137549,7 @@
         {
           "hazardId": "H1",
           "hazardItem": "停機及能源隔離後，設備、管路、槽體或熱交換器仍可能蓄熱，並因熱膨脹、局部熱點或殘留壓力，在開蓋、拆接或操作閥件時突然釋放蒸汽或高溫介質造成燙傷。",
-          "severity": null,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -137577,7 +137577,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "啟動循環清洗及升溫過程中，高溫管路、閥件、槽體、泵浦或熱交換器表面可能超過安全接觸溫度，巡檢、取樣或調整時造成接觸性燙傷。",
-          "severity": null,
+          "severity": 3,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -137634,7 +137634,7 @@
         {
           "hazardId": "H4",
           "hazardItem": "高溫清洗液排放時，軟管、接頭、固定件或導流裝置若耐溫耐壓不足、破損或固定不良，可能破裂、甩動或噴濺造成燙傷。",
-          "severity": null,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -137663,7 +137663,7 @@
         {
           "hazardId": "H5",
           "hazardItem": "取樣、補藥及循環監控時，高溫樣品、取樣閥、管線或蒸汽逸散可能接觸手部、臉部及眼部造成燙傷。",
-          "severity": null,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -170501,7 +170501,7 @@
         {
           "hazardId": "H4",
           "hazardItem": "裂縫、落土、坡面鼓起、滲水或位移未被發現時，人員進入失穩區可能遭掩埋。",
-          "severity": null,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -185477,7 +185477,7 @@
         {
           "hazardId": "H1",
           "hazardItem": "作業人員在狹小平台內徒手搬運過重工具、材料或零件，可能因瞬間用力不當造成腰部、肌肉或手部扭傷。",
-          "severity": null,
+          "severity": 3,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -185505,7 +185505,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "控制器配置不良或操作阻力過大時，反覆操作可能使手腕長期維持不自然角度，造成腕部疼痛或上肢傷害。",
-          "severity": null,
+          "severity": 2,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -185527,7 +185527,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "平台空間不足且材料堆放不當時，人員需跨越障礙或扭身取物，可能造成膝部、腰部或肩部扭傷。",
-          "severity": null,
+          "severity": 3,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -185555,7 +185555,7 @@
         {
           "hazardId": "H4",
           "hazardItem": "作業人員攜帶過多工具及材料進入平台時，可能因搬運重心不穩而增加急性肌肉骨骼負荷。",
-          "severity": null,
+          "severity": 2,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -185743,7 +185743,7 @@
         {
           "hazardId": "H1",
           "hazardItem": "高空作業車伸臂、平台或導電長料進入架空線、變電設備、配電盤或電纜橋架的帶電危險區時，可能造成電擊、電弧灼傷及墜落死亡。",
-          "severity": null,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -185771,7 +185771,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "控制箱、配線、絕緣、接地、漏電保護或臨時用電線路破損、進水或失效時，車體及操作部位可能帶電。",
-          "severity": null,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -185793,7 +185793,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "高空作業車誤觸帶電線路後，平台人員下車或地面人員接觸車體及周邊金屬物，可能遭受接觸電壓或跨步電壓電擊。",
-          "severity": null,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -186274,7 +186274,7 @@
         {
           "hazardId": "H1",
           "hazardItem": "平台、踏階、出入口或作業地面有油污、泥水、坡度、高低差或照明不足時，人員行走及上下設備可能滑倒或踩空。",
-          "severity": null,
+          "severity": 3,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -186302,7 +186302,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "地面及通道散置電纜、延長線、工具、材料或廢棄物時，人員行走、指揮或上下平台可能被絆倒。",
-          "severity": null,
+          "severity": 3,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -186324,7 +186324,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "人員未使用指定出入口，或在設備尚未停妥時上下，可能因失去支撐或重心不穩而跌倒。",
-          "severity": null,
+          "severity": 3,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -186352,7 +186352,7 @@
         {
           "hazardId": "H1",
           "hazardItem": "作業人員直接接觸日照升溫的平台欄杆、底板、車體或工具，可能造成接觸性燙傷。",
-          "severity": null,
+          "severity": 2,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -186374,7 +186374,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "檢點或維修液壓、馬達及散熱部位時，未停機或確認降溫即接觸高溫表面，可能造成燙傷。",
-          "severity": null,
+          "severity": 3,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -186396,7 +186396,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "夏季戶外高處作業時，長時間接觸高溫設備表面可能增加局部熱傷害風險。",
-          "severity": null,
+          "severity": 3,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -186418,7 +186418,7 @@
         {
           "hazardId": "H4",
           "hazardItem": "冬季低溫或強風環境中接觸平台欄杆、底板、車體或金屬工具，可能造成局部冷傷害或凍傷。",
-          "severity": null,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -186440,7 +186440,7 @@
         {
           "hazardId": "H5",
           "hazardItem": "低溫造成手部僵硬時，操作人員可能因觸覺及操作能力下降而發生誤操作。",
-          "severity": null,
+          "severity": 2,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -186971,7 +186971,7 @@
         {
           "hazardId": "H1",
           "hazardItem": "作業評估及越邊、下降前未辨識或隔離裸露電線、路燈迴路及外牆帶電設備，人體、工作繩或金屬工具進入危險距離而感電。",
-          "severity": null,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -187071,7 +187071,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "工作面定位及轉位時未確認停電狀態，或他人誤送電、帶電部位絕緣破損，作業者碰觸帶電體而感電。",
-          "severity": null,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
