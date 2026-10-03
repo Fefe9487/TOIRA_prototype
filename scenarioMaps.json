@@ -1,12 +1,12 @@
 {
   "schema": "toira-scenario-maps",
-  "version": "20261002n",
+  "version": "20261003a",
   "generatedAt": "2026-10-02T03:05:52Z",
-  "note": "已對上的危害與控制。核心來自挑選說明或 Luna 補標；只有一條措施的已補到最多三條。 沒掛上的對策已再判斷；掛不上的寫在 unlinkedControls。 2026-10-02 核心標記按原核心候選與原順序收斂：工程最多二條，否則管理一條，再否則個人防護一條；分類與事故路徑例外待人工校正，詳見 CORE_CONTROL_POLICY.md。 2026-10-02 控制措施正文限制50字，複合長句精簡或拆分；依原核心來源保留最對應情境的主要短句，其他為支撐，核心數及上限不變，詳見CONTROL_TEXT_REVISIONS.json。",
+  "note": "已對上的危害與控制。核心來自挑選說明或 Luna 補標；只有一條措施的已補到最多三條。 沒掛上的對策已再判斷；掛不上的寫在 unlinkedControls。 2026-10-02 核心標記按原核心候選與原順序收斂：工程最多二條，否則管理一條，再否則個人防護一條；分類與事故路徑例外待人工校正，詳見 CORE_CONTROL_POLICY.md。 2026-10-02 控制措施正文限制50字，複合長句精簡或拆分；依原核心來源保留最對應情境的主要短句，其他為支撐，核心數及上限不變，詳見CONTROL_TEXT_REVISIONS.json。 2026-10-03 三張作業的群組核心重點改對法規點名的危害；局限空間新增物體倒塌、崩塌，三則情境依現行格式掛對策並通過同一套核心與50字檢查。",
   "counts": {
-    "groups": 1398,
-    "hazards": 6086,
-    "coreHazards": 6086,
+    "groups": 1399,
+    "hazards": 6089,
+    "coreHazards": 6089,
     "gapOmitted": 0,
     "codexEmptyOmitted": 0,
     "unmatchedLibraryGroups": 0
@@ -49218,6 +49218,90 @@
           ],
           "coreControlRefs": [
             "A1"
+          ]
+        }
+      ]
+    },
+    {
+      "taskName": "局限空間作業",
+      "groupName": "物體倒塌、崩塌",
+      "hazardControlMap": [
+        {
+          "hazardId": "H1",
+          "hazardItem": "槽壁、土壁、坑井或管溝側壁的支撐不足，或受地下水、振動及鄰近荷重影響而塌陷，可能掩埋槽內或坑內人員。",
+          "severity": 5,
+          "controlRefs": [
+            {
+              "pool": "AvoidItems",
+              "controlId": "A1",
+              "text": "坑井、管溝設符合地質的擋土支撐或安全邊坡，未支撐側壁下方禁止停留。(工程改善)",
+              "role": "core"
+            },
+            {
+              "pool": "AvoidItems",
+              "controlId": "A2",
+              "text": "進入前檢查槽壁、內襯、支撐及堆載，有剝落、變形、掏空或裂縫時先加固或改非進入。(行政管理)",
+              "role": "support"
+            },
+            {
+              "pool": "AvoidItems",
+              "controlId": "A4",
+              "text": "作業中由監視人觀察壁面、支撐及地表，出現掉土、變形或異響時立即命令撤離。(行政管理)",
+              "role": "support"
+            }
+          ],
+          "coreControlRefs": [
+            "A1"
+          ]
+        },
+        {
+          "hazardId": "H2",
+          "hazardItem": "內襯、砌體、腐蝕槽壁或上方結構失去支撐而向內崩落，可能壓埋正在清理、檢修或焊接的人員。",
+          "severity": 5,
+          "controlRefs": [
+            {
+              "pool": "AvoidItems",
+              "controlId": "A2",
+              "text": "進入前檢查槽壁、內襯、支撐及堆載，有剝落、變形、掏空或裂縫時先加固或改非進入。(行政管理)",
+              "role": "core"
+            },
+            {
+              "pool": "AvoidItems",
+              "controlId": "A4",
+              "text": "作業中由監視人觀察壁面、支撐及地表，出現掉土、變形或異響時立即命令撤離。(行政管理)",
+              "role": "support"
+            }
+          ],
+          "coreControlRefs": [
+            "A2"
+          ]
+        },
+        {
+          "hazardId": "H3",
+          "hazardItem": "棄土、材料或重型機具堆置在開口邊緣，荷重使周邊地盤下陷或側壁塌入，可能掩埋出入口並阻斷撤離。",
+          "severity": 5,
+          "controlRefs": [
+            {
+              "pool": "AvoidItems",
+              "controlId": "A3",
+              "text": "開口邊緣不得堆棄土、材料或停放重型機具，堆土退離側壁至少一個開挖深度。(行政管理)",
+              "role": "core"
+            },
+            {
+              "pool": "AvoidItems",
+              "controlId": "A1",
+              "text": "坑井、管溝設符合地質的擋土支撐或安全邊坡，未支撐側壁下方禁止停留。(工程改善)",
+              "role": "support"
+            },
+            {
+              "pool": "AvoidItems",
+              "controlId": "A4",
+              "text": "作業中由監視人觀察壁面、支撐及地表，出現掉土、變形或異響時立即命令撤離。(行政管理)",
+              "role": "support"
+            }
+          ],
+          "coreControlRefs": [
+            "A3"
           ]
         }
       ]
