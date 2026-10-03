@@ -10456,19 +10456,19 @@
       "locations": [
         {
           "task": "天花板輕鋼架組立作業",
-          "group": "墜落",
+          "group": "墜落、滾落",
           "hazardId": "H1",
           "controlId": "A1"
         },
         {
           "task": "天花板輕鋼架組立作業",
-          "group": "墜落",
+          "group": "墜落、滾落",
           "hazardId": "H2",
           "controlId": "A1"
         },
         {
           "task": "天花板輕鋼架組立作業",
-          "group": "墜落",
+          "group": "墜落、滾落",
           "hazardId": "H3",
           "controlId": "A1"
         }
@@ -10498,7 +10498,7 @@
       "locations": [
         {
           "task": "天花板輕鋼架組立作業",
-          "group": "墜落",
+          "group": "墜落、滾落",
           "hazardId": "H2",
           "controlId": "A3"
         }
@@ -10525,25 +10525,25 @@
       "locations": [
         {
           "task": "天花板輕鋼架組立作業",
-          "group": "物體倒塌",
+          "group": "物體倒塌、崩塌",
           "hazardId": "H1",
           "controlId": "A2"
         },
         {
           "task": "天花板輕鋼架組立作業",
-          "group": "物體倒塌",
+          "group": "物體倒塌、崩塌",
           "hazardId": "H3",
           "controlId": "A2"
         },
         {
           "task": "天花板輕鋼架組立作業",
-          "group": "物體倒塌",
+          "group": "物體倒塌、崩塌",
           "hazardId": "H4",
           "controlId": "A2"
         },
         {
           "task": "天花板輕鋼架組立作業",
-          "group": "物體倒塌",
+          "group": "物體倒塌、崩塌",
           "hazardId": "H5",
           "controlId": "A2"
         }
@@ -10570,13 +10570,13 @@
       "locations": [
         {
           "task": "天花板輕鋼架組立作業",
-          "group": "物體倒塌",
+          "group": "物體倒塌、崩塌",
           "hazardId": "H2",
           "controlId": "A3"
         },
         {
           "task": "天花板輕鋼架組立作業",
-          "group": "物體倒塌",
+          "group": "物體倒塌、崩塌",
           "hazardId": "H5",
           "controlId": "A3"
         }
@@ -10603,7 +10603,7 @@
       "locations": [
         {
           "task": "天花板輕鋼架組立作業",
-          "group": "物體倒塌",
+          "group": "物體倒塌、崩塌",
           "hazardId": "H4",
           "controlId": "A4"
         }
@@ -21451,37 +21451,37 @@
       "locations": [
         {
           "task": "鋼筋綁紮作業",
-          "group": "墜落",
+          "group": "墜落、滾落",
           "hazardId": "H1",
           "controlId": "A1"
         },
         {
           "task": "鋼筋綁紮作業",
-          "group": "墜落",
+          "group": "墜落、滾落",
           "hazardId": "H2",
           "controlId": "A1"
         },
         {
           "task": "鋼筋綁紮作業",
-          "group": "墜落",
+          "group": "墜落、滾落",
           "hazardId": "H3",
           "controlId": "A1"
         },
         {
           "task": "鋼筋綁紮作業",
-          "group": "墜落",
+          "group": "墜落、滾落",
           "hazardId": "H4",
           "controlId": "A1"
         },
         {
           "task": "鋼筋綁紮作業",
-          "group": "墜落",
+          "group": "墜落、滾落",
           "hazardId": "H5",
           "controlId": "A1"
         },
         {
           "task": "鋼筋綁紮作業",
-          "group": "墜落",
+          "group": "墜落、滾落",
           "hazardId": "H6",
           "controlId": "A1"
         }
@@ -21508,37 +21508,37 @@
       "locations": [
         {
           "task": "鋼筋綁紮作業",
-          "group": "墜落",
+          "group": "墜落、滾落",
           "hazardId": "H1",
           "controlId": "A3"
         },
         {
           "task": "鋼筋綁紮作業",
-          "group": "墜落",
+          "group": "墜落、滾落",
           "hazardId": "H2",
           "controlId": "A3"
         },
         {
           "task": "鋼筋綁紮作業",
-          "group": "墜落",
+          "group": "墜落、滾落",
           "hazardId": "H3",
           "controlId": "A3"
         },
         {
           "task": "鋼筋綁紮作業",
-          "group": "墜落",
+          "group": "墜落、滾落",
           "hazardId": "H4",
           "controlId": "A3"
         },
         {
           "task": "鋼筋綁紮作業",
-          "group": "墜落",
+          "group": "墜落、滾落",
           "hazardId": "H5",
           "controlId": "A3"
         },
         {
           "task": "鋼筋綁紮作業",
-          "group": "墜落",
+          "group": "墜落、滾落",
           "hazardId": "H6",
           "controlId": "A3"
         }
@@ -21565,37 +21565,37 @@
       "locations": [
         {
           "task": "鋼筋綁紮作業",
-          "group": "墜落",
+          "group": "墜落、滾落",
           "hazardId": "H1",
           "controlId": "A6"
         },
         {
           "task": "鋼筋綁紮作業",
-          "group": "墜落",
+          "group": "墜落、滾落",
           "hazardId": "H2",
           "controlId": "A6"
         },
         {
           "task": "鋼筋綁紮作業",
-          "group": "墜落",
+          "group": "墜落、滾落",
           "hazardId": "H3",
           "controlId": "A6"
         },
         {
           "task": "鋼筋綁紮作業",
-          "group": "墜落",
+          "group": "墜落、滾落",
           "hazardId": "H4",
           "controlId": "A6"
         },
         {
           "task": "鋼筋綁紮作業",
-          "group": "墜落",
+          "group": "墜落、滾落",
           "hazardId": "H5",
           "controlId": "A6"
         },
         {
           "task": "鋼筋綁紮作業",
-          "group": "墜落",
+          "group": "墜落、滾落",
           "hazardId": "H6",
           "controlId": "A6"
         }
@@ -24945,7 +24945,7 @@
     {
       "caseId": 112,
       "task": "天花板輕鋼架組立作業",
-      "group": "墜落",
+      "group": "墜落、滾落",
       "hazard": "人員在合梯或移動平台上放樣、鑽孔、安裝吊筋及固定板材時，因梯具未展開、平台未鎖定、地面不平或過度側伸而失足墜落。",
       "sourceControlId": "A1",
       "revisionId": 298,
@@ -24957,7 +24957,7 @@
     {
       "caseId": 116,
       "task": "天花板輕鋼架組立作業",
-      "group": "物體倒塌",
+      "group": "物體倒塌、崩塌",
       "hazard": "吊筋、主副架、吊件、橫撐或接頭固定不足，未完成臨時支撐即承載板材，可能造成骨架局部或整體倒塌。",
       "sourceControlId": "A2",
       "revisionId": 300,
@@ -25965,7 +25965,7 @@
     {
       "caseId": 452,
       "task": "鋼筋綁紮作業",
-      "group": "墜落",
+      "group": "墜落、滾落",
       "hazard": "於梁側、柱牆、樓板臨邊或高處綁紮時，護欄、工作平台、踏板或上下設備未完成、未固定或失穩，作業人員可能失足墜落。",
       "sourceControlId": "A6",
       "revisionId": 609,
@@ -25977,7 +25977,7 @@
     {
       "caseId": 456,
       "task": "鋼筋綁紮作業",
-      "group": "墜落",
+      "group": "墜落、滾落",
       "hazard": "查驗、修整及清理時為取料、避障或跨越障礙而倒退行走，未使用安全通道或工作平台而於臨邊或開口失足墜落。",
       "sourceControlId": "A6",
       "revisionId": 609,
@@ -26637,7 +26637,7 @@
     {
       "caseId": 114,
       "task": "天花板輕鋼架組立作業",
-      "group": "墜落",
+      "group": "墜落、滾落",
       "hazard": "板材安裝、開孔修整及檢查時攀爬護欄、站立於不穩定物品或缺少安全上下設備，可能失足墜落。",
       "sourceControlId": "A1",
       "revisionId": 298,
@@ -26649,7 +26649,7 @@
     {
       "caseId": 118,
       "task": "天花板輕鋼架組立作業",
-      "group": "物體倒塌",
+      "group": "物體倒塌、崩塌",
       "hazard": "地震、材料碰撞、平台移位或機電交叉施工造成吊點、接頭及支撐受力異常，可能導致骨架失效倒塌。",
       "sourceControlId": "A2",
       "revisionId": 300,
@@ -27657,7 +27657,7 @@
     {
       "caseId": 454,
       "task": "鋼筋綁紮作業",
-      "group": "墜落",
+      "group": "墜落、滾落",
       "hazard": "攀爬未固定筋籠、模板支撐或站立於護欄、箍筋上進行組立與綁紮，因缺乏穩固上下設備或筋籠晃動而墜落。",
       "sourceControlId": "A6",
       "revisionId": 609,
@@ -28317,7 +28317,7 @@
     {
       "caseId": 113,
       "task": "天花板輕鋼架組立作業",
-      "group": "墜落",
+      "group": "墜落、滾落",
       "hazard": "人員組立主副架、橫撐或固定板材時踩踏未完成或未固定的骨架，可能因支撐失效而墜落。",
       "sourceControlId": "A1",
       "revisionId": 298,
@@ -28329,7 +28329,7 @@
     {
       "caseId": 117,
       "task": "天花板輕鋼架組立作業",
-      "group": "物體倒塌",
+      "group": "物體倒塌、崩塌",
       "hazard": "板材升降設備超載、偏載、擺動或防脫落失效，可能造成板材及未完成骨架失穩。",
       "sourceControlId": "A2",
       "revisionId": 300,
@@ -29337,7 +29337,7 @@
     {
       "caseId": 453,
       "task": "鋼筋綁紮作業",
-      "group": "墜落",
+      "group": "墜落、滾落",
       "hazard": "直接踩踏未固定鋼筋網、馬椅、懸空筋或跨越梁槽作業，因鋼筋滑移、支撐失穩或間隙踩空而墜落。",
       "sourceControlId": "A6",
       "revisionId": 609,
@@ -29997,7 +29997,7 @@
     {
       "caseId": 115,
       "task": "天花板輕鋼架組立作業",
-      "group": "物體倒塌",
+      "group": "物體倒塌、崩塌",
       "hazard": "移動平台設於不平地面、腳輪未煞車、超載或載人載料移動，可能造成平台傾覆。",
       "sourceControlId": "A3",
       "revisionId": 301,
@@ -31005,7 +31005,7 @@
     {
       "caseId": 451,
       "task": "鋼筋綁紮作業",
-      "group": "墜落",
+      "group": "墜落、滾落",
       "hazard": "作業前未確認樓板邊緣、梁側、電梯井、預留開口及梁槽防護，排筋、綁紮、查驗或清理時可能踩空墜落。",
       "sourceControlId": "A6",
       "revisionId": 609,
@@ -31017,7 +31017,7 @@
     {
       "caseId": 455,
       "task": "鋼筋綁紮作業",
-      "group": "墜落",
+      "group": "墜落、滾落",
       "hazard": "高處作業遇積水、綁線、短料、雜物、照明不足、強風、豪雨或雷電，滑倒或絆倒後可能自臨邊或開口墜落。",
       "sourceControlId": "A6",
       "revisionId": 609,

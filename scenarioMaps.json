@@ -1,10 +1,10 @@
 {
   "schema": "toira-scenario-maps",
-  "version": "20261003d",
+  "version": "20261003e",
   "generatedAt": "2026-10-02T03:05:52Z",
-  "note": "已對上的危害與控制。核心來自挑選說明或 Luna 補標；只有一條措施的已補到最多三條。 沒掛上的對策已再判斷；掛不上的寫在 unlinkedControls。 2026-10-02 核心標記按原核心候選與原順序收斂：工程最多二條，否則管理一條，再否則個人防護一條；分類與事故路徑例外待人工校正，詳見 CORE_CONTROL_POLICY.md。 2026-10-02 控制措施正文限制50字，複合長句精簡或拆分；依原核心來源保留最對應情境的主要短句，其他為支撐，核心數及上限不變，詳見CONTROL_TEXT_REVISIONS.json。 2026-10-03 三張作業的群組核心重點改對法規點名的危害；局限空間新增物體倒塌、崩塌，三則情境依現行格式掛對策並通過同一套核心與50字檢查。 2026-10-03 職業病嚴重度改為可恢復 S4、不可恢復 S5。 2026-10-03 補上 41 則原本沒有嚴重度的情境。",
+  "note": "已對上的危害與控制。核心來自挑選說明或 Luna 補標；只有一條措施的已補到最多三條。 沒掛上的對策已再判斷；掛不上的寫在 unlinkedControls。 2026-10-02 核心標記按原核心候選與原順序收斂：工程最多二條，否則管理一條，再否則個人防護一條；分類與事故路徑例外待人工校正，詳見 CORE_CONTROL_POLICY.md。 2026-10-02 控制措施正文限制50字，複合長句精簡或拆分；依原核心來源保留最對應情境的主要短句，其他為支撐，核心數及上限不變，詳見CONTROL_TEXT_REVISIONS.json。 2026-10-03 三張作業的群組核心重點改對法規點名的危害；局限空間新增物體倒塌、崩塌，三則情境依現行格式掛對策並通過同一套核心與50字檢查。 2026-10-03 職業病嚴重度改為可恢復 S4、不可恢復 S5。 2026-10-03 補上 41 則原本沒有嚴重度的情境。 2026-10-03 危害類型名稱收進勞動部17類加職業病、其他類別風險：墜落與滾落併為墜落、滾落，物體倒塌併為物體倒塌、崩塌，與有害物等之接觸併為有害物接觸。",
   "counts": {
-    "groups": 1399,
+    "groups": 1398,
     "hazards": 6089,
     "coreHazards": 6089,
     "gapOmitted": 0,
@@ -36201,7 +36201,7 @@
     },
     {
       "taskName": "天花板輕鋼架組立作業",
-      "groupName": "墜落",
+      "groupName": "墜落、滾落",
       "hazardControlMap": [
         {
           "hazardId": "H1",
@@ -36634,7 +36634,7 @@
     },
     {
       "taskName": "天花板輕鋼架組立作業",
-      "groupName": "物體倒塌",
+      "groupName": "物體倒塌、崩塌",
       "hazardControlMap": [
         {
           "hazardId": "H1",
@@ -37075,7 +37075,7 @@
     },
     {
       "taskName": "天花板輕鋼架組立作業",
-      "groupName": "與有害物等之接觸",
+      "groupName": "有害物接觸",
       "hazardControlMap": [
         {
           "hazardId": "H1",
@@ -50544,7 +50544,7 @@
     },
     {
       "taskName": "工區材料進場及堆置作業",
-      "groupName": "與有害物等之接觸",
+      "groupName": "有害物接觸",
       "hazardControlMap": [
         {
           "hazardId": "H1",
@@ -154919,7 +154919,7 @@
     },
     {
       "taskName": "鋼筋綁紮作業",
-      "groupName": "墜落",
+      "groupName": "墜落、滾落",
       "hazardControlMap": [
         {
           "hazardId": "H1",
@@ -155399,6 +155399,94 @@
             "A2",
             "A6"
           ]
+        },
+        {
+          "hazardId": "H7",
+          "hazardItem": "鋼筋卸料時綑帶解除，或堆置於斜坡、凹凸及未整平地面，圓鋼筋失去約束後滾落，撞擊或夾壓人員。",
+          "severity": 5,
+          "controlRefs": [
+            {
+              "pool": "AvoidItems",
+              "controlId": "A1",
+              "text": "卸料區應整平夯實，鋼筋下方設置連續墊木、擋樁、止擋或專用料架，拆綑時依先上後下及分層方式進行。(工程改善)",
+              "role": "core"
+            },
+            {
+              "pool": "AvoidItems",
+              "controlId": "A2",
+              "text": "鋼筋應依徑別、長度及使用區域分區堆置，限制堆置高度並將長短料分開綑束。(行政管理)",
+              "role": "support"
+            }
+          ],
+          "coreControlRefs": [
+            "A1"
+          ]
+        },
+        {
+          "hazardId": "H8",
+          "hazardItem": "不同徑別及長度鋼筋混堆、堆置過高或底層滑移，造成整捆鋼筋滾動並波及鄰近人員。",
+          "severity": 5,
+          "controlRefs": [
+            {
+              "pool": "AvoidItems",
+              "controlId": "A1",
+              "text": "卸料區應整平夯實，鋼筋下方設置連續墊木、擋樁、止擋或專用料架，拆綑時依先上後下及分層方式進行。(工程改善)",
+              "role": "core"
+            },
+            {
+              "pool": "AvoidItems",
+              "controlId": "A2",
+              "text": "鋼筋應依徑別、長度及使用區域分區堆置，限制堆置高度並將長短料分開綑束。(行政管理)",
+              "role": "support"
+            }
+          ],
+          "coreControlRefs": [
+            "A1"
+          ]
+        },
+        {
+          "hazardId": "H9",
+          "hazardItem": "吊運鋼筋至樓層或收料平台後未穩定放置即解開吊具，長料滑動滾落至通道或臨邊。",
+          "severity": 5,
+          "controlRefs": [
+            {
+              "pool": "AvoidItems",
+              "controlId": "A1",
+              "text": "卸料區應整平夯實，鋼筋下方設置連續墊木、擋樁、止擋或專用料架，拆綑時依先上後下及分層方式進行。(工程改善)",
+              "role": "core"
+            },
+            {
+              "pool": "AvoidItems",
+              "controlId": "A3",
+              "text": "吊放至收料位置後，確認鋼筋完全落放於墊木或料架並完成止滑約束，才可解開吊具。(行政管理)",
+              "role": "support"
+            }
+          ],
+          "coreControlRefs": [
+            "A1"
+          ]
+        },
+        {
+          "hazardId": "H10",
+          "hazardItem": "排筋、上層筋及馬椅安裝過程中，未固定鋼筋受推移、踩踏或外力影響而滑移滾動，造成失足或腳部受傷。",
+          "severity": 3,
+          "controlRefs": [
+            {
+              "pool": "AvoidItems",
+              "controlId": "A4",
+              "text": "排筋及上層鋼筋應分區逐段定位，完成綁固或臨時固定前禁止推移、踩踏及集中堆料。(行政管理)",
+              "role": "core"
+            },
+            {
+              "pool": "AvoidItems",
+              "controlId": "N1",
+              "text": "於排筋及上層筋作業區使用專用固定夾將鋼筋與馬椅可靠鎖固，防止鋼筋滑移或滾動。(工程改善)",
+              "role": "support"
+            }
+          ],
+          "coreControlRefs": [
+            "A4"
+          ]
         }
       ]
     },
@@ -155593,100 +155681,6 @@
           "coreControlRefs": [
             "A1",
             "A2__part2"
-          ]
-        }
-      ]
-    },
-    {
-      "taskName": "鋼筋綁紮作業",
-      "groupName": "滾落",
-      "hazardControlMap": [
-        {
-          "hazardId": "H1",
-          "hazardItem": "鋼筋卸料時綑帶解除，或堆置於斜坡、凹凸及未整平地面，圓鋼筋失去約束後滾落，撞擊或夾壓人員。",
-          "severity": 5,
-          "controlRefs": [
-            {
-              "pool": "AvoidItems",
-              "controlId": "A1",
-              "text": "卸料區應整平夯實，鋼筋下方設置連續墊木、擋樁、止擋或專用料架，拆綑時依先上後下及分層方式進行。(工程改善)",
-              "role": "core"
-            },
-            {
-              "pool": "AvoidItems",
-              "controlId": "A2",
-              "text": "鋼筋應依徑別、長度及使用區域分區堆置，限制堆置高度並將長短料分開綑束。(行政管理)",
-              "role": "support"
-            }
-          ],
-          "coreControlRefs": [
-            "A1"
-          ]
-        },
-        {
-          "hazardId": "H2",
-          "hazardItem": "不同徑別及長度鋼筋混堆、堆置過高或底層滑移，造成整捆鋼筋滾動並波及鄰近人員。",
-          "severity": 5,
-          "controlRefs": [
-            {
-              "pool": "AvoidItems",
-              "controlId": "A1",
-              "text": "卸料區應整平夯實，鋼筋下方設置連續墊木、擋樁、止擋或專用料架，拆綑時依先上後下及分層方式進行。(工程改善)",
-              "role": "core"
-            },
-            {
-              "pool": "AvoidItems",
-              "controlId": "A2",
-              "text": "鋼筋應依徑別、長度及使用區域分區堆置，限制堆置高度並將長短料分開綑束。(行政管理)",
-              "role": "support"
-            }
-          ],
-          "coreControlRefs": [
-            "A1"
-          ]
-        },
-        {
-          "hazardId": "H3",
-          "hazardItem": "吊運鋼筋至樓層或收料平台後未穩定放置即解開吊具，長料滑動滾落至通道或臨邊。",
-          "severity": 5,
-          "controlRefs": [
-            {
-              "pool": "AvoidItems",
-              "controlId": "A1",
-              "text": "卸料區應整平夯實，鋼筋下方設置連續墊木、擋樁、止擋或專用料架，拆綑時依先上後下及分層方式進行。(工程改善)",
-              "role": "core"
-            },
-            {
-              "pool": "AvoidItems",
-              "controlId": "A3",
-              "text": "吊放至收料位置後，確認鋼筋完全落放於墊木或料架並完成止滑約束，才可解開吊具。(行政管理)",
-              "role": "support"
-            }
-          ],
-          "coreControlRefs": [
-            "A1"
-          ]
-        },
-        {
-          "hazardId": "H4",
-          "hazardItem": "排筋、上層筋及馬椅安裝過程中，未固定鋼筋受推移、踩踏或外力影響而滑移滾動，造成失足或腳部受傷。",
-          "severity": 3,
-          "controlRefs": [
-            {
-              "pool": "AvoidItems",
-              "controlId": "A4",
-              "text": "排筋及上層鋼筋應分區逐段定位，完成綁固或臨時固定前禁止推移、踩踏及集中堆料。(行政管理)",
-              "role": "core"
-            },
-            {
-              "pool": "AvoidItems",
-              "controlId": "N1",
-              "text": "於排筋及上層筋作業區使用專用固定夾將鋼筋與馬椅可靠鎖固，防止鋼筋滑移或滾動。(工程改善)",
-              "role": "support"
-            }
-          ],
-          "coreControlRefs": [
-            "A4"
           ]
         }
       ]
