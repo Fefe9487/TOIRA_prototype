@@ -1,8 +1,8 @@
 {
   "schema": "toira-scenario-maps",
-  "version": "20261003a",
+  "version": "20261003c",
   "generatedAt": "2026-10-02T03:05:52Z",
-  "note": "已對上的危害與控制。核心來自挑選說明或 Luna 補標；只有一條措施的已補到最多三條。 沒掛上的對策已再判斷；掛不上的寫在 unlinkedControls。 2026-10-02 核心標記按原核心候選與原順序收斂：工程最多二條，否則管理一條，再否則個人防護一條；分類與事故路徑例外待人工校正，詳見 CORE_CONTROL_POLICY.md。 2026-10-02 控制措施正文限制50字，複合長句精簡或拆分；依原核心來源保留最對應情境的主要短句，其他為支撐，核心數及上限不變，詳見CONTROL_TEXT_REVISIONS.json。 2026-10-03 三張作業的群組核心重點改對法規點名的危害；局限空間新增物體倒塌、崩塌，三則情境依現行格式掛對策並通過同一套核心與50字檢查。",
+  "note": "已對上的危害與控制。核心來自挑選說明或 Luna 補標；只有一條措施的已補到最多三條。 沒掛上的對策已再判斷；掛不上的寫在 unlinkedControls。 2026-10-02 核心標記按原核心候選與原順序收斂：工程最多二條，否則管理一條，再否則個人防護一條；分類與事故路徑例外待人工校正，詳見 CORE_CONTROL_POLICY.md。 2026-10-02 控制措施正文限制50字，複合長句精簡或拆分；依原核心來源保留最對應情境的主要短句，其他為支撐，核心數及上限不變，詳見CONTROL_TEXT_REVISIONS.json。 2026-10-03 三張作業的群組核心重點改對法規點名的危害；局限空間新增物體倒塌、崩塌，三則情境依現行格式掛對策並通過同一套核心與50字檢查。 2026-10-03 職業病嚴重度改為可恢復 S4、不可恢復 S5。",
   "counts": {
     "groups": 1399,
     "hazards": 6089,
@@ -471,7 +471,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "搬運、投料、排料及收料長期採彎腰、扭轉、過肩或重複施力姿勢，可能造成下背及上肢肌肉骨骼傷病。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -493,7 +493,7 @@
         {
           "hazardId": "H4",
           "hazardItem": "破碎機振動長時間傳至操作位置，防振、設備維護或暴露時間控制不足，可能造成手臂、肩頸疲勞及振動相關肌肉骨骼危害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -1724,7 +1724,7 @@
         {
           "hazardId": "H1",
           "hazardItem": "中控值班長時間在低照度環境注視高對比、多分割監視畫面，可能造成視覺疲勞、眼睛乾澀、頭痛與注意力下降。",
-          "severity": 2,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -1746,7 +1746,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "久坐、固定姿勢、反覆使用鍵鼠，以及巡檢、疏散與道具復位的久站久走、搬抬推拉，可能造成頸肩腕、腰背及上下肢累積性肌肉骨骼傷害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -1796,7 +1796,7 @@
         {
           "hazardId": "H4",
           "hazardItem": "通風不良下暴露於煙霧特效、香氛、清潔劑揮發物或粉塵，可能引起呼吸道刺激、過敏或氣喘惡化。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -1825,7 +1825,7 @@
         {
           "hazardId": "H5",
           "hazardItem": "玩家接待、預篩、傷病處置及CPR或AED過程接觸血液、唾液、呼吸道分泌物或嘔吐物，可能發生病原體暴露與感染。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -2854,7 +2854,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "搬運鋼索、銷軸及重型零件，或進行高處對孔、鎖固及張力調整時，因反覆彎腰扭轉、仰頭伸臂、蹲跪及固定不良姿勢，造成慢性肌肉骨骼傷害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -2876,7 +2876,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "切磨、除鏽或輔助機柴油設備作業時，吸入金屬粉塵或柴油廢氣，造成呼吸道慢性傷害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -2904,7 +2904,7 @@
         {
           "hazardId": "H4",
           "hazardItem": "戶外組裝、拆卸及穿索時，長時間暴露於日照及紫外線，造成眼睛或皮膚慢性傷害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -2926,7 +2926,7 @@
         {
           "hazardId": "H5",
           "hazardItem": "使用振動手工具時，因振動暴露時間過長，造成手臂振動相關不適及末梢循環障礙。",
-          "severity": 5,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -4598,7 +4598,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "吸入寒冷乾燥空氣或頻繁進出高低溫區，未經適應且缺乏回溫休息，可能引發呼吸道不適、氣喘惡化及心血管負荷。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -4634,7 +4634,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "低溫造成肌肉僵硬與關節活動度下降，持續搬運、推拉、彎腰或扭轉可能造成下背、肩頸、手腕、手肘及肩部肌肉骨骼職業病。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -8122,7 +8122,7 @@
         {
           "hazardId": "H1",
           "hazardItem": "徒手搬運、推拉手推車及低高位堆疊時反覆彎腰、扭轉或伸取，可能造成下背、肩頸及上肢肌肉骨骼傷害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -8144,7 +8144,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "備料區及升降機周邊長期暴露於設備運轉或警報噪音，可能造成噪音性聽力損失。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -8166,7 +8166,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "分類、拆包及搬運產生的粉塵或包材纖維在通風不良時被吸入，可能造成慢性呼吸道刺激或職業性呼吸系統疾病。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -8962,7 +8962,7 @@
         {
           "hazardId": "H1",
           "hazardItem": "進行底座校正、接線、對心或零件搬運時，長時間彎腰、跪姿、前傾、扭轉或重複用力，可能造成累積性肌肉骨骼傷害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -8984,7 +8984,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "使用清洗劑、除油劑、潤滑劑或除鏽劑時，揮發物、油霧或液體接觸皮膚，可能造成呼吸道刺激、慢性器官危害或接觸性皮膚炎。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -9013,7 +9013,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "於高噪音設備區試車、診斷異音或維修時長時間暴露，可能造成噪音性聽力損失或耳鳴。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -9035,7 +9035,7 @@
         {
           "hazardId": "H4",
           "hazardItem": "長時間使用衝擊、振動工具或清理積塵、碳粉時，振動與粉塵逸散控制不足，可能造成上肢神經循環障礙或慢性呼吸系統傷害。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -9836,7 +9836,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "使用溶劑型清洗劑或刺激性化學品時，密閉、通風或防護失效造成蒸氣吸入及皮膚接觸，長期暴露可能導致神經、肝腎或職業性皮膚疾病。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -9886,7 +9886,7 @@
         {
           "hazardId": "H4",
           "hazardItem": "搬運原料袋、模具及半成品，或重複進行投料、取樣、開蓋及清槽時，因負重、不良姿勢、久站或重複動作，可能造成下背、肩頸及上肢肌肉骨骼疾病。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -11260,7 +11260,7 @@
         {
           "hazardId": "H1",
           "hazardItem": "揮發性溶劑、酸鹼或高毒、致敏化學品於入料、接管、取樣或卸料時逸散，反覆吸入或皮膚接觸，可能造成呼吸道、神經、肝腎及皮膚健康危害。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -11344,7 +11344,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "粉狀化學品拆袋、投料或轉運時，密閉輸送或集塵失效會使粉塵被吸入，造成慢性咳嗽、喘鳴及肺功能下降。",
-          "severity": 3,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -11444,7 +11444,7 @@
         {
           "hazardId": "H4",
           "hazardItem": "桶裝及袋裝搬運、軟管拖拉、彎腰接管與反覆操作閥件造成長期施力或不良姿勢，可能引發肩頸、下背及手腕肌肉骨骼傷病。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -12539,7 +12539,7 @@
         {
           "hazardId": "H1",
           "hazardItem": "清潔除墨及保養時長期吸入有機溶劑蒸氣或霧滴，並反覆接觸皮膚，可能造成慢性中毒、氣喘或接觸性皮膚炎。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -12583,7 +12583,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "長時間彎腰、扭轉、伸手及重複擦拭、拆裝施力，造成下背、肩頸及上肢肌肉骨骼傷病。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -13864,7 +13864,7 @@
         {
           "hazardId": "H1",
           "hazardItem": "調墨、清洗及去漬時，油墨與溶劑反覆逸散或接觸皮膚，可能造成慢性神經或肝危害及接觸性皮膚炎。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -13908,7 +13908,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "裁切、清潔及紙張作業產生紙屑、粉塵與乾燥油墨微粒，通風或集塵不足時可能造成呼吸道刺激或氣喘惡化。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -14710,7 +14710,7 @@
         {
           "hazardId": "H1",
           "hazardItem": "柴油貨車或堆高機怠速、運轉時，通風不良區域可能累積柴油廢氣及一氧化碳，造成呼吸、心肺及慢性健康危害。",
-          "severity": 5,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -14732,7 +14732,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "粉體、紙箱或散裝原料拆封、搬運及清理時產生可吸入粉塵，可能造成呼吸道過敏、氣喘或粉塵相關肺部疾病。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -14754,7 +14754,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "重複搬運、推拉、彎腰扭轉或操作車輛產生全身振動，可能造成下背痛、肌腱炎及其他肌肉骨骼傷害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -14805,7 +14805,7 @@
         {
           "hazardId": "H5",
           "hazardItem": "夏季於月台曝曬、搬運或操作設備時，熱負荷與補水、遮蔭及休息不足可能造成熱衰竭及心血管負擔。",
-          "severity": 5,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -16150,7 +16150,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "有機溶劑、樹脂、硬化劑或清洗劑經吸入或皮膚接觸，可能造成慢性中毒、皮膚炎、致敏或眼部傷害。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -17129,7 +17129,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "長期徒手搬抬重袋、推拉容器或以彎腰扭轉姿勢倒料，可能造成下背、肩頸及上肢肌肉骨骼傷害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -17187,7 +17187,7 @@
         {
           "hazardId": "H4",
           "hazardItem": "未依有害物質及噪音暴露結果執行監測、特殊健康檢查與追蹤時，可能延誤發現職業性健康異常。",
-          "severity": 5,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -18251,7 +18251,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "粉體拆包、倒袋、投料、清槽或清掃時，密閉或集塵失效造成粉塵揚散，長期吸入可能導致呼吸道疾病。",
-          "severity": 5,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -18321,7 +18321,7 @@
         {
           "hazardId": "H4",
           "hazardItem": "搬運原料、投料、清理槽底或操作閥件時，重量、頻率或姿勢負荷過高，可能造成下背、肩頸或上肢肌肉骨骼傷害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -18343,7 +18343,7 @@
         {
           "hazardId": "H5",
           "hazardItem": "於加熱設備及高溫區巡檢、取樣、排料或清洗時，蓄熱、通風不足或休息飲水不當，可能造成熱疾病、熱緊迫或脫水。",
-          "severity": 5,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -19155,7 +19155,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "去皮機、刷洗機及排風設備持續運轉產生噪音，長時間暴露可能造成聽力損失。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -19177,7 +19177,7 @@
         {
           "hazardId": "H4",
           "hazardItem": "長期接觸低溫清洗水或冷藏前處理環境，可能造成末梢循環不良及肌肉僵硬。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -20461,7 +20461,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "長時間刷洗、刮除、持握高壓水槍及搬運軟管，重複施力或姿勢不良可能造成肌肉骨骼傷害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -20511,7 +20511,7 @@
         {
           "hazardId": "H4",
           "hazardItem": "局限空間內高溫、高濕且通風不良，作業時間過長或休息補水不足可能造成熱危害。",
-          "severity": 5,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -21443,7 +21443,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "液位計位置不良需長時間彎腰、蹲姿或仰頭讀值，反覆負荷可能造成肩頸及下背肌肉骨骼傷害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -23152,7 +23152,7 @@
         {
           "hazardId": "H1",
           "hazardItem": "於鑄造或熔煉區反覆暴露於高溫輻射及環境熱負荷，熱適應、補水或冷卻休息不足時可能造成熱衰竭、熱中暑或心血管負荷增加。",
-          "severity": 5,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -23236,7 +23236,7 @@
         {
           "hazardId": "H4",
           "hazardItem": "長時間以不良姿勢拉引導繩、彎腰解鉤或搬運吊具，缺乏輔助設備與姿勢調整時可能造成下背、肩頸及上肢肌肉骨骼傷病。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -24523,7 +24523,7 @@
         {
           "hazardId": "H1",
           "hazardItem": "吊籠內長時間或反覆採仰頭、前傾、扭轉、側身伸取等不良姿勢，並搬運工具、零件及材料，可能造成頸肩、上肢及下背肌肉骨骼疾病。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -24546,7 +24546,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "於吊籠內使用溶劑型塗料、清潔劑或除鏽劑時，蒸氣逸散控制不足可能造成有機溶劑暴露及神經、肝腎或呼吸系統健康損害。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -24575,7 +24575,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "進行鑽孔、打磨、切削、敲擊或塗裝時，粉塵、金屬煙霧及霧滴控制不足，長期吸入可能造成慢性呼吸道疾病或職業性氣喘。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -24597,7 +24597,7 @@
         {
           "hazardId": "H4",
           "hazardItem": "長期暴露於起重機、電動工具及敲擊作業噪音，若暴露量與時間控制不足，可能造成噪音性聽力損失。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -24619,7 +24619,7 @@
         {
           "hazardId": "H5",
           "hazardItem": "長時間或高頻率使用鑽孔、打磨及切削等振動工具，可能造成手臂振動症候群及周邊神經、血管傷害。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -25287,7 +25287,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "使用黏著劑或清潔劑時吸入揮發物，或液體反覆接觸皮膚，可能造成呼吸道刺激或接觸性皮膚炎。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -25309,7 +25309,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "熱收縮設備及周邊長時間處於高溫，暴露時間過長或補水休息不足可能造成熱疲勞、脫水或熱衰竭。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -26326,7 +26326,7 @@
         {
           "hazardId": "H5",
           "hazardItem": "長時間站立、反覆抬手噴塗、彎腰補漆或搬運塗料桶，可能造成肩頸、下背及上肢肌肉骨骼傷害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -28719,7 +28719,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "引擎、警報器及貨物碰撞產生長時間高噪音，可能導致噪音性聽力損失。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -28741,7 +28741,7 @@
         {
           "hazardId": "H4",
           "hazardItem": "長時間駕駛反覆扭轉頸部、操作及久坐，且座椅、輪胎或不平路面造成全身振動，可能導致肩頸、腕部或下背慢性傷害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -29768,7 +29768,7 @@
         {
           "hazardId": "H1",
           "hazardItem": "粉料、填充料或色母粒倒料及清掃時，粉塵控制或呼吸防護失效，長期吸入可能造成慢性呼吸道疾病。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -30795,7 +30795,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "工件上料、對位、取件及外觀檢查需長時間重複取放、翻轉與手腕偏轉；工作高度或取放距離不當，可能造成上肢肌肉骨骼傷害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -32343,7 +32343,7 @@
         {
           "hazardId": "H4",
           "hazardItem": "夜間趕工、工時過長、班次輪替不足或精神壓力過大，可能造成疲勞、睡眠障礙及注意力下降。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -33585,7 +33585,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "植栽配置及介質填充時，介質粉塵、肥料、藥劑、黴菌、花粉及昆蟲可能造成皮膚、眼睛或呼吸道過敏。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -33607,7 +33607,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "長時間彎腰、抬舉、重複搬運及手持工具作業，可能造成肌肉骨骼累積性傷害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -35622,7 +35622,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "多片縱鋸機、送料設備及集塵系統長時間運轉產生噪音，長期暴露可能造成噪音性聽力損失或耳鳴。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -35650,7 +35650,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "長期進行上料、接料、搬運及堆置等重複性作業，工作站高度、物料位置或作業安排不當，可能造成肩頸、上肢及下背部肌肉骨骼疾病。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -40054,7 +40054,7 @@
         {
           "hazardId": "H1",
           "hazardItem": "長時間在昏暗場景或照明不足處作業及監看螢幕時，可能出現視覺疲勞、眼睛乾澀、頭痛及睡眠節律干擾。",
-          "severity": 2,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -40098,7 +40098,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "重複搬運道具、彎腰、跪姿及狹小空間作業，可能造成下背、肩頸及腕部累積性肌肉骨骼傷害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -40120,7 +40120,7 @@
         {
           "hazardId": "H4",
           "hazardItem": "長時間趕場、單人巡場或處理異常事件時，可能產生心理壓力、注意力下降及情緒耗竭。",
-          "severity": 2,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -40908,7 +40908,7 @@
         {
           "hazardId": "H4",
           "hazardItem": "氣動修邊工具長時間產生高噪音，累積暴露可能造成聽力下降。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -40936,7 +40936,7 @@
         {
           "hazardId": "H5",
           "hazardItem": "長時間持握氣動修邊工具承受手臂振動，可能造成手臂痠麻或循環不良。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -42290,7 +42290,7 @@
         {
           "hazardId": "H1",
           "hazardItem": "取件後輕修毛邊時若有粉屑飛散，長期吸入可能造成呼吸道刺激。",
-          "severity": 2,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -42334,7 +42334,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "清潔劑揮發物、包材及塑膠逸散物在通風不足時，可能造成呼吸道刺激、頭痛或身體不適。",
-          "severity": 2,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -42356,7 +42356,7 @@
         {
           "hazardId": "H4",
           "hazardItem": "夜班、長工時或休息不足造成疲勞，可能引發健康影響並增加作業失誤。",
-          "severity": 2,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -43918,7 +43918,7 @@
         {
           "hazardId": "H1",
           "hazardItem": "塑化、換料及清模時吸入清模劑或添加劑揮發物，並接觸脫模劑與液壓油，可能造成呼吸道刺激或接觸性皮膚炎。",
-          "severity": 2,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -43995,7 +43995,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "投料、粉碎及清模時長期吸入塑膠粉塵、熱裂解煙霧或油霧，可能造成慢性支氣管炎或肺功能下降。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -44058,7 +44058,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "長期暴露於射出機、乾燥機、粉碎機及空壓機運轉噪音，可能造成噪音性聽力損失。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -44100,7 +44100,7 @@
         {
           "hazardId": "H4",
           "hazardItem": "換模、搬運及裝箱時長時間彎腰或重複取件修邊，可能造成肩頸、上肢及下背肌肉骨骼傷害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -44157,7 +44157,7 @@
         {
           "hazardId": "H5",
           "hazardItem": "長時間於射出機、乾燥機、烘料機、模溫機、熱模及熔融塑料周邊等高溫設備及廠房環境作業，若散熱、休息與補水不足，可能造成熱壓力、脫水、熱疲勞、熱疾病或中暑。",
-          "severity": 5,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -44213,7 +44213,7 @@
         {
           "hazardId": "H6",
           "hazardItem": "長期夜班、長工時及高節拍生產若休息、輪班與疲勞管理不足，可能造成睡眠障礙、慢性疲勞及人因相關健康損害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -45394,7 +45394,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "反覆彎腰、伸手、扭轉、取件及搬運周轉箱，並長時間站立或承受高工作節拍，可能造成下背、肩頸及上肢肌肉骨骼傷害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -45416,7 +45416,7 @@
         {
           "hazardId": "H4",
           "hazardItem": "長時間於加熱筒、熱模具及其他高溫設備周邊取件或排除異常，可能因熱暴露造成熱疲勞、脫水或熱疾病。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -46195,7 +46195,7 @@
         {
           "hazardId": "H1",
           "hazardItem": "拆裝螺栓、管線與模具定位時反覆彎腰、蹲跪、伸手及施力，長期造成下背、肩頸及上肢肌肉骨骼傷害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -46217,7 +46217,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "試模、脫模、清潔及油路作業長期暴露於煙霧、油霧或溶劑蒸氣，可能造成慢性呼吸道疾病或皮膚炎。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -46267,7 +46267,7 @@
         {
           "hazardId": "H4",
           "hazardItem": "熱模、模溫機及試模區長時間高溫暴露，休息或補水不足時可能造成熱疲勞、脫水或熱疾病。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -46289,7 +46289,7 @@
         {
           "hazardId": "H5",
           "hazardItem": "作業區照度不足、眩光、連續工時或休息不足，可能造成視覺與身心疲勞。",
-          "severity": 2,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -48495,7 +48495,7 @@
         {
           "hazardId": "H1",
           "hazardItem": "局限空間內溶劑、清洗劑或製程氣體因通風不足，經吸入或皮膚接觸，可能造成呼吸道或神經傷害，或接觸性皮膚炎。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -48760,7 +48760,7 @@
         {
           "hazardId": "H7",
           "hazardItem": "低矮狹窄空間長時間彎腰、跪姿或扭轉，姿勢負荷累積，可能造成下背、膝部及肩頸肌肉骨骼傷害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -48782,7 +48782,7 @@
         {
           "hazardId": "H8",
           "hazardItem": "潮濕悶熱且通風不佳的局限空間，熱負荷經長時間暴露，可能造成脫水、熱衰竭或熱疾病。",
-          "severity": 5,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -50441,7 +50441,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "拆包、卸料、搬運及清掃時產生或揚起粉塵，可能造成長期吸入暴露及呼吸系統職業病。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -50485,7 +50485,7 @@
         {
           "hazardId": "H4",
           "hazardItem": "堆高機及手持工具的振動經手臂、座椅或腳踏板傳遞，暴露時間過長可能造成振動相關健康危害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -50507,7 +50507,7 @@
         {
           "hazardId": "H5",
           "hazardItem": "材料重量、搬運距離及頻率不當，或反覆彎腰、扭轉及推拉，可能造成肌肉骨骼相關職業病。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -51750,7 +51750,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "反覆上料、扶料、導正、量測及下料涉及負重、彎腰、扭轉及不良工作高度，長期可能造成下背、肩頸及上肢肌肉骨骼傷害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -51800,7 +51800,7 @@
         {
           "hazardId": "H4",
           "hazardItem": "潤滑油霧、清潔劑揮發物或作業飛濺在通風不足及防護不當時，可能造成呼吸道刺激、皮膚炎及眼部傷害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -51822,7 +51822,7 @@
         {
           "hazardId": "H5",
           "hazardItem": "輪班、長工時、趕工或休息不足造成疲勞累積，可能降低注意力並加重肌肉骨骼不適。",
-          "severity": 2,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -53079,7 +53079,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "反覆彎腰、扭轉、人工搬抬重物或推拉高阻力容器進行撈渣與清運時，因機械輔助及搬運限制不足，造成下背、肩頸及四肢肌肉骨骼傷害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -54195,7 +54195,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "反覆投料、穿帶綁紮、推拉及搬運紙包，長時間彎腰、扭轉或重複施力，造成下背、肩頸及上肢肌肉骨骼疾病。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -54217,7 +54217,7 @@
         {
           "hazardId": "H4",
           "hazardItem": "保養、清潔及處理洩漏時接觸液壓油、潤滑油、清潔劑或受污染紙塵，造成接觸性皮膚炎或皮膚乾裂。",
-          "severity": 2,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -54239,7 +54239,7 @@
         {
           "hazardId": "H5",
           "hazardItem": "於通風不良、高溫或悶熱環境持續作業，因熱負荷與脫水造成熱疲勞、注意力下降或熱疾病。",
-          "severity": 5,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -54261,7 +54261,7 @@
         {
           "hazardId": "H6",
           "hazardItem": "室內使用內燃機堆高機時暴露於柴油廢氣、一氧化碳及其他燃燒產物，造成頭痛、暈眩、呼吸道不適或中毒。",
-          "severity": 5,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -57451,7 +57451,7 @@
         {
           "hazardId": "H1",
           "hazardItem": "天花板開啟或鑽孔時，保溫棉、玻璃纖維或粉塵在通風不足處經吸入或接觸，可能造成呼吸道、眼部及皮膚不適。",
-          "severity": 2,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -57509,7 +57509,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "鑽孔及支架固定作業時長時間使用手持振動工具，振動經手部傳遞，可能造成手臂振動傷害。",
-          "severity": 5,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -57531,7 +57531,7 @@
         {
           "hazardId": "H4",
           "hazardItem": "防火封堵及孔洞復原使用密封膠、化學錨栓或其他材料時，未依SDS控制通風及接觸防護，可能造成揮發物吸入或皮膚、眼部健康危害。",
-          "severity": 2,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -58877,7 +58877,7 @@
         {
           "hazardId": "H1",
           "hazardItem": "長時間以高重複、高用力或不良姿勢操作銼刀、刮刀、手鋸、扳手及鉗具，可能造成上肢及下背肌肉骨骼疾病。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -58943,7 +58943,7 @@
         {
           "hazardId": "H4",
           "hazardItem": "修整金屬、塑膠、玻纖或複合材料產生的粉塵與微粒若反覆吸入，可能造成呼吸道刺激、過敏或職業性呼吸疾病。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -59913,7 +59913,7 @@
         {
           "hazardId": "H1",
           "hazardItem": "研磨金屬或塗層時長期吸入粉塵及煙霧，並接觸粉塵或清潔用品，可能造成呼吸道傷害或接觸性皮膚炎。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -59941,7 +59941,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "手持式研磨機長時間產生高噪音，若未控制暴露時間或使用有效聽力防護，可能造成噪音性聽力損失或耳鳴。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -59963,7 +59963,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "研磨機或附件振動過大且長時間持續操作，可能造成手臂振動症候群、手指麻木及末梢循環障礙。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -59985,7 +59985,7 @@
         {
           "hazardId": "H4",
           "hazardItem": "工作臺或工件高度不當、姿勢受限、重複施力或長時間彎腰扭轉研磨，可能造成肩頸、下背及上肢肌肉骨骼傷害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -62209,7 +62209,7 @@
         {
           "hazardId": "H5",
           "hazardItem": "在狹窄空間或不良姿勢下拆裝及搬運零件，長時間採跪姿、扭身、過肩伸手或搬運重物，可能造成腰背、肩頸及上肢肌肉骨骼累積性傷病。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -62245,7 +62245,7 @@
         {
           "hazardId": "H6",
           "hazardItem": "長時間使用振動手工具，可能造成手麻、末梢循環障礙、上肢累積性傷害、手臂振動症候群或周邊神經障礙。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -62267,7 +62267,7 @@
         {
           "hazardId": "H7",
           "hazardItem": "於高溫或通風不良環境連續作業，可能因熱負荷造成熱疾病。",
-          "severity": 5,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -63809,7 +63809,7 @@
         {
           "hazardId": "H1",
           "hazardItem": "地表清理、破碎、裝卸及廢棄物分類產生粉塵，長時間吸入可能造成呼吸道危害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -63843,7 +63843,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "回填、灑水及壓實作業可能同時暴露於粉塵、噪音及振動，長期暴露可能造成呼吸、聽力或肌肉骨骼傷害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -63878,7 +63878,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "不明污染物及廢棄物未確認成分時，可能因吸入、皮膚接觸或飛濺造成健康危害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -66472,7 +66472,7 @@
         {
           "hazardId": "H1",
           "hazardItem": "研磨產生的金屬及磨料粉塵，經吸入或二次揚塵，可能造成呼吸道疾病、氣喘或肺功能下降。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -66506,7 +66506,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "作業人員經聽覺長期暴露於研磨設備與手持工具的高噪音，可能造成噪音性聽力損失或耳鳴。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -66540,7 +66540,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "長時間以不良姿勢手持研磨、重複搬運或過度施力，可能造成肩頸、腕部及下背累積性肌肉骨骼傷病。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -66568,7 +66568,7 @@
         {
           "hazardId": "H4",
           "hazardItem": "手持研磨工具的高振動經手臂長期傳遞，可能造成手臂振動症候群、手指麻木或末梢循環障礙。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -67637,7 +67637,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "通風不良處使用有機溶劑塗料或清潔劑時，吸入或皮膚接觸可能造成神經、肝腎及其他健康危害。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -67659,7 +67659,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "夏季在屋頂長時間曝曬並承受紫外線，可能發生熱痙攣、熱衰竭、皮膚病變或眼部傷害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -67725,7 +67725,7 @@
         {
           "hazardId": "H6",
           "hazardItem": "在斜屋頂採彎腰、跪姿、扭轉姿勢或人工搬運板材及廢料，可能造成下背、肩頸、上肢及膝部肌肉骨骼傷病。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -69417,7 +69417,7 @@
         {
           "hazardId": "H1",
           "hazardItem": "施工架組拆的材料搬運、扣件鎖固及高處安裝涉及重物搬運、重複施力與彎腰、過肩、扭轉等不良姿勢，長期暴露可能造成下背、肩頸及上肢肌肉骨骼慢性傷害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -69439,7 +69439,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "使用電動或氣動工具進行鑽孔、切割及扣件作業時，長時間手臂振動暴露可能造成手臂振動症候群及周邊神經肌肉骨骼傷害。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -69461,7 +69461,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "鄰近切割、鑽孔及拆除作業時長期暴露於噪音與粉塵，可能造成噪音性聽力損失及慢性呼吸道疾病。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -69490,7 +69490,7 @@
         {
           "hazardId": "H4",
           "hazardItem": "長期於戶外高處作業接受日曬及紫外線暴露，可能造成皮膚慢性傷害、眼部刺激及其他紫外線相關健康危害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -70930,7 +70930,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "長時間搬運、鎖固及高處作業採不良姿勢，造成腰背及上肢累積性肌肉骨骼負荷。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -72636,7 +72636,7 @@
         {
           "hazardId": "H4",
           "hazardItem": "堆高機、吊車、裝卸設備、油壓拖板車及手持工具長時間運轉產生噪音，聽力保護不足或暴露時間過長可能造成噪音性聽力損失。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -72658,7 +72658,7 @@
         {
           "hazardId": "H5",
           "hazardItem": "長時間操作堆高機、吊車或於不平整路面行駛，持續暴露於全身振動可能造成下背疼痛。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -74584,7 +74584,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "拆裝濾袋、搬運集塵袋及維修零件時，長時間彎腰、扭轉、抬舉或重複操作，可能造成下背、肩頸及上肢肌肉骨骼傷害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -75380,7 +75380,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "搬運投料、拉移整理、清堵及換刀若長期重複施力、彎腰扭轉或徒手搬運，可能造成肌肉骨骼傷病、疲勞及注意力下降。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -76202,7 +76202,7 @@
         {
           "hazardId": "H1",
           "hazardItem": "熱處理裝卸、巡檢或清掃時吸入木粉塵、熱分解煙霧或甲醛，可能造成呼吸道疾病或肺功能下降。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -76282,7 +76282,7 @@
         {
           "hazardId": "H4",
           "hazardItem": "人工搬運工件、反覆彎腰取放或推拉重載台車，可能因長期施力及不良姿勢造成肌肉骨骼傷病。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -76906,7 +76906,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "工作台或料架高度不當而長時間彎腰取放，或反覆抬舉、翻面及堆疊較重木竹工件，可能造成下背、肩頸及手腕肌肉骨骼傷病。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -78645,7 +78645,7 @@
         {
           "hazardId": "H1",
           "hazardItem": "泥漿添加材料開袋及投料時粉塵或氣霧逸散，長時間暴露可能造成呼吸道、皮膚及眼睛傷害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -78701,7 +78701,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "鋼筋切割、彎曲及研磨產生金屬粉塵與噪音，焊接產生的煙霧及輻射可能造成呼吸道與眼睛傷害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -78729,7 +78729,7 @@
         {
           "hazardId": "H4",
           "hazardItem": "鋼筋搬運、綁紮及導管接拆時長期彎腰、扭轉或重複施力，可能造成肌肉骨骼傷害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -79640,7 +79640,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "場地清除、挖穴及機械整地時粉塵、土壤微粒、柴油廢氣及揚塵可能在呼吸區累積。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -81228,7 +81228,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "槽車怠速產生的柴油廢氣在通風不足處累積，長期吸入可能增加呼吸道慢性疾病風險。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -82012,7 +82012,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "反覆搬運卸料軟管、法蘭及盲板時，負重過大、姿勢不良或缺乏輪替可能造成下背、肩部及腕部肌肉骨骼傷害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -82034,7 +82034,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "在高溫、日曬或通風不良環境進行拆管及滴漏清理時，持續熱暴露可能造成熱衰竭等健康損害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -83445,7 +83445,7 @@
         {
           "hazardId": "H1",
           "hazardItem": "卸料站通風不足或低窪處蒸氣滯留，作業人員長期吸入有機溶劑或刺激性氣體，可能造成呼吸及神經系統健康危害。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -83529,7 +83529,7 @@
         {
           "hazardId": "H4",
           "hazardItem": "軟管搬運及法蘭鎖固時長時間不良姿勢、過度施力或重複動作，可能造成下背、肩部及手腕累積性傷害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -84657,7 +84657,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "操作高位或高扭矩洩壓閥時，過度前伸、扭轉及重複施力可能造成肩頸、下背與上肢肌肉骨骼傷害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -85874,7 +85874,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "鑽掘、清孔、泥漿添加劑調製、廢土清運及破除產生粉塵，吸入可能造成呼吸道危害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -85918,7 +85918,7 @@
         {
           "hazardId": "H4",
           "hazardItem": "鋼筋籠、導管、套管及廢料搬運時反覆彎腰、扭轉或超負荷施力，可能造成慢性肌肉骨骼疾病。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -86516,7 +86516,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "長時間彎腰、蹲跪、伸手探入模穴及搬運工具零件，工作高度不當或缺乏輔具時，可能造成下背、肩頸及上肢肌肉骨骼傷害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -86566,7 +86566,7 @@
         {
           "hazardId": "H5",
           "hazardItem": "使用電動研磨、鋼刷及氣動工具時長期暴露於手臂振動，可能造成手麻或手臂振動症候群。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -87603,7 +87603,7 @@
         {
           "hazardId": "H1",
           "hazardItem": "開袋、補料或乾式清理時吸入水泥粉塵，或皮膚接觸濕混凝土及高鹼性添加劑，可能造成慢性呼吸道疾病或接觸性皮膚炎。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -87669,7 +87669,7 @@
         {
           "hazardId": "H4",
           "hazardItem": "在狹窄模板區域長時間彎腰、扭轉及搬運泵管或振動器，若缺乏機械輔具與工時安排，可能造成下背、肩頸及上肢肌肉骨骼疾病。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -88651,7 +88651,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "清理機台積塵、金屬粉塵、碳粉、油霧或清潔噴霧時，若密閉、集塵或呼吸防護不足而持續吸入，可能造成慢性呼吸道疾病。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -88686,7 +88686,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "維修高噪音設備或使用空壓、電動及敲擊工具時，若長時間暴露且隔音防護不足，可能造成噪音性聽力損失。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -88714,7 +88714,7 @@
         {
           "hazardId": "H4",
           "hazardItem": "長時間使用電動、空壓或敲擊工具時，若工具振動量高或連續操作時間過長，可能造成手臂振動症候群或末梢神經功能障礙。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -89945,7 +89945,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "反覆拆裝、施力、彎腰、跪姿或過肩作業時，工作高度、工具及作業節奏不當可能造成肌肉骨骼疾病。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -92021,7 +92021,7 @@
         {
           "hazardId": "H1",
           "hazardItem": "通風不足時長期吸入焊接煙霧、金屬氧化物或塗層產生的有害金屬煙塵，可能造成慢性呼吸道或全身性健康損害。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -92043,7 +92043,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "低位或長時間焊接採彎腰、扭轉或跪姿，且工件定位不良，可能造成下背、肩頸及其他肌肉骨骼疾病。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -92065,7 +92065,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "長時間處於高溫及熱輻射環境，可能因熱負荷累積造成熱衰竭或心血管負荷增加。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -93278,7 +93278,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "高溫高濕、低溫潮濕及反覆浸水作業，可能造成脫水、皮膚炎、黴菌感染或其他慢性健康影響。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -93322,7 +93322,7 @@
         {
           "hazardId": "H5",
           "hazardItem": "燃油蒸氣、排氣、煙霧特效及清潔溶劑長期暴露，可能造成呼吸道刺激及肝腎或神經系統健康影響。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -93344,7 +93344,7 @@
         {
           "hazardId": "H6",
           "hazardItem": "長工時、夜班、休息不足及睡眠節律失衡，可能造成疲勞、注意力下降及過勞相關健康問題。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -94382,7 +94382,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "低照度、閃光、監視畫面切換及長時間固定視線或坐姿，可能造成視覺疲勞、頭痛及頸肩腕部不適。",
-          "severity": 2,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -94404,7 +94404,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "長時間站立、蹲伏、姿勢固定、反覆突進及肢體表演，可能造成腰背、關節及肌腱的累積性傷害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -94426,7 +94426,7 @@
         {
           "hazardId": "H4",
           "hazardItem": "玩家衝突、暴力反應、高警覺演出及夜間輪班，可能造成心理壓力、情緒耗竭、睡眠不足及疲勞性失誤。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -94448,7 +94448,7 @@
         {
           "hazardId": "H5",
           "hazardItem": "長時間穿戴不透氣服裝或面具、接觸化妝品及煙霧特效，並與玩家近距離互動或共用用品，可能造成熱不適、皮膚與呼吸道刺激及交叉感染。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -95722,7 +95722,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "搬運油墨桶、溶劑桶及廢液桶時，重量、搬運高度或姿勢不當可能造成下背、肩頸及上肢肌肉骨骼傷害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -96495,7 +96495,7 @@
         {
           "hazardId": "H1",
           "hazardItem": "平台高差或控制器位置不當，長期超負荷搬運、彎腰扭轉或站立受震，可能造成肌肉骨骼及腰背慢性傷害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -96545,7 +96545,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "油壓油或清潔劑因使用不當或洩漏造成皮膚、眼睛接觸或揮發物吸入，可能引發皮膚炎、眼部刺激或其他化學健康危害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -97978,7 +97978,7 @@
         {
           "hazardId": "H1",
           "hazardItem": "於地下室、機房或天花板上方清潔除塵時，吸入粉塵及黴菌，可能引發呼吸道刺激、過敏或氣喘。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -98000,7 +98000,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "清潔除塵或處理清潔劑、電池滲漏物及滅火藥劑殘留時，可能吸入清潔劑揮發物而引起呼吸道刺激、過敏或氣喘，皮膚或眼部接觸污染物可能造成皮膚炎或化學傷害。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -98050,7 +98050,7 @@
         {
           "hazardId": "H4",
           "hazardItem": "於屋頂或高溫機房長時間作業時，暴露於日照及熱累積環境，可能造成脫水、熱痙攣或中暑。",
-          "severity": 5,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -99343,7 +99343,7 @@
         {
           "hazardId": "H1",
           "hazardItem": "分裝、封箱、裝箱堆置及棧板移運時反覆搬運、推拉、彎腰、伸手或維持不良姿勢，可能造成下背、肩頸及上肢肌肉骨骼傷害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -100556,7 +100556,7 @@
         {
           "hazardId": "H4",
           "hazardItem": "長時間重複取放料、彎腰搬運、站立操作及施力定位工件時，可能造成下背、肩頸及上肢肌肉骨骼傷病。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -100578,7 +100578,7 @@
         {
           "hazardId": "H5",
           "hazardItem": "手工具或設備振動長時間經手臂傳遞，且休息與輪調不足時，可能造成手臂疲勞、麻木或振動相關傷害。",
-          "severity": 5,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -101265,7 +101265,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "潤滑油霧、橡塑加工煙霧、金屬粉塵及清潔或切削化學品蒸氣於控制不足時長期暴露，可能造成呼吸道、皮膚或全身性健康危害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -101328,7 +101328,7 @@
         {
           "hazardId": "H4",
           "hazardItem": "輪班、長工時、趕工及高專注負荷造成疲勞累積，可能引發注意力下降及慢性身心健康危害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -101350,7 +101350,7 @@
         {
           "hazardId": "H5",
           "hazardItem": "鍛轤、加熱材料、熱表面或低溫環境造成長時間熱冷暴露，可能發生熱中暑、脫水、熱衰竭或失溫。",
-          "severity": 5,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -102570,7 +102570,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "使用有機溶劑清洗工件或保養設備時，揮發物控制或皮膚隔離失效，可能造成溶劑吸入及皮膚傷害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -102592,7 +102592,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "裝卸料、翻件及搬運治具反覆彎腰、扭轉或高施力，可能造成下背、肩頸及上肢肌肉骨骼疾病。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -102614,7 +102614,7 @@
         {
           "hazardId": "H4",
           "hazardItem": "氧化皮清理及敲擊產生持續噪音，暴露控制或聽力防護不足可能造成噪音性聽力損失。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -104370,7 +104370,7 @@
         {
           "hazardId": "H1",
           "hazardItem": "爐內通風不良或殘留焦炭持續產生一氧化碳，長時間暴露造成健康危害。",
-          "severity": 5,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -105585,7 +105585,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "焊接、切割、研磨、除鏽及使用潤滑油、清潔劑或柴油設備時，焊煙、粉塵、化學蒸氣、廢氣及弧光可能傷害呼吸道、皮膚與眼睛。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -106589,7 +106589,7 @@
         {
           "hazardId": "H1",
           "hazardItem": "開封、秤量、轉注或清洗時，局部排氣或密閉失效使粉塵、酸鹼霧、蒸氣及殘留物進入呼吸區，長期造成呼吸道疾病或接觸性皮膚炎。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -106617,7 +106617,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "處理甲醛、異氰酸酯或氯氣前驅物等致敏性物質時，因設備逸散或通風不良，造成職業性氣喘或過敏性鼻炎。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -107074,7 +107074,7 @@
         {
           "hazardId": "H1",
           "hazardItem": "人工搬抬、推拉、扶正及重複整理紙材時，因搬運重量、工作高度或動線不當而長時間彎腰、扭轉或前伸，造成肌肉骨骼過度負荷及慢性傷害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -107125,7 +107125,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "拆包、切割、搬運及廢棄物清運產生紙屑與粉塵，通風或集塵不足可能造成眼鼻刺激、過敏及呼吸道疾病。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -107847,7 +107847,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "原紙捲、物料及成品搬運伴隨長時間站立與重複調整，可能造成下背、肩頸及上肢肌肉骨骼傷病。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -107869,7 +107869,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "切邊、輸送及清掃產生紙屑與紙粉，長期吸入可能造成呼吸道刺激或職業性呼吸系統疾病。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -107919,7 +107919,7 @@
         {
           "hazardId": "H5",
           "hazardItem": "預熱缸、蒸汽及高溫表面形成熱負荷，通風、補水與休息不足可能造成熱疲勞、脫水或熱中暑。",
-          "severity": 5,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -108694,7 +108694,7 @@
         {
           "hazardId": "H1",
           "hazardItem": "裁切、壓線及清掃產生紙屑與細微粉塵時，集塵失效或使用壓縮空氣吹掃可能造成呼吸道刺激及接觸性皮膚炎。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -108730,7 +108730,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "使用含有機溶劑清潔劑時，通風不足或皮膚防護失效可能造成蒸氣吸入及皮膚接觸傷害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -108774,7 +108774,7 @@
         {
           "hazardId": "H4",
           "hazardItem": "反覆搬運、翻轉、堆疊及送料扶正大型瓦楞紙板時，姿勢或負荷不當可能造成下背、肩頸及上肢肌肉骨骼傷害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -109583,7 +109583,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "紙材輸送、裁切及清理會產生紙粉，局部排氣不足或乾掃揚塵時長期吸入可能引發呼吸道刺激、過敏或慢性不適。",
-          "severity": 2,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -111416,7 +111416,7 @@
         {
           "hazardId": "H1",
           "hazardItem": "反覆使用清潔劑時，若通風不足或連續暴露時間過長，可能造成呼吸道刺激、皮膚炎或其他化學性健康損害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -111438,7 +111438,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "乾式清掃或以壓縮空氣吹掃造成粉塵揚散，長期吸入可能引發鼻炎、慢性咳嗽或其他呼吸道疾病。",
-          "severity": 3,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -111482,7 +111482,7 @@
         {
           "hazardId": "H4",
           "hazardItem": "清運污水、廢棄物或污染抹布時，若分類、密封及衛生防護不足，可能因接觸或飛濺造成感染。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -112202,7 +112202,7 @@
         {
           "hazardId": "H1",
           "hazardItem": "生產設備長時間運轉造成高噪音，巡檢人員暴露時間過長或聽力防護不足，可能導致聽力損失、耳鳴及職業性聽覺障礙。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -112224,7 +112224,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "乾式清掃或清除設備積塵時缺乏濕式清潔、吸塵或局部排氣，反覆吸入粉塵可能造成慢性呼吸道疾病。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -112268,7 +112268,7 @@
         {
           "hazardId": "H4",
           "hazardItem": "夜班、長工時或高溫區巡檢時休息、補水及熱適應不足，可能累積疲勞並導致熱疾病或心血管負荷增加。",
-          "severity": 5,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -113550,7 +113550,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "艙內高溫高濕、連續排班或休息不足造成熱負荷累積，可能引發熱適應失衡及心血管等健康異常。",
-          "severity": 5,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -114789,7 +114789,7 @@
         {
           "hazardId": "H1",
           "hazardItem": "清洗、拆裝及除油作業反覆接觸苯類溶劑、油品、酸鹼液與清洗劑，造成慢性毒性、皮膚炎或皮膚敏感化。",
-          "severity": 5,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -114861,7 +114861,7 @@
         {
           "hazardId": "H4",
           "hazardItem": "切割、研磨及電動工具產生手臂振動，長期暴露造成末梢循環或神經肌肉傷害。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -114883,7 +114883,7 @@
         {
           "hazardId": "H5",
           "hazardItem": "熱作及高溫環境造成熱壓力、脫水或中暑，焊接弧光與熱輻射造成眼睛及皮膚傷害。",
-          "severity": 5,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -116318,7 +116318,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "清焦、除鏽、噴砂、打磨及焊接切割產生粉塵、金屬煙霧與臭氧，源頭抑制、通風或呼吸防護不足而造成呼吸道疾病。",
-          "severity": 5,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -116368,7 +116368,7 @@
         {
           "hazardId": "H4",
           "hazardItem": "高溫設備、蒸汽及夏季戶外歲修造成熱暴露，休息、飲水及降溫不足而發生熱疲勞或熱中暑。",
-          "severity": 5,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -118143,7 +118143,7 @@
         {
           "hazardId": "H1",
           "hazardItem": "研磨金屬或含鉻、鎳、錳等材料時，粉塵、磨料及金屬煙霧因局部排氣或集塵不足，或清掃揚塵而被長期吸入，可能造成呼吸道疾病、職業性氣喘或金屬致敏。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -118206,7 +118206,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "長時間操作手持式研磨機時，設備振動或握持負荷過高且連續作業未受管控，可能造成手臂振動症候群、手麻及末梢循環障礙。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -118228,7 +118228,7 @@
         {
           "hazardId": "H4",
           "hazardItem": "工作台或工件支撐不當，作業人員長期彎腰、扭轉、前傾、腕部偏斜或反覆施力，可能造成下背、肩頸及上肢肌肉骨骼疾病。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -119617,7 +119617,7 @@
         {
           "hazardId": "H1",
           "hazardItem": "長時間反覆彎腰黏貼、抬舉推拉桌椅物料，或過肩調整高處設備，可能造成下背、肩頸及上肢肌肉骨骼傷病。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -119652,7 +119652,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "長時間近距離核對座位名單、標籤文字及佈置圖，照明不足、螢幕反光或字體過小，可能造成視覺疲勞、頭痛及注意力下降。",
-          "severity": 2,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -119675,7 +119675,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "活動前佈置時程緊迫、工作量集中且延長工時，未安排足夠休息與人力支援，可能造成疲勞、睡眠障礙及慢性身心健康負荷。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -119697,7 +119697,7 @@
         {
           "hazardId": "H4",
           "hazardItem": "佈置人員面對臨時變更、客戶催促或現場衝突，若缺乏溝通與支持機制，可能累積焦慮、情緒耗竭或需諮商介入之心理健康問題。",
-          "severity": 2,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -121417,7 +121417,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "泵浦、壓縮機、蒸汽洩放區、設備間及道路旁長時間噪音暴露，可能造成噪音性聽力損失。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -121439,7 +121439,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "反覆彎腰、蹲跪、過肩操作及人工搬運閥件、水表與工具，可能造成下背、肩部及手腕慢性傷害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -121461,7 +121461,7 @@
         {
           "hazardId": "H4",
           "hazardItem": "長時間使用手持電動機具拆裝、切削或修復，手傳振動暴露過量可能造成末梢循環及神經傷害。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -121483,7 +121483,7 @@
         {
           "hazardId": "H5",
           "hazardItem": "日曬、高溫管廊、路側及悶熱空間作業時熱負荷過高，可能造成脫水、熱衰竭或心血管負荷增加。",
-          "severity": 5,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -122318,7 +122318,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "於夾層、機房等通風不良處使用清潔劑、黏著劑或塗佈材料，蒸氣累積或皮膚反覆接觸可能造成中毒、器官損害或皮膚疾病。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -122368,7 +122368,7 @@
         {
           "hazardId": "H4",
           "hazardItem": "反覆搬運、彎腰、扭轉、蹲跪及過肩安裝，且負荷、工作高度或工時未調整，可能造成下背、肩頸及上肢肌肉骨骼傷病。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -122390,7 +122390,7 @@
         {
           "hazardId": "H5",
           "hazardItem": "於高溫、悶熱或曝曬環境長時間施工，休息、補水及輪替不足，可能發生熱相關疾病並增加心血管負荷。",
-          "severity": 5,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -122412,7 +122412,7 @@
         {
           "hazardId": "H6",
           "hazardItem": "焊接電弧及切割火焰產生的紫外線、紅外線與強光持續暴露，可能造成電光性眼炎、視力傷害或皮膚灼傷。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -123982,7 +123982,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "油墨、稀釋劑、清洗劑及膠料於調配、補充、清洗或轉移時產生蒸氣或皮膚接觸，可能造成頭暈、器官損害或接觸性皮膚炎。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -124051,7 +124051,7 @@
         {
           "hazardId": "H4",
           "hazardItem": "備料、上料、搬紙、堆疊及設備保養換刀涉及重複動作、彎腰、伸手與施力，可能造成下背、肩頸、手腕及手肘肌肉骨骼傷害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -124651,7 +124651,7 @@
         {
           "hazardId": "H1",
           "hazardItem": "修邊、清掃及廢料處理時，紙粉塵長期暴露可能造成慢性呼吸道發炎、過敏或其他職業性呼吸系統疾病。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -124729,7 +124729,7 @@
         {
           "hazardId": "H4",
           "hazardItem": "未依粉塵、噪音、人因及皮膚暴露特性進行評估與健康追蹤，可能使職業病危害持續累積或延誤發現。",
-          "severity": 5,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -126511,7 +126511,7 @@
         {
           "hazardId": "H1",
           "hazardItem": "紙材搬運、餵紙、整紙及檢查時長時間搬舉、重複施力或採不良姿勢，可能造成下背、肩頸及上肢肌肉骨骼疾病。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -126562,7 +126562,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "摺紙、裁切及紙張摩擦產生紙粉，清掃或集塵失效造成粉塵揚散，長期吸入可能引發呼吸道疾病。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -129636,7 +129636,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "混砂、加料及塗模時，黏結劑或塗模劑因逸散、標示不清或通風不足，可能造成呼吸道刺激、過敏或皮膚眼睛傷害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -129670,7 +129670,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "混砂機、機械壓實設備及手工具運轉產生噪音，長時間暴露可能造成耳鳴或噪音性聽力損失。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -129698,7 +129698,7 @@
         {
           "hazardId": "H4",
           "hazardItem": "混砂機、機械壓實設備及手工具產生手臂或全身振動，長時間暴露可能造成手臂振動症候群、神經血管異常或肌肉骨骼傷害。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -130818,7 +130818,7 @@
         {
           "hazardId": "H1",
           "hazardItem": "長期在昏暗、眩光或近距離精密維修環境下辨識線路與監看螢幕，可能造成眼睛疲勞、乾澀及頭痛。",
-          "severity": 2,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -130862,7 +130862,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "手持電動工具振動長期暴露，可能造成手臂振動症候群或周邊神經傷害。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -130884,7 +130884,7 @@
         {
           "hazardId": "H4",
           "hazardItem": "場域音響測試、警報聲及機械運轉產生的高噪音長期暴露，可能造成聽力下降或耳鳴。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -130906,7 +130906,7 @@
         {
           "hazardId": "H5",
           "hazardItem": "夜間故障排除、待命及悶熱空間作業可能造成疲勞、注意力下降、睡眠失調及心理壓力累積。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -131585,7 +131585,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "刀軸、送料系統及集塵風機持續產生高噪音時，長時間暴露可能造成耳鳴、溝通障礙或聽力損失。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -131619,7 +131619,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "作業員長時間站在固定進出料位置並反覆搬運木材時，工作高度或休息輪替不當可能造成下背、肩頸及上肢肌肉骨骼疾病。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -132286,7 +132286,7 @@
         {
           "hazardId": "H1",
           "hazardItem": "油煙、油霧及燃燒廢氣因排煙不良或燃燒異常長期暴露，可能造成慢性呼吸道刺激、心肺負荷或一氧化碳健康危害。",
-          "severity": 5,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -132308,7 +132308,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "長時間站立、反覆搬運食材或油桶及不良工作姿勢，可能造成下背、肩頸及上肢肌肉骨骼傷害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -133408,7 +133408,7 @@
         {
           "hazardId": "H1",
           "hazardItem": "長時間檢視字體過小或照明不足的紙本檔案，眼睛持續近距離聚焦，可能造成疲勞、乾澀及頭痛。",
-          "severity": 2,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -133430,7 +133430,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "桌椅高度不當而長時間低頭或久坐，並反覆裝訂貼標，可能造成頸肩、下背、手腕及下肢肌肉骨骼傷害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -133458,7 +133458,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "存放區通風不佳，整理久置紙本時接觸紙屑、灰塵或霉味，可能造成眼鼻喉刺激或呼吸道不適。",
-          "severity": 2,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -133494,7 +133494,7 @@
         {
           "hazardId": "H4",
           "hazardItem": "因調閱期限或短期大量歸檔而延長工時、壓縮休息時間，長期負荷過高可能造成疲勞及睡眠障礙。",
-          "severity": 2,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -134326,7 +134326,7 @@
         {
           "hazardId": "H1",
           "hazardItem": "長時間低頭核對、分類及編號登錄，頸部前傾與近距離用眼造成頸肩痠痛及視覺疲勞。",
-          "severity": 2,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -134354,7 +134354,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "反覆搬抬紙箱或推拉重載手推車，並以手腕重複施力，可能造成腰背、肩腕及上肢肌肉骨骼傷病。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -134382,7 +134382,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "碎紙機長時間運轉產生噪音，近距離暴露造成耳鳴、聽覺疲勞或溝通干擾。",
-          "severity": 2,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -134404,7 +134404,7 @@
         {
           "hazardId": "H4",
           "hazardItem": "清倒碎紙屑及打包廢紙產生紙屑粉塵，通風不良或清掃不當造成眼鼻喉及呼吸道刺激。",
-          "severity": 2,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -135002,7 +135002,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "加工、打磨及清理產生油霧、金屬粉塵與細微碎屑，排氣或集塵不足時長期吸入可能造成呼吸道刺激或慢性不適。",
-          "severity": 2,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -135025,7 +135025,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "清洗模具及設備使用有機溶劑，通風不良、容器未密閉或皮膚防護不足時，可能造成蒸氣暴露及皮膚炎。",
-          "severity": 2,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -135054,7 +135054,7 @@
         {
           "hazardId": "H4",
           "hazardItem": "長期重複取放、搬運、伸臂、彎腰及久站操作，可能造成肩頸、上肢及下背部肌肉骨骼疾病。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -137195,7 +137195,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "清洗藥液準備與接管、補藥及排液作業時，反覆搬運藥桶、拖拉軟管、拆接管件及長時間彎腰或伸展，可能造成下背痛、肩頸傷病及上肢肌腱炎。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -138385,7 +138385,7 @@
         {
           "hazardId": "H4",
           "hazardItem": "焊接及切割時持續暴露於紫外線、紅外線及弧光，可能造成電光性眼炎、白內障或皮膚傷害。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -139422,7 +139422,7 @@
         {
           "hazardId": "H1",
           "hazardItem": "重複鎖固、對心、取放及搬運作業若長時間彎腰、蹲跪、上舉或站立，可能累積下背、肩頸、上肢及膝部肌肉骨骼傷害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -139505,7 +139505,7 @@
         {
           "hazardId": "H4",
           "hazardItem": "拆箱、打磨、去鏽及清理作業產生粉塵與金屬微粒，逸散控制或通風不足可能造成呼吸道刺激或慢性呼吸系統疾病。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -139528,7 +139528,7 @@
         {
           "hazardId": "H5",
           "hazardItem": "潤滑油、清潔劑及有機溶劑在密閉或通風不良處逸散，長期吸入或皮膚接觸可能造成皮膚炎、頭痛及其他健康影響。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -140416,7 +140416,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "車床、銑床切削產生的金屬粉塵未有效捕集，長期吸入可能造成呼吸道刺激或其他健康危害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -140444,7 +140444,7 @@
         {
           "hazardId": "H4",
           "hazardItem": "長時間站立、彎腰、搬運及重複上肢動作，工作站與搬運方式不當可能造成下背、肩頸及上肢肌肉骨骼疾患。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -141729,7 +141729,7 @@
         {
           "hazardId": "H1",
           "hazardItem": "大量汰換或故障搶修期間工時過長、休息不足，可能造成疲勞累積與注意力下降。",
-          "severity": 2,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -141751,7 +141751,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "昏暗環境、局部強光或閃爍光源下長時間檢查，可能造成眼睛疲勞與頭痛。",
-          "severity": 2,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -141773,7 +141773,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "日光燈管等含汞燈具破裂時，汞蒸氣與螢光粉可能經呼吸道、皮膚進入人體；若以清掃或真空吸取，可能把汞揚起造成吸入。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -142666,7 +142666,7 @@
         {
           "hazardId": "H1",
           "hazardItem": "長時間站立、反覆擦拭、彎腰擰拖把、推拉設備或提拿垃圾袋，可能造成肌肉骨骼傷害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -142752,7 +142752,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "長時間使用吸塵器或洗地機時，可能暴露於噪音及振動；未使用相關設備時不適用本項暴露。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -143883,7 +143883,7 @@
         {
           "hazardId": "H1",
           "hazardItem": "長時間打字使用滑鼠，手腕反覆施力或座椅高度不當，可能造成腕隧道症候群、肌腱炎或頸肩腰背疼痛。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -143970,7 +143970,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "顯示器距離、亮度或眩光不當，人員長時間注視螢幕，可能造成眼睛乾澀、視覺疲勞或頭痛。",
-          "severity": 2,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -144051,7 +144051,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "通風不足、空氣乾燥或列印設備集中，長時間工作可能造成眼鼻喉乾澀、頭痛及專注力下降。",
-          "severity": 2,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -144073,7 +144073,7 @@
         {
           "hazardId": "H4",
           "hazardItem": "長時間加班、休息不足或缺乏事件後支持，可能造成慢性疲勞、睡眠障礙或持續心理負荷。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -145693,7 +145693,7 @@
         {
           "hazardId": "H5",
           "hazardItem": "夜班、趕工及長工時造成恢復不足，可能使疲勞累積並降低注意力。",
-          "severity": 2,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -147184,7 +147184,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "反覆操作夯實機、切割機、吹葉機或其他高振動手工具，長期導致手臂振動症候群、麻木或肌肉骨骼不適。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -147212,7 +147212,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "經常搬運瀝青袋、砂包、交通錐及溝蓋板，姿勢不良或過度用力，引發下背痛、肩頸痛及肌肉骨骼疾病。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -147276,7 +147276,7 @@
         {
           "hazardId": "H5",
           "hazardItem": "夜間施工輪班不規律、工時過長且交通壓力大，造成疲勞累積、睡眠障礙與注意力下降。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -148643,7 +148643,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "長期搬運藥桶、接管、彎腰取樣及高頻操作閥件時，若工作高度與搬運方式未改善，可能造成下背、肩頸及上肢肌肉骨骼疾病。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -149358,7 +149358,7 @@
         {
           "hazardId": "H4",
           "hazardItem": "重型設備試運轉或引擎怠速時，柴油廢氣與一氧化碳於通風不良區域累積，可能造成急性中毒。",
-          "severity": 5,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -149380,7 +149380,7 @@
         {
           "hazardId": "H5",
           "hazardItem": "焊接、切割及電弧作業暴露於紫外線、紅外線與弧光，可能造成電光性眼炎及皮膚灼傷。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -149402,7 +149402,7 @@
         {
           "hazardId": "H6",
           "hazardItem": "高溫、通風不良或作業節奏緊迫時，休息、補水及輪替不足，可能造成熱疲勞或熱衰竭。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -150268,7 +150268,7 @@
         {
           "hazardId": "H1",
           "hazardItem": "焊接煙霧、臭氧、金屬粉塵及有機溶劑蒸氣未受源頭控制，長期暴露可能引發呼吸道、皮膚、神經或肝腎傷害。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -150309,7 +150309,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "焊接、切割、研磨及鑽孔設備持續運轉造成噪音暴露，可能導致噪音性聽力損失。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -150331,7 +150331,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "板材搬運、鑽孔、焊接及組立長期採彎腰、高舉、扭轉或重複用力姿勢，可能造成肩頸、上肢及下背肌肉骨骼傷病。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -150353,7 +150353,7 @@
         {
           "hazardId": "H4",
           "hazardItem": "焊接弧光的紫外線、紅外線及飛濺反覆暴露，可能造成眼部刺激、角膜損傷及皮膚傷害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -150375,7 +150375,7 @@
         {
           "hazardId": "H5",
           "hazardItem": "長時間操作砂輪機、鑽孔機等手持工具造成手臂振動暴露，可能導致手臂振動症候群及周邊神經血管傷害。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -150397,7 +150397,7 @@
         {
           "hazardId": "H6",
           "hazardItem": "焊接及高溫金屬作業的熱輻射與高溫環境可能造成脫水、熱疲勞、熱痙攣或熱疾病。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -151389,7 +151389,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "長時間重複取放料、踩踏、定位及搬運，伴隨彎腰、扭轉、過度用力與設備振動，可能造成腰背、肩頸及上肢肌肉骨骼傷害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -151411,7 +151411,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "沖孔、摩擦及清潔保養產生或接觸金屬粉塵、油霧、潤滑油及清潔劑，可能造成呼吸道、眼睛或皮膚刺激。",
-          "severity": 2,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -152492,7 +152492,7 @@
         {
           "hazardId": "H1",
           "hazardItem": "鋼構定位、翻轉、臨時支撐及拆解堆置時長時間站立、彎腰、扭轉或承受局部高負荷，可能造成下背、肩頸及上肢肌肉骨骼傷害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -152555,7 +152555,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "焊接及切割產生弧光、紫外線與紅外線，未受遮蔽或濾光防護可能造成眼睛及皮膚累積性傷害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -154401,7 +154401,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "操作員承受起重機運轉及迴轉振動，長期暴露可能造成肩頸、腰背或手臂不適。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -154423,7 +154423,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "指揮、導向及解鉤時反覆彎腰、扭轉、伸展或維持固定姿勢，可能造成肌肉骨骼累積性傷害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -154445,7 +154445,7 @@
         {
           "hazardId": "H4",
           "hazardItem": "日曬、低溫或雨淋加劇疲勞與姿勢負荷，可能降低對警報及口令的辨識能力。",
-          "severity": 2,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -157362,7 +157362,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "補磨、刮除或清掃乾燥塗層及殘渣時粉塵揚散並被吸入，造成慢性呼吸道刺激或肺部疾病。",
-          "severity": 3,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -158952,7 +158952,7 @@
         {
           "hazardId": "H6",
           "hazardItem": "長時間暴露於高溫鑄件及熱輻射環境，可能造成脫水、熱疲勞、中暑及其他熱相關疾病。",
-          "severity": 5,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -160055,7 +160055,7 @@
         {
           "hazardId": "H5",
           "hazardItem": "搬運砂箱、鑄件及澆包輔具時長時間彎腰、扭轉、推拉或人工搬抬，可能造成下背、肩頸及上肢肌肉骨骼疾病。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -160814,7 +160814,7 @@
         {
           "hazardId": "H1",
           "hazardItem": "人工搬抬、反覆抓握推拉與對位，以及移載設備操作時彎腰扭轉、過度施力、固定姿勢或全身振動，可能造成下背、肩頸及上肢肌肉骨骼傷害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -160893,7 +160893,7 @@
         {
           "hazardId": "H4",
           "hazardItem": "長工時、高入料節拍及熱、噪音等作業負荷，可能造成疲勞、注意力下降及作業失誤。",
-          "severity": 2,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -161711,7 +161711,7 @@
         {
           "hazardId": "H4",
           "hazardItem": "長期彎腰、前伸、重複施力、搬運及站立作業，可能造成肩頸、下背、上肢及下肢肌肉骨骼負荷傷害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -162677,7 +162677,7 @@
         {
           "hazardId": "H1",
           "hazardItem": "開挖粉塵、切割煙塵或柴油微粒在通風不良坑溝及狹窄處被長期吸入，可能造成呼吸道危害。",
-          "severity": 5,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -162734,7 +162734,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "手持電動工具振動、反覆搬運構件及不當姿勢施力，可能造成手臂振動症候群或肌肉骨骼傷害。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -162756,7 +162756,7 @@
         {
           "hazardId": "H4",
           "hazardItem": "長時間接觸泥濘、積水及油污，未清潔乾燥或處理傷口可能造成皮膚炎或感染。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -162778,7 +162778,7 @@
         {
           "hazardId": "H5",
           "hazardItem": "戶外開挖區長時間處於高溫及紫外線曝曬，可能造成熱中暑、脫水、熱疲勞或皮膚傷害。",
-          "severity": 5,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -164124,7 +164124,7 @@
         {
           "hazardId": "H1",
           "hazardItem": "鑽孔、切割及研磨產生金屬粉塵、飛散物及噪音，長時間暴露可能造成呼吸道、眼部及聽力危害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -164153,7 +164153,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "電鑽、砂輪機及拉線機長時間連續操作或維護不良，可能造成手臂振動及上肢肌肉骨骼危害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -165113,7 +165113,7 @@
         {
           "hazardId": "H1",
           "hazardItem": "長時間駕駛於不平整路面，車體振動經座椅傳遞至人體，可能造成下背痛及肌肉骨骼傷害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -165135,7 +165135,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "長時間扭轉伸手、重複握持或反覆抬舉推拉重物，可能造成肩頸、腰背及上肢肌肉骨骼傷害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -166453,7 +166453,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "電弧紫外線及紅外線照射焊工、鄰近人員或裸露皮膚，防護不足可能造成電光性眼炎及皮膚光傷害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -167454,7 +167454,7 @@
         {
           "hazardId": "H1",
           "hazardItem": "鑽孔、研磨、切割及清掃產生粉塵與金屬碎屑，經吸入或接觸眼部、皮膚，可能造成呼吸道及皮膚長期傷害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -167498,7 +167498,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "清潔、潤滑及試運轉使用清潔劑、潤滑油或溶劑，可能造成蒸氣吸入及皮膚接觸暴露。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -168385,7 +168385,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "盤內、線槽及老舊設備拆修產生粉塵，未採濕式清潔或吸塵時反覆吸入，可能造成慢性呼吸道疾病。",
-          "severity": 3,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -168429,7 +168429,7 @@
         {
           "hazardId": "H4",
           "hazardItem": "高溫機房、戶外配電或長時間搶修時，補水、降溫、休息及工時安排不足，可能造成熱危害及疲勞。",
-          "severity": 5,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -169432,7 +169432,7 @@
         {
           "hazardId": "H1",
           "hazardItem": "清槽、補藥及維護時吸入酸霧、鉻鎳霧滴或重金屬粉塵，並接觸酸鹼液，可能造成呼吸道、肝腎傷害或職業性皮膚炎。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -169460,7 +169460,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "前處理脫脂及設備擦拭使用有機溶劑時，因容器開放、作業時間過長或通風不足吸入蒸氣，可能造成神經、肝臟或腎臟功能損害。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -169488,7 +169488,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "整流器、冷卻設備、抽風機、泵浦及吊掛搬運設備長期產生高噪音，可能造成噪音性聽力損失或耳鳴。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -169510,7 +169510,7 @@
         {
           "hazardId": "H4",
           "hazardItem": "作業人員長時間處於潮濕、悶熱及化學霧氣環境，熱負荷未受控制時可能發生熱疾病及健康不適。",
-          "severity": 5,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -169532,7 +169532,7 @@
         {
           "hazardId": "H5",
           "hazardItem": "長期重複掛件、卸件、刷洗、搬運及槽邊伸手作業，因工作高度、伸手距離或人工負荷不當，可能造成肩頸、上肢及下背部肌肉骨骼傷害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -170625,7 +170625,7 @@
         {
           "hazardId": "H1",
           "hazardItem": "清理、開挖、整坡及土方裝運產生粉塵時，可能造成呼吸道、眼睛及皮膚暴露。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -170647,7 +170647,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "挖土機、土方車、抽水機及手持工具產生噪音與振動時，可能造成聽力及肌肉骨骼危害。",
-          "severity": 5,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -170669,7 +170669,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "露天作業暴露高溫、低溫及柴油廢氣時，可能造成熱疾病、寒冷危害或呼吸暴露。",
-          "severity": 5,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -171635,7 +171635,7 @@
         {
           "hazardId": "H1",
           "hazardItem": "風扇、排氣設備及托盤碰撞形成持續噪音，長期暴露可能造成噪音性聽力損失或耳鳴。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -171679,7 +171679,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "粉末食品、香辛料及脫水原料於加料、卸料或清潔時形成有機粉塵，長期吸入可能引發氣喘、過敏性鼻炎及其他呼吸道疾病。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -171701,7 +171701,7 @@
         {
           "hazardId": "H4",
           "hazardItem": "反覆搬運托盤、推拉推車、彎腰裝卸及長時間站立，可能造成下背、肩頸、上肢及下肢肌肉骨骼疾病。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -171729,7 +171729,7 @@
         {
           "hazardId": "H5",
           "hazardItem": "燃燒產物長期暴露可能造成慢性健康影響。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -172501,7 +172501,7 @@
         {
           "hazardId": "H1",
           "hazardItem": "包裝工位高度或節拍不當，長期彎腰伸手、久站或過重搬箱，可能造成下背、肩頸及上下肢肌肉骨骼傷害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -172542,7 +172542,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "清潔、消毒及簡易保養時接觸化學品或吸入揮發物，或混用不相容藥劑，造成皮膚炎、呼吸道刺激或氣喘。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -173539,7 +173539,7 @@
         {
           "hazardId": "H1",
           "hazardItem": "拆袋、秤量、過篩、投料及清潔時，粉塵與致敏原若持續逸散，可能造成職業性鼻炎、氣喘、支氣管炎或皮膚炎。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -173595,7 +173595,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "反覆搬運重物、彎腰扭轉、高舉投料、抓握提舉及推拉手推車，長期累積負荷可能造成下背痛、肩頸疼痛、上肢肌腱病變或腕隧道症候群。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -174521,7 +174521,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "反覆搬運、彎腰扭轉投料、清槽及長時間站立作業，可能造成下背痛、肩頸與肌腱傷害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -175280,7 +175280,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "長期於冷藏或冷凍區作業且低溫暴露、保暖或休息不足，可能造成末梢循環不良、肌肉僵硬及關節疼痛。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -175302,7 +175302,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "長期接觸清潔消毒劑並頻繁濕作業，或吸入消毒霧滴，可能造成刺激性或過敏性皮膚炎、慢性鼻炎或職業性氣喘。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -176510,7 +176510,7 @@
         {
           "hazardId": "H1",
           "hazardItem": "曝曬區高溫、高濕及強日照或反射光長時間暴露，熱負荷未受控可能造成熱傷害及眼睛、皮膚光照傷害。",
-          "severity": 5,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -176560,7 +176560,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "清洗消毒、殘渣或滷液攪動與轉移可能產生化學蒸氣、霧滴或生物性氣膠，通風或防護失效可造成呼吸道疾病。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -177510,7 +177510,7 @@
         {
           "hazardId": "H1",
           "hazardItem": "長時間處於低溫加工區並反覆接觸冷藏食材或鹽水，保暖及回溫不足時可能造成末梢循環不良與關節疼痛。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -177532,7 +177532,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "反覆揉鹽、翻拌、壓實、搬運及長時間站立，重量、姿勢或休息控制不足時可能造成肌肉骨骼傷害與疲勞累積。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -178653,7 +178653,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "於低溫冷藏或前處理區長時間作業且保暖不足時，可能造成手部麻木、末梢循環不良或其他冷相關不適。",
-          "severity": 2,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -179563,7 +179563,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "清潔、消毒、除垢及濕作業中長時間接觸化學品揮發物、霧滴與水分，造成職業性氣喘或皮膚炎。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -181742,7 +181742,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "長期搬運、推拉及拆裝鋼瓶與管線，若持續重複施力或採不良姿勢，可能造成下背、肩頸及上肢肌肉骨骼傷害。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -181764,7 +181764,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "操作低溫氣體設備或低溫排放時，暴露時間及保暖休息不足，可能造成末梢循環及皮膚慢性不適。",
-          "severity": 2,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -181786,7 +181786,7 @@
         {
           "hazardId": "H4",
           "hazardItem": "輪班、夜班或緊急待命造成睡眠不足，可能形成疲勞累積及身心健康風險。",
-          "severity": 2,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -182318,7 +182318,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "鍋爐房熱量累積且通風、休息或補水不足，長時間作業可能造成熱疲勞、脫水或熱疾病。",
-          "severity": 5,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -182346,7 +182346,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "水處理藥劑、燃料蒸氣或燃燒廢氣長期低濃度暴露，可能造成呼吸道、皮膚或其他慢性健康影響。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -184267,7 +184267,7 @@
         {
           "hazardId": "H1",
           "hazardItem": "搬運、肩扛攝影器材及長時間持機、彎腰、蹲姿或固定姿勢作業，因重量、距離、人員配置及工時不當造成肌肉骨骼累積性負荷。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -184311,7 +184311,7 @@
         {
           "hazardId": "H3",
           "hazardItem": "煙霧、霧化液、燃油或清潔劑使用、補充及清潔過程洩漏、揮發或通風不足，造成吸入或皮膚接觸暴露。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -184339,7 +184339,7 @@
         {
           "hazardId": "H4",
           "hazardItem": "夜間、長工時、連續拍攝及輪班造成疲勞，可能降低動作控制。",
-          "severity": 5,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -184361,7 +184361,7 @@
         {
           "hazardId": "H5",
           "hazardItem": "低照度環境長時間監看螢幕、精細對焦及追蹤畫面，因照明不足、螢幕反光或休息不足造成視覺疲勞。",
-          "severity": 2,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -184912,7 +184912,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "鍋爐、燃燒器、風機及乾燥設備產生高噪音，長期暴露可能造成噪音性聽力損失。",
-          "severity": 4,
+          "severity": 5,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -184956,7 +184956,7 @@
         {
           "hazardId": "H4",
           "hazardItem": "燃燒不完全或製程逸散產生一氧化碳、氮氧化物及其他刺激性氣體，通風不良時反覆暴露可能造成健康損害。",
-          "severity": 5,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -184978,7 +184978,7 @@
         {
           "hazardId": "H5",
           "hazardItem": "高溫維修涉及彎腰、伸手、搬運隔熱材料及拆裝零件，長期不良姿勢、過度施力或重複動作可能造成肌肉骨骼疾病。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
@@ -185961,7 +185961,7 @@
         {
           "hazardId": "H2",
           "hazardItem": "長時間上舉、扭轉、前伸或以不良姿勢施工，可能累積肩頸、下背及上肢肌肉骨骼負荷。",
-          "severity": 3,
+          "severity": 4,
           "controlRefs": [
             {
               "pool": "AvoidItems",
