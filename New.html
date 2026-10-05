@@ -1409,7 +1409,7 @@
         const STORAGE_KEY = 'toira.assessment.v2';
 
         // JSON 使用一般 HTTP 快取；資料改版時同步更新 Selection.html 的版本號。
-        const DATA_VER = '20261003e';
+        const DATA_VER = '20261005b';
 
         // 風險矩陣與文字定義
         const riskMatrix = {
@@ -1851,7 +1851,7 @@
         function controlMark(control) {
             const lane = `<span class="chip-tag">${escapeHtml(control.lane)}</span>`;
             if (!control.core) return lane;
-            return `${lane}<span class="core-badge core-badge--inline">核心改善</span>`;
+            return `${lane}<span class="core-badge core-badge--inline">必要設施</span>`;
         }
 
         function plainControlText(item) {
@@ -1862,7 +1862,7 @@
 
         function controlLine(control, keepLane) {
             const text = keepLane ? displayControlText(control.text) : plainControlText(control.text);
-            return control.core ? `${text}（核心改善）` : text;
+            return control.core ? `${text}（必要設施）` : text;
         }
 
         function isCoreGroup(group) {
@@ -2444,7 +2444,7 @@
                     const stateClass = on ? 'selected' : 'is-pending';
                     const ckey = encodeURIComponent(control.key);
                     const statusClass = on ? 'control-status--done' : (control.core ? 'control-status--pending-core' : 'control-status--pending');
-                    const statusText = on ? '✓ 已做到' : (control.core ? '核心措施未做到' : '尚未做到');
+                    const statusText = on ? '✓ 已做到' : (control.core ? '必要設施未做到' : '尚未做到');
                     html += `<div class="hazard-item avoid-type scenario-control ${stateClass}" data-ckey="${ckey}" data-core="${control.core ? 'true' : 'false'}" onclick="toggleLinkedControl(event, ${tid}, '${ckey}')"><div class="hazard-item__text"><span>${escapeHtml(plainControlText(control.text))} ${controlMark(control)}</span><span class="control-status ${statusClass}">${statusText}</span></div></div>`;
                 });
                 html += `
@@ -2672,7 +2672,7 @@
                     const done = !!checked[key];
                     const core = el.dataset.core === 'true';
                     status.className = 'control-status ' + (done ? 'control-status--done' : (core ? 'control-status--pending-core' : 'control-status--pending'));
-                    status.textContent = done ? '✓ 已做到' : (core ? '核心措施未做到' : '尚未做到');
+                    status.textContent = done ? '✓ 已做到' : (core ? '必要設施未做到' : '尚未做到');
                 }
             });
             const task = hazardLibrary.find(t => t.id === taskId);
