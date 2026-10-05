@@ -1407,9 +1407,10 @@
         const expandedCategories = new Set();
         const RISK_FORM_API = (window.RISK_FORM_API || 'http://localhost:8000').replace(/\/$/, '');
         const STORAGE_KEY = 'toira.assessment.v2';
+        let scenarioIndexMigration = null;
 
         // JSON 使用一般 HTTP 快取；資料改版時同步更新 Selection.html 的版本號。
-        const DATA_VER = '20261005g';
+        const DATA_VER = '20261005h';
 
         // 風險矩陣與文字定義
         const riskMatrix = {
@@ -1533,6 +1534,10 @@
 
         function scenariosFromMapDoc(group, doc) {
             const rows = Array.isArray(doc && doc.hazardControlMap) ? doc.hazardControlMap : [];
+            const hazards = group.hazardItems || [];
+            if (rows.length !== hazards.length || rows.some((row, index) => row.hazardItem !== hazards[index])) {
+                throw new Error(`情境文字與作業庫不一致：${doc.taskName}／${doc.groupName}`);
+            }
             return rows.map((row) => {
                 const sevNum = parseInt(row.severity, 10);
                 const severity = sevNum >= 1 && sevNum <= 5 ? `S${sevNum}` : (group.severitylevel || 'S4');
@@ -1583,6 +1588,12 @@
                     console.warn('情境映射未載入', url, err);
                 }
             }
+            try {
+                const res = await fetch(`scenarioMigration.json?v=${DATA_VER}`, { cache: 'default' });
+                if (res.ok) scenarioIndexMigration = await res.json();
+            } catch (err) {
+                console.warn('舊評估情境對照未載入', err);
+            }
             return docs;
         }
 
@@ -1628,7 +1639,7 @@
                         sessionStorage.removeItem('initTasks');
                     } catch (e) { console.error("預載入失敗", e); }
                 } else if (restoreProject()) {
-                    showToast('已載入上次儲存的評估資料');
+                    showToast('已載入上次儲存的評估資料；舊情境若有拆分，請確認「舊評估待確認」項目');
                 }
 
                 updateProjectCount();
@@ -1797,6 +1808,7 @@
         // ==========================================
         function saveProject() {
             const snapshot = {
+                dataVersion: DATA_VER,
                 savedAt: new Date().toISOString(),
                 companyInfo: sessionStorage.getItem('companyInfo'),
                 industryName: sessionStorage.getItem('industryName'),
@@ -1813,11 +1825,66 @@
             }
         }
 
+        function migrateScenarioSelections(snapshot, tasks, migration) {
+            if (snapshot.dataVersion === DATA_VER) return;
+            if (!migration || migration.toVersion !== DATA_VER || !Array.isArray(migration.groups)) {
+                throw new Error('無法載入舊情境對照；原儲存資料已保留，請重新載入頁面');
+            }
+            if (snapshot.dataVersion && snapshot.dataVersion !== migration.fromVersion) {
+                throw new Error('此評估版本需要另行核對；原儲存資料已保留');
+            }
+            const selections = snapshot.userSelections || {};
+            tasks.forEach(task => {
+                (task.hazardGroups || []).forEach((group, groupIndex) => {
+                    const change = migration.groups.find(item => item.taskName === task.taskName && item.groupName === group.groupName);
+                    const state = selections[`${task.id}_${groupIndex}`];
+                    if (!change || !state) return;
+                    const selected = new Set(state.scenarios || []);
+                    const oldManual = state.scenarioManual || {};
+                    const oldExtras = state.scenarioExtras || {};
+                    state.scenarioMigrationBackup = {
+                        fromVersion: snapshot.dataVersion || migration.fromVersion,
+                        hazardItems: change.oldHazardItems,
+                        scenarios: [...selected], scenarioManual: oldManual, scenarioExtras: oldExtras
+                    };
+                    state.scenarios = change.newSourceIndices.reduce((indices, sources, index) => {
+                        if (sources.some(source => selected.has(source))) indices.push(index);
+                        return indices;
+                    }, []);
+                    state.scenarioManual = {};
+                    state.scenarioExtras = {};
+                    const preserved = new Set();
+                    change.exactOldIndices.forEach((oldIndex, newIndex) => {
+                        if (oldIndex === null) return;
+                        preserved.add(oldIndex);
+                        if (oldManual[oldIndex]) state.scenarioManual[newIndex] = oldManual[oldIndex];
+                        if (oldExtras[oldIndex]) state.scenarioExtras[newIndex] = oldExtras[oldIndex];
+                    });
+                    state.customScenarios = state.customScenarios || [];
+                    change.oldHazardItems.forEach((text, oldIndex) => {
+                        if (preserved.has(oldIndex)) return;
+                        const manual = oldManual[oldIndex] || {};
+                        const extras = oldExtras[oldIndex] || [];
+                        if (!manual.isManual && !extras.length) return;
+                        state.customScenarios.push({
+                            text: `【舊評估待確認】${text}`, selected: false,
+                            measures: extras.map(item => item.text).filter(Boolean),
+                            manualS: manual.isManual ? manual.manualS : '',
+                            manualP: manual.isManual ? manual.manualP : '',
+                            migratedFromIndex: oldIndex
+                        });
+                    });
+                });
+            });
+            snapshot.dataVersion = DATA_VER;
+        }
+
         function restoreProject() {
             const raw = localStorage.getItem(STORAGE_KEY);
             if (!raw) return false;
             try {
                 const snapshot = JSON.parse(raw);
+                migrateScenarioSelections(snapshot, hazardLibrary, scenarioIndexMigration);
                 (snapshot.customTasks || []).forEach(task => {
                     if (!hazardLibrary.some(t => t.id === task.id)) hazardLibrary.push(task);
                 });
@@ -1833,6 +1900,7 @@
                 return myProjectTasks.length > 0;
             } catch (e) {
                 console.error('讀取儲存資料失敗', e);
+                showToast(e.message, 'error');
                 return false;
             }
         }
@@ -3316,4 +3384,3 @@
 </body>
 
 </html>
-

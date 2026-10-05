@@ -1,0 +1,2381 @@
+[
+  {
+    "taskName": "人工搬運作業",
+    "groupName": "職業病",
+    "rows": {
+      "1": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A7",
+          "A8",
+          "A9",
+          "A2",
+          "A5",
+          "A6"
+        ]
+      },
+      "2": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A3",
+          "A7",
+          "A8",
+          "A9",
+          "A2",
+          "A6"
+        ]
+      },
+      "3": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A4",
+          "A3",
+          "A5",
+          "A6"
+        ]
+      },
+      "4": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A3",
+          "A5",
+          "A6"
+        ]
+      },
+      "5": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A6",
+          "A5"
+        ]
+      }
+    }
+  },
+  {
+    "taskName": "使用升降機上下料件作業",
+    "groupName": "職業病",
+    "rows": {
+      "1": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A1",
+          "A4",
+          "A6"
+        ]
+      },
+      "2": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A2",
+          "A4",
+          "A6"
+        ]
+      },
+      "3": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A3",
+          "A4",
+          "A6"
+        ]
+      },
+      "4": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A4",
+          "A6"
+        ]
+      },
+      "5": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A5",
+          "A4",
+          "A6"
+        ]
+      },
+      "6": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A6"
+        ]
+      }
+    }
+  },
+  {
+    "taskName": "化學品入料作業",
+    "groupName": "職業病",
+    "rows": {
+      "1": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A10",
+          "A1",
+          "A4",
+          "A3"
+        ]
+      },
+      "3": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A5",
+          "A12",
+          "A13"
+        ]
+      },
+      "6": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A12",
+          "A13",
+          "A14"
+        ]
+      }
+    }
+  },
+  {
+    "taskName": "印刷機滾筒清潔與保養作業",
+    "groupName": "職業病",
+    "rows": {
+      "1": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A1",
+          "A2"
+        ]
+      },
+      "2": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A2"
+        ]
+      }
+    }
+  },
+  {
+    "taskName": "印刷紙材包裝出貨作業",
+    "groupName": "職業病",
+    "rows": {
+      "1": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A1",
+          "A2"
+        ]
+      },
+      "2": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A2"
+        ]
+      }
+    }
+  },
+  {
+    "taskName": "印裁機操作作業",
+    "groupName": "職業病",
+    "rows": {
+      "1": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A1",
+          "A2"
+        ]
+      },
+      "2": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A1",
+          "A2"
+        ]
+      }
+    }
+  },
+  {
+    "taskName": "原料入料作業",
+    "groupName": "職業病",
+    "rows": {
+      "2": {
+        "sourceHazardIds": [
+          "H2"
+        ],
+        "controlRefs": [
+          "A2",
+          "A4",
+          "A3"
+        ]
+      },
+      "3": {
+        "sourceHazardIds": [
+          "H2"
+        ],
+        "controlRefs": [
+          "A2",
+          "A3"
+        ]
+      }
+    }
+  },
+  {
+    "taskName": "原料投料作業",
+    "groupName": "職業病",
+    "rows": {
+      "1": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A1"
+        ]
+      },
+      "2": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A2"
+        ]
+      }
+    }
+  },
+  {
+    "taskName": "反應爐清洗作業",
+    "groupName": "職業病",
+    "rows": {
+      "1": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A1",
+          "A2"
+        ]
+      },
+      "2": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A1"
+        ]
+      }
+    }
+  },
+  {
+    "taskName": "可燃性化學品管線液位監測作業",
+    "groupName": "職業病",
+    "rows": {
+      "1": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A1",
+          "A3",
+          "A2"
+        ]
+      },
+      "2": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A3",
+          "A4"
+        ]
+      }
+    }
+  },
+  {
+    "taskName": "合梯使用作業",
+    "groupName": "職業病",
+    "rows": {
+      "1": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A1",
+          "A2",
+          "A4",
+          "A5"
+        ]
+      },
+      "2": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A1",
+          "A2",
+          "A4",
+          "A5"
+        ]
+      },
+      "3": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A3",
+          "A2",
+          "A4",
+          "A5"
+        ]
+      },
+      "4": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A4",
+          "A2",
+          "A5",
+          "A6"
+        ]
+      },
+      "5": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A1",
+          "A2",
+          "A4",
+          "A5"
+        ]
+      },
+      "6": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A1",
+          "A4",
+          "A6"
+        ]
+      }
+    }
+  },
+  {
+    "taskName": "多片縱鋸機操作作業",
+    "groupName": "職業病",
+    "rows": {
+      "1": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A1",
+          "A2",
+          "A3"
+        ]
+      },
+      "2": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A1",
+          "A4"
+        ]
+      }
+    }
+  },
+  {
+    "taskName": "射出成品修邊作業",
+    "groupName": "職業病",
+    "rows": {
+      "1": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A1",
+          "A7"
+        ]
+      },
+      "2": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A1",
+          "A7"
+        ]
+      },
+      "3": {
+        "sourceHazardIds": [
+          "H2",
+          "H3"
+        ],
+        "controlRefs": [
+          "A4",
+          "A3",
+          "A1"
+        ]
+      },
+      "4": {
+        "sourceHazardIds": [
+          "H3"
+        ],
+        "controlRefs": [
+          "A4",
+          "A3",
+          "A1"
+        ]
+      },
+      "5": {
+        "sourceHazardIds": [
+          "H3"
+        ],
+        "controlRefs": [
+          "A6",
+          "A1",
+          "A3"
+        ]
+      },
+      "6": {
+        "sourceHazardIds": [
+          "H4",
+          "H5"
+        ],
+        "controlRefs": [
+          "A8",
+          "A5",
+          "A3",
+          "A9",
+          "A1"
+        ]
+      }
+    }
+  },
+  {
+    "taskName": "射出成型作業",
+    "groupName": "職業病",
+    "rows": {
+      "1": {
+        "sourceHazardIds": [
+          "H1",
+          "H2"
+        ],
+        "controlRefs": [
+          "A17",
+          "A18",
+          "A19",
+          "A20",
+          "A21",
+          "A22",
+          "A23"
+        ]
+      },
+      "2": {
+        "sourceHazardIds": [
+          "H2"
+        ],
+        "controlRefs": [
+          "A24",
+          "A25",
+          "A26",
+          "A27"
+        ]
+      },
+      "4": {
+        "sourceHazardIds": [
+          "H4"
+        ],
+        "controlRefs": [
+          "A31",
+          "A32",
+          "A33",
+          "A34",
+          "A35"
+        ]
+      },
+      "5": {
+        "sourceHazardIds": [
+          "H5"
+        ],
+        "controlRefs": [
+          "A36",
+          "A37",
+          "A38",
+          "A39",
+          "A40"
+        ]
+      },
+      "7": {
+        "sourceHazardIds": [
+          "H1",
+          "H2"
+        ],
+        "controlRefs": [
+          "A17",
+          "A18",
+          "A24",
+          "A25",
+          "A26",
+          "A27"
+        ]
+      },
+      "8": {
+        "sourceHazardIds": [
+          "H4"
+        ],
+        "controlRefs": [
+          "A31",
+          "A32",
+          "A33",
+          "A34",
+          "A35"
+        ]
+      },
+      "9": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A19",
+          "A20",
+          "A21",
+          "A22",
+          "A23"
+        ]
+      },
+      "10": {
+        "sourceHazardIds": [
+          "H5"
+        ],
+        "controlRefs": [
+          "A36",
+          "A37",
+          "A38",
+          "A39",
+          "A40"
+        ]
+      }
+    }
+  },
+  {
+    "taskName": "射出成型品取出作業",
+    "groupName": "職業病",
+    "rows": {
+      "1": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A9",
+          "A10",
+          "A11",
+          "A12",
+          "A8"
+        ]
+      },
+      "2": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A3",
+          "A8"
+        ]
+      }
+    }
+  },
+  {
+    "taskName": "局限空間作業",
+    "groupName": "職業病",
+    "rows": {
+      "1": {
+        "sourceHazardIds": [
+          "H1",
+          "H2"
+        ],
+        "controlRefs": [
+          "A14",
+          "A15",
+          "A16",
+          "A17",
+          "A18",
+          "A19",
+          "A20",
+          "A21"
+        ]
+      },
+      "2": {
+        "sourceHazardIds": [
+          "H3"
+        ],
+        "controlRefs": [
+          "A14",
+          "A15",
+          "A16",
+          "A17",
+          "A7",
+          "A18",
+          "A20"
+        ]
+      },
+      "4": {
+        "sourceHazardIds": [
+          "H5",
+          "H6"
+        ],
+        "controlRefs": [
+          "A24",
+          "A25",
+          "A26",
+          "A27"
+        ]
+      },
+      "5": {
+        "sourceHazardIds": [
+          "H7"
+        ],
+        "controlRefs": [
+          "A28",
+          "A29"
+        ]
+      },
+      "6": {
+        "sourceHazardIds": [
+          "H8"
+        ],
+        "controlRefs": [
+          "A30",
+          "A31",
+          "A32"
+        ]
+      },
+      "7": {
+        "sourceHazardIds": [
+          "H1",
+          "H2",
+          "H3",
+          "H4"
+        ],
+        "controlRefs": [
+          "A14",
+          "A15",
+          "A16",
+          "A17",
+          "A18",
+          "A19",
+          "A20",
+          "A21",
+          "A22",
+          "A23",
+          "A7"
+        ]
+      },
+      "8": {
+        "sourceHazardIds": [
+          "H1",
+          "H2"
+        ],
+        "controlRefs": [
+          "A18",
+          "A19",
+          "A21"
+        ]
+      },
+      "9": {
+        "sourceHazardIds": [
+          "H6",
+          "H7"
+        ],
+        "controlRefs": [
+          "A26",
+          "A27",
+          "A28",
+          "A29"
+        ]
+      },
+      "10": {
+        "sourceHazardIds": [
+          "H5"
+        ],
+        "controlRefs": [
+          "A24",
+          "A25"
+        ]
+      },
+      "11": {
+        "sourceHazardIds": [
+          "H8"
+        ],
+        "controlRefs": [
+          "A30",
+          "A31",
+          "A32"
+        ]
+      }
+    }
+  },
+  {
+    "taskName": "廢渣／爐渣撈取與清運作業",
+    "groupName": "職業病",
+    "rows": {
+      "1": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A13",
+          "A14",
+          "A3",
+          "A16",
+          "A17"
+        ]
+      },
+      "2": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A15",
+          "A16",
+          "A17"
+        ]
+      }
+    }
+  },
+  {
+    "taskName": "弱電安裝作業",
+    "groupName": "職業病",
+    "rows": {
+      "1": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A7",
+          "A8",
+          "A3"
+        ]
+      },
+      "2": {
+        "sourceHazardIds": [
+          "H1",
+          "H2",
+          "H3"
+        ],
+        "controlRefs": [
+          "A8",
+          "A3",
+          "A9",
+          "A10",
+          "A11",
+          "A12"
+        ]
+      }
+    }
+  },
+  {
+    "taskName": "手持式研磨機操作作業",
+    "groupName": "職業病",
+    "rows": {
+      "1": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A1",
+          "A2"
+        ]
+      },
+      "5": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A8"
+        ]
+      }
+    }
+  },
+  {
+    "taskName": "排風設備維修作業",
+    "groupName": "職業病",
+    "rows": {
+      "1": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A13",
+          "A14"
+        ]
+      },
+      "2": {
+        "sourceHazardIds": [
+          "H2",
+          "H3"
+        ],
+        "controlRefs": [
+          "A15",
+          "A16",
+          "A17",
+          "A18",
+          "A19"
+        ]
+      },
+      "3": {
+        "sourceHazardIds": [
+          "H4"
+        ],
+        "controlRefs": [
+          "A20",
+          "A18"
+        ]
+      },
+      "4": {
+        "sourceHazardIds": [
+          "H4"
+        ],
+        "controlRefs": [
+          "A6",
+          "A19"
+        ]
+      },
+      "5": {
+        "sourceHazardIds": [
+          "H5"
+        ],
+        "controlRefs": [
+          "A21",
+          "A22",
+          "A23"
+        ]
+      },
+      "6": {
+        "sourceHazardIds": [
+          "H6"
+        ],
+        "controlRefs": [
+          "A24",
+          "A25"
+        ]
+      },
+      "8": {
+        "sourceHazardIds": [
+          "H2",
+          "H4"
+        ],
+        "controlRefs": [
+          "A15",
+          "A16",
+          "A17",
+          "A18",
+          "A19",
+          "A20"
+        ]
+      },
+      "9": {
+        "sourceHazardIds": [
+          "H4"
+        ],
+        "controlRefs": [
+          "A6",
+          "A19"
+        ]
+      },
+      "10": {
+        "sourceHazardIds": [
+          "H5"
+        ],
+        "controlRefs": [
+          "A21",
+          "A22",
+          "A23"
+        ]
+      },
+      "11": {
+        "sourceHazardIds": [
+          "H1",
+          "H6"
+        ],
+        "controlRefs": [
+          "A13",
+          "A14",
+          "A24",
+          "A25"
+        ]
+      }
+    }
+  },
+  {
+    "taskName": "料件暫存作業",
+    "groupName": "職業病",
+    "rows": {
+      "1": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A7",
+          "A2",
+          "A8",
+          "A9"
+        ]
+      },
+      "2": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A3",
+          "A8",
+          "A9"
+        ]
+      },
+      "3": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A4",
+          "A8",
+          "A9"
+        ]
+      },
+      "4": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A8",
+          "A9"
+        ]
+      }
+    }
+  },
+  {
+    "taskName": "料件研磨作業",
+    "groupName": "職業病",
+    "rows": {
+      "1": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A13",
+          "A14",
+          "A15",
+          "A16"
+        ]
+      },
+      "2": {
+        "sourceHazardIds": [
+          "H2"
+        ],
+        "controlRefs": [
+          "A17",
+          "A18",
+          "A19",
+          "A16"
+        ]
+      },
+      "3": {
+        "sourceHazardIds": [
+          "H3"
+        ],
+        "controlRefs": [
+          "A20",
+          "A21",
+          "A19"
+        ]
+      },
+      "4": {
+        "sourceHazardIds": [
+          "H4"
+        ],
+        "controlRefs": [
+          "A22",
+          "A23",
+          "A19"
+        ]
+      },
+      "5": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A13",
+          "A14",
+          "A15",
+          "A16"
+        ]
+      },
+      "6": {
+        "sourceHazardIds": [
+          "H2"
+        ],
+        "controlRefs": [
+          "A17",
+          "A18",
+          "A19",
+          "A16"
+        ]
+      },
+      "7": {
+        "sourceHazardIds": [
+          "H4"
+        ],
+        "controlRefs": [
+          "A22",
+          "A23",
+          "A19"
+        ]
+      },
+      "8": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A13",
+          "A14",
+          "A15",
+          "A16"
+        ]
+      },
+      "9": {
+        "sourceHazardIds": [
+          "H2"
+        ],
+        "controlRefs": [
+          "A17",
+          "A18",
+          "A19",
+          "A16"
+        ]
+      },
+      "10": {
+        "sourceHazardIds": [
+          "H3"
+        ],
+        "controlRefs": [
+          "A20",
+          "A21",
+          "A19"
+        ]
+      },
+      "11": {
+        "sourceHazardIds": [
+          "H4"
+        ],
+        "controlRefs": [
+          "A22",
+          "A23",
+          "A19"
+        ]
+      }
+    }
+  },
+  {
+    "taskName": "於石綿板、鐵皮板、瓦、木板、茅草、塑膠等易踏穿材料構築之屋頂從事作業",
+    "groupName": "職業病",
+    "rows": {
+      "1": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A17",
+          "A2",
+          "A18",
+          "A4",
+          "A16"
+        ]
+      },
+      "2": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A19",
+          "A20",
+          "A16"
+        ]
+      },
+      "5": {
+        "sourceHazardIds": [
+          "H4",
+          "H5"
+        ],
+        "controlRefs": [
+          "A25",
+          "A26",
+          "A27",
+          "A28"
+        ]
+      }
+    }
+  },
+  {
+    "taskName": "有機溶劑使用與塗裝作業",
+    "groupName": "職業病",
+    "rows": {
+      "1": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A1",
+          "A4",
+          "A5"
+        ]
+      },
+      "2": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A1",
+          "A4",
+          "A5"
+        ]
+      },
+      "3": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A2",
+          "A3"
+        ]
+      },
+      "4": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A4",
+          "A5"
+        ]
+      }
+    }
+  },
+  {
+    "taskName": "木材入廠與卸收堆置作業",
+    "groupName": "職業病",
+    "rows": {
+      "1": {
+        "sourceHazardIds": [
+          "H1",
+          "H2"
+        ],
+        "controlRefs": [
+          "A16",
+          "A17",
+          "A18",
+          "A19",
+          "A20"
+        ]
+      },
+      "2": {
+        "sourceHazardIds": [
+          "H3"
+        ],
+        "controlRefs": [
+          "A21",
+          "A22",
+          "A23"
+        ]
+      },
+      "3": {
+        "sourceHazardIds": [
+          "H4"
+        ],
+        "controlRefs": [
+          "A24",
+          "A25"
+        ]
+      },
+      "5": {
+        "sourceHazardIds": [
+          "H6"
+        ],
+        "controlRefs": [
+          "A28",
+          "A29",
+          "A18"
+        ]
+      },
+      "6": {
+        "sourceHazardIds": [
+          "H1",
+          "H6"
+        ],
+        "controlRefs": [
+          "A16",
+          "A17",
+          "A18",
+          "A19",
+          "A28",
+          "A29"
+        ]
+      },
+      "7": {
+        "sourceHazardIds": [
+          "H3"
+        ],
+        "controlRefs": [
+          "A21",
+          "A22",
+          "A23"
+        ]
+      },
+      "8": {
+        "sourceHazardIds": [
+          "H4"
+        ],
+        "controlRefs": [
+          "A24",
+          "A25"
+        ]
+      }
+    }
+  },
+  {
+    "taskName": "木竹製品熱處理作業",
+    "groupName": "職業病",
+    "rows": {
+      "1": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A6",
+          "A7",
+          "A8"
+        ]
+      },
+      "2": {
+        "sourceHazardIds": [
+          "H2"
+        ],
+        "controlRefs": [
+          "A5"
+        ]
+      }
+    }
+  },
+  {
+    "taskName": "木竹製品裝訂機裝訂作業",
+    "groupName": "職業病",
+    "rows": {
+      "3": {
+        "sourceHazardIds": [
+          "H3"
+        ],
+        "controlRefs": [
+          "A13",
+          "A15"
+        ]
+      },
+      "4": {
+        "sourceHazardIds": [
+          "H3"
+        ],
+        "controlRefs": [
+          "A14",
+          "A15"
+        ]
+      }
+    }
+  },
+  {
+    "taskName": "模具保養與防鏽作業",
+    "groupName": "職業病",
+    "rows": {
+      "1": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A6",
+          "A3"
+        ]
+      },
+      "2": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A2",
+          "A6"
+        ]
+      },
+      "5": {
+        "sourceHazardIds": [
+          "H4",
+          "H5"
+        ],
+        "controlRefs": [
+          "A6",
+          "A3",
+          "A8",
+          "A9",
+          "A10"
+        ]
+      }
+    }
+  },
+  {
+    "taskName": "模板支撐灌漿作業",
+    "groupName": "職業病",
+    "rows": {
+      "1": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A1"
+        ]
+      },
+      "2": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A3"
+        ]
+      }
+    }
+  },
+  {
+    "taskName": "氣動傳動裝置維修作業",
+    "groupName": "職業病",
+    "rows": {
+      "1": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A7",
+          "A8",
+          "A9"
+        ]
+      },
+      "4": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A7",
+          "A9"
+        ]
+      }
+    }
+  },
+  {
+    "taskName": "氣焊操作作業",
+    "groupName": "職業病",
+    "rows": {
+      "1": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A7",
+          "A1"
+        ]
+      },
+      "2": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A1",
+          "A7"
+        ]
+      }
+    }
+  },
+  {
+    "taskName": "油墨調配與廢液回收作業",
+    "groupName": "職業病",
+    "rows": {
+      "1": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A8",
+          "A9",
+          "A10",
+          "A11",
+          "A7"
+        ]
+      },
+      "2": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A8",
+          "A9",
+          "A12",
+          "A7"
+        ]
+      }
+    }
+  },
+  {
+    "taskName": "油壓升降平台作業",
+    "groupName": "職業病",
+    "rows": {
+      "1": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A1",
+          "A2"
+        ]
+      },
+      "2": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A3"
+        ]
+      }
+    }
+  },
+  {
+    "taskName": "消防設備維護檢點作業",
+    "groupName": "職業病",
+    "rows": {
+      "1": {
+        "sourceHazardIds": [
+          "H1",
+          "H2"
+        ],
+        "controlRefs": [
+          "A1",
+          "A6",
+          "A2"
+        ]
+      },
+      "2": {
+        "sourceHazardIds": [
+          "H2"
+        ],
+        "controlRefs": [
+          "A3"
+        ]
+      }
+    }
+  },
+  {
+    "taskName": "液態化學品分裝與包裝作業",
+    "groupName": "職業病",
+    "rows": {
+      "2": {
+        "sourceHazardIds": [
+          "H2"
+        ],
+        "controlRefs": [
+          "A4",
+          "A3"
+        ]
+      },
+      "3": {
+        "sourceHazardIds": [
+          "H2"
+        ],
+        "controlRefs": [
+          "A5",
+          "A6",
+          "A3"
+        ]
+      },
+      "4": {
+        "sourceHazardIds": [
+          "H2"
+        ],
+        "controlRefs": [
+          "A6"
+        ]
+      }
+    }
+  },
+  {
+    "taskName": "游離輻射作業",
+    "groupName": "職業病",
+    "rows": {
+      "1": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A1",
+          "A2",
+          "A3"
+        ]
+      },
+      "2": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A3",
+          "A2"
+        ]
+      },
+      "3": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A4",
+          "A6"
+        ]
+      },
+      "4": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A5",
+          "A6"
+        ]
+      },
+      "5": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A7",
+          "A2",
+          "A3"
+        ]
+      }
+    }
+  },
+  {
+    "taskName": "熔爐耐火材砌築與拆除作業",
+    "groupName": "職業病",
+    "rows": {
+      "2": {
+        "sourceHazardIds": [
+          "H2"
+        ],
+        "controlRefs": [
+          "A10",
+          "A11",
+          "A5",
+          "A8",
+          "A3"
+        ]
+      },
+      "3": {
+        "sourceHazardIds": [
+          "H2"
+        ],
+        "controlRefs": [
+          "A10",
+          "A11",
+          "A5",
+          "A8"
+        ]
+      },
+      "4": {
+        "sourceHazardIds": [
+          "H3",
+          "H4"
+        ],
+        "controlRefs": [
+          "A12",
+          "A13",
+          "A8",
+          "A14",
+          "A15"
+        ]
+      },
+      "5": {
+        "sourceHazardIds": [
+          "H2",
+          "H3"
+        ],
+        "controlRefs": [
+          "A4",
+          "A10",
+          "A11",
+          "A5",
+          "A8",
+          "A12",
+          "A13"
+        ]
+      }
+    }
+  },
+  {
+    "taskName": "瓦楞紙複瓦機貼合作業",
+    "groupName": "職業病",
+    "rows": {
+      "3": {
+        "sourceHazardIds": [
+          "H3"
+        ],
+        "controlRefs": [
+          "A3",
+          "A4",
+          "A5",
+          "A7"
+        ]
+      },
+      "4": {
+        "sourceHazardIds": [
+          "H3"
+        ],
+        "controlRefs": [
+          "A5",
+          "A7"
+        ]
+      },
+      "5": {
+        "sourceHazardIds": [
+          "H3"
+        ],
+        "controlRefs": [
+          "A4",
+          "A5",
+          "A7"
+        ]
+      }
+    }
+  },
+  {
+    "taskName": "異常氣壓作業",
+    "groupName": "職業病",
+    "rows": {
+      "1": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A10",
+          "A11",
+          "A13",
+          "A14"
+        ]
+      },
+      "2": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A2",
+          "A11",
+          "A12",
+          "A13",
+          "A14"
+        ]
+      }
+    }
+  },
+  {
+    "taskName": "研討會場地佈置作業",
+    "groupName": "職業病",
+    "rows": {
+      "1": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A1",
+          "A2"
+        ]
+      },
+      "2": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A1",
+          "A3"
+        ]
+      },
+      "3": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A1",
+          "A4"
+        ]
+      }
+    }
+  },
+  {
+    "taskName": "粉塵投料、攪拌與包裝作業",
+    "groupName": "職業病",
+    "rows": {
+      "1": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A1",
+          "A2",
+          "A4"
+        ]
+      },
+      "2": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A1",
+          "A2",
+          "A3",
+          "A4"
+        ]
+      },
+      "3": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A1",
+          "A2",
+          "A3",
+          "A4"
+        ]
+      }
+    }
+  },
+  {
+    "taskName": "紙材裝訂作業",
+    "groupName": "職業病",
+    "rows": {
+      "4": {
+        "sourceHazardIds": [
+          "H4"
+        ],
+        "controlRefs": [
+          "A16",
+          "A15",
+          "A18"
+        ]
+      },
+      "5": {
+        "sourceHazardIds": [
+          "H4"
+        ],
+        "controlRefs": [
+          "A17",
+          "A18",
+          "A19"
+        ]
+      }
+    }
+  },
+  {
+    "taskName": "自動雙面壓刨床操作作業",
+    "groupName": "職業病",
+    "rows": {
+      "1": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A1",
+          "A2",
+          "A7"
+        ]
+      },
+      "2": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A1",
+          "A2",
+          "A3",
+          "A7"
+        ]
+      }
+    }
+  },
+  {
+    "taskName": "行政文書檔案整理作業",
+    "groupName": "職業病",
+    "rows": {
+      "2": {
+        "sourceHazardIds": [
+          "H2"
+        ],
+        "controlRefs": [
+          "A2",
+          "A8"
+        ]
+      },
+      "3": {
+        "sourceHazardIds": [
+          "H2"
+        ],
+        "controlRefs": [
+          "A3",
+          "A8"
+        ]
+      },
+      "4": {
+        "sourceHazardIds": [
+          "H2"
+        ],
+        "controlRefs": [
+          "A2",
+          "A8"
+        ]
+      }
+    }
+  },
+  {
+    "taskName": "行政文書檔案歸檔銷毀作業",
+    "groupName": "職業病",
+    "rows": {
+      "2": {
+        "sourceHazardIds": [
+          "H2"
+        ],
+        "controlRefs": [
+          "A2",
+          "A8"
+        ]
+      },
+      "3": {
+        "sourceHazardIds": [
+          "H2"
+        ],
+        "controlRefs": [
+          "A2",
+          "A3",
+          "A8"
+        ]
+      },
+      "4": {
+        "sourceHazardIds": [
+          "H2"
+        ],
+        "controlRefs": [
+          "A8",
+          "A5"
+        ]
+      }
+    }
+  },
+  {
+    "taskName": "設備管路原地循環清洗作業",
+    "groupName": "職業病",
+    "rows": {
+      "1": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A1",
+          "A6",
+          "A7"
+        ]
+      },
+      "2": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A1",
+          "A6",
+          "A7"
+        ]
+      }
+    }
+  },
+  {
+    "taskName": "車床及銑床操作作業",
+    "groupName": "職業病",
+    "rows": {
+      "2": {
+        "sourceHazardIds": [
+          "H2",
+          "H3"
+        ],
+        "controlRefs": [
+          "A2",
+          "A3",
+          "A4",
+          "A5"
+        ]
+      },
+      "3": {
+        "sourceHazardIds": [
+          "H2"
+        ],
+        "controlRefs": [
+          "A4",
+          "A5"
+        ]
+      }
+    }
+  },
+  {
+    "taskName": "辦公室電腦文書作業",
+    "groupName": "職業病",
+    "rows": {
+      "1": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A9",
+          "A11",
+          "A12",
+          "A13",
+          "A14",
+          "A5"
+        ]
+      },
+      "2": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A9",
+          "A10",
+          "A11",
+          "A12",
+          "A14",
+          "A5"
+        ]
+      },
+      "3": {
+        "sourceHazardIds": [
+          "H2"
+        ],
+        "controlRefs": [
+          "A9",
+          "A10",
+          "A12",
+          "A14",
+          "A15",
+          "A16",
+          "A17"
+        ]
+      },
+      "4": {
+        "sourceHazardIds": [
+          "H2"
+        ],
+        "controlRefs": [
+          "A16",
+          "A17",
+          "A14"
+        ]
+      },
+      "6": {
+        "sourceHazardIds": [
+          "H4"
+        ],
+        "controlRefs": [
+          "A7",
+          "A8"
+        ]
+      },
+      "7": {
+        "sourceHazardIds": [
+          "H4"
+        ],
+        "controlRefs": [
+          "A7",
+          "A8"
+        ]
+      },
+      "8": {
+        "sourceHazardIds": [
+          "H4"
+        ],
+        "controlRefs": [
+          "A8",
+          "A7"
+        ]
+      }
+    }
+  },
+  {
+    "taskName": "酸鹼化學品操作作業",
+    "groupName": "職業病",
+    "rows": {
+      "1": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A1",
+          "A2"
+        ]
+      },
+      "2": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A2"
+        ]
+      }
+    }
+  },
+  {
+    "taskName": "鑄造塗模作業",
+    "groupName": "職業病",
+    "rows": {
+      "1": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A7",
+          "A8",
+          "A6",
+          "A10"
+        ]
+      },
+      "2": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A8",
+          "A9",
+          "A6"
+        ]
+      }
+    }
+  },
+  {
+    "taskName": "鑽孔機操作作業",
+    "groupName": "職業病",
+    "rows": {
+      "2": {
+        "sourceHazardIds": [
+          "H2"
+        ],
+        "controlRefs": [
+          "A15",
+          "A16",
+          "A17",
+          "A7"
+        ]
+      },
+      "4": {
+        "sourceHazardIds": [
+          "H2"
+        ],
+        "controlRefs": [
+          "A15",
+          "A17",
+          "A9"
+        ]
+      }
+    }
+  },
+  {
+    "taskName": "開挖擋土支撐組立及拆除作業",
+    "groupName": "職業病",
+    "rows": {
+      "1": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A1",
+          "A2",
+          "A4"
+        ]
+      },
+      "2": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A3",
+          "A4",
+          "A2"
+        ]
+      }
+    }
+  },
+  {
+    "taskName": "電動台車及搬運設備操作作業",
+    "groupName": "職業病",
+    "rows": {
+      "2": {
+        "sourceHazardIds": [
+          "H2"
+        ],
+        "controlRefs": [
+          "A8"
+        ]
+      },
+      "3": {
+        "sourceHazardIds": [
+          "H2"
+        ],
+        "controlRefs": [
+          "A3"
+        ]
+      }
+    }
+  },
+  {
+    "taskName": "電梯安裝作業",
+    "groupName": "職業病",
+    "rows": {
+      "1": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A1",
+          "A3"
+        ]
+      },
+      "2": {
+        "sourceHazardIds": [
+          "H2"
+        ],
+        "controlRefs": [
+          "A1",
+          "A6"
+        ]
+      }
+    }
+  },
+  {
+    "taskName": "電鍍作業",
+    "groupName": "職業病",
+    "rows": {
+      "1": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A1",
+          "A3",
+          "A7"
+        ]
+      },
+      "2": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A1",
+          "A3",
+          "A7"
+        ]
+      }
+    }
+  },
+  {
+    "taskName": "食品包裝作業",
+    "groupName": "職業病",
+    "rows": {
+      "1": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A13",
+          "A3",
+          "A14"
+        ]
+      },
+      "2": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A15",
+          "A16",
+          "A3"
+        ]
+      }
+    }
+  },
+  {
+    "taskName": "食材包裝作業",
+    "groupName": "職業病",
+    "rows": {
+      "3": {
+        "sourceHazardIds": [
+          "H3"
+        ],
+        "controlRefs": [
+          "A8",
+          "A9",
+          "A10"
+        ]
+      },
+      "4": {
+        "sourceHazardIds": [
+          "H3"
+        ],
+        "controlRefs": [
+          "A11"
+        ]
+      }
+    }
+  },
+  {
+    "taskName": "食材揉鹽醃製作業",
+    "groupName": "職業病",
+    "rows": {
+      "3": {
+        "sourceHazardIds": [
+          "H3"
+        ],
+        "controlRefs": [
+          "A5"
+        ]
+      },
+      "4": {
+        "sourceHazardIds": [
+          "H3"
+        ],
+        "controlRefs": [
+          "A6"
+        ]
+      }
+    }
+  },
+  {
+    "taskName": "食材清洗與切塊作業",
+    "groupName": "職業病",
+    "rows": {
+      "1": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A5",
+          "A6"
+        ]
+      },
+      "2": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A5",
+          "A6",
+          "A7"
+        ]
+      }
+    }
+  },
+  {
+    "taskName": "高噪音環境設備操作與巡檢作業",
+    "groupName": "職業病",
+    "rows": {
+      "1": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A1",
+          "A2",
+          "A6",
+          "A7",
+          "A5"
+        ]
+      },
+      "2": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A6",
+          "A7",
+          "A5"
+        ]
+      },
+      "3": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A4",
+          "A6",
+          "A7"
+        ]
+      },
+      "4": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A1",
+          "A2",
+          "A6",
+          "A7",
+          "A5"
+        ]
+      },
+      "5": {
+        "sourceHazardIds": [
+          "H1"
+        ],
+        "controlRefs": [
+          "A6",
+          "A7",
+          "A4"
+        ]
+      }
+    }
+  }
+]

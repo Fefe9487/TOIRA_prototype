@@ -1,0 +1,47 @@
+{
+  "version": "20261005h",
+  "tasks": 174,
+  "groups": 1400,
+  "hazards": 6193,
+  "controlReferences": 18334,
+  "hazardTextMismatches": 0,
+  "invalidControlRefs": 0,
+  "changedGroups": 60,
+  "unchangedGroups": 1340,
+  "reconstructedRows": 197,
+  "preservedRowsInChangedGroups": 109,
+  "rowsWithoutHistoricalApplicableCore": 44,
+  "annotationSynchronized": true,
+  "structuralValidation": "passed",
+  "runtimeValidation": {
+    "passed": true,
+    "test": "node scripts/test_scenario_runtime.cjs",
+    "checks": [
+      "all 1400 group parsers",
+      "6193 exact hazard texts",
+      "18334 resolved controls",
+      "reject corrupt maps",
+      "split scenario saved-state migration",
+      "exact scenario index migration",
+      "idempotent migration"
+    ]
+  },
+  "browserValidation": {
+    "status": "not-run",
+    "reason": "Playwright is installed, but no Chromium executable is available in this environment."
+  },
+  "existingAssignmentTests": {
+    "status": "3 pre-existing failures",
+    "baselineCommit": "8367026b9231fa599d74ad2007c28925cbce158f",
+    "sameFailuresBeforeAndAfter": true,
+    "details": [
+      "test_covers_all_library_tasks expects 173; actual 174",
+      "test_each_inspector_has_70_unique expects 70; actual 71/70/71",
+      "test_pairwise_overlap expects A01/A03 intersection 10; actual 11, overlap metadata still 10"
+    ]
+  },
+  "semanticReview": {
+    "status": "pending expert review for reconstructed links and inherited S",
+    "rowsWithoutHistoricalApplicableCore": 44
+  }
+}
