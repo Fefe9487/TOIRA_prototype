@@ -1409,7 +1409,7 @@
         const STORAGE_KEY = 'toira.assessment.v2';
 
         // JSON 使用一般 HTTP 快取；資料改版時同步更新 Selection.html 的版本號。
-        const DATA_VER = '20261005b';
+        const DATA_VER = '20261005c';
 
         // 風險矩陣與文字定義
         const riskMatrix = {
@@ -1691,12 +1691,13 @@
             groups.forEach((_, idx) => {
                 const key = `${taskId}_${idx}`;
                 if (!userSelections[key]) {
-                    userSelections[key] = { hazards: [], avoids: [], scenarios: [], scenarioManual: {}, customHazards: [], customAvoids: [], customScenarios: [], isManual: false, manualS: 'S4', manualP: 'P4' };
+                    userSelections[key] = { hazards: [], avoids: [], scenarios: [], scenarioManual: {}, scenarioExtras: {}, customHazards: [], customAvoids: [], customScenarios: [], isManual: false, manualS: 'S4', manualP: 'P4' };
                 } else {
                     if (!Array.isArray(userSelections[key].hazards)) userSelections[key].hazards = [];
                     if (!Array.isArray(userSelections[key].avoids)) userSelections[key].avoids = [];
                     if (!Array.isArray(userSelections[key].scenarios)) userSelections[key].scenarios = [];
                     if (!userSelections[key].scenarioManual) userSelections[key].scenarioManual = {};
+                    if (!userSelections[key].scenarioExtras || typeof userSelections[key].scenarioExtras !== 'object') userSelections[key].scenarioExtras = {};
                     if (!Array.isArray(userSelections[key].customHazards)) userSelections[key].customHazards = [];
                     if (!Array.isArray(userSelections[key].customAvoids)) userSelections[key].customAvoids = [];
                     if (!Array.isArray(userSelections[key].customScenarios)) userSelections[key].customScenarios = [];
@@ -1862,7 +1863,42 @@
 
         function controlLine(control, keepLane) {
             const text = keepLane ? displayControlText(control.text) : plainControlText(control.text);
-            return control.core ? `${text}（必要設施）` : text;
+            const marks = `${control.core ? '（必要設施）' : ''}${control.extra ? '（自訂）' : ''}`;
+            return marks ? `${text}${marks}` : text;
+        }
+
+        function scenarioExtraList(state, scenarioIndex) {
+            const bucket = state && state.scenarioExtras;
+            const list = bucket && bucket[scenarioIndex];
+            return Array.isArray(list) ? list : [];
+        }
+
+        function extraControlObject(item, scenarioIndex, extraIndex) {
+            const lane = CONTROL_LANES.includes(item.lane) ? item.lane : '管理控制';
+            const text = `${String(item.text || '').trim()}(${lane})`;
+            return {
+                key: `scenario-extra:${scenarioIndex}:${extraIndex}`,
+                lane,
+                scoreLane: scoreLaneOf(text),
+                text,
+                core: false,
+                extra: true,
+                extraIndex,
+            };
+        }
+
+        function controlsForScenario(scenario, state, scenarioIndex) {
+            const extras = scenarioExtraList(state, scenarioIndex)
+                .map((item, extraIndex) => extraControlObject(item, scenarioIndex, extraIndex));
+            return (scenario.controls || []).concat(extras);
+        }
+
+        function checkedForScenario(taskId, state, scenarioIndex) {
+            const checked = Object.assign({}, checkedControls(taskId));
+            scenarioExtraList(state, scenarioIndex).forEach((item, extraIndex) => {
+                if (item && item.done) checked[`scenario-extra:${scenarioIndex}:${extraIndex}`] = true;
+            });
+            return checked;
         }
 
         function isCoreGroup(group) {
@@ -1980,17 +2016,18 @@
         }
 
         function buildMappedExportRows(task, group, state) {
-            const checked = checkedControls(task.id);
             const selected = new Set(state.scenarios || []);
             const rows = [];
             group.scenarios.forEach((scenario, si) => {
                 if (!selected.has(si)) return;
                 const manual = (state.scenarioManual || {})[si] || {};
-                let cur = lookupRisk(scenario.severity, probabilityFromLinkedControls(scenario.controls, checked));
+                const controls = controlsForScenario(scenario, state, si);
+                const scenarioChecked = checkedForScenario(task.id, state, si);
+                let cur = lookupRisk(scenario.severity, probabilityFromLinkedControls(controls, scenarioChecked));
                 if (manual.isManual) cur = lookupRisk(manual.manualS || 'S4', manual.manualP || 'P4');
-                const existingControls = scenario.controls.filter((c) => checked[c.key]).map((c) => controlLine(c, true));
-                const additionalControls = scenario.controls.filter((c) => !checked[c.key]).map((c) => controlLine(c, true));
-                let residualP = probabilityIfAddressed(scenario.controls);
+                const existingControls = controls.filter((c) => scenarioChecked[c.key]).map((c) => controlLine(c, true));
+                const additionalControls = controls.filter((c) => !scenarioChecked[c.key]).map((c) => controlLine(c, true));
+                let residualP = probabilityIfAddressed(controls);
                 const pNum = parseInt(String(cur.p).replace('P', ''), 10);
                 const rNum = parseInt(String(residualP).replace('P', ''), 10);
                 if (rNum > pNum) residualP = cur.p;
@@ -2262,6 +2299,7 @@
                 userSelections[selKey] = state;
                 if (!state.scenarios) state.scenarios = [];
                 if (!state.scenarioManual) state.scenarioManual = {};
+                if (!state.scenarioExtras || typeof state.scenarioExtras !== 'object') state.scenarioExtras = {};
                 if (!state.customHazards) state.customHazards = [];
                 if (!state.customAvoids) state.customAvoids = [];
                 if (!state.customScenarios) state.customScenarios = [];
@@ -2422,13 +2460,15 @@
         }
 
         function mappedScenarioSections(taskId, group, index, state, tid) {
-            const checked = checkedControls(taskId);
             const hasSelectedScenario = state.scenarios.length > 0 || (state.customScenarios || []).some((item) => item.selected);
             let html = hasSelectedScenario ? '' : `<p class="scenario-hint">選擇符合現場的危害情境後，即可查看改善措施與風險評估。自訂情境需自行填寫改善措施，並評估嚴重度與可能性。</p>`;
             group.scenarios.forEach((scenario, si) => {
                 const picked = state.scenarios.includes(si);
                 const selected = picked ? 'selected' : '';
                 const manual = state.scenarioManual[si] || { isManual: false, manualS: scenario.severity || 'S4', manualP: 'P4' };
+                const controls = controlsForScenario(scenario, state, si);
+                const scenarioChecked = checkedForScenario(taskId, state, si);
+                const doneCount = controls.filter((control) => scenarioChecked[control.key]).length;
                 html += `
                     <div class="scenario-block${picked ? ' is-open' : ''}" id="scenario-${index}-${si}">
                         
@@ -2436,18 +2476,32 @@
                             <div class="hazard-item__text">${escapeHtml(scenario.text)}</div>
                         </div>
                         <div class="scenario-detail">
-                        <div class="scenario-controls-heading"><span>處理風險或機會之措施(改善建議)</span><span class="scenario-controls-count">${scenario.controls.filter((control) => checked[control.key]).length} / ${scenario.controls.length} 項已做到</span></div><p class="scenario-controls-help">勾選代表現場已做到；未勾選代表尚未做到，會列為待改善。</p>
+                        <div class="scenario-controls-heading"><span>處理風險或機會之措施(改善建議)</span><span class="scenario-controls-count">${doneCount} / ${controls.length} 項已做到</span></div><p class="scenario-controls-help">勾選代表現場已做到；未勾選代表尚未做到，會列為待改善。自行新增的措施只出現在這則情境。</p>
                         <div class="hazard-list">
                 `;
-                scenario.controls.forEach((control) => {
-                    const on = !!checked[control.key];
+                controls.forEach((control) => {
+                    const on = !!scenarioChecked[control.key];
                     const stateClass = on ? 'selected' : 'is-pending';
-                    const ckey = encodeURIComponent(control.key);
                     const statusClass = on ? 'control-status--done' : (control.core ? 'control-status--pending-core' : 'control-status--pending');
                     const statusText = on ? '✓ 已做到' : (control.core ? '必要設施未做到' : '尚未做到');
+                    if (control.extra) {
+                        html += `<div class="hazard-item avoid-type scenario-control ${stateClass}" data-extra="${control.extraIndex}" onclick="toggleScenarioExtra(${tid}, ${index}, ${si}, ${control.extraIndex})"><div class="hazard-item__text"><span>${escapeHtml(plainControlText(control.text))} ${controlMark(control)}<span class="chip-tag">自訂</span></span><span class="control-status ${statusClass}">${statusText}</span><button class="chip-del" onclick="removeScenarioExtra(event, ${tid}, ${index}, ${si}, ${control.extraIndex})">✖</button></div></div>`;
+                        return;
+                    }
+                    const ckey = encodeURIComponent(control.key);
                     html += `<div class="hazard-item avoid-type scenario-control ${stateClass}" data-ckey="${ckey}" data-core="${control.core ? 'true' : 'false'}" onclick="toggleLinkedControl(event, ${tid}, '${ckey}')"><div class="hazard-item__text"><span>${escapeHtml(plainControlText(control.text))} ${controlMark(control)}</span><span class="control-status ${statusClass}">${statusText}</span></div></div>`;
                 });
                 html += `
+                        </div>
+                        <div class="inline-add">
+                            <input class="t-input" type="text" id="scenario-extra-${index}-${si}" placeholder="輸入只給這則情境的改善措施..." onkeydown="if(event.key==='Enter'){event.preventDefault();addScenarioExtra(${tid}, ${index}, ${si});}">
+                            <select class="t-input inline-add__lane" id="scenario-extra-lane-${index}-${si}" aria-label="防護類型">
+                                <option value="">選擇類型</option>
+                                <option value="工程改善">工程改善</option>
+                                <option value="管理控制">管理控制</option>
+                                <option value="個人防護">個人防護</option>
+                            </select>
+                            <button class="t-btn t-btn--outline" onclick="addScenarioExtra(${tid}, ${index}, ${si})">＋ 新增</button>
                         </div>
                         <div class="advice-panel" id="advice-panel-${index}-${si}"></div>
                         <div class="risk-panel">
@@ -2679,15 +2733,68 @@
             if (!task) return;
             task.hazardGroups.forEach((group, gi) => {
                 if (!group.scenarios) return;
+                const groupState = userSelections[`${taskId}_${gi}`];
                 group.scenarios.forEach((scenario, si) => {
                     calculateScenarioUI(taskId, gi, si);
                     const count = document.querySelector('#scenario-' + gi + '-' + si + ' .scenario-controls-count');
-                    if (count) {
-                        const completed = scenario.controls.filter((control) => checked[control.key]).length;
-                        count.textContent = completed + ' / ' + scenario.controls.length + ' 項已做到';
+                    if (count && groupState) {
+                        const controls = controlsForScenario(scenario, groupState, si);
+                        const scenarioChecked = checkedForScenario(taskId, groupState, si);
+                        const completed = controls.filter((control) => scenarioChecked[control.key]).length;
+                        count.textContent = completed + ' / ' + controls.length + ' 項已做到';
                     }
                 });
             });
+        }
+
+        function ensureScenarioExtras(state, scenarioIndex) {
+            if (!state.scenarioExtras || typeof state.scenarioExtras !== 'object') state.scenarioExtras = {};
+            if (!Array.isArray(state.scenarioExtras[scenarioIndex])) state.scenarioExtras[scenarioIndex] = [];
+            return state.scenarioExtras[scenarioIndex];
+        }
+
+        function refreshScenarioBlock(taskId, groupIndex, scenarioIndex) {
+            renderAssessment(taskId);
+            const block = document.getElementById(`scenario-${groupIndex}-${scenarioIndex}`);
+            if (block) block.scrollIntoView({ block: 'nearest' });
+        }
+
+        function addScenarioExtra(taskId, groupIndex, scenarioIndex) {
+            const inputEl = document.getElementById(`scenario-extra-${groupIndex}-${scenarioIndex}`);
+            const laneEl = document.getElementById(`scenario-extra-lane-${groupIndex}-${scenarioIndex}`);
+            const val = inputEl && inputEl.value.trim();
+            if (!val) return;
+            const lane = laneEl && CONTROL_LANES.includes(laneEl.value) ? laneEl.value : '';
+            if (!lane) {
+                showToast('請先選擇防護類型', 'error');
+                if (laneEl) laneEl.focus();
+                return;
+            }
+            const body = val.replace(/[（(【]\s*(消除|取代|工程改善|工程控制|行政管理|管理控制|個人防護具|個人防護)\s*[）)】]\s*$/, '').trim();
+            if (!body) return;
+            ensureSelectionState(taskId);
+            const state = userSelections[`${taskId}_${groupIndex}`];
+            if (!state) return;
+            ensureScenarioExtras(state, scenarioIndex).push({ text: body, lane, done: false });
+            refreshScenarioBlock(taskId, groupIndex, scenarioIndex);
+        }
+
+        function removeScenarioExtra(event, taskId, groupIndex, scenarioIndex, extraIndex) {
+            if (event) event.stopPropagation();
+            const state = userSelections[`${taskId}_${groupIndex}`];
+            const list = state && ensureScenarioExtras(state, scenarioIndex);
+            if (!list || !list[extraIndex]) return;
+            list.splice(extraIndex, 1);
+            refreshScenarioBlock(taskId, groupIndex, scenarioIndex);
+        }
+
+        function toggleScenarioExtra(taskId, groupIndex, scenarioIndex, extraIndex) {
+            const state = userSelections[`${taskId}_${groupIndex}`];
+            const list = state && ensureScenarioExtras(state, scenarioIndex);
+            const item = list && list[extraIndex];
+            if (!item) return;
+            item.done = !item.done;
+            refreshScenarioBlock(taskId, groupIndex, scenarioIndex);
         }
 
         function scenarioManualState(state, scenarioIndex, fallbackS) {
@@ -2727,8 +2834,10 @@
             const scenario = group && group.scenarios && group.scenarios[scenarioIndex];
             const state = userSelections[`${taskId}_${groupIndex}`];
             if (!scenario || !state) return;
+            const controls = controlsForScenario(scenario, state, scenarioIndex);
+            const scenarioChecked = checkedForScenario(taskId, state, scenarioIndex);
             const manual = (state.scenarioManual || {})[scenarioIndex] || {};
-            let res = lookupRisk(scenario.severity, probabilityFromLinkedControls(scenario.controls, checkedControls(taskId)));
+            let res = lookupRisk(scenario.severity, probabilityFromLinkedControls(controls, scenarioChecked));
             if (manual.isManual) res = lookupRisk(manual.manualS, manual.manualP);
             const riskObj = (res && res.riskObj) || riskDescriptions[4];
             const sLevelEl = document.getElementById(`s-level-${groupIndex}-${scenarioIndex}`);
@@ -2755,9 +2864,7 @@
             }
             if (noteEl && riskObj) noteEl.textContent = `備註：${riskObj.note}`;
             if (advicePanel) {
-                const checked = checkedControls(taskId);
-                const pending = scenario.controls.filter((c) => !checked[c.key]);
-                const anyChecked = scenario.controls.some((c) => checked[c.key]);
+                const pending = controls.filter((c) => !scenarioChecked[c.key]);
                 if (pending.length) {
                     advicePanel.innerHTML = `<strong>尚待改善 ${pending.length} 項</strong><p>完成下列措施後，系統會重新評估可能性。</p><ul>${pending.map((c) => `<li>${escapeHtml(controlLine(c))}</li>`).join('')}</ul>`;
                     advicePanel.style.display = 'block';
