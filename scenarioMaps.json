@@ -1,12 +1,12 @@
 {
   "schema": "toira-scenario-maps",
-  "version": "20261005d",
+  "version": "20261005e",
   "generatedAt": "2026-10-02T03:05:52Z",
-  "note": "已對上的危害與控制。核心來自挑選說明或 Luna 補標；只有一條措施的已補到最多三條。 沒掛上的對策已再判斷；掛不上的寫在 unlinkedControls。 2026-10-02 核心標記按原核心候選與原順序收斂：工程最多二條，否則管理一條，再否則個人防護一條；分類與事故路徑例外待人工校正，詳見 CORE_CONTROL_POLICY.md。 2026-10-02 控制措施正文限制50字，複合長句精簡或拆分；依原核心來源保留最對應情境的主要短句，其他為支撐，核心數及上限不變，詳見CONTROL_TEXT_REVISIONS.json。 2026-10-03 三張作業的群組核心重點改對法規點名的危害；局限空間新增物體倒塌、崩塌，三則情境依現行格式掛對策並通過同一套核心與50字檢查。 2026-10-03 職業病嚴重度改為可恢復 S4、不可恢復 S5。 2026-10-03 補上 41 則原本沒有嚴重度的情境。 2026-10-03 危害類型名稱收進勞動部17類加職業病、其他類別風險：墜落與滾落併為墜落、滾落，物體倒塌併為物體倒塌、崩塌，與有害物等之接觸併為有害物接觸。 2026-10-05 試掃十張作業修正核心：僅法規對該危害情境明定之措施得為核心，含法規要求之個人防護；法規未要求者不標核心。 2026-10-05 其餘 1452 則補上條文對到的核心，物體飛落缺安全帽者新增安全帽。原先核心除一則純健檢外保留；條文對照未涵蓋的情境維持原核心。 2026-10-05 情境圖新增的措施補回同一組作業庫，並改回 AvoidItems。",
+  "note": "已對上的危害與控制。核心來自挑選說明或 Luna 補標；只有一條措施的已補到最多三條。 沒掛上的對策已再判斷；掛不上的寫在 unlinkedControls。 2026-10-02 核心標記按原核心候選與原順序收斂：工程最多二條，否則管理一條，再否則個人防護一條；分類與事故路徑例外待人工校正，詳見 CORE_CONTROL_POLICY.md。 2026-10-02 控制措施正文限制50字，複合長句精簡或拆分；依原核心來源保留最對應情境的主要短句，其他為支撐，核心數及上限不變，詳見CONTROL_TEXT_REVISIONS.json。 2026-10-03 三張作業的群組核心重點改對法規點名的危害；局限空間新增物體倒塌、崩塌，三則情境依現行格式掛對策並通過同一套核心與50字檢查。 2026-10-03 職業病嚴重度改為可恢復 S4、不可恢復 S5。 2026-10-03 補上 41 則原本沒有嚴重度的情境。 2026-10-03 危害類型名稱收進勞動部17類加職業病、其他類別風險：墜落與滾落併為墜落、滾落，物體倒塌併為物體倒塌、崩塌，與有害物等之接觸併為有害物接觸。 2026-10-05 試掃十張作業修正核心：僅法規對該危害情境明定之措施得為核心，含法規要求之個人防護；法規未要求者不標核心。 2026-10-05 其餘 1452 則補上條文對到的核心，物體飛落缺安全帽者新增安全帽。原先核心除一則純健檢外保留；條文對照未涵蓋的情境維持原核心。 2026-10-05 情境圖新增的措施補回同一組作業庫，並改回 AvoidItems。 2026-10-05 高壓爐操作作業的有害物接觸與感電補上情境映射，沿用同一組作業庫句子，不再退回整組清單。",
   "counts": {
-    "groups": 1398,
-    "hazards": 6089,
-    "coreHazards": 6089,
+    "groups": 1400,
+    "hazards": 6095,
+    "coreHazards": 6095,
     "gapOmitted": 0,
     "codexEmptyOmitted": 0,
     "unmatchedLibraryGroups": 0
@@ -186970,6 +186970,192 @@
               "pool": "AvoidItems",
               "controlId": "N1",
               "text": "在蒸汽管線維修隔離點設置可上鎖的洩壓與排凝口，並將排放導至安全位置。(工程改善)",
+              "role": "support"
+            }
+          ],
+          "coreControlRefs": [
+            "A4"
+          ]
+        }
+      ]
+    },
+    {
+      "taskName": "高壓鍋爐操作作業",
+      "groupName": "有害物接觸",
+      "hazardControlMap": [
+        {
+          "hazardId": "H1",
+          "hazardItem": "燃燒不完全、煙道堵塞或鍋爐房通風不足時，一氧化碳及其他燃燒廢氣累積，巡檢或操作人員吸入可能中毒、昏厥。",
+          "severity": 5,
+          "controlRefs": [
+            {
+              "pool": "AvoidItems",
+              "controlId": "A1",
+              "text": "鍋爐房設置並維持有效換氣，燃燒廢氣導至室外；煙道堵塞或排氣停轉時立即停爐。(工程改善)",
+              "role": "core"
+            },
+            {
+              "pool": "AvoidItems",
+              "controlId": "A2",
+              "text": "點火、巡檢及停留鍋爐房時以儀器確認一氧化碳未超標；火焰異常、煙氣倒灌或警報時立即停爐撤離。(行政管理)",
+              "role": "support"
+            },
+            {
+              "pool": "AvoidItems",
+              "controlId": "A3",
+              "text": "確認安全前不得返回。(行政管理)",
+              "role": "support"
+            }
+          ],
+          "coreControlRefs": [
+            "A1"
+          ]
+        },
+        {
+          "hazardId": "H2",
+          "hazardItem": "燃料油或燃氣於槽、泵、管線、法蘭或轉運軟管洩漏，人員吸入蒸氣或皮膚接觸可能造成刺激、麻醉或化學傷害。",
+          "severity": 5,
+          "controlRefs": [
+            {
+              "pool": "AvoidItems",
+              "controlId": "A4",
+              "text": "燃料轉運及接頭作業依程序檢漏，發現洩漏先停止供料並通風置換，禁止在洩漏區停留。(行政管理)",
+              "role": "core"
+            },
+            {
+              "pool": "AvoidItems",
+              "controlId": "A6",
+              "text": "加藥取樣或接觸燃料藥劑，依SDS戴耐化學手套及護目或面罩(個人防護)",
+              "role": "support"
+            },
+            {
+              "pool": "AvoidItems",
+              "controlId": "A7",
+              "text": "需要時加呼吸防護；受污染立即沖洗更換(個人防護)",
+              "role": "support"
+            }
+          ],
+          "coreControlRefs": [
+            "A4"
+          ]
+        },
+        {
+          "hazardId": "H3",
+          "hazardItem": "給水加藥、排污取樣或藥劑調製時，水處理藥劑噴濺或逸散，可能造成皮膚、眼部傷害或吸入刺激。",
+          "severity": 5,
+          "controlRefs": [
+            {
+              "pool": "AvoidItems",
+              "controlId": "A5",
+              "text": "鍋爐用水處理藥劑依SDS標示、分區及相容性使用；調製及加藥點設置防噴濺，並維持局部排氣或強制通風。(工程改善)",
+              "role": "core"
+            },
+            {
+              "pool": "AvoidItems",
+              "controlId": "A8",
+              "text": "加藥及化學品作業區維持洗眼器或緊急沖淋可用，並保持通道暢通。(工程改善)",
+              "role": "support"
+            },
+            {
+              "pool": "AvoidItems",
+              "controlId": "A6",
+              "text": "加藥取樣或接觸燃料藥劑，依SDS戴耐化學手套及護目或面罩(個人防護)",
+              "role": "support"
+            },
+            {
+              "pool": "AvoidItems",
+              "controlId": "A7",
+              "text": "需要時加呼吸防護；受污染立即沖洗更換(個人防護)",
+              "role": "support"
+            }
+          ],
+          "coreControlRefs": [
+            "A5"
+          ]
+        }
+      ]
+    },
+    {
+      "taskName": "高壓鍋爐操作作業",
+      "groupName": "感電",
+      "hazardControlMap": [
+        {
+          "hazardId": "H1",
+          "hazardItem": "鍋爐房潮濕、蒸汽或排污積水造成控制盤、馬達或電纜絕緣失效，接觸金屬外殼或操作開關可能感電。",
+          "severity": 5,
+          "controlRefs": [
+            {
+              "pool": "AvoidItems",
+              "controlId": "A1",
+              "text": "控制盤、給水泵、燃燒器及風機馬達的絕緣、接地、漏電保護及端子須保持正常。(工程改善)",
+              "role": "core"
+            },
+            {
+              "pool": "AvoidItems",
+              "controlId": "A2",
+              "text": "設備破損、受潮或動作異常時，立即停用修復。(工程改善)",
+              "role": "support"
+            },
+            {
+              "pool": "AvoidItems",
+              "controlId": "A3",
+              "text": "鍋爐房電纜、插頭及接線盒避開積水與蒸汽噴洩路徑，外皮或接頭受損立即停用更換。(行政管理)",
+              "role": "support"
+            }
+          ],
+          "coreControlRefs": [
+            "A1"
+          ]
+        },
+        {
+          "hazardId": "H2",
+          "hazardItem": "給水泵、燃燒器、風機馬達或控制盤接地、漏電保護失效時，外殼帶電可能造成電擊。",
+          "severity": 5,
+          "controlRefs": [
+            {
+              "pool": "AvoidItems",
+              "controlId": "A1",
+              "text": "控制盤、給水泵、燃燒器及風機馬達的絕緣、接地、漏電保護及端子須保持正常。(工程改善)",
+              "role": "core"
+            },
+            {
+              "pool": "AvoidItems",
+              "controlId": "A2",
+              "text": "設備破損、受潮或動作異常時，立即停用修復。(工程改善)",
+              "role": "support"
+            },
+            {
+              "pool": "AvoidItems",
+              "controlId": "A5",
+              "text": "由合格電氣人員確認漏電斷路器及接地功能，異常時該迴路不得送電。(行政管理)",
+              "role": "support"
+            }
+          ],
+          "coreControlRefs": [
+            "A1"
+          ]
+        },
+        {
+          "hazardId": "H3",
+          "hazardItem": "開啟控制盤或檢修馬達配線前未斷電上鎖掛牌及驗電，誤送電或殘壓可能造成電擊或電弧灼傷。",
+          "severity": 5,
+          "controlRefs": [
+            {
+              "pool": "AvoidItems",
+              "controlId": "A4",
+              "text": "開啟控制盤或檢修馬達配線前切斷電源並上鎖掛牌，驗電確認無電後才接觸導體；潮濕處不得帶電作業。(行政管理)",
+              "role": "core"
+            },
+            {
+              "pool": "AvoidItems",
+              "controlId": "A5",
+              "text": "由合格電氣人員確認漏電斷路器及接地功能，異常時該迴路不得送電。(行政管理)",
+              "role": "support"
+            },
+            {
+              "pool": "AvoidItems",
+              "controlId": "A6",
+              "text": "必要的通電量測由合格電氣人員使用適用儀器；潮濕或蒸汽環境穿戴絕緣手套及絕緣鞋。(個人防護)",
               "role": "support"
             }
           ],
