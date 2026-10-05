@@ -3,7 +3,7 @@
 更新日期：2026-10-02（Asia/Taipei）
 適用資料：`scenarioMaps.json`
 初次核心收斂版本：`20261002m`
-目前資料版本：`20261005e`
+目前資料版本：`20261005g`。情境圖的措施只留作業庫編號，欄位見文末。
 收斂前基準提交：`d74c0c0ca072518690ef671106cdf16ef6122003`
 
 以下至「驗證與回復」記錄初次核心收斂；後續50字整理另列於文件末尾。
@@ -186,3 +186,13 @@ CONTROL_REVIEW_QUEUE.md 從 85 筆減為 58 筆。拿掉的 27 筆，留下的�
 ## 高壓爐兩組補上映射（20261005e）
 
 高壓爐操作作業的有害物接觸、感電原先只有作業庫、沒有情境圖，評估頁會整組退回作業庫清單。這兩組各 3 則已改掛情境圖，危害句子與措施都沿用同一組 AvoidItems，沒有新寫句子。每一則保留一條直接擋住該情境的措施為必要設施：有工程措施時用工程，否則用那一則的管理措施。頁面資料版本 20261005e。情境 6,095 則，群組 1,400。
+
+## 未讀欄位與空白核心理由（20261005f）
+
+情境圖拿掉頁面沒有讀的 pool、sourceControlId、sourcePartIndex。role、coreControlRefs、sourceControlKey、originalText 與措施正文都留著。作業庫拿掉與核心重點完全相同的優先評估。辦公與廳舍相關 7 張作業裡 31 組空白核心理由已依該組危害句子補上。頁面資料版本 20261005f。
+
+## 措施正文改留作業庫（20261005g）
+
+情境圖的措施不再抄正文。一則只留 `hazardId`、`hazardItem`、`severity`、`controlRefs`、`coreControlRefs`。`controlRefs` 是作業庫編號，例如 `A1` 對同一組 `AvoidItems` 第 1 句；必要設施的編號留在 `coreControlRefs`。
+
+已拿掉 `text`、`role`、`originalText`、`sourceControlKey`、`pool`、`sourceControlId`、`sourcePartIndex`、`unlinkedControls` 與檔案 `note`。作業庫不再有 `優先評估`。評估頁和標註頁用編號回作業庫取句子，畫面上的措施與必要設施不變。勾選鍵改用句子本身。原本只寫在情境圖的 4,361 句已各補進同一組 `AvoidItems` 一次。頁面資料版本 20261005g。情境 6,095 則，群組 1,400。

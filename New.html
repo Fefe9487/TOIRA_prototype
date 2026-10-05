@@ -1409,7 +1409,7 @@
         const STORAGE_KEY = 'toira.assessment.v2';
 
         // JSON 使用一般 HTTP 快取；資料改版時同步更新 Selection.html 的版本號。
-        const DATA_VER = '20261005e';
+        const DATA_VER = '20261005g';
 
         // 風險矩陣與文字定義
         const riskMatrix = {
@@ -1517,6 +1517,20 @@
             return probabilityFromLinkedControls(controls, fake);
         }
 
+        function controlIdOf(cr) {
+            if (typeof cr === 'string') return cr.trim();
+            return String((cr && cr.controlId) || '').trim();
+        }
+
+        function avoidTextById(group, controlId) {
+            const avoids = Array.isArray(group && group.AvoidItems) ? group.AvoidItems : [];
+            const match = /^A(\d+)$/.exec(String(controlId || '').trim());
+            if (!match) return '';
+            const idx = Number(match[1]) - 1;
+            if (idx < 0 || idx >= avoids.length) return '';
+            return String(avoids[idx] || '').trim();
+        }
+
         function scenariosFromMapDoc(group, doc) {
             const rows = Array.isArray(doc && doc.hazardControlMap) ? doc.hazardControlMap : [];
             return rows.map((row) => {
@@ -1524,16 +1538,19 @@
                 const severity = sevNum >= 1 && sevNum <= 5 ? `S${sevNum}` : (group.severitylevel || 'S4');
                 const coreIds = new Set((row.coreControlRefs || []).map((id) => String(id || '').trim()));
                 const controls = (row.controlRefs || []).map((cr) => {
-                    const text = String(cr.text || '').trim();
-                    const controlId = String(cr.controlId || '').trim();
+                    const controlId = controlIdOf(cr);
+                    const inline = cr && typeof cr === 'object' ? String(cr.text || '').trim() : '';
+                    const text = inline || avoidTextById(group, controlId);
+                    if (!text) return null;
+                    const sourceKey = cr && typeof cr === 'object' ? String(cr.sourceControlKey || '').trim() : '';
                     return {
-                        key: String(cr.sourceControlKey || '').trim() || controlBodyKey(text),
+                        key: sourceKey || controlBodyKey(text),
                         lane: controlLane(text),
                         scoreLane: scoreLaneOf(text),
                         text,
-                        core: cr.role === 'core' || coreIds.has(controlId),
+                        core: (cr && cr.role === 'core') || coreIds.has(controlId),
                     };
-                }).filter((c) => c.key);
+                }).filter(Boolean);
                 return { text: String(row.hazardItem || '').trim(), severity, controls };
             }).filter((s) => s.text);
         }
