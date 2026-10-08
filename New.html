@@ -413,6 +413,93 @@
             gap: 10px;
         }
 
+        .t-app-bar__row {
+            flex-wrap: wrap;
+        }
+
+        .t-app-bar__title {
+            flex: 1;
+            min-width: 180px;
+        }
+
+        .t-app-bar__tools {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-left: auto;
+            flex-shrink: 0;
+        }
+
+        .stat-sev-switch {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 6px 12px 6px 8px;
+            border: 1px solid rgba(255, 255, 255, .35);
+            border-radius: 999px;
+            background: rgba(255, 255, 255, .1);
+            color: #fff;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .stat-sev-switch input {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            opacity: 0;
+        }
+
+        .stat-sev-switch__track {
+            position: relative;
+            width: 36px;
+            height: 20px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, .28);
+            flex-shrink: 0;
+        }
+
+        .stat-sev-switch__track::after {
+            content: "";
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #fff;
+            transition: transform .15s ease;
+        }
+
+        .stat-sev-switch input:checked + .stat-sev-switch__track {
+            background: #f4c56a;
+        }
+
+        .stat-sev-switch input:checked + .stat-sev-switch__track::after {
+            transform: translateX(16px);
+        }
+
+        .stat-sev-switch input:focus-visible + .stat-sev-switch__track {
+            outline: 2px solid #fff;
+            outline-offset: 2px;
+        }
+
+        .stat-sev-switch__text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.25;
+        }
+
+        .stat-sev-switch__text strong {
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .stat-sev-switch__text small {
+            font-size: 11px;
+            opacity: .88;
+        }
+
         .task-desc {
             margin-bottom: 22px;
             font-size: 15px;
@@ -675,6 +762,34 @@
             font-size: 14px;
             font-weight: 600;
             color: var(--ink-2);
+        }
+
+        .sev-basis {
+            margin-left: 6px;
+            padding: 1px 6px;
+            border: 1px solid var(--line-strong);
+            border-radius: 999px;
+            background: var(--surface);
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--muted);
+            vertical-align: 1px;
+        }
+
+        .sev-basis:empty {
+            display: none;
+        }
+
+        .sev-basis.is-stat {
+            color: var(--brand-800);
+            border-color: var(--brand-600);
+            background: var(--brand-50);
+        }
+
+        .sev-basis.is-manual {
+            color: var(--danger);
+            border-color: var(--danger);
+            background: var(--danger-tint);
         }
 
         .risk-badge {
@@ -1195,7 +1310,17 @@
     <header class="t-app-bar">
         <div class="t-app-bar__row">
             <h1 class="t-app-bar__title" id="header-title">自選製程 - 危害辨識系統</h1>
-            <div class="t-badge t-badge--onbrand" id="company-header-display" hidden></div>
+            <div class="t-app-bar__tools">
+                <label class="stat-sev-switch" title="開啟後，各危害情境的嚴重度改依危害類型的職災統計分級（110–114 年、5 年平均）。關閉時用生成時估算的嚴重度。職業病沒有統計分級，仍用估算值。已手動評估的情境不受此開關影響。">
+                    <input type="checkbox" id="stat-severity-toggle" onchange="toggleStatSeverity(this.checked)">
+                    <span class="stat-sev-switch__track" aria-hidden="true"></span>
+                    <span class="stat-sev-switch__text">
+                        <strong>職災統計嚴重度</strong>
+                        <small id="stat-severity-caption">目前：生成時估算</small>
+                    </span>
+                </label>
+                <div class="t-badge t-badge--onbrand" id="company-header-display" hidden></div>
+            </div>
         </div>
         <div class="t-tabs">
             <button class="t-tab" id="tab-search" onclick="switchTab('search-view')">🔍 資料庫查詢</button>
@@ -1407,7 +1532,37 @@
         const expandedCategories = new Set();
         const RISK_FORM_API = (window.RISK_FORM_API || 'http://localhost:8000').replace(/\/$/, '');
         const STORAGE_KEY = 'toira.assessment.v2';
+        const STAT_SEVERITY_KEY = 'toira.useStatSeverity';
+        let useStatSeverityOn = false;
+        try {
+            useStatSeverityOn = sessionStorage.getItem(STAT_SEVERITY_KEY) === '1';
+        } catch (err) {
+            useStatSeverityOn = false;
+        }
         let scenarioIndexMigration = null;
+
+        // 110–114 年職災加權得分的色帶分級。火災、感電、有害物接觸、爆炸為 S5；
+        // 物體倒塌雖有高於部分 S5 的分數，色帶仍列為 S4。職業病不在統計表內。
+        const STAT_SEVERITY_BY_TYPE = {
+            '被夾被捲': 'S5',
+            '墜落滾落': 'S5',
+            '被切割擦傷': 'S5',
+            '跌倒': 'S5',
+            '火災': 'S5',
+            '感電': 'S5',
+            '有害物接觸': 'S5',
+            '爆炸': 'S5',
+            '物體倒塌崩塌': 'S4',
+            '被撞': 'S4',
+            '物體飛落': 'S4',
+            '不當動作': 'S3',
+            '高低溫接觸': 'S3',
+            '其他類別風險': 'S3',
+            '衝撞': 'S3',
+            '溺水': 'S3',
+            '踩踏': 'S2',
+            '物體破裂': 'S2'
+        };
 
         // JSON 使用一般 HTTP 快取；資料改版時同步更新 Selection.html 的版本號。
         const DATA_VER = '20261005h';
@@ -1437,6 +1592,69 @@
             if (level === '2' || level.startsWith('2')) return 'S2';
             if (level === '1' || level.startsWith('1')) return 'S1';
             return 'S4';
+        }
+
+        function hazardTypeKey(name) {
+            return String(name || '')
+                .replace(/\s+/g, '')
+                .replace(/[、，,．.。]/g, '')
+                .replace(/與/g, '')
+                .replace('被刺割擦傷', '被切割擦傷');
+        }
+
+        function statisticalSeverity(groupName) {
+            return STAT_SEVERITY_BY_TYPE[hazardTypeKey(groupName)] || '';
+        }
+
+        function activeScenarioSeverity(scenario, groupName) {
+            if (useStatSeverityOn) {
+                const stat = (scenario && scenario.statSeverity) || statisticalSeverity(groupName);
+                if (stat) return stat;
+            }
+            return normalizeSeverity(scenario && scenario.severity);
+        }
+
+        function activeGroupSeverity(group) {
+            const estimated = group && group.severitylevel;
+            if (useStatSeverityOn) {
+                const stat = statisticalSeverity(group && group.groupName);
+                if (stat) return stat;
+            }
+            return normalizeSeverity(estimated);
+        }
+
+        function severityBasis(groupName, isManual) {
+            if (isManual) return '手動';
+            if (useStatSeverityOn && statisticalSeverity(groupName)) return '統計';
+            return '估算';
+        }
+
+        function paintSeverityBasis(el, basis) {
+            if (!el) return;
+            el.textContent = basis || '';
+            el.className = 'sev-basis' + (basis === '統計' ? ' is-stat' : (basis === '手動' ? ' is-manual' : ''));
+        }
+
+        function syncStatSeveritySwitch() {
+            const box = document.getElementById('stat-severity-toggle');
+            const caption = document.getElementById('stat-severity-caption');
+            if (box) box.checked = useStatSeverityOn;
+            if (caption) caption.textContent = useStatSeverityOn ? '目前：110–114 年職災統計' : '目前：生成時估算';
+        }
+
+        function toggleStatSeverity(on) {
+            useStatSeverityOn = !!on;
+            try {
+                sessionStorage.setItem(STAT_SEVERITY_KEY, useStatSeverityOn ? '1' : '0');
+            } catch (err) { /* 隱私模式仍可在本次頁面使用 */ }
+            syncStatSeveritySwitch();
+            const y = window.scrollY;
+            if (currentActiveTaskId && document.getElementById('assessment-view')?.classList.contains('active')) {
+                renderAssessment(currentActiveTaskId);
+                window.scrollTo(0, y);
+            }
+            const report = document.getElementById('report-modal');
+            if (report && report.style.display === 'flex') openReport();
         }
 
         function normalizeProbability(value) {
@@ -1541,6 +1759,7 @@
             return rows.map((row) => {
                 const sevNum = parseInt(row.severity, 10);
                 const severity = sevNum >= 1 && sevNum <= 5 ? `S${sevNum}` : (group.severitylevel || 'S4');
+                const statSeverity = statisticalSeverity(group.groupName);
                 const coreIds = new Set((row.coreControlRefs || []).map((id) => String(id || '').trim()));
                 const controls = (row.controlRefs || []).map((cr) => {
                     const controlId = controlIdOf(cr);
@@ -1556,7 +1775,7 @@
                         core: (cr && cr.role === 'core') || coreIds.has(controlId),
                     };
                 }).filter(Boolean);
-                return { text: String(row.hazardItem || '').trim(), severity, controls };
+                return { text: String(row.hazardItem || '').trim(), severity, statSeverity, controls };
             }).filter((s) => s.text);
         }
 
@@ -1601,6 +1820,7 @@
         // 1. 初始化與讀取 JSON 資料
         // ==========================================
         document.addEventListener('DOMContentLoaded', () => {
+            syncStatSeveritySwitch();
             applyCompanyInfo(sessionStorage.getItem('companyInfo'));
 
             const industryTitle = sessionStorage.getItem('industryName') || '自選製程';
@@ -2057,7 +2277,7 @@
                 const additionalControls = getAdditionalControlAdvice(group.AvoidItems || [], state.avoids)
                     .map(displayControlText);
 
-                const baseS = group.severitylevel.split(':')[0].trim();
+                const baseS = activeGroupSeverity(group);
                 let cur = computeRiskValues(
                     baseS,
                     group.hazardItems.length + (state.customHazards || []).length,
@@ -2108,7 +2328,7 @@
                 const manual = (state.scenarioManual || {})[si] || {};
                 const controls = controlsForScenario(scenario, state, si);
                 const scenarioChecked = checkedForScenario(task.id, state, si);
-                let cur = lookupRisk(scenario.severity, probabilityFromLinkedControls(controls, scenarioChecked));
+                let cur = lookupRisk(activeScenarioSeverity(scenario, group.groupName), probabilityFromLinkedControls(controls, scenarioChecked));
                 if (manual.isManual) cur = lookupRisk(manual.manualS || 'S4', manual.manualP || 'P4');
                 const existingControls = controls.filter((c) => scenarioChecked[c.key]).map((c) => controlLine(c, true));
                 const additionalControls = controls.filter((c) => !scenarioChecked[c.key]).map((c) => controlLine(c, true));
@@ -2486,7 +2706,7 @@
                         <div class="risk-panel">
                             <div class="risk-header">
                                 <div class="risk-factors">
-                                    <span>嚴重度 (S): <span id="s-level-${index}">-</span></span>
+                                    <span>嚴重度 (S): <span id="s-level-${index}">-</span><span class="sev-basis" id="s-basis-${index}"></span></span>
                                     <span>可能性 (P): <span id="p-level-${index}">-</span></span>
                                 </div>
                                 <div class="risk-badge risk-0" id="risk-badge-${index}">請勾選上方項目</div>
@@ -2550,7 +2770,8 @@
             group.scenarios.forEach((scenario, si) => {
                 const picked = state.scenarios.includes(si);
                 const selected = picked ? 'selected' : '';
-                const manual = state.scenarioManual[si] || { isManual: false, manualS: scenario.severity || 'S4', manualP: 'P4' };
+                const activeS = activeScenarioSeverity(scenario, group.groupName);
+                const manual = state.scenarioManual[si] || { isManual: false, manualS: activeS, manualP: 'P4' };
                 const controls = controlsForScenario(scenario, state, si);
                 const scenarioChecked = checkedForScenario(taskId, state, si);
                 const doneCount = controls.filter((control) => scenarioChecked[control.key]).length;
@@ -2592,7 +2813,7 @@
                         <div class="risk-panel">
                             <div class="risk-header">
                                 <div class="risk-factors">
-                                    <span>嚴重度 (S): <span id="s-level-${index}-${si}">-</span></span>
+                                    <span>嚴重度 (S): <span id="s-level-${index}-${si}">-</span><span class="sev-basis" id="s-basis-${index}-${si}"></span></span>
                                     <span>可能性 (P): <span id="p-level-${index}-${si}">-</span></span>
                                 </div>
                                 <div class="risk-badge risk-0" id="risk-badge-${index}-${si}">計算中</div>
@@ -2604,7 +2825,7 @@
                                 <div class="manual-controls" id="manual-controls-${index}-${si}" style="display:${manual.isManual ? 'flex' : 'none'};">
                                     <span>嚴重度 (S):
                                         <select id="manual-s-${index}-${si}" onchange="updateScenarioManual(${tid}, ${index}, ${si})">
-                                            ${optionList(['S5', 'S4', 'S3', 'S2', 'S1'], ['5 (極大)', '4 (重大)', '3 (高)', '2 (中)', '1 (輕)'], manual.manualS || scenario.severity || 'S4')}
+                                            ${optionList(['S5', 'S4', 'S3', 'S2', 'S1'], ['5 (極大)', '4 (重大)', '3 (高)', '2 (中)', '1 (輕)'], manual.isManual ? (manual.manualS || activeS) : activeS)}
                                         </select>
                                     </span>
                                     <span>可能性 (P):
@@ -2894,7 +3115,8 @@
             const scenario = task && task.hazardGroups[groupIndex] && task.hazardGroups[groupIndex].scenarios[scenarioIndex];
             const state = userSelections[`${taskId}_${groupIndex}`];
             if (!state || !scenario) return;
-            const manual = scenarioManualState(state, scenarioIndex, scenario.severity);
+            const groupName = task.hazardGroups[groupIndex].groupName;
+            const manual = scenarioManualState(state, scenarioIndex, activeScenarioSeverity(scenario, groupName));
             const box = document.getElementById(`manual-override-${groupIndex}-${scenarioIndex}`);
             manual.isManual = !!(box && box.checked);
             const panel = document.getElementById(`manual-controls-${groupIndex}-${scenarioIndex}`);
@@ -2922,7 +3144,7 @@
             const controls = controlsForScenario(scenario, state, scenarioIndex);
             const scenarioChecked = checkedForScenario(taskId, state, scenarioIndex);
             const manual = (state.scenarioManual || {})[scenarioIndex] || {};
-            let res = lookupRisk(scenario.severity, probabilityFromLinkedControls(controls, scenarioChecked));
+            let res = lookupRisk(activeScenarioSeverity(scenario, group.groupName), probabilityFromLinkedControls(controls, scenarioChecked));
             if (manual.isManual) res = lookupRisk(manual.manualS, manual.manualP);
             const riskObj = (res && res.riskObj) || riskDescriptions[4];
             const sLevelEl = document.getElementById(`s-level-${groupIndex}-${scenarioIndex}`);
@@ -2932,6 +3154,7 @@
             const noteEl = document.getElementById(`risk-note-${groupIndex}-${scenarioIndex}`);
             const advicePanel = document.getElementById(`advice-panel-${groupIndex}-${scenarioIndex}`);
             if (sLevelEl) sLevelEl.textContent = String(res.s || '').replace('S', '') || '-';
+            paintSeverityBasis(document.getElementById(`s-basis-${groupIndex}-${scenarioIndex}`), severityBasis(group.groupName, manual.isManual));
             if (pLevelEl) pLevelEl.textContent = String(res.p || '').replace('P', '') || '-';
             if (sLevelEl && pLevelEl) {
                 sLevelEl.style.color = manual.isManual ? 'var(--danger)' : '';
@@ -3065,7 +3288,7 @@
             const checkedA = (state.avoids || []).length;
 
             let res = computeRiskValues(
-                groupData.severitylevel,
+                activeGroupSeverity(groupData),
                 totalH, checkedH,
                 totalA, checkedA
             );
@@ -3077,6 +3300,7 @@
             const riskObj = (res && res.riskObj) || riskDescriptions[4];
 
             if (sLevelEl) sLevelEl.textContent = String(res.s || '').replace('S', '') || '-';
+            paintSeverityBasis(document.getElementById(`s-basis-${groupIndex}`), severityBasis(groupData.groupName, state.isManual));
             if (pLevelEl) pLevelEl.textContent = String(res.p || '').replace('P', '') || '-';
 
             if (sLevelEl && pLevelEl) {
