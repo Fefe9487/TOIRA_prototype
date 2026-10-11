@@ -15,10 +15,12 @@ function extract(name) {
   assert(end > start, name);
   return html.slice(start, end + '\n        }'.length);
 }
-const names = ['controlBodyKey', 'controlLane', 'scoreLaneOf', 'controlIdOf', 'avoidTextById',
+const names = ['normalizeSeverity', 'hazardTypeKey', 'statisticalSeverity', 'controlBodyKey', 'controlLane', 'scoreLaneOf', 'controlIdOf', 'avoidTextById',
   'scenariosFromMapDoc', 'attachScenarioMaps', 'probabilityFromLinkedControls', 'migrateScenarioSelections'];
 const context = vm.createContext({});
-vm.runInContext("const DATA_VER = '20261005h';\n" + names.map(extract).join('\n'), context);
+const riskMatrix = html.match(/const riskMatrix = (\{[\s\S]*?\});/)[1];
+const severityTable = html.match(/const STAT_SEVERITY_BY_TYPE = (\{[\s\S]*?\});/)[1];
+vm.runInContext(`const DATA_VER = '20261005h';\nconst riskMatrix = ${riskMatrix};\nconst STAT_SEVERITY_BY_TYPE = ${severityTable};\n` + names.map(extract).join('\n'), context);
 const read = name => JSON.parse(fs.readFileSync(path.join(repo, name), 'utf8'));
 const library = read('tasksLibrary.json');
 const maps = read('scenarioMaps.json');

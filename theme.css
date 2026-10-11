@@ -56,6 +56,11 @@
     --font-sans: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", "Segoe UI", system-ui, sans-serif;
 }
 
+.usage-guide__note { font-size: 13px; color: var(--ink-2); line-height: 1.7; }
+.usage-guide__footer a { color: var(--brand-700); text-underline-offset: 3px; }
+.assessment-duty-note { padding: 12px 16px; margin: 0 0 18px; border-left: 3px solid var(--danger); background: var(--surface); color: var(--danger); font-size: 13px; line-height: 1.8; }
+.assessment-duty-note a { color: var(--brand-700); margin-left: 6px; text-underline-offset: 3px; }
+
 /* --------------------------------------------------------------- 基礎 */
 
 *,
@@ -382,3 +387,32 @@ body {
 .t-toast--error {
     border-left-color: var(--danger);
 }
+
+/* 共用使用說明圖卡 */
+        .usage-guide-trigger { color: #fff; border: 1px solid rgba(255,255,255,.5); background: transparent; }
+        .usage-guide-trigger:hover { color: var(--brand-900); background: var(--surface); }
+        .usage-guide { width: min(880px, calc(100% - 32px)); max-height: 88vh; padding: 0; border: 1px solid var(--line); border-radius: var(--r-lg); color: var(--ink); background: var(--surface); }
+        .usage-guide[open] { display: flex; flex-direction: column; }
+        .usage-guide::backdrop { background: rgba(12,35,38,.6); }
+        .usage-guide__header { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; padding: 22px 24px 16px; border-bottom: 1px solid var(--line); flex-shrink: 0; }
+        .usage-guide__header h2 { margin: 0 0 6px; font-size: 22px; color: var(--brand-800); }
+        .usage-guide__header p { margin: 0; font-size: 14px; color: var(--muted); }
+        .usage-guide__body { overflow-y: auto; min-height: 0; padding: 20px 24px; }
+        .usage-guide__status { margin: 0 0 16px; padding: 10px 12px; border-radius: var(--r-sm); color: var(--warn-ink); background: var(--warn-tint); font-size: 14px; line-height: 1.7; }
+        .usage-guide__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+        .usage-guide__card { padding: 16px; border: 1px solid var(--line); border-radius: var(--r-md); background: var(--surface-2); }
+        .usage-guide__card h3 { margin: 0 0 10px; font-size: 17px; color: var(--brand-800); }
+        .usage-guide__card p, .usage-guide__card li { font-size: 14px; line-height: 1.8; }
+        .usage-guide__card p { margin: 8px 0 0; }
+        .usage-guide__card ul { padding-left: 20px; margin: 0; }
+        .usage-guide__card strong { color: var(--ink); }
+        .usage-guide__footer { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 16px 24px; border-top: 1px solid var(--line); flex-shrink: 0; }
+        .usage-guide__footer span { color: var(--muted); font-size: 13px; }
+        @media (max-width: 640px) {
+            .usage-guide__grid { grid-template-columns: 1fr; }
+            .usage-guide__header, .usage-guide__body, .usage-guide__footer { padding: 16px; }
+            .usage-guide__footer { align-items: stretch; flex-direction: column; gap: 8px; }
+            .usage-guide__footer .t-btn { width: 100%; }
+        }
+
+@media print { .usage-guide { display: none !important; } }
