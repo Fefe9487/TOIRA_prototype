@@ -60,3 +60,7 @@ QA 包含 27 題問答，涵蓋公版編製、情境對照、核心重點、必�
 - [常見問答細修稿](docs/TOIRA常見問答_細修稿.md)
 
 MD 為編輯稿，修改後須同步至網頁內容。
+
+## 軟體公司部署用的獨立 HTML
+
+`deployment/toira-faq.html` 與 `deployment/toira-usage-guide.html` 已內嵌樣式、互動程式及圖解，放在同一資料夾即可使用。安裝與更新方式見 [部署說明](deployment/README.md)。由原型內容重新產生交付檔可執行 `python scripts/build_help_pages.py`。

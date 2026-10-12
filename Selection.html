@@ -20,8 +20,17 @@
         .page-head {
             display: flex;
             align-items: center;
+            flex-wrap: wrap;
             gap: 16px;
             margin-bottom: 28px;
+        }
+
+        .page-head__help {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 8px;
+            margin-left: auto;
         }
 
         .sheet {
@@ -187,6 +196,11 @@
         }
 
         @media (max-width: 720px) {
+            .page-head__help {
+                width: 100%;
+                margin-left: 0;
+            }
+
             .sheet {
                 padding: 22px 16px 28px;
             }
@@ -196,9 +210,13 @@
 
 <body>
     <div class="page">
-        <div class="page-head">
+        <header class="page-head">
             <button class="t-btn t-btn--outline" onclick="location.href='index.html'">← 返回基本資料</button>
-        </div>
+            <nav class="page-head__help" aria-label="使用協助">
+                <button class="t-btn t-btn--outline t-btn--sm" id="usage-guide-open" type="button" onclick="openUsageGuide()" aria-haspopup="dialog" aria-controls="usage-guide">使用說明</button>
+                <a class="t-btn t-btn--outline t-btn--sm" id="qa-open" href="faq.html" target="_blank" rel="noopener" aria-label="常見問答（另開分頁）">常見問答</a>
+            </nav>
+        </header>
 
         <div class="t-panel sheet">
             <h2 class="t-section-title">1. 選擇行業別模板</h2>
