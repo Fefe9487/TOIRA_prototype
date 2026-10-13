@@ -6,7 +6,7 @@
     <title>系統資料管理後臺 - 風險評估系統</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="theme.css">
+    <link rel="stylesheet" href="theme.css?v=20261013a">
     <style>
         /* 後臺沿用前端的 theme.css 色票，此處僅做語意別名 */
         :root {
@@ -343,6 +343,27 @@
             color: var(--text-muted);
             margin-top: 4px;
             display: block;
+        }
+
+        /* 手機版（20261013a）：後臺表格維持橫向捲動 */
+        @media (max-width: 640px) {
+            main {
+                padding: 1rem 0.75rem;
+            }
+
+            .card {
+                padding: 1rem;
+            }
+
+            .tabs {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .tab-btn {
+                padding: 0.75rem 1rem;
+                white-space: nowrap;
+            }
         }
     </style>
 </head>

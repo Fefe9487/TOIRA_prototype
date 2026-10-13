@@ -416,3 +416,61 @@ body {
         }
 
 @media print { .usage-guide { display: none !important; } }
+
+/* --------------------------------------------------------------- 手機版共用響應式（20261013a） */
+
+@media (max-width: 768px) {
+    .t-app-bar {
+        padding: 12px 12px 0;
+    }
+
+    .t-app-bar__row {
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+
+    .t-app-bar__title {
+        font-size: 19px;
+    }
+
+    .t-tabs {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .t-tab {
+        flex: 1 0 auto;
+        padding: 10px 14px;
+        font-size: 14px;
+        white-space: nowrap;
+    }
+
+    .t-section-title {
+        font-size: 17px;
+    }
+
+    .t-toast-host {
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+    }
+}
+
+@media (max-width: 640px) {
+    /* 手機輸入框至少 16px，避免 iOS 對焦時自動放大 */
+    .t-input,
+    select,
+    textarea {
+        font-size: 16px;
+    }
+
+    .t-btn--lg {
+        padding: 13px 20px;
+        font-size: 16px;
+    }
+
+    .t-note {
+        padding: 12px 14px;
+        font-size: 14px;
+    }
+}

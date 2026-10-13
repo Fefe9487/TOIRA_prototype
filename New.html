@@ -7,7 +7,7 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <title>危害辨識與風險評估系統</title>
-    <link rel="stylesheet" href="theme.css?v=20261011b">
+    <link rel="stylesheet" href="theme.css?v=20261013a">
     <script src="usage-guide.js?v=20261011d" defer></script>
     <script src="vendor/jszip.min.js" defer></script>
     <script src="xlsx-export.js?v=20261011c" defer></script>
@@ -1311,6 +1311,134 @@
                 box-shadow: none;
                 padding: 0;
                 max-width: 100%;
+            }
+        }
+
+        /* --------------------------------------------------- 手機版（20261013a）：評估頁直式堆疊 */
+
+        @media (max-width: 860px) {
+            .container {
+                padding: 0 12px;
+            }
+
+            .assessment-container {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                position: static;
+                width: 100%;
+                max-height: 300px;
+            }
+
+            .result-grid {
+                grid-template-columns: minmax(0, 1fr);
+            }
+
+            .report-meta {
+                grid-template-columns: 1fr;
+            }
+
+            .report-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .custom-hazard-list {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .t-app-bar__tools {
+                width: 100%;
+                margin-left: 0;
+                justify-content: flex-start;
+                flex-wrap: wrap;
+            }
+
+            .t-app-bar__title {
+                font-size: 19px;
+            }
+
+            .stat-sev-switch {
+                max-width: 100%;
+            }
+
+            .search-bar {
+                flex-direction: column;
+            }
+
+            .search-bar .t-btn {
+                width: 100%;
+            }
+
+            .content-title {
+                font-size: 18px;
+            }
+
+            .hazard-card {
+                padding: 16px 14px;
+            }
+
+            .hazard-group-title {
+                font-size: 16px;
+            }
+
+            /* 手機勾選框放大到好點的尺寸 */
+            .hazard-item {
+                padding: 14px 12px;
+            }
+
+            .hazard-item::before {
+                width: 22px;
+                height: 22px;
+            }
+
+            .risk-header {
+                flex-wrap: wrap;
+            }
+
+            .risk-factors {
+                flex-wrap: wrap;
+                gap: 10px 14px;
+            }
+
+            .content-actions .t-btn {
+                flex: 1 1 auto;
+            }
+
+            .manual-controls {
+                gap: 10px;
+            }
+
+            .report-container {
+                padding: 22px 14px;
+            }
+
+            table.report-table {
+                display: block;
+                max-width: 100%;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            table.report-table th,
+            table.report-table td {
+                padding: 8px;
+            }
+
+            .modal-overlay {
+                padding: 16px 8px;
+            }
+
+            .scope-warning {
+                padding: 12px 14px;
+                font-size: 13px;
+            }
+
+            .site-disclaimer {
+                margin: 24px 12px 40px;
+                padding: 18px 14px 20px;
             }
         }
     </style>

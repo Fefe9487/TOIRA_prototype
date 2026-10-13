@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>選擇行業模板</title>
-    <link rel="stylesheet" href="theme.css?v=20261011b">
+    <link rel="stylesheet" href="theme.css?v=20261013a">
     <script src="usage-guide.js?v=20261011d" defer></script>
     <style>
         body {
@@ -196,6 +196,10 @@
         }
 
         @media (max-width: 720px) {
+            body {
+                padding: 24px 12px 48px;
+            }
+
             .page-head__help {
                 width: 100%;
                 margin-left: 0;
@@ -203,6 +207,21 @@
 
             .sheet {
                 padding: 22px 16px 28px;
+            }
+
+            .industry-grid {
+                padding: 12px;
+            }
+
+            .industry-card {
+                min-height: 0;
+                padding: 18px 14px;
+            }
+
+            .custom-block__action .t-btn--lg {
+                width: 100%;
+                padding: 14px 20px;
+                font-size: 16px;
             }
         }
     </style>

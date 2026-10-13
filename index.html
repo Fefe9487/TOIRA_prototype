@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>線上風險評估精靈</title>
-    <link rel="stylesheet" href="theme.css?v=20261011b">
+    <link rel="stylesheet" href="theme.css?v=20261013a">
     <script src="usage-guide.js?v=20261011d" defer></script>
     <style>
         body {
@@ -81,6 +81,38 @@
             display: flex;
             justify-content: flex-end;
             margin-top: 38px;
+        }
+
+        /* 手機版（20261013a）：表單直式堆疊 */
+        @media (max-width: 640px) {
+            body {
+                padding: 0 12px 48px;
+            }
+
+            header {
+                padding: 28px 0 18px;
+            }
+
+            header h1 {
+                font-size: 23px;
+            }
+
+            .card {
+                padding: 24px 18px 28px;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+
+            .full-width {
+                grid-column: auto;
+            }
+
+            .footer-actions .t-btn {
+                width: 100%;
+            }
         }
     </style>
 </head>
