@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>TOIRA 常見問答</title>
 <link rel="stylesheet" href="theme.css?v=20261013a">
-<link rel="stylesheet" href="qa.css?v=20261011e">
+<link rel="stylesheet" href="qa.css?v=20261015a">
 <script src="qa.js?v=20261011e" defer>
 </script>
 </head>
@@ -24,14 +24,14 @@
 <p class="qa-eyebrow">使用協助</p>
 <h1>常見問答 <span>Q&amp;A</span>
 </h1>
-<p>查詢評估方式、改善責任與資料使用說明。</p>
+<p>查詢作業範圍、防護措施、風險分級與資料保存。</p>
 </div>
-<small>更新日期：2026/10/11</small>
+<small>更新日期：2026/10/13</small>
 </div>
 <form id="qaSearchForm" class="qa-search" role="search">
 <label for="qaSearch">關鍵字搜尋</label>
 <div class="qa-search-row">
-<input class="t-input" id="qaSearch" type="search" placeholder="輸入關鍵字或題號，例如：AI、手動調降、Q13" autocomplete="off" aria-describedby="qaSearchHint">
+<input class="t-input" id="qaSearch" type="search" placeholder="輸入關鍵字或題號，例如：必要設施、手動評估、Q27" autocomplete="off" aria-describedby="qaSearchHint">
 <button class="t-btn t-btn--primary" type="submit">搜尋</button>
 <button class="t-btn t-btn--ghost" id="qaClearSearch" type="button" hidden>清除</button>
 </div>
@@ -43,48 +43,52 @@
 <nav class="qa-categories" aria-label="篩選問答">
 <button type="button" class="qa-category active" data-category-filter="all" aria-pressed="true">
 <span>全部問答</span>
-<b>27</b>
+<b>45</b>
 </button>
-<button type="button" class="qa-category" data-category-filter="usage" aria-pressed="false">
-<span>使用方式</span>
+<button type="button" class="qa-category" data-category-filter="source" aria-pressed="false">
+<span>認識 TOIRA 與資料來源</span>
 <b>4</b>
 </button>
-<button type="button" class="qa-category" data-category-filter="rating" aria-pressed="false">
-<span>風險分級</span>
-<b>6</b>
+<button type="button" class="qa-category" data-category-filter="scope" aria-pressed="false">
+<span>開始評估與作業範圍</span>
+<b>9</b>
 </button>
 <button type="button" class="qa-category" data-category-filter="controls" aria-pressed="false">
-<span>改善與責任</span>
-<b>4</b>
+<span>防護措施與必要設施</span>
+<b>6</b>
 </button>
-<button type="button" class="qa-category" data-category-filter="data" aria-pressed="false">
-<span>AI 與資料</span>
-<b>4</b>
+<button type="button" class="qa-category" data-category-filter="rating" aria-pressed="false">
+<span>風險分級與判斷</span>
+<b>11</b>
+</button>
+<button type="button" class="qa-category" data-category-filter="improve" aria-pressed="false">
+<span>改善措施與評估更新</span>
+<b>5</b>
 </button>
 <button type="button" class="qa-category" data-category-filter="reports" aria-pressed="false">
-<span>報表與保存</span>
-<b>2</b>
+<span>報表與資料保存</span>
+<b>6</b>
 </button>
-<button type="button" class="qa-category" data-category-filter="about" aria-pressed="false">
-<span>功能與資料來源</span>
-<b>7</b>
+<button type="button" class="qa-category" data-category-filter="ai" aria-pressed="false">
+<span>AI 使用與問題回報</span>
+<b>4</b>
 </button>
 </nav>
 </aside>
 <div class="qa-results" id="qaResults">
 <div class="qa-toolbar">
-<p id="qaResultCount" role="status" aria-live="polite">全部問答，共 27 題</p>
+<p id="qaResultCount" role="status" aria-live="polite">全部問答，共 45 題</p>
 <div>
 <button type="button" id="qaExpandAll">全部展開</button>
 <button type="button" id="qaCollapseAll">全部收合</button>
 </div>
 </div>
-<section class="qa-group" aria-labelledby="group-usage">
+<section class="qa-group" aria-labelledby="group-source">
 <div class="qa-group-head">
-<h2 id="group-usage">使用方式</h2>
+<h2 id="group-source">認識 TOIRA 與資料來源</h2>
 <span class="qa-group-count">4 題</span>
 </div>
-<details class="qa-item" id="q1" data-category="usage" data-keywords="適用 範圍 中小企業 限制" open>
+<details class="qa-item" id="q1" data-category="source" data-keywords="是什麼 適合 中小企業 微型 自營 危險性工作場所" open>
 <summary>
 <span class="qa-number">Q01</span>
 <span class="qa-question">TOIRA 是什麼？適合誰使用？</span>
@@ -92,75 +96,56 @@
 </span>
 </summary>
 <div class="qa-answer">
-<p>TOIRA 是台灣線上互動式風險評估輔助工具，以常見作業的具體危害情境，引導使用者確認現有防護措施與應採取之預防設施，協助進行初步、定性的風險評估。</p>
-<p>主要協助中小企業與自營作業者降低評估門檻。以員工 100 人以下、較缺乏風險評估專業資源的事業單位為設計重點；仍應由具相關能力的人員依現場條件覆核。</p>
-<p>複雜且高風險的作業場所，以及須辦理危險性工作場所申請、定期評估或製程修改的情況，應另依適用要求完成系統化評估。</p>
-<details class="qa-figure-details">
-<summary>圖解：使用指南與重要須知<span>展開圖片</span>
-</summary>
-<figure class="qa-figure">
-<a class="qa-image-trigger" href="assets/qa/toira-usage-guide.png" target="_blank" rel="noopener" data-qa-image data-title="使用指南與重要須知" aria-label="放大圖片：使用指南與重要須知">
-<img src="assets/qa/toira-usage-guide.png" width="1767" height="1656" alt="使用指南說明中小企業的初步評估、適用限制、現場覆核與雇主責任。" loading="lazy" decoding="async">
-<span class="qa-image-hint">點圖放大</span>
-</a>
-<figcaption>圖卡中的 100 人以下為產品設計重點；是否須採完整法定評估，仍應依事業規模、危害性質及適用要求確認。
-</figcaption>
-</figure>
-</details>
+<p>TOIRA 是臺灣線上互動式風險評估輔助工具，提供常見作業的危害情境和防護措施，協助使用者依現場情況逐項確認，不必從空白表格開始填寫。</p>
+<p>TOIRA 主要協助中小型企業、微型企業及自營作業者進行作業風險評估。危險性工作場所或高度複雜的作業，仍應依適用規定選用合適的評估方法。</p>
 <div class="qa-answer-actions">
 <a href="#q1" aria-label="Q1 的固定連結">題目連結</a>
 <button type="button" data-close-question="q1">收合本題</button>
 </div>
 </div>
 </details>
-<details class="qa-item" id="q2" data-category="usage" data-keywords="流程 操作 使用說明">
+<details class="qa-item" id="q2" data-category="source" data-keywords="自行填寫 傳統 差異 空白表格 現場調查">
 <summary>
 <span class="qa-number">Q02</span>
-<span class="qa-question">如何開始評估一項作業？</span>
+<span class="qa-question">TOIRA 與自行填寫風險評估表有何不同？</span>
 <span class="qa-toggle" aria-hidden="true">
 </span>
 </summary>
 <div class="qa-answer">
-<p>填寫公司資料後，依行業挑選作業，或自行從資料庫加入符合現場的項目。評估流程如下：</p>
-<ol class="qa-answer-list">
-<li>確認作業範圍與實際設備、材料及人員配置。</li>
-<li>選擇符合現場的危害情境，並補充未涵蓋的危害。</li>
-<li>勾選已備有且實際有效落實的防護措施。</li>
-<li>檢視系統風險等級與應採取之預防設施；若手動調整，補上現場依據與備註。</li>
-<li>確認評估內容後儲存專案，匯出 Excel 或 PDF 報表，並追蹤改善完成情形。</li>
-</ol>
+<p>自行填表須從作業步驟開始，逐一辨識危害、評估風險並提出改善措施。TOIRA 先提供常見情境及措施，讓使用者挑選、確認，再補上現場特有的內容。</p>
+<p>TOIRA 可以減少整理資料的時間，惟現場調查、評估確認及改善追蹤仍須由事業單位完成。</p>
 <div class="qa-answer-actions">
 <a href="#q2" aria-label="Q2 的固定連結">題目連結</a>
 <button type="button" data-close-question="q2">收合本題</button>
 </div>
 </div>
 </details>
-<details class="qa-item" id="q3" data-category="usage" data-keywords="自訂 新增 查無">
+<details class="qa-item" id="q3" data-category="source" data-keywords="資料來源 法規 指引 職災 生成式 AI 專家審查">
 <summary>
 <span class="qa-number">Q03</span>
-<span class="qa-question">找不到符合現場的作業或危害，怎麼辦？</span>
+<span class="qa-question">TOIRA 的作業資料從哪裡來？</span>
 <span class="qa-toggle" aria-hidden="true">
 </span>
 </summary>
 <div class="qa-answer">
-<p>可使用資料庫關鍵字查詢，或新增自定義製程、危害情境及預防設施。</p>
-<p>自訂情境不自動評分，應自行選擇嚴重度與可能性，並由具相關能力的人員確認；未評分者在報表中顯示「未評估」。</p>
+<p>TOIRA 編製作業資料時，先界定作業內容，再參考安全衛生法規、技術指引及職災案例，應用生成式 AI 輔助整理危害情境與防護措施，並安排專家審查及修訂。</p>
+<p>TOIRA 描述的是常見作業情況，使用者仍須補上現場設備、材料及操作方式的差異。</p>
 <div class="qa-answer-actions">
 <a href="#q3" aria-label="Q3 的固定連結">題目連結</a>
 <button type="button" data-close-question="q3">收合本題</button>
 </div>
 </div>
 </details>
-<details class="qa-item" id="q4" data-category="usage" data-keywords="審查 品質 專家">
+<details class="qa-item" id="q4" data-category="source" data-keywords="專家審查 正確性 作業型態 確認">
 <summary>
 <span class="qa-number">Q04</span>
-<span class="qa-question">公版內容如何由專家把關？</span>
+<span class="qa-question">TOIRA 的作業內容有經過專家審查嗎？</span>
 <span class="qa-toggle" aria-hidden="true">
 </span>
 </summary>
 <div class="qa-answer">
-<p>公版作業資料於建置階段使用 AI 輔助撰寫，須經專家逐筆審查後，才提供正式查詢與評估使用。</p>
-<p>審查重點包括作業範圍、危害情境、預防設施、法規與實務的適切性，以及風險分級的合理性。使用者仍須依現場設備與作業條件確認及修正。</p>
+<p>TOIRA 提供的作業內容應用 AI 輔助整理，再由專家檢查作業範圍、危害情境、防護措施及風險分級，修正不符合現場實務的內容。</p>
+<p>TOIRA 編製過程已盡可能檢核內容的正確性，惟作業型態多變，使用者仍應確認內容是否符合自己的設備和作業方式。</p>
 <div class="qa-answer-actions">
 <a href="#q4" aria-label="Q4 的固定連結">題目連結</a>
 <button type="button" data-close-question="q4">收合本題</button>
@@ -168,188 +153,144 @@
 </div>
 </details>
 </section>
-<section class="qa-group" aria-labelledby="group-rating">
+<section class="qa-group" aria-labelledby="group-scope">
 <div class="qa-group-head">
-<h2 id="group-rating">風險分級</h2>
-<span class="qa-group-count">6 題</span>
+<h2 id="group-scope">開始評估與作業範圍</h2>
+<span class="qa-group-count">9 題</span>
 </div>
-<details class="qa-item" id="q5" data-category="rating" data-keywords="演算法 矩陣 計算 AI">
+<details class="qa-item" id="q5" data-category="scope" data-keywords="誰來填 現場主管 操作人員 安全衛生 雇主">
 <summary>
 <span class="qa-number">Q05</span>
-<span class="qa-question">風險等級是由 AI 即時計算的嗎？</span>
+<span class="qa-question">誰適合填寫和確認這份評估？</span>
 <span class="qa-toggle" aria-hidden="true">
 </span>
 </summary>
 <div class="qa-answer">
-<p>風險等級由固定的 5×5 嚴重度 S／可能性 P 矩陣查得。一般評估、QA 查詢與報表匯出均不呼叫 AI。</p>
-<p>嚴重度的參考資料與現場措施勾選共同影響結果；風險等級不是現場事故機率的實測值。</p>
+<p>建議由熟悉作業的人員參與，包括現場主管、實際操作人員及安全衛生人員。操作人員可以補充實際做法，安全衛生人員協助確認危害與措施是否完整。</p>
+<p>TOIRA 提供評估內容及操作工具，不能取代現場人員的判斷。完成後應由事業單位確認評估結果及改善安排，並由雇主落實適用的安全衛生義務。</p>
 <div class="qa-answer-actions">
 <a href="#q5" aria-label="Q5 的固定連結">題目連結</a>
 <button type="button" data-close-question="q5">收合本題</button>
 </div>
 </div>
 </details>
-<details class="qa-item" id="q6" data-category="rating" data-keywords="切換 比較 統計 S2 S3 S4 S5">
+<details class="qa-item" id="q6" data-category="scope" data-keywords="開始 流程 行業模板 資料庫 關鍵字 儲存資料 Excel PDF">
 <summary>
 <span class="qa-number">Q06</span>
-<span class="qa-question">嚴重度開關開啟、關閉有何不同？</span>
+<span class="qa-question">如何使用 TOIRA 開始評估一項作業？</span>
 <span class="qa-toggle" aria-hidden="true">
 </span>
 </summary>
 <div class="qa-answer">
-<p>原型保留比較開關。關閉時採生成時的情境估算；開啟時採 110–114 年（5 年）職災統計與分級規則，公版參考等級為 S2–S5。</p>
-<p>立即危險類型採 S5；職業病可恢復採 S4、不可恢復採 S5。</p>
-<p>切換開關不會覆寫使用者已設定的手動評估。報表會標示當次嚴重度來源。</p>
+<p>使用者填寫公司資料後，可選擇 TOIRA 的行業模板，或從 TOIRA 作業資料庫自行加入項目。TOIRA 作業資料庫支援關鍵字搜尋，使用者可依作業內容查找適合的項目。</p>
+<p>選取現場會發生的危害情境後，勾選已做到的防護措施，再檢查 TOIRA 顯示的風險等級與待改善項目。完成後按「儲存資料」，並下載 Excel 或 PDF 報表留存。</p>
 <div class="qa-answer-actions">
 <a href="#q6" aria-label="Q6 的固定連結">題目連結</a>
 <button type="button" data-close-question="q6">收合本題</button>
 </div>
 </div>
 </details>
-<details class="qa-item" id="q7" data-category="rating" data-keywords="停工 墜落 感電 倒塌 崩塌 火災 爆炸 中毒 缺氧">
+<details class="qa-item" id="q7" data-category="scope" data-keywords="行業模板 不符合 增減 換料 清潔 維修 異常">
 <summary>
 <span class="qa-number">Q07</span>
-<span class="qa-question">S5 是否代表現場一定有立即危險，必須停工？</span>
-<span class="qa-law-badge">附法條</span>
+<span class="qa-question">TOIRA 的行業模板沒有完全符合現場，怎麼辦？</span>
 <span class="qa-toggle" aria-hidden="true">
 </span>
 </summary>
 <div class="qa-answer">
-<p>S5 是本工具的後果嚴重度分級，不等於現場已符合法定的立即危險情事。</p>
-<p>認定標準列出墜落、感電、倒塌崩塌、火災爆炸及中毒缺氧等類型；是否有立即危險，仍須依各類型的法定具體情事與現場防護判斷。</p>
-<p>現場確有立即危險時，應即停止相關作業並退避，不得等待矩陣評分或改善期限。</p>
-<details class="qa-law">
-<summary>立即發生危險之虞認定標準第 2 條｜展開條文全文</summary>
-<div class="qa-law-body">
-<p>有立即發生危險之虞之類型如下：<br>一、墜落。<br>二、感電。<br>三、倒塌、崩塌。<br>四、火災、爆炸。<br>五、中毒、缺氧。</p>
-<p>
-<a href="https://laws.mol.gov.tw/FLAW/FLAWDOC01.aspx?flno=2&amp;id=FL022800" target="_blank" rel="noopener">查看官方法規（另開分頁）</a>
-</p>
-<small>查核日期：2026/10/11。適用內容以主管機關公告為準。</small>
-</div>
-</details>
+<p>TOIRA 的行業模板提供常見作業的起始清單。使用者可選相近的模板，再加入缺少的作業、移除現場沒有的項目，也可直接從 TOIRA 作業資料庫選取作業。</p>
+<p>除了正常操作，使用者也應確認換料、清潔、維修及異常處理等作業是否漏列。</p>
 <div class="qa-answer-actions">
 <a href="#q7" aria-label="Q7 的固定連結">題目連結</a>
 <button type="button" data-close-question="q7">收合本題</button>
 </div>
 </div>
 </details>
-<details class="qa-item" id="q8" data-category="rating" data-keywords="恢復 聽力 職業病 S4 S5">
+<details class="qa-item" id="q8" data-category="scope" data-keywords="找不到 自訂 未評估 關鍵字搜尋">
 <summary>
 <span class="qa-number">Q08</span>
-<span class="qa-question">職業病的 S4、S5 如何區分？</span>
+<span class="qa-question">在 TOIRA 找不到符合現場的作業或危害，怎麼辦？</span>
 <span class="qa-toggle" aria-hidden="true">
 </span>
 </summary>
 <div class="qa-answer">
-<p>本次分級規則為可恢復的職業病採 S4，不可恢復的職業病採 S5。</p>
-<p>同一情境若含多種健康後果，應依較嚴重的合理可預見後果評估。可恢復性應由具職業衛生或職業醫學能力的人員確認。</p>
-<p>職業病的風險分級供危害辨識使用，不能視為醫療診斷。</p>
+<p>使用者可先在 TOIRA 以關鍵字搜尋相近作業。仍找不到時，可新增自訂作業或危害情境，填入可能造成的傷害及防護措施。</p>
+<p>TOIRA 的自訂情境須由使用者自行選擇嚴重度及可能性。尚未完成評分時，TOIRA 會在報表中顯示「未評估」。</p>
 <div class="qa-answer-actions">
 <a href="#q8" aria-label="Q8 的固定連結">題目連結</a>
 <button type="button" data-close-question="q8">收合本題</button>
 </div>
 </div>
 </details>
-<details class="qa-item" id="q9" data-category="rating" data-keywords="P1 P2 P3 P4 P5 核心 工程 管理 比例">
+<details class="qa-item" id="q9" data-category="scope" data-keywords="正常操作 清潔 換料 維修 停機 異常 護罩">
 <summary>
 <span class="qa-number">Q09</span>
-<span class="qa-question">勾選防護措施後，可能性如何改變？</span>
+<span class="qa-question">只評估正常操作就夠嗎？清潔、維修也要一併評估嗎？</span>
 <span class="qa-toggle" aria-hidden="true">
 </span>
 </summary>
 <div class="qa-answer">
-<p>有情境對照且標示必要設施時，只看這一則情境所對應的措施，依下列順序判斷，先符合的條件先採用：</p>
-<ul class="qa-answer-list">
-<li>P5：必要設施、工程及管理措施都未落實。</li>
-<li>P4：已落實部分措施，但仍有任一必要設施未完成。</li>
-<li>P2：必要設施全部完成，且該情境有工程措施、工程措施也全部完成。</li>
-<li>P3：必要設施全部完成，但工程措施未全做，或該情境沒有工程措施。</li>
-</ul>
-<p>必要設施可以分屬工程、管理或個人防護；只要標示為必要，就納入是否完成的判斷。一般管理措施及未標示必要的個人防護具，不會改變上述 P2 的判定條件。</p>
-<p>有情境對照但未標示必要設施時，依工程／管理措施完成狀況分級，系統自動評分最低為 P3。無情境對照時則按公版措施勾選比例：全做 P2、至少一半 P3、有做但不足一半 P4、未做 P5。</p>
-<p>P1 不會自動出現，只能由使用者手動評估。措施須確實有效落實，不能為了降低分數而勾選尚未完成的項目。</p>
-<details class="qa-figure-details">
-<summary>圖解：必要設施情境的可能性判定流程<span>展開圖片</span>
-</summary>
-<figure class="qa-figure">
-<a class="qa-image-trigger" href="assets/qa/toira-probability-flow.png" target="_blank" rel="noopener" data-qa-image data-title="必要設施情境的可能性判定流程" aria-label="放大圖片：必要設施情境的可能性判定流程">
-<img src="assets/qa/toira-probability-flow.png" width="1578" height="996" alt="流程依必要設施、工程與管理措施的完成情形判定 P5、P4、P3 或 P2，P1 僅由手動設定。" loading="lazy" decoding="async">
-<span class="qa-image-hint">點圖放大</span>
-</a>
-<figcaption>P2 以必要設施完整且工程措施全部完成為條件；一般管理措施或未標必要的個人防護具不影響此條件。判定順序詳見上方文字。
-</figcaption>
-</figure>
-</details>
+<p>清潔、換料、維修、停機及異常處理，可能有正常操作時沒有的危害，也應納入評估。</p>
+<p>例如機器運轉時有護罩，維修時卻須拆開並接近傳動部件，兩者的危害和防護不同。使用者應在 TOIRA 分別確認相關情境，必要時新增內容。</p>
 <div class="qa-answer-actions">
 <a href="#q9" aria-label="Q9 的固定連結">題目連結</a>
 <button type="button" data-close-question="q9">收合本題</button>
 </div>
 </div>
 </details>
-<details class="qa-item" id="q10" data-category="rating" data-keywords="剩餘 殘餘 預估 驗收 完成">
+<details class="qa-item" id="q10" data-category="scope" data-keywords="承攬 承攬商 共同作業 動火 清槽">
 <summary>
 <span class="qa-number">Q10</span>
-<span class="qa-question">「預估處理後之風險」可以當作改善完成證明嗎？</span>
+<span class="qa-question">承攬商的作業也要放進評估嗎？</span>
 <span class="qa-toggle" aria-hidden="true">
 </span>
 </summary>
 <div class="qa-answer">
-<p>不可以。該欄假設應採取的措施已完整落實且有效，用於預估處理後的風險。</p>
-<p>改善完成後仍應確認設備、措施與人員執行狀況，留下查核與驗收紀錄，再重新評估現場風險。</p>
+<p>評估時應一併確認承攬作業帶來的危害，尤其是與原有作業互相影響的部分，例如動火附近仍有可燃物、清槽時其他設備仍在送料。</p>
+<p>不能因為承攬商另有一份評估表，就略過共同作業的影響。使用者在 TOIRA 整理評估內容時，也應確認各方的作業範圍、防護措施及現場協調方式。</p>
 <div class="qa-answer-actions">
 <a href="#q10" aria-label="Q10 的固定連結">題目連結</a>
 <button type="button" data-close-question="q10">收合本題</button>
 </div>
 </div>
 </details>
-</section>
-<section class="qa-group" aria-labelledby="group-controls">
-<div class="qa-group-head">
-<h2 id="group-controls">改善與責任</h2>
-<span class="qa-group-count">4 題</span>
-</div>
-<details class="qa-item" id="q11" data-category="controls" data-keywords="勾選 已做到 已完成 防護">
+<details class="qa-item" id="q11" data-category="scope" data-keywords="共用 不同設備 不同地點 分別記錄">
 <summary>
 <span class="qa-number">Q11</span>
-<span class="qa-question">「現有(已備有)防護措施」應如何勾選？</span>
+<span class="qa-question">同一項作業在不同設備或地點，可以共用一份評估嗎？</span>
 <span class="qa-toggle" aria-hidden="true">
 </span>
 </summary>
 <div class="qa-answer">
-<p>僅勾選現場已備有、正在使用且有效落實的措施。尚在採購、排程、規劃或承諾中的措施，應保留為待改善。</p>
-<p>勾選是一項現況紀錄，不能取代現場查核與執行證據。</p>
+<p>只有設備、作業方式、危害及防護條件相近時，才適合共用評估內容；差異會影響風險時，應分別記錄。</p>
+<p>即使 TOIRA 的作業名稱相同，也可能因高度、物料、空間或能量來源不同，而需要不同的評估及措施。</p>
 <div class="qa-answer-actions">
 <a href="#q11" aria-label="Q11 的固定連結">題目連結</a>
 <button type="button" data-close-question="q11">收合本題</button>
 </div>
 </div>
 </details>
-<details class="qa-item" id="q12" data-category="controls" data-keywords="法律 法規 義務 懲處 裁罰 12-1 改善">
+<details class="qa-item" id="q12" data-category="scope" data-keywords="核心重點 局限空間 有害物 感電 火災 爆炸 工具箱會議">
 <summary>
 <span class="qa-number">Q12</span>
-<span class="qa-question">「應採取之預防設施」未完成會被處罰嗎？</span>
-<span class="qa-law-badge">附法條</span>
+<span class="qa-question">TOIRA 的「核心重點」是什麼？只看這些就好嗎？</span>
 <span class="qa-toggle" aria-hidden="true">
 </span>
 </summary>
 <div class="qa-answer">
-<p>雇主應依實際危害與適用法令實施風險評估，並採取必要的預防設備及措施；本工具的勾選或分數不會免除這項義務。</p>
-<p>是否違法或受裁罰，須依未落實的事項、適用法條與現場事實認定。不是按下勾選就自動產生一項新的罰則，也不能以取消勾選規避原有義務。</p>
-<p>請將必要設施列入改善計畫，確認負責人、期限、暫時防護與完成查核。</p>
-<details class="qa-law">
-<summary>職業安全衛生管理辦法第 12 條之 1｜展開條文全文</summary>
-<div class="qa-law-body">
-<p>雇主使勞工從事工作前，應就工作場所內之建築物、機械、設備、器具、原料、材料等或作業活動及其他可能引起之危害因素實施風險評估，並依評估結果，採取必要之預防設備及措施。</p>
-<p>雇主應依其事業單位之規模、性質及前項風險評估結果，訂定職業安全衛生管理計畫，要求各級主管依其職責指揮、監督所屬人員執行；勞工人數未滿三十人之事業單位，得以安全衛生管理執行紀錄或文件代替職業安全衛生管理計畫。</p>
-<p>勞工人數在一百人以上之事業單位，應另訂定職業安全衛生管理規章。</p>
-<p>第二項職業安全衛生管理計畫，應包括下列事項：<br>一、機械、設備或器具之管理。<br>二、危害性化學品之分類、標示、通識及管理。<br>三、有害作業環境之採樣策略規劃及監測。<br>四、危險性工作場所之製程或施工安全評估。<br>五、採購管理、承攬管理及變更管理。<br>六、安全衛生作業標準。<br>七、定期檢查、重點檢查、作業檢點及現場巡視。<br>八、安全衛生教育訓練。<br>九、個人防護具之管理。<br>十、健康檢查、管理及促進。<br>十一、安全衛生資訊之蒐集、分享及運用。<br>十二、緊急應變措施。<br>十三、職業災害、虛驚事故、影響身心健康事件之調查處理及統計分析。<br>十四、安全衛生管理稽核及績效評估措施。<br>十五、其他安全衛生管理措施。</p>
-<p>第二項職業安全衛生管理事項之執行，應作成紀錄，並保存三年。</p>
-<p>
-<a href="https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=N0060027&amp;flno=12-1" target="_blank" rel="noopener">查看官方法規（另開分頁）</a>
-</p>
-<small>查核日期：2026/10/11。適用內容以主管機關公告為準。</small>
-</div>
+<p>TOIRA 的「核心重點」標示法規指定或常見情境下，該作業應優先檢視的危害類型。例如局限空間常見有害物接觸、感電、火災及爆炸等危害。</p>
+<p>使用者仍應確認所有適用的危害類型，並落實必要措施。作業前可再利用 TOIRA 標示的核心重點快速檢閱，作為工具箱會議或危害告知的整理依據。</p>
+<details class="qa-figure-details">
+<summary>圖解：核心重點與危害情境示意<span>展開圖片</span>
+</summary>
+<figure class="qa-figure">
+<a class="qa-image-trigger" href="assets/qa/toira-core-hazards.png" target="_blank" rel="noopener" data-qa-image data-title="核心重點與危害情境示意" aria-label="放大圖片：核心重點與危害情境示意">
+<img src="assets/qa/toira-core-hazards.png" width="1212" height="682" alt="局限空間有害物接觸的危害組標示核心重點，並列出可能中毒或缺氧的具體情境。" loading="lazy" decoding="async">
+<span class="qa-image-hint">點圖放大</span>
+</a>
+<figcaption>圖中為局限空間的有害物接觸。核心重點供優先檢視，仍須確認其他適用危害。
+</figcaption>
+</figure>
 </details>
 <div class="qa-answer-actions">
 <a href="#q12" aria-label="Q12 的固定連結">題目連結</a>
@@ -357,46 +298,443 @@
 </div>
 </div>
 </details>
-<details class="qa-item" id="q13" data-category="controls" data-keywords="備註 手動 調降 降低 紅色 警告">
+<details class="qa-item" id="q13" data-category="scope" data-keywords="沒勾 取消選取 不存在 排除 報表">
 <summary>
 <span class="qa-number">Q13</span>
-<span class="qa-question">使用者可以自行調低風險等級嗎？</span>
+<span class="qa-question">沒有勾選 TOIRA 的危害情境，就代表風險不存在嗎？</span>
 <span class="qa-toggle" aria-hidden="true">
 </span>
 </summary>
 <div class="qa-answer">
-<p>原型提供手動評估，應依現場事實填寫「調整理由／備註」，說明措施有效性與調整依據。</p>
-<p>自行調降者應承擔其調整及作業決策責任。調低分數不代表現場危害已降低，亦不免除法定安全衛生與防護義務。</p>
-<p>手動調整的現況值與預估處理後之風險，以及調整說明，會在報表中以紅色標示。</p>
-<details class="qa-figure-details">
-<summary>圖解：手動評估操作示意<span>展開圖片</span>
-</summary>
-<figure class="qa-figure">
-<a class="qa-image-trigger" href="assets/qa/toira-manual-rating.png" target="_blank" rel="noopener" data-qa-image data-title="手動評估操作示意" aria-label="放大圖片：手動評估操作示意">
-<img src="assets/qa/toira-manual-rating.png" width="1204" height="607" alt="手動評估提供嚴重度與可能性的選單，手動風險值以紅色顯示。" loading="lazy" decoding="async">
-<span class="qa-image-hint">點圖放大</span>
-</a>
-<figcaption>實際調整時須依現場事實補上調整理由／備註，並確認報表中的手動標記。
-</figcaption>
-</figure>
-</details>
+<p>不是。TOIRA 只會將選取的情境列入本次報表；取消選取不會改變現場狀況。</p>
+<p>只有確認作業沒有這種情境，或危害已實際消除時，才應排除。使用者不能為了降低報表中的風險項目，取消仍存在的危害。</p>
 <div class="qa-answer-actions">
 <a href="#q13" aria-label="Q13 的固定連結">題目連結</a>
 <button type="button" data-close-question="q13">收合本題</button>
 </div>
 </div>
 </details>
-<details class="qa-item" id="q14" data-category="controls" data-keywords="緊急 撤離 停止 退避 通報">
+</section>
+<section class="qa-group" aria-labelledby="group-controls">
+<div class="qa-group-head">
+<h2 id="group-controls">防護措施與必要設施</h2>
+<span class="qa-group-count">6 題</span>
+</div>
+<details class="qa-item" id="q14" data-category="controls" data-keywords="必要設施 工程改善 管理控制 個人防護 分類">
 <summary>
 <span class="qa-number">Q14</span>
-<span class="qa-question">現場有立即危險時，應先填表還是先處置？</span>
+<span class="qa-question">TOIRA 的「必要設施」與工程、管理、個人防護有何不同？</span>
+<span class="qa-toggle" aria-hidden="true">
+</span>
+</summary>
+<div class="qa-answer">
+<p>TOIRA 的「必要設施」是控制該情境危害不可缺少的設備及措施，通常依據法規要求或工程實務標示。必要設施可以屬於工程改善、管理控制或個人防護，同一情境也可能有多項必要設施。</p>
+<p>工程、管理及個人防護是措施的分類；必要設施則標示措施的必要性。TOIRA 未標示為必要設施的措施，也應依現場需求及法規要求確認是否需要落實。</p>
+<div class="qa-answer-actions">
+<a href="#q14" aria-label="Q14 的固定連結">題目連結</a>
+<button type="button" data-close-question="q14">收合本題</button>
+</div>
+</div>
+</details>
+<details class="qa-item" id="q15" data-category="controls" data-keywords="現有 已備有 勾選 護罩 待改善 落實">
+<summary>
+<span class="qa-number">Q15</span>
+<span class="qa-question">TOIRA 的「現有（已備有）防護措施」應如何勾選？</span>
+<span class="qa-toggle" aria-hidden="true">
+</span>
+</summary>
+<div class="qa-answer">
+<p>使用者只應勾選現場已備有、實際使用且能發揮作用的措施。例如護罩已安裝，但作業時經常拆掉，就不能視為已落實；尚在採購、排程或規劃中的措施，先列為待改善。</p>
+<p>TOIRA 標示的必要設施應優先檢視。TOIRA 已盡可能整理該情境可採取的措施，惟作業型態廣泛，使用者也可自行補充現場已落實的措施。</p>
+<div class="qa-answer-actions">
+<a href="#q15" aria-label="Q15 的固定連結">題目連結</a>
+<button type="button" data-close-question="q15">收合本題</button>
+</div>
+</div>
+</details>
+<details class="qa-item" id="q16" data-category="controls" data-keywords="不適用 不勾 補充說明 手動調整">
+<summary>
+<span class="qa-number">Q16</span>
+<span class="qa-question">TOIRA 的某項措施不適用現場，應該勾選還是不勾？</span>
+<span class="qa-toggle" aria-hidden="true">
+</span>
+</summary>
+<div class="qa-answer">
+<p>不要把「不適用」當成「已做到」。使用者應先確認是否選錯危害情境；情境適用但某項措施不適用時，應說明原因及現場實際採用的防護方式。</p>
+<p>TOIRA 目前沒有獨立的「不適用」選項，使用者可補充說明，再由評估人員判斷是否需要手動調整。</p>
+<div class="qa-answer-actions">
+<a href="#q16" aria-label="Q16 的固定連結">題目連結</a>
+<button type="button" data-close-question="q16">收合本題</button>
+</div>
+</div>
+</details>
+<details class="qa-item" id="q17" data-category="controls" data-keywords="替代 取代 法規指定 新增措施 計分">
+<summary>
+<span class="qa-number">Q17</span>
+<span class="qa-question">已採用另一種防護，可以取代 TOIRA 內建的措施嗎？</span>
+<span class="qa-toggle" aria-hidden="true">
+</span>
+</summary>
+<div class="qa-answer">
+<p>使用者應記錄替代做法，確認是否有效控制同一危害並符合適用規定。法規指定的設備或方法，不能僅因自行認為效果相當就改用其他做法。使用者也不能只因名稱相近，就把 TOIRA 內建措施勾成已完成。</p>
+<p>使用者可在 TOIRA 補充替代措施，惟 TOIRA 不會自動將新增內容視為已完成原有的必要設施。新增措施是否參與計分，另依措施分類及完成狀態判定。</p>
+<div class="qa-answer-actions">
+<a href="#q17" aria-label="Q17 的固定連結">題目連結</a>
+<button type="button" data-close-question="q17">收合本題</button>
+</div>
+</div>
+</details>
+<details class="qa-item" id="q18" data-category="controls" data-keywords="新增 自動評分 可能性 工程 個人防護 自訂">
+<summary>
+<span class="qa-number">Q18</span>
+<span class="qa-question">在 TOIRA 新增防護措施，會影響自動評分嗎？</span>
+<span class="qa-toggle" aria-hidden="true">
+</span>
+</summary>
+<div class="qa-answer">
+<p>使用者在 TOIRA 既有情境下新增工程或管理措施後，TOIRA 會依所選分類及完成狀態，判定該情境的可能性。TOIRA 不會自動將新增措施標為必要設施。</p>
+<p>例如新增一項尚未完成的工程措施，可能使「工程全數完成」條件不再成立；新增一般個人防護措施，也不一定改變分數。整則自訂情境仍須由使用者自行評分。</p>
+<div class="qa-answer-actions">
+<a href="#q18" aria-label="Q18 的固定連結">題目連結</a>
+<button type="button" data-close-question="q18">收合本題</button>
+</div>
+</div>
+</details>
+<details class="qa-item" id="q19" data-category="controls" data-keywords="紀錄 檢查 測試 教育訓練 作業許可 查核 證據">
+<summary>
+<span class="qa-number">Q19</span>
+<span class="qa-question">要留下哪些資料，才能說明防護措施確實做到？</span>
+<span class="qa-toggle" aria-hidden="true">
+</span>
+</summary>
+<div class="qa-answer">
+<p>使用者可依措施內容，留存設備檢查、功能測試、教育訓練、作業許可或現場查核紀錄，並記下日期及確認人員。</p>
+<p>在 TOIRA 勾選措施是現況紀錄，仍須有實際執行的依據。例如防護具已發放，不等於作業時都有正確佩戴；護罩有照片，也不等於設備運轉時確實使用。</p>
+<div class="qa-answer-actions">
+<a href="#q19" aria-label="Q19 的固定連結">題目連結</a>
+<button type="button" data-close-question="q19">收合本題</button>
+</div>
+</div>
+</details>
+</section>
+<section class="qa-group" aria-labelledby="group-rating">
+<div class="qa-group-head">
+<h2 id="group-rating">風險分級與判斷</h2>
+<span class="qa-group-count">11 題</span>
+</div>
+<details class="qa-item" id="q20" data-category="rating" data-keywords="嚴重度 S 可能性 P 風險矩陣 風險評估指引 S1 S2 S3 S4 S5 P1 P2 P3 P4 P5">
+<summary>
+<span class="qa-number">Q20</span>
+<span class="qa-question">TOIRA 的嚴重度 S、可能性 P 和風險等級，分別是什麼？</span>
+<span class="qa-toggle" aria-hidden="true">
+</span>
+</summary>
+<div class="qa-answer">
+<p>嚴重度 S 是事故或健康影響可能造成多大的傷害。TOIRA 參照「風險評估指引」的嚴重度分級，提供下列五個層級：</p>
+<div class="qa-table-wrap">
+<table class="qa-table">
+<caption>嚴重度分級</caption>
+<thead>
+<tr>
+<th scope="col">等級</th>
+<th scope="col">人員傷亡</th>
+<th scope="col">危害影響範圍</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">S5 重大</th>
+<td>造成一人以上死亡、三人以上受傷、或是可能發生無法復原之職業病的災害</td>
+<td>嚴重危害物質洩漏；危害影響範圍擴及廠外，對環境及公眾健康有立即及持續衝擊</td>
+</tr>
+<tr>
+<th scope="row">S4 高度</th>
+<td>造成永久失能或可能發生可復原之職業病的災害</td>
+<td>大量危害物質洩漏；危害影響範圍除廠內外，對環境及公眾健康有暫時性衝擊</td>
+</tr>
+<tr>
+<th scope="row">S3 中度</th>
+<td>須外送就醫，且造成工時損失之災害；或可能發生因職業健康問題而造成工時損失之狀況</td>
+<td>中量危害物質洩漏；危害影響限於工廠局部區域</td>
+</tr>
+<tr>
+<th scope="row">S2 低度</th>
+<td>僅須急救處理，或外送就醫，但未造成工時損失之輕度災害；或可能發生因職業健康問題而造成工作效率降低之現象</td>
+<td>少量危害物質洩漏；危害影響限於局部設備附近</td>
+</tr>
+<tr>
+<th scope="row">S1 輕度</th>
+<td>無明顯危害或可能會引起職業健康問題，但對工作效率無明顯影響</td>
+<td>微量危害物質洩漏：無明顯危害</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>可能性 P 是該危害情境發生的可能程度。「風險評估指引」的參考分級如下：</p>
+<div class="qa-table-wrap">
+<table class="qa-table">
+<caption>可能性分級</caption>
+<thead>
+<tr>
+<th scope="col">等級</th>
+<th scope="col">防護設施之完整性及有效性</th>
+<th scope="col">預期危害事件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">P5 極可能</th>
+<td>未設置必要的防護設施，或所設置之防護設施並無法發揮其功能</td>
+<td>每5年1次；或在製程、活動或服務之生命週期內可能會發生5次以上</td>
+</tr>
+<tr>
+<th scope="row">P4 較有可能</th>
+<td>僅設置部分必要的防護設施，或對已設置之防護設施，未定期維護保養或監督查核</td>
+<td>每5–10年1次；在製程、活動或服務之生命週期內可能會發生2~5次</td>
+</tr>
+<tr>
+<th scope="row">P3 有可能</th>
+<td>已設置必要的防護設施，或對已設置之防護設施，未定期維護保養或監督查核</td>
+<td>每10–30年1次；在製程、活動或服務之生命週期內可能會發生1次。</td>
+</tr>
+<tr>
+<th scope="row">P2 不太可能</th>
+<td>已設置必要的防護設施，且有定期維護保養或監督查核使其維持在可用狀態</td>
+<td>每30–100年一次；在製程、活動或服務之生命週期內可能不太會發生</td>
+</tr>
+<tr>
+<th scope="row">P1 幾乎不可能</th>
+<td>除已設置必要的防護設施外，另增設其他工程防護設施，且有定期維護保養或監督查核，以維持其應有的功能</td>
+<td>低於100年1次；在製程、活動或服務之生命週期內幾乎不會發生</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>TOIRA 依 S 及 P 查風險矩陣，得到風險等級。表列頻率是指引的參考基準，不能直接當成 TOIRA 已測得現場事故頻率。</p>
+<p>等級數字是分級，不是百分比。P2 不代表事故機率是 2%，TOIRA 的風險等級也不是將 S 和 P 直接相乘。</p>
+<div class="qa-answer-actions">
+<a href="#q20" aria-label="Q20 的固定連結">題目連結</a>
+<button type="button" data-close-question="q20">收合本題</button>
+</div>
+</div>
+</details>
+<details class="qa-item" id="q21" data-category="rating" data-keywords="AI 即時計算 矩陣 內建 可能性">
+<summary>
+<span class="qa-number">Q21</span>
+<span class="qa-question">TOIRA 的風險等級是由 AI 即時計算的嗎？</span>
+<span class="qa-toggle" aria-hidden="true">
+</span>
+</summary>
+<div class="qa-answer">
+<p>不是。TOIRA 依嚴重度 S 及可能性 P，參照「風險評估指引」的風險矩陣計算等級。TOIRA 各危害情境的嚴重度採內建參考值，可能性則依改善措施的完成情況判定。</p>
+<p>TOIRA 的風險等級用來協助安排改善，不是現場事故機率的測量結果。使用者仍應審慎確認評估結果，並依現場條件作必要修訂。</p>
+<div class="qa-answer-actions">
+<a href="#q21" aria-label="Q21 的固定連結">題目連結</a>
+<button type="button" data-close-question="q21">收合本題</button>
+</div>
+</div>
+</details>
+<details class="qa-item" id="q22" data-category="rating" data-keywords="五年 職災統計 110 114 嚴重度 立即危險">
+<summary>
+<span class="qa-number">Q22</span>
+<span class="qa-question">TOIRA 如何使用近五年的職災統計作為嚴重度參考？</span>
+<span class="qa-toggle" aria-hidden="true">
+</span>
+</summary>
+<div class="qa-answer">
+<p>TOIRA 以民國 110–114 年職災資料整理的分級值，作為危害類型的嚴重度參考，另結合立即危險類型及職業病的分級規則。</p>
+<p>TOIRA 採用的分級值反映統計整理及工具規則，未必完全適用所有情境。使用者可依現場狀況調整嚴重度，並保留判斷依據。</p>
+<div class="qa-answer-actions">
+<a href="#q22" aria-label="Q22 的固定連結">題目連結</a>
+<button type="button" data-close-question="q22">收合本題</button>
+</div>
+</div>
+</details>
+<details class="qa-item" id="q23" data-category="rating" data-keywords="職業病 S4 S5 可恢復 不可恢復 診斷">
+<summary>
+<span class="qa-number">Q23</span>
+<span class="qa-question">TOIRA 對職業病的 S4、S5 如何區分？</span>
+<span class="qa-toggle" aria-hidden="true">
+</span>
+</summary>
+<div class="qa-answer">
+<p>TOIRA 參照「風險評估指引」，將可恢復的職業病列為 S4（高度），不可恢復的職業病列為 S5（重大）。同一情境可能造成多種健康影響時，採較嚴重的後果作為參考。</p>
+<p>TOIRA 的分級不能用來診斷疾病或判定個別勞工的恢復情況。使用者仍應依現場危害及專業判斷，適度調整嚴重度。</p>
+<div class="qa-answer-actions">
+<a href="#q23" aria-label="Q23 的固定連結">題目連結</a>
+<button type="button" data-close-question="q23">收合本題</button>
+</div>
+</div>
+</details>
+<details class="qa-item" id="q24" data-category="rating" data-keywords="可能性 P5 P4 P3 P2 P1 必要設施 工程 勾選">
+<summary>
+<span class="qa-number">Q24</span>
+<span class="qa-question">勾選防護措施後，TOIRA 如何判定可能性？</span>
+<span class="qa-toggle" aria-hidden="true">
+</span>
+</summary>
+<div class="qa-answer">
+<p>TOIRA 依該則危害情境對應措施的分類、必要設施標記及完成狀態判定可能性，不是只看勾選數量。</p>
+<p>對有標示必要設施的情境，TOIRA 依下列條件判定：</p>
+<ul class="qa-answer-list">
+<li>P5（極可能）：必要設施、工程及管理措施都未完成。</li>
+<li>P4（較有可能）：已完成部分措施，但仍有必要設施未完成。</li>
+<li>P3（有可能）：必要設施全部完成，但工程措施未全數完成，或該情境沒有工程措施。</li>
+<li>P2（不太可能）：必要設施全部完成，且該情境有工程措施、工程措施也全部完成。</li>
+</ul>
+<p>TOIRA 不會自動給出 P1（幾乎不可能），須由使用者依現場情況手動評估。措施已經做到且確實有效，才能勾選。</p>
+<div class="qa-answer-actions">
+<a href="#q24" aria-label="Q24 的固定連結">題目連結</a>
+<button type="button" data-close-question="q24">收合本題</button>
+</div>
+</div>
+</details>
+<details class="qa-item" id="q25" data-category="rating" data-keywords="個人防護具 PPE 可能性 沒有下降 必要設施">
+<summary>
+<span class="qa-number">Q25</span>
+<span class="qa-question">只勾個人防護具，為什麼 TOIRA 的可能性沒有下降？</span>
+<span class="qa-toggle" aria-hidden="true">
+</span>
+</summary>
+<div class="qa-answer">
+<p>TOIRA 自動評分主要看必要設施、工程及管理措施。一般未標為必要設施的個人防護具，不會單獨讓可能性下降；有標示為必要設施的防護具，則會納入必要設施是否完成的判斷。</p>
+<p>TOIRA 的分數沒有改變，不代表防護具不重要，使用者仍應依實際危害選用並正確使用。</p>
+<div class="qa-answer-actions">
+<a href="#q25" aria-label="Q25 的固定連結">題目連結</a>
+<button type="button" data-close-question="q25">收合本題</button>
+</div>
+</div>
+</details>
+<details class="qa-item" id="q26" data-category="rating" data-keywords="中度風險 全部做到 S5 P2 低風險">
+<summary>
+<span class="qa-number">Q26</span>
+<span class="qa-question">防護措施全部做到，為什麼 TOIRA 仍顯示中度風險？</span>
+<span class="qa-toggle" aria-hidden="true">
+</span>
+</summary>
+<div class="qa-answer">
+<p>防護措施主要降低危害發生的可能性，原本可能造成的嚴重傷害，不會只因勾選措施就消失。</p>
+<p>例如 TOIRA 採用的矩陣中，S5、P2 仍為中度風險。措施全數完成不一定會降為低風險，也不表示措施沒有作用。</p>
+<div class="qa-answer-actions">
+<a href="#q26" aria-label="Q26 的固定連結">題目連結</a>
+<button type="button" data-close-question="q26">收合本題</button>
+</div>
+</div>
+</details>
+<details class="qa-item" id="q27" data-category="rating" data-keywords="手動評估 調整 調低 調高 紅色 備註">
+<summary>
+<span class="qa-number">Q27</span>
+<span class="qa-question">可以自行調整 TOIRA 的風險等級嗎？</span>
+<span class="qa-toggle" aria-hidden="true">
+</span>
+</summary>
+<div class="qa-answer">
+<p>使用者可啟用「手動評估風險」，調整嚴重度及可能性，TOIRA 會依調整後的數值重新計算風險等級，結果可能上升或下降。</p>
+<p>TOIRA 會在報表中以紅色標示手動評估值。使用者應保留調整依據；分數降低不代表現場危害已經改善。</p>
+<div class="qa-answer-actions">
+<a href="#q27" aria-label="Q27 的固定連結">題目連結</a>
+<button type="button" data-close-question="q27">收合本題</button>
+</div>
+</div>
+</details>
+<details class="qa-item" id="q28" data-category="rating" data-keywords="沒有事故 從未發生 調低 可能性 暴露">
+<summary>
+<span class="qa-number">Q28</span>
+<span class="qa-question">從來沒有發生事故，可以在 TOIRA 把可能性評低一點嗎？</span>
+<span class="qa-toggle" aria-hidden="true">
+</span>
+</summary>
+<div class="qa-answer">
+<p>沒有事故紀錄可以作為參考，但不能單憑這一點調低可能性。也可能是作業次數少、過去未被記錄，或事故尚未發生。</p>
+<p>使用者調整 TOIRA 的評分前，仍應確認作業頻率、暴露機會，以及防護措施是否確實有效。</p>
+<div class="qa-answer-actions">
+<a href="#q28" aria-label="Q28 的固定連結">題目連結</a>
+<button type="button" data-close-question="q28">收合本題</button>
+</div>
+</div>
+</details>
+<details class="qa-item" id="q29" data-category="rating" data-keywords="未評估 空白 自訂 沒有風險">
+<summary>
+<span class="qa-number">Q29</span>
+<span class="qa-question">TOIRA 報表顯示「未評估」，是否代表沒有風險？</span>
+<span class="qa-toggle" aria-hidden="true">
+</span>
+</summary>
+<div class="qa-answer">
+<p>不是。TOIRA 顯示「未評估」，表示該情境尚未完成評分。</p>
+<p>自訂情境未同時填入嚴重度及可能性時，TOIRA 會在報表顯示「未評估」。使用者應補齊內容後再確認報表，不能把空白當成低風險。</p>
+<div class="qa-answer-actions">
+<a href="#q29" aria-label="Q29 的固定連結">題目連結</a>
+<button type="button" data-close-question="q29">收合本題</button>
+</div>
+</div>
+</details>
+<details class="qa-item" id="q30" data-category="rating" data-keywords="S5 立即危險 停工 退避 重大">
+<summary>
+<span class="qa-number">Q30</span>
+<span class="qa-question">TOIRA 顯示 S5，是否代表現場有立即危險，必須停工？</span>
+<span class="qa-toggle" aria-hidden="true">
+</span>
+</summary>
+<div class="qa-answer">
+<p>TOIRA 顯示 S5（重大），表示該情境可能造成嚴重後果，例如一人以上死亡、三人以上受傷，或不可恢復的職業病，不能單憑 S5 判定現場已有立即危險。</p>
+<p>是否須立即停工，應依現場是否有立即發生危險之虞判斷。採取有效防護可以降低風險；現場確有立即危險時，應先停止相關作業、使人員退避，再處理危害。</p>
+<div class="qa-answer-actions">
+<a href="#q30" aria-label="Q30 的固定連結">題目連結</a>
+<button type="button" data-close-question="q30">收合本題</button>
+</div>
+</div>
+</details>
+</section>
+<section class="qa-group" aria-labelledby="group-improve">
+<div class="qa-group-head">
+<h2 id="group-improve">改善措施與評估更新</h2>
+<span class="qa-group-count">5 題</span>
+</div>
+<details class="qa-item" id="q31" data-category="improve" data-keywords="先改善 低風險 優先 維持 風險評估指引">
+<summary>
+<span class="qa-number">Q31</span>
+<span class="qa-question">哪些項目要先改善？TOIRA 顯示低風險就不用管嗎？</span>
+<span class="qa-toggle" aria-hidden="true">
+</span>
+</summary>
+<div class="qa-answer">
+<p>先處理有立即危險的情況，再優先確認法規要求的防護及高風險項目。其他項目可參考 TOIRA 的風險等級、可能後果及受影響人數安排改善。</p>
+<p>TOIRA 顯示低風險，仍須維持現有防護，不能因此拆除設備或停止查核。使用者可參考「風險評估指引」，依評估結果執行改善計畫。</p>
+<div class="qa-answer-actions">
+<a href="#q31" aria-label="Q31 的固定連結">題目連結</a>
+<button type="button" data-close-question="q31">收合本題</button>
+</div>
+</div>
+</details>
+<details class="qa-item" id="q32" data-category="improve" data-keywords="預估處理後之風險 改善完成 驗收 殘餘">
+<summary>
+<span class="qa-number">Q32</span>
+<span class="qa-question">TOIRA 的「預估處理後之風險」代表改善已完成嗎？</span>
+<span class="qa-toggle" aria-hidden="true">
+</span>
+</summary>
+<div class="qa-answer">
+<p>不代表。TOIRA 是在假設相關改善措施完成的情況下，預估處理後的風險等級。</p>
+<p>實際改善後，使用者仍須檢查設備是否正常、人員是否照做，再更新 TOIRA 中的現有措施及評估結果。</p>
+<div class="qa-answer-actions">
+<a href="#q32" aria-label="Q32 的固定連結">題目連結</a>
+<button type="button" data-close-question="q32">收合本題</button>
+</div>
+</div>
+</details>
+<details class="qa-item" id="q33" data-category="improve" data-keywords="立即危險 停工 退避 第18條 解僱 工資">
+<summary>
+<span class="qa-number">Q33</span>
+<span class="qa-question">現場有立即危險時，應先填 TOIRA 還是先處置？</span>
 <span class="qa-law-badge">附法條</span>
 <span class="qa-toggle" aria-hidden="true">
 </span>
 </summary>
 <div class="qa-answer">
-<p>應先停止相關作業並使勞工退避至安全場所，再依現場程序處置與報告。不得等待填表、評分或改善期限。</p>
-<p>勞工執行職務發現立即危險時，得在不危及其他工作者的情況下自行停止作業及退避，並立即向直屬主管報告。</p>
+<p>先停止相關作業，讓人員退到安全場所，再依現場程序通報及處理；TOIRA 的評估紀錄可於後續補充。</p>
+<p>勞工發現立即發生危險之虞時，可以在不危及其他工作者安全的情況下，自行停止作業、退避，並立即向直屬主管報告。雇主不得因此予以解僱、調職、不給付停止作業期間工資或其他不利處分；法定例外情形，依職業安全衛生法第 18 條辦理。</p>
+<p>參考：職業安全衛生法第 18 條。</p>
 <details class="qa-law">
 <summary>職業安全衛生法第 18 條｜展開條文全文</summary>
 <div class="qa-law-body">
@@ -410,285 +748,215 @@
 </div>
 </details>
 <div class="qa-answer-actions">
-<a href="#q14" aria-label="Q14 的固定連結">題目連結</a>
-<button type="button" data-close-question="q14">收合本題</button>
+<a href="#q33" aria-label="Q33 的固定連結">題目連結</a>
+<button type="button" data-close-question="q33">收合本題</button>
 </div>
 </div>
 </details>
-</section>
-<section class="qa-group" aria-labelledby="group-data">
-<div class="qa-group-head">
-<h2 id="group-data">AI 與資料</h2>
-<span class="qa-group-count">4 題</span>
-</div>
-<details class="qa-item" id="q15" data-category="data" data-keywords="宣告 聲明 撰寫 編製 AI 人工智慧">
+<details class="qa-item" id="q34" data-category="improve" data-keywords="處罰 裁罰 應採取之預防設施 法規 義務 未完成">
 <summary>
-<span class="qa-number">Q15</span>
-<span class="qa-question">平台在哪個階段使用生成式 AI？</span>
+<span class="qa-number">Q34</span>
+<span class="qa-question">TOIRA 列出的「應採取之預防設施」沒做完，就一定會被處罰嗎？</span>
 <span class="qa-toggle" aria-hidden="true">
 </span>
 </summary>
 <div class="qa-answer">
-<p>本平台於作業資料建置階段，使用生成式人工智慧輔助撰寫。作業資料須經專家審查後，才提供正式查詢與評估使用。</p>
-<p>使用者操作時的風險計算、QA 查詢及報表匯出，採固定規則及既有內容；使用者填寫的資料不提供 AI 讀取，也不用於 AI 再次訓練。</p>
+<p>是否違法，須看現場缺少的防護及適用法規，不能只看 TOIRA 報表有幾項未完成。法規要求的措施，不會因為使用者沒有勾選而免除責任。TOIRA 顯示低風險或措施已勾選完成，也不代表已符合全部法規要求。</p>
+<p>使用者應確認未完成項目可能造成的危害，再安排改善；需要立即處置的危害，不能只列入日後的改善計畫。</p>
 <div class="qa-answer-actions">
-<a href="#q15" aria-label="Q15 的固定連結">題目連結</a>
-<button type="button" data-close-question="q15">收合本題</button>
+<a href="#q34" aria-label="Q34 的固定連結">題目連結</a>
+<button type="button" data-close-question="q34">收合本題</button>
 </div>
 </div>
 </details>
-<details class="qa-item" id="q16" data-category="data" data-keywords="外洩 訓練 再訓練 模型 隱私 資料安全">
+<details class="qa-item" id="q35" data-category="improve" data-keywords="再評估 三年 更新 變更 事故 虛驚 定期">
 <summary>
-<span class="qa-number">Q16</span>
-<span class="qa-question">AI 訓練會不會使我填寫的資料外洩？</span>
+<span class="qa-number">Q35</span>
+<span class="qa-question">TOIRA 評估完成後，什麼時候要再做一次？</span>
 <span class="qa-toggle" aria-hidden="true">
 </span>
 </summary>
 <div class="qa-answer">
-<p>使用者填寫的資料與評估作業不提供人工智慧讀取，也不會用於人工智慧再次訓練。</p>
-<p>一般評估、QA 搜尋與 Excel／PDF 匯出均在瀏覽器處理，不把填答送交後端模型。</p>
-<p>仍請妥善管理裝置、帳號與匯出檔案，避免在共用電腦留下公司資料；不使用 AI 不等於所有資訊安全風險均已消失。</p>
+<p>設備、材料、作業方式或現場條件改變，可能影響原評估時，使用者應重新檢查 TOIRA 的情境、措施及風險判斷。改善完成、事故或虛驚事件發生後，也應確認評估是否需要修正。</p>
+<p>建議事業單位至少每三年全面檢視作業評估的適用性。這是管理建議，並非所有作業的法定重評週期；特定作業另有檢討要求時，依其規定辦理。作業條件改變或出現新危害時，應及時更新，不能等到定期檢視，也不能只沿用舊報表、修改日期，就當成已更新。</p>
 <div class="qa-answer-actions">
-<a href="#q16" aria-label="Q16 的固定連結">題目連結</a>
-<button type="button" data-close-question="q16">收合本題</button>
-</div>
-</div>
-</details>
-<details class="qa-item" id="q17" data-category="data" data-keywords="匿名 匿名化 描述性 分析 公司 個資 保存">
-<summary>
-<span class="qa-number">Q17</span>
-<span class="qa-question">填答及評估作業會被如何保存與分析？</span>
-<span class="qa-toggle" aria-hidden="true">
-</span>
-</summary>
-<div class="qa-answer">
-<p>使用者填寫的資料與評估作業，保留供匿名化之描述性分析使用，例如了解作業類型、防護措施落實情況及風險等級分布；不提供 AI 讀取或再次訓練。</p>
-<p>分析前應去除或處理公司名稱、統一編號、聯絡資訊及備註中的可識別內容，並避免由稀少案例辨識特定事業單位或個人。</p>
-<div class="qa-answer-actions">
-<a href="#q17" aria-label="Q17 的固定連結">題目連結</a>
-<button type="button" data-close-question="q17">收合本題</button>
-</div>
-</div>
-</details>
-<details class="qa-item" id="q18" data-category="data" data-keywords="問答 搜尋 聊天 查詢 關鍵字">
-<summary>
-<span class="qa-number">Q18</span>
-<span class="qa-question">QA 查詢會將問題送給 AI 嗎？</span>
-<span class="qa-toggle" aria-hidden="true">
-</span>
-</summary>
-<div class="qa-answer">
-<p>不會。QA 只搜尋本頁已整理的固定問答內容，支援關鍵字與分類篩選，不會將搜尋內容送交 AI。</p>
-<p>可輸入多個關鍵字或題號（例如 Q13）；若沒有結果，可清除搜尋或切換全部分類。</p>
-<div class="qa-answer-actions">
-<a href="#q18" aria-label="Q18 的固定連結">題目連結</a>
-<button type="button" data-close-question="q18">收合本題</button>
+<a href="#q35" aria-label="Q35 的固定連結">題目連結</a>
+<button type="button" data-close-question="q35">收合本題</button>
 </div>
 </div>
 </details>
 </section>
 <section class="qa-group" aria-labelledby="group-reports">
 <div class="qa-group-head">
-<h2 id="group-reports">報表與保存</h2>
-<span class="qa-group-count">2 題</span>
+<h2 id="group-reports">報表與資料保存</h2>
+<span class="qa-group-count">6 題</span>
 </div>
-<details class="qa-item" id="q19" data-category="reports" data-keywords="儲存 保存 換機 同步 瀏覽器 localStorage">
+<details class="qa-item" id="q36" data-category="reports" data-keywords="報表 對應 現有措施 待改善 預估處理後">
 <summary>
-<span class="qa-number">Q19</span>
-<span class="qa-question">評估資料如何儲存？可以換裝置接續嗎？</span>
+<span class="qa-number">Q36</span>
+<span class="qa-question">TOIRA 的危害情境、防護措施與報表如何對應？</span>
 <span class="qa-toggle" aria-hidden="true">
 </span>
 </summary>
 <div class="qa-answer">
-<p>按「儲存評估」後，專案保存在目前瀏覽器；公司資料亦可能保留於同一瀏覽器。清除網站資料或更換裝置、瀏覽器，可能無法取得原專案。</p>
-<p>原型尚未提供跨裝置同步，請匯出報表保留紀錄。共用電腦使用後，應依單位規範管理或清除留存資料。</p>
+<p>TOIRA 各危害情境均有相對應的防護措施。使用者選取情境後，逐項確認措施是否做到。</p>
+<p>TOIRA 會依選取的情境，在報表列出現有措施、目前風險、待改善措施及預估處理後之風險。同一作業可能有多則情境，使用者應分別確認。</p>
 <div class="qa-answer-actions">
-<a href="#q19" aria-label="Q19 的固定連結">題目連結</a>
-<button type="button" data-close-question="q19">收合本題</button>
+<a href="#q36" aria-label="Q36 的固定連結">題目連結</a>
+<button type="button" data-close-question="q36">收合本題</button>
 </div>
 </div>
 </details>
-<details class="qa-item" id="q20" data-category="reports" data-keywords="PDF Excel XLSX 匯出 報表 申報 合規 證明">
+<details class="qa-item" id="q37" data-category="reports" data-keywords="符合法規 申報 證明 附件 責任">
 <summary>
-<span class="qa-number">Q20</span>
-<span class="qa-question">匯出的報表可以直接作為法規符合證明或自動申報嗎？</span>
+<span class="qa-number">Q37</span>
+<span class="qa-question">TOIRA 報表可以證明符合法規，或直接完成申報嗎？</span>
 <span class="qa-toggle" aria-hidden="true">
 </span>
 </summary>
 <div class="qa-answer">
-<p>報表供初步危害辨識、內部管理與改善追蹤參考，不能單獨保證現場安全、符合法令或已完成法定評估程序；本平台也不會自動申報。</p>
-<p>可下載 Excel 供事業單位修改內文，或匯出 PDF。每則選取的危害情境會呈現對應的現有防護、風險評估、應採取之預防設施與預估處理後之風險。</p>
-<p>目前報表欄名為「現有(已備有)防護措施」及「應採取之預防設施」。手動調整的現況與處理後風險值，以及調整說明，均以紅色標示。</p>
-<p>請先由具相關能力的人員確認內容，再依適用要求保存及辦理後續作業；預估處理後的分數仍須經改善查核與驗收確認。</p>
+<p>TOIRA 報表可用來整理危害、安排改善及留存評估內容；符合通報要求時，也可作為評估附件。產出或儲存 TOIRA 報表，不等於完成法定申報、通報、審查或檢查程序。</p>
+<p>TOIRA 提供作業風險評估的參考內容，評估人員仍應依現場條件確認危害、評分及措施。法令另有指定評估方法或程序時，應依其規定辦理。雇主應落實法定防護及管理義務，不能只以 TOIRA 報表代替實際執行。</p>
+<p>TOIRA 的參考內容不保證涵蓋所有現場情境。因使用 TOIRA 發生損害時，各方責任應依適用法令及具體事實判定。</p>
 <div class="qa-answer-actions">
-<a href="#q20" aria-label="Q20 的固定連結">題目連結</a>
-<button type="button" data-close-question="q20">收合本題</button>
+<a href="#q37" aria-label="Q37 的固定連結">題目連結</a>
+<button type="button" data-close-question="q37">收合本題</button>
+</div>
+</div>
+</details>
+<details class="qa-item" id="q38" data-category="reports" data-keywords="儲存 瀏覽器 伺服器 職安署 匿名 分析 個資">
+<summary>
+<span class="qa-number">Q38</span>
+<span class="qa-question">TOIRA 的評估資料存在哪裡？會被拿來分析嗎？</span>
+<span class="qa-toggle" aria-hidden="true">
+</span>
+</summary>
+<div class="qa-answer">
+<p>使用者在 TOIRA 建立評估清單時，TOIRA 會先將資料暫存於使用者的瀏覽器。使用者按「儲存資料」，或執行一次 Excel、PDF 匯出後，TOIRA 會將評估結果儲存至職安署伺服器；尚未保存的內容，可能因更換瀏覽器或重新開啟案件而遺失。</p>
+<p>TOIRA 不會將使用者填寫的危害情境、改善措施或作業名稱送交生成式 AI 加值處理。TOIRA 保留匿名化分析機制，依填寫的作業、危害情境及防護措施進行描述性統計，作為職安署政策規劃的參考。</p>
+<p>使用者應避免在 TOIRA 的自由文字欄位填入與評估無關的個人資料，尤其是病歷、健康檢查結果等敏感資料。</p>
+<div class="qa-answer-actions">
+<a href="#q38" aria-label="Q38 的固定連結">題目連結</a>
+<button type="button" data-close-question="q38">收合本題</button>
+</div>
+</div>
+</details>
+<details class="qa-item" id="q39" data-category="reports" data-keywords="如何儲存 儲存資料 匯出 遺失 暫存">
+<summary>
+<span class="qa-number">Q39</span>
+<span class="qa-question">如何儲存 TOIRA 的評估資料？</span>
+<span class="qa-toggle" aria-hidden="true">
+</span>
+</summary>
+<div class="qa-answer">
+<p>使用者須按「儲存資料」，或執行一次 Excel、PDF 匯出，TOIRA 才會將評估結果保存至職安署伺服器。</p>
+<p>尚未執行保存時，TOIRA 的暫存內容可能在下次開啟案件時遺失。評估有修改時，使用者也應重新保存，並下載當次報表留存。</p>
+<div class="qa-answer-actions">
+<a href="#q39" aria-label="Q39 的固定連結">題目連結</a>
+<button type="button" data-close-question="q39">收合本題</button>
+</div>
+</div>
+</details>
+<details class="qa-item" id="q40" data-category="reports" data-keywords="版本 改善前後 下載 檔名 日期">
+<summary>
+<span class="qa-number">Q40</span>
+<span class="qa-question">如何保留 TOIRA 評估的不同版本？</span>
+<span class="qa-toggle" aria-hidden="true">
+</span>
+</summary>
+<div class="qa-answer">
+<p>使用者修改及儲存評估後，TOIRA 會更新目前保存的內容。需要比較改善前後時，建議分別下載報表，於檔名註明評估日期及版本。</p>
+<p>使用者應保留每次評估採用的資料、措施狀態及調整依據，避免只保留最後一次結果，卻無法確認改善前後的差異。</p>
+<div class="qa-answer-actions">
+<a href="#q40" aria-label="Q40 的固定連結">題目連結</a>
+<button type="button" data-close-question="q40">收合本題</button>
+</div>
+</div>
+</details>
+<details class="qa-item" id="q41" data-category="reports" data-keywords="Excel 匯入 匯回 修改 重新匯出">
+<summary>
+<span class="qa-number">Q41</span>
+<span class="qa-question">下載 TOIRA 的 Excel 修改後，可以再匯回嗎？</span>
+<span class="qa-toggle" aria-hidden="true">
+</span>
+</summary>
+<div class="qa-answer">
+<p>TOIRA 目前沒有匯入修改後 Excel 的功能。使用者可另行編修及留存檔案，但 TOIRA 不會同步讀取這些修改，也不會重新計算檔案中的風險等級。</p>
+<p>需要更新 TOIRA 中的評估時，使用者仍須回到 TOIRA 修改內容，按「儲存資料」後重新匯出。</p>
+<div class="qa-answer-actions">
+<a href="#q41" aria-label="Q41 的固定連結">題目連結</a>
+<button type="button" data-close-question="q41">收合本題</button>
 </div>
 </div>
 </details>
 </section>
-<section class="qa-group" aria-labelledby="group-about">
+<section class="qa-group" aria-labelledby="group-ai">
 <div class="qa-group-head">
-<h2 id="group-about">功能與資料來源</h2>
-<span class="qa-group-count">7 題</span>
+<h2 id="group-ai">AI 使用與問題回報</h2>
+<span class="qa-group-count">4 題</span>
 </div>
-<details class="qa-item" id="q21" data-category="about" data-keywords="傳統 差異 情境 互動 資料庫 功能">
+<details class="qa-item" id="q42" data-category="ai" data-keywords="生成式 AI 編製 填表 固定規則">
 <summary>
-<span class="qa-number">Q21</span>
-<span class="qa-question">TOIRA 與傳統填寫風險評估表有何不同？</span>
+<span class="qa-number">Q42</span>
+<span class="qa-question">TOIRA 在哪個階段使用生成式 AI？</span>
 <span class="qa-toggle" aria-hidden="true">
 </span>
 </summary>
 <div class="qa-answer">
-<p>傳統方式需要使用者從作業中辨識危害、判斷風險並提出對策。TOIRA 先提供常見作業、具體危害情境與預防設施，讓使用者依現場逐項確認。</p>
-<p>使用者可從行業模板開始，再挑選作業、危害情境與現有防護措施。系統依填答呈現風險及待改善項目，協助雇主與勞工共同參與評估。</p>
-<p>現場調查、內容覆核與改善追蹤仍由事業單位完成。</p>
-<details class="qa-figure-details">
-<summary>圖解：TOIRA 功能概念圖<span>展開圖片</span>
-</summary>
-<figure class="qa-figure">
-<a class="qa-image-trigger" href="assets/qa/toira-overview.png" target="_blank" rel="noopener" data-qa-image data-title="TOIRA 功能概念圖" aria-label="放大圖片：TOIRA 功能概念圖">
-<img src="assets/qa/toira-overview.png" width="2000" height="1124" alt="功能概念圖說明作業情境勾選、作業資料庫、自訂作業與報表匯出。" loading="lazy" decoding="async">
-<span class="qa-image-hint">點圖放大</span>
-</a>
-<figcaption>作業項目與危害分類請以目前資料庫為準。
-</figcaption>
-</figure>
-</details>
+<p>TOIRA 在作業資料製作階段應用生成式 AI，協助整理作業內容、危害情境及防護措施。</p>
+<p>使用者填表時，TOIRA 採用既有資料及固定規則，不會每次再請 AI 生成評估結果。</p>
 <div class="qa-answer-actions">
-<a href="#q21" aria-label="Q21 的固定連結">題目連結</a>
-<button type="button" data-close-question="q21">收合本題</button>
+<a href="#q42" aria-label="Q42 的固定連結">題目連結</a>
+<button type="button" data-close-question="q42">收合本題</button>
 </div>
 </div>
 </details>
-<details class="qa-item" id="q22" data-category="about" data-keywords="模板 行業 製造業 營造業 自訂 邊界">
+<details class="qa-item" id="q43" data-category="ai" data-keywords="訓練 AI 外洩 隱私 個資 伺服器">
 <summary>
-<span class="qa-number">Q22</span>
-<span class="qa-question">行業模板沒有完全符合現場時，怎麼辦？</span>
+<span class="qa-number">Q43</span>
+<span class="qa-question">TOIRA 會把填寫資料送給 AI，或用來訓練 AI 嗎？</span>
 <span class="qa-toggle" aria-hidden="true">
 </span>
 </summary>
 <div class="qa-answer">
-<p>行業模板提供常見作業組合，不能直接代表整間工廠或所有工程的實際情況。可選擇相近的製造業或營造業模板，再增減作業。</p>
-<p>若沒有對應模板，可從資料庫自行選擇作業；必要時新增自定義製程、危害情境及預防設施。請確認評估邊界，避免漏掉換料、清潔、維修或異常處置等作業。</p>
-<p>自訂情境須自行填寫嚴重度與可能性。模板及作業項目以行業選擇頁與目前資料庫為準。</p>
-<details class="qa-figure-details">
-<summary>圖解：行業模板選擇示意<span>展開圖片</span>
-</summary>
-<figure class="qa-figure">
-<a class="qa-image-trigger" href="assets/qa/toira-industry-templates.png" target="_blank" rel="noopener" data-qa-image data-title="行業模板選擇示意" aria-label="放大圖片：行業模板選擇示意">
-<img src="assets/qa/toira-industry-templates.png" width="1006" height="826" alt="行業模板頁列出通用作業、醃製食品、食品及木竹製品等製造業模板。" loading="lazy" decoding="async">
-<span class="qa-image-hint">點圖放大</span>
-</a>
-<figcaption>選擇與現場相近的模板後，仍可增減作業。
-</figcaption>
-</figure>
-</details>
+<p>依 TOIRA 現行設計，TOIRA 不會將使用者在風險評估、問答搜尋及報表匯出流程中填寫的資料送交生成式 AI，也不會將這些資料用於 AI 訓練。</p>
+<p>TOIRA 的伺服器資料、瀏覽器暫存及下載報表，仍可能包含公司資訊或個人資料。使用者應妥善管理自己的帳號、裝置及下載檔案；伺服器端的資料保護責任，仍由相關單位依適用法令及實際分工辦理。</p>
 <div class="qa-answer-actions">
-<a href="#q22" aria-label="Q22 的固定連結">題目連結</a>
-<button type="button" data-close-question="q22">收合本題</button>
+<a href="#q43" aria-label="Q43 的固定連結">題目連結</a>
+<button type="button" data-close-question="q43">收合本題</button>
 </div>
 </div>
 </details>
-<details class="qa-item" id="q23" data-category="about" data-keywords="情境 逐條 對照 報表 作業 預防設施">
+<details class="qa-item" id="q44" data-category="ai" data-keywords="QA 搜尋 問答 關鍵字 題號 不使用 AI">
 <summary>
-<span class="qa-number">Q23</span>
-<span class="qa-question">每則危害情境如何對應預防設施與報表？</span>
+<span class="qa-number">Q44</span>
+<span class="qa-question">TOIRA 的 QA 搜尋會把問題送給 AI 嗎？</span>
 <span class="qa-toggle" aria-hidden="true">
 </span>
 </summary>
 <div class="qa-answer">
-<p>每一則公版危害情境，都有相對應的預防設施。選取情境後，確認該情境對應措施的落實情況，再評估嚴重度與可能性。</p>
-<p>報表依選取的情境逐列呈現：危害及可能後果、現有(已備有)防護措施、現況風險、應採取之預防設施，以及預估處理後之風險。</p>
-<p>同一作業可能存在多則危害情境。請逐則檢視，不能以其中一則的低風險代表整項作業安全。</p>
+<p>不會。TOIRA 只搜尋已整理的固定問答，沒有 AI 對話功能。</p>
+<p>使用者可輸入關鍵字或題號，例如 Q1。找不到時，可縮短關鍵字，或切換成「全部問答」。</p>
 <div class="qa-answer-actions">
-<a href="#q23" aria-label="Q23 的固定連結">題目連結</a>
-<button type="button" data-close-question="q23">收合本題</button>
+<a href="#q44" aria-label="Q44 的固定連結">題目連結</a>
+<button type="button" data-close-question="q44">收合本題</button>
 </div>
 </div>
 </details>
-<details class="qa-item" id="q24" data-category="about" data-keywords="核心 重點 優先 危害類型 法規 實務">
+<details class="qa-item" id="q45" data-category="ai" data-keywords="錯誤 回報 修正 反映 待補">
 <summary>
-<span class="qa-number">Q24</span>
-<span class="qa-question">「核心重點」是什麼？其他危害可以不看嗎？</span>
+<span class="qa-number">Q45</span>
+<span class="qa-question">發現 TOIRA 內容錯誤或與現場做法不同，怎麼反映？</span>
 <span class="qa-toggle" aria-hidden="true">
 </span>
 </summary>
 <div class="qa-answer">
-<p>核心重點標示依適用法規或實務經驗，應優先檢視的危害類型，協助使用者先確認關鍵的作業風險。</p>
-<p>核心重點不是完整危害清單。其他危害仍可能適用，也可能有資料庫尚未涵蓋的情境，應依現場實況逐一確認並補充。</p>
-<details class="qa-figure-details">
-<summary>圖解：核心重點與危害情境示意<span>展開圖片</span>
-</summary>
-<figure class="qa-figure">
-<a class="qa-image-trigger" href="assets/qa/toira-core-hazards.png" target="_blank" rel="noopener" data-qa-image data-title="核心重點與危害情境示意" aria-label="放大圖片：核心重點與危害情境示意">
-<img src="assets/qa/toira-core-hazards.png" width="1212" height="682" alt="局限空間有害物接觸的危害組標示核心重點，並列出可能中毒或缺氧的具體情境。" loading="lazy" decoding="async">
-<span class="qa-image-hint">點圖放大</span>
-</a>
-<figcaption>核心重點供優先檢視；仍須確認其他危害與現場差異。
-</figcaption>
-</figure>
-</details>
+<p>使用者可記下作業名稱、危害類型、情境原文及需要修正的原因；有相關法規或指引時，可一併提供來源，透過 TOIRA 的錯誤回報管道反映。</p>
+<p>錯誤回報網址：待補。</p>
+<p>現場需要的防護不能等 TOIRA 內容修正後才處理。使用者可先在本次評估補充說明或新增情境。</p>
 <div class="qa-answer-actions">
-<a href="#q24" aria-label="Q24 的固定連結">題目連結</a>
-<button type="button" data-close-question="q24">收合本題</button>
-</div>
-</div>
-</details>
-<details class="qa-item" id="q25" data-category="about" data-keywords="必要 設施 工程 管理 個人防護 PPE 分類 控制">
-<summary>
-<span class="qa-number">Q25</span>
-<span class="qa-question">「必要設施」與工程、管理、個人防護有何不同？</span>
-<span class="qa-toggle" aria-hidden="true">
-</span>
-</summary>
-<div class="qa-answer">
-<p>「必要設施」是對該情境不可缺少的關鍵控制條件，可依適用法規、作業通念或最佳實務標註。它表示必要性，不是另一種措施分類。</p>
-<p>工程改善、管理控制與個人防護是措施的分類。必要設施可能屬於其中任何一類，標示為必要的個人防護具也須確認落實。</p>
-<p>若必要設施尚未完成，應列為待改善，並依現場危害採取適當處置。勾選或調低分數都不能取代必要防護的實際落實。</p>
-<div class="qa-answer-actions">
-<a href="#q25" aria-label="Q25 的固定連結">題目連結</a>
-<button type="button" data-close-question="q25">收合本題</button>
-</div>
-</div>
-</details>
-<details class="qa-item" id="q26" data-category="about" data-keywords="公版 產生 編製 腳本 專家 審查 AI 法規 職災 人機料法環危">
-<summary>
-<span class="qa-number">Q26</span>
-<span class="qa-question">公版作業資料如何產生與審查？</span>
-<span class="qa-toggle" aria-hidden="true">
-</span>
-</summary>
-<div class="qa-answer">
-<p>公版資料的編製在資料建置階段進行，主要流程如下：</p>
-<ol class="qa-answer-list">
-<li>界定作業範圍：確認作業名稱、評估邊界及包含的操作步驟。</li>
-<li>整理作業特徵：從人員、機械、材料、方法、環境及危害等面向整理情境。</li>
-<li>蒐集參考資料：檢索法規、指引手冊及歷史職災事故，作為內容編製的依據。</li>
-<li>AI 輔助撰寫與合理性檢查：整理具體危害情境及對應預防設施，檢查內容的一致性。</li>
-<li>專家審查與修訂：逐筆確認內容是否符合安全衛生實務，完成審查後才提供正式查詢與評估。</li>
-</ol>
-<p>此流程用於編製公版資料。使用者填寫的資料與評估作業不會送入此生成流程，也不提供 AI 讀取或再次訓練。</p>
-<div class="qa-answer-actions">
-<a href="#q26" aria-label="Q26 的固定連結">題目連結</a>
-<button type="button" data-close-question="q26">收合本題</button>
-</div>
-</div>
-</details>
-<details class="qa-item" id="q27" data-category="about" data-keywords="嚴重度 S2 S3 S4 S5 五年 統計 傷病 失能 死亡 加權">
-<summary>
-<span class="qa-number">Q27</span>
-<span class="qa-question">嚴重度的近五年職災統計基準如何產生？</span>
-<span class="qa-toggle" aria-hidden="true">
-</span>
-</summary>
-<div class="qa-answer">
-<p>以民國 110–114 年的職災資料為統計窗口，對傷病、失能與死亡等不同後果採加權方式整理，再取五年平均，作為危害類型的嚴重度分級參考。</p>
-<p>統計參考分為 S2–S5，並結合立即危險類型及職業病可恢復性的分級規則。這是對危害後果的參考分級，不能直接當作特定工廠的事故發生機率。</p>
-<p>原型保留嚴重度比較開關：開啟採統計與分級規則，關閉採生成時估算；手動評估值不受開關覆寫。評估時仍須確認現場情況與措施有效性。</p>
-<div class="qa-answer-actions">
-<a href="#q27" aria-label="Q27 的固定連結">題目連結</a>
-<button type="button" data-close-question="q27">收合本題</button>
+<a href="#q45" aria-label="Q45 的固定連結">題目連結</a>
+<button type="button" data-close-question="q45">收合本題</button>
 </div>
 </div>
 </details>
