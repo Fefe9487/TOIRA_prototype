@@ -1,6 +1,6 @@
 /* TOIRA 共用使用說明；同一分頁讀過本版後，可由頂端隨時重新開啟。 */
 (() => {
-    const VERSION = '20261011d';
+    const VERSION = '20261016c';
     const STORAGE_KEY = 'toira.usageGuide.read';
     const markup = `<dialog class="usage-guide" id="usage-guide" aria-labelledby="usage-guide-title">
         <div class="usage-guide__header">
@@ -23,8 +23,8 @@
                 <section class="usage-guide__card">
                     <h3>2. 演算法如何產生風險等級？</h3>
                     <ul>
-                        <li>原型保留嚴重度開關：關閉採生成時估算；開啟採 110–114 年（5 年）職災統計與分級規則，公版參考等級為 S2–S5。立即危險類型採 S5；職業病可恢復採 S4、不可恢復採 S5。</li>
-                        <li>可能性 P 依必要設施、工程、管理及個人防護的完成狀態分級。要降到 P2，該情境的措施須全部完成。無情境對照時依措施勾選比例推算。</li>
+                        <li>嚴重度 S 採 110–114 年（5 年）職災統計與分級規則，分為 S2–S5 四種等級。其中有發生立即危險之虞的危害類型採 S5，剩下依專家判斷切分。職業病嚴重度依可復原（S4）和不可復原分隔（S5）。</li>
+                        <li>可能性 P 依核心、工程及管理措施的落實狀態分級，無情境對照時依措施勾選比例推算。</li>
                         <li>以固定 <strong>5×5 S／P 矩陣</strong>查得風險等級，非 AI 即時判斷或實測事故機率。</li>
                         <li>「預估處理後之風險」假設措施落實且有效，<strong>不是改善驗收結果</strong>。</li>
                     </ul>
