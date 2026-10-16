@@ -1860,9 +1860,11 @@
             const coreAll = cores.length > 0 && cores.every(isOn);
             const countedOn = engOn + admOn > 0 || cores.some(isOn);
             if (cores.length) {
+                // 有必要設施：P5 → P4 → P2 → P3，先符合先採用。
+                // P2 須必要設施全部完成，且工程、管理措施都存在並全部勾完。
                 if (!countedOn) return 'P5';
                 if (!coreAll) return 'P4';
-                if (engAll) return 'P2';
+                if (engAll && admAll) return 'P2';
                 return 'P3';
             }
             if (engAll) return 'P3';
