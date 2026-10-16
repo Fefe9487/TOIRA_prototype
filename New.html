@@ -8,7 +8,7 @@
     <meta http-equiv="Pragma" content="no-cache">
     <title>危害辨識與風險評估系統</title>
     <link rel="stylesheet" href="theme.css?v=20261013a">
-    <script src="usage-guide.js?v=20261011d" defer></script>
+    <script src="usage-guide.js?v=20261016b" defer></script>
     <script src="vendor/jszip.min.js" defer></script>
     <script src="xlsx-export.js?v=20261011c" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
@@ -1858,13 +1858,14 @@
             const engAll = eng.length > 0 && engOn === eng.length;
             const admAll = adm.length > 0 && admOn === adm.length;
             const coreAll = cores.length > 0 && cores.every(isOn);
+            const allOn = list.length > 0 && list.every(isOn);
             const countedOn = engOn + admOn > 0 || cores.some(isOn);
             if (cores.length) {
                 // 有必要設施：P5 → P4 → P2 → P3，先符合先採用。
-                // P2 須必要設施全部完成，且工程、管理措施都存在並全部勾完。
+                // P2 須必要設施、工程、管理都存在並完成，且這一則措施（含個人防護具）全部勾完。
                 if (!countedOn) return 'P5';
                 if (!coreAll) return 'P4';
-                if (engAll && admAll) return 'P2';
+                if (engAll && admAll && allOn) return 'P2';
                 return 'P3';
             }
             if (engAll) return 'P3';
@@ -1875,9 +1876,7 @@
 
         function probabilityIfAddressed(controls) {
             const fake = {};
-            (controls || []).forEach((c) => {
-                if (c.core || c.scoreLane === 'E' || c.scoreLane === 'M') fake[c.key] = true;
-            });
+            (controls || []).forEach((c) => { fake[c.key] = true; });
             return probabilityFromLinkedControls(controls, fake);
         }
 

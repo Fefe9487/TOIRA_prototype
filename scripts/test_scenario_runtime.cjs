@@ -24,7 +24,7 @@ vm.runInContext(`const DATA_VER = '20261005h';\nconst riskMatrix = ${riskMatrix}
 function linked(items, checked) {
   return context.probabilityFromLinkedControls(items.map(([key, lane, core]) => ({ key, scoreLane: lane, core })), checked);
 }
-// 必要設施的工程與個人防護已完成、管理改善未完成 → P3。三者都完成才是 P2。
+// 必要設施的工程與個人防護已完成、管理改善未完成 → P3。措施全勾才是 P2。
 assert.equal(linked([['eng', 'E', true], ['ppe', 'P', true], ['adm', 'M', false]], { eng: true, ppe: true }), 'P3');
 assert.equal(linked([['eng', 'E', true], ['ppe', 'P', true], ['adm', 'M', false]], { eng: true, ppe: true, adm: true }), 'P2');
 assert.equal(linked([['eng', 'E', true], ['ppe', 'P', true], ['adm', 'M', false]], {}), 'P5');
@@ -32,7 +32,9 @@ assert.equal(linked([['eng', 'E', true], ['ppe', 'P', true], ['adm', 'M', false]
 assert.equal(linked([['eng', 'E', true], ['ppe', 'P', true]], { eng: true, ppe: true }), 'P3');
 assert.equal(linked([['adm', 'M', true], ['ppe', 'P', true]], { adm: true, ppe: true }), 'P3');
 assert.equal(linked([['eng', 'E', true], ['adm1', 'M', false], ['adm2', 'M', false]], { eng: true, adm1: true }), 'P3');
-assert.equal(linked([['eng', 'E', true], ['adm', 'M', false], ['ppe', 'P', false]], { eng: true, adm: true }), 'P2');
+assert.equal(linked([['eng', 'E', true], ['adm', 'M', false], ['ppe', 'P', false]], { eng: true, adm: true }), 'P3');
+assert.equal(linked([['eng', 'E', true], ['adm', 'M', false], ['ppe', 'P', false]], { eng: true, adm: true, ppe: true }), 'P2');
+assert.equal(linked([['eng', 'E', true], ['adm', 'M', false], ['ppe1', 'P', false], ['ppe2', 'P', false]], { eng: true, adm: true, ppe1: true }), 'P3');
 assert.equal(linked([['eng', 'E', true], ['adm', 'M', true], ['ppe', 'P', true]], { eng: true, adm: true }), 'P4');
 assert.equal(linked([['eng', 'E', true], ['ppe', 'P', false]], { ppe: true }), 'P5');
 assert.equal(linked([['eng', 'E', false], ['adm', 'M', false]], { eng: true, adm: true }), 'P3');
