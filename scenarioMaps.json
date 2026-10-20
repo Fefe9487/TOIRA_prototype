@@ -192,7 +192,8 @@
           ],
           "coreControlRefs": [
             "A5",
-            "A7"
+            "A7",
+            "A6"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -226,7 +227,8 @@
           "coreControlRefs": [
             "A2",
             "A8",
-            "A7"
+            "A7",
+            "A9"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -242,7 +244,8 @@
           ],
           "coreControlRefs": [
             "A10",
-            "A7"
+            "A7",
+            "A11"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -335,7 +338,8 @@
             "A4"
           ],
           "coreControlRefs": [
-            "A1"
+            "A1",
+            "A4"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -349,7 +353,8 @@
             "A4"
           ],
           "coreControlRefs": [
-            "A3"
+            "A3",
+            "A4"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -363,7 +368,8 @@
             "A4"
           ],
           "coreControlRefs": [
-            "A2"
+            "A2",
+            "A4"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -382,11 +388,11 @@
             "A1",
             "A2",
             "A6",
-            "A7",
-            "A8"
+            "A7"
           ],
           "coreControlRefs": [
-            "A1"
+            "A1",
+            "A2"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -415,11 +421,11 @@
             "A2",
             "A6",
             "A7",
-            "A8",
             "A5"
           ],
           "coreControlRefs": [
-            "A1"
+            "A1",
+            "A2"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -433,11 +439,11 @@
             "A2",
             "A6",
             "A7",
-            "A8",
             "A5"
           ],
           "coreControlRefs": [
-            "A1"
+            "A1",
+            "A2"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -465,7 +471,7 @@
         },
         {
           "hazardId": "H2",
-          "hazardItem": "投料平台、階梯、設備開口、高低差或高處作業面缺乏護欄、覆蓋或合格工作平台，人員攀爬機台或踩踏非工作面而失足墜落。",
+          "hazardItem": "投料平台、階梯、設備開口、高低差或高處作業面缺乏護欄、護蓋或合格工作平台，人員攀爬機台或踩踏非工作面而失足墜落。",
           "severity": 5,
           "controlRefs": [
             "A2",
@@ -474,7 +480,10 @@
             "A8"
           ],
           "coreControlRefs": [
-            "A2"
+            "A2",
+            "A6",
+            "A7",
+            "A8"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -509,7 +518,8 @@
             "A2"
           ],
           "coreControlRefs": [
-            "A1"
+            "A1",
+            "A2"
           ],
           "ruleSeverity": 3,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -523,7 +533,8 @@
             "A6"
           ],
           "coreControlRefs": [
-            "A3"
+            "A3",
+            "A6"
           ],
           "ruleSeverity": 3,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -537,7 +548,8 @@
             "A7"
           ],
           "coreControlRefs": [
-            "A4"
+            "A4",
+            "A7"
           ],
           "ruleSeverity": 3,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -1002,7 +1014,8 @@
             "A3"
           ],
           "coreControlRefs": [
-            "A2"
+            "A2",
+            "A3"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -1017,7 +1030,9 @@
             "A7"
           ],
           "coreControlRefs": [
-            "A1"
+            "A1",
+            "A6",
+            "A7"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -1034,7 +1049,8 @@
           ],
           "coreControlRefs": [
             "A8",
-            "A1"
+            "A1",
+            "A10"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -1094,12 +1110,12 @@
           "severity": 3,
           "controlRefs": [
             "A7",
-            "A8",
             "A9",
             "A10"
           ],
           "coreControlRefs": [
-            "A9"
+            "A9",
+            "A7"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -1113,7 +1129,8 @@
             "A11"
           ],
           "coreControlRefs": [
-            "A4"
+            "A4",
+            "A11"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -1127,7 +1144,8 @@
             "A12"
           ],
           "coreControlRefs": [
-            "A5"
+            "A5",
+            "A12"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -1232,15 +1250,15 @@
       "hazardControlMap": [
         {
           "hazardId": "H1",
-          "hazardItem": "桅杆、臂架或高空作業車平台組裝、拆卸及鋼索穿引時，因工作平台、護欄、臨時踏板或防墜掛點不足、損壞或拆除後未替代，致人員由高處墜落。",
+          "hazardItem": "桅杆、臂架組裝、拆卸及鋼索穿引時，因未設置高空作業車或其他工作台、護欄、安全通道或防墜掛點不足、損壞或拆除後未替代，致人員由高處墜落。",
           "severity": 5,
           "controlRefs": [
             "A1",
-            "A2"
+            "A9"
           ],
           "coreControlRefs": [
             "A1",
-            "A2"
+            "A9"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -1251,11 +1269,11 @@
           "severity": 5,
           "controlRefs": [
             "A1",
-            "A2"
+            "A9"
           ],
           "coreControlRefs": [
             "A1",
-            "A2"
+            "A9"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -1296,11 +1314,11 @@
           "controlRefs": [
             "A5",
             "A1",
-            "A2"
+            "A9"
           ],
           "coreControlRefs": [
             "A1",
-            "A2"
+            "A9"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -1377,7 +1395,7 @@
       "hazardControlMap": [
         {
           "hazardId": "H1",
-          "hazardItem": "地基承載力、支腿反力或墊板配置不足時，輔助起重機可能沉陷或翻覆，並引發吊裝構件倒塌。",
+          "hazardItem": "地基承載力、外伸撐座反力或墊板配置不足時，輔助起重機可能沉陷或翻覆，並引發吊裝構件倒塌。",
           "severity": 5,
           "controlRefs": [
             "A1",
@@ -1796,7 +1814,7 @@
       "hazardControlMap": [
         {
           "hazardId": "H1",
-          "hazardItem": "吊裝、回轉及落地調整時，因指揮或隔離失效，作業人員進入吊掛物、構件或輔助起重機的運行、擺動、回轉及下方區域而遭撞擊。",
+          "hazardItem": "吊裝、迴轉及落地調整時，因指揮或隔離失效，作業人員進入吊掛物下方、構件或起重機的運行、擺動、回轉至下方區域而遭撞擊。",
           "severity": 5,
           "controlRefs": [
             "A6",
@@ -2097,11 +2115,11 @@
           "hazardItem": "物料堆疊超載、超高或偏心，或棧板與地面支承失效時，堆疊可能失穩倒塌，造成人員遭壓砸。",
           "severity": 5,
           "controlRefs": [
-            "A1",
+            "A8",
             "A2"
           ],
           "coreControlRefs": [
-            "A1"
+            "A8"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -3184,7 +3202,8 @@
             "A8"
           ],
           "coreControlRefs": [
-            "A6"
+            "A6",
+            "A8"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -4256,7 +4275,8 @@
             "A6"
           ],
           "coreControlRefs": [
-            "A1"
+            "A1",
+            "A4"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -4397,7 +4417,8 @@
           ],
           "coreControlRefs": [
             "A5",
-            "A6"
+            "A6",
+            "A7"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -4413,7 +4434,8 @@
           ],
           "coreControlRefs": [
             "A3",
-            "A6"
+            "A6",
+            "A8"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -4597,7 +4619,8 @@
             "A7"
           ],
           "coreControlRefs": [
-            "A5"
+            "A5",
+            "A7"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -4626,7 +4649,8 @@
             "A9"
           ],
           "coreControlRefs": [
-            "A6"
+            "A6",
+            "A9"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -4655,7 +4679,8 @@
             "A11"
           ],
           "coreControlRefs": [
-            "A6"
+            "A6",
+            "A11"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -4703,7 +4728,8 @@
             "A6"
           ],
           "coreControlRefs": [
-            "A4"
+            "A4",
+            "A6"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -8712,7 +8738,7 @@
       "hazardControlMap": [
         {
           "hazardId": "H1",
-          "hazardItem": "靠近未設護欄或蓋板的投料口時，探視、倒退或轉身可能失足墜落，造成重傷。",
+          "hazardItem": "靠近未設護欄或護蓋的投料口時，探視、倒退或轉身可能失足墜落，造成重傷。",
           "severity": 3,
           "controlRefs": [
             "A1",
@@ -8755,7 +8781,7 @@
         },
         {
           "hazardId": "H4",
-          "hazardItem": "升降輔具未固定、煞車或支腿未鎖定、超載，或人員在移動中上下，可能造成設備傾倒及墜落。",
+          "hazardItem": "升降輔具未固定、煞車或外伸撐座未鎖定、超載，或人員在移動中上下，可能造成設備傾倒及墜落。",
           "severity": 3,
           "controlRefs": [
             "A3",
@@ -9666,7 +9692,7 @@
         },
         {
           "hazardId": "H4",
-          "hazardItem": "投料平台、料斗周邊或地面開口的護欄、踢腳板、自閉門或蓋板缺失時，人員可能失足墜落。",
+          "hazardItem": "投料平台、料斗周邊或地面開口的護欄、踢腳板、自閉門或護蓋缺失時，人員可能失足墜落。",
           "severity": 3,
           "controlRefs": [
             "A3",
@@ -12141,7 +12167,8 @@
             "A3"
           ],
           "coreControlRefs": [
-            "A1"
+            "A1",
+            "A3"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -12155,7 +12182,8 @@
             "A2"
           ],
           "coreControlRefs": [
-            "A1"
+            "A1",
+            "A2"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -12169,7 +12197,8 @@
             "A7"
           ],
           "coreControlRefs": [
-            "A4"
+            "A4",
+            "A7"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -12199,7 +12228,8 @@
             "A9"
           ],
           "coreControlRefs": [
-            "A8"
+            "A8",
+            "A5"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -12274,7 +12304,8 @@
           ],
           "coreControlRefs": [
             "A1",
-            "A6"
+            "A6",
+            "A5"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -12291,7 +12322,8 @@
           ],
           "coreControlRefs": [
             "A3",
-            "A6"
+            "A6",
+            "A5"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -12308,7 +12340,8 @@
           ],
           "coreControlRefs": [
             "A4",
-            "A6"
+            "A6",
+            "A5"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -13377,7 +13410,7 @@
       "hazardControlMap": [
         {
           "hazardId": "H1",
-          "hazardItem": "起重機支腿、地基承載、作業半徑或額定荷重不符，或吊籠吊掛系統及防脫裝置失效，可能造成起重機失穩、吊籠傾覆或整體墜落。",
+          "hazardItem": "起重機外伸撐座、地基承載、作業半徑或額定荷重不符，或吊籠吊掛系統及防脫裝置失效，可能造成起重機失穩、吊籠傾覆或整體墜落。",
           "severity": 5,
           "controlRefs": [
             "A4",
@@ -13419,14 +13452,15 @@
           "coreControlRefs": [
             "A10",
             "A6",
-            "A7"
+            "A7",
+            "A11"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
         },
         {
           "hazardId": "H4",
-          "hazardItem": "未繫掛獨立生命線、探身跨越護欄、攀爬護欄或站立於物料工具上作業，可能造成失去平衡或由吊籠開口墜落。",
+          "hazardItem": "未繫掛獨立安全母索、探身跨越護欄、攀爬護欄或站立於物料工具上作業，可能造成失去平衡或由吊籠開口墜落。",
           "severity": 5,
           "controlRefs": [
             "A7",
@@ -13608,7 +13642,8 @@
           "coreControlRefs": [
             "A1",
             "A2",
-            "A6"
+            "A6",
+            "A5"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -13624,7 +13659,8 @@
           ],
           "coreControlRefs": [
             "A3",
-            "A6"
+            "A6",
+            "A5"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -13673,7 +13709,8 @@
           ],
           "coreControlRefs": [
             "A4",
-            "A6"
+            "A6",
+            "A5"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -14469,7 +14506,10 @@
             "A10"
           ],
           "coreControlRefs": [
-            "A11"
+            "A11",
+            "A2",
+            "A8",
+            "A10"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -14484,7 +14524,9 @@
             "A10"
           ],
           "coreControlRefs": [
-            "A11"
+            "A11",
+            "A3",
+            "A10"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -14499,7 +14541,8 @@
             "A10"
           ],
           "coreControlRefs": [
-            "A2"
+            "A2",
+            "A10"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -14514,7 +14557,9 @@
             "A10"
           ],
           "coreControlRefs": [
-            "A4"
+            "A4",
+            "A11",
+            "A10"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -14552,7 +14597,8 @@
             "A5"
           ],
           "coreControlRefs": [
-            "A2"
+            "A2",
+            "A1"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -14567,7 +14613,8 @@
             "A3"
           ],
           "coreControlRefs": [
-            "A3"
+            "A3",
+            "A1"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -14597,7 +14644,8 @@
             "A5"
           ],
           "coreControlRefs": [
-            "A4"
+            "A4",
+            "A1"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -15144,7 +15192,8 @@
           ],
           "coreControlRefs": [
             "A14",
-            "A12"
+            "A12",
+            "A11"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -15563,26 +15612,28 @@
             "A1",
             "A2",
             "A3",
-            "A5"
+            "A6"
           ],
           "coreControlRefs": [
-            "A1"
+            "A1",
+            "A6"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
         },
         {
           "hazardId": "H2",
-          "hazardItem": "人員進入吊運、迴轉或降落路徑，或站在吊物與固定物之間，可能遭吊物、吊鉤、吊梁或吊具撞擊。",
+          "hazardItem": "修正對應相關法規重點如下\n人員進入吊運、迴轉或作業半徑內，或站在吊物與固定物之間，可能遭吊物、吊鉤、吊梁或吊具撞擊。",
           "severity": 5,
           "controlRefs": [
-            "A4",
-            "A5",
+            "A8",
+            "A7",
             "A2",
             "A3"
           ],
           "coreControlRefs": [
-            "A4"
+            "A8",
+            "A7"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -15594,11 +15645,12 @@
           "controlRefs": [
             "A2",
             "A3",
-            "A4",
+            "A8",
             "A5"
           ],
           "coreControlRefs": [
-            "A4"
+            "A8",
+            "A5"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -17603,14 +17655,15 @@
             "A5"
           ],
           "coreControlRefs": [
-            "A1"
+            "A1",
+            "A2"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
         },
         {
           "hazardId": "H2",
-          "hazardItem": "高處進行對孔、拆栓、鎖固或構件定位時，未持續繫掛或錨點、生命線配置不當，可能因重心外移或失足墜落。",
+          "hazardItem": "高處進行對孔、拆栓、鎖固或構件定位時，未持續繫掛或錨點、安全母索配置不當，可能因重心外移或失足墜落。",
           "severity": 5,
           "controlRefs": [
             "A2",
@@ -17650,7 +17703,8 @@
             "A2"
           ],
           "coreControlRefs": [
-            "A1"
+            "A1",
+            "A2"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -17758,7 +17812,7 @@
         },
         {
           "hazardId": "H3",
-          "hazardItem": "輔助起重機支腿、墊板或地盤承載不足，可能造成起重機翻覆並引發吊物或構件倒塌。",
+          "hazardItem": "輔助起重機外伸撐座、墊板或地盤承載不足，可能造成起重機翻覆並引發吊物或構件倒塌。",
           "severity": 5,
           "controlRefs": [
             "A5",
@@ -17803,7 +17857,8 @@
           ],
           "coreControlRefs": [
             "A1",
-            "A9"
+            "A9",
+            "A5"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -17822,7 +17877,8 @@
           ],
           "coreControlRefs": [
             "A2",
-            "A9"
+            "A9",
+            "A5"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -17840,7 +17896,8 @@
           ],
           "coreControlRefs": [
             "A4",
-            "A9"
+            "A9",
+            "A5"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -17942,7 +17999,7 @@
       "hazardControlMap": [
         {
           "hazardId": "H1",
-          "hazardItem": "輔助起重機進場、移位、支腿展開、撤收或回轉時，機體、配重或尾端可能掃掠塔身、設施或人員。",
+          "hazardItem": "輔助起重機進場、移位、外伸撐座展開、撤收或回轉時，機體、配重或尾端可能掃掠塔身、設施或人員。",
           "severity": 5,
           "controlRefs": [
             "A1",
@@ -18150,7 +18207,7 @@
       "hazardControlMap": [
         {
           "hazardId": "H1",
-          "hazardItem": "施工架、高空工作車、工作台或支腿的承載與穩定條件不足，護欄、上下設備或防墜系統未完成即登高，可能墜落。",
+          "hazardItem": "施工架、高空工作車、工作台或外伸撐座的承載與穩定條件不足，護欄、上下設備或防墜系統未完成即登高，可能墜落。",
           "severity": 5,
           "controlRefs": [
             "A1",
@@ -18206,7 +18263,7 @@
         },
         {
           "hazardId": "H4",
-          "hazardItem": "生命線、錨點、連接器或高處設備變形、鬆脫、損傷或遭碰撞後持續使用，可能導致防墜失效。",
+          "hazardItem": "安全母索、錨點、連接器或高處設備變形、鬆脫、損傷或遭碰撞後持續使用，可能導致防墜失效。",
           "severity": 5,
           "controlRefs": [
             "A1",
@@ -18466,21 +18523,23 @@
             "A7"
           ],
           "coreControlRefs": [
-            "A1"
+            "A1",
+            "A7"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
         },
         {
           "hazardId": "H2",
-          "hazardItem": "施工架或高空工作車設置於地耐力不足、坡度不適或支腿墊板不當的位置，可能傾覆或倒塌。",
+          "hazardItem": "施工架或高空工作車設置於地耐力不足、坡度不適或外伸撐座墊板不當的位置，可能傾覆或倒塌。",
           "severity": 5,
           "controlRefs": [
             "A2",
             "A8"
           ],
           "coreControlRefs": [
-            "A2"
+            "A2",
+            "A8"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -18494,7 +18553,8 @@
             "A3"
           ],
           "coreControlRefs": [
-            "A1"
+            "A1",
+            "A3"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -18536,7 +18596,8 @@
             "A9"
           ],
           "coreControlRefs": [
-            "A5"
+            "A5",
+            "A9"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -18710,7 +18771,7 @@
         },
         {
           "hazardId": "H2",
-          "hazardItem": "高空工作車進退、支腿展開或迴轉定位時，可能撞擊施工架、外牆或架空設施。",
+          "hazardItem": "高空工作車進退、外伸撐座展開或迴轉定位時，可能撞擊施工架、外牆或架空設施。",
           "severity": 5,
           "controlRefs": [
             "A1",
@@ -18827,7 +18888,7 @@
       "hazardControlMap": [
         {
           "hazardId": "H1",
-          "hazardItem": "施工架及高空工作車的支腿、踏板、護欄與升降機構形成夾點，手腳伸入或設備移動時可能遭夾傷。",
+          "hazardItem": "施工架及高空工作車的外伸撐座、踏板、護欄與升降機構形成夾點，手腳伸入或設備移動時可能遭夾傷。",
           "severity": 5,
           "controlRefs": [
             "A1",
@@ -18925,7 +18986,7 @@
         },
         {
           "hazardId": "H2",
-          "hazardItem": "施工架、吊籠或工作平台的護欄、踏板、踢腳板及上下設備缺失或損壞，作業人員施工時可能墜落。",
+          "hazardItem": "施工架、吊籠或工作平台的護欄、踏板及上下設備缺失或損壞，作業人員施工時可能墜落。",
           "severity": 5,
           "controlRefs": [
             "A14",
@@ -18953,7 +19014,8 @@
             "A3"
           ],
           "coreControlRefs": [
-            "A14"
+            "A14",
+            "A3"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -19337,7 +19399,8 @@
           "coreControlRefs": [
             "A1",
             "A4",
-            "A6"
+            "A6",
+            "A2"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -19356,7 +19419,8 @@
           "coreControlRefs": [
             "A1",
             "A3",
-            "A6"
+            "A6",
+            "A2"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -19372,7 +19436,8 @@
           ],
           "coreControlRefs": [
             "A1",
-            "A6"
+            "A6",
+            "A2"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -19408,7 +19473,8 @@
           "coreControlRefs": [
             "A1",
             "A4",
-            "A6"
+            "A6",
+            "A2"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -19445,7 +19511,8 @@
             "A3"
           ],
           "coreControlRefs": [
-            "A1"
+            "A1",
+            "A2"
           ],
           "ruleSeverity": 3,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -19474,7 +19541,8 @@
             "A6"
           ],
           "coreControlRefs": [
-            "A4"
+            "A4",
+            "A6"
           ],
           "ruleSeverity": 3,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -20244,7 +20312,7 @@
           "severity": 5,
           "controlRefs": [
             "A7",
-            "A8",
+            "A13",
             "A9",
             "A2",
             "A5",
@@ -20252,7 +20320,9 @@
             "A4"
           ],
           "coreControlRefs": [
-            "A8"
+            "A13",
+            "A7",
+            "A5"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -20272,7 +20342,8 @@
             "A5"
           ],
           "coreControlRefs": [
-            "A7"
+            "A7",
+            "A5"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -20293,7 +20364,8 @@
             "A8",
             "A9",
             "A2",
-            "A5"
+            "A5",
+            "A7"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -20751,7 +20823,8 @@
           ],
           "coreControlRefs": [
             "A1",
-            "A4"
+            "A4",
+            "A6"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -20766,7 +20839,8 @@
             "A6"
           ],
           "coreControlRefs": [
-            "A2"
+            "A2",
+            "A6"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -20781,7 +20855,9 @@
             "A6"
           ],
           "coreControlRefs": [
-            "A4"
+            "A4",
+            "A6",
+            "A5"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -21507,7 +21583,7 @@
         },
         {
           "hazardId": "H2",
-          "hazardItem": "踏上夾層、平台、樓板或蓋板前未確認承載及固定狀況時，可能因結構失效或誤踩開口而墜落至下層。",
+          "hazardItem": "踏上夾層、平台、樓板或護蓋前未確認承載及固定狀況時，可能因結構失效或誤踩開口而墜落至下層。",
           "severity": 5,
           "controlRefs": [
             "A2",
@@ -25740,7 +25816,8 @@
           ],
           "coreControlRefs": [
             "A1",
-            "A6"
+            "A6",
+            "A2"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -25836,7 +25913,8 @@
             "A5"
           ],
           "coreControlRefs": [
-            "A7"
+            "A7",
+            "A11"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -25964,7 +26042,8 @@
           ],
           "coreControlRefs": [
             "A2",
-            "A8"
+            "A8",
+            "A9"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -27259,7 +27338,7 @@
         },
         {
           "hazardId": "H2",
-          "hazardItem": "車輛停靠或支腿設置位置靠近架空線，卸料時車體、支腿或吊臂可能侵入帶電區域。",
+          "hazardItem": "車輛停靠或外伸撐座設置位置靠近架空線，卸料時車體、外伸撐座或吊臂可能侵入帶電區域。",
           "severity": 5,
           "controlRefs": [
             "A1",
@@ -27863,7 +27942,7 @@
       "hazardControlMap": [
         {
           "hazardId": "H1",
-          "hazardItem": "車輛停靠、支腿伸出或倒車定位時，人員站在車體與牆面、支腿或其他設備間，可能遭夾壓。",
+          "hazardItem": "車輛停靠、外伸撐座伸出或倒車定位時，人員站在車體與牆面、外伸撐座或其他設備間，可能遭夾壓。",
           "severity": 5,
           "controlRefs": [
             "A2",
@@ -29192,7 +29271,7 @@
         },
         {
           "hazardId": "H3",
-          "hazardItem": "作業人員於爐面、渣槽、集渣坑或其他開口邊緣跨越及倒退搬運時，因護欄或覆蓋板缺失、蓋板不穩或踏面不良而墜落，造成重傷、燙傷或死亡。",
+          "hazardItem": "作業人員於爐面、渣槽、集渣坑或其他開口邊緣跨越及倒退搬運時，因護欄或護蓋缺失、護蓋不穩或踏面不良而墜落，造成重傷、燙傷或死亡。",
           "severity": 5,
           "controlRefs": [
             "A3",
@@ -30042,7 +30121,8 @@
           ],
           "coreControlRefs": [
             "A6",
-            "A8"
+            "A8",
+            "A5"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -30052,8 +30132,6 @@
           "hazardItem": "在二公尺以上進行天花修補或燈具拆裝時，站立於未固定合梯頂板或最上層踏階，因重心偏移或梯腳滑動而墜落。",
           "severity": 5,
           "controlRefs": [
-            "A6",
-            "A7",
             "A8",
             "A9",
             "A10",
@@ -30062,13 +30140,12 @@
             "A5"
           ],
           "coreControlRefs": [
-            "A6",
-            "A7",
             "A8",
             "A9",
             "A11",
             "A12",
-            "A5"
+            "A5",
+            "A10"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -30078,15 +30155,11 @@
           "hazardItem": "於樓梯間、挑空邊緣或未設護欄之平台進行牆面修繕時，後退作業未注意邊界，由開口失足墜至下層。",
           "severity": 5,
           "controlRefs": [
-            "A6",
-            "A7",
             "A8",
-            "A9",
             "A4",
             "A5"
           ],
           "coreControlRefs": [
-            "A6",
             "A8",
             "A5"
           ],
@@ -30098,18 +30171,12 @@
           "hazardItem": "使用移動式施工架進行高處油漆或批土時，腳輪未煞停且作業面未設護欄，架體晃動導致人員墜落。",
           "severity": 5,
           "controlRefs": [
-            "A6",
-            "A7",
             "A8",
-            "A9",
-            "A10",
             "A11",
             "A12",
             "A5"
           ],
           "coreControlRefs": [
-            "A6",
-            "A7",
             "A8",
             "A11",
             "A12",
@@ -30123,16 +30190,14 @@
           "hazardItem": "在屋簷、外牆或窗框修繕時，未使用安全帶或未設置適當繫掛點，因踩踏面脆弱、濕滑或材料鬆動而滑落。",
           "severity": 5,
           "controlRefs": [
-            "A6",
-            "A7",
             "A8",
             "A9",
             "A4",
             "A5"
           ],
           "coreControlRefs": [
-            "A6",
-            "A8"
+            "A8",
+            "A5"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -30142,8 +30207,6 @@
           "hazardItem": "於潮濕地坪或有粉塵之室內攀爬梯具時，鞋底沾附泥漿、油漆或粉塵降低摩擦力，滑腳後自梯上墜落。",
           "severity": 3,
           "controlRefs": [
-            "A6",
-            "A7",
             "A8",
             "A9",
             "A10",
@@ -30152,8 +30215,8 @@
             "A5"
           ],
           "coreControlRefs": [
-            "A6",
-            "A8"
+            "A8",
+            "A5"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -30190,7 +30253,8 @@
             "A8"
           ],
           "coreControlRefs": [
-            "A1"
+            "A1",
+            "A8"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -30238,7 +30302,8 @@
             "A1"
           ],
           "coreControlRefs": [
-            "A4"
+            "A4",
+            "A1"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -30252,7 +30317,8 @@
             "A1"
           ],
           "coreControlRefs": [
-            "A5"
+            "A5",
+            "A1"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -30540,7 +30606,8 @@
           ],
           "coreControlRefs": [
             "A4",
-            "A6"
+            "A6",
+            "A5"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -30560,7 +30627,8 @@
           "coreControlRefs": [
             "A7",
             "A2",
-            "A6"
+            "A6",
+            "A8"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -30578,7 +30646,8 @@
           ],
           "coreControlRefs": [
             "A7",
-            "A6"
+            "A6",
+            "A9"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -30907,7 +30976,6 @@
           "controlRefs": [
             "A1",
             "A2",
-            "A4",
             "A5"
           ],
           "coreControlRefs": [
@@ -31328,7 +31396,8 @@
             "A6"
           ],
           "coreControlRefs": [
-            "A1"
+            "A1",
+            "A6"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -31342,7 +31411,8 @@
             "A6"
           ],
           "coreControlRefs": [
-            "A2"
+            "A2",
+            "A6"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -31356,7 +31426,8 @@
             "A6"
           ],
           "coreControlRefs": [
-            "A3"
+            "A3",
+            "A6"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -31371,7 +31442,8 @@
             "A6"
           ],
           "coreControlRefs": [
-            "A4"
+            "A4",
+            "A6"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -31455,7 +31527,8 @@
           ],
           "coreControlRefs": [
             "A1",
-            "A2"
+            "A2",
+            "A3"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -31473,7 +31546,10 @@
           ],
           "coreControlRefs": [
             "A1",
-            "A2"
+            "A2",
+            "A3",
+            "A4",
+            "A6"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -31483,14 +31559,14 @@
           "hazardItem": "氣墊未充足氣、風扇或備用電源失效，層疊箱墊層數或排列不足，安全網或減速索具錨點不相容，實跳時無法接住或減速。",
           "severity": 5,
           "controlRefs": [
-            "A1",
             "A2",
             "A3",
             "A4"
           ],
           "coreControlRefs": [
-            "A1",
-            "A2"
+            "A2",
+            "A4",
+            "A3"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -31508,7 +31584,10 @@
           ],
           "coreControlRefs": [
             "A1",
-            "A2"
+            "A2",
+            "A6",
+            "A5",
+            "A3"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -31518,13 +31597,12 @@
           "hazardItem": "前一鏡衝擊後未重檢氣墊壓力、箱墊位置、網與索具即再跳，著陸系統已位移或洩壓。",
           "severity": 5,
           "controlRefs": [
-            "A1",
             "A4",
             "A7"
           ],
           "coreControlRefs": [
-            "A1",
-            "A4"
+            "A4",
+            "A7"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -31538,7 +31616,8 @@
             "A7"
           ],
           "coreControlRefs": [
-            "A1"
+            "A1",
+            "A7"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -31761,7 +31840,8 @@
             "A5"
           ],
           "coreControlRefs": [
-            "A2"
+            "A2",
+            "A6"
           ],
           "ruleSeverity": 3,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -31775,7 +31855,8 @@
             "A2"
           ],
           "coreControlRefs": [
-            "A2"
+            "A2",
+            "A3"
           ],
           "ruleSeverity": 3,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -31789,7 +31870,8 @@
             "A2"
           ],
           "coreControlRefs": [
-            "A2"
+            "A2",
+            "A4"
           ],
           "ruleSeverity": 3,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -32048,7 +32130,8 @@
           ],
           "coreControlRefs": [
             "A1",
-            "A6"
+            "A6",
+            "A3"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -32081,7 +32164,8 @@
           ],
           "coreControlRefs": [
             "A8",
-            "A6"
+            "A6",
+            "A9"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -32091,13 +32175,12 @@
           "hazardItem": "翻面或搬移大型、不規則料件時，若重心不穩或支撐不足，料件可能翻落或撞擊人員。",
           "severity": 4,
           "controlRefs": [
-            "A2",
             "A10",
             "A6"
           ],
           "coreControlRefs": [
-            "A2",
-            "A6"
+            "A6",
+            "A10"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -32113,7 +32196,8 @@
           ],
           "coreControlRefs": [
             "A11",
-            "A6"
+            "A6",
+            "A12"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -33131,7 +33215,6 @@
           "hazardItem": "在屋頂、夾層或設備平台作業時，踩踏脆弱屋面、採光罩、孔洞邊緣或承載不足的平台，可能失足墜落。",
           "severity": 5,
           "controlRefs": [
-            "A10",
             "A11",
             "A12",
             "A13",
@@ -33140,10 +33223,10 @@
             "A15"
           ],
           "coreControlRefs": [
-            "A10",
             "A12",
             "A13",
-            "A14"
+            "A14",
+            "A11"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -33153,18 +33236,15 @@
           "hazardItem": "使用合梯、移動平台或爬梯時，因角度、止滑、固定不當、損壞或拆卸施力，可能滑移、翻倒而墜落。",
           "severity": 5,
           "controlRefs": [
-            "A10",
             "A11",
-            "A12",
-            "A13",
             "A14",
             "A16",
-            "A17",
-            "A8"
+            "A17"
           ],
           "coreControlRefs": [
-            "A10",
-            "A12"
+            "A11",
+            "A16",
+            "A17"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -33174,20 +33254,19 @@
           "hazardItem": "上下梯具或高處移位時手持工具、零件而未保持三點接觸，可能因姿勢失穩墜落。",
           "severity": 5,
           "controlRefs": [
-            "A10",
             "A11",
             "A12",
             "A13",
             "A14",
             "A18",
             "A17",
-            "A8",
             "A9"
           ],
           "coreControlRefs": [
-            "A10",
             "A12",
-            "A14"
+            "A14",
+            "A17",
+            "A11"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -33197,7 +33276,6 @@
           "hazardItem": "雨水、強風、濕滑、照明不足或通道障礙使屋頂、平台及梯具失足，可能造成墜落。",
           "severity": 5,
           "controlRefs": [
-            "A10",
             "A11",
             "A12",
             "A13",
@@ -33208,8 +33286,8 @@
             "A9"
           ],
           "coreControlRefs": [
-            "A10",
-            "A13"
+            "A13",
+            "A11"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -33219,7 +33297,6 @@
           "hazardItem": "高處平台、屋頂、風管或設備開口的護欄、踏板及臨時平台損壞或未封閉，作業人員跨越、拆卸或移位時可能失足、踏穿墜落。",
           "severity": 5,
           "controlRefs": [
-            "A10",
             "A11",
             "A12",
             "A13",
@@ -33228,10 +33305,10 @@
             "A8"
           ],
           "coreControlRefs": [
-            "A10",
             "A12",
             "A13",
-            "A14"
+            "A14",
+            "A11"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -33241,16 +33318,13 @@
           "hazardItem": "防墜系統的安全帶、繫繩或錨點不合格、未鉤掛或下方淨空不足，失足時可能造成擺盪撞擊或二次墜落。",
           "severity": 5,
           "controlRefs": [
-            "A10",
             "A11",
-            "A12",
-            "A13",
             "A14",
             "A8"
           ],
           "coreControlRefs": [
-            "A10",
-            "A12"
+            "A11",
+            "A8"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -33260,15 +33334,15 @@
           "hazardItem": "防墜系統制動後無法自行脫離高處，救援延遲時可能發生懸吊創傷、意識喪失或再次墜落。",
           "severity": 5,
           "controlRefs": [
-            "A10",
             "A11",
             "A12",
             "A13",
             "A8"
           ],
           "coreControlRefs": [
-            "A10",
-            "A12"
+            "A12",
+            "A11",
+            "A8"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -33303,7 +33377,8 @@
             "A6"
           ],
           "coreControlRefs": [
-            "A1"
+            "A1",
+            "A2"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -33398,7 +33473,8 @@
             "A14"
           ],
           "coreControlRefs": [
-            "A12"
+            "A12",
+            "A13"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -33961,7 +34037,10 @@
           ],
           "coreControlRefs": [
             "A12",
-            "A7"
+            "A7",
+            "A9",
+            "A3",
+            "A10"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -34269,7 +34348,8 @@
           ],
           "coreControlRefs": [
             "A1",
-            "A2"
+            "A2",
+            "A3"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -34525,7 +34605,8 @@
           ],
           "coreControlRefs": [
             "A2",
-            "A5"
+            "A5",
+            "A6"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -34543,7 +34624,8 @@
           ],
           "coreControlRefs": [
             "A2",
-            "A5"
+            "A5",
+            "A4"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -34575,7 +34657,8 @@
             "A6"
           ],
           "coreControlRefs": [
-            "A5"
+            "A5",
+            "A3"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -34591,7 +34674,8 @@
             "A6"
           ],
           "coreControlRefs": [
-            "A5"
+            "A5",
+            "A6"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -34759,7 +34843,8 @@
             "A6"
           ],
           "coreControlRefs": [
-            "A1"
+            "A1",
+            "A6"
           ],
           "ruleSeverity": 3,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -34773,7 +34858,8 @@
             "A6"
           ],
           "coreControlRefs": [
-            "A1"
+            "A1",
+            "A6"
           ],
           "ruleSeverity": 3,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -34787,7 +34873,8 @@
             "A6"
           ],
           "coreControlRefs": [
-            "A1"
+            "A1",
+            "A6"
           ],
           "ruleSeverity": 3,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -34819,7 +34906,8 @@
             "A6"
           ],
           "coreControlRefs": [
-            "A1"
+            "A1",
+            "A6"
           ],
           "ruleSeverity": 3,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -34833,7 +34921,8 @@
             "A5"
           ],
           "coreControlRefs": [
-            "A1"
+            "A1",
+            "A5"
           ],
           "ruleSeverity": 3,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -36823,7 +36912,8 @@
           ],
           "coreControlRefs": [
             "A1",
-            "A6"
+            "A6",
+            "A8"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -36837,7 +36927,8 @@
             "A3"
           ],
           "coreControlRefs": [
-            "A2"
+            "A2",
+            "A3"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -36867,7 +36958,8 @@
             "A5"
           ],
           "coreControlRefs": [
-            "A1"
+            "A1",
+            "A3"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -36881,7 +36973,8 @@
             "A1"
           ],
           "coreControlRefs": [
-            "A1"
+            "A1",
+            "A7"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -36905,7 +36998,8 @@
           "coreControlRefs": [
             "A2",
             "A6",
-            "A7"
+            "A7",
+            "A1"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -36923,7 +37017,8 @@
           "coreControlRefs": [
             "A3",
             "A6",
-            "A7"
+            "A7",
+            "A1"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -36940,7 +37035,8 @@
           ],
           "coreControlRefs": [
             "A6",
-            "A7"
+            "A7",
+            "A4"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -37408,7 +37504,7 @@
         },
         {
           "hazardId": "H2",
-          "hazardItem": "連牆件、斜撐、工作臺或臨時防墜設施未按順序設置或保留，作業人員站上鬆動構件時墜落，可致重傷或死亡。",
+          "hazardItem": "繫牆桿、斜撐、工作臺或臨時防墜設施未按規定設置，作業人員站上鬆動構件時墜落，可致重傷或死亡。",
           "severity": 5,
           "controlRefs": [
             "A2",
@@ -37470,7 +37566,9 @@
             "A10"
           ],
           "coreControlRefs": [
-            "A1"
+            "A1",
+            "A12",
+            "A10"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -37503,7 +37601,8 @@
             "A11"
           ],
           "coreControlRefs": [
-            "A2"
+            "A2",
+            "A4"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -37526,7 +37625,7 @@
         },
         {
           "hazardId": "H9",
-          "hazardItem": "防墜系統錨點或生命線承載力、位置及墜落淨空不足，墜落時可能造成防護失效或撞擊障礙物。",
+          "hazardItem": "防墜系統錨點或安全母索承載力、位置及墜落淨空不足，墜落時可能造成防護失效或撞擊障礙物。",
           "severity": 5,
           "controlRefs": [
             "A1",
@@ -37534,7 +37633,8 @@
             "A12"
           ],
           "coreControlRefs": [
-            "A1"
+            "A1",
+            "A12"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -37675,7 +37775,8 @@
           ],
           "coreControlRefs": [
             "A1",
-            "A8"
+            "A8",
+            "A12"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -37705,7 +37806,8 @@
             "A13"
           ],
           "coreControlRefs": [
-            "A4"
+            "A4",
+            "A13"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -37729,8 +37831,7 @@
           "hazardItem": "拆除未依自上而下、逐層逐跨順序進行，先拆主構件、斜撐或連牆件，使剩餘架體失去支撐而倒塌。",
           "severity": 5,
           "controlRefs": [
-            "A6",
-            "A10"
+            "A6"
           ],
           "coreControlRefs": [
             "A6"
@@ -37748,7 +37849,8 @@
             "A8"
           ],
           "coreControlRefs": [
-            "A8"
+            "A8",
+            "A11"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -37796,7 +37898,9 @@
             "A9"
           ],
           "coreControlRefs": [
-            "A4"
+            "A4",
+            "A5",
+            "A9"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -37847,7 +37951,8 @@
           ],
           "coreControlRefs": [
             "A1",
-            "A10"
+            "A10",
+            "A5"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -37863,7 +37968,8 @@
           ],
           "coreControlRefs": [
             "A3",
-            "A10"
+            "A10",
+            "A7"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -37891,12 +37997,12 @@
           "controlRefs": [
             "A1",
             "A10",
-            "A11"
+            "A12"
           ],
           "coreControlRefs": [
             "A1",
             "A10",
-            "A11"
+            "A12"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -37916,7 +38022,8 @@
             "A1",
             "A2",
             "A8",
-            "A10"
+            "A10",
+            "A6"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -37926,15 +38033,14 @@
           "hazardItem": "拆除時以拋擲方式下送扣件與短料，材料飛落擊中下方人員，造成眼部、顏面或身體重傷。",
           "severity": 4,
           "controlRefs": [
-            "A1",
             "A2",
             "A7",
             "A10"
           ],
           "coreControlRefs": [
-            "A1",
             "A2",
-            "A10"
+            "A10",
+            "A7"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -38522,12 +38628,11 @@
           "severity": 5,
           "controlRefs": [
             "A8",
-            "A3",
-            "A4",
-            "A5"
+            "A10",
+            "A4"
           ],
           "coreControlRefs": [
-            "A3"
+            "A10"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -38538,13 +38643,13 @@
           "severity": 5,
           "controlRefs": [
             "A2",
-            "A3",
+            "A11",
             "A4",
             "A5"
           ],
           "coreControlRefs": [
             "A2",
-            "A3",
+            "A11",
             "A4",
             "A5"
           ],
@@ -38557,12 +38662,12 @@
           "severity": 5,
           "controlRefs": [
             "A2",
-            "A3",
+            "A11",
             "A9"
           ],
           "coreControlRefs": [
             "A2",
-            "A3"
+            "A11"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -38586,7 +38691,7 @@
         },
         {
           "hazardId": "H5",
-          "hazardItem": "人員由高空作業車、工作架、梯具或構件上下及轉移時，跨越未防護間隙而墜落。",
+          "hazardItem": "修正對應相關法規重點\n人員由工作台、施工架、梯具或構件上下及轉移時，跨越未防護間隙而墜落。",
           "severity": 5,
           "controlRefs": [
             "A3",
@@ -38711,14 +38816,15 @@
             "A7"
           ],
           "coreControlRefs": [
-            "A6"
+            "A6",
+            "A1"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
         },
         {
           "hazardId": "H2",
-          "hazardItem": "地基軟弱、墊板不足、支腿沉陷、積水沖刷或排水不良，導致立柱傾斜、基礎崩塌及構台倒塌。",
+          "hazardItem": "地基軟弱、墊板不足、外伸撐座沉陷、積水沖刷或排水不良，導致立柱傾斜、基礎崩塌及構台倒塌。",
           "severity": 5,
           "controlRefs": [
             "A1",
@@ -38812,7 +38918,8 @@
           ],
           "coreControlRefs": [
             "A1",
-            "A9"
+            "A9",
+            "A10"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -38830,7 +38937,8 @@
           "coreControlRefs": [
             "A2",
             "A11",
-            "A9"
+            "A9",
+            "A3"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -38864,7 +38972,8 @@
           ],
           "coreControlRefs": [
             "A4",
-            "A9"
+            "A9",
+            "A5"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -40404,7 +40513,7 @@
       "hazardControlMap": [
         {
           "hazardId": "H1",
-          "hazardItem": "集塵器上方平台、檢修口或開口的護欄、踢腳板及蓋板不完整，或人員失衡時可能墜落。",
+          "hazardItem": "集塵器上方平台、檢修口或開口的護欄及護蓋不完整，或人員失衡時可能墜落。",
           "severity": 5,
           "controlRefs": [
             "A7",
@@ -42634,7 +42743,8 @@
           ],
           "coreControlRefs": [
             "A1",
-            "A2"
+            "A2",
+            "A5"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -42704,14 +42814,14 @@
           "controlRefs": [
             "A1",
             "A2",
-            "A4",
+            "A7",
             "A5",
             "A6"
           ],
           "coreControlRefs": [
             "A1",
             "A2",
-            "A4",
+            "A7",
             "A5",
             "A6"
           ],
@@ -43108,7 +43218,7 @@
         },
         {
           "hazardId": "H11",
-          "hazardItem": "槽口蓋板、回填材料或工作平台強度不足，受車輛或機具荷重後可能塌落。",
+          "hazardItem": "槽口護蓋、回填材料或工作平台強度不足，受車輛或機具荷重後可能塌落。",
           "severity": 5,
           "controlRefs": [
             "A1",
@@ -43329,7 +43439,8 @@
             "A5"
           ],
           "coreControlRefs": [
-            "A1"
+            "A1",
+            "A5"
           ],
           "ruleSeverity": 3,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -43346,7 +43457,10 @@
             "A5"
           ],
           "coreControlRefs": [
-            "A1"
+            "A1",
+            "A2",
+            "A3",
+            "A5"
           ],
           "ruleSeverity": 3,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -43416,11 +43530,11 @@
           "severity": 5,
           "controlRefs": [
             "A2",
-            "A6",
-            "A7"
+            "A6"
           ],
           "coreControlRefs": [
-            "A2"
+            "A2",
+            "A6"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -43556,7 +43670,8 @@
             "A5"
           ],
           "coreControlRefs": [
-            "A1"
+            "A1",
+            "A5"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -43681,7 +43796,7 @@
         },
         {
           "hazardId": "H2",
-          "hazardItem": "吊車支腿下陷、地盤失穩、植株落位不平或根球失效，可能造成吊車、植株、穴壁或吊掛物倒塌。",
+          "hazardItem": "吊車外伸撐座下陷、地盤失穩、植株落位不平或根球失效，可能造成吊車、植株、穴壁或吊掛物倒塌。",
           "severity": 5,
           "controlRefs": [
             "A2",
@@ -46822,13 +46937,13 @@
           "hazardItem": "孔口、導坑、泥漿池、平台邊緣及邊坡未設防護時，人員量測、清孔或巡查可能失足墜落。",
           "severity": 5,
           "controlRefs": [
-            "A1",
+            "A7",
             "A2",
             "A5",
             "A6"
           ],
           "coreControlRefs": [
-            "A1",
+            "A7",
             "A2",
             "A5",
             "A6"
@@ -46848,7 +46963,8 @@
           ],
           "coreControlRefs": [
             "A2",
-            "A3"
+            "A3",
+            "A5"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -46996,7 +47112,7 @@
       "hazardControlMap": [
         {
           "hazardId": "H1",
-          "hazardItem": "平台承載不足、回填沉陷或排水不良時，鑽樁機、打樁機、吊車支腿及桅桿可能失穩傾覆。",
+          "hazardItem": "平台承載不足、回填沉陷或排水不良時，鑽樁機、打樁機、吊車外伸撐座及桅桿可能失穩傾覆。",
           "severity": 5,
           "controlRefs": [
             "A1",
@@ -47210,7 +47326,8 @@
             "A7"
           ],
           "coreControlRefs": [
-            "A1"
+            "A1",
+            "A2"
           ],
           "ruleSeverity": 3,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -47226,7 +47343,8 @@
             "A7"
           ],
           "coreControlRefs": [
-            "A1"
+            "A1",
+            "A2"
           ],
           "ruleSeverity": 3,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -47243,7 +47361,8 @@
             "A7"
           ],
           "coreControlRefs": [
-            "A1"
+            "A1",
+            "A2"
           ],
           "ruleSeverity": 3,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -47308,7 +47427,7 @@
       "hazardControlMap": [
         {
           "hazardId": "H1",
-          "hazardItem": "人員靠近機具迴轉、支腿、桅桿、鋼筋籠、套管或導管下放區時，構件擺動或下滑可能造成夾傷。",
+          "hazardItem": "人員靠近機具迴轉、外伸撐座、桅桿、鋼筋籠、套管或導管下放區時，構件擺動或下滑可能造成夾傷。",
           "severity": 5,
           "controlRefs": [
             "A1",
@@ -47904,7 +48023,8 @@
             "A4"
           ],
           "coreControlRefs": [
-            "A2"
+            "A2",
+            "A4"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -47920,7 +48040,8 @@
           ],
           "coreControlRefs": [
             "A1",
-            "A3"
+            "A3",
+            "A6"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -48117,7 +48238,12 @@
             "A9"
           ],
           "coreControlRefs": [
-            "A1"
+            "A1",
+            "A10",
+            "A6",
+            "A7",
+            "A9",
+            "A8"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -48135,7 +48261,10 @@
             "A9"
           ],
           "coreControlRefs": [
-            "A2"
+            "A2",
+            "A1",
+            "A9",
+            "A7"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -48153,7 +48282,12 @@
             "A9"
           ],
           "coreControlRefs": [
-            "A1"
+            "A1",
+            "A6",
+            "A10",
+            "A9",
+            "A7",
+            "A8"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -48169,7 +48303,10 @@
             "A9"
           ],
           "coreControlRefs": [
-            "A8"
+            "A8",
+            "A7",
+            "A9",
+            "A6"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -48451,7 +48588,8 @@
             "A5"
           ],
           "coreControlRefs": [
-            "A1"
+            "A1",
+            "A5"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -48496,7 +48634,8 @@
             "A9"
           ],
           "coreControlRefs": [
-            "A4"
+            "A4",
+            "A9"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -48609,7 +48748,8 @@
             "A6"
           ],
           "coreControlRefs": [
-            "A1"
+            "A1",
+            "A6"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -48623,7 +48763,8 @@
             "A2"
           ],
           "coreControlRefs": [
-            "A2"
+            "A2",
+            "A1"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -48637,7 +48778,8 @@
             "A7"
           ],
           "coreControlRefs": [
-            "A3"
+            "A3",
+            "A7"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -48651,7 +48793,8 @@
             "A8"
           ],
           "coreControlRefs": [
-            "A4"
+            "A4",
+            "A8"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -48665,7 +48808,8 @@
             "A9"
           ],
           "coreControlRefs": [
-            "A5"
+            "A5",
+            "A9"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -48962,7 +49106,8 @@
             "A6"
           ],
           "coreControlRefs": [
-            "A2"
+            "A2",
+            "A6"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -48977,7 +49122,8 @@
             "A3"
           ],
           "coreControlRefs": [
-            "A4"
+            "A4",
+            "A6"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -49123,7 +49269,8 @@
             "A6"
           ],
           "coreControlRefs": [
-            "A2"
+            "A2",
+            "A6"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -49137,7 +49284,8 @@
             "A7"
           ],
           "coreControlRefs": [
-            "A3"
+            "A3",
+            "A7"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -49151,7 +49299,8 @@
             "A8"
           ],
           "coreControlRefs": [
-            "A4"
+            "A4",
+            "A8"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -49891,7 +50040,8 @@
             "A6"
           ],
           "coreControlRefs": [
-            "A1"
+            "A1",
+            "A6"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -49920,14 +50070,15 @@
             "A10"
           ],
           "coreControlRefs": [
-            "A9"
+            "A9",
+            "A10"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "110–114 年職災統計"
         },
         {
           "hazardId": "H4",
-          "hazardItem": "拆卸地板蓋板、溝槽護蓋或基座覆蓋件後未防護或未復位，作業人員踩空跌倒。",
+          "hazardItem": "拆卸地板護蓋、溝槽護蓋或基座覆蓋件後未防護或未復位，作業人員踩空跌倒。",
           "severity": 3,
           "controlRefs": [
             "A4",
@@ -53061,7 +53212,7 @@
       "hazardControlMap": [
         {
           "hazardId": "H1",
-          "hazardItem": "護欄、踢腳板、門閂或樓層防墜門缺失、失效，或平台未到位時出入口仍可開啟，作業人員誤踏樓層開口而墜入井道。",
+          "hazardItem": "護欄、門閂或樓層防墜門缺失、失效，或平台未到位時出入口仍可開啟，作業人員誤踏樓層開口而墜入井道。",
           "severity": 5,
           "controlRefs": [
             "A1",
@@ -53097,7 +53248,8 @@
             "A6"
           ],
           "coreControlRefs": [
-            "A5"
+            "A5",
+            "A6"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -53235,7 +53387,7 @@
       "hazardControlMap": [
         {
           "hazardId": "H1",
-          "hazardItem": "平台未設踢腳板、側板或防落措施，零散物料、工具或包材在升降震動中由平台邊緣滑落，擊中下方或周邊人員。",
+          "hazardItem": "平台未設腳趾板、側板或防落覆網等措施，零散物料、工具或包材在升降震動中由平台邊緣滑落，擊中下方或周邊人員。",
           "severity": 3,
           "controlRefs": [
             "A1",
@@ -53244,7 +53396,8 @@
           ],
           "coreControlRefs": [
             "A1",
-            "A7"
+            "A7",
+            "A6"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -53260,7 +53413,8 @@
           ],
           "coreControlRefs": [
             "A2",
-            "A7"
+            "A7",
+            "A6"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -53276,7 +53430,8 @@
           ],
           "coreControlRefs": [
             "A3",
-            "A7"
+            "A7",
+            "A6"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -53292,7 +53447,8 @@
           ],
           "coreControlRefs": [
             "A4",
-            "A7"
+            "A7",
+            "A6"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -53308,7 +53464,8 @@
           ],
           "coreControlRefs": [
             "A5",
-            "A7"
+            "A7",
+            "A6"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -53563,7 +53720,9 @@
             "A4"
           ],
           "coreControlRefs": [
-            "A1"
+            "A1",
+            "A2",
+            "A4"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -53579,7 +53738,8 @@
           ],
           "coreControlRefs": [
             "A1",
-            "A3"
+            "A3",
+            "A2"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -53730,7 +53890,9 @@
             "A11"
           ],
           "coreControlRefs": [
-            "A9"
+            "A9",
+            "A10",
+            "A11"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -53746,7 +53908,8 @@
             "A8"
           ],
           "coreControlRefs": [
-            "A1"
+            "A1",
+            "A4"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -54425,7 +54588,8 @@
           ],
           "coreControlRefs": [
             "A1",
-            "A5"
+            "A5",
+            "A6"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -54454,7 +54618,8 @@
             "A9"
           ],
           "coreControlRefs": [
-            "A3"
+            "A3",
+            "A9"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -54482,7 +54647,8 @@
             "A6"
           ],
           "coreControlRefs": [
-            "A5"
+            "A5",
+            "A6"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -58066,7 +58232,8 @@
           ],
           "coreControlRefs": [
             "A1",
-            "A2"
+            "A2",
+            "A6"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -58083,7 +58250,8 @@
             "A10"
           ],
           "coreControlRefs": [
-            "A4"
+            "A4",
+            "A6"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -58100,14 +58268,15 @@
           ],
           "coreControlRefs": [
             "A2",
-            "A4"
+            "A4",
+            "A3"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
         },
         {
           "hazardId": "H4",
-          "hazardItem": "發生墜落時，生命線、錨點或繫索不相容，或防墜落淨空不足及救援延遲，可能造成懸吊創傷與二次傷害。",
+          "hazardItem": "發生墜落時，安全母索、錨點或繫索不相容，或防墜落淨空不足及救援延遲，可能造成懸吊創傷與二次傷害。",
           "severity": 5,
           "controlRefs": [
             "A6",
@@ -58116,7 +58285,8 @@
             "A10"
           ],
           "coreControlRefs": [
-            "A7"
+            "A7",
+            "A6"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -59584,7 +59754,7 @@
         },
         {
           "hazardId": "H2",
-          "hazardItem": "地坪破損、高低差、鬆動蓋板或棧板侵入通道，可能造成失足；跨越或攀爬棧板取料時也可能踩空跌倒。",
+          "hazardItem": "地坪破損、高低差、鬆動護蓋或棧板侵入通道，可能造成失足；跨越或攀爬棧板取料時也可能踩空跌倒。",
           "severity": 3,
           "controlRefs": [
             "A6",
@@ -61184,7 +61354,8 @@
           ],
           "coreControlRefs": [
             "A7",
-            "A6"
+            "A6",
+            "A8"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -61217,7 +61388,8 @@
           ],
           "coreControlRefs": [
             "A12",
-            "A6"
+            "A6",
+            "A13"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -61368,7 +61540,8 @@
             "A5"
           ],
           "coreControlRefs": [
-            "A5"
+            "A5",
+            "A1"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -61385,7 +61558,8 @@
             "A4"
           ],
           "coreControlRefs": [
-            "A8"
+            "A8",
+            "A4"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -61449,7 +61623,8 @@
             "A14"
           ],
           "coreControlRefs": [
-            "A13"
+            "A13",
+            "A14"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -61582,7 +61757,7 @@
       "hazardControlMap": [
         {
           "hazardId": "H1",
-          "hazardItem": "平台、樓梯或架高走道的護欄、扶手或踢腳板失效時，巡查、通行或搬運可能失足墜落或沿階梯滾落。",
+          "hazardItem": "平台、樓梯或架高走道的護欄、扶手失效時，巡查、通行或搬運可能失足墜落或沿階梯滾落。",
           "severity": 5,
           "controlRefs": [
             "A1",
@@ -61597,7 +61772,7 @@
         },
         {
           "hazardId": "H2",
-          "hazardItem": "孔洞或格柵蓋板於維修期間拆除、移位或未復原時，通行人員可能踩空墜落。",
+          "hazardItem": "孔洞或格柵護蓋於維修期間拆除、移位或未復原時，通行人員可能踩空墜落。",
           "severity": 5,
           "controlRefs": [
             "A1",
@@ -62283,7 +62458,8 @@
           ],
           "coreControlRefs": [
             "A5",
-            "A7"
+            "A7",
+            "A11"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -62503,7 +62679,8 @@
             "A13"
           ],
           "coreControlRefs": [
-            "A12"
+            "A12",
+            "A13"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -62597,7 +62774,8 @@
             "A7",
             "A8",
             "A10",
-            "A11"
+            "A11",
+            "A9"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -63181,7 +63359,8 @@
           ],
           "coreControlRefs": [
             "A1",
-            "A2"
+            "A2",
+            "A4"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -63215,7 +63394,9 @@
             "A1"
           ],
           "coreControlRefs": [
-            "A3"
+            "A3",
+            "A4",
+            "A1"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -63231,7 +63412,10 @@
             "A5"
           ],
           "coreControlRefs": [
-            "A1"
+            "A1",
+            "A4",
+            "A5",
+            "A2"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -63330,7 +63514,8 @@
             "A5"
           ],
           "coreControlRefs": [
-            "A1"
+            "A1",
+            "A5"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -63347,7 +63532,8 @@
             "A5"
           ],
           "coreControlRefs": [
-            "A6"
+            "A6",
+            "A5"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -63362,7 +63548,8 @@
             "A5"
           ],
           "coreControlRefs": [
-            "A2"
+            "A2",
+            "A5"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -63380,7 +63567,9 @@
             "A9"
           ],
           "coreControlRefs": [
-            "A6"
+            "A6",
+            "A5",
+            "A3"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -63394,7 +63583,8 @@
             "A5"
           ],
           "coreControlRefs": [
-            "A4"
+            "A4",
+            "A5"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -63411,7 +63601,8 @@
             "A5"
           ],
           "coreControlRefs": [
-            "A6"
+            "A6",
+            "A9"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -63528,7 +63719,8 @@
             "A9"
           ],
           "coreControlRefs": [
-            "A6"
+            "A6",
+            "A9"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -64023,7 +64215,7 @@
       "hazardControlMap": [
         {
           "hazardId": "H1",
-          "hazardItem": "塔槽、反應器及管廊高處作業時，臨邊護欄、踢腳板、格柵或孔洞防護缺失或未復原，造成作業人員失足墜落。",
+          "hazardItem": "塔槽、反應器及管廊高處作業時，臨邊護欄、格柵或孔洞防護缺失或未復原，造成作業人員失足墜落。",
           "severity": 5,
           "controlRefs": [
             "A1",
@@ -64064,7 +64256,9 @@
             "A6"
           ],
           "coreControlRefs": [
-            "A3"
+            "A3",
+            "A4",
+            "A6"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -64079,7 +64273,8 @@
             "A5"
           ],
           "coreControlRefs": [
-            "A1"
+            "A1",
+            "A4"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -64199,7 +64394,10 @@
           ],
           "coreControlRefs": [
             "A1",
-            "A3"
+            "A3",
+            "A5",
+            "A6",
+            "A7"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -64215,7 +64413,8 @@
           ],
           "coreControlRefs": [
             "A1",
-            "A2"
+            "A2",
+            "A5"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -64229,7 +64428,8 @@
             "A5"
           ],
           "coreControlRefs": [
-            "A2"
+            "A2",
+            "A5"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -64243,7 +64443,8 @@
             "A5"
           ],
           "coreControlRefs": [
-            "A4"
+            "A4",
+            "A5"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -64257,7 +64458,8 @@
             "A5"
           ],
           "coreControlRefs": [
-            "A2"
+            "A2",
+            "A5"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -64272,7 +64474,9 @@
             "A7"
           ],
           "coreControlRefs": [
-            "A6"
+            "A6",
+            "A7",
+            "A5"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -64320,7 +64524,8 @@
             "A7"
           ],
           "coreControlRefs": [
-            "A7"
+            "A7",
+            "A3"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -66786,7 +66991,7 @@
       "hazardControlMap": [
         {
           "hazardId": "H1",
-          "hazardItem": "上下或檢查移動式起重機、車台、支腿及吊具時，於油污濕滑、無護欄或不穩固處攀爬而失足墜落。",
+          "hazardItem": "上下或檢查移動式起重機、車台、外伸撐座及吊具時，於油污濕滑、無護欄或不穩固處攀爬而失足墜落。",
           "severity": 3,
           "controlRefs": [
             "A1",
@@ -66938,7 +67143,7 @@
       "hazardControlMap": [
         {
           "hazardId": "H1",
-          "hazardItem": "支腿未完全伸展、墊板不足或地盤承載力不足時起吊，起重機沉陷、滑移或傾覆並壓砸人員。",
+          "hazardItem": "外伸撐座未完全伸展、墊板不足或地盤承載力不足時起吊，起重機沉陷、滑移或傾覆並壓砸人員。",
           "severity": 5,
           "controlRefs": [
             "A8",
@@ -66946,7 +67151,8 @@
             "A6"
           ],
           "coreControlRefs": [
-            "A8"
+            "A8",
+            "A6"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -66960,7 +67166,8 @@
             "A6"
           ],
           "coreControlRefs": [
-            "A3"
+            "A3",
+            "A6"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -66975,7 +67182,8 @@
             "A6"
           ],
           "coreControlRefs": [
-            "A4"
+            "A4",
+            "A6"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -67022,18 +67230,19 @@
         },
         {
           "hazardId": "H2",
-          "hazardItem": "起重機超出額定工況，或支腿、煞車及限制裝置失效，造成機體傾覆或起升失控而使吊物墜落。",
+          "hazardItem": "起重機吊掛超過額定荷重，外伸撐座、煞車及過負載裝置失效，造成機體傾覆或起升失控而使伸臂及吊物墜落。",
           "severity": 5,
           "controlRefs": [
-            "A1",
+            "A13",
             "A11",
             "A12",
             "A9",
             "A10"
           ],
           "coreControlRefs": [
-            "A1",
-            "A10"
+            "A13",
+            "A10",
+            "A9"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -67049,7 +67258,8 @@
           ],
           "coreControlRefs": [
             "A5",
-            "A8"
+            "A8",
+            "A9"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -67067,7 +67277,9 @@
           ],
           "coreControlRefs": [
             "A7",
-            "A10"
+            "A10",
+            "A9",
+            "A1"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -67083,7 +67295,8 @@
           ],
           "coreControlRefs": [
             "A9",
-            "A10"
+            "A10",
+            "A1"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -67110,7 +67323,7 @@
         },
         {
           "hazardId": "H2",
-          "hazardItem": "支腿伸縮、起重機迴轉或配重移動時，人員進入機體與地面、圍籬及障礙物間，遭夾傷。",
+          "hazardItem": "外伸撐座伸縮、起重機迴轉或配重移動時，人員進入機體與地面、圍籬及障礙物間，遭夾傷。",
           "severity": 5,
           "controlRefs": [
             "A2",
@@ -67291,14 +67504,15 @@
           ],
           "coreControlRefs": [
             "A1",
-            "A2"
+            "A2",
+            "A4"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
         },
         {
           "hazardId": "H2",
-          "hazardItem": "地下表箱、設備坑口、孔洞或開啟的箱體未設牢固蓋板或護欄，人員探身、後退或跨越時可能踩空墜落。",
+          "hazardItem": "地下表箱、設備坑口、孔洞或開啟的箱體未設牢固護蓋或護欄，人員探身、後退或跨越時可能踩空墜落。",
           "severity": 3,
           "controlRefs": [
             "A3",
@@ -67334,7 +67548,8 @@
             "A4"
           ],
           "coreControlRefs": [
-            "A2"
+            "A2",
+            "A4"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -67418,7 +67633,8 @@
             "A7"
           ],
           "coreControlRefs": [
-            "A2"
+            "A2",
+            "A6"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -67433,7 +67649,8 @@
             "A6"
           ],
           "coreControlRefs": [
-            "A3"
+            "A3",
+            "A6"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -67448,7 +67665,9 @@
             "A6"
           ],
           "coreControlRefs": [
-            "A4"
+            "A4",
+            "A3",
+            "A6"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -67463,7 +67682,9 @@
             "A6"
           ],
           "coreControlRefs": [
-            "A5"
+            "A5",
+            "A3",
+            "A6"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -67480,7 +67701,9 @@
           ],
           "coreControlRefs": [
             "A5",
-            "A7"
+            "A7",
+            "A6",
+            "A1"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -67814,7 +68037,8 @@
             "A3"
           ],
           "coreControlRefs": [
-            "A3"
+            "A3",
+            "A5"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -67849,21 +68073,23 @@
             "A4"
           ],
           "coreControlRefs": [
-            "A2"
+            "A2",
+            "A4"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "110–114 年職災統計"
         },
         {
           "hazardId": "H3",
-          "hazardItem": "坑溝、人孔、表箱及排水孔蓋板鬆動、未復位或缺失，地坪高低差及開口可能造成踩空跌倒。",
+          "hazardItem": "坑溝、人孔、表箱及排水孔護蓋鬆動、未復位或缺失，地坪高低差及開口可能造成踩空跌倒。",
           "severity": 3,
           "controlRefs": [
             "A3",
             "A6"
           ],
           "coreControlRefs": [
-            "A3"
+            "A3",
+            "A6"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -67884,7 +68110,8 @@
             "A6"
           ],
           "coreControlRefs": [
-            "A2"
+            "A2",
+            "A6"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -67899,7 +68126,8 @@
             "A5"
           ],
           "coreControlRefs": [
-            "A5"
+            "A5",
+            "A3"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -67915,7 +68143,8 @@
           ],
           "coreControlRefs": [
             "A1",
-            "A5"
+            "A5",
+            "A6"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -67929,7 +68158,8 @@
             "A6"
           ],
           "coreControlRefs": [
-            "A2"
+            "A2",
+            "A6"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -68281,7 +68511,9 @@
             "A7"
           ],
           "coreControlRefs": [
-            "A1"
+            "A1",
+            "A6",
+            "A7"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -68311,7 +68543,8 @@
             "A6"
           ],
           "coreControlRefs": [
-            "A4"
+            "A4",
+            "A6"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -68360,7 +68593,8 @@
             "A4"
           ],
           "coreControlRefs": [
-            "A3"
+            "A3",
+            "A4"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -68374,7 +68608,8 @@
             "A6"
           ],
           "coreControlRefs": [
-            "A4"
+            "A4",
+            "A6"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -68388,7 +68623,8 @@
             "A7"
           ],
           "coreControlRefs": [
-            "A5"
+            "A5",
+            "A7"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -68493,7 +68729,7 @@
         },
         {
           "hazardId": "H3",
-          "hazardItem": "地面、平台或夾層的孔洞、高低差及蓋板未有效防護，且照明不足時，可能造成踩空跌倒。",
+          "hazardItem": "地面、平台或夾層的孔洞、高低差及護蓋未有效防護，且照明不足時，可能造成踩空跌倒。",
           "severity": 5,
           "controlRefs": [
             "A2",
@@ -71784,7 +72020,10 @@
           ],
           "coreControlRefs": [
             "A10",
-            "A9"
+            "A9",
+            "A11",
+            "A7",
+            "A13"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -72030,7 +72269,8 @@
             "A3"
           ],
           "coreControlRefs": [
-            "A2"
+            "A2",
+            "A1"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -72045,7 +72285,8 @@
             "A5"
           ],
           "coreControlRefs": [
-            "A5"
+            "A5",
+            "A1"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -72060,7 +72301,8 @@
             "A4"
           ],
           "coreControlRefs": [
-            "A4"
+            "A4",
+            "A1"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -75973,7 +76215,7 @@
         },
         {
           "hazardId": "H3",
-          "hazardItem": "高處作業缺少適用護欄或防墜系統，安全帶未正確連接可承載錨點或生命線，失足後防墜保護失效而墜落。",
+          "hazardItem": "高處作業缺少適用護欄或防墜系統，安全帶未正確連接可承載錨點或安全母索，失足後防墜保護失效而墜落。",
           "severity": 5,
           "controlRefs": [
             "A1",
@@ -76352,7 +76594,9 @@
             "A4"
           ],
           "coreControlRefs": [
-            "A3"
+            "A3",
+            "A2",
+            "A4"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -76368,7 +76612,8 @@
             "A4"
           ],
           "coreControlRefs": [
-            "A3"
+            "A3",
+            "A4"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -76382,7 +76627,8 @@
             "A6"
           ],
           "coreControlRefs": [
-            "A5"
+            "A5",
+            "A6"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -77303,14 +77549,15 @@
             "A5"
           ],
           "coreControlRefs": [
-            "A1"
+            "A1",
+            "A2"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
         },
         {
           "hazardId": "H3",
-          "hazardItem": "高處平台、設備開口或邊緣的護欄、蓋板、踏板拆除或缺損時，作業人員可能由開口或邊緣墜落。",
+          "hazardItem": "高處平台、設備開口或邊緣的護欄、護蓋、踏板拆除或缺損時，作業人員可能由開口或邊緣墜落。",
           "severity": 5,
           "controlRefs": [
             "A3",
@@ -77506,7 +77753,8 @@
           "coreControlRefs": [
             "A1",
             "A2",
-            "A7"
+            "A7",
+            "A6"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -77522,7 +77770,8 @@
           ],
           "coreControlRefs": [
             "A5",
-            "A7"
+            "A7",
+            "A6"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -77538,7 +77787,8 @@
           ],
           "coreControlRefs": [
             "A3",
-            "A7"
+            "A7",
+            "A6"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -77554,7 +77804,8 @@
           ],
           "coreControlRefs": [
             "A4",
-            "A7"
+            "A7",
+            "A8"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -77915,7 +78166,8 @@
             "A6"
           ],
           "coreControlRefs": [
-            "A1"
+            "A1",
+            "A6"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -79281,7 +79533,8 @@
           ],
           "coreControlRefs": [
             "A1",
-            "A2"
+            "A2",
+            "A3"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -79298,7 +79551,8 @@
           ],
           "coreControlRefs": [
             "A2",
-            "A1"
+            "A1",
+            "A3"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -79314,7 +79568,9 @@
             "A9"
           ],
           "coreControlRefs": [
-            "A3"
+            "A3",
+            "A8",
+            "A9"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -79328,7 +79584,8 @@
             "A3"
           ],
           "coreControlRefs": [
-            "A7"
+            "A7",
+            "A3"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -79344,7 +79601,8 @@
             "A2"
           ],
           "coreControlRefs": [
-            "A2"
+            "A2",
+            "A5"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -79368,7 +79626,9 @@
             "A4"
           ],
           "coreControlRefs": [
-            "A4"
+            "A4",
+            "A7",
+            "A2"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -79405,7 +79665,9 @@
             "A10"
           ],
           "coreControlRefs": [
-            "A11"
+            "A11",
+            "A7",
+            "A2"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -79420,7 +79682,8 @@
             "A7"
           ],
           "coreControlRefs": [
-            "A4"
+            "A4",
+            "A2"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -79577,7 +79840,8 @@
           ],
           "coreControlRefs": [
             "A7",
-            "A6"
+            "A6",
+            "A3"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -79588,12 +79852,10 @@
           "severity": 3,
           "controlRefs": [
             "A7",
-            "A1",
             "A6"
           ],
           "coreControlRefs": [
             "A7",
-            "A1",
             "A6"
           ],
           "ruleSeverity": 4,
@@ -79612,7 +79874,8 @@
           "coreControlRefs": [
             "A7",
             "A1",
-            "A6"
+            "A6",
+            "A8"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -79821,7 +80084,8 @@
           ],
           "coreControlRefs": [
             "A6",
-            "A7"
+            "A7",
+            "A9"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -79836,7 +80100,8 @@
             "A9"
           ],
           "coreControlRefs": [
-            "A7"
+            "A7",
+            "A10"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -79851,7 +80116,8 @@
             "A9"
           ],
           "coreControlRefs": [
-            "A7"
+            "A7",
+            "A8"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -79866,7 +80132,8 @@
             "A9"
           ],
           "coreControlRefs": [
-            "A7"
+            "A7",
+            "A10"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -79893,7 +80160,10 @@
           ],
           "coreControlRefs": [
             "A10",
-            "A3"
+            "A3",
+            "A7",
+            "A8",
+            "A9"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -79924,7 +80194,8 @@
             "A12"
           ],
           "coreControlRefs": [
-            "A3"
+            "A3",
+            "A5"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -79934,14 +80205,12 @@
           "hazardItem": "已拔插頭擦拭電器外殼時，他人重新插電或啟動設備，可能使作業人員接觸帶電部位。",
           "severity": 5,
           "controlRefs": [
-            "A7",
             "A8",
-            "A9",
-            "A10",
             "A13"
           ],
           "coreControlRefs": [
-            "A7"
+            "A8",
+            "A13"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -79984,7 +80253,9 @@
           ],
           "coreControlRefs": [
             "A9",
-            "A1"
+            "A1",
+            "A3",
+            "A5"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -80004,7 +80275,8 @@
           ],
           "coreControlRefs": [
             "A9",
-            "A1"
+            "A1",
+            "A4"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -80019,7 +80291,9 @@
             "A9"
           ],
           "coreControlRefs": [
-            "A9"
+            "A9",
+            "A5",
+            "A4"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -80256,13 +80530,11 @@
           "severity": 3,
           "controlRefs": [
             "A3",
-            "A6",
-            "A8"
+            "A6"
           ],
           "coreControlRefs": [
             "A3",
-            "A6",
-            "A8"
+            "A6"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -81341,7 +81613,7 @@
       "hazardControlMap": [
         {
           "hazardId": "H1",
-          "hazardItem": "高處製糊平台護欄或中欄杆缺失時，作業員搬運澱粉袋接近投料口可能重心偏移並墜落，造成骨折或死亡。",
+          "hazardItem": "高處製糊平台護欄缺失時，作業員搬運澱粉袋接近投料口可能重心偏移並墜落，造成骨折或死亡。",
           "severity": 5,
           "controlRefs": [
             "A6",
@@ -81375,7 +81647,7 @@
         },
         {
           "hazardId": "H3",
-          "hazardItem": "投料口缺少可承載的防墜格柵或活動蓋板損壞時，人員靠近檢視料位可能墜入槽體，造成撞擊、溺浸或死亡。",
+          "hazardItem": "投料口缺少可承載的防墜格柵或活動護蓋損壞時，人員靠近檢視料位可能墜入槽體，造成撞擊、溺浸或死亡。",
           "severity": 5,
           "controlRefs": [
             "A6",
@@ -81959,7 +82231,8 @@
           ],
           "coreControlRefs": [
             "A14",
-            "A16"
+            "A16",
+            "A13"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -82000,7 +82273,8 @@
           ],
           "coreControlRefs": [
             "A11",
-            "A6"
+            "A6",
+            "A12"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -82625,7 +82899,8 @@
             "A9"
           ],
           "coreControlRefs": [
-            "A4"
+            "A4",
+            "A9"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -82663,7 +82938,10 @@
             "A11"
           ],
           "coreControlRefs": [
-            "A8"
+            "A8",
+            "A6",
+            "A9",
+            "A7"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -82681,7 +82959,9 @@
             "A5"
           ],
           "coreControlRefs": [
-            "A3"
+            "A3",
+            "A6",
+            "A7"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -82700,7 +82980,10 @@
             "A5"
           ],
           "coreControlRefs": [
-            "A8"
+            "A8",
+            "A6",
+            "A7",
+            "A9"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -82718,7 +83001,9 @@
             "A11"
           ],
           "coreControlRefs": [
-            "A8"
+            "A8",
+            "A6",
+            "A9"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -82737,7 +83022,11 @@
             "A5"
           ],
           "coreControlRefs": [
-            "A8"
+            "A8",
+            "A6",
+            "A7",
+            "A9",
+            "A5"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -82755,7 +83044,9 @@
             "A11"
           ],
           "coreControlRefs": [
-            "A8"
+            "A8",
+            "A11",
+            "A9"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -82775,7 +83066,8 @@
             "A4"
           ],
           "coreControlRefs": [
-            "A6"
+            "A6",
+            "A4"
           ],
           "ruleSeverity": 3,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -82790,7 +83082,8 @@
             "A4"
           ],
           "coreControlRefs": [
-            "A7"
+            "A7",
+            "A4"
           ],
           "ruleSeverity": 3,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -82805,7 +83098,8 @@
             "A4"
           ],
           "coreControlRefs": [
-            "A7"
+            "A7",
+            "A4"
           ],
           "ruleSeverity": 3,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -83306,7 +83600,7 @@
       "hazardControlMap": [
         {
           "hazardId": "H1",
-          "hazardItem": "人員在設備頂部、平台、料斗邊緣或開口作業時，護欄、踢腳板、蓋板缺失或平台腐蝕鬆動，可能踩空或墜落。",
+          "hazardItem": "人員在設備頂部、平台、料斗邊緣或開口作業時，護欄、護蓋缺失或平台腐蝕鬆動，可能踩空或墜落。",
           "severity": 5,
           "controlRefs": [
             "A2",
@@ -83330,7 +83624,8 @@
             "A8"
           ],
           "coreControlRefs": [
-            "A5"
+            "A5",
+            "A8"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -83436,7 +83731,8 @@
           ],
           "coreControlRefs": [
             "A4",
-            "A10"
+            "A10",
+            "A11"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -83452,7 +83748,8 @@
           ],
           "coreControlRefs": [
             "A5",
-            "A10"
+            "A10",
+            "A12"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -83504,7 +83801,8 @@
           "coreControlRefs": [
             "A8",
             "A9",
-            "A10"
+            "A10",
+            "A15"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -83632,7 +83930,8 @@
             "A2"
           ],
           "coreControlRefs": [
-            "A1"
+            "A1",
+            "A4"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -83685,7 +83984,8 @@
             "A6"
           ],
           "coreControlRefs": [
-            "A3"
+            "A3",
+            "A6"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -83701,7 +84001,8 @@
           ],
           "coreControlRefs": [
             "A4",
-            "A1"
+            "A1",
+            "A5"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -85202,7 +85503,8 @@
             "A5"
           ],
           "coreControlRefs": [
-            "A5"
+            "A5",
+            "A1"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -85216,7 +85518,8 @@
             "A5"
           ],
           "coreControlRefs": [
-            "A5"
+            "A5",
+            "A2"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -85270,7 +85573,8 @@
           ],
           "coreControlRefs": [
             "A9",
-            "A8"
+            "A8",
+            "A7"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -85303,7 +85607,8 @@
           ],
           "coreControlRefs": [
             "A4",
-            "A6"
+            "A6",
+            "A7"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -85320,7 +85625,8 @@
           ],
           "coreControlRefs": [
             "A5",
-            "A8"
+            "A8",
+            "A10"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -85464,7 +85770,8 @@
             "A4"
           ],
           "coreControlRefs": [
-            "A3"
+            "A3",
+            "A4"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -85479,7 +85786,8 @@
             "A5"
           ],
           "coreControlRefs": [
-            "A3"
+            "A3",
+            "A5"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -85500,7 +85808,8 @@
             "A5"
           ],
           "coreControlRefs": [
-            "A1"
+            "A1",
+            "A5"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -85515,7 +85824,7 @@
             "A3"
           ],
           "coreControlRefs": [
-            "A1"
+            "A3"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -85530,7 +85839,8 @@
             "A4"
           ],
           "coreControlRefs": [
-            "A2"
+            "A2",
+            "A4"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -85545,7 +85855,8 @@
             "A5"
           ],
           "coreControlRefs": [
-            "A1"
+            "A1",
+            "A5"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -85581,7 +85892,8 @@
             "A10"
           ],
           "coreControlRefs": [
-            "A3"
+            "A3",
+            "A2"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -85611,7 +85923,8 @@
             "A4"
           ],
           "coreControlRefs": [
-            "A3"
+            "A3",
+            "A4"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -85625,7 +85938,8 @@
             "A6"
           ],
           "coreControlRefs": [
-            "A5"
+            "A5",
+            "A6"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -85639,7 +85953,7 @@
             "A6"
           ],
           "coreControlRefs": [
-            "A5"
+            "A6"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -85653,7 +85967,8 @@
             "A11"
           ],
           "coreControlRefs": [
-            "A10"
+            "A10",
+            "A11"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -85685,7 +86000,8 @@
             "A8"
           ],
           "coreControlRefs": [
-            "A7"
+            "A7",
+            "A8"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -85702,7 +86018,8 @@
             "A9"
           ],
           "coreControlRefs": [
-            "A7"
+            "A7",
+            "A9"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -85789,7 +86106,7 @@
         },
         {
           "hazardId": "H2",
-          "hazardItem": "吊車架設於鬆軟回填地、地下管溝、邊坡或開挖邊緣時，支腿沉陷可能造成吊車傾覆。",
+          "hazardItem": "吊車架設於鬆軟回填地、地下管溝、邊坡或開挖邊緣時，外伸撐座沉陷可能造成吊車傾覆。",
           "severity": 5,
           "controlRefs": [
             "A1",
@@ -85805,7 +86122,7 @@
         },
         {
           "hazardId": "H3",
-          "hazardItem": "吊臂伸展、旋轉或試吊時超出荷重表限制、側拉或支腿墊板不足，可能造成吊車失穩翻覆。",
+          "hazardItem": "吊臂伸展、旋轉或試吊時超出荷重表限制、側拉或外伸撐座墊板不足，可能造成吊車失穩翻覆。",
           "severity": 5,
           "controlRefs": [
             "A2",
@@ -85928,7 +86245,7 @@
           "coreControlRefs": [
             "A1",
             "A4",
-            "A12"
+            "A3"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -85945,7 +86262,8 @@
           ],
           "coreControlRefs": [
             "A2",
-            "A4"
+            "A4",
+            "A5"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -85972,7 +86290,7 @@
         },
         {
           "hazardId": "H2",
-          "hazardItem": "吊車旋轉、支腿架設或吊臂動作時，作業半徑與人員或車輛動線重疊，可能造成衝撞。",
+          "hazardItem": "吊車旋轉、外伸撐座架設或吊臂動作時，作業半徑與人員或車輛動線重疊，可能造成衝撞。",
           "severity": 5,
           "controlRefs": [
             "A3",
@@ -86007,7 +86325,8 @@
             "A6"
           ],
           "coreControlRefs": [
-            "A6"
+            "A6",
+            "A4"
           ],
           "ruleSeverity": 3,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -86024,7 +86343,8 @@
             "A6"
           ],
           "coreControlRefs": [
-            "A6"
+            "A6",
+            "A5"
           ],
           "ruleSeverity": 3,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -86044,21 +86364,23 @@
             "A6"
           ],
           "coreControlRefs": [
-            "A1"
+            "A1",
+            "A6"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "110–114 年職災統計"
         },
         {
           "hazardId": "H2",
-          "hazardItem": "吊車支腿伸展、墊板定位或收回時，手足進入支腿、墊板與車體間夾點，可能遭夾傷。",
+          "hazardItem": "吊車外伸撐座伸展、墊板定位或收回時，手足進入外伸撐座、墊板與車體間夾點，可能遭夾傷。",
           "severity": 4,
           "controlRefs": [
             "A2",
             "A7"
           ],
           "coreControlRefs": [
-            "A2"
+            "A2",
+            "A7"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -86086,7 +86408,8 @@
             "A6"
           ],
           "coreControlRefs": [
-            "A4"
+            "A4",
+            "A6"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -86100,7 +86423,8 @@
             "A6"
           ],
           "coreControlRefs": [
-            "A5"
+            "A5",
+            "A6"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -86114,7 +86438,8 @@
             "A6"
           ],
           "coreControlRefs": [
-            "A4"
+            "A4",
+            "A6"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -86229,7 +86554,7 @@
       "hazardControlMap": [
         {
           "hazardId": "H1",
-          "hazardItem": "起重機支腿設於軟弱、回填或靠近開挖邊緣的地面，起升或迴轉時地面沉陷可能造成機具傾覆。",
+          "hazardItem": "起重機外伸撐座設於軟弱、回填或靠近開挖邊緣的地面，起升或迴轉時地面沉陷可能造成機具傾覆。",
           "severity": 5,
           "controlRefs": [
             "A1",
@@ -86251,7 +86576,8 @@
             "A5"
           ],
           "coreControlRefs": [
-            "A2"
+            "A2",
+            "A4"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -86266,7 +86592,8 @@
             "A5"
           ],
           "coreControlRefs": [
-            "A3"
+            "A3",
+            "A4"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -86293,7 +86620,10 @@
           "coreControlRefs": [
             "A1",
             "A11",
-            "A10"
+            "A10",
+            "A2",
+            "A4",
+            "A6"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -86312,7 +86642,9 @@
           "coreControlRefs": [
             "A2",
             "A11",
-            "A10"
+            "A10",
+            "A6",
+            "A3"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -86331,7 +86663,9 @@
           "coreControlRefs": [
             "A2",
             "A11",
-            "A10"
+            "A10",
+            "A3",
+            "A6"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -86349,7 +86683,8 @@
           "coreControlRefs": [
             "A4",
             "A11",
-            "A10"
+            "A10",
+            "A6"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -86367,7 +86702,8 @@
           "coreControlRefs": [
             "A5",
             "A11",
-            "A10"
+            "A10",
+            "A6"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -86702,17 +87038,17 @@
           "hazardItem": "作業前未確認樓板邊緣、梁側、電梯井、預留開口及梁槽防護，排筋、綁紮、查驗或清理時可能踩空墜落。",
           "severity": 5,
           "controlRefs": [
-            "A11",
+            "A19",
             "A12",
-            "A2",
+            "A20",
             "A13",
             "A14",
             "A15",
             "A16"
           ],
           "coreControlRefs": [
-            "A11",
-            "A2",
+            "A19",
+            "A20",
             "A13",
             "A14",
             "A15"
@@ -86725,9 +87061,9 @@
           "hazardItem": "於梁側、柱牆、樓板臨邊或高處綁紮時，護欄、工作平台、踏板或上下設備未完成、未固定或失穩，作業人員可能失足墜落。",
           "severity": 5,
           "controlRefs": [
-            "A11",
+            "A19",
             "A12",
-            "A2",
+            "A20",
             "A13",
             "A14",
             "A4",
@@ -86735,8 +87071,8 @@
             "A16"
           ],
           "coreControlRefs": [
-            "A11",
-            "A2",
+            "A19",
+            "A20",
             "A13",
             "A14",
             "A4",
@@ -86760,7 +87096,11 @@
           ],
           "coreControlRefs": [
             "A2",
-            "A15"
+            "A15",
+            "A11",
+            "A13",
+            "A16",
+            "A14"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -86770,7 +87110,7 @@
           "hazardItem": "攀爬未固定筋籠、模板支撐或站立於護欄、箍筋上進行組立與綁紮，因缺乏穩固上下設備或筋籠晃動而墜落。",
           "severity": 5,
           "controlRefs": [
-            "A11",
+            "A19",
             "A12",
             "A13",
             "A14",
@@ -86779,7 +87119,7 @@
             "A16"
           ],
           "coreControlRefs": [
-            "A11",
+            "A19",
             "A13",
             "A14",
             "A4",
@@ -86793,9 +87133,9 @@
           "hazardItem": "高處作業遇積水、綁線、短料、雜物、照明不足、強風、豪雨或雷電，滑倒或絆倒後可能自臨邊或開口墜落。",
           "severity": 5,
           "controlRefs": [
-            "A11",
+            "A19",
             "A12",
-            "A2",
+            "A20",
             "A13",
             "A14",
             "A5",
@@ -86803,11 +87143,12 @@
             "A16"
           ],
           "coreControlRefs": [
-            "A11",
-            "A2",
+            "A19",
+            "A20",
             "A13",
             "A14",
-            "A15"
+            "A15",
+            "A5"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -86817,9 +87158,9 @@
           "hazardItem": "查驗、修整及清理時為取料、避障或跨越障礙而倒退行走，未使用安全通道或工作平台而於臨邊或開口失足墜落。",
           "severity": 5,
           "controlRefs": [
-            "A11",
+            "A19",
             "A12",
-            "A2",
+            "A20",
             "A13",
             "A14",
             "A5",
@@ -86827,11 +87168,12 @@
             "A16"
           ],
           "coreControlRefs": [
-            "A11",
-            "A2",
+            "A19",
+            "A20",
             "A13",
             "A14",
-            "A15"
+            "A15",
+            "A5"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -86845,7 +87187,8 @@
             "A17"
           ],
           "coreControlRefs": [
-            "A7"
+            "A7",
+            "A17"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -86859,7 +87202,8 @@
             "A17"
           ],
           "coreControlRefs": [
-            "A7"
+            "A7",
+            "A17"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -86873,7 +87217,8 @@
             "A9"
           ],
           "coreControlRefs": [
-            "A7"
+            "A7",
+            "A9"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -87173,7 +87518,8 @@
           "coreControlRefs": [
             "A3",
             "A5",
-            "A7"
+            "A7",
+            "A6"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -87210,7 +87556,8 @@
             "A5"
           ],
           "coreControlRefs": [
-            "A4"
+            "A4",
+            "A2"
           ],
           "ruleSeverity": 3,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -87224,7 +87571,8 @@
             "A4"
           ],
           "coreControlRefs": [
-            "A4"
+            "A4",
+            "A3"
           ],
           "ruleSeverity": 3,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -87238,7 +87586,8 @@
             "A5"
           ],
           "coreControlRefs": [
-            "A4"
+            "A4",
+            "A5"
           ],
           "ruleSeverity": 3,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -88828,7 +89177,7 @@
         },
         {
           "hazardId": "H2",
-          "hazardItem": "作業區有坑洞、地面破損或高低差，未設蓋板、護欄或隔離時，作業人員可能踩空或絆倒。",
+          "hazardItem": "作業區有坑洞、地面破損或高低差，未設護蓋、護欄或隔離時，作業人員可能踩空或絆倒。",
           "severity": 3,
           "controlRefs": [
             "A6",
@@ -89439,7 +89788,7 @@
         },
         {
           "hazardId": "H4",
-          "hazardItem": "平台、梯階、坑槽及地面開口的護欄、蓋板或止滑設施缺失，或人員攀爬砂箱、模具及設備代替通道，可能失足墜落。",
+          "hazardItem": "平台、梯階、坑槽及地面開口的護欄、護蓋或止滑設施缺失，或人員攀爬砂箱、模具及設備代替通道，可能失足墜落。",
           "severity": 3,
           "controlRefs": [
             "A6",
@@ -91002,7 +91351,8 @@
             "A2"
           ],
           "coreControlRefs": [
-            "A1"
+            "A1",
+            "A2"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -91017,7 +91367,9 @@
             "A6"
           ],
           "coreControlRefs": [
-            "A3"
+            "A3",
+            "A6",
+            "A5"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -91031,7 +91383,8 @@
             "A7"
           ],
           "coreControlRefs": [
-            "A4"
+            "A4",
+            "A7"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -91045,7 +91398,7 @@
             "A8"
           ],
           "coreControlRefs": [
-            "A4"
+            "A8"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -91304,15 +91657,14 @@
           "hazardItem": "臨時配電箱、延長線、插頭或手持電動工具破損、漏電、錯接、超載或受潮時，可能發生漏電感電。",
           "severity": 5,
           "controlRefs": [
-            "A1",
             "A3",
             "A6",
             "A7"
           ],
           "coreControlRefs": [
-            "A1",
             "A3",
-            "A6"
+            "A6",
+            "A7"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -91328,7 +91680,8 @@
             "A8"
           ],
           "coreControlRefs": [
-            "A4"
+            "A4",
+            "A7"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -91338,15 +91691,11 @@
           "hazardItem": "接地線、等電位跨接或設備外殼接地不良時，設備故障可能使外殼帶電。",
           "severity": 5,
           "controlRefs": [
-            "A1",
             "A3",
-            "A4",
             "A5"
           ],
           "coreControlRefs": [
-            "A1",
             "A3",
-            "A4",
             "A5"
           ],
           "ruleSeverity": 5,
@@ -91362,7 +91711,8 @@
             "A8"
           ],
           "coreControlRefs": [
-            "A1"
+            "A1",
+            "A4"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -91839,7 +92189,8 @@
             "A5"
           ],
           "coreControlRefs": [
-            "A2"
+            "A2",
+            "A1"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -91854,7 +92205,8 @@
             "A4"
           ],
           "coreControlRefs": [
-            "A2"
+            "A2",
+            "A1"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -91869,7 +92221,8 @@
             "A3"
           ],
           "coreControlRefs": [
-            "A2"
+            "A2",
+            "A1"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -92143,7 +92496,9 @@
             "A8"
           ],
           "coreControlRefs": [
-            "A7"
+            "A7",
+            "A1",
+            "A8"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -92159,7 +92514,10 @@
             "A8"
           ],
           "coreControlRefs": [
-            "A7"
+            "A7",
+            "A3",
+            "A1",
+            "A8"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -92174,7 +92532,9 @@
             "A6"
           ],
           "coreControlRefs": [
-            "A7"
+            "A7",
+            "A8",
+            "A6"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -92190,7 +92550,10 @@
             "A8"
           ],
           "coreControlRefs": [
-            "A7"
+            "A7",
+            "A1",
+            "A9",
+            "A8"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -92450,7 +92813,8 @@
             "A8"
           ],
           "coreControlRefs": [
-            "A6"
+            "A6",
+            "A7"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -92493,7 +92857,8 @@
             "A11"
           ],
           "coreControlRefs": [
-            "A5"
+            "A5",
+            "A11"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -92513,7 +92878,8 @@
             "A7"
           ],
           "coreControlRefs": [
-            "A1"
+            "A1",
+            "A7"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -92527,7 +92893,8 @@
             "A7"
           ],
           "coreControlRefs": [
-            "A1"
+            "A1",
+            "A7"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -92542,7 +92909,8 @@
             "A7"
           ],
           "coreControlRefs": [
-            "A1"
+            "A1",
+            "A8"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -92557,7 +92925,9 @@
             "A10"
           ],
           "coreControlRefs": [
-            "A7"
+            "A7",
+            "A9",
+            "A10"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -92571,7 +92941,8 @@
             "A12"
           ],
           "coreControlRefs": [
-            "A11"
+            "A11",
+            "A12"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -92713,7 +93084,7 @@
       "hazardControlMap": [
         {
           "hazardId": "H1",
-          "hazardItem": "於鋼構、施工架、平台、屋頂或開口邊緣焊接時，護欄、踢腳板、覆蓋或防墜系統缺失，或踩踏脆弱板材與採光罩，可能失足或踏穿墜落。",
+          "hazardItem": "於鋼構、施工架、平台、屋頂或開口邊緣焊接時，護欄、覆蓋或防墜系統缺失，或踩踏脆弱板材與採光罩，可能失足或踏穿墜落。",
           "severity": 5,
           "controlRefs": [
             "A1",
@@ -92803,7 +93174,9 @@
           "coreControlRefs": [
             "A1",
             "A3",
-            "A6"
+            "A6",
+            "A2",
+            "A4"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -92838,7 +93211,8 @@
             "A8"
           ],
           "coreControlRefs": [
-            "A3"
+            "A3",
+            "A8"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -92848,9 +93222,6 @@
           "hazardItem": "設備維修或清潔未停電、驗電及上鎖掛牌，遭他人誤送電後接觸內部帶電元件，可能造成重傷或死亡。",
           "severity": 5,
           "controlRefs": [
-            "A1",
-            "A2",
-            "A3",
             "A7"
           ],
           "coreControlRefs": [
@@ -92875,7 +93246,9 @@
             "A5"
           ],
           "coreControlRefs": [
-            "A1"
+            "A1",
+            "A5",
+            "A2"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -92889,7 +93262,8 @@
             "A5"
           ],
           "coreControlRefs": [
-            "A3"
+            "A3",
+            "A5"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -92903,7 +93277,8 @@
             "A5"
           ],
           "coreControlRefs": [
-            "A1"
+            "A1",
+            "A5"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -92918,7 +93293,9 @@
             "A5"
           ],
           "coreControlRefs": [
-            "A1"
+            "A1",
+            "A2",
+            "A5"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -93270,7 +93647,8 @@
             "A6"
           ],
           "coreControlRefs": [
-            "A5"
+            "A5",
+            "A6"
           ],
           "ruleSeverity": 3,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -93299,7 +93677,7 @@
         },
         {
           "hazardId": "H2",
-          "hazardItem": "開啟樓層井道防護進行層門、門框或配線作業時，護欄、門扇或蓋板拆除且未設替代防護，可能墜入井道。",
+          "hazardItem": "開啟樓層井道防護進行層門、門框或配線作業時，護欄、門扇拆除且未設替代防護，可能墜入井道。",
           "severity": 5,
           "controlRefs": [
             "A1",
@@ -93680,7 +94058,8 @@
           ],
           "coreControlRefs": [
             "A1",
-            "A7"
+            "A7",
+            "A5"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -93785,7 +94164,8 @@
             "A7"
           ],
           "coreControlRefs": [
-            "A1"
+            "A1",
+            "A7"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -93885,18 +94265,18 @@
       "hazardControlMap": [
         {
           "hazardId": "H1",
-          "hazardItem": "於高處、邊緣、樓板或天花開口及機台上方作業時，護欄、踢腳板或覆蓋不足，或站立於不穩固部位，可能失足墜落。",
+          "hazardItem": "於高處、邊緣、樓板或天花開口及機台上方作業時，護欄或覆蓋不足，或站立於不穩固部位，可能失足墜落。",
           "severity": 5,
           "controlRefs": [
             "A7",
-            "A2",
-            "A8",
+            "A9",
+            "A10",
             "A5"
           ],
           "coreControlRefs": [
             "A7",
-            "A2",
-            "A8"
+            "A9",
+            "A10"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -93906,28 +94286,29 @@
           "hazardItem": "合梯未完全展開定位、地面不平或濕滑、站位過高，或作業時過度伸身，可能造成梯具滑移或傾倒。",
           "severity": 3,
           "controlRefs": [
-            "A2",
+            "A9",
             "A4"
           ],
           "coreControlRefs": [
-            "A2"
+            "A9",
+            "A4"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
         },
         {
           "hazardId": "H3",
-          "hazardItem": "移動式工作平台輪檔未鎖定、支腿或踏板不穩、護欄缺失，或平台移動中作業，可能因平台失穩而墜落。",
+          "hazardItem": "移動式工作平台輪檔未鎖定、外伸撐座或踏板不穩、護欄缺失，或平台移動中作業，可能因平台失穩而墜落。",
           "severity": 5,
           "controlRefs": [
             "A7",
-            "A2",
+            "A9",
             "A5",
             "A6"
           ],
           "coreControlRefs": [
             "A7",
-            "A2",
+            "A9",
             "A5",
             "A6"
           ],
@@ -93943,7 +94324,8 @@
             "A5"
           ],
           "coreControlRefs": [
-            "A7"
+            "A7",
+            "A5"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -93996,7 +94378,9 @@
             "A3"
           ],
           "coreControlRefs": [
-            "A1"
+            "A1",
+            "A3",
+            "A8"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -94010,7 +94394,8 @@
             "A4"
           ],
           "coreControlRefs": [
-            "A8"
+            "A8",
+            "A4"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -94548,7 +94933,7 @@
         },
         {
           "hazardId": "H3",
-          "hazardItem": "夜間或停電搶修時照明不足，盤間高低差、門檻、孔洞或電纜溝蓋板不易辨識，可能失足跌倒。",
+          "hazardItem": "夜間或停電搶修時照明不足，盤間高低差、門檻、孔洞或電纜溝護蓋不易辨識，可能失足跌倒。",
           "severity": 3,
           "controlRefs": [
             "A9",
@@ -94620,7 +95005,8 @@
             "A3"
           ],
           "coreControlRefs": [
-            "A1"
+            "A1",
+            "A3"
           ],
           "ruleSeverity": 3,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -94634,7 +95020,8 @@
             "A7"
           ],
           "coreControlRefs": [
-            "A7"
+            "A7",
+            "A3"
           ],
           "ruleSeverity": 3,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -94648,7 +95035,8 @@
             "A9"
           ],
           "coreControlRefs": [
-            "A8"
+            "A8",
+            "A9"
           ],
           "ruleSeverity": 3,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -95134,7 +95522,7 @@
         },
         {
           "hazardId": "H2",
-          "hazardItem": "通道、平台或排水溝有堆物、破損蓋板、高低差或凹凸，照明不足、蒸氣遮蔽或搬運物遮擋視線時，可能導致絆倒失足或工件掉落。",
+          "hazardItem": "通道、平台或排水溝有堆物、破損護蓋、高低差或凹凸，照明不足、蒸氣遮蔽或搬運物遮擋視線時，可能導致絆倒失足或工件掉落。",
           "severity": 3,
           "controlRefs": [
             "A2",
@@ -95232,16 +95620,17 @@
       "hazardControlMap": [
         {
           "hazardId": "H1",
-          "hazardItem": "坑緣護欄、覆蓋板或跨越設施缺失、失效或遭拆除時，人員或車輛可能墜入開挖面。",
+          "hazardItem": "坑緣護欄、護蓋或跨越設施缺失、失效或遭拆除時，人員或車輛可能墜入開挖面。",
           "severity": 5,
           "controlRefs": [
-            "A1",
+            "A6",
             "A4",
             "A5"
           ],
           "coreControlRefs": [
-            "A1",
-            "A5"
+            "A6",
+            "A5",
+            "A4"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -95266,12 +95655,12 @@
           "hazardItem": "人工修坡、邊坡巡查或收工復原時接近泥濘坡面與未防護坑緣，可能失足墜落或滾落。",
           "severity": 3,
           "controlRefs": [
-            "A1",
+            "A7",
             "A2",
             "A4"
           ],
           "coreControlRefs": [
-            "A1",
+            "A7",
             "A2"
           ],
           "ruleSeverity": 5,
@@ -95515,7 +95904,9 @@
           "coreControlRefs": [
             "A2",
             "A5",
-            "A6"
+            "A6",
+            "A1",
+            "A3"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -95531,7 +95922,8 @@
           ],
           "coreControlRefs": [
             "A1",
-            "A6"
+            "A6",
+            "A3"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -95562,13 +95954,12 @@
             "A2",
             "A6",
             "A1",
-            "A3",
-            "A5"
+            "A3"
           ],
           "coreControlRefs": [
             "A4",
             "A6",
-            "A5"
+            "A2"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -95748,7 +96139,8 @@
             "A7"
           ],
           "coreControlRefs": [
-            "A1"
+            "A1",
+            "A3"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -95762,7 +96154,8 @@
             "A3"
           ],
           "coreControlRefs": [
-            "A1"
+            "A1",
+            "A3"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -95776,7 +96169,8 @@
             "A6"
           ],
           "coreControlRefs": [
-            "A1"
+            "A1",
+            "A6"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -99125,7 +99519,7 @@
         },
         {
           "hazardId": "H3",
-          "hazardItem": "排水溝蓋板破損、鬆動、未固定或未復位，且作業區照度不足或存在高低差，作業人員踩踏時失足跌倒。",
+          "hazardItem": "排水溝護蓋破損、鬆動、未固定或未復位，且作業區照度不足或存在高低差，作業人員踩踏時失足跌倒。",
           "severity": 3,
           "controlRefs": [
             "A12",
@@ -99230,7 +99624,7 @@
       "hazardControlMap": [
         {
           "hazardId": "H1",
-          "hazardItem": "醃漬槽、平台或槽口缺少護欄、踢腳板及承載蓋板，搬料、投料、補鹽或查看槽內時可能失足墜入槽內。",
+          "hazardItem": "醃漬槽、平台或槽口缺少護欄及承載護蓋，搬料、投料、補鹽或查看槽內時可能失足墜入槽內。",
           "severity": 4,
           "controlRefs": [
             "A1",
@@ -100988,7 +101382,7 @@
         },
         {
           "hazardId": "H3",
-          "hazardItem": "排水溝蓋板鬆動、門檻高低差或地坪破損，推送餐車通過時絆倒失衡。",
+          "hazardItem": "排水溝護蓋鬆動、門檻高低差或地坪破損，推送餐車通過時絆倒失衡。",
           "severity": 3,
           "controlRefs": [
             "A11",
@@ -101350,7 +101744,8 @@
           "coreControlRefs": [
             "A1",
             "A6",
-            "A7"
+            "A7",
+            "A5"
           ],
           "recoveryReview": "pending",
           "severityReviewRequired": true,
@@ -101427,7 +101822,8 @@
             "A5"
           ],
           "coreControlRefs": [
-            "A10"
+            "A10",
+            "A9"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -101450,7 +101846,8 @@
           ],
           "coreControlRefs": [
             "A1",
-            "A6"
+            "A6",
+            "A8"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -101501,7 +101898,8 @@
           ],
           "coreControlRefs": [
             "A9",
-            "A6"
+            "A6",
+            "A8"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -102171,7 +102569,8 @@
             "A8"
           ],
           "coreControlRefs": [
-            "A2"
+            "A2",
+            "A7"
           ],
           "ruleSeverity": 3,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -102708,57 +103107,55 @@
       "hazardControlMap": [
         {
           "hazardId": "H1",
-          "hazardItem": "樓板、電梯井口、管道間或平台邊緣的護欄、踢腳板、蓋板或安全網缺失、損壞、鬆脫或被拆除時，作業人員可能踩空或由缺口滑出墜落。",
+          "hazardItem": "樓板、電梯井口、管道間或平台邊緣的護欄、護蓋或安全網缺失、損壞、鬆脫或被拆除時，作業人員可能踩空或由缺口滑出墜落。",
           "severity": 5,
           "controlRefs": [
             "A8",
             "A9",
             "A2",
             "A3",
-            "A10",
-            "A11"
+            "A10"
           ],
           "coreControlRefs": [
             "A8",
             "A2",
-            "A10"
+            "A10",
+            "A3"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
         },
         {
           "hazardId": "H2",
-          "hazardItem": "開口蓋板強度不足、未固定、受潮腐蝕或未標示不可踩踏時，可能因人員或物料荷重破裂、滑移或翻起，使人員墜入開口。",
+          "hazardItem": "開口護蓋強度不足、未固定、受潮腐蝕或未標示不可踩踏時，可能因人員或物料荷重破裂、滑移或翻起，使人員墜入開口。",
           "severity": 5,
           "controlRefs": [
             "A8",
             "A9",
             "A2",
-            "A10",
-            "A11"
+            "A10"
           ],
           "coreControlRefs": [
             "A8",
             "A9",
-            "A2",
-            "A11"
+            "A2"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
         },
         {
           "hazardId": "H3",
-          "hazardItem": "護欄、蓋板或生命線移位、拆除及復原期間，替代防護或順序管制不足時，作業人員可能誤入未防護區而墜落。",
+          "hazardItem": "護欄、護蓋或安全母索移位、拆除及復原期間，替代防護或順序管制不足時，作業人員可能誤入未防護區而墜落。",
           "severity": 5,
           "controlRefs": [
             "A2",
             "A3",
-            "A10",
-            "A11"
+            "A10"
           ],
           "coreControlRefs": [
             "A2",
-            "A10"
+            "A10",
+            "A3"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -102770,12 +103167,12 @@
           "controlRefs": [
             "A2",
             "A4",
-            "A10",
-            "A11"
+            "A10"
           ],
           "coreControlRefs": [
             "A2",
-            "A11"
+            "A4",
+            "A10"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -102897,7 +103294,8 @@
           "coreControlRefs": [
             "A1",
             "A7",
-            "A6"
+            "A6",
+            "A10"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -103081,8 +103479,7 @@
           "controlRefs": [
             "A1",
             "A2",
-            "A3",
-            "A4",
+            "A10",
             "A5",
             "A6",
             "A7"
@@ -103090,7 +103487,10 @@
           "coreControlRefs": [
             "A1",
             "A2",
-            "A4"
+            "A10",
+            "A5",
+            "A7",
+            "A6"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -103101,8 +103501,7 @@
           "severity": 5,
           "controlRefs": [
             "A2",
-            "A3",
-            "A4",
+            "A10",
             "A5",
             "A6",
             "A7",
@@ -103110,8 +103509,10 @@
           ],
           "coreControlRefs": [
             "A2",
-            "A4",
-            "A5"
+            "A10",
+            "A5",
+            "A6",
+            "A7"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -103122,8 +103523,7 @@
           "severity": 5,
           "controlRefs": [
             "A2",
-            "A3",
-            "A4",
+            "A10",
             "A5",
             "A6",
             "A7",
@@ -103132,23 +103532,29 @@
           ],
           "coreControlRefs": [
             "A2",
-            "A4"
+            "A10",
+            "A5",
+            "A6",
+            "A7",
+            "A9",
+            "A8"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
         },
         {
           "hazardId": "H4",
-          "hazardItem": "安全帶、連接器、生命線或錨點選用錯誤、掛在腳架、燈架或布景，或承載不足，失足時無法攔截。",
+          "hazardItem": "安全帶、連接器、安全母索或錨點選用錯誤、掛在腳架、燈架或布景，或承載不足，失足時無法攔截。",
           "severity": 5,
           "controlRefs": [
-            "A4",
+            "A10",
             "A5",
             "A6",
             "A7"
           ],
           "coreControlRefs": [
-            "A4"
+            "A10",
+            "A7"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -103516,7 +103922,8 @@
           "coreControlRefs": [
             "A3",
             "A4",
-            "A6"
+            "A6",
+            "A5"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -103640,7 +104047,8 @@
             "A5"
           ],
           "coreControlRefs": [
-            "A1"
+            "A1",
+            "A4"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -103656,7 +104064,8 @@
             "A5"
           ],
           "coreControlRefs": [
-            "A1"
+            "A1",
+            "A3"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -104304,20 +104713,20 @@
           "severity": 5,
           "controlRefs": [
             "A1",
-            "A2",
+            "A10",
             "A7",
             "A8"
           ],
           "coreControlRefs": [
             "A1",
-            "A2"
+            "A10"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
         },
         {
           "hazardId": "H2",
-          "hazardItem": "高空作業車停於坡地、鬆軟或承載力不足地面，或因煞車、支腿、防失穩裝置失效及超載偏載而翻覆，可能造成平台人員墜落。",
+          "hazardItem": "高空作業車停於坡地、鬆軟或承載力不足地面，或因煞車、外伸撐座、防失穩裝置失效及超載偏載而翻覆，可能造成平台人員墜落。",
           "severity": 5,
           "controlRefs": [
             "A2",
@@ -104447,7 +104856,8 @@
           "coreControlRefs": [
             "A3",
             "A4",
-            "A6"
+            "A6",
+            "A5"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -104465,7 +104875,8 @@
           "coreControlRefs": [
             "A1",
             "A3",
-            "A6"
+            "A6",
+            "A5"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -104481,7 +104892,8 @@
           ],
           "coreControlRefs": [
             "A4",
-            "A6"
+            "A6",
+            "A5"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -104637,7 +105049,8 @@
           ],
           "coreControlRefs": [
             "A1",
-            "A5"
+            "A5",
+            "A2"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -104665,7 +105078,8 @@
             "A4"
           ],
           "coreControlRefs": [
-            "A1"
+            "A1",
+            "A4"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -104836,7 +105250,11 @@
           ],
           "coreControlRefs": [
             "A9",
-            "A11"
+            "A11",
+            "A1",
+            "A2",
+            "A12",
+            "A13"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -104846,19 +105264,15 @@
           "hazardItem": "人員失去支撐後長時間懸吊，若救援延遲或下肢持續受壓，可能發生懸吊不耐症、失去意識或死亡。",
           "severity": 5,
           "controlRefs": [
-            "A1",
-            "A2",
-            "A9",
-            "A10",
             "A12",
             "A13",
             "A16",
             "A17"
           ],
           "coreControlRefs": [
-            "A1",
-            "A9",
-            "A12"
+            "A12",
+            "A17",
+            "A16"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -104868,21 +105282,18 @@
           "hazardItem": "設備卡滯、人員失能、通訊中斷或救援設備無法即時到位時，受困人員無法自行解除懸吊狀態，可能加劇生理危害。",
           "severity": 5,
           "controlRefs": [
-            "A1",
-            "A2",
-            "A9",
             "A10",
             "A12",
             "A13",
-            "A14",
-            "A15",
             "A16",
             "A17"
           ],
           "coreControlRefs": [
-            "A9",
             "A12",
-            "A14"
+            "A16",
+            "A17",
+            "A10",
+            "A13"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -104897,7 +105308,9 @@
             "A20"
           ],
           "coreControlRefs": [
-            "A18"
+            "A18",
+            "A19",
+            "A20"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -104918,7 +105331,8 @@
           "coreControlRefs": [
             "A9",
             "A21",
-            "A12"
+            "A12",
+            "A13"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -104939,7 +105353,8 @@
           "coreControlRefs": [
             "A9",
             "A21",
-            "A12"
+            "A12",
+            "A13"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -105121,7 +105536,10 @@
             "A6"
           ],
           "coreControlRefs": [
-            "A4"
+            "A4",
+            "A6",
+            "A5",
+            "A1"
           ],
           "ruleSeverity": 3,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -105139,7 +105557,9 @@
             "A6"
           ],
           "coreControlRefs": [
-            "A4"
+            "A4",
+            "A5",
+            "A6"
           ],
           "ruleSeverity": 3,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -105157,7 +105577,11 @@
             "A6"
           ],
           "coreControlRefs": [
-            "A4"
+            "A4",
+            "A1",
+            "A2",
+            "A6",
+            "A5"
           ],
           "ruleSeverity": 3,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -105385,5 +105809,7 @@
     "immediateDanger": "立即危險類型採 S5；類型分級不等於現場已符合法定立即危險情事。",
     "expertReviewStatus": "in-progress",
     "expectedFeedbackDate": "2026-10-20"
-  }
+  },
+  "expertApplied": "A01-2026-10-19 on 20261013 base",
+  "termExtrapolated": "A01-general-terms-20261020"
 }
