@@ -1704,7 +1704,7 @@
         };
 
         // JSON 使用一般 HTTP 快取；資料改版時同步更新 Selection.html 的版本號。
-        const DATA_VER = '20261020a';
+        const DATA_VER = '20261021a';
         const SEVERITY_POLICY_VER = '20261011b';
         const MANUAL_RISK_WARNING = '使用者自行調降風險評估等級，應依現場事實填寫調整理由／備註，並自行承擔其調整及作業決策責任。調低分數不代表現場危害已降低，亦不免除法定安全衛生及防護義務。';
 
@@ -2191,10 +2191,30 @@
             }
         }
 
+        const AVOID_INDEX_REMAP_20261021A = {
+            '滾輪／鍛轤操作作業\u0000高低溫接觸': [0, 1, null, 2, 3, 4, 5, 6, null, 7]
+        };
+
+        function remapAvoidSelections(snapshot, tasks, remap) {
+            const selections = snapshot.userSelections || {};
+            tasks.forEach(task => {
+                (task.hazardGroups || []).forEach((group, groupIndex) => {
+                    const table = remap[`${task.taskName}\u0000${group.groupName}`];
+                    const state = selections[`${task.id}_${groupIndex}`];
+                    if (!table || !state || !Array.isArray(state.avoids)) return;
+                    state.avoids = [...new Set(state.avoids
+                        .map(index => table[index])
+                        .filter(index => Number.isInteger(index)))];
+                });
+            });
+        }
+
         function migrateScenarioSelections(snapshot, tasks, migration) {
             if (snapshot.dataVersion === DATA_VER) return;
-            // 20261020a 只改句子用詞，情境順序與措施編號沒變。
-            if (snapshot.dataVersion === '20261005h') {
+            // 20261020a、20261021a 只改句子用詞或在群組末尾追加措施，情境順序沒變；
+            // 20261021a 刪除「滾輪／鍛轤操作作業／高低溫接觸」舊 A3、A9，已勾措施編號需前移。
+            if (snapshot.dataVersion === '20261005h' || snapshot.dataVersion === '20261020a') {
+                remapAvoidSelections(snapshot, tasks, AVOID_INDEX_REMAP_20261021A);
                 snapshot.dataVersion = DATA_VER;
                 return;
             }
