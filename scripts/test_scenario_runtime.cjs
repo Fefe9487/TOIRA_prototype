@@ -16,11 +16,14 @@ function extract(name) {
   return html.slice(start, end + '\n        }'.length);
 }
 const names = ['normalizeSeverity', 'hazardTypeKey', 'statisticalSeverity', 'controlBodyKey', 'controlLane', 'scoreLaneOf', 'controlIdOf', 'avoidTextById',
-  'scenariosFromMapDoc', 'attachScenarioMaps', 'probabilityFromLinkedControls', 'migrateScenarioSelections'];
+  'scenariosFromMapDoc', 'attachScenarioMaps', 'probabilityFromLinkedControls', 'remapAvoidSelections', 'migrateScenarioSelections'];
 const context = vm.createContext({});
+const DATA_VER = html.match(/const DATA_VER = '([^']+)'/)[1];
 const riskMatrix = html.match(/const riskMatrix = (\{[\s\S]*?\});/)[1];
 const severityTable = html.match(/const STAT_SEVERITY_BY_TYPE = (\{[\s\S]*?\});/)[1];
-vm.runInContext(`const DATA_VER = '20261005h';\nconst riskMatrix = ${riskMatrix};\nconst STAT_SEVERITY_BY_TYPE = ${severityTable};\n` + names.map(extract).join('\n'), context);
+const avoidRemap = html.match(/const AVOID_INDEX_REMAP_20261021A = (\{[\s\S]*?\});/)[1];
+vm.runInContext(`const DATA_VER = '${DATA_VER}';\nconst riskMatrix = ${riskMatrix};\nconst STAT_SEVERITY_BY_TYPE = ${severityTable};\n`
+  + `const AVOID_INDEX_REMAP_20261021A = ${avoidRemap};\n` + names.map(extract).join('\n'), context);
 function linked(items, checked) {
   return context.probabilityFromLinkedControls(items.map(([key, lane, core]) => ({ key, scoreLane: lane, core })), checked);
 }
@@ -59,9 +62,10 @@ for (const [id, task] of Object.entries(library)) {
     }
   }
 }
-assert.equal(groups, 1400);
-assert.equal(hazards, 6193);
-assert.equal(controls, 18334);
+assert.equal(groups, maps.maps.length);
+assert.equal(groups, maps.counts.groups);
+assert.equal(hazards, maps.counts.hazards);
+assert.equal(controls, maps.maps.reduce((n, doc) => n + doc.hazardControlMap.reduce((m, row) => m + row.controlRefs.length, 0), 0));
 const manualTask = library['人工搬運作業'];
 const manualGroupIndex = manualTask.hazardGroups.findIndex(g => g.groupName === '職業病');
 assert.equal(manualTask.hazardGroups[manualGroupIndex].scenarios.length, 5);
@@ -103,5 +107,23 @@ assert.equal(exactState.scenarioExtras[newIndex][0].done, true);
 assert.equal(exactState.customScenarios.length, 0);
 assert.throws(() => context.migrateScenarioSelections({dataVersion: '20261005g'}, [], null), /原儲存資料已保留/);
 assert.throws(() => context.migrateScenarioSelections({dataVersion: 'unknown'}, [], migration), /另行核對/);
-console.log(JSON.stringify({groups, hazards, controls, exactTextJoin: true, legacySplitMigration: true,
-  legacyExactIndexMigration: true, migrationIdempotent: true, corruptMapRejected: true}, null, 2));
+// 20261021a 刪除滾輪／鍛轤操作作業「高低溫接觸」舊 A3、A9：已勾措施依新編號前移，其他群組不動。
+const roller = library['滾輪／鍛轤操作作業'];
+const rollerIndex = roller.hazardGroups.findIndex(g => g.groupName === '高低溫接觸');
+const otherIndex = roller.hazardGroups.findIndex(g => g.groupName !== '高低溫接觸');
+assert.equal(roller.hazardGroups[rollerIndex].AvoidItems.length, 8);
+for (const fromVersion of ['20261005h', '20261020a', '20261005g']) {
+  const selections = {
+    [`${roller.id}_${rollerIndex}`]: {scenarios: [0], avoids: [0, 2, 3, 8, 9]},
+    [`${roller.id}_${otherIndex}`]: {scenarios: [], avoids: [2, 8]}
+  };
+  const remapSnapshot = {dataVersion: fromVersion, userSelections: selections};
+  context.migrateScenarioSelections(remapSnapshot, [roller], migration);
+  assert.equal(remapSnapshot.dataVersion, DATA_VER);
+  assert.deepEqual(Array.from(selections[`${roller.id}_${rollerIndex}`].avoids), [0, 2, 7], fromVersion);
+  assert.deepEqual(Array.from(selections[`${roller.id}_${otherIndex}`].avoids), [2, 8], fromVersion);
+  context.migrateScenarioSelections(remapSnapshot, [roller], migration);
+  assert.deepEqual(Array.from(selections[`${roller.id}_${rollerIndex}`].avoids), [0, 2, 7], `${fromVersion} idempotent`);
+}
+console.log(JSON.stringify({dataVersion: DATA_VER, groups, hazards, controls, exactTextJoin: true, legacySplitMigration: true,
+  legacyExactIndexMigration: true, migrationIdempotent: true, corruptMapRejected: true, avoidIndexRemap20261021a: true}, null, 2));
