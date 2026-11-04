@@ -17,8 +17,11 @@ def main():
     ap.add_argument('--check', action='store_true', help='exit 1 if New.html is out of date')
     args = ap.parse_args()
     fixes = json.loads((REPO / 'audit' / 'equipment_fixes_20261104b.json').read_text(encoding='utf-8'))
+    gondola = json.loads((REPO / 'audit' / 'gondola_trim_20261104g.json').read_text(encoding='utf-8'))
     tables = {'TASK_RENAMES': fixes['taskRenames'], 'AVOID_INDEX_REMAP_20261104B': fixes['avoidIndexRemap'],
-              'CONTROL_KEY_RENAMES_20261104B': fixes['controlKeyRenames']}
+              'CONTROL_KEY_RENAMES_20261104B': fixes['controlKeyRenames'],
+              'AVOID_INDEX_REMAP_20261104G': gondola['avoidIndexRemap'],
+              'CONTROL_KEY_RENAMES_20261104G': gondola['controlKeyRenames']}
     path = REPO / 'New.html'
     html = path.read_text(encoding='utf-8')
     updated = html

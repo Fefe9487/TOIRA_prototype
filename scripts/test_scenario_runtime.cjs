@@ -17,7 +17,7 @@ function extract(name) {
 }
 const names = ['normalizeSeverity', 'hazardTypeKey', 'statisticalSeverity', 'controlBodyKey', 'controlLane', 'scoreLaneOf', 'controlIdOf', 'avoidTextById',
   'scenariosFromMapDoc', 'attachScenarioMaps', 'probabilityFromLinkedControls', 'remapAvoidSelections', 'renameSnapshotTasks', 'renameControlKeys',
-  'applyEquipmentAudit20261104b', 'migrateScenarioSelections'];
+  'applyEquipmentAudit20261104b', 'applyGondolaTrim20261104g', 'migrateScenarioSelections'];
 const context = vm.createContext({});
 const DATA_VER = html.match(/const DATA_VER = '([^']+)'/)[1];
 const riskMatrix = html.match(/const riskMatrix = (\{[\s\S]*?\});/)[1];
@@ -26,14 +26,20 @@ const avoidRemap = html.match(/const AVOID_INDEX_REMAP_20261021A = (\{[\s\S]*?\}
 const taskRenames = html.match(/const TASK_RENAMES = (\{.*\});/)[1];
 const avoidRemapB = html.match(/const AVOID_INDEX_REMAP_20261104B = (\{.*\});/)[1];
 const keyRenamesB = html.match(/const CONTROL_KEY_RENAMES_20261104B = (\{.*\});/)[1];
+const avoidRemapG = html.match(/const AVOID_INDEX_REMAP_20261104G = (\{.*\});/)[1];
+const keyRenamesG = html.match(/const CONTROL_KEY_RENAMES_20261104G = (\{.*\});/)[1];
 vm.runInContext(`const DATA_VER = '${DATA_VER}';\nconst riskMatrix = ${riskMatrix};\nconst STAT_SEVERITY_BY_TYPE = ${severityTable};\n`
   + `const AVOID_INDEX_REMAP_20261021A = ${avoidRemap};\nconst TASK_RENAMES = ${taskRenames};\n`
   + `const AVOID_INDEX_REMAP_20261104B = ${avoidRemapB};\nconst CONTROL_KEY_RENAMES_20261104B = ${keyRenamesB};\n`
+  + `const AVOID_INDEX_REMAP_20261104G = ${avoidRemapG};\nconst CONTROL_KEY_RENAMES_20261104G = ${keyRenamesG};\n`
   + names.map(extract).join('\n'), context);
 const fixLog = JSON.parse(fs.readFileSync(path.join(repo, 'audit', 'equipment_fixes_20261104b.json'), 'utf8'));
 assert.deepEqual(JSON.parse(taskRenames), fixLog.taskRenames);
 assert.deepEqual(JSON.parse(avoidRemapB), fixLog.avoidIndexRemap);
 assert.deepEqual(JSON.parse(keyRenamesB), fixLog.controlKeyRenames);
+const gondolaLog = JSON.parse(fs.readFileSync(path.join(repo, 'audit', 'gondola_trim_20261104g.json'), 'utf8'));
+assert.deepEqual(JSON.parse(avoidRemapG), gondolaLog.avoidIndexRemap);
+assert.deepEqual(JSON.parse(keyRenamesG), gondolaLog.controlKeyRenames);
 function linked(items, checked) {
   return context.probabilityFromLinkedControls(items.map(([key, lane, core]) => ({ key, scoreLane: lane, core })), checked);
 }
@@ -213,6 +219,24 @@ for (const name of ['剪叉式升降台作業', '建築物外牆吊籠清洗及�
   const task = library[name];
   assert(task && task.hazardGroups.every(g => g.scenarios && g.scenarios.length), name);
   assert(task.hazardGroups.every(g => g.scenarios.every(s => context.probabilityFromLinkedControls(s.controls, {}) === 'P5')), name);
+}
+// 20261104d～20261104f 存檔的外牆吊籠作業：r1 措施編號改到精簡版，勾選鍵複製到合併後的新句。
+{
+  const gondola = '建築物外牆吊籠清洗及維護作業';
+  const fall = library[gondola].hazardGroups.findIndex(g => g.groupName === '墜落、滾落');
+  const table = gondolaLog.avoidIndexRemap[`${gondola}\u0000墜落、滾落`];
+  const [oldKey, newKey] = Object.entries(gondolaLog.controlKeyRenames[gondola])[0];
+  for (const ver of ['20261104d', '20261104f']) {
+    const gSnap = {dataVersion: ver, myProjectTasks: [gondola],
+      userSelections: {[`${gondola}_${fall}`]: {scenarios: [0], avoids: [0, 1, 31, 54]}},
+      taskControlChecks: {[gondola]: {[oldKey]: true}}};
+    context.migrateScenarioSelections(gSnap, [library[gondola], roller], migration);
+    assert.equal(gSnap.dataVersion, DATA_VER, ver);
+    const expected = [...new Set([0, 1, 31, 54].map(i => table[i]).filter(Number.isInteger))];
+    assert.deepEqual(Array.from(gSnap.userSelections[`${gondola}_${fall}`].avoids), expected, ver);
+    assert(expected.every(i => i < library[gondola].hazardGroups[fall].AvoidItems.length), ver);
+    assert.equal(gSnap.taskControlChecks[gondola][newKey], true, ver);
+  }
 }
 const dosimeter = library['游離輻射作業'].hazardGroups.find(g => g.groupName === '職業病').scenarios
   .flatMap(s => s.controls).find(c => c.text.includes('個人劑量計'));
