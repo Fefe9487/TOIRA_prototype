@@ -107,8 +107,10 @@ def validate(repo, annotation=None):
     for item in migration['groups']:
         key = item['taskName'], item['groupName']
         assert len(item['newSourceIndices']) == len(groups[key]['hazardItems']) == len(item['exactOldIndices'])
-        for sources in item['newSourceIndices']:
-            assert sources and all(0 <= s < len(item['oldHazardItems']) for s in sources)
+        appended = set(item.get('appendedIndices', []))
+        for index, sources in enumerate(item['newSourceIndices']):
+            assert (sources or index in appended) and all(0 <= s < len(item['oldHazardItems']) for s in sources)
+            assert index not in appended or (not sources and item['exactOldIndices'][index] is None)
 
     report = read(repo / 'SCENARIO_TEXT_REPAIR.json')
     assert report['version'] == maps['version']

@@ -1,0 +1,1244 @@
+{
+ "note": "Cursor 對本地 AI 候選的人工複核。accepted＝同意 AI 分類（A 類已套用見 audit/equipment_fixes_20261104b.json）；rejected＝不同意並註明 Cursor 改判；pending＝待職安衛專家。B 類未列者由 summarize_local_ai.py 以字元雙連覆蓋率規則複核。id 為快照 tasksLibrary.json.bak-equip-20261104 的編號。",
+ "decisions": [
+  {
+   "mode": "unreferenced",
+   "taskName": "備料與簡易升降機操作作業",
+   "id": "被夾、被捲/A2",
+   "decision": "accepted",
+   "note": "A 類，已補引用至 H4，並新增過捲預防裝置工程措施為必要設施"
+  },
+  {
+   "mode": "unreferenced",
+   "taskName": "備料與簡易升降機操作作業",
+   "id": "被夾、被捲/A3",
+   "decision": "rejected",
+   "note": "改判 B：A6 已含樓層門、連鎖、煞車測試及異常停用"
+  },
+  {
+   "mode": "unreferenced",
+   "taskName": "高處繩索接近作業",
+   "id": "物體飛落/A7",
+   "decision": "accepted",
+   "note": "C 類，起重吊掛用具檢查誤植，已刪除"
+  },
+  {
+   "mode": "unreferenced",
+   "taskName": "高處繩索接近作業",
+   "id": "物體飛落/A8",
+   "decision": "accepted",
+   "note": "C 類，起重吊掛用具停用誤植，已刪除"
+  },
+  {
+   "mode": "unreferenced",
+   "taskName": "高處繩索接近作業",
+   "id": "墜落、滾落/A3",
+   "decision": "accepted",
+   "note": "D 類，取代措施無直接情境，保留"
+  },
+  {
+   "mode": "unreferenced",
+   "taskName": "高處繩索接近作業",
+   "id": "墜落、滾落/A6",
+   "decision": "accepted",
+   "note": "B 類，A1 已指定救援人員"
+  },
+  {
+   "mode": "unreferenced",
+   "taskName": "高處繩索接近作業",
+   "id": "墜落、滾落/A7",
+   "decision": "accepted",
+   "note": "D 類，救援時限屬救援計畫細項，保留"
+  },
+  {
+   "mode": "unreferenced",
+   "taskName": "高處繩索接近作業",
+   "id": "墜落、滾落/A8",
+   "decision": "accepted",
+   "note": "D 類，救援演練保留"
+  },
+  {
+   "mode": "unreferenced",
+   "taskName": "設備管路原地循環清洗作業",
+   "id": "有害物接觸/A8",
+   "decision": "accepted",
+   "note": "D 類，進入槽體屬另一作業階段，保留"
+  },
+  {
+   "mode": "unreferenced",
+   "taskName": "設備管路原地循環清洗作業",
+   "id": "墜落、滾落/A5",
+   "decision": "accepted",
+   "note": "D 類，落物措施放在墜落組，保留"
+  },
+  {
+   "mode": "unreferenced",
+   "taskName": "設備管路原地循環清洗作業",
+   "id": "職業病/A2",
+   "decision": "rejected",
+   "note": "改判 D：原地清洗常用熱液或蒸汽，措施適用；職業病組目前沒有熱危害情境，是否新增待專家確認"
+  },
+  {
+   "mode": "unreferenced",
+   "taskName": "設備管路原地循環清洗作業",
+   "id": "職業病/A3",
+   "decision": "rejected",
+   "note": "改判 D：同上，熱環境管理適用但無對應情境"
+  },
+  {
+   "mode": "unreferenced",
+   "taskName": "紫外線乾燥與烘烤設備操作作業",
+   "id": "火災/A8",
+   "decision": "accepted",
+   "note": "A 類，已補引用至 H2、H3"
+  },
+  {
+   "mode": "unreferenced",
+   "taskName": "人字臂起重機組裝與拆卸作業",
+   "id": "墜落、滾落/A7",
+   "decision": "accepted",
+   "note": "A 類，已補引用至 H1（管理辦法第50-1條）"
+  },
+  {
+   "mode": "unreferenced",
+   "taskName": "人字臂起重機組裝與拆卸作業",
+   "id": "物體飛落/A6",
+   "decision": "accepted",
+   "note": "B 類，A10、A11 已改寫為合格證與資格要求"
+  },
+  {
+   "mode": "unreferenced",
+   "taskName": "人字臂起重機組裝與拆卸作業",
+   "id": "物體飛落/A7",
+   "decision": "accepted",
+   "note": "B 類，A10、A11 已涵蓋"
+  },
+  {
+   "mode": "unreferenced",
+   "taskName": "使用升降機上下料件作業",
+   "id": "被夾、被捲/A1",
+   "decision": "accepted",
+   "note": "A 類；移除誤用的過捲預防裝置後改寫，引用至新增的安全裝置失效情境 H5（非 AI 建議的 H1）"
+  },
+  {
+   "mode": "unreferenced",
+   "taskName": "使用升降機上下料件作業",
+   "id": "被夾、被捲/A2",
+   "decision": "accepted",
+   "note": "A 類；改寫為異常停用後引用至新增 H5（非 AI 建議的 H2）"
+  },
+  {
+   "mode": "unreferenced",
+   "taskName": "吊掛熔融金屬澆鑄桶作業",
+   "id": "物體飛落/A1",
+   "decision": "rejected",
+   "note": "改判 A：同作業沒有已引用措施涵蓋過捲預防裝置，已補引用至 H3"
+  },
+  {
+   "mode": "unreferenced",
+   "taskName": "固定式起重機吊掛作業",
+   "id": "物體飛落/A9",
+   "decision": "rejected",
+   "note": "改判 B：A14 已含制動與過捲預防裝置"
+  },
+  {
+   "mode": "unreferenced",
+   "taskName": "固定式起重機吊掛作業",
+   "id": "物體飛落/A10",
+   "decision": "rejected",
+   "note": "改判 D：配線、配電盤屬固定式起重機定期檢查項目，並非混入"
+  },
+  {
+   "mode": "unreferenced",
+   "taskName": "堆高機駕駛與搬運作業",
+   "id": "被撞/A3",
+   "decision": "rejected",
+   "note": "改判 B：A8 已含煞車、轉向檢點"
+  },
+  {
+   "mode": "unreferenced",
+   "taskName": "堆高機駕駛與搬運作業",
+   "id": "被撞/A4",
+   "decision": "rejected",
+   "note": "改判 B：A8 已含倒車警報器、警示燈"
+  },
+  {
+   "mode": "unreferenced",
+   "taskName": "堆高機駕駛與搬運作業",
+   "id": "物體飛落/A3",
+   "decision": "rejected",
+   "note": "改判 A：頂蓬為法定構造（機械設備器具安全標準第79條），已新增駕駛人遭落物擊中情境並補引用"
+  },
+  {
+   "mode": "unreferenced",
+   "taskName": "塔式起重機升高及拆卸作業",
+   "id": "物體飛落/A7",
+   "decision": "accepted",
+   "note": "A 類，已補引用至 H2"
+  },
+  {
+   "mode": "unreferenced",
+   "taskName": "油壓升降平台作業",
+   "id": "被夾、被捲/A5",
+   "decision": "rejected",
+   "note": "改判 B：A12 已含限位、急停、防墜測試"
+  },
+  {
+   "mode": "unreferenced",
+   "taskName": "營建用升降機組裝、拆卸及維修作業",
+   "id": "墜落、滾落/A8",
+   "decision": "accepted",
+   "note": "A 類，已補引用至 H2"
+  },
+  {
+   "mode": "unreferenced",
+   "taskName": "營建用升降機組裝、拆卸及維修作業",
+   "id": "墜落、滾落/A9",
+   "decision": "rejected",
+   "note": "改判 D：屬使用限制，非組拆維修中的防墜屏障"
+  },
+  {
+   "mode": "unreferenced",
+   "taskName": "營建用升降機組裝、拆卸及維修作業",
+   "id": "物體飛落/A2",
+   "decision": "accepted",
+   "note": "A 類，已補引用至 H1"
+  },
+  {
+   "mode": "unreferenced",
+   "taskName": "異常氣壓作業",
+   "id": "職業病/A4",
+   "decision": "pending",
+   "note": "已完成的 P0-2 作業，本次不修改；供氣品質是否補引用待專家"
+  },
+  {
+   "mode": "unreferenced",
+   "taskName": "異常氣壓作業",
+   "id": "有害物接觸/A6",
+   "decision": "pending",
+   "note": "已完成的 P0-2 作業，本次不修改"
+  },
+  {
+   "mode": "unreferenced",
+   "taskName": "高處繩索接近作業",
+   "id": "墜落、滾落/A4",
+   "decision": "accepted",
+   "note": "B 類，A19 懸吊座板及腳踏環已涵蓋"
+  },
+  {
+   "mode": "unreferenced",
+   "taskName": "高處繩索接近作業",
+   "id": "墜落、滾落/A5",
+   "decision": "accepted",
+   "note": "B 類，A16 已配置救援繩組及升降設備"
+  },
+  {
+   "mode": "unreferenced",
+   "taskName": "高處繩索接近作業",
+   "id": "物體飛落/A6",
+   "decision": "accepted",
+   "note": "B 類，墜落組 A13 相同"
+  },
+  {
+   "mode": "unreferenced",
+   "taskName": "堆高機駕駛與搬運作業",
+   "id": "物體飛落/A4",
+   "decision": "accepted",
+   "note": "B 類，A9 已含液壓裂漏停用"
+  },
+  {
+   "mode": "unreferenced",
+   "taskName": "油壓升降平台作業",
+   "id": "被夾、被捲/A6",
+   "decision": "accepted",
+   "note": "B 類，A12 已含油壓缸、管路檢查"
+  },
+  {
+   "mode": "unreferenced",
+   "taskName": "石化業壓力容器、儲槽及管線歲修作業",
+   "id": "爆炸/A5",
+   "decision": "rejected",
+   "note": "改判 B：A7～A10 已含安全閥、爆破片及升壓前確認"
+  },
+  {
+   "mode": "unreferenced",
+   "taskName": "移動式起重機吊掛作業",
+   "id": "物體飛落/A3",
+   "decision": "accepted",
+   "note": "A 類，已補引用至 H2"
+  },
+  {
+   "mode": "unreferenced",
+   "taskName": "移動式起重機吊掛作業",
+   "id": "物體飛落/A4",
+   "decision": "rejected",
+   "note": "改判 B：A12 已含吊鉤防止脫落裝置"
+  },
+  {
+   "mode": "unreferenced",
+   "taskName": "移動式起重機吊掛作業",
+   "id": "物體倒塌、崩塌/A2",
+   "decision": "accepted",
+   "note": "A 類，已補引用至 H1"
+  },
+  {
+   "mode": "unreferenced",
+   "taskName": "繩索與吊索吊掛作業",
+   "id": "物體飛落/A3",
+   "decision": "accepted",
+   "note": "B 類，A14、A15 已含吊具檢查與防脫"
+  },
+  {
+   "mode": "unreferenced",
+   "taskName": "高壓鍋爐操作作業",
+   "id": "爆炸/A4",
+   "decision": "rejected",
+   "note": "改判 D：泛稱燃燒裝置檢查，H4 已由吹掃措施 A7 防護"
+  },
+  {
+   "mode": "unreferenced",
+   "taskName": "高空作業車作業",
+   "id": "墜落、滾落/A4",
+   "decision": "rejected",
+   "note": "改判 B：A9 與被撞 A3（每日檢點作業裝置）已涵蓋"
+  },
+  {
+   "mode": "unreferenced",
+   "taskName": "高空作業車作業",
+   "id": "被撞/A3",
+   "decision": "rejected",
+   "note": "改判 A：已依管理辦法第50-1條改寫為每日檢點並補引用至 H4"
+  },
+  {
+   "mode": "unreferenced",
+   "taskName": "高空作業車作業",
+   "id": "職業病/A1",
+   "decision": "accepted",
+   "note": "D 類，室內柴油廢氣措施無對應情境"
+  },
+  {
+   "mode": "unreferenced",
+   "taskName": "高空作業車作業",
+   "id": "職業病/A5",
+   "decision": "accepted",
+   "note": "D 類，熱危害與雷電措施無對應情境"
+  },
+  {
+   "mode": "unreferenced",
+   "taskName": "高空作業車作業",
+   "id": "職業病/A6",
+   "decision": "accepted",
+   "note": "D 類，日照與低溫防護無對應情境"
+  },
+  {
+   "mode": "unreferenced",
+   "taskName": "鋼筋吊運作業",
+   "id": "物體飛落/A7",
+   "decision": "accepted",
+   "note": "B 類，A11 已涵蓋"
+  },
+  {
+   "mode": "unreferenced",
+   "taskName": "鋼筋吊運作業",
+   "id": "物體飛落/A8",
+   "decision": "accepted",
+   "note": "A 類；引用至新增的起重機安全裝置失效情境 H6（非 AI 建議的 H2）"
+  },
+  {
+   "mode": "unreferenced",
+   "taskName": "鋼筋吊運作業",
+   "id": "物體飛落/A9",
+   "decision": "accepted",
+   "note": "B 類，A11 與 A8 已涵蓋"
+  },
+  {
+   "mode": "unreferenced",
+   "taskName": "電梯安裝作業",
+   "id": "物體飛落/A6",
+   "decision": "accepted",
+   "note": "A 類，已補引用至 H1"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "人字臂起重機組裝與拆卸作業",
+   "id": "#2",
+   "decision": "accepted",
+   "note": "A10、A11 已改寫為依荷重區分的資格要求與禁止條件"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "人字臂起重機組裝與拆卸作業",
+   "id": "#6",
+   "decision": "accepted",
+   "note": "墜落 A2、A9 逐字重複，已合併"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "人字臂起重機組裝與拆卸作業",
+   "id": "#1",
+   "decision": "rejected",
+   "note": "跨群組相近措施由各危害群組各自引用，維持"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "人字臂起重機組裝與拆卸作業",
+   "id": "#3",
+   "decision": "rejected",
+   "note": "跨群組相近措施，維持"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "人字臂起重機組裝與拆卸作業",
+   "id": "#4",
+   "decision": "rejected",
+   "note": "同群組 A2（冷卻測溫）與 A3（殘留能量）作用不同，維持"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "人字臂起重機組裝與拆卸作業",
+   "id": "#5",
+   "decision": "rejected",
+   "note": "管理（標示隔離）與工程（隔熱罩）分屬不同層級，維持"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "人字臂起重機組裝與拆卸作業",
+   "id": "#7",
+   "decision": "rejected",
+   "note": "跨群組相近措施，維持"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "人字臂起重機組裝與拆卸作業",
+   "id": "#8",
+   "decision": "rejected",
+   "note": "跨群組相近措施，維持"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "人字臂起重機組裝與拆卸作業",
+   "id": "#9",
+   "decision": "rejected",
+   "note": "跨群組相近措施，維持"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "人字臂起重機組裝與拆卸作業",
+   "id": "#10",
+   "decision": "rejected",
+   "note": "跨群組相近措施，維持"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "人字臂起重機組裝與拆卸作業",
+   "id": "#11",
+   "decision": "rejected",
+   "note": "跨群組相近措施，維持"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "人字臂起重機組裝與拆卸作業",
+   "id": "#12",
+   "decision": "rejected",
+   "note": "跨群組相近措施，維持"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "使用升降機上下料件作業",
+   "id": "#1",
+   "decision": "rejected",
+   "note": "裝卸動線上的其他車輛交會屬本作業須管制的場所危害，維持"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "使用升降機上下料件作業",
+   "id": "#2",
+   "decision": "accepted",
+   "note": "已改為「車門或護門」"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "使用升降機上下料件作業",
+   "id": "#3",
+   "decision": "rejected",
+   "note": "現有用語可辨識，未涉及設備混淆"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "使用升降機上下料件作業",
+   "id": "#4",
+   "decision": "rejected",
+   "note": "管理控制與行政管理同屬管理欄，計分相同"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "使用升降機上下料件作業",
+   "id": "#5",
+   "decision": "rejected",
+   "note": "同上"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "備料與簡易升降機操作作業",
+   "id": "#1",
+   "decision": "rejected",
+   "note": "簡易提升機以捲揚機驅動，屬同一設備的構件"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "備料與簡易升降機操作作業",
+   "id": "#2",
+   "decision": "accepted",
+   "note": "已改為「搬器行程範圍」"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "備料與簡易升降機操作作業",
+   "id": "#3",
+   "decision": "pending",
+   "note": "控制層級標籤調整會改變 P 值計分欄位，待專家確認"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "備料與簡易升降機操作作業",
+   "id": "#4",
+   "decision": "pending",
+   "note": "控制層級標籤調整會改變 P 值計分欄位，待專家確認"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "備料與簡易升降機操作作業",
+   "id": "#5",
+   "decision": "accepted",
+   "note": "同 #2"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "吊掛熔融金屬澆鑄桶作業",
+   "id": "#1",
+   "decision": "pending",
+   "note": "作業範圍是否擴及澆注、清渣待專家界定"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "吊掛熔融金屬澆鑄桶作業",
+   "id": "#3",
+   "decision": "pending",
+   "note": "控制層級標籤調整會改變 P 值計分欄位，待專家確認"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "吊掛熔融金屬澆鑄桶作業",
+   "id": "#7",
+   "decision": "rejected",
+   "note": "引導繩與導引繩同義"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "吊掛熔融金屬澆鑄桶作業",
+   "id": "#8",
+   "decision": "accepted",
+   "note": "已改為「近距離」"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "固定式起重機吊掛作業",
+   "id": "#1",
+   "decision": "rejected",
+   "note": "與堆高機交會屬吊運路徑的交叉作業風險，維持"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "固定式起重機吊掛作業",
+   "id": "#2",
+   "decision": "pending",
+   "note": "控制層級標籤調整會改變 P 值計分欄位，待專家確認"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "堆高機駕駛與搬運作業",
+   "id": "#7",
+   "decision": "rejected",
+   "note": "「穿落」指貨物穿過棧板掉落，語意明確"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "堆高機駕駛與搬運作業",
+   "id": "#8",
+   "decision": "accepted",
+   "note": "已改為「後視鏡」"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "堆高機駕駛與搬運作業",
+   "id": "#9",
+   "decision": "rejected",
+   "note": "TS 為職業安全衛生法第7條安全標示，用語正確"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "堆高機駕駛與搬運作業",
+   "id": "#10",
+   "decision": "pending",
+   "note": "控制層級標籤調整會改變 P 值計分欄位，待專家確認"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "堆高機駕駛與搬運作業",
+   "id": "#11",
+   "decision": "pending",
+   "note": "控制層級標籤調整會改變 P 值計分欄位，待專家確認"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "塔式起重機升高及拆卸作業",
+   "id": "#1",
+   "decision": "rejected",
+   "note": "配重與配重塊同義"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "塔式起重機升高及拆卸作業",
+   "id": "#2",
+   "decision": "accepted",
+   "note": "「塔吊」已統一為塔式起重機"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "塔式起重機升高及拆卸作業",
+   "id": "#3",
+   "decision": "rejected",
+   "note": "「銷固」指以銷軸固定，用語正確"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "塔式起重機升高及拆卸作業",
+   "id": "#4",
+   "decision": "rejected",
+   "note": "「錨錠」為營造安全衛生設施標準用語"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "塔式起重機升高及拆卸作業",
+   "id": "#5",
+   "decision": "pending",
+   "note": "控制層級標籤調整會改變 P 值計分欄位，待專家確認"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "塔式起重機升高及拆卸作業",
+   "id": "#6",
+   "decision": "pending",
+   "note": "控制層級標籤調整會改變 P 值計分欄位，待專家確認"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "塔式起重機升高及拆卸作業",
+   "id": "#7",
+   "decision": "pending",
+   "note": "控制層級標籤調整會改變 P 值計分欄位，待專家確認"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "油壓升降平台作業",
+   "id": "#1",
+   "decision": "accepted",
+   "note": "作業範圍補列清潔、排除卡料與故障處置時的停機隔離"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "油壓升降平台作業",
+   "id": "#2",
+   "decision": "rejected",
+   "note": "出入口的堆高機交會屬場所交叉動線，維持"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "油壓升降平台作業",
+   "id": "#3",
+   "decision": "pending",
+   "note": "控制層級標籤調整會改變 P 值計分欄位，待專家確認"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "油壓升降平台作業",
+   "id": "#4",
+   "decision": "pending",
+   "note": "控制層級標籤調整會改變 P 值計分欄位，待專家確認"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "油壓升降平台作業",
+   "id": "#5",
+   "decision": "rejected",
+   "note": "過橋板與承載橋板分屬兩條措施，非設備混淆"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "游離輻射作業",
+   "id": "#1",
+   "decision": "rejected",
+   "note": "射源傳送裝置、捲線機屬射源儀器本身的機構"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "游離輻射作業",
+   "id": "#2",
+   "decision": "rejected",
+   "note": "同 #1；拆分問題另列專家待審"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "游離輻射作業",
+   "id": "#3",
+   "decision": "rejected",
+   "note": "用語可辨識"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "游離輻射作業",
+   "id": "#4",
+   "decision": "rejected",
+   "note": "用語可辨識"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "游離輻射作業",
+   "id": "#5",
+   "decision": "rejected",
+   "note": "AI 未提出具體修正"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "游離輻射作業",
+   "id": "#6",
+   "decision": "pending",
+   "note": "控制層級標籤調整會改變 P 值計分欄位，待專家確認"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "營建用升降機組裝、拆卸及維修作業",
+   "id": "#2",
+   "decision": "pending",
+   "note": "控制層級標籤調整會改變 P 值計分欄位，待專家確認"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "營建用升降機組裝、拆卸及維修作業",
+   "id": "#3",
+   "decision": "pending",
+   "note": "控制層級標籤調整會改變 P 值計分欄位，待專家確認"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "營建用升降機組裝、拆卸及維修作業",
+   "id": "#4",
+   "decision": "rejected",
+   "note": "「錨錠」為法規用語"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "營建用升降機組裝、拆卸及維修作業",
+   "id": "#5",
+   "decision": "rejected",
+   "note": "導向繩與導引繩同義"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "營建用升降機組裝、拆卸及維修作業",
+   "id": "#6",
+   "decision": "accepted",
+   "note": "作業說明補列吊車吊運標準節及組件"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "異常氣壓作業",
+   "id": "#1",
+   "decision": "pending",
+   "note": "已完成的 P0-2 作業，本次不修改；是否含潛水作業待專家"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "異常氣壓作業",
+   "id": "#2",
+   "decision": "pending",
+   "note": "已完成的 P0-2 作業，本次不修改；沉箱與高壓艙是否拆分待專家"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "異常氣壓作業",
+   "id": "#7",
+   "decision": "rejected",
+   "note": "「錨錠」為法規用語"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "異常氣壓作業",
+   "id": "#8",
+   "decision": "pending",
+   "note": "已完成的 P0-2 作業，本次不修改"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "異常氣壓作業",
+   "id": "#9",
+   "decision": "pending",
+   "note": "已完成的 P0-2 作業，本次不修改"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "異常氣壓作業",
+   "id": "#10",
+   "decision": "pending",
+   "note": "已完成的 P0-2 作業，本次不修改"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "吊籠作業",
+   "id": "#1",
+   "decision": "pending",
+   "note": "已完成的 P0-1 作業（現名起重機吊掛搭乘設備載人作業），本次不修改"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "吊籠作業",
+   "id": "#2",
+   "decision": "pending",
+   "note": "已完成的 P0-1 作業（現名起重機吊掛搭乘設備載人作業），本次不修改"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "吊籠作業",
+   "id": "#3",
+   "decision": "pending",
+   "note": "已完成的 P0-1 作業（現名起重機吊掛搭乘設備載人作業），本次不修改"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "吊籠作業",
+   "id": "#4",
+   "decision": "pending",
+   "note": "已完成的 P0-1 作業（現名起重機吊掛搭乘設備載人作業），本次不修改"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "吊籠作業",
+   "id": "#5",
+   "decision": "pending",
+   "note": "已完成的 P0-1 作業（現名起重機吊掛搭乘設備載人作業），本次不修改"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "吊籠作業",
+   "id": "#6",
+   "decision": "pending",
+   "note": "已完成的 P0-1 作業（現名起重機吊掛搭乘設備載人作業），本次不修改"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "吊籠作業",
+   "id": "#10",
+   "decision": "pending",
+   "note": "已完成的 P0-1 作業（現名起重機吊掛搭乘設備載人作業），本次不修改"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "吊籠作業",
+   "id": "#11",
+   "decision": "pending",
+   "note": "已完成的 P0-1 作業（現名起重機吊掛搭乘設備載人作業），本次不修改"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "吊籠作業",
+   "id": "#12",
+   "decision": "pending",
+   "note": "已完成的 P0-1 作業（現名起重機吊掛搭乘設備載人作業），本次不修改"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "石化業壓力容器、儲槽及管線歲修作業",
+   "id": "#1",
+   "decision": "pending",
+   "note": "控制層級標籤調整會改變 P 值計分欄位，待專家確認"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "石化業壓力容器、儲槽及管線歲修作業",
+   "id": "#2",
+   "decision": "pending",
+   "note": "控制層級標籤調整會改變 P 值計分欄位，待專家確認"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "石化業壓力容器、儲槽及管線歲修作業",
+   "id": "#3",
+   "decision": "pending",
+   "note": "控制層級標籤調整會改變 P 值計分欄位，待專家確認"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "石化業壓力容器、儲槽及管線歲修作業",
+   "id": "#4",
+   "decision": "pending",
+   "note": "控制層級標籤調整會改變 P 值計分欄位，待專家確認"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "移動式起重機吊掛作業",
+   "id": "#1",
+   "decision": "accepted",
+   "note": "物體飛落 A1、A13 逐字重複，已合併"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "移動式起重機吊掛作業",
+   "id": "#3",
+   "decision": "accepted",
+   "note": "已統一為「過負荷預防裝置」"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "移動式起重機吊掛作業",
+   "id": "#4",
+   "decision": "rejected",
+   "note": "用語可接受或為正確法規用語，維持"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "移動式起重機吊掛作業",
+   "id": "#5",
+   "decision": "rejected",
+   "note": "用語可接受或為正確法規用語，維持"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "移動式起重機吊掛作業",
+   "id": "#6",
+   "decision": "rejected",
+   "note": "用語可接受或為正確法規用語，維持"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "繩索與吊索吊掛作業",
+   "id": "#1",
+   "decision": "rejected",
+   "note": "跨群組相近措施由各群組各自引用，維持"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "繩索與吊索吊掛作業",
+   "id": "#2",
+   "decision": "rejected",
+   "note": "跨群組相近措施由各群組各自引用，維持"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "繩索與吊索吊掛作業",
+   "id": "#3",
+   "decision": "rejected",
+   "note": "跨群組相近措施由各群組各自引用，維持"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "鑄造模具吊掛作業",
+   "id": "#1",
+   "decision": "rejected",
+   "note": "用語可接受或為正確法規用語，維持"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "鑄造模具吊掛作業",
+   "id": "#2",
+   "decision": "accepted",
+   "note": "「夾滯」改為「卡滯」"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "鑄造模具吊掛作業",
+   "id": "#3",
+   "decision": "rejected",
+   "note": "用語可接受或為正確法規用語，維持"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "鑄造模具吊掛作業",
+   "id": "#4",
+   "decision": "rejected",
+   "note": "用語可接受或為正確法規用語，維持"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "高壓鍋爐操作作業",
+   "id": "#2",
+   "decision": "accepted",
+   "note": "「眼臉」改為「眼睛、臉部」"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "高壓鍋爐操作作業",
+   "id": "#3",
+   "decision": "rejected",
+   "note": "用語可接受或為正確法規用語，維持"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "高壓鍋爐操作作業",
+   "id": "#4",
+   "decision": "rejected",
+   "note": "用語可接受或為正確法規用語，維持"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "高壓鍋爐操作作業",
+   "id": "#5",
+   "decision": "rejected",
+   "note": "用語可接受或為正確法規用語，維持"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "高壓鍋爐操作作業",
+   "id": "#6",
+   "decision": "rejected",
+   "note": "用語可接受或為正確法規用語，維持"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "高壓鍋爐操作作業",
+   "id": "#7",
+   "decision": "rejected",
+   "note": "用語可接受或為正確法規用語，維持"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "高壓鍋爐操作作業",
+   "id": "#8",
+   "decision": "rejected",
+   "note": "用語可接受或為正確法規用語，維持"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "高壓鍋爐操作作業",
+   "id": "#9",
+   "decision": "rejected",
+   "note": "用語可接受或為正確法規用語，維持"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "高壓鍋爐操作作業",
+   "id": "#10",
+   "decision": "rejected",
+   "note": "用語可接受或為正確法規用語，維持"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "高空作業車作業",
+   "id": "#2",
+   "decision": "rejected",
+   "note": "拆卸物以吊掛支撐受控下放，非起重作業"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "高空作業車作業",
+   "id": "#3",
+   "decision": "accepted",
+   "note": "「吊運物料」改為「搬上工作台的物料」（設施規則第128-1條第6款）"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "高空作業車作業",
+   "id": "#4",
+   "decision": "rejected",
+   "note": "「錨錠」為法規用語"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "高空作業車作業",
+   "id": "#5",
+   "decision": "rejected",
+   "note": "「錨錠」為法規用語"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "高空作業車作業",
+   "id": "#6",
+   "decision": "pending",
+   "note": "控制層級標籤調整會改變 P 值計分欄位，待專家確認"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "高空作業車作業",
+   "id": "#7",
+   "decision": "pending",
+   "note": "控制層級標籤調整會改變 P 值計分欄位，待專家確認"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "高空作業車作業",
+   "id": "#8",
+   "decision": "pending",
+   "note": "控制層級標籤調整會改變 P 值計分欄位，待專家確認"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "鋼筋吊運作業",
+   "id": "#11",
+   "decision": "accepted",
+   "note": "改為「達停止作業風速或遇雷雨」"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "鋼筋吊運作業",
+   "id": "#12",
+   "decision": "rejected",
+   "note": "用語可接受或為正確法規用語，維持"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "電梯安裝作業",
+   "id": "#1",
+   "decision": "pending",
+   "note": "控制層級標籤調整會改變 P 值計分欄位，待專家確認"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "電梯安裝作業",
+   "id": "#2",
+   "decision": "pending",
+   "note": "控制層級標籤調整會改變 P 值計分欄位，待專家確認"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "電梯安裝作業",
+   "id": "#5",
+   "decision": "rejected",
+   "note": "氣瓶屬安裝時的熔接輔助設備，維持"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "電梯安裝作業",
+   "id": "#6",
+   "decision": "rejected",
+   "note": "用語可接受或為正確法規用語，維持"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "電梯安裝作業",
+   "id": "#7",
+   "decision": "rejected",
+   "note": "用語可接受或為正確法規用語，維持"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "電梯安裝作業",
+   "id": "#8",
+   "decision": "rejected",
+   "note": "用語可接受或為正確法規用語，維持"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "電梯安裝作業",
+   "id": "#9",
+   "decision": "rejected",
+   "note": "用語可接受或為正確法規用語，維持"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "威亞吊飛作業",
+   "id": "#1",
+   "decision": "rejected",
+   "note": "「斷能」指隔離全部能源，比「斷電」完整"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "威亞吊飛作業",
+   "id": "#2",
+   "decision": "pending",
+   "note": "控制層級標籤調整會改變 P 值計分欄位，待專家確認"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "威亞吊飛作業",
+   "id": "#3",
+   "decision": "pending",
+   "note": "控制層級標籤調整會改變 P 值計分欄位，待專家確認"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "威亞吊飛作業",
+   "id": "#9",
+   "decision": "rejected",
+   "note": "用語可接受或為正確法規用語，維持"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "威亞吊飛作業",
+   "id": "#10",
+   "decision": "rejected",
+   "note": "用語可接受或為正確法規用語，維持"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "高處繩索接近作業",
+   "id": "#1",
+   "decision": "pending",
+   "note": "控制層級標籤調整會改變 P 值計分欄位，待專家確認"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "高處繩索接近作業",
+   "id": "#2",
+   "decision": "pending",
+   "note": "控制層級標籤調整會改變 P 值計分欄位，待專家確認"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "高處繩索接近作業",
+   "id": "#3",
+   "decision": "pending",
+   "note": "控制層級標籤調整會改變 P 值計分欄位，待專家確認"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "高處繩索接近作業",
+   "id": "#4",
+   "decision": "pending",
+   "note": "控制層級標籤調整會改變 P 值計分欄位，待專家確認"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "高處繩索接近作業",
+   "id": "#5",
+   "decision": "pending",
+   "note": "控制層級標籤調整會改變 P 值計分欄位，待專家確認"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "高處繩索接近作業",
+   "id": "#6",
+   "decision": "pending",
+   "note": "控制層級標籤調整會改變 P 值計分欄位，待專家確認"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "高處繩索接近作業",
+   "id": "#7",
+   "decision": "pending",
+   "note": "控制層級標籤調整會改變 P 值計分欄位，待專家確認"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "高處繩索接近作業",
+   "id": "#8",
+   "decision": "rejected",
+   "note": "繩索路徑鄰近可動設備（如外牆機具）屬實際情境，維持"
+  },
+  {
+   "mode": "consistency",
+   "taskName": "高處繩索接近作業",
+   "id": "#12",
+   "decision": "accepted",
+   "note": "「拉掣」改為「拉扯」"
+  }
+ ]
+}

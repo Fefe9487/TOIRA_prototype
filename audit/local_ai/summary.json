@@ -1,0 +1,63 @@
+{
+ "unreferenced": {
+  "batches": 29,
+  "batchStatus": {
+   "ok": 29
+  },
+  "attempts": 29,
+  "validOutputs": 178,
+  "failedBatches": [],
+  "categories": {
+   "A": 19,
+   "B": 137,
+   "D": 16,
+   "C": 6
+  },
+  "cursorDecisions": {
+   "accepted": 150,
+   "rejected": 16,
+   "unreviewed": 10,
+   "pending": 2
+  },
+  "seconds": 2179
+ },
+ "consistency": {
+  "batches": 22,
+  "batchStatus": {
+   "ok": 19,
+   "partial": 3
+  },
+  "attempts": 27,
+  "validOutputs": 204,
+  "failedBatches": [],
+  "categories": {
+   "duplicate_control": 81,
+   "scope_conflict": 9,
+   "wording": 57,
+   "equipment_mismatch": 8,
+   "label_mismatch": 36,
+   "duplicate_hazard": 13
+  },
+  "cursorDecisions": {
+   "rejected": 62,
+   "accepted": 17,
+   "pending": 47,
+   "unreviewed": 78
+  },
+  "seconds": 3200
+ },
+ "finalUnreferenced": {
+  "total": 2119,
+  "classes": {
+   "D": 11,
+   "B": 1901,
+   "unclassified": 206,
+   "pending": 1
+  },
+  "priorityDeviceClasses": {
+   "B": 165,
+   "unclassified": 29,
+   "D": 1
+  }
+ }
+}

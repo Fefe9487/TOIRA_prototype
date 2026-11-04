@@ -1373,13 +1373,18 @@
         ],
         [
           2
-        ]
+        ],
+        []
       ],
       "exactOldIndices": [
         null,
         null,
         1,
-        2
+        2,
+        null
+      ],
+      "appendedIndices": [
+        4
       ]
     },
     {
@@ -1602,13 +1607,18 @@
         ],
         [
           2
-        ]
+        ],
+        []
       ],
       "exactOldIndices": [
         null,
         null,
         1,
-        2
+        2,
+        null
+      ],
+      "appendedIndices": [
+        4
       ]
     },
     {

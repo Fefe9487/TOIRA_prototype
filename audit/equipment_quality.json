@@ -1,0 +1,4004 @@
+{
+ "dataVersion": "20261104f",
+ "scenarioMapsVersion": "20261005h",
+ "counts": {
+  "tasks": 176,
+  "groups": 1417,
+  "hazards": 6259,
+  "controlRefs": 18673,
+  "controls": 12630,
+  "unreferencedControls": 2119,
+  "tasksWithUnreferenced": 157,
+  "industryRows": 554
+ },
+ "hardFailures": [],
+ "unreferencedPriority": [
+  {
+   "taskName": "低溫環境作業",
+   "groupName": "被撞",
+   "id": "A5",
+   "text": "堆高機及電動拖板車每日使用前檢查煞車、轉向、連結裝置及輪組。(行政管理)",
+   "priorityDevices": [
+    "制動器"
+   ],
+   "coveredByReferenced": 0.65,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "備料與簡易提升機操作作業",
+   "groupName": "被夾、被捲",
+   "id": "A3",
+   "text": "簡易提升機樓層門、連鎖、煞車、鋼索或導軌任一異常，立即停用並掛牌。(行政管理)",
+   "priorityDevices": [
+    "制動器",
+    "安全連鎖"
+   ],
+   "coveredByReferenced": 0.81,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "分離與成型攪拌作業",
+   "groupName": "被夾、被捲",
+   "id": "A4",
+   "text": "每班檢查護罩、連鎖、急停、回轉體、主軸軸承、制動器、外殼、接地及電源開關。(行政管理)",
+   "priorityDevices": [
+    "制動器",
+    "安全連鎖",
+    "緊急停止裝置"
+   ],
+   "coveredByReferenced": 0.32,
+   "ruleClass": "unclassified"
+  },
+  {
+   "taskName": "化學品入料作業",
+   "groupName": "物體破裂",
+   "id": "A4",
+   "text": "接管前確認軟管與快接耐化、耐壓且未過期，快接完全扣死並加防脫，墊片鎖固並完成低壓試漏後才入料。(行政管理)",
+   "priorityDevices": [
+    "防墜及防脫裝置"
+   ],
+   "coveredByReferenced": 0.83,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "印裁機操作作業",
+   "groupName": "被切、割、擦傷",
+   "id": "A1",
+   "text": "刀具、模切及裁切點設固定或連鎖護罩，未復位不得點動且禁止旁路，寸動時雙手離開刀口。(工程改善)",
+   "priorityDevices": [
+    "安全連鎖"
+   ],
+   "coveredByReferenced": 0.75,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "印裁機操作作業",
+   "groupName": "被夾、被捲",
+   "id": "A7",
+   "text": "開機前確認離合器、煞車、護罩連鎖、急停及安全裝置，異常不得運轉。(行政管理)",
+   "priorityDevices": [
+    "制動器",
+    "安全連鎖",
+    "緊急停止裝置"
+   ],
+   "coveredByReferenced": 0.31,
+   "ruleClass": "unclassified"
+  },
+  {
+   "taskName": "卸料碼頭進料作業",
+   "groupName": "被撞",
+   "id": "A6",
+   "text": "堆高機使用前確認煞車、轉向、連結裝置、儀表、倒車警報、警示燈、喇叭及控制配線，異常先排除再使用。(行政管理)",
+   "priorityDevices": [
+    "制動器"
+   ],
+   "coveredByReferenced": 0.13,
+   "ruleClass": "unclassified"
+  },
+  {
+   "taskName": "卸料碼頭進料作業",
+   "groupName": "跌倒",
+   "id": "A3",
+   "text": "車輛停妥後熄火、拉手煞車並設輪擋或月台鎖定；渡板及尾板確認搭接固定後才可進入作業面。(行政管理)",
+   "priorityDevices": [
+    "制動器"
+   ],
+   "coveredByReferenced": 0.82,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "原料入料作業",
+   "groupName": "有害物接觸",
+   "id": "A3",
+   "text": "接管前核對標示、管線及相容性，洩壓並對口鎖固後才開閥；拆管前先關閥並洩壓排空，禁止帶壓拆接。(行政管理)",
+   "priorityDevices": [
+    "壓力釋放與超壓保護"
+   ],
+   "coveredByReferenced": 0.79,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "原料投料作業",
+   "groupName": "爆炸",
+   "id": "A4",
+   "text": "含溶劑設備啟動或投料前，於投料口、槽內及低窪處測定可燃氣體，濃度低於爆炸下限30%才可投料；不合格時先通風再重測。(行政管理)",
+   "priorityDevices": [
+    "火災爆炸及有害氣體監測"
+   ],
+   "coveredByReferenced": 0.86,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "原料攪拌與加熱作業",
+   "groupName": "被夾、被捲",
+   "id": "A1",
+   "text": "攪拌槽、傳動、泵浦、螺旋及升降機構設固定護罩、安全門連鎖及限位，失效時禁止運轉。(工程改善)",
+   "priorityDevices": [
+    "安全連鎖"
+   ],
+   "coveredByReferenced": 0.88,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "原料攪拌與加熱作業",
+   "groupName": "高低溫接觸",
+   "id": "A5",
+   "text": "定期檢查蒸氣、熱媒及冷媒管線的法蘭、墊片、閥件及洩壓設施，洩漏或裸露熱點立即隔離修復。(行政管理)",
+   "priorityDevices": [
+    "壓力釋放與超壓保護"
+   ],
+   "coveredByReferenced": 0.84,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "可燃性化學品管線液位監測作業",
+   "groupName": "有害物接觸",
+   "id": "A6",
+   "text": "疑似洩漏後禁止進入低窪與通風不良處，先測定介質及氧氣；不合格時改由穿戴供氣式呼吸防護具的人員接近。(行政管理)",
+   "priorityDevices": [
+    "火災爆炸及有害氣體監測"
+   ],
+   "coveredByReferenced": 0.78,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "可燃性化學品管線液位監測作業",
+   "groupName": "爆炸",
+   "id": "A3",
+   "text": "作業前及放空、拆裝時，以合格可燃氣體偵測器監測開口與低窪處，未達合格不得放空或拆接，警報時立即停止。(行政管理)",
+   "priorityDevices": [
+    "火災爆炸及有害氣體監測"
+   ],
+   "coveredByReferenced": 0.71,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "固定式起重機吊掛作業",
+   "groupName": "物體飛落",
+   "id": "A9",
+   "text": "起吊前檢查過捲預防裝置、制動、離合、控制及警報；吊升荷重三公噸以上者另確認檢查合格證有效。(行政管理)",
+   "priorityDevices": [
+    "過捲預防裝置",
+    "制動器"
+   ],
+   "coveredByReferenced": 0.74,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "堆高機駕駛與搬運作業",
+   "groupName": "被撞",
+   "id": "A3",
+   "text": "每日出車前檢查煞車、轉向、連結及儀表。(行政管理)",
+   "priorityDevices": [
+    "制動器"
+   ],
+   "coveredByReferenced": 0.53,
+   "ruleClass": "unclassified"
+  },
+  {
+   "taskName": "射出成品堆疊作業",
+   "groupName": "被撞",
+   "id": "A2",
+   "text": "搬運車輛每班前檢查煞車、轉向、連結裝置、警示器、照明、輪組及操控，異常立即停用。(行政管理)",
+   "priorityDevices": [
+    "制動器"
+   ],
+   "coveredByReferenced": 0.66,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "射出成型品取出作業",
+   "groupName": "被夾、被捲",
+   "id": "A1",
+   "text": "進入取出區前先停止自動循環，確認模具、頂出及機械手已停止，不得短接或停用安全聯鎖。(行政管理)",
+   "priorityDevices": [
+    "安全連鎖"
+   ],
+   "coveredByReferenced": 0.8,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "射出成型品取出作業",
+   "groupName": "被夾、被捲",
+   "id": "A5",
+   "text": "安全門聯鎖、護罩或緊急停止異常時立即停機隔離，修復並確認功能正常後才可復機。(行政管理)",
+   "priorityDevices": [
+    "安全連鎖",
+    "緊急停止裝置"
+   ],
+   "coveredByReferenced": 0.82,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "射出成型模具更換作業",
+   "groupName": "被夾、被捲",
+   "id": "A1",
+   "text": "拆裝前斷電上鎖掛牌，關閉液壓氣壓並洩壓，以插銷或鎖模塊固定活動模板，確認無法合模後才拆壓板。(行政管理)",
+   "priorityDevices": [
+    "壓力釋放與超壓保護"
+   ],
+   "coveredByReferenced": 0.68,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "射出成型模具更換作業",
+   "groupName": "墜落、滾落",
+   "id": "A3",
+   "text": "護欄無法防護的高處作業，使用具獨立錨錠點的全身背負式安全帶並確實掛接可靠防墜掛點。(個人防護)",
+   "priorityDevices": [
+    "防墜及防脫裝置"
+   ],
+   "coveredByReferenced": 0.84,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "射出成型作業",
+   "groupName": "被夾、被捲",
+   "id": "A1",
+   "text": "模區、頂出區、機械手及粉碎機投入口設固定護罩、護圍、門連鎖與光柵，禁止旁路。(工程改善)",
+   "priorityDevices": [
+    "安全連鎖"
+   ],
+   "coveredByReferenced": 0.9,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "射出成型作業",
+   "groupName": "被夾、被捲",
+   "id": "A3",
+   "text": "換模、維修、清潔及故障排除前隔離電氣、液壓與氣壓能源並洩壓，確認無法再動作後支撐固定模具。(行政管理)",
+   "priorityDevices": [
+    "壓力釋放與超壓保護"
+   ],
+   "coveredByReferenced": 0.97,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "射出成型作業",
+   "groupName": "高低溫接觸",
+   "id": "A2",
+   "text": "清料、換模及熱媒管線拆接前隔離加熱與壓力，冷卻洩壓達安全值後才可拆卸，禁止帶壓拆卸。(行政管理)",
+   "priorityDevices": [
+    "壓力釋放與超壓保護"
+   ],
+   "coveredByReferenced": 0.64,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "射出成型作業",
+   "groupName": "被撞",
+   "id": "A1",
+   "text": "吊運模具前檢查吊具額定荷重與防脫鉤，試吊調平後劃定警戒區，禁止人員進入吊物下方。(行政管理)",
+   "priorityDevices": [
+    "防墜及防脫裝置"
+   ],
+   "coveredByReferenced": 0.89,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "射出成型作業",
+   "groupName": "職業病",
+   "id": "A6",
+   "text": "對射出機、粉碎機及空壓設備以隔音、減振或包覆降低噪音，並依測定結果實施聽力保護及特殊健檢。(工程改善)",
+   "priorityDevices": [
+    "火災爆炸及有害氣體監測"
+   ],
+   "coveredByReferenced": 0.78,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "射出成型作業",
+   "groupName": "職業病",
+   "id": "A13",
+   "text": "依化學品、粉塵、噪音及熱環境暴露安排作業環境監測、特殊健康檢查及異常追蹤。(行政管理)",
+   "priorityDevices": [
+    "火災爆炸及有害氣體監測"
+   ],
+   "coveredByReferenced": 0.9,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "平軋機操作作業",
+   "groupName": "物體倒塌、崩塌",
+   "id": "A5",
+   "text": "升降台配置符合荷重需求的超載保護、防墜及機械鎖定裝置，並於使用前確認功能有效。(工程改善)",
+   "priorityDevices": [
+    "防墜及防脫裝置"
+   ],
+   "coveredByReferenced": 0.89,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "廢渣／爐渣撈取與清運作業",
+   "groupName": "有害物接觸",
+   "id": "A4",
+   "text": "半密閉容器或槽體禁止人員伸入或進入；確需進入時依局限空間程序通風、持續監測並配置外部監視及救援。(行政管理)",
+   "priorityDevices": [
+    "火災爆炸及有害氣體監測"
+   ],
+   "coveredByReferenced": 0.81,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "廢渣／爐渣撈取與清運作業",
+   "groupName": "職業病",
+   "id": "A6",
+   "text": "應依粉塵、金屬、高溫、噪音及振動暴露實施作業環境監測、特殊健康檢查，並依結果調整控制措施與健康追蹤。(行政管理)",
+   "priorityDevices": [
+    "火災爆炸及有害氣體監測"
+   ],
+   "coveredByReferenced": 0.48,
+   "ruleClass": "unclassified"
+  },
+  {
+   "taskName": "廢渣／爐渣撈取與清運作業",
+   "groupName": "職業病",
+   "id": "A12",
+   "text": "應依粉塵及金屬暴露結果實施作業環境監測、特殊健康檢查與異常追蹤。(行政管理)",
+   "priorityDevices": [
+    "火災爆炸及有害氣體監測"
+   ],
+   "coveredByReferenced": 0.52,
+   "ruleClass": "unclassified"
+  },
+  {
+   "taskName": "排風設備維修作業",
+   "groupName": "被夾、被捲",
+   "id": "A1",
+   "text": "依隔離清單切斷各類能量，上鎖掛牌並洩壓、放電及驗停；多人時加掛個人鎖，確認零能量後才可拆修。(行政管理)",
+   "priorityDevices": [
+    "壓力釋放與超壓保護"
+   ],
+   "coveredByReferenced": 0.64,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "排風設備維修作業",
+   "groupName": "墜落、滾落",
+   "id": "A3",
+   "text": "無法設置護欄時，應在核定錨錠點或安全母索使用全身背負式安全帶及防墜繫索確實掛妥。(個人防護)",
+   "priorityDevices": [
+    "防墜及防脫裝置"
+   ],
+   "coveredByReferenced": 0.83,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "排風設備維修作業",
+   "groupName": "高低溫接觸",
+   "id": "A1",
+   "text": "拆卸或開口前應完成熱源、冷源及流體隔離、洩壓排空與冷卻除霜，確認溫度與壓力已可安全作業。(行政管理)",
+   "priorityDevices": [
+    "壓力釋放與超壓保護"
+   ],
+   "coveredByReferenced": 0.64,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "排風設備維修作業",
+   "groupName": "有害物接觸",
+   "id": "A2",
+   "text": "進入風箱或夾層前，在槽外測定氧氣及有害、可燃氣體，合格才可進入；入口監視人不得入內，禁止未防護的第二人入內搶救。(行政管理)",
+   "priorityDevices": [
+    "火災爆炸及有害氣體監測"
+   ],
+   "coveredByReferenced": 0.72,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "料件暫存作業",
+   "groupName": "被撞",
+   "id": "A3",
+   "text": "搬運設備應停在平坦處、降下貨叉、拉妥煞車並拔除鑰匙，斜坡處另設止輪措施防溜。(行政管理)",
+   "priorityDevices": [
+    "制動器"
+   ],
+   "coveredByReferenced": 0.94,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "料件暫存作業",
+   "groupName": "被夾、被捲",
+   "id": "A3",
+   "text": "貨叉或料件未落地且機具未停妥煞車前，不得調整或抽取；下降落放時應站於側方並確認落點無人。(行政管理)",
+   "priorityDevices": [
+    "制動器"
+   ],
+   "coveredByReferenced": 0.9,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "料件研磨作業",
+   "groupName": "職業病",
+   "id": "A6",
+   "text": "對高噪音研磨設備加設隔音或減振，優先選用低噪音機型，並依監測安排工作輪替及聽力保護。(工程改善)",
+   "priorityDevices": [
+    "火災爆炸及有害氣體監測"
+   ],
+   "coveredByReferenced": 0.43,
+   "ruleClass": "unclassified"
+  },
+  {
+   "taskName": "於石綿板、鐵皮板、瓦、木板、茅草、塑膠等易踏穿材料構築之屋頂從事作業",
+   "groupName": "職業病",
+   "id": "A15",
+   "text": "應依石綿及粉塵暴露評估安排作業環境監測、特殊健康檢查及健康管理追蹤。(行政管理)",
+   "priorityDevices": [
+    "火災爆炸及有害氣體監測"
+   ],
+   "coveredByReferenced": 0.97,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "木材入廠與卸收堆置作業",
+   "groupName": "被撞",
+   "id": "A5",
+   "text": "貨車進行進退或卸貨前，應確認車輛停妥、拉妥手煞車並設置輪檔，未固定不得開始作業。(行政管理)",
+   "priorityDevices": [
+    "制動器"
+   ],
+   "coveredByReferenced": 0.83,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "木材入廠與卸收堆置作業",
+   "groupName": "被撞",
+   "id": "A7",
+   "text": "堆高機使用前確認煞車、轉向、連結裝置、輪具及警示正常；異常時立即停用。(行政管理)",
+   "priorityDevices": [
+    "制動器"
+   ],
+   "coveredByReferenced": 0.66,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "木材入廠與卸收堆置作業",
+   "groupName": "被夾、被捲",
+   "id": "A1",
+   "text": "堆高機門架或鏈條運轉中禁止伸手排除偏移；須先停機、降叉並拉妥煞車後，才可由側方調整。(行政管理)",
+   "priorityDevices": [
+    "制動器"
+   ],
+   "coveredByReferenced": 0.78,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "木材入廠與卸收堆置作業",
+   "groupName": "職業病",
+   "id": "A5",
+   "text": "半密閉區應將排氣導離呼吸帶，必要時設置一氧化碳警報器。(工程改善)",
+   "priorityDevices": [
+    "火災爆炸及有害氣體監測"
+   ],
+   "coveredByReferenced": 0.75,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "木材粉塵集塵設備清空與維護作業",
+   "groupName": "墜落、滾落",
+   "id": "A4",
+   "text": "配置符合墜落距離需求的錨錠點與防墜器，作業人員全程正確掛接並確認下方淨空後才登高。(個人防護)",
+   "priorityDevices": [
+    "防墜及防脫裝置"
+   ],
+   "coveredByReferenced": 0.92,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "木材粉塵集塵設備清空與維護作業",
+   "groupName": "墜落、滾落",
+   "id": "A6",
+   "text": "改用高空工作車時，使用前確認煞車、外伸撐座、操作及作業裝置、伸臂升降與工作台護欄，異常不得升高。(行政管理)",
+   "priorityDevices": [
+    "制動器"
+   ],
+   "coveredByReferenced": 0.28,
+   "ruleClass": "unclassified"
+  },
+  {
+   "taskName": "木竹製品熱處理作業",
+   "groupName": "高低溫接觸",
+   "id": "A4",
+   "text": "開門、洩壓、排水或拆管前，應先關閉蒸汽及熱媒來源並確認壓力歸零後才可拆管操作。(行政管理)",
+   "priorityDevices": [
+    "壓力釋放與超壓保護"
+   ],
+   "coveredByReferenced": 0.82,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "木竹製品熱處理作業",
+   "groupName": "有害物接觸",
+   "id": "A4",
+   "text": "進入窯體前排空殘氣，測定一氧化碳及氧氣合格後才可進入；窯外留人監視並強制通風，禁止第二人搶救。(行政管理)",
+   "priorityDevices": [
+    "火災爆炸及有害氣體監測"
+   ],
+   "coveredByReferenced": 0.8,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "木竹製品裝訂機裝訂作業",
+   "groupName": "被夾、被捲",
+   "id": "A1",
+   "text": "裝訂頭及壓料區設置可進料的連鎖護罩，護罩未定位時不得擊發；傳動護罩保持完整，運轉中手或衣物不得靠近。(工程改善)",
+   "priorityDevices": [
+    "安全連鎖"
+   ],
+   "coveredByReferenced": 0.62,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "槽車卸料作業",
+   "groupName": "有害物接觸",
+   "id": "A2",
+   "text": "拆管或開孔前先停泵關閥，洩壓至零壓後上鎖掛牌；接管先對口鎖固並確認無殘壓才開閥。(行政管理)",
+   "priorityDevices": [
+    "壓力釋放與超壓保護"
+   ],
+   "coveredByReferenced": 0.67,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "槽車卸料作業",
+   "groupName": "有害物接觸",
+   "id": "A6",
+   "text": "開孔、採樣或洩壓前於人孔、接頭及低窪處測氣；未測、超標或濃度不明時不得開孔，禁止人員進入槽內。(行政管理)",
+   "priorityDevices": [
+    "壓力釋放與超壓保護"
+   ],
+   "coveredByReferenced": 0.72,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "槽車卸料作業",
+   "groupName": "被夾、被捲",
+   "id": "A1",
+   "text": "卸料泵、皮帶及收捲器設置固定防護罩與緊急停止裝置，防護罩缺失或失效時不得運轉。(工程改善)",
+   "priorityDevices": [
+    "緊急停止裝置"
+   ],
+   "coveredByReferenced": 0.85,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "槽車卸料作業",
+   "groupName": "火災",
+   "id": "A4",
+   "text": "卸料區備妥與物料相容的滅火器，並在泵浦旁設置可立即操作的緊急停止裝置供使用。(工程改善)",
+   "priorityDevices": [
+    "緊急停止裝置"
+   ],
+   "coveredByReferenced": 0.91,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "槽車卸料作業",
+   "groupName": "物體破裂",
+   "id": "A4",
+   "text": "依設備額定壓力操作泵浦，設置壓力指示或洩壓保護，禁止關閉下游閥造成憋壓超壓。(工程改善)",
+   "priorityDevices": [
+    "壓力釋放與超壓保護"
+   ],
+   "coveredByReferenced": 0.94,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "槽車卸料作業",
+   "groupName": "物體破裂",
+   "id": "A5",
+   "text": "軟管全程設置支撐、防甩鏈及防脫落裝置，作業中禁止折彎、過度拉扯或讓接頭脫離。(工程改善)",
+   "priorityDevices": [
+    "防墜及防脫裝置"
+   ],
+   "coveredByReferenced": 0.58,
+   "ruleClass": "unclassified"
+  },
+  {
+   "taskName": "槽車卸料後管線卸除與復原作業",
+   "groupName": "被夾、被捲",
+   "id": "A2",
+   "text": "槽車拆管前應熄火、拉妥駐車煞車、設置輪擋並管制車鑰匙，作業期間禁止車輛移動。(行政管理)",
+   "priorityDevices": [
+    "制動器"
+   ],
+   "coveredByReferenced": 0.85,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "槽車卸料管閥連接作業",
+   "groupName": "有害物接觸",
+   "id": "A1",
+   "text": "打開帶壓廠端管口前先隔離閥件，洩壓至零壓後上鎖掛牌；新管對口鎖固並試漏後才開閥。(行政管理)",
+   "priorityDevices": [
+    "壓力釋放與超壓保護"
+   ],
+   "coveredByReferenced": 0.58,
+   "ruleClass": "unclassified"
+  },
+  {
+   "taskName": "槽車卸料管閥連接作業",
+   "groupName": "物體破裂",
+   "id": "A3",
+   "text": "以支撐、固定及防脫裝置限制軟管拉扯、扭折與過度彎曲，並符合最小彎曲半徑要求。(工程改善)",
+   "priorityDevices": [
+    "防墜及防脫裝置"
+   ],
+   "coveredByReferenced": 0.94,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "槽車卸料管閥連接作業",
+   "groupName": "職業病",
+   "id": "A4",
+   "text": "依物質危害與暴露結果辦理作業環境監測、特殊健康檢查，並對異常健康結果持續追蹤。(行政管理)",
+   "priorityDevices": [
+    "火災爆炸及有害氣體監測"
+   ],
+   "coveredByReferenced": 0.79,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "槽車或儲槽洩壓閥開啟作業",
+   "groupName": "有害物接觸",
+   "id": "A1",
+   "text": "開閥前核對槽體、物料與閥件，隔離不該開的管線並上鎖掛牌；確認排放暢通後再分段緩慢洩壓。(行政管理)",
+   "priorityDevices": [
+    "壓力釋放與超壓保護"
+   ],
+   "coveredByReferenced": 0.71,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "槽車或儲槽洩壓閥開啟作業",
+   "groupName": "有害物接觸",
+   "id": "A4",
+   "text": "在洩壓作業點設置供水、標示及通道均正常的緊急沖淋與洗眼設備，禁止占用或阻擋。(工程改善)",
+   "priorityDevices": [
+    "壓力釋放與超壓保護"
+   ],
+   "coveredByReferenced": 0.76,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "槽車或儲槽洩壓閥開啟作業",
+   "groupName": "有害物接觸",
+   "id": "A6",
+   "text": "洩壓開閥時站在上風側，身體避開排放口與導排管出口，禁止面對閥口或噴射路徑作業。(行政管理)",
+   "priorityDevices": [
+    "壓力釋放與超壓保護"
+   ],
+   "coveredByReferenced": 0.86,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "槽車或儲槽洩壓閥開啟作業",
+   "groupName": "火災",
+   "id": "A1",
+   "text": "將洩壓排放導入密閉回收或安全放空系統，出口固定朝向無人員、無設備及低窪區域。(工程改善)",
+   "priorityDevices": [
+    "壓力釋放與超壓保護"
+   ],
+   "coveredByReferenced": 0.85,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "槽車或儲槽洩壓閥開啟作業",
+   "groupName": "火災",
+   "id": "A2",
+   "text": "洩壓前後依當時風向設置警戒區，管制人員與車輛進入，並保持人員疏散通道暢通可用。(行政管理)",
+   "priorityDevices": [
+    "壓力釋放與超壓保護"
+   ],
+   "coveredByReferenced": 0.71,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "槽車或儲槽洩壓閥開啟作業",
+   "groupName": "火災",
+   "id": "A4",
+   "text": "洩壓排放端配置適用的阻火器或防回火裝置，並依設備說明確認功能正常後才可開閥。(工程改善)",
+   "priorityDevices": [
+    "壓力釋放與超壓保護"
+   ],
+   "coveredByReferenced": 0.83,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "槽車或儲槽洩壓閥開啟作業",
+   "groupName": "火災",
+   "id": "A5",
+   "text": "開閥前清除排水溝、集液坑及圍堰內的可燃殘液，並在洩壓作業點放置適用滅火器備用。(行政管理)",
+   "priorityDevices": [
+    "壓力釋放與超壓保護"
+   ],
+   "coveredByReferenced": 0.8,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "槽車或儲槽洩壓閥開啟作業",
+   "groupName": "職業病",
+   "id": "A2",
+   "text": "提供適當高度的作業平台與減力工具操作洩壓閥件，禁止高位前伸及高扭矩徒手扳動。(工程改善)",
+   "priorityDevices": [
+    "壓力釋放與超壓保護"
+   ],
+   "coveredByReferenced": 0.63,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "槽車或儲槽洩壓閥開啟作業",
+   "groupName": "職業病",
+   "id": "A3",
+   "text": "操作高扭矩洩壓閥時安排工作輪替與短暫休息，限制長時間扭轉、前伸及重複施力作業。(行政管理)",
+   "priorityDevices": [
+    "壓力釋放與超壓保護"
+   ],
+   "coveredByReferenced": 0.77,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "模具保養與防鏽作業",
+   "groupName": "職業病",
+   "id": "A1",
+   "text": "依實際暴露量執行有機溶劑、粉塵或油霧、噪音及手臂振動監測，超標時調整作業並安排健康檢查與追蹤。(行政管理)",
+   "priorityDevices": [
+    "火災爆炸及有害氣體監測"
+   ],
+   "coveredByReferenced": 0.93,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "氣動傳動裝置維修作業",
+   "groupName": "被夾、被捲",
+   "id": "A4",
+   "text": "送氣試車前復裝護罩及安全連鎖，採低壓點動或分段操作，禁止運轉中伸手進入危險區。(行政管理)",
+   "priorityDevices": [
+    "安全連鎖"
+   ],
+   "coveredByReferenced": 0.94,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "氣動傳動裝置維修作業",
+   "groupName": "物體飛落",
+   "id": "A1",
+   "text": "拆卸前由洩壓點釋放殘壓並確認零壓；鬆脫端蓋、彈簧及濾杯時避開軸向，以擋板承擋彈出零件。(行政管理)",
+   "priorityDevices": [
+    "壓力釋放與超壓保護"
+   ],
+   "coveredByReferenced": 0.76,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "氣動傳動裝置維修作業",
+   "groupName": "有害物接觸",
+   "id": "A3",
+   "text": "拆卸、排放或清洗前確認停機、隔離並洩壓，以接液盤、吸附材及防噴濺遮蔽承接液體。(行政管理)",
+   "priorityDevices": [
+    "壓力釋放與超壓保護"
+   ],
+   "coveredByReferenced": 0.84,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "油墨調配與廢液回收作業",
+   "groupName": "有害物接觸",
+   "id": "A5",
+   "text": "禁止將頭或身體伸入桶內；進入前強制通風並測定氧氣與有機蒸氣，不合格不得進入，並於外部留人監視。(行政管理)",
+   "priorityDevices": [
+    "火災爆炸及有害氣體監測"
+   ],
+   "coveredByReferenced": 0.56,
+   "ruleClass": "unclassified"
+  },
+  {
+   "taskName": "油壓升降平台作業",
+   "groupName": "被夾、被捲",
+   "id": "A5",
+   "text": "啟用前測試上下限位、急停、防墜、制動及油壓裝置。(行政管理)",
+   "priorityDevices": [
+    "制動器",
+    "緊急停止裝置",
+    "防墜及防脫裝置"
+   ],
+   "coveredByReferenced": 0.63,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "滾輪／鍛轤操作作業",
+   "groupName": "被夾、被捲",
+   "id": "A1",
+   "text": "進料口、出料口、滾輪咬合點及傳動部位設固定護罩或安全光柵，急停有效且不得旁路。(工程改善)",
+   "priorityDevices": [
+    "緊急停止裝置"
+   ],
+   "coveredByReferenced": 0.85,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "滾輪／鍛轤操作作業",
+   "groupName": "跌倒",
+   "id": "A5",
+   "text": "通道、急停路線及機台周邊保持淨空，材料、模具與工具不得堆放於走道，電纜軟管不得橫跨動線。(行政管理)",
+   "priorityDevices": [
+    "緊急停止裝置"
+   ],
+   "coveredByReferenced": 0.95,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "滾輪／鍛轤操作作業",
+   "groupName": "職業病",
+   "id": "A2",
+   "text": "依噪音測定結果劃定聽力防護管制區，提供適用耳塞或耳罩並安排定期聽力檢查追蹤。(個人防護)",
+   "priorityDevices": [
+    "火災爆炸及有害氣體監測"
+   ],
+   "coveredByReferenced": 0.79,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "澆鑄件熱處理（退火、回火）作業",
+   "groupName": "被夾、被捲",
+   "id": "A2",
+   "text": "台車設置有效煞車、止輪器、防溜裝置及端擋，使用前確認台車不會自行滑移或移動。(工程改善)",
+   "priorityDevices": [
+    "制動器"
+   ],
+   "coveredByReferenced": 0.88,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "澆鑄件熱處理（退火、回火）作業",
+   "groupName": "被夾、被捲",
+   "id": "A4",
+   "text": "爐門升降機構設置防墜支撐及限位裝置，功能異常時立即停用並隔離，禁止繼續使用。(工程改善)",
+   "priorityDevices": [
+    "防墜及防脫裝置"
+   ],
+   "coveredByReferenced": 0.88,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "澆鑄件熱處理（退火、回火）作業",
+   "groupName": "職業病",
+   "id": "A6",
+   "text": "降低敲擊音源並依噪音測定結果劃設聽力防護區，提供適用耳塞或耳罩及定期聽力檢查。(個人防護)",
+   "priorityDevices": [
+    "火災爆炸及有害氣體監測"
+   ],
+   "coveredByReferenced": 0.91,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "澆鑄件熱處理（退火、回火）作業",
+   "groupName": "爆炸",
+   "id": "A2",
+   "text": "燃氣系統維修前關閉氣源、洩壓並完成氣體置換，復機前進行檢漏及再次完成吹掃確認。(行政管理)",
+   "priorityDevices": [
+    "壓力釋放與超壓保護"
+   ],
+   "coveredByReferenced": 0.88,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "澆鑄件熱處理（退火、回火）作業",
+   "groupName": "有害物接觸",
+   "id": "A5",
+   "text": "加熱期間確認燃燒與爐口排氣正常並測定一氧化碳，燃燒異常或排氣停轉立即停爐撤離。(行政管理)",
+   "priorityDevices": [
+    "火災爆炸及有害氣體監測"
+   ],
+   "coveredByReferenced": 0.85,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "營建用升降機組裝、拆卸及維修作業",
+   "groupName": "墜落、滾落",
+   "id": "A9",
+   "text": "升降機檢查合格證逾期，或搬器、門扉連鎖、制動器、鋼索異常時，不得供人員使用。(行政管理)",
+   "priorityDevices": [
+    "制動器",
+    "安全連鎖"
+   ],
+   "coveredByReferenced": 0.81,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "特定化學物質操作作業",
+   "groupName": "有害物接觸",
+   "id": "A7",
+   "text": "使用前確認反應槽、蓋板、管線、閥件、安全閥、緊急遮斷及警報無損傷變形或洩漏，異常不得投料。(行政管理)",
+   "priorityDevices": [
+    "壓力釋放與超壓保護"
+   ],
+   "coveredByReferenced": 0.16,
+   "ruleClass": "unclassified"
+  },
+  {
+   "taskName": "瓦楞紙複瓦機備料與入料作業",
+   "groupName": "被撞",
+   "id": "A5",
+   "text": "每日作業前檢查堆高機及拖板車的煞車、轉向、連結裝置、喇叭、蜂鳴器與警示燈，失效立即停用報修。(行政管理)",
+   "priorityDevices": [
+    "制動器"
+   ],
+   "coveredByReferenced": 0.79,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "瓦楞紙複瓦機成型作業",
+   "groupName": "職業病",
+   "id": "A2",
+   "text": "依噪音測定結果劃設聽力保護區，管制暴露時間並於保護區內使用合適的耳塞或耳罩。(行政管理)",
+   "priorityDevices": [
+    "火災爆炸及有害氣體監測"
+   ],
+   "coveredByReferenced": 0.91,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "瓦楞紙複瓦機裁切作業",
+   "groupName": "被夾、被捲",
+   "id": "A4",
+   "text": "復機前應復原護罩與連鎖，清點工具及零件，並確認危險區內無人後才可點動或啟動。(行政管理)",
+   "priorityDevices": [
+    "安全連鎖"
+   ],
+   "coveredByReferenced": 0.71,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "瓦楞紙複瓦機裁切作業",
+   "groupName": "被夾、被捲",
+   "id": "A5",
+   "text": "急停按鈕應設於送料、出料及清障處人員可快速觸及的位置，並應定期測試停機功能。(工程改善)",
+   "priorityDevices": [
+    "緊急停止裝置"
+   ],
+   "coveredByReferenced": 0.85,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "瓦楞紙複瓦機貼合作業",
+   "groupName": "跌倒",
+   "id": "A4",
+   "text": "手推車及物料搬運車使用前應確認車輪、煞車及載物穩定性，發現異常應立即停用該車。(行政管理)",
+   "priorityDevices": [
+    "制動器"
+   ],
+   "coveredByReferenced": 0.12,
+   "ruleClass": "unclassified"
+  },
+  {
+   "taskName": "瓦楞紙複瓦機貼合作業",
+   "groupName": "跌倒",
+   "id": "A5",
+   "text": "推車及物料搬運車使用前應確認車輪、煞車及載物穩定性，異常車輛立即停用。(行政管理)",
+   "priorityDevices": [
+    "制動器"
+   ],
+   "coveredByReferenced": 0.1,
+   "ruleClass": "unclassified"
+  },
+  {
+   "taskName": "瓦楞紙複瓦機貼合作業",
+   "groupName": "職業病",
+   "id": "A6",
+   "text": "應依噪音、粉塵及化學物質暴露測定結果，安排聽力、呼吸道與皮膚的健康追蹤檢查。(行政管理)",
+   "priorityDevices": [
+    "火災爆炸及有害氣體監測"
+   ],
+   "coveredByReferenced": 0.67,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "瓦楞紙複瓦機輸送帶維修作業",
+   "groupName": "物體飛落",
+   "id": "A3",
+   "text": "拆卸用的工具與小零件應置於工具袋、零件盒或磁性托盤，上方使用的工具加裝防墜繫留。(工程改善)",
+   "priorityDevices": [
+    "防墜及防脫裝置"
+   ],
+   "coveredByReferenced": 0.9,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "瓦楞紙複瓦機輸送帶維修作業",
+   "groupName": "高低溫接觸",
+   "id": "A1",
+   "text": "隔離蒸汽並完成洩壓排凝後，以測溫確認熱盤與皮帶降至可接觸溫度，才可進入熱盤區換帶或調張力。(行政管理)",
+   "priorityDevices": [
+    "壓力釋放與超壓保護"
+   ],
+   "coveredByReferenced": 0.7,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "生產現場通行與作業環境維持作業",
+   "groupName": "被撞",
+   "id": "A4",
+   "text": "每次使用車輛前確認煞車、轉向及警示裝置正常可用，停放時使用煞車或輪擋防滑移。(行政管理)",
+   "priorityDevices": [
+    "制動器"
+   ],
+   "coveredByReferenced": 0.72,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "生產現場通行與作業環境維持作業",
+   "groupName": "衝撞",
+   "id": "A3",
+   "text": "手推車應依核定載重裝載，載物堆高不得高於視線，煞車或轉向失效時立即停用該車。(行政管理)",
+   "priorityDevices": [
+    "制動器"
+   ],
+   "coveredByReferenced": 0.71,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "生產現場通行與作業環境維持作業",
+   "groupName": "不當動作",
+   "id": "A4",
+   "text": "每次使用前檢查手推車輪組、把手及煞車是否正常，推行阻力或轉向異常時立即停用。(行政管理)",
+   "priorityDevices": [
+    "制動器"
+   ],
+   "coveredByReferenced": 0.79,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "生產環境一般巡檢與維護作業",
+   "groupName": "被撞",
+   "id": "A2",
+   "text": "搬運車輛使用前應確認煞車、警示器、照明及轉向功能，故障車輛立即停用掛牌隔離。(行政管理)",
+   "priorityDevices": [
+    "制動器"
+   ],
+   "coveredByReferenced": 0.91,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "生產環境一般巡檢與維護作業",
+   "groupName": "職業病",
+   "id": "A9",
+   "text": "應依暴露類別安排環境監測及特殊健康檢查，對超標或異常結果追蹤並調整工作內容。(行政管理)",
+   "priorityDevices": [
+    "火災爆炸及有害氣體監測"
+   ],
+   "coveredByReferenced": 0.91,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "異常氣壓作業",
+   "groupName": "職業病",
+   "id": "A5",
+   "text": "將壓縮機與人員作業或休息位置隔開，依噪音測定結果安排輪替並配戴聽力防護器具。(個人防護)",
+   "priorityDevices": [
+    "火災爆炸及有害氣體監測"
+   ],
+   "coveredByReferenced": 0.94,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "異常氣壓作業",
+   "groupName": "被夾、被捲",
+   "id": "A2",
+   "text": "作業前應測試門位連鎖、防夾及緊急停止功能，發現失效時立即停用並掛牌標示隔離。(行政管理)",
+   "priorityDevices": [
+    "安全連鎖",
+    "緊急停止裝置"
+   ],
+   "coveredByReferenced": 0.82,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "異常氣壓作業",
+   "groupName": "其他類別風險",
+   "id": "A1",
+   "text": "作業前確認壓力容器、管線、閥件及洩壓裝置無異常並完成氣密檢查，不合格不得使用。(行政管理)",
+   "priorityDevices": [
+    "壓力釋放與超壓保護"
+   ],
+   "coveredByReferenced": 0.74,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "石化業壓力容器、儲槽及管線歲修作業",
+   "groupName": "爆炸",
+   "id": "A5",
+   "text": "升壓前確認本體、蓋板螺栓、管閥、壓力表、溫度計、安全閥、爆破片及儲槽沈陷；逾期或未復歸不得升壓。(行政管理)",
+   "priorityDevices": [
+    "壓力釋放與超壓保護"
+   ],
+   "coveredByReferenced": 0.45,
+   "ruleClass": "unclassified"
+  },
+  {
+   "taskName": "石化業製程區歲修作業",
+   "groupName": "爆炸",
+   "id": "A7",
+   "text": "歲修前確認化學設備內部、蓋板、管線、閥件、安全閥、冷卻、攪拌及計測控制無損傷腐蝕，異常時不得進料或復歸。(行政管理)",
+   "priorityDevices": [
+    "壓力釋放與超壓保護"
+   ],
+   "coveredByReferenced": 0.16,
+   "ruleClass": "unclassified"
+  },
+  {
+   "taskName": "砂心製作與烘烤作業",
+   "groupName": "職業病",
+   "id": "A2",
+   "text": "對粉塵、樹脂及甲醛蒸氣實施暴露監測，超標時調整排氣或防護，並辦理特殊健康檢查。(行政管理)",
+   "priorityDevices": [
+    "火災爆炸及有害氣體監測"
+   ],
+   "coveredByReferenced": 0.91,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "砂心製作與烘烤作業",
+   "groupName": "不當動作",
+   "id": "A4",
+   "text": "台車應依載重操作並以平穩速度推拉、轉向及煞停，禁止急拉急停或跨越地面障礙物。(行政管理)",
+   "priorityDevices": [
+    "緊急停止裝置"
+   ],
+   "coveredByReferenced": 0.82,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "移動式起重機吊掛作業",
+   "groupName": "物體飛落",
+   "id": "A4",
+   "text": "確認鋼索、吊鏈、吊鉤防止脫落裝置、伸臂、撐座及迴轉裝置正常；逾期或異常不得使用。(行政管理)",
+   "priorityDevices": [
+    "防墜及防脫裝置"
+   ],
+   "coveredByReferenced": 0.56,
+   "ruleClass": "unclassified"
+  },
+  {
+   "taskName": "管線配置作業",
+   "groupName": "墜落、滾落",
+   "id": "A7",
+   "text": "改用高空工作車時，使用前確認煞車、外伸撐座、操作及作業裝置、伸臂升降與工作台護欄，異常不得升高。(行政管理)",
+   "priorityDevices": [
+    "制動器"
+   ],
+   "coveredByReferenced": 0.35,
+   "ruleClass": "unclassified"
+  },
+  {
+   "taskName": "紙材成品修邊作業",
+   "groupName": "被切、割、擦傷",
+   "id": "A3",
+   "text": "換刀、清理刀口或手部進入刀具行程前先停機上鎖並確認刀具停止；試車或寸動時護罩連鎖須復位，禁止伸入刀口。(行政管理)",
+   "priorityDevices": [
+    "安全連鎖"
+   ],
+   "coveredByReferenced": 0.88,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "紙材成品修邊作業",
+   "groupName": "被夾、被捲",
+   "id": "A4",
+   "text": "作業中禁止拆除或旁路護罩及連鎖裝置，防護未復原或功能未確認前不得重新啟動設備。(行政管理)",
+   "priorityDevices": [
+    "安全連鎖"
+   ],
+   "coveredByReferenced": 0.78,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "紙材材料入廠卸收作業",
+   "groupName": "被撞",
+   "id": "A5",
+   "text": "堆高機及拖板車僅由授權人員操作，使用前確認煞車、轉向、連結裝置、輪胎、警示及控制配線，異常立即停用。(行政管理)",
+   "priorityDevices": [
+    "制動器"
+   ],
+   "coveredByReferenced": 0.74,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "紙材裁切作業",
+   "groupName": "被夾、被捲",
+   "id": "A5",
+   "text": "每日開機前檢查離合器、煞車、護罩、連鎖、雙手啟動、急停及送料動作，發現異常立即停機掛牌報修。(行政管理)",
+   "priorityDevices": [
+    "制動器",
+    "安全連鎖",
+    "緊急停止裝置"
+   ],
+   "coveredByReferenced": 0.84,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "紙材裝訂作業",
+   "groupName": "被夾、被捲",
+   "id": "A2",
+   "text": "開機前測試護門連鎖、緊急停止及安全感測裝置，異常時立即停機修復並禁止旁路使用。(行政管理)",
+   "priorityDevices": [
+    "安全連鎖",
+    "緊急停止裝置"
+   ],
+   "coveredByReferenced": 0.83,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "紙材裝訂作業",
+   "groupName": "高低溫接觸",
+   "id": "A3",
+   "text": "拆卸膠管、清膠或換膠桶前停止加熱與供料，洩壓並測溫確認達安全溫度後才可作業。(行政管理)",
+   "priorityDevices": [
+    "壓力釋放與超壓保護"
+   ],
+   "coveredByReferenced": 0.82,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "繩索與吊索吊掛作業",
+   "groupName": "物體飛落",
+   "id": "A3",
+   "text": "使用前檢查鋼索、吊鏈、纖維索、吊鉤、吊索、鏈環及卸克有無磨耗、斷絲，並確認吊鉤防止脫落裝置。(行政管理)",
+   "priorityDevices": [
+    "防墜及防脫裝置"
+   ],
+   "coveredByReferenced": 0.57,
+   "ruleClass": "unclassified"
+  },
+  {
+   "taskName": "翻砂鑄造造模作業",
+   "groupName": "跌倒",
+   "id": "A5",
+   "text": "搬運模框或砂料前確認手推車輪組、煞車及轉向裝置正常，異常立即停用，修復後再使用。(行政管理)",
+   "priorityDevices": [
+    "制動器"
+   ],
+   "coveredByReferenced": 0.71,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "蒸煮、油炸作業",
+   "groupName": "被夾、被捲",
+   "id": "A4",
+   "text": "發現護罩或緊急停止裝置失效時應立即停機並掛禁止操作牌，修復測試合格後方可重新啟動。(行政管理)",
+   "priorityDevices": [
+    "緊急停止裝置"
+   ],
+   "coveredByReferenced": 0.74,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "衝床操作作業",
+   "groupName": "被夾、被捲",
+   "id": "A7",
+   "text": "開機前確認離合器、煞車、一行程一停止、緊急制動及安全裝置無異常。(行政管理)",
+   "priorityDevices": [
+    "制動器"
+   ],
+   "coveredByReferenced": 0.41,
+   "ruleClass": "unclassified"
+  },
+  {
+   "taskName": "設備安裝作業",
+   "groupName": "物體飛落",
+   "id": "A2",
+   "text": "吊掛前檢查過捲預防裝置、制動、鋼索、吊索、卸扣及吊耳；異常時不得起吊。(行政管理)",
+   "priorityDevices": [
+    "過捲預防裝置",
+    "制動器"
+   ],
+   "coveredByReferenced": 0.32,
+   "ruleClass": "unclassified"
+  },
+  {
+   "taskName": "設備轉輪組立作業",
+   "groupName": "物體飛落",
+   "id": "A1",
+   "text": "依吊物重量、重心及吊點選用額定荷重足夠的吊索具，使用前檢查起重設備過捲預防裝置、制動、鋼索與吊具。(行政管理)",
+   "priorityDevices": [
+    "過捲預防裝置",
+    "制動器"
+   ],
+   "coveredByReferenced": 0.74,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "設備轉輪組立作業",
+   "groupName": "墜落、滾落",
+   "id": "A6",
+   "text": "改用高空工作車時，使用前確認煞車、外伸撐座、操作及作業裝置、伸臂升降與工作台護欄，異常不得升高。(行政管理)",
+   "priorityDevices": [
+    "制動器"
+   ],
+   "coveredByReferenced": 0.35,
+   "ruleClass": "unclassified"
+  },
+  {
+   "taskName": "造紙製糊作業",
+   "groupName": "被夾、被捲",
+   "id": "A3",
+   "text": "攪拌機急停按鈕設於操作人員可及且不受危險點阻擋的位置，並維持裝置可用不得旁路。(工程改善)",
+   "priorityDevices": [
+    "緊急停止裝置"
+   ],
+   "coveredByReferenced": 0.89,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "造紙製糊作業",
+   "groupName": "墜落、滾落",
+   "id": "A1",
+   "text": "平台周邊設置護欄；投料口加設可承載格柵，禁止站上開口，開口作業時設置臨時護欄或強制防墜，完工後復位。(工程改善)",
+   "priorityDevices": [
+    "防墜及防脫裝置"
+   ],
+   "coveredByReferenced": 0.83,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "造紙製糊作業",
+   "groupName": "墜落、滾落",
+   "id": "A5",
+   "text": "開口或護欄拆除時繫掛全身背負式安全帶於合格固定點或防墜器；護欄完整的平台及梯不以安全帶取代護欄。(個人防護)",
+   "priorityDevices": [
+    "防墜及防脫裝置"
+   ],
+   "coveredByReferenced": 0.76,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "造紙製糊作業",
+   "groupName": "職業病",
+   "id": "A3",
+   "text": "依噪音暴露測定結果安排工作輪替及定期聽力檢查，異常結果由主管追蹤並調整工作。(行政管理)",
+   "priorityDevices": [
+    "火災爆炸及有害氣體監測"
+   ],
+   "coveredByReferenced": 0.76,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "造紙製糊作業",
+   "groupName": "有害物接觸",
+   "id": "A4",
+   "text": "取樣、清洗前關閉液鹼來源並洩壓、排空及沖洗；開桶、轉注、加藥及拆接時配戴耐鹼手套、護目鏡及防護衣。(個人防護)",
+   "priorityDevices": [
+    "壓力釋放與超壓保護"
+   ],
+   "coveredByReferenced": 0.93,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "重型設備維修作業",
+   "groupName": "物體飛落",
+   "id": "A2",
+   "text": "重型設備吊掛前檢查過捲預防裝置、制動及吊具，並先試吊。(行政管理)",
+   "priorityDevices": [
+    "過捲預防裝置",
+    "制動器"
+   ],
+   "coveredByReferenced": 0.39,
+   "ruleClass": "unclassified"
+  },
+  {
+   "taskName": "釘車與打孔機操作作業",
+   "groupName": "被夾、被捲",
+   "id": "A1",
+   "text": "裝訂頭、沖頭及傳動部加裝連鎖護罩，護罩未定位不得啟動；腳踏開關加裝防誤觸護蓋且不得旁路。(工程改善)",
+   "priorityDevices": [
+    "安全連鎖"
+   ],
+   "coveredByReferenced": 0.83,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "鑄造塗模作業",
+   "groupName": "有害物接觸",
+   "id": "A4",
+   "text": "噴槍、軟管、接頭及噴嘴於作業前應確認無堵塞或滲漏，異常時先停機洩壓後再處理。(行政管理)",
+   "priorityDevices": [
+    "壓力釋放與超壓保護"
+   ],
+   "coveredByReferenced": 0.82,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "鑄造塗模作業",
+   "groupName": "爆炸",
+   "id": "A4",
+   "text": "壓力噴塗桶與管線於使用前應確認壓力表及安全閥正常，拆卸前須先停機完成洩壓作業。(行政管理)",
+   "priorityDevices": [
+    "壓力釋放與超壓保護"
+   ],
+   "coveredByReferenced": 0.74,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "鑄造模具脫模作業",
+   "groupName": "物體飛落",
+   "id": "A3",
+   "text": "吊運前檢查吊車煞車、過捲預防裝置、吊鉤、鋼索、鏈條、吊帶及卸扣，發現磨損、變形或逾期立即停用更換。(行政管理)",
+   "priorityDevices": [
+    "過捲預防裝置",
+    "制動器"
+   ],
+   "coveredByReferenced": 0.75,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "鑄造鋁錠入料作業",
+   "groupName": "被夾、被捲",
+   "id": "A3",
+   "text": "堆高機或推車改位前由駕駛停車並拉妥煞車，待人員離開夾點後再使用輔具調整載荷。(行政管理)",
+   "priorityDevices": [
+    "制動器"
+   ],
+   "coveredByReferenced": 0.89,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "鑄造鋁錠入料作業",
+   "groupName": "爆炸",
+   "id": "A4",
+   "text": "以吊掛、堆高機或推車入料前應確認載荷已固定與防脫落，禁止不穩定載荷跨越熔池。(行政管理)",
+   "priorityDevices": [
+    "防墜及防脫裝置"
+   ],
+   "coveredByReferenced": 0.85,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "鑽孔機操作作業",
+   "groupName": "被夾、被捲",
+   "id": "A5",
+   "text": "緊急停止按鈕應設於操作位置附近且伸手可及，並於設備點檢時確認按下可停止主軸。(行政管理)",
+   "priorityDevices": [
+    "緊急停止裝置"
+   ],
+   "coveredByReferenced": 0.76,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "鑽孔機操作作業",
+   "groupName": "職業病",
+   "id": "A1",
+   "text": "高噪音鑽孔設備優先加裝隔音罩或減振措施，並依噪音測定結果輪休及保護聽力。(工程改善)",
+   "priorityDevices": [
+    "火災爆炸及有害氣體監測"
+   ],
+   "coveredByReferenced": 0.69,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "開挖擋土支撐組立及拆除作業",
+   "groupName": "物體倒塌、崩塌",
+   "id": "A8",
+   "text": "監測值達位移、軸力或地下水預警值時，立即停工撤離。(行政管理)",
+   "priorityDevices": [
+    "火災爆炸及有害氣體監測"
+   ],
+   "coveredByReferenced": 0.86,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "電動台車及搬運設備操作作業",
+   "groupName": "被撞",
+   "id": "A5",
+   "text": "出車前確認煞車、轉向、連結裝置、警示及控制配線有效。(行政管理)",
+   "priorityDevices": [
+    "制動器"
+   ],
+   "coveredByReferenced": 0.52,
+   "ruleClass": "unclassified"
+  },
+  {
+   "taskName": "電動台車及搬運設備操作作業",
+   "groupName": "被撞",
+   "id": "A6",
+   "text": "駕駛離車時應拉妥煞車、斷電並拔除鑰匙或防止未授權啟動，坡道停放加設輪擋固定。(行政管理)",
+   "priorityDevices": [
+    "制動器"
+   ],
+   "coveredByReferenced": 0.88,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "電氣設備及線路操作與維護作業",
+   "groupName": "物體飛落",
+   "id": "A1",
+   "text": "高處檢修使用的工具及小零件應放入工具袋或零件盒，並以防墜繫繩或承接裝置固定。(工程改善)",
+   "priorityDevices": [
+    "防墜及防脫裝置"
+   ],
+   "coveredByReferenced": 0.79,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "電氣設備及線路操作與維護作業",
+   "groupName": "被夾、被捲",
+   "id": "A1",
+   "text": "配電盤旋轉及滑動部件應維持完整護罩、聯鎖及限位裝置，防護失效時立即停用修復。(工程改善)",
+   "priorityDevices": [
+    "安全連鎖"
+   ],
+   "coveredByReferenced": 0.76,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "食品乾燥作業",
+   "groupName": "高低溫接觸",
+   "id": "A3",
+   "text": "清潔或保養前切斷蒸汽及其他能源並完成洩壓，確認設備已冷卻後才可進入腔體作業。(行政管理)",
+   "priorityDevices": [
+    "壓力釋放與超壓保護"
+   ],
+   "coveredByReferenced": 0.8,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "食品乾燥作業",
+   "groupName": "高低溫接觸",
+   "id": "A4",
+   "text": "乾燥區設置排熱通風並依熱環境監測安排工休與補水；低溫作業安排回溫休息，人員不適時立即離開暴露區。(工程改善)",
+   "priorityDevices": [
+    "火災爆炸及有害氣體監測"
+   ],
+   "coveredByReferenced": 0.86,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "食品乾燥作業",
+   "groupName": "被撞",
+   "id": "A3",
+   "text": "推車使用前應確認煞車、輪組及載物固定狀況，禁止倒退拉車或超高堆載而遮蔽視線。(行政管理)",
+   "priorityDevices": [
+    "制動器"
+   ],
+   "coveredByReferenced": 0.88,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "食品乾燥作業",
+   "groupName": "物體飛落",
+   "id": "A1",
+   "text": "層架、推車與托盤應設置止滑、限位及防落構造，移動或抽拉前確認煞車與固定件正常。(工程改善)",
+   "priorityDevices": [
+    "制動器"
+   ],
+   "coveredByReferenced": 0.91,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "食品乾燥作業",
+   "groupName": "有害物接觸",
+   "id": "A3",
+   "text": "清洗或消毒前切斷設備能源並完成洩壓排液，通風排空確認無殘留後才可開門或檢查。(行政管理)",
+   "priorityDevices": [
+    "壓力釋放與超壓保護"
+   ],
+   "coveredByReferenced": 0.83,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "食品乾燥作業",
+   "groupName": "有害物接觸",
+   "id": "A7",
+   "text": "進入腔體前先強制排氣並以儀器測定一氧化碳，合格後才可進入；設置一氧化碳警報，異常時立即停機撤離。(行政管理)",
+   "priorityDevices": [
+    "火災爆炸及有害氣體監測"
+   ],
+   "coveredByReferenced": 0.74,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "食品乾燥作業",
+   "groupName": "不當動作",
+   "id": "A3",
+   "text": "應選用低阻力且具煞車的推車，遇重載或長距離搬運時改用滾輪輸送或其他輔助設備。(工程改善)",
+   "priorityDevices": [
+    "制動器"
+   ],
+   "coveredByReferenced": 0.86,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "食品包裝作業",
+   "groupName": "被夾、被捲",
+   "id": "A1",
+   "text": "輸送帶、滾輪、鏈條、導膜輪、壓輪及夾爪危險點裝設固定護罩，並保持聯鎖及急停有效。(工程改善)",
+   "priorityDevices": [
+    "安全連鎖",
+    "緊急停止裝置"
+   ],
+   "coveredByReferenced": 0.73,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "食品包裝作業",
+   "groupName": "職業病",
+   "id": "A11",
+   "text": "對包裝噪音設備執行隔音、減振及預防保養，並依監測結果安排聽力保護及健康檢查。(工程改善)",
+   "priorityDevices": [
+    "火災爆炸及有害氣體監測"
+   ],
+   "coveredByReferenced": 0.94,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "食品包裝作業",
+   "groupName": "被撞",
+   "id": "A3",
+   "text": "車輛使用前應檢查煞車、方向、警示音燈及載物穩定性，發現異常時應立即停用並隔離。(行政管理)",
+   "priorityDevices": [
+    "制動器"
+   ],
+   "coveredByReferenced": 0.76,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "食品包裝作業",
+   "groupName": "被撞",
+   "id": "A4",
+   "text": "自動裝箱設備及機械手臂作業範圍應設置圍欄或實體隔離，並維持聯鎖功能持續有效。(工程改善)",
+   "priorityDevices": [
+    "安全連鎖"
+   ],
+   "coveredByReferenced": 0.8,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "食品包裝作業",
+   "groupName": "被撞",
+   "id": "A5",
+   "text": "進入圍欄或動作範圍前應急停並上鎖掛牌或切入維修模式，確認停止；禁止僅按急停後進入。(行政管理)",
+   "priorityDevices": [
+    "緊急停止裝置"
+   ],
+   "coveredByReferenced": 0.86,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "食品原料投料作業",
+   "groupName": "跌倒",
+   "id": "A4",
+   "text": "升降平台使用前應確認平台固定、煞車鎖定及上下設備狀態正常，發現異常時禁止使用。(行政管理)",
+   "priorityDevices": [
+    "制動器"
+   ],
+   "coveredByReferenced": 0.76,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "食品原料投料作業",
+   "groupName": "被夾、被捲",
+   "id": "A5",
+   "text": "每班及維修後應確認護罩、急停、限位、支撐及止動裝置有效，失效時立即停機修復。(行政管理)",
+   "priorityDevices": [
+    "緊急停止裝置"
+   ],
+   "coveredByReferenced": 0.94,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "食材取出、曝曬與換缸作業",
+   "groupName": "被撞",
+   "id": "A5",
+   "text": "滷液管線接續或拆卸前應停機、隔離並確認完全洩壓，軟管與接頭應採耐壓及防甩固定。(行政管理)",
+   "priorityDevices": [
+    "壓力釋放與超壓保護"
+   ],
+   "coveredByReferenced": 0.83,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "食材取出、曝曬與換缸作業",
+   "groupName": "有害物接觸",
+   "id": "A2",
+   "text": "入槽或開蓋前依許可測定氧氣、硫化氫及二氧化碳，並配置槽外監視及持續測氣，異常時立即撤離並採非進入式救援。(行政管理)",
+   "priorityDevices": [
+    "火災爆炸及有害氣體監測"
+   ],
+   "coveredByReferenced": 0.66,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "食材清洗與切塊作業",
+   "groupName": "物體飛落",
+   "id": "A4",
+   "text": "推車使用前應確認車體、腳輪及煞車功能，載物保持穩定；異常推車應立即停用維修。(行政管理)",
+   "priorityDevices": [
+    "制動器"
+   ],
+   "coveredByReferenced": 0.78,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "食材烹煮作業",
+   "groupName": "高低溫接觸",
+   "id": "A1",
+   "text": "取用烤盤或搬運熱湯熱油時應使用耐熱手套與防濺面罩，推車並應具煞車及防傾功能。(個人防護)",
+   "priorityDevices": [
+    "制動器"
+   ],
+   "coveredByReferenced": 0.69,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "食材烹煮作業",
+   "groupName": "被切、割、擦傷",
+   "id": "A3",
+   "text": "切割設備應配置完整護罩、專用推料器及連鎖防護，防護失效時應立即停用不得開機。(工程改善)",
+   "priorityDevices": [
+    "安全連鎖"
+   ],
+   "coveredByReferenced": 0.73,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "食材烹煮作業",
+   "groupName": "不當動作",
+   "id": "A5",
+   "text": "應選用低阻力且具適當把手與煞車的推車，輪組或煞車異常時立即停用不得繼續使用。(工程改善)",
+   "priorityDevices": [
+    "制動器"
+   ],
+   "coveredByReferenced": 0.79,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "食材烹煮作業",
+   "groupName": "爆炸",
+   "id": "A2",
+   "text": "壓力鍋及蒸煮鍋應維持安全閥與壓力控制有效，禁止旁通安全閥或繼續使用已失效設備。(工程改善)",
+   "priorityDevices": [
+    "壓力釋放與超壓保護"
+   ],
+   "coveredByReferenced": 0.73,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "食材烹煮作業",
+   "groupName": "爆炸",
+   "id": "A3",
+   "text": "壓力鍋等壓力設備開蓋、拆卸或清潔前先停機、洩壓及冷卻，確認壓力歸零後才可作業。(行政管理)",
+   "priorityDevices": [
+    "壓力釋放與超壓保護"
+   ],
+   "coveredByReferenced": 0.94,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "食材烹煮作業",
+   "groupName": "被夾、被捲",
+   "id": "A1",
+   "text": "旋轉、傳動、輸送及升降部位應設置固定護罩與有效連鎖，防止人員接觸運轉中構件。(工程改善)",
+   "priorityDevices": [
+    "安全連鎖"
+   ],
+   "coveredByReferenced": 0.88,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "高壓鍋爐操作作業",
+   "groupName": "爆炸",
+   "id": "A5",
+   "text": "確認鍋爐檢查合格證有效，並檢查本體、給水、水位、安全閥及自動控制。(行政管理)",
+   "priorityDevices": [
+    "壓力釋放與超壓保護"
+   ],
+   "coveredByReferenced": 0.77,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "高度2公尺以上開口周邊作業",
+   "groupName": "物體飛落",
+   "id": "A2",
+   "text": "高處使用的工具及小型器具應加裝符合荷重的防墜繫掛，作業前確認繫掛點牢固可靠。(工程改善)",
+   "priorityDevices": [
+    "防墜及防脫裝置"
+   ],
+   "coveredByReferenced": 0.88,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "高溫環境操作與維護作業",
+   "groupName": "高低溫接觸",
+   "id": "A2",
+   "text": "拆管或開蓋前先關閉相關閥門並完成洩壓冷卻，確認已達零壓零溫無殘壓後才可拆卸。(行政管理)",
+   "priorityDevices": [
+    "壓力釋放與超壓保護"
+   ],
+   "coveredByReferenced": 0.66,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "高溫環境操作與維護作業",
+   "groupName": "火災",
+   "id": "A4",
+   "text": "操作中發現超溫或火焰監測異常時立即停機切斷燃料，排除故障後才可復歸重新點火。(行政管理)",
+   "priorityDevices": [
+    "火災爆炸及有害氣體監測"
+   ],
+   "coveredByReferenced": 0.91,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "高溫環境操作與維護作業",
+   "groupName": "被夾、被捲",
+   "id": "A2",
+   "text": "清潔、排除卡料及維修前隔離危險能源，完成洩壓釋能及機械阻擋，每人上鎖後試啟動確認無動作。(行政管理)",
+   "priorityDevices": [
+    "壓力釋放與超壓保護"
+   ],
+   "coveredByReferenced": 0.72,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "高溫環境操作與維護作業",
+   "groupName": "職業病",
+   "id": "A7",
+   "text": "氣體濃度超標或出現警報時立即停機、撤離及通報，確認測氣安全前不得返回作業區。(行政管理)",
+   "priorityDevices": [
+    "火災爆炸及有害氣體監測"
+   ],
+   "coveredByReferenced": 0.91,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "高空工作車作業",
+   "groupName": "墜落、滾落",
+   "id": "A3",
+   "text": "升高平台前確認地面平整且承載力足夠，並完成煞車、外伸撐座或輪擋設置。(行政管理)",
+   "priorityDevices": [
+    "制動器"
+   ],
+   "coveredByReferenced": 0.53,
+   "ruleClass": "unclassified"
+  },
+  {
+   "taskName": "施工構台組立與拆除作業",
+   "groupName": "物體飛落",
+   "id": "A7",
+   "text": "使用起重機前確認過捲預防裝置、制動、過負荷警報、鋼索、吊具及吊鉤防止脫落裝置均無異常。(行政管理)",
+   "priorityDevices": [
+    "過捲預防裝置",
+    "制動器",
+    "過負荷預防裝置",
+    "防墜及防脫裝置"
+   ],
+   "coveredByReferenced": 0.14,
+   "ruleClass": "unclassified"
+  },
+  {
+   "taskName": "施工構台組立與拆除作業",
+   "groupName": "物體飛落",
+   "id": "A8",
+   "text": "起重機檢查合格證逾期（三公噸以上者）、操作人員資格不符，或制動、吊具異常時，不得吊運。(行政管理)",
+   "priorityDevices": [
+    "制動器"
+   ],
+   "coveredByReferenced": 0.46,
+   "ruleClass": "unclassified"
+  },
+  {
+   "taskName": "鋼筋綁紮作業",
+   "groupName": "墜落、滾落",
+   "id": "A1",
+   "text": "開工前由指定人員檢查護欄、護蓋、平台、梯具、安全母索及防墜器，失效即隔離停工。(行政管理)",
+   "priorityDevices": [
+    "防墜及防脫裝置"
+   ],
+   "coveredByReferenced": 0.88,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "鋼筋綁紮作業",
+   "groupName": "物體飛落",
+   "id": "A2",
+   "text": "依鋼筋長度與重心選用合格吊帶、卸扣及具防止脫落裝置的吊鉤，先試吊確認平衡後才得緩慢移動。(行政管理)",
+   "priorityDevices": [
+    "防墜及防脫裝置"
+   ],
+   "coveredByReferenced": 0.95,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "鋼構構件進場卸運作業",
+   "groupName": "物體飛落",
+   "id": "A10",
+   "text": "確認過捲預防裝置、制動、過負荷警報、鋼索、吊具及吊鉤防止脫落裝置均無異常。(行政管理)",
+   "priorityDevices": [
+    "過捲預防裝置",
+    "制動器",
+    "過負荷預防裝置",
+    "防墜及防脫裝置"
+   ],
+   "coveredByReferenced": 0.33,
+   "ruleClass": "unclassified"
+  },
+  {
+   "taskName": "鋼構構件進場卸運作業",
+   "groupName": "物體飛落",
+   "id": "A11",
+   "text": "起重機檢查合格證逾期（三公噸以上者）、操作人員資格不符，或制動、吊具異常時，不得吊運。(行政管理)",
+   "priorityDevices": [
+    "制動器"
+   ],
+   "coveredByReferenced": 0.43,
+   "ruleClass": "unclassified"
+  },
+  {
+   "taskName": "鋼構地面預組作業",
+   "groupName": "物體飛落",
+   "id": "A1",
+   "text": "起吊前固定構件內散落物及附件，並檢查過捲預防裝置、制動、吊索及吊鉤防止脫落裝置。(行政管理)",
+   "priorityDevices": [
+    "過捲預防裝置",
+    "制動器",
+    "防墜及防脫裝置"
+   ],
+   "coveredByReferenced": 0.59,
+   "ruleClass": "unclassified"
+  },
+  {
+   "taskName": "天花板輕鋼架組立作業",
+   "groupName": "墜落、滾落",
+   "id": "A1",
+   "text": "依高度選用合格合梯或施工架，平台設置護欄、上下設備及煞車，禁止在平台上加設合梯或攀爬護欄。(工程改善)",
+   "priorityDevices": [
+    "制動器"
+   ],
+   "coveredByReferenced": 0.78,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "天花板輕鋼架組立作業",
+   "groupName": "物體倒塌、崩塌",
+   "id": "A3",
+   "text": "移動平台設於堅實平整地面，確認結構、台板、護欄及煞車並遵守載重，移動前人員與鬆散物料先下架。(行政管理)",
+   "priorityDevices": [
+    "制動器"
+   ],
+   "coveredByReferenced": 0.64,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "天花板輕鋼架組立作業",
+   "groupName": "物體倒塌、崩塌",
+   "id": "A4",
+   "text": "板材升降機使用前確認鋼索、支架、煞車、導向及防脫落裝置，吊運路徑及下方設置警戒並禁止人員停留。(行政管理)",
+   "priorityDevices": [
+    "制動器",
+    "防墜及防脫裝置"
+   ],
+   "coveredByReferenced": 0.85,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "工區材料進場及堆置作業",
+   "groupName": "物體飛落",
+   "id": "A3",
+   "text": "確認起重機制動、過捲預防裝置及吊具防脫，破損或異常時立即隔離。(行政管理)",
+   "priorityDevices": [
+    "過捲預防裝置",
+    "制動器",
+    "防墜及防脫裝置"
+   ],
+   "coveredByReferenced": 0.3,
+   "ruleClass": "unclassified"
+  },
+  {
+   "taskName": "柱狀基礎建構作業(連續壁)",
+   "groupName": "物體飛落",
+   "id": "A2",
+   "text": "鋼索、卸扣、吊鉤、吊梁及防止脫落裝置使用前檢查裂損、變形或磨損，並確認起重機制動與過捲預防裝置。(行政管理)",
+   "priorityDevices": [
+    "過捲預防裝置",
+    "制動器",
+    "防墜及防脫裝置"
+   ],
+   "coveredByReferenced": 0.53,
+   "ruleClass": "unclassified"
+  },
+  {
+   "taskName": "柱狀基礎建構作業(連續壁)",
+   "groupName": "被夾、被捲",
+   "id": "A7",
+   "text": "偵測到人員進入履帶、迴轉部或抓斗危險區時立即停機。(工程改善)",
+   "priorityDevices": [
+    "火災爆炸及有害氣體監測"
+   ],
+   "coveredByReferenced": 0.27,
+   "ruleClass": "unclassified"
+  },
+  {
+   "taskName": "行政文書檔案整理作業",
+   "groupName": "跌倒",
+   "id": "A4",
+   "text": "應定期保養推車輪組及煞車功能，輪子卡滯、破損或偏擺時立即停止使用並完成修繕。(工程改善)",
+   "priorityDevices": [
+    "制動器"
+   ],
+   "coveredByReferenced": 0.85,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "行政文書檔案整理作業",
+   "groupName": "不當動作",
+   "id": "A4",
+   "text": "推車載重不得超過額定荷重，貨物堆疊不得遮蔽視線，輪子或煞車異常時立即停止使用。(工程改善)",
+   "priorityDevices": [
+    "制動器"
+   ],
+   "coveredByReferenced": 0.82,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "行政文書檔案整理作業",
+   "groupName": "被撞",
+   "id": "A5",
+   "text": "手推車應停放於平坦且不阻礙通道通行的指定位置，停妥後確實使用煞車或止動措施。(行政管理)",
+   "priorityDevices": [
+    "制動器"
+   ],
+   "coveredByReferenced": 0.69,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "行政文書檔案歸檔銷毀作業",
+   "groupName": "被夾、被捲",
+   "id": "A3",
+   "text": "每日開工前檢查碎紙機的護罩、開關、逆轉及緊急停止功能，異常時立即掛牌停用並修復。(行政管理)",
+   "priorityDevices": [
+    "緊急停止裝置"
+   ],
+   "coveredByReferenced": 0.89,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "氣密與水壓試驗作業",
+   "groupName": "爆炸",
+   "id": "A6",
+   "text": "充氣、升壓或殘壓未確認釋放前，禁止拆卸盲板、接頭、儀表或軟管；完成安全洩壓、確認零壓後方可拆除。(行政管理)",
+   "priorityDevices": [
+    "壓力釋放與超壓保護"
+   ],
+   "coveredByReferenced": 0.18,
+   "ruleClass": "unclassified"
+  },
+  {
+   "taskName": "威亞吊飛作業",
+   "groupName": "墜落、滾落",
+   "id": "A4",
+   "text": "吊飛前以最低必要高度緩慢張緊試吊，確認連接、鋼絲及煞車正常後才正式吊飛；異常立即受控降回地面。(行政管理)",
+   "priorityDevices": [
+    "制動器"
+   ],
+   "coveredByReferenced": 0.83,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "威亞吊飛作業",
+   "groupName": "衝撞",
+   "id": "A4",
+   "text": "依張緊、低高度離地、停止確認及短距升降的順序試吊；擺盪、偏航、異音、煞車異常或遇障礙時，立即受控降落。(行政管理)",
+   "priorityDevices": [
+    "制動器"
+   ],
+   "coveredByReferenced": 0.81,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "威亞吊飛作業",
+   "groupName": "物體飛落",
+   "id": "A1",
+   "text": "吊飛前及變更配置後，由合格人員確認吊點、連接方向、防脫及主備援均固定防鬆且配置正確。(行政管理)",
+   "priorityDevices": [
+    "防墜及防脫裝置"
+   ],
+   "coveredByReferenced": 0.81,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "威亞吊飛作業",
+   "groupName": "物體飛落",
+   "id": "A5",
+   "text": "吊飛前檢查威亞鋼絲、連接器及吊帶金屬件有無斷股、變形或防脫失效，異常立即停用隔離並標示。(行政管理)",
+   "priorityDevices": [
+    "防墜及防脫裝置"
+   ],
+   "coveredByReferenced": 0.85,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "廳舍修繕作業",
+   "groupName": "有害物接觸",
+   "id": "A2",
+   "text": "室內塗裝、防水須有有機溶劑作業主管在場並強制換氣；監測濃度，達管制值即停工換氣。(行政管理)",
+   "priorityDevices": [
+    "火災爆炸及有害氣體監測"
+   ],
+   "coveredByReferenced": 0.65,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "廳舍修繕作業",
+   "groupName": "有害物接觸",
+   "id": "A3",
+   "text": "來源不明保溫材先採樣辨識，未確認前不得拆除；粉塵及溶劑實施監測、分級管理與特殊健康檢查，並執行聽力保護。(行政管理)",
+   "priorityDevices": [
+    "火災爆炸及有害氣體監測"
+   ],
+   "coveredByReferenced": 0.74,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "道路維護作業",
+   "groupName": "被夾、被捲",
+   "id": "A2",
+   "text": "重型施工機械裝設倒車顯影系統、倒車警報器及死角監視器，設備失效時不得倒車或回轉。(工程改善)",
+   "priorityDevices": [
+    "火災爆炸及有害氣體監測"
+   ],
+   "coveredByReferenced": 0.76,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "道路維護作業",
+   "groupName": "墜落、滾落",
+   "id": "A2",
+   "text": "邊坡、橋面外側及路肩高差處設置護欄或工作台，警戒線不得代替護欄；無法設置護欄時才可使用防墜系統，並須有牢固錨錠點。(工程改善)",
+   "priorityDevices": [
+    "防墜及防脫裝置"
+   ],
+   "coveredByReferenced": 0.87,
+   "ruleClass": "B"
+  },
+  {
+   "taskName": "道路維護作業",
+   "groupName": "職業病",
+   "id": "A1",
+   "text": "瀝青、標線溶劑等危害性化學品依分級管理辦理；監測超標即改濕式抑塵、輪替或停止暴露，不得只留監測報告。(行政管理)",
+   "priorityDevices": [
+    "火災爆炸及有害氣體監測"
+   ],
+   "coveredByReferenced": 0.67,
+   "ruleClass": "B"
+  }
+ ],
+ "unreferencedByDevice": {
+  "制動器": 63,
+  "安全連鎖": 23,
+  "緊急停止裝置": 20,
+  "防墜及防脫裝置": 29,
+  "壓力釋放與超壓保護": 42,
+  "火災爆炸及有害氣體監測": 38,
+  "過捲預防裝置": 10,
+  "過負荷預防裝置": 2
+ },
+ "unreferencedRuleClass": {
+  "unclassified": 230,
+  "B": 1889
+ },
+ "unreferencedPriorityRuleClass": {
+  "B": 161,
+  "unclassified": 34
+ },
+ "mandatoryCoverage": [
+  {
+   "taskName": "備料與簡易提升機操作作業",
+   "equipment": "簡易提升機",
+   "item": "過捲預防裝置",
+   "source": "起重升降機具安全規則第95條；職業安全衛生管理辦法第25條",
+   "covered": true
+  },
+  {
+   "taskName": "備料與簡易提升機操作作業",
+   "equipment": "簡易提升機",
+   "item": "制動性能檢點",
+   "source": "職業安全衛生管理辦法第57條",
+   "covered": true
+  },
+  {
+   "taskName": "備料與簡易提升機操作作業",
+   "equipment": "簡易提升機",
+   "item": "不得搭乘人員",
+   "source": "起重升降機具安全規則第96條",
+   "covered": true
+  },
+  {
+   "taskName": "備料與簡易提升機操作作業",
+   "equipment": "簡易提升機",
+   "item": "不得超過積載荷重",
+   "source": "起重升降機具安全規則第93條",
+   "covered": true
+  },
+  {
+   "taskName": "使用升降機上下料件作業",
+   "equipment": "升降機",
+   "item": "出入口門連鎖",
+   "source": "職業安全衛生設施規則第93條、第95條",
+   "covered": true
+  },
+  {
+   "taskName": "使用升降機上下料件作業",
+   "equipment": "升降機",
+   "item": "終點極限開關／緊急停止",
+   "source": "職業安全衛生設施規則第96條；起重升降機具安全規則第77條",
+   "covered": true
+  },
+  {
+   "taskName": "使用升降機上下料件作業",
+   "equipment": "升降機",
+   "item": "設計上專供載貨用者不得搭載人員",
+   "source": "起重升降機具安全規則第78條",
+   "covered": true
+  },
+  {
+   "taskName": "使用升降機上下料件作業",
+   "equipment": "升降機",
+   "item": "不得超過積載荷重",
+   "source": "起重升降機具安全規則第74條",
+   "covered": true
+  },
+  {
+   "taskName": "人字臂起重桿組裝與拆卸作業",
+   "equipment": "人字臂起重桿",
+   "item": "過捲預防裝置",
+   "source": "起重升降機具安全規則第43條；職業安全衛生管理辦法第54條",
+   "covered": true
+  },
+  {
+   "taskName": "人字臂起重桿組裝與拆卸作業",
+   "equipment": "人字臂起重桿",
+   "item": "制動裝置",
+   "source": "起重升降機具安全規則第52條",
+   "covered": true
+  },
+  {
+   "taskName": "高空工作車作業",
+   "equipment": "高空工作車",
+   "item": "外伸撐座完全伸出",
+   "source": "職業安全衛生設施規則第128-1條第2款",
+   "covered": true
+  },
+  {
+   "taskName": "高空工作車作業",
+   "equipment": "高空工作車",
+   "item": "工作台人員安全帽及全身背負式安全帶",
+   "source": "職業安全衛生設施規則第128-1條第7款",
+   "covered": true
+  },
+  {
+   "taskName": "高空工作車作業",
+   "equipment": "高空工作車",
+   "item": "特殊作業安全衛生教育訓練人員操作",
+   "source": "職業安全衛生設施規則第128-9條",
+   "covered": true
+  },
+  {
+   "taskName": "高空工作車作業",
+   "equipment": "高空工作車",
+   "item": "每日作業前檢點制動、操作及作業裝置",
+   "source": "職業安全衛生管理辦法第50-1條",
+   "covered": true
+  },
+  {
+   "taskName": "堆高機駕駛與搬運作業",
+   "equipment": "堆高機",
+   "item": "不得超過最大荷重",
+   "source": "職業安全衛生設施規則第127條",
+   "covered": true
+  },
+  {
+   "taskName": "堆高機駕駛與搬運作業",
+   "equipment": "堆高機",
+   "item": "除乘坐席位外不得搭載勞工",
+   "source": "職業安全衛生設施規則第116條第2款、第10款",
+   "covered": true
+  },
+  {
+   "taskName": "堆高機駕駛與搬運作業",
+   "equipment": "堆高機",
+   "item": "頂蓬",
+   "source": "機械設備器具安全標準第79條",
+   "covered": true
+  },
+  {
+   "taskName": "堆高機駕駛與搬運作業",
+   "equipment": "堆高機",
+   "item": "後扶架（擋貨架）",
+   "source": "職業安全衛生設施規則第124條",
+   "covered": true
+  },
+  {
+   "taskName": "油壓升降平台作業",
+   "equipment": "貨用油壓升降平台",
+   "item": "禁止人員搭乘",
+   "source": "依設備設計用途；屬簡易提升機或載貨用升降機時另依起重升降機具安全規則第96條、第78條",
+   "covered": true
+  },
+  {
+   "taskName": "油壓升降平台作業",
+   "equipment": "貨用油壓升降平台",
+   "item": "不得超過額定載重",
+   "source": "依製造商銘牌；屬起重升降機具時另依起重升降機具安全規則第74條、第93條",
+   "covered": true
+  },
+  {
+   "taskName": "剪叉式升降台作業",
+   "equipment": "貨用油壓升降平台",
+   "item": "禁止人員搭乘",
+   "source": "依設備設計用途；屬簡易提升機或載貨用升降機時另依起重升降機具安全規則第96條、第78條",
+   "covered": true
+  },
+  {
+   "taskName": "剪叉式升降台作業",
+   "equipment": "貨用油壓升降平台",
+   "item": "不得超過額定載重",
+   "source": "依製造商銘牌；屬起重升降機具時另依起重升降機具安全規則第74條、第93條",
+   "covered": true
+  },
+  {
+   "taskName": "建築物外牆吊籠清洗及維護作業",
+   "equipment": "吊籠",
+   "item": "不得超過積載荷重",
+   "source": "起重升降機具安全規則第97條",
+   "covered": true
+  },
+  {
+   "taskName": "建築物外牆吊籠清洗及維護作業",
+   "equipment": "吊籠",
+   "item": "懸吊固定處支撐強度確認",
+   "source": "起重升降機具安全規則第99條",
+   "covered": true
+  },
+  {
+   "taskName": "建築物外牆吊籠清洗及維護作業",
+   "equipment": "吊籠",
+   "item": "運轉中操作人員不得擅離",
+   "source": "起重升降機具安全規則第101條",
+   "covered": true
+  },
+  {
+   "taskName": "建築物外牆吊籠清洗及維護作業",
+   "equipment": "吊籠",
+   "item": "安全帽及全身背負式安全帶",
+   "source": "起重升降機具安全規則第102條",
+   "covered": true
+  },
+  {
+   "taskName": "建築物外牆吊籠清洗及維護作業",
+   "equipment": "吊籠",
+   "item": "下方危險區域管制及警告標示",
+   "source": "起重升降機具安全規則第103條",
+   "covered": true
+  },
+  {
+   "taskName": "建築物外牆吊籠清洗及維護作業",
+   "equipment": "吊籠",
+   "item": "惡劣氣候停止作業",
+   "source": "起重升降機具安全規則第104條",
+   "covered": true
+  }
+ ],
+ "mandatoryGaps": [],
+ "warnings": {
+  "nearDuplicateTaskNames": [],
+  "exactDuplicateHazards": [],
+  "scenarioWithManyCores": [
+   "設備管路原地循環清洗作業／感電／H3：4",
+   "不良品破碎作業／跌倒／H2：4",
+   "不良品破碎作業／物體飛落／H3：4",
+   "低溫環境作業／物體飛落／H2：4",
+   "分離與成型攪拌作業／被夾、被捲／H2：4",
+   "分離與成型攪拌作業／感電／H2：4",
+   "化學品入料作業／有害物接觸／H1：4",
+   "化學品入料作業／有害物接觸／H3：4",
+   "化學品入料作業／爆炸／H3：4",
+   "化學品入料作業／職業病／H1：4",
+   "化學品入料作業／職業病／H2：5",
+   "原料清洗與去皮作業／被夾、被捲／H1：4",
+   "原料清洗與去皮作業／被夾、被捲／H3：4",
+   "移動式起重機搭乘設備載人高處作業／墜落、滾落／H3：4",
+   "移動式起重機搭乘設備載人高處作業／物體飛落／H1：4",
+   "移動式起重機搭乘設備載人高處作業／物體飛落／H2：4",
+   "商品包裝作業／被夾、被捲／H1：4",
+   "噴漆及上漆作業／有害物接觸／H1：4",
+   "密室場景機關復位與空間整備作業／墜落、滾落／H1：4",
+   "射出成型作業／跌倒／H6：4",
+   "局限空間作業／有害物接觸／H1：5",
+   "局限空間作業／有害物接觸／H2：5",
+   "局限空間作業／有害物接觸／H5：5",
+   "局限空間作業／物體飛落／H1：4",
+   "局限空間作業／物體飛落／H5：4",
+   "局限空間作業／感電／H2：4",
+   "局限空間作業／感電／H7：4",
+   "局限空間作業／被夾、被捲／H1：6",
+   "局限空間作業／職業病／H7：4",
+   "排風設備維修作業／被夾、被捲／H1：7",
+   "排風設備維修作業／被夾、被捲／H3：5",
+   "排風設備維修作業／墜落、滾落／H1：4",
+   "排風設備維修作業／墜落、滾落／H3：4",
+   "排風設備維修作業／墜落、滾落／H5：4",
+   "排風設備維修作業／物體飛落／H6：4",
+   "料件暫存作業／物體倒塌、崩塌／H3：4",
+   "料件研磨作業／物體飛落／H1：5",
+   "料件研磨作業／物體飛落／H2：7",
+   "料件研磨作業／物體飛落／H4：5",
+   "料件研磨作業／物體飛落／H5：5",
+   "料件研磨作業／物體飛落／H6：5",
+   "料件研磨作業／物體飛落／H7：9",
+   "料件研磨作業／物體飛落／H8：8",
+   "料件研磨作業／物體飛落／H9：4",
+   "料件研磨作業／物體飛落／H10：9",
+   "料件研磨作業／物體飛落／H11：8",
+   "料件研磨作業／跌倒／H2：5",
+   "料件研磨作業／跌倒／H6：5",
+   "料件研磨作業／跌倒／H7：5",
+   "料件研磨作業／跌倒／H9：5",
+   "料件研磨作業／感電／H3：5",
+   "料件研磨作業／感電／H8：6",
+   "料件研磨作業／感電／H14：4",
+   "料件研磨作業／職業病／H6：4",
+   "於石綿板、鐵皮板、瓦、木板、茅草、塑膠等易踏穿材料構築之屋頂從事作業／物體飛落／H1：4",
+   "於石綿板、鐵皮板、瓦、木板、茅草、塑膠等易踏穿材料構築之屋頂從事作業／物體飛落／H2：4",
+   "施工架組拆與高處作業／墜落、滾落／H3：4",
+   "施工架組拆與高處作業／物體飛落／H5：5",
+   "施工架組拆與高處作業／物體飛落／H10：4",
+   "木材入廠與卸收堆置作業／被撞／H1：5",
+   "木材入廠與卸收堆置作業／被撞／H4：4",
+   "木材入廠與卸收堆置作業／被撞／H6：4",
+   "木材入廠與卸收堆置作業／物體倒塌、崩塌／H1：4",
+   "木材入廠與卸收堆置作業／物體倒塌、崩塌／H3：5",
+   "木材入廠與卸收堆置作業／墜落、滾落／H1：5",
+   "木材入廠與卸收堆置作業／墜落、滾落／H3：4",
+   "木材入廠與卸收堆置作業／墜落、滾落／H5：5",
+   "木材入廠與卸收堆置作業／職業病／H6：4",
+   "木材粉塵集塵設備清空與維護作業／被夾、被捲／H1：4",
+   "木漿碎紙作業／被夾、被捲／H2：4",
+   "木竹製品裝訂機裝訂作業／被夾、被捲／H3：5",
+   "模板支撐灌漿作業／物體倒塌、崩塌／H1：6",
+   "模板支撐灌漿作業／物體倒塌、崩塌／H2：4",
+   "模板支撐灌漿作業／物體倒塌、崩塌／H3：6",
+   "模板支撐灌漿作業／物體倒塌、崩塌／H4：4",
+   "機台維修保養作業／物體飛落／H4：4",
+   "液態化學品分裝與包裝作業／被夾、被捲／H2：4",
+   "滾修機作業／被夾、被捲／H3：4",
+   "瓦楞紙複瓦機備料與入料作業／被夾、被捲／H1：4",
+   "瓦楞紙複瓦機備料與入料作業／物體飛落／H1：4",
+   "瓦楞紙複瓦機備料與入料作業／物體飛落／H3：4",
+   "瓦楞紙複瓦機成型作業／被夾、被捲／H3：4",
+   "生產現場通行與作業環境維持作業／物體飛落／H1：4",
+   "生產環境一般巡檢與維護作業／跌倒／H1：5",
+   "生產環境一般巡檢與維護作業／跌倒／H4：4",
+   "石化業壓力容器、儲槽及管線歲修作業／墜落、滾落／H2：4",
+   "石化業壓力容器、儲槽及管線歲修作業／墜落、滾落／H4：4",
+   "石化業製程區歲修作業／有害物接觸／H1：5",
+   "移動式起重機吊掛作業／物體飛落／H4：4",
+   "管線維修及抄表作業／有害物接觸／H5：4",
+   "紙材印刷作業／被夾、被捲／H1：4",
+   "繩索與吊索吊掛作業／物體飛落／H1：5",
+   "繩索與吊索吊掛作業／墜落、滾落／H1：4",
+   "自動化機關修繕、配線與硬體維護作業／被夾、被捲／H2：4",
+   "自動化機關修繕、配線與硬體維護作業／被夾、被捲／H3：4",
+   "自動化機關修繕、配線與硬體維護作業／感電／H1：4",
+   "自動化機關修繕、配線與硬體維護作業／感電／H3：4",
+   "自動雙面壓刨床操作作業／被夾、被捲／H2：4",
+   "自動雙面壓刨床操作作業／被夾、被捲／H3：4",
+   "自動雙面壓刨床操作作業／被夾、被捲／H4：4",
+   "蒸煮、油炸作業／跌倒／H2：4",
+   "蒸煮、油炸作業／火災／H1：6",
+   "蒸煮、油炸作業／火災／H3：4",
+   "蒸煮、油炸作業／火災／H4：4",
+   "蒸煮、油炸作業／被夾、被捲／H3：4",
+   "蒸煮、油炸作業／被夾、被捲／H4：4",
+   "設備維修、檢查、調整與復歸作業／被夾、被捲／H1：4",
+   "設備維修、檢查、調整與復歸作業／被夾、被捲／H2：4",
+   "設備維修、檢查、調整與復歸作業／物體飛落／H1：4",
+   "設備轉輪組立作業／墜落、滾落／H2：4",
+   "造紙製糊作業／被夾、被捲／H2：4",
+   "造紙製糊作業／墜落、滾落／H1：4",
+   "重型設備維修作業／物體飛落／H5：4",
+   "釘車與打孔機操作作業／被夾、被捲／H1：6",
+   "釘車與打孔機操作作業／被夾、被捲／H2：5",
+   "釘車與打孔機操作作業／被夾、被捲／H3：7",
+   "釘車與打孔機操作作業／被夾、被捲／H4：4",
+   "釘車與打孔機操作作業／物體飛落／H1：4",
+   "釘車與打孔機操作作業／物體飛落／H2：4",
+   "釘車與打孔機操作作業／物體飛落／H3：4",
+   "鑽孔機操作作業／被夾、被捲／H4：4",
+   "開挖擋土支撐組立及拆除作業／物體倒塌、崩塌／H1：5",
+   "開挖擋土支撐組立及拆除作業／物體倒塌、崩塌／H2：5",
+   "電動台車及搬運設備操作作業／物體倒塌、崩塌／H2：4",
+   "電動台車及搬運設備操作作業／物體倒塌、崩塌／H4：4",
+   "電動台車及搬運設備操作作業／物體飛落／H1：4",
+   "電動台車及搬運設備操作作業／物體飛落／H2：4",
+   "電弧焊接作業／感電／H1：5",
+   "電弧焊接作業／感電／H2：4",
+   "電弧焊接作業／墜落、滾落／H4：4",
+   "電氣設備及線路操作與維護作業／墜落、滾落／H3：4",
+   "電鍍作業／有害物接觸／H3：5",
+   "食品乾燥作業／跌倒／H1：4",
+   "食品包裝作業／被夾、被捲／H1：5",
+   "食品包裝作業／被夾、被捲／H3：4",
+   "食品包裝作業／跌倒／H2：4",
+   "食品包裝作業／跌倒／H3：4",
+   "食品包裝作業／跌倒／H5：6",
+   "食品包裝作業／職業病／H3：4",
+   "食品包裝作業／感電／H2：4",
+   "食品原料攪拌作業／被夾、被捲／H3：4",
+   "食材包裝作業／被夾、被捲／H1：4",
+   "食材包裝作業／被夾、被捲／H2：4",
+   "食材揉鹽醃製作業／被夾、被捲／H3：5",
+   "高噪音環境設備操作與巡檢作業／職業病／H4：4",
+   "高度2公尺以上開口周邊作業／墜落、滾落／H1：4",
+   "高度2公尺以上開口周邊作業／物體飛落／H4：4",
+   "高度二公尺以上邊緣及開口無法設置防墜設施之影視拍攝作業／墜落、滾落／H1：6",
+   "高度二公尺以上邊緣及開口無法設置防墜設施之影視拍攝作業／墜落、滾落／H2：5",
+   "高度二公尺以上邊緣及開口無法設置防墜設施之影視拍攝作業／墜落、滾落／H3：7",
+   "高度二公尺以上邊緣及開口無法設置防墜設施之影視拍攝作業／物體飛落／H5：4",
+   "影視受控墜落拍攝作業／墜落、滾落／H2：5",
+   "影視受控墜落拍攝作業／墜落、滾落／H4：5",
+   "高溫環境操作與維護作業／跌倒／H1：4",
+   "高溫環境操作與維護作業／跌倒／H3：4",
+   "高空工作車作業／物體飛落／H2：4",
+   "高空工作車作業／物體飛落／H3：4",
+   "施工構台組立與拆除作業／墜落、滾落／H2：4",
+   "施工構台組立與拆除作業／物體飛落／H2：4",
+   "露天開挖作業／物體倒塌、崩塌／H1：5",
+   "鋼筋吊運作業／物體飛落／H1：6",
+   "鋼筋吊運作業／物體飛落／H2：5",
+   "鋼筋吊運作業／物體飛落／H3：5",
+   "鋼筋吊運作業／物體飛落／H4：4",
+   "鋼筋吊運作業／物體飛落／H5：4",
+   "鋼筋綁紮作業／墜落、滾落／H1：5",
+   "鋼筋綁紮作業／墜落、滾落／H2：6",
+   "鋼筋綁紮作業／墜落、滾落／H3：6",
+   "鋼筋綁紮作業／墜落、滾落／H4：5",
+   "鋼筋綁紮作業／墜落、滾落／H5：6",
+   "鋼筋綁紮作業／墜落、滾落／H6：6",
+   "鋼筋綁紮作業／物體飛落／H4：4",
+   "鋼構構件進場卸運作業／物體飛落／H2：4",
+   "外牆飾材安裝作業／墜落、滾落／H1：4",
+   "外牆飾材安裝作業／墜落、滾落／H2：5",
+   "外牆飾材安裝作業／墜落、滾落／H4：4",
+   "外牆飾材安裝作業／物體飛落／H1：4",
+   "外牆飾材安裝作業／物體飛落／H2：4",
+   "外牆飾材安裝作業／物體飛落／H5：4",
+   "天花板輕鋼架組立作業／墜落、滾落／H3：5",
+   "天花板輕鋼架組立作業／物體飛落／H3：4",
+   "電梯安裝作業／墜落、滾落／H2：4",
+   "電梯安裝作業／物體飛落／H3：4",
+   "外牆造景美化作業／墜落、滾落／H1：5",
+   "弱電安裝作業／墜落、滾落／H1：4",
+   "弱電安裝作業／物體飛落／H1：4",
+   "工區材料進場及堆置作業／跌倒／H1：4",
+   "工區材料進場及堆置作業／跌倒／H2：4",
+   "柱狀基礎建構作業(連續壁)／衝撞／H4：4",
+   "柱狀基礎建構作業(連續壁)／墜落、滾落／H2：6",
+   "柱狀基礎建構作業(連續壁)／墜落、滾落／H5：5",
+   "樁式基礎作業／墜落、滾落／H1：4",
+   "辦公區域環境清潔作業／跌倒／H1：4",
+   "辦公區域環境清潔作業／有害物接觸／H2：4",
+   "辦公區域環境清潔作業／感電／H1：5",
+   "辦公區域燈具更換作業／物體飛落／H5：4",
+   "塑膠超音波熔接作業／被夾、被捲／H2：5",
+   "塑膠超音波熔接作業／被夾、被捲／H4：4",
+   "塑膠超音波熔接作業／被夾、被捲／H6：4",
+   "塑膠超音波熔接作業／感電／H3：4",
+   "熔爐耐火材砌築與拆除作業／高低溫接觸／H1：4",
+   "熔爐耐火材砌築與拆除作業／高低溫接觸／H2：4",
+   "熔爐耐火材砌築與拆除作業／有害物接觸／H1：9",
+   "熔爐耐火材砌築與拆除作業／有害物接觸／H2：5",
+   "熔爐耐火材砌築與拆除作業／有害物接觸／H3：4",
+   "熔爐耐火材砌築與拆除作業／有害物接觸／H4：5",
+   "熔爐耐火材砌築與拆除作業／墜落、滾落／H1：6",
+   "熔爐耐火材砌築與拆除作業／墜落、滾落／H2：6",
+   "熔爐耐火材砌築與拆除作業／墜落、滾落／H3：6",
+   "熔爐耐火材砌築與拆除作業／物體飛落／H2：4",
+   "熔爐耐火材砌築與拆除作業／物體飛落／H3：4",
+   "熔爐耐火材砌築與拆除作業／物體飛落／H4：4",
+   "熔爐耐火材砌築與拆除作業／物體飛落／H5：4",
+   "熔爐耐火材砌築與拆除作業／感電／H2：4",
+   "熔爐耐火材砌築與拆除作業／爆炸／H4：4",
+   "氣密與水壓試驗作業／物體破裂／H2：4",
+   "威亞吊飛作業／物體飛落／H1：5",
+   "威亞吊飛作業／物體飛落／H2：5",
+   "威亞吊飛作業／物體飛落／H3：5",
+   "威亞吊飛作業／物體飛落／H4：4",
+   "廳舍修繕作業／墜落、滾落／H2：6",
+   "廳舍修繕作業／墜落、滾落／H4：4",
+   "廳舍修繕作業／物體飛落／H5：4",
+   "道路維護作業／被撞／H1：4",
+   "道路維護作業／被撞／H3：4",
+   "道路維護作業／被撞／H5：5",
+   "道路維護作業／墜落、滾落／H1：4",
+   "道路維護作業／墜落、滾落／H2：4",
+   "道路維護作業／墜落、滾落／H4：4",
+   "高處繩索接近作業／墜落、滾落／H1：6",
+   "高處繩索接近作業／墜落、滾落／H3：5",
+   "高處繩索接近作業／墜落、滾落／H5：4",
+   "高處繩索接近作業／墜落、滾落／H6：4",
+   "高處繩索接近作業／衝撞／H1：4",
+   "高處繩索接近作業／衝撞／H3：5",
+   "高處繩索接近作業／物體飛落／H1：4",
+   "高處繩索接近作業／物體飛落／H2：4",
+   "高處繩索接近作業／物體飛落／H4：5",
+   "高處繩索接近作業／被夾、被捲／H3：4",
+   "建築物外牆吊籠清洗及維護作業／墜落、滾落／H2：5",
+   "建築物外牆吊籠清洗及維護作業／墜落、滾落／H3：4",
+   "建築物外牆吊籠清洗及維護作業／墜落、滾落／H9：4",
+   "建築物外牆吊籠清洗及維護作業／物體飛落／H1：4",
+   "建築物外牆吊籠清洗及維護作業／物體飛落／H4：5",
+   "建築物外牆吊籠清洗及維護作業／被夾、被捲／H1：4",
+   "建築物外牆吊籠清洗及維護作業／被夾、被捲／H4：5",
+   "建築物外牆吊籠清洗及維護作業／跌倒／H3：4",
+   "建築物外牆吊籠清洗及維護作業／高低溫接觸／H2：4",
+   "建築物外牆吊籠清洗及維護作業／火災／H1：4"
+  ],
+  "scenarioWithoutCore": [
+   "人工搬運作業／職業病／H5",
+   "使用升降機上下料件作業／職業病／H3",
+   "使用升降機上下料件作業／職業病／H4",
+   "使用升降機上下料件作業／職業病／H5",
+   "使用升降機上下料件作業／職業病／H6",
+   "印刷機滾筒清潔與保養作業／職業病／H2",
+   "印刷紙材包裝出貨作業／職業病／H2",
+   "原料投料作業／職業病／H2",
+   "可燃性化學品管線液位監測作業／職業病／H2",
+   "合梯使用作業／職業病／H4",
+   "多片縱鋸機操作作業／職業病／H2",
+   "射出成型品取出作業／職業病／H2",
+   "局限空間作業／職業病／H8",
+   "廢渣／爐渣撈取與清運作業／職業病／H2",
+   "手持式研磨機操作作業／職業病／H5",
+   "排風設備維修作業／職業病／H4",
+   "排風設備維修作業／職業病／H9",
+   "於石綿板、鐵皮板、瓦、木板、茅草、塑膠等易踏穿材料構築之屋頂從事作業／職業病／H1",
+   "有機溶劑使用與塗裝作業／職業病／H1",
+   "有機溶劑使用與塗裝作業／職業病／H2",
+   "有機溶劑使用與塗裝作業／職業病／H4",
+   "木竹製品裝訂機裝訂作業／職業病／H4",
+   "模板支撐灌漿作業／職業病／H2",
+   "油壓升降平台作業／職業病／H2",
+   "消防設備維護檢點作業／職業病／H2",
+   "液態化學品分裝與包裝作業／職業病／H2",
+   "游離輻射作業／職業病／H2",
+   "游離輻射作業／職業病／H4",
+   "游離輻射作業／職業病／H5",
+   "瓦楞紙複瓦機貼合作業／職業病／H4",
+   "異常氣壓作業／職業病／H2",
+   "紙材裝訂作業／職業病／H5",
+   "車床及銑床操作作業／職業病／H3",
+   "食材包裝作業／職業病／H3",
+   "行政文書檔案整理作業／職業病／H3",
+   "行政文書檔案歸檔銷毀作業／職業病／H2",
+   "行政文書檔案歸檔銷毀作業／職業病／H4",
+   "研討會場地佈置作業／職業病／H3"
+  ],
+  "nonStandardGroupName": [
+   [
+    "水域影視拍攝作業",
+    "溺水"
+   ],
+   [
+    "露天開挖作業",
+    "溺水"
+   ],
+   [
+    "柱狀基礎建構作業(連續壁)",
+    "溺水"
+   ]
+  ],
+  "equipmentKeywordConflict": [
+   {
+    "taskName": "備料與簡易提升機操作作業",
+    "groupName": "被夾、被捲",
+    "id": "A2",
+    "family": "吊掛用具",
+    "owned": [
+     "油壓升降平台",
+     "簡易提升機"
+    ],
+    "text": "操作前測試樓層門、柵門連鎖、過捲預防裝置、限位、煞車、防下滑裝置、鋼索或吊鏈、導軌及控制。(行政管理)"
+   },
+   {
+    "taskName": "傳動馬達維修作業",
+    "groupName": "物體飛落",
+    "id": "A10",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "吊運前確認吊鉤位於重物重心正上方並垂直起吊，禁止斜拉或拖曳重物。(管理控制)"
+   },
+   {
+    "taskName": "原料入料作業",
+    "groupName": "被撞",
+    "id": "H1",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "吊掛或起重移送時，吊物擺盪或人員進入吊物迴轉範圍，可能遭吊物或吊鉤撞擊。"
+   },
+   {
+    "taskName": "原料入料作業",
+    "groupName": "物體飛落",
+    "id": "A1",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "起吊前依額定荷重與重心選用吊具，逐項檢查吊鏈、鋼索、吊鉤、防止脫落裝置及起重機煞車與限位；異常立即停用。(行政管理)"
+   },
+   {
+    "taskName": "射出成型作業",
+    "groupName": "被撞",
+    "id": "H1",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "吊運模具時，吊鉤、鋼索或吊具失效、載荷失衡或吊物擺盪，可能使人員遭吊物或吊具撞擊。"
+   },
+   {
+    "taskName": "射出成型作業",
+    "groupName": "被撞",
+    "id": "A8",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "吊運模具前檢查吊鉤、鋼索及吊具額定荷重與防止脫落裝置狀態。(行政管理)"
+   },
+   {
+    "taskName": "射出成型作業",
+    "groupName": "跌倒",
+    "id": "A8",
+    "family": "固定式起重機",
+    "owned": [],
+    "text": "推車及成品箱、原料袋依核定載重與高度搬運，保持前方視線；超重或大件改用天車、機械手或其他搬運設備。(工程改善)"
+   },
+   {
+    "taskName": "射出成型作業",
+    "groupName": "物體飛落",
+    "id": "A17",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "吊運模具使用具自鎖防止脫落裝置的吊鉤及與模具吊點相容的專用吊具，並設置獨立二次防墜繫留。(工程改善)"
+   },
+   {
+    "taskName": "射出成型作業",
+    "groupName": "職業病",
+    "id": "A33",
+    "family": "固定式起重機",
+    "owned": [],
+    "text": "重物使用升降台車或天車搬運，減少彎腰及徒手搬運。(工程改善)"
+   },
+   {
+    "taskName": "平軋機操作作業",
+    "groupName": "被撞",
+    "id": "H2",
+    "family": "固定式起重機",
+    "owned": [],
+    "text": "天車、堆高機、板材車或吊運輥件作業時，因視線死角或指揮失誤造成移動物擺動，可能撞擊人員。"
+   },
+   {
+    "taskName": "廢渣／爐渣撈取與清運作業",
+    "groupName": "物體飛落",
+    "id": "A3",
+    "family": "吊掛用具",
+    "owned": [
+     "堆高機"
+    ],
+    "text": "吊耳、吊鏈、吊鉤、渣盆、貨叉及附屬裝置應依額定荷重固定負載，發現設備或路面異常時停止搬運。(行政管理)"
+   },
+   {
+    "taskName": "廢渣／爐渣撈取與清運作業",
+    "groupName": "被撞",
+    "id": "A7",
+    "family": "吊掛用具",
+    "owned": [
+     "堆高機"
+    ],
+    "text": "吊車應配置吊鉤攝影機及駕駛室顯示器，協助操作人員確認吊物與周邊人員位置。(工程改善)"
+   },
+   {
+    "taskName": "排風設備維修作業",
+    "groupName": "被撞",
+    "id": "A6",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "吊掛時加設獨立於主吊具的額定荷重安全吊帶，並使用具防止脫落裝置的吊鉤。(工程改善)"
+   },
+   {
+    "taskName": "施工架組拆與高處作業",
+    "groupName": "物體飛落",
+    "id": "H3",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "吊運鋼管、踏板、框架或設備材料時，吊索具、吊點或綁紮失效，吊物途中滑脫掉落。"
+   },
+   {
+    "taskName": "施工架組拆與高處作業",
+    "groupName": "物體飛落",
+    "id": "A4",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "吊運前確認吊索具、吊點及綁紮方式符合荷重要求，先試吊確認穩定，發現異常立即停用。(行政管理)"
+   },
+   {
+    "taskName": "施工架組拆與高處作業",
+    "groupName": "感電",
+    "id": "H5",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "施工架、吊臂、吊索或長構件在架空線附近組拆或吊運時侵入安全距離，可能接觸帶電體或產生電弧，造成人員感電、灼傷或墜落。"
+   },
+   {
+    "taskName": "施工架組拆與高處作業",
+    "groupName": "不當動作",
+    "id": "A7",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "拆卸扣件使用符合規格且具扭矩限制的手工具，降低工具滑脫及反作用力造成的手腕受力與失衡風險。(工程改善)"
+   },
+   {
+    "taskName": "施工架組拆與高處作業",
+    "groupName": "被切、割、擦傷",
+    "id": "H7",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "搬運、傳遞、組立、拆除或鋪設構件時接觸鋼管、踏板、扣件及吊掛用具的毛邊、斷絲或外露銳端，造成割傷、刺傷或擦傷。"
+   },
+   {
+    "taskName": "施工架組拆與高處作業",
+    "groupName": "被切、割、擦傷",
+    "id": "A7",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "吊掛用具檢查鋼索斷絲、吊帶磨損及端部外露情形，異常時立即隔離更換，不得繼續使用。(行政管理)"
+   },
+   {
+    "taskName": "模具保養與防鏽作業",
+    "groupName": "被夾、被捲",
+    "id": "H3",
+    "family": "固定式起重機",
+    "owned": [],
+    "text": "天車吊掛、移運、落放或脫鉤時，吊物偏擺、滑移或落放失控，人員以手校正吊物而遭夾壓。"
+   },
+   {
+    "taskName": "模具保養與防鏽作業",
+    "groupName": "被撞",
+    "id": "H1",
+    "family": "固定式起重機",
+    "owned": [],
+    "text": "天車吊運或回存模具時，吊具失效、吊物失衡擺盪或路徑受阻，吊物、吊具或回彈物撞擊人員。"
+   },
+   {
+    "taskName": "模具保養與防鏽作業",
+    "groupName": "被撞",
+    "id": "H3",
+    "family": "固定式起重機",
+    "owned": [],
+    "text": "堆高機、台車、天車與人員動線交會，或回存時架位、照明及視線不良，移動設備、模具與架體碰撞人員。"
+   },
+   {
+    "taskName": "模具保養與防鏽作業",
+    "groupName": "被撞",
+    "id": "A3",
+    "family": "固定式起重機",
+    "owned": [],
+    "text": "天車吊運時劃設路徑警戒，人員不得進入吊物擺盪範圍及吊物下方，禁止在下方停留。(行政管理)"
+   },
+   {
+    "taskName": "機台維修保養作業",
+    "groupName": "被撞",
+    "id": "H1",
+    "family": "固定式起重機",
+    "owned": [],
+    "text": "使用堆高機、天車或手推車搬運零件時，若路線未區隔、視線受阻或倒車無人引導，搬運設備或物件可能撞擊人員。"
+   },
+   {
+    "taskName": "機台維修保養作業",
+    "groupName": "被撞",
+    "id": "A2",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "吊掛前確認吊具、吊索、額定荷重、重心及綁掛狀況，先試吊確認穩定並禁止人員進入吊掛物下方。(行政管理)"
+   },
+   {
+    "taskName": "機台維修保養作業",
+    "groupName": "被撞",
+    "id": "A6",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "吊掛重件使用具雙重防止脫落裝置的吊鉤及防鬆脫連接件，提升吊掛物連結的機械保持能力。(工程改善)"
+   },
+   {
+    "taskName": "油壓升降平台作業",
+    "groupName": "墜落、滾落",
+    "id": "A7",
+    "family": "簡易提升機",
+    "owned": [
+     "油壓升降平台"
+    ],
+    "text": "跨樓層使用的貨物升降平台，依搬器尺寸及積載荷重確認是否屬簡易提升機或升降機，並依相關規定管理。(行政管理)"
+   },
+   {
+    "taskName": "油壓升降平台作業",
+    "groupName": "墜落、滾落",
+    "id": "A7",
+    "family": "升降機",
+    "owned": [
+     "油壓升降平台"
+    ],
+    "text": "跨樓層使用的貨物升降平台，依搬器尺寸及積載荷重確認是否屬簡易提升機或升降機，並依相關規定管理。(行政管理)"
+   },
+   {
+    "taskName": "澆鑄件熱處理（退火、回火）作業",
+    "groupName": "被夾、被捲",
+    "id": "A1",
+    "family": "固定式起重機",
+    "owned": [],
+    "text": "吊掛前確認天車、吊具及吊點無異常且荷重合適，吊掛物下方應圈為管制，吊運時由一人指揮並禁止人員站在吊物下方或夾點。(行政管理)"
+   },
+   {
+    "taskName": "異常氣壓作業",
+    "groupName": "其他類別風險",
+    "id": "H1",
+    "family": "鍋爐壓力容器",
+    "owned": [],
+    "text": "壓力容器、艙門、管線或閥件本體破損，或帶壓誤開造成爆裂與急速減壓，可能使人員受傷或失去意識。"
+   },
+   {
+    "taskName": "異常氣壓作業",
+    "groupName": "其他類別風險",
+    "id": "A1",
+    "family": "鍋爐壓力容器",
+    "owned": [],
+    "text": "作業前確認壓力容器、管線、閥件及洩壓裝置無異常並完成氣密檢查，不合格不得使用。(行政管理)"
+   },
+   {
+    "taskName": "異常氣壓作業",
+    "groupName": "其他類別風險",
+    "id": "A7",
+    "family": "鍋爐壓力容器",
+    "owned": [],
+    "text": "作業前確認壓力容器、管線、閥件、壓力表及洩壓裝置正常。(行政管理)"
+   },
+   {
+    "taskName": "異常氣壓作業",
+    "groupName": "其他類別風險",
+    "id": "A8",
+    "family": "鍋爐壓力容器",
+    "owned": [],
+    "text": "壓力容器、管線、閥件、壓力表或洩壓裝置氣密或耐壓檢查不合格，不得使用。(行政管理)"
+   },
+   {
+    "taskName": "石化業壓力容器、儲槽及管線歲修作業",
+    "groupName": "物體飛落",
+    "id": "H2",
+    "family": "吊掛用具",
+    "owned": [
+     "鍋爐壓力容器"
+    ],
+    "text": "吊掛閥件、短節或大型組件時，吊索具或吊點失效、綁掛不當或重心錯誤，吊物脫落而擊傷人員。"
+   },
+   {
+    "taskName": "石化業壓力容器、儲槽及管線歲修作業",
+    "groupName": "物體飛落",
+    "id": "A2",
+    "family": "吊掛用具",
+    "owned": [
+     "鍋爐壓力容器"
+    ],
+    "text": "吊掛前應檢查吊索具、卸扣、吊點及吊耳狀況，確認綁掛與重心後先試吊再開始作業。(行政管理)"
+   },
+   {
+    "taskName": "石化業壓力容器、儲槽及管線歲修作業",
+    "groupName": "物體飛落",
+    "id": "A9",
+    "family": "吊掛用具",
+    "owned": [
+     "鍋爐壓力容器"
+    ],
+    "text": "吊掛作業使用具防止脫落裝置的吊鉤，避免吊索自吊鉤滑脫。(工程改善)"
+   },
+   {
+    "taskName": "管線維修及抄表作業",
+    "groupName": "物體飛落",
+    "id": "H4",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "吊具、吊索、吊耳或掛點磨損、破損、額定能力不足或掛設不當，吊掛物可能脫落。"
+   },
+   {
+    "taskName": "管線維修及抄表作業",
+    "groupName": "物體飛落",
+    "id": "A9",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "每次吊掛前檢查吊具、吊索、吊耳及掛點的狀況與額定荷重，異常或能力不足者立即停用更換。(管理控制)"
+   },
+   {
+    "taskName": "衝床操作作業",
+    "groupName": "物體飛落",
+    "id": "H4",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "換模或搬運模具時吊帶、吊鉤或吊掛點失效，模具可能墜落並擊傷或壓傷作業人員。"
+   },
+   {
+    "taskName": "設備安裝作業",
+    "groupName": "被撞",
+    "id": "H2",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "吊具、吊索、吊點或固定件選用錯誤、超載或失效，致設備滑移或吊物擺盪而撞擊作業人員。"
+   },
+   {
+    "taskName": "設備安裝作業",
+    "groupName": "被撞",
+    "id": "A2",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "吊掛前核對設備重量、重心、吊點及吊具額定能力，並檢查吊索、卸扣與連接件狀況。(行政管理)"
+   },
+   {
+    "taskName": "設備安裝作業",
+    "groupName": "物體飛落",
+    "id": "H1",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "吊掛設備、構件或附掛件時，吊索具或吊點選用不當、額定荷重不足、重心控制失誤或暫時固定失效，造成滑脫、擺動、傾倒或掉落，砸壓下方人員。"
+   },
+   {
+    "taskName": "設備安裝作業",
+    "groupName": "物體飛落",
+    "id": "A2",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "吊掛前檢查過捲預防裝置、制動、鋼索、吊索、卸扣及吊耳；異常時不得起吊。(行政管理)"
+   },
+   {
+    "taskName": "設備安裝作業",
+    "groupName": "物體飛落",
+    "id": "A9",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "吊掛前核對設備重量、重心、吊點及吊具額定荷重，並檢查吊索具、卸扣與吊耳狀況。(行政管理)"
+   },
+   {
+    "taskName": "設備轉輪組立作業",
+    "groupName": "被夾、被捲",
+    "id": "H4",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "組立、調整或試轉時，若未隔離動力、未上鎖掛牌或防護罩未復歸，旋轉部位意外啟動可能捲入手部、衣物、吊索或導引繩。"
+   },
+   {
+    "taskName": "設備轉輪組立作業",
+    "groupName": "被撞",
+    "id": "H2",
+    "family": "固定式起重機",
+    "owned": [],
+    "text": "天車、吊車或堆高機與人員混合作業時，若行進控制、倒車指揮或動線分隔失效，車體、吊臂、吊鉤或吊物可能撞擊人員。"
+   },
+   {
+    "taskName": "設備轉輪組立作業",
+    "groupName": "被撞",
+    "id": "H2",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "天車、吊車或堆高機與人員混合作業時，若行進控制、倒車指揮或動線分隔失效，車體、吊臂、吊鉤或吊物可能撞擊人員。"
+   },
+   {
+    "taskName": "設備轉輪組立作業",
+    "groupName": "物體飛落",
+    "id": "H1",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "吊掛轉輪或附件時，若吊索具選用、吊點掛設或重心判定不當，吊物可能滑脫掉落並擊傷人員。"
+   },
+   {
+    "taskName": "設備轉輪組立作業",
+    "groupName": "物體飛落",
+    "id": "A1",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "依吊物重量、重心及吊點選用額定荷重足夠的吊索具，使用前檢查起重設備過捲預防裝置、制動、鋼索與吊具。(行政管理)"
+   },
+   {
+    "taskName": "設備轉輪組立作業",
+    "groupName": "物體飛落",
+    "id": "A10",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "依吊物重量、重心及吊點選用額定荷重足夠的吊索具，使用前檢查起重設備與吊具，並以試吊確認吊物穩定。(行政管理)"
+   },
+   {
+    "taskName": "設備轉輪組立作業",
+    "groupName": "墜落、滾落",
+    "id": "H3",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "作業面有油污、積水、工具、零件或吊索，且照明不足或視線受阻時，搬運及校正可能滑倒、絆倒或踩空墜落。"
+   },
+   {
+    "taskName": "設備轉輪組立作業",
+    "groupName": "墜落、滾落",
+    "id": "A5",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "高處作業面應保持足夠照明，並清除油污、積水、工具及吊索，孔洞與高低差應有明顯標示。(行政管理)"
+   },
+   {
+    "taskName": "設備轉輪組立作業",
+    "groupName": "被切、割、擦傷",
+    "id": "H2",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "吊索、鋼索、鏈條及卸扣若有斷絲、毛刺、變形或破損，掛拆及定位時接觸可能造成手部割傷。"
+   },
+   {
+    "taskName": "設備轉輪組立作業",
+    "groupName": "被切、割、擦傷",
+    "id": "A6",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "吊索、鋼索有斷絲、毛刺、變形或破損時立即停用並改用完好索具，禁止徒手握持毛刺段。(行政管理)"
+   },
+   {
+    "taskName": "設備轉輪組立作業",
+    "groupName": "被切、割、擦傷",
+    "id": "A9",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "掛拆及定位吊索具時配戴防切割手套。(個人防護)"
+   },
+   {
+    "taskName": "設備轉輪組立作業",
+    "groupName": "不當動作",
+    "id": "A1",
+    "family": "固定式起重機",
+    "owned": [],
+    "text": "超過人力或重心不穩的轉輪、軸件改用天車、電動吊具或推車，不得以兩人協同代替機械吊運。(工程改善)"
+   },
+   {
+    "taskName": "設備轉輪組立作業",
+    "groupName": "職業病",
+    "id": "A1",
+    "family": "固定式起重機",
+    "owned": [],
+    "text": "重複或長時間搬運重件時優先使用天車、電動吊具、推車等輔具，並依作業週期安排工作輪替與休息。(工程改善)"
+   },
+   {
+    "taskName": "酸鹼化學品操作作業",
+    "groupName": "被夾、被捲",
+    "id": "H3",
+    "family": "升降機",
+    "owned": [],
+    "text": "翻桶機、升降機、氣動閥及移載設備動作時，若人員進入作動範圍或限位、防護失效，可能遭設備與容器夾壓。"
+   },
+   {
+    "taskName": "重型設備維修作業",
+    "groupName": "物體飛落",
+    "id": "A1",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "吊掛前確認重心、吊點、額定荷重及吊索狀況。(行政管理)"
+   },
+   {
+    "taskName": "重型設備維修作業",
+    "groupName": "物體飛落",
+    "id": "A11",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "吊掛前確認重心、吊點、額定荷重及吊索狀況，點檢吊具並先試吊；由指定人員指揮，吊掛區域圈圍管制，禁止人員進入吊物下方。(行政管理)"
+   },
+   {
+    "taskName": "鑄造模具脫模作業",
+    "groupName": "物體飛落",
+    "id": "A3",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "吊運前檢查吊車煞車、過捲預防裝置、吊鉤、鋼索、鏈條、吊帶及卸扣，發現磨損、變形或逾期立即停用更換。(行政管理)"
+   },
+   {
+    "taskName": "鑄造模具脫模作業",
+    "groupName": "物體飛落",
+    "id": "A13",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "吊運前檢查吊車、吊鉤、鋼索、鏈條、吊帶及卸扣，發現磨損、變形或逾期時立即停用更換。(行政管理)"
+   },
+   {
+    "taskName": "開挖擋土支撐組立及拆除作業",
+    "groupName": "物體飛落",
+    "id": "H1",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "吊運、定位、組立或拆除支撐構件時，吊點、吊索具或臨時固定失效，構件可能滑落、傾倒或彈出打擊人員。"
+   },
+   {
+    "taskName": "開挖擋土支撐組立及拆除作業",
+    "groupName": "物體飛落",
+    "id": "A1",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "支撐構件吊運前應依構件重量、重心及吊點選用合格吊索具，確認額定荷重及防脫裝置。(行政管理)"
+   },
+   {
+    "taskName": "開挖擋土支撐組立及拆除作業",
+    "groupName": "物體飛落",
+    "id": "A2",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "構件完成螺栓連接或可靠臨時固定並確認卸壓後，才可解開吊索，吊物下方不得有人停留。(行政管理)"
+   },
+   {
+    "taskName": "電弧焊接作業",
+    "groupName": "感電",
+    "id": "H2",
+    "family": "鍋爐壓力容器",
+    "owned": [],
+    "text": "在金屬槽體、鍋爐等狹小導電空間施焊時，未採降壓及絕緣措施，人體同時接觸工件與焊接回路可能造成致命感電。"
+   },
+   {
+    "taskName": "電弧焊接作業",
+    "groupName": "物體飛落",
+    "id": "H2",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "大型工件吊掛、翻轉或定位時，吊索具、夾具或支撐失效，工件滑脫、傾倒或零件脫落可能擊傷周邊人員。"
+   },
+   {
+    "taskName": "電弧焊接作業",
+    "groupName": "物體飛落",
+    "id": "A2",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "大型工件翻轉及定位前應檢查吊索具與夾具並設止擋墊塊，吊物下方圈圍管制並禁止人員停留。(行政管理)"
+   },
+   {
+    "taskName": "電鍍作業",
+    "groupName": "被撞",
+    "id": "H1",
+    "family": "固定式起重機",
+    "owned": [],
+    "text": "天車、吊掛輸送線、堆高機等移動設備與人員動線交叉或隔離失效，移動中的工件、掛具或車體可能撞擊人員。"
+   },
+   {
+    "taskName": "高溫環境操作與維護作業",
+    "groupName": "職業病",
+    "id": "H2",
+    "family": "鍋爐壓力容器",
+    "owned": [],
+    "text": "鍋爐、燃燒器、風機及乾燥設備產生高噪音，長期暴露可能造成噪音性聽力損失。"
+   },
+   {
+    "taskName": "高溫環境操作與維護作業",
+    "groupName": "職業病",
+    "id": "A2",
+    "family": "鍋爐壓力容器",
+    "owned": [],
+    "text": "對鍋爐、燃燒器、風機等噪音源採取隔音、減振或消音措施，降低作業區噪音暴露量。(工程改善)"
+   },
+   {
+    "taskName": "施工構台組立與拆除作業",
+    "groupName": "物體飛落",
+    "id": "A7",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "使用起重機前確認過捲預防裝置、制動、過負荷警報、鋼索、吊具及吊鉤防止脫落裝置均無異常。(行政管理)"
+   },
+   {
+    "taskName": "施工構台組立與拆除作業",
+    "groupName": "物體倒塌、崩塌",
+    "id": "H3",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "立柱及首層構件定位後未立即固定，臨時支撐或防傾措施不足即解除吊索，造成構件傾倒。"
+   },
+   {
+    "taskName": "施工構台組立與拆除作業",
+    "groupName": "物體倒塌、崩塌",
+    "id": "A3",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "立柱及首層構件定位後先完成固定及臨時斜撐，每完成一跨立即裝設斜撐與水平連繫材，確認穩定後才解除吊索。(工程改善)"
+   },
+   {
+    "taskName": "施工構台組立與拆除作業",
+    "groupName": "被切、割、擦傷",
+    "id": "H2",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "搬運、吊運定位、解除固定及拆除時，銳利構件、鋼索或吊鏈回彈、甩動及滑移，造成割傷或擦傷。"
+   },
+   {
+    "taskName": "鋼筋吊運作業",
+    "groupName": "物體飛落",
+    "id": "H2",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "吊索、卸扣、吊鉤或吊梁容量不足、角度不當或防止脫落裝置失效，受力後可能鬆脫並造成吊物飛落。"
+   },
+   {
+    "taskName": "鋼筋吊運作業",
+    "groupName": "物體飛落",
+    "id": "H3",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "鋼筋束綁束不牢、吊點固定不當或尖銳邊緣割傷吊索，起升及迴轉時可能散落。"
+   },
+   {
+    "taskName": "鋼筋吊運作業",
+    "groupName": "物體飛落",
+    "id": "A2",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "依吊物重量、形狀、吊掛角度及尖銳邊緣選用足額定荷重的吊索、卸扣、吊梁、護角及具防止脫落裝置的吊鉤。(行政管理)"
+   },
+   {
+    "taskName": "鋼筋吊運作業",
+    "groupName": "物體飛落",
+    "id": "A3",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "掛鉤後確認吊索對稱受力、卸扣銷鎖固及吊鉤防止脫落裝置有效，鬆散鋼筋應先重新綑束。(行政管理)"
+   },
+   {
+    "taskName": "鋼筋吊運作業",
+    "groupName": "物體飛落",
+    "id": "A8",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "確認過捲預防裝置、制動、過負荷警報、鋼索、吊具及吊鉤防止脫落裝置均無異常。(行政管理)"
+   },
+   {
+    "taskName": "鋼筋吊運作業",
+    "groupName": "物體倒塌、崩塌",
+    "id": "A4",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "圓形鋼筋、鋼筋束及鋼筋籠落放後設置雙側楔塊、擋樁或支架，確認防滾防倒後才撤除吊索。(行政管理)"
+   },
+   {
+    "taskName": "鋼筋吊運作業",
+    "groupName": "被夾、被捲",
+    "id": "H1",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "掛鉤及綁掛時手指伸入吊鉤、卸扣或吊索受力交疊處，吊具受力或滑移可能造成夾傷。"
+   },
+   {
+    "taskName": "鋼筋吊運作業",
+    "groupName": "被夾、被捲",
+    "id": "H5",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "吊索尚未卸載或受壓卡住即徒手拉取，吊物或支承物突然移動可能夾傷作業人員。"
+   },
+   {
+    "taskName": "鋼筋吊運作業",
+    "groupName": "被夾、被捲",
+    "id": "A3",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "導向人員應站在吊物側方可退避位置，導向繩不得打結、纏身或靠近吊鉤及旋轉部位。(行政管理)"
+   },
+   {
+    "taskName": "鋼筋吊運作業",
+    "groupName": "被夾、被捲",
+    "id": "A4",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "解鉤時先確認吊索卸載，再以長柄工具取出受壓吊具，禁止強拉卡住的吊索。(行政管理)"
+   },
+   {
+    "taskName": "鋼筋吊運作業",
+    "groupName": "墜落、滾落",
+    "id": "A3",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "解鉤前確認吊物已完全承重且穩定，吊索受壓或卡住時使用長柄工具處理。(行政管理)"
+   },
+   {
+    "taskName": "鋼筋綁紮作業",
+    "groupName": "物體飛落",
+    "id": "H2",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "吊運時吊帶、卸扣、吊鉤或綑束失效，或未試吊確認重心即移動，造成鋼筋、料斗或零件掉落。"
+   },
+   {
+    "taskName": "鋼筋綁紮作業",
+    "groupName": "物體飛落",
+    "id": "A2",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "依鋼筋長度與重心選用合格吊帶、卸扣及具防止脫落裝置的吊鉤，先試吊確認平衡後才得緩慢移動。(行政管理)"
+   },
+   {
+    "taskName": "鋼筋綁紮作業",
+    "groupName": "物體飛落",
+    "id": "A8",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "依鋼筋長度與重心選用合格吊帶、卸扣及具防止脫落裝置的吊鉤，先試吊確認平衡後再緩慢移動。(行政管理)"
+   },
+   {
+    "taskName": "鋼筋綁紮作業",
+    "groupName": "物體破裂",
+    "id": "H2",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "吊帶、鋼索、卸扣或吊鉤因超載、磨損、扭結、疲勞或接觸銳角而斷裂，造成斷裂物、零件或吊掛物飛散。"
+   },
+   {
+    "taskName": "鋼構地面預組作業",
+    "groupName": "物體倒塌、崩塌",
+    "id": "A2",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "吊掛翻轉前確認構件重心、吊點及吊索受力，先試吊確認平衡、外伸撐座穩定及移動淨空後再正式移動。(行政管理)"
+   },
+   {
+    "taskName": "鋼構地面預組作業",
+    "groupName": "被夾、被捲",
+    "id": "H2",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "吊掛、移位及翻轉時，人員進入構件、吊索張力線或回轉範圍，可能因擺動、回彈或受力變化遭夾傷或捲入。"
+   },
+   {
+    "taskName": "鋼構地面預組作業",
+    "groupName": "被夾、被捲",
+    "id": "A1",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "掛鉤、解鉤及調整墊木前確認吊索已無不明受力且構件穩定，操作時手腳不得伸入構件與墊木或止擋間的夾點。(行政管理)"
+   },
+   {
+    "taskName": "鋼構地面預組作業",
+    "groupName": "被夾、被捲",
+    "id": "A2",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "吊掛及翻轉時使用牽引繩控制構件，作業人員站在構件側向及吊索張力線外，避免以手腳阻擋擺動或回彈。(行政管理)"
+   },
+   {
+    "taskName": "鋼構地面預組作業",
+    "groupName": "物體飛落",
+    "id": "H1",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "構件卸放、吊掛翻轉或移位時，吊索、吊鉤或未固定附件失效，可能造成鋼構件及零件脫落並擊傷人員。"
+   },
+   {
+    "taskName": "鋼構地面預組作業",
+    "groupName": "物體飛落",
+    "id": "A1",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "起吊前固定構件內散落物及附件，並檢查過捲預防裝置、制動、吊索及吊鉤防止脫落裝置。(行政管理)"
+   },
+   {
+    "taskName": "鋼構地面預組作業",
+    "groupName": "物體飛落",
+    "id": "A2",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "起吊前確認吊索受力方向適用，試吊確認無鬆脫後才可移動。(行政管理)"
+   },
+   {
+    "taskName": "鋼構地面預組作業",
+    "groupName": "物體飛落",
+    "id": "A9",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "起吊前固定構件內部散落物及附件，確認吊索、吊鉤防止脫落裝置及受力方向適用，並以試吊確認無鬆脫後再移動。(行政管理)"
+   },
+   {
+    "taskName": "外牆飾材安裝作業",
+    "groupName": "墜落、滾落",
+    "id": "H2",
+    "family": "吊籠",
+    "owned": [],
+    "text": "施工架、吊籠或工作台的護欄、踏板及上下設備缺失或損壞，作業人員施工時可能墜落。"
+   },
+   {
+    "taskName": "外牆飾材安裝作業",
+    "groupName": "墜落、滾落",
+    "id": "H3",
+    "family": "吊籠",
+    "owned": [],
+    "text": "鋼索、錨錠點、安全母索或防墜器失效，可能造成吊籠或平台位移、傾斜並使人員墜落。"
+   },
+   {
+    "taskName": "外牆飾材安裝作業",
+    "groupName": "墜落、滾落",
+    "id": "H5",
+    "family": "吊籠",
+    "owned": [],
+    "text": "強風、豪雨或平台積水使吊籠晃動或人員失衡，可能導致高處墜落。"
+   },
+   {
+    "taskName": "外牆飾材安裝作業",
+    "groupName": "墜落、滾落",
+    "id": "H6",
+    "family": "吊籠",
+    "owned": [],
+    "text": "拆除施工架、吊籠、臨時支撐或防護設施時未依順序作業，可能使人員失去防護而墜落。"
+   },
+   {
+    "taskName": "外牆飾材安裝作業",
+    "groupName": "墜落、滾落",
+    "id": "A2",
+    "family": "吊籠",
+    "owned": [],
+    "text": "吊籠使用前另應檢查鋼索緊結、過捲預防裝置、制動及控制；架體或吊籠異常時立即停用。(行政管理)"
+   },
+   {
+    "taskName": "外牆飾材安裝作業",
+    "groupName": "墜落、滾落",
+    "id": "A3",
+    "family": "吊籠",
+    "owned": [],
+    "text": "吊籠作業時安全帶掛於獨立安全母索或合格錨錠點，禁止掛於籠體、護欄或鋼索；施工架作業時掛於架上安全母索，破損即汰換。(個人防護)"
+   },
+   {
+    "taskName": "外牆飾材安裝作業",
+    "groupName": "墜落、滾落",
+    "id": "A4",
+    "family": "吊籠",
+    "owned": [],
+    "text": "調整吊籠或工作台位置以避免過度側伸，禁止跨越護欄或站在材料、箱體等不穩定物上作業。(行政管理)"
+   },
+   {
+    "taskName": "外牆飾材安裝作業",
+    "groupName": "墜落、滾落",
+    "id": "A9",
+    "family": "吊籠",
+    "owned": [],
+    "text": "施工架、吊籠及臨時走道保持連續平整及防滑，踏板破損、鬆脫或有高低差時立即隔離修復。(行政管理)"
+   },
+   {
+    "taskName": "外牆飾材安裝作業",
+    "groupName": "墜落、滾落",
+    "id": "A14",
+    "family": "吊籠",
+    "owned": [],
+    "text": "施工架、吊籠及工作台使用前確認護欄、踏板、上下設備、壁連座及防墜構件完整，異常時立即停用修復。(行政管理)"
+   },
+   {
+    "taskName": "外牆飾材安裝作業",
+    "groupName": "物體飛落",
+    "id": "H1",
+    "family": "吊籠",
+    "owned": [],
+    "text": "施工架、吊籠或平台邊緣堆放飾材、工具及小料，受振動、風力或碰撞影響可能滑落並擊中下方人員。"
+   },
+   {
+    "taskName": "外牆飾材安裝作業",
+    "groupName": "物體飛落",
+    "id": "H2",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "吊運飾材時吊帶、吊鉤、夾具、吸盤或吊點失效，可能造成板材、工具或小料脫落。"
+   },
+   {
+    "taskName": "外牆飾材安裝作業",
+    "groupName": "物體飛落",
+    "id": "A1",
+    "family": "吊籠",
+    "owned": [],
+    "text": "施工架、吊籠及平台外側設置踢腳板、密目網或落物承接設施，並封閉物料可能掉落的縫隙。(工程改善)"
+   },
+   {
+    "taskName": "外牆飾材安裝作業",
+    "groupName": "衝撞",
+    "id": "H2",
+    "family": "吊籠",
+    "owned": [],
+    "text": "大型飾板就位或調整時協同動作不一致、支撐不足或吊籠靠牆距離不當，板材可能突然移動撞擊人員。"
+   },
+   {
+    "taskName": "外牆飾材安裝作業",
+    "groupName": "衝撞",
+    "id": "H4",
+    "family": "吊籠",
+    "owned": [],
+    "text": "吊籠或施工架運行路徑有突出物或材料障礙，平台移動時可能發生碰撞。"
+   },
+   {
+    "taskName": "外牆飾材安裝作業",
+    "groupName": "衝撞",
+    "id": "A4",
+    "family": "吊籠",
+    "owned": [],
+    "text": "施工架、吊籠運行前清除突出物及路徑障礙，遇強風或視線不良時停止移動作業。(行政管理)"
+   },
+   {
+    "taskName": "外牆飾材安裝作業",
+    "groupName": "衝撞",
+    "id": "A6",
+    "family": "吊籠",
+    "owned": [],
+    "text": "於吊籠及施工架移動端設置防撞感測器與緊急停止裝置，偵測接近障礙物時停止平台運行。(工程改善)"
+   },
+   {
+    "taskName": "外牆飾材安裝作業",
+    "groupName": "物體倒塌、崩塌",
+    "id": "H1",
+    "family": "吊籠",
+    "owned": [],
+    "text": "施工架、吊籠、工作平台或樓板未核對額定載重，材料集中、偏載或超載時可能失穩、倒塌或崩塌。"
+   },
+   {
+    "taskName": "外牆飾材安裝作業",
+    "groupName": "物體倒塌、崩塌",
+    "id": "H3",
+    "family": "吊籠",
+    "owned": [],
+    "text": "吊籠懸吊構件、鋼索、配重或安全鎖安裝不當，或人員材料超過額定荷重，可能造成平台傾斜或崩落。"
+   },
+   {
+    "taskName": "外牆飾材安裝作業",
+    "groupName": "物體倒塌、崩塌",
+    "id": "H6",
+    "family": "吊籠",
+    "owned": [],
+    "text": "拆除施工架、吊籠或臨時支撐時未確認構件固定狀況，可能造成構件連鎖倒塌。"
+   },
+   {
+    "taskName": "外牆飾材安裝作業",
+    "groupName": "物體倒塌、崩塌",
+    "id": "A3",
+    "family": "吊籠",
+    "owned": [],
+    "text": "吊籠依原廠規格確認懸吊構件、鋼索、配重、安全鎖及平台固定狀況，發生傾斜、變形或異常振動時立即停用。(行政管理)"
+   },
+   {
+    "taskName": "外牆飾材安裝作業",
+    "groupName": "被夾、被捲",
+    "id": "H1",
+    "family": "吊籠",
+    "owned": [],
+    "text": "檢查或維修吊籠、捲揚機、鋼索、滑輪及攪拌機時，手部、衣物或長髮接近移動構件，可能被夾或被捲。"
+   },
+   {
+    "taskName": "外牆飾材安裝作業",
+    "groupName": "被夾、被捲",
+    "id": "H6",
+    "family": "吊籠",
+    "owned": [],
+    "text": "拆除吊籠、施工架或臨時支撐時，構件滑動或轉動失控，人員可能被夾在構件與固定物之間。"
+   },
+   {
+    "taskName": "外牆飾材安裝作業",
+    "groupName": "被夾、被捲",
+    "id": "A2",
+    "family": "吊籠",
+    "owned": [],
+    "text": "手提切割機、鑽孔機排除卡料前應停機拔電，完全停止後才可接觸；吊籠捲揚機及滑輪交由合格人員處理。(行政管理)"
+   },
+   {
+    "taskName": "外牆飾材安裝作業",
+    "groupName": "被夾、被捲",
+    "id": "A6",
+    "family": "吊籠",
+    "owned": [],
+    "text": "維修吊籠捲揚機、攪拌機及傳動部件前，於動力源設置可上鎖隔離裝置並上鎖掛牌。(工程改善)"
+   },
+   {
+    "taskName": "外牆飾材安裝作業",
+    "groupName": "感電",
+    "id": "H3",
+    "family": "吊籠",
+    "owned": [],
+    "text": "吊籠、切割機或攪拌機未確實接地，或漏電斷路器失效時，設備外殼漏電可能使人員感電。"
+   },
+   {
+    "taskName": "外牆飾材安裝作業",
+    "groupName": "感電",
+    "id": "A4",
+    "family": "吊籠",
+    "owned": [],
+    "text": "臨時電纜架高或加設防護套，避開積水、尖銳邊緣、通行區及吊籠運行區。(工程改善)"
+   },
+   {
+    "taskName": "外牆飾材安裝作業",
+    "groupName": "感電",
+    "id": "A6",
+    "family": "吊籠",
+    "owned": [],
+    "text": "吊籠、施工架及吊運路徑與架空線保持距離，距離不足時立即改路線、停電或絕緣隔離，不得只靠探測牆內管線。(行政管理)"
+   },
+   {
+    "taskName": "天花板輕鋼架組立作業",
+    "groupName": "物體倒塌、崩塌",
+    "id": "A4",
+    "family": "升降機",
+    "owned": [],
+    "text": "板材升降機使用前確認鋼索、支架、煞車、導向及防脫落裝置，吊運路徑及下方設置警戒並禁止人員停留。(行政管理)"
+   },
+   {
+    "taskName": "天花板輕鋼架組立作業",
+    "groupName": "不當動作",
+    "id": "A4",
+    "family": "升降機",
+    "owned": [],
+    "text": "板材提升採板材升降機或合適輔助設備，未完成定位前不得由人員單獨承擔板材重量。(工程改善)"
+   },
+   {
+    "taskName": "電梯安裝作業",
+    "groupName": "物體破裂",
+    "id": "H1",
+    "family": "吊掛用具",
+    "owned": [
+     "升降機"
+    ],
+    "text": "吊運導軌、主機、轎廂或對重時，吊索、吊鉤、卸扣、吊帶、吊點或臨時支撐因缺陷、超載或衝擊而破裂，造成吊物失控。"
+   },
+   {
+    "taskName": "植栽作業",
+    "groupName": "被撞",
+    "id": "H1",
+    "family": "升降機",
+    "owned": [],
+    "text": "車輛、挖土機、鑽穴機、鏟裝機、尾門升降機、推車或清運車輛進出、倒車及迴轉時，人員進入盲區或行進路線而遭撞擊。"
+   },
+   {
+    "taskName": "植栽作業",
+    "groupName": "物體飛落",
+    "id": "H3",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "大型植株吊運時，吊帶、卸扣、吊點或根球包覆失效，可能造成植株、枝幹或索具脫落飛甩。"
+   },
+   {
+    "taskName": "植栽作業",
+    "groupName": "物體飛落",
+    "id": "A3",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "吊運前檢查吊帶、卸扣、吊點及根球包覆完整，先試吊確認平衡，破損索具立即更換。(行政管理)"
+   },
+   {
+    "taskName": "植栽作業",
+    "groupName": "感電",
+    "id": "H1",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "未確認地下電纜及架空電線位置即挖掘、修枝、支架施工或吊運，金屬工具、吊臂、吊索或植株接近帶電設施而感電。"
+   },
+   {
+    "taskName": "外牆造景美化作業",
+    "groupName": "物體飛落",
+    "id": "H1",
+    "family": "吊掛用具",
+    "owned": [
+     "高空工作車"
+    ],
+    "text": "構件綁掛及吊運時吊點不當、吊索損傷或綑綁鬆脫，植生模組、植栽槽及裝飾構件可能掉落。"
+   },
+   {
+    "taskName": "外牆造景美化作業",
+    "groupName": "物體飛落",
+    "id": "A1",
+    "family": "吊掛用具",
+    "owned": [
+     "高空工作車"
+    ],
+    "text": "吊運前依構件重心及重量選用合格吊點、吊索與吊具，鬆散零件裝箱固定並試吊確認平衡。(行政管理)"
+   },
+   {
+    "taskName": "外牆造景美化作業",
+    "groupName": "物體倒塌、崩塌",
+    "id": "H5",
+    "family": "吊掛用具",
+    "owned": [
+     "高空工作車"
+    ],
+    "text": "模組及裝飾構件尚未完成防脫與永久固定即解除吊索或臨時支撐，可能滑移、傾倒或局部崩塌。"
+   },
+   {
+    "taskName": "外牆造景美化作業",
+    "groupName": "物體倒塌、崩塌",
+    "id": "A6",
+    "family": "吊掛用具",
+    "owned": [
+     "高空工作車"
+    ],
+    "text": "植生模組、植栽槽及裝飾構件完成校正、鎖固與防脫確認前，不得解除吊索或臨時支撐。(行政管理)"
+   },
+   {
+    "taskName": "電力系統安裝作業",
+    "groupName": "物體倒塌、崩塌",
+    "id": "A3",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "使用吊車、堆高機及吊索具應依額定荷重操作，盤匣及長料不得超載吊運或偏載起吊。(行政管理)"
+   },
+   {
+    "taskName": "電力系統安裝作業",
+    "groupName": "物體飛落",
+    "id": "H2",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "吊裝盤匣、電纜盤及長料時，吊索、吊耳或綁束失效，材料可能脫落飛落。"
+   },
+   {
+    "taskName": "電力系統安裝作業",
+    "groupName": "物體飛落",
+    "id": "A2",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "盤匣吊裝前應檢查吊索、卸扣、吊耳及綁束狀況，吊物下方與移動路徑圈圍管制並禁止人員停留。(行政管理)"
+   },
+   {
+    "taskName": "工區材料進場及堆置作業",
+    "groupName": "物體飛落",
+    "id": "H2",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "吊索、吊鉤、卸扣或橫樑破損、變形或超過額定荷重，可能於吊運中斷裂並造成材料飛落。"
+   },
+   {
+    "taskName": "工區材料進場及堆置作業",
+    "groupName": "物體飛落",
+    "id": "A2",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "吊掛前使用額定荷重足夠且狀況良好的吊索、吊鉤、夾具及棧板。(行政管理)"
+   },
+   {
+    "taskName": "工區材料進場及堆置作業",
+    "groupName": "物體飛落",
+    "id": "A9",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "使用額定荷重足夠且狀況良好的吊索、吊鉤、夾具及棧板，破損或不合格品立即隔離。(行政管理)"
+   },
+   {
+    "taskName": "工區材料進場及堆置作業",
+    "groupName": "感電",
+    "id": "H3",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "吊掛時未監視吊臂、吊索及長料與架空線的距離，材料擺動或轉向時可能碰觸帶電線路。"
+   },
+   {
+    "taskName": "工區材料進場及堆置作業",
+    "groupName": "被切、割、擦傷",
+    "id": "A1",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "作業前檢查材料毛邊、鋼帶、吊索及包裝狀況，尖銳部位加裝護角或防割保護套，破損品立即隔離。(行政管理)"
+   },
+   {
+    "taskName": "柱狀基礎建構作業(連續壁)",
+    "groupName": "物體飛落",
+    "id": "A2",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "鋼索、卸扣、吊鉤、吊梁及防止脫落裝置使用前檢查裂損、變形或磨損，並確認起重機制動與過捲預防裝置。(行政管理)"
+   },
+   {
+    "taskName": "柱狀基礎建構作業(連續壁)",
+    "groupName": "物體飛落",
+    "id": "A3",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "鋼索、卸扣、吊鉤或吊梁磨損、裂損超限時，立即更換並停用。(行政管理)"
+   },
+   {
+    "taskName": "柱狀基礎建構作業(連續壁)",
+    "groupName": "物體飛落",
+    "id": "A7",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "鋼索、卸扣、吊鉤、吊梁及防止脫落裝置應符合荷重需求，發現裂損、變形或磨損超限時立即更換。(行政管理)"
+   },
+   {
+    "taskName": "樁式基礎作業",
+    "groupName": "物體飛落",
+    "id": "A1",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "依吊裝計畫確認重量、重心、吊點及吊具能力，起吊前試吊並檢查插銷、吊耳、鋼索及卸扣。(行政管理)"
+   },
+   {
+    "taskName": "辦公區域燈具更換作業",
+    "groupName": "不當動作",
+    "id": "A6",
+    "family": "升降機",
+    "owned": [],
+    "text": "使用升降搬運車或物料升降機將梯子、燈具及工具箱運送至作業位置。(工程改善)"
+   },
+   {
+    "taskName": "熔爐耐火材砌築與拆除作業",
+    "groupName": "物體飛落",
+    "id": "A5",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "廢料桶依額定荷重分批裝填，桶口加設防散落覆蓋或繫固，起吊前確認吊點、吊索及桶斗平衡。(工程改善)"
+   },
+   {
+    "taskName": "熔爐耐火材砌築與拆除作業",
+    "groupName": "物體破裂",
+    "id": "H5",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "吊耳、鋼索、卸扣或脆化構件承載不足而破裂，導致吊物失穩或零件飛散。"
+   },
+   {
+    "taskName": "熔爐耐火材砌築與拆除作業",
+    "groupName": "物體破裂",
+    "id": "A9",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "吊掛前核對吊耳、鋼索及卸扣的額定荷重與吊物重量，檢查裂紋、磨耗及脆化並報廢不合格件。(管理控制)"
+   },
+   {
+    "taskName": "威亞吊飛作業",
+    "groupName": "物體飛落",
+    "id": "H3",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "正式吊飛時，吊掛用具磨耗、斷絲、防脫裝置失效、連接方向錯誤或額定承載不足，可能造成吊掛物件、構件或連接件脫落，擊中下方人員。"
+   },
+   {
+    "taskName": "道路維護作業",
+    "groupName": "物體飛落",
+    "id": "A2",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "吊掛人孔蓋、蓋板及重物前檢查吊帶、吊鉤、夾具與荷重能力，吊物下方嚴禁站人或通行。(行政管理)"
+   },
+   {
+    "taskName": "道路維護作業",
+    "groupName": "物體飛落",
+    "id": "A8",
+    "family": "吊掛用具",
+    "owned": [],
+    "text": "使用具防脫鎖扣的專用吊具並以獨立防墜吊索固定吊物，降低主吊具失效時物件墜落的風險。(工程改善)"
+   },
+   {
+    "taskName": "道路維護作業",
+    "groupName": "火災",
+    "id": "H6",
+    "family": "鍋爐壓力容器",
+    "owned": [],
+    "text": "瀝青加熱設備、熱熔標線鍋爐或瓦斯加熱器使用時燃料管線洩漏遇高溫火源，引發火災燒傷人員與車輛。"
+   }
+  ]
+ },
+ "taskRenames": {
+  "備料與簡易升降機操作作業": "備料與簡易提升機操作作業",
+  "人字臂起重機組裝與拆卸作業": "人字臂起重桿組裝與拆卸作業",
+  "高空作業車作業": "高空工作車作業",
+  "吊籠作業": "移動式起重機搭乘設備載人高處作業",
+  "起重機吊掛搭乘設備載人作業": "移動式起重機搭乘設備載人高處作業"
+ }
+}

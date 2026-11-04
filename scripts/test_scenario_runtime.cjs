@@ -16,14 +16,24 @@ function extract(name) {
   return html.slice(start, end + '\n        }'.length);
 }
 const names = ['normalizeSeverity', 'hazardTypeKey', 'statisticalSeverity', 'controlBodyKey', 'controlLane', 'scoreLaneOf', 'controlIdOf', 'avoidTextById',
-  'scenariosFromMapDoc', 'attachScenarioMaps', 'probabilityFromLinkedControls', 'remapAvoidSelections', 'migrateScenarioSelections'];
+  'scenariosFromMapDoc', 'attachScenarioMaps', 'probabilityFromLinkedControls', 'remapAvoidSelections', 'renameSnapshotTasks', 'renameControlKeys',
+  'applyEquipmentAudit20261104b', 'migrateScenarioSelections'];
 const context = vm.createContext({});
 const DATA_VER = html.match(/const DATA_VER = '([^']+)'/)[1];
 const riskMatrix = html.match(/const riskMatrix = (\{[\s\S]*?\});/)[1];
 const severityTable = html.match(/const STAT_SEVERITY_BY_TYPE = (\{[\s\S]*?\});/)[1];
 const avoidRemap = html.match(/const AVOID_INDEX_REMAP_20261021A = (\{[\s\S]*?\});/)[1];
+const taskRenames = html.match(/const TASK_RENAMES = (\{.*\});/)[1];
+const avoidRemapB = html.match(/const AVOID_INDEX_REMAP_20261104B = (\{.*\});/)[1];
+const keyRenamesB = html.match(/const CONTROL_KEY_RENAMES_20261104B = (\{.*\});/)[1];
 vm.runInContext(`const DATA_VER = '${DATA_VER}';\nconst riskMatrix = ${riskMatrix};\nconst STAT_SEVERITY_BY_TYPE = ${severityTable};\n`
-  + `const AVOID_INDEX_REMAP_20261021A = ${avoidRemap};\n` + names.map(extract).join('\n'), context);
+  + `const AVOID_INDEX_REMAP_20261021A = ${avoidRemap};\nconst TASK_RENAMES = ${taskRenames};\n`
+  + `const AVOID_INDEX_REMAP_20261104B = ${avoidRemapB};\nconst CONTROL_KEY_RENAMES_20261104B = ${keyRenamesB};\n`
+  + names.map(extract).join('\n'), context);
+const fixLog = JSON.parse(fs.readFileSync(path.join(repo, 'audit', 'equipment_fixes_20261104b.json'), 'utf8'));
+assert.deepEqual(JSON.parse(taskRenames), fixLog.taskRenames);
+assert.deepEqual(JSON.parse(avoidRemapB), fixLog.avoidIndexRemap);
+assert.deepEqual(JSON.parse(keyRenamesB), fixLog.controlKeyRenames);
 function linked(items, checked) {
   return context.probabilityFromLinkedControls(items.map(([key, lane, core]) => ({ key, scoreLane: lane, core })), checked);
 }
@@ -125,5 +135,88 @@ for (const fromVersion of ['20261005h', '20261020a', '20261005g']) {
   context.migrateScenarioSelections(remapSnapshot, [roller], migration);
   assert.deepEqual(Array.from(selections[`${roller.id}_${rollerIndex}`].avoids), [0, 2, 7], `${fromVersion} idempotent`);
 }
+// 20261104b：舊作業名稱、群組內刪除措施的編號前移、改寫措施的勾選鍵複製。
+const derrick = library['人字臂起重桿組裝與拆卸作業'];
+const derrickFall = derrick.hazardGroups.findIndex(g => g.groupName === '墜落、滾落');
+const derrickDrop = derrick.hazardGroups.findIndex(g => g.groupName === '物體飛落');
+const rope = library['高處繩索接近作業'];
+const ropeDrop = rope.hazardGroups.findIndex(g => g.groupName === '物體飛落');
+const oldKey = '組拆前確認人字臂起重機檢查合格證仍在有效期限內，並由持有效操作證的人員操作。';
+const newKey = context.controlBodyKey(derrick.hazardGroups[derrickDrop].AvoidItems[9]);
+for (const fromVersion of ['20261104a', '20261027a', '20261021a', '20261020a', '20261005h']) {
+  const snap = {
+    dataVersion: fromVersion,
+    myProjectTasks: ['人字臂起重機組裝與拆卸作業', '高處繩索接近作業'],
+    userSelections: {
+      [`人字臂起重機組裝與拆卸作業_${derrickFall}`]: {scenarios: [0, 2], avoids: [0, 8, 1]},
+      [`人字臂起重機組裝與拆卸作業_${derrickDrop}`]: {scenarios: [4], avoids: [9]},
+      [`高處繩索接近作業_${ropeDrop}`]: {scenarios: [], avoids: [5, 6, 7, 8, 11]}
+    },
+    taskControlChecks: {'人字臂起重機組裝與拆卸作業': {[oldKey]: true}}
+  };
+  context.migrateScenarioSelections(snap, [derrick, rope, roller], migration);
+  assert.equal(snap.dataVersion, DATA_VER);
+  assert.deepEqual(Array.from(snap.myProjectTasks), ['人字臂起重桿組裝與拆卸作業', '高處繩索接近作業']);
+  assert(!Object.keys(snap.userSelections).some(k => k.startsWith('人字臂起重機')));
+  assert.deepEqual(Array.from(snap.userSelections[`人字臂起重桿組裝與拆卸作業_${derrickFall}`].avoids), [0, 1], fromVersion);
+  assert.deepEqual(Array.from(snap.userSelections[`人字臂起重桿組裝與拆卸作業_${derrickFall}`].scenarios), [0, 2]);
+  assert.deepEqual(Array.from(snap.userSelections[`人字臂起重桿組裝與拆卸作業_${derrickDrop}`].avoids), [9]);
+  assert.deepEqual(Array.from(snap.userSelections[`高處繩索接近作業_${ropeDrop}`].avoids), [5, 6, 9], fromVersion);
+  assert.equal(snap.taskControlChecks['人字臂起重桿組裝與拆卸作業'][newKey], true);
+  const once = JSON.stringify(snap);
+  context.migrateScenarioSelections(snap, [derrick, rope, roller], migration);
+  assert.equal(JSON.stringify(snap), once, `${fromVersion} idempotent`);
+}
+// 必要設施補強：新增情境可載入，且未勾任何措施時為 P5。
+for (const [task, group, text] of [['人字臂起重桿組裝與拆卸作業', '物體飛落', '過捲預防裝置未設置'],
+  ['使用升降機上下料件作業', '被夾、被捲', '終點極限開關、緊急停止裝置或制動器失效']]) {
+  const g = library[task].hazardGroups.find(x => x.groupName === group);
+  const s = g.scenarios.find(x => x.text.includes(text));
+  assert(s && s.controls.some(c => c.core && c.scoreLane === 'E'), `${task} mandatory device scenario`);
+}
+for (const legacy of Object.keys(fixLog.taskRenames)) assert(!(legacy in library), legacy);
+// 20261104a 已改寫內容的「吊籠作業」及中間名稱只換名稱：舊存檔的情境勾選、手動評估與措施勾選原樣帶到新名稱。
+const basketTask = '移動式起重機搭乘設備載人高處作業';
+for (const legacy of ['吊籠作業', '起重機吊掛搭乘設備載人作業']) {
+  const basketState = {scenarios: [0, 3], avoids: [], scenarioManual: {3: {isManual: true, manualS: 'S5', manualP: 'P3'}}};
+  const basketSnap = {dataVersion: '20261104a', myProjectTasks: [legacy], userSelections: {[`${legacy}_0`]: basketState},
+    taskControlChecks: {[legacy]: {someKey: true}}};
+  context.migrateScenarioSelections(basketSnap, [library[basketTask], roller], migration);
+  assert.deepEqual(Array.from(basketSnap.myProjectTasks), [basketTask], legacy);
+  assert.equal(basketSnap.userSelections[`${basketTask}_0`], basketState);
+  assert.equal(basketSnap.taskControlChecks[basketTask].someKey, true);
+}
+// 20261104b 測試期間的存檔：只換名稱並複製改句後的勾選鍵，已勾措施編號不前移。
+const tower = library['塔式起重機升高及拆卸作業'];
+const towerDrop = tower.hazardGroups.findIndex(g => g.groupName === '物體飛落');
+const towerOld = '塔吊升高或拆卸前確認檢查合格證仍在有效期內。';
+const towerNew = context.controlBodyKey(tower.hazardGroups[towerDrop].AvoidItems[9]);
+assert.notEqual(towerOld, towerNew);
+const ropeIdx = [5, 6, 9];
+const bSnap = {dataVersion: '20261104b', myProjectTasks: ['起重機吊掛搭乘設備載人作業', '高處繩索接近作業'],
+  userSelections: {'起重機吊掛搭乘設備載人作業_0': {scenarios: [1], avoids: []}, [`高處繩索接近作業_${ropeDrop}`]: {scenarios: [], avoids: ropeIdx.slice()}},
+  taskControlChecks: {'塔式起重機升高及拆卸作業': {[towerOld]: true}}};
+context.migrateScenarioSelections(bSnap, [library[basketTask], rope, tower, roller], migration);
+assert.equal(bSnap.dataVersion, DATA_VER);
+assert.deepEqual(Array.from(bSnap.myProjectTasks), [basketTask, '高處繩索接近作業']);
+assert.deepEqual(Array.from(bSnap.userSelections[`${basketTask}_0`].scenarios), [1]);
+assert.deepEqual(Array.from(bSnap.userSelections[`高處繩索接近作業_${ropeDrop}`].avoids), ropeIdx);
+assert.equal(bSnap.taskControlChecks['塔式起重機升高及拆卸作業'][towerNew], true);
+// 20261104c 存檔走同一條路；20261104d 新增的作業可載入情境，未勾措施時為 P5。
+for (const ver of ['20261104c', '20261104d', '20261104e']) {
+  const cSnap = {dataVersion: ver, myProjectTasks: ['起重機吊掛搭乘設備載人作業'], userSelections: {}, taskControlChecks: {}};
+  context.migrateScenarioSelections(cSnap, [library[basketTask], roller], migration);
+  assert.equal(cSnap.dataVersion, DATA_VER, ver);
+  assert.deepEqual(Array.from(cSnap.myProjectTasks), [basketTask], ver);
+}
+for (const name of ['剪叉式升降台作業', '建築物外牆吊籠清洗及維護作業']) {
+  const task = library[name];
+  assert(task && task.hazardGroups.every(g => g.scenarios && g.scenarios.length), name);
+  assert(task.hazardGroups.every(g => g.scenarios.every(s => context.probabilityFromLinkedControls(s.controls, {}) === 'P5')), name);
+}
+const dosimeter = library['游離輻射作業'].hazardGroups.find(g => g.groupName === '職業病').scenarios
+  .flatMap(s => s.controls).find(c => c.text.includes('個人劑量計'));
+assert.equal(dosimeter.scoreLane, 'M');
 console.log(JSON.stringify({dataVersion: DATA_VER, groups, hazards, controls, exactTextJoin: true, legacySplitMigration: true,
-  legacyExactIndexMigration: true, migrationIdempotent: true, corruptMapRejected: true, avoidIndexRemap20261021a: true}, null, 2));
+  legacyExactIndexMigration: true, migrationIdempotent: true, corruptMapRejected: true, avoidIndexRemap20261021a: true,
+  taskRenames20261104b: true, avoidIndexRemap20261104b: true, controlKeyCopy20261104b: true}, null, 2));

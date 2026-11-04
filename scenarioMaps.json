@@ -3,9 +3,9 @@
   "version": "20261005h",
   "generatedAt": "2026-10-05T10:29:11Z",
   "counts": {
-    "groups": 1400,
-    "hazards": 6193,
-    "coreHazards": 6155,
+    "groups": 1417,
+    "hazards": 6259,
+    "coreHazards": 6221,
     "gapOmitted": 0,
     "codexEmptyOmitted": 0,
     "unmatchedLibraryGroups": 0
@@ -1153,7 +1153,7 @@
       ]
     },
     {
-      "taskName": "人字臂起重機組裝與拆卸作業",
+      "taskName": "人字臂起重桿組裝與拆卸作業",
       "groupName": "不當動作",
       "hazardControlMap": [
         {
@@ -1245,7 +1245,7 @@
       ]
     },
     {
-      "taskName": "人字臂起重機組裝與拆卸作業",
+      "taskName": "人字臂起重桿組裝與拆卸作業",
       "groupName": "墜落、滾落",
       "hazardControlMap": [
         {
@@ -1254,11 +1254,12 @@
           "severity": 5,
           "controlRefs": [
             "A1",
-            "A9"
+            "A2",
+            "A7"
           ],
           "coreControlRefs": [
             "A1",
-            "A9"
+            "A2"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -1269,11 +1270,11 @@
           "severity": 5,
           "controlRefs": [
             "A1",
-            "A9"
+            "A2"
           ],
           "coreControlRefs": [
             "A1",
-            "A9"
+            "A2"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -1314,11 +1315,11 @@
           "controlRefs": [
             "A5",
             "A1",
-            "A9"
+            "A2"
           ],
           "coreControlRefs": [
             "A1",
-            "A9"
+            "A2"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -1326,7 +1327,7 @@
       ]
     },
     {
-      "taskName": "人字臂起重機組裝與拆卸作業",
+      "taskName": "人字臂起重桿組裝與拆卸作業",
       "groupName": "感電",
       "hazardControlMap": [
         {
@@ -1375,7 +1376,7 @@
         },
         {
           "hazardId": "H4",
-          "hazardItem": "起重機通電試車及控制功能測試時，因控制盤、端子或馬達回路帶電部位外露，或未管制人員進入測試區而發生感電。",
+          "hazardItem": "人字臂起重桿通電試車及控制功能測試時，因控制盤、端子或馬達回路帶電部位外露，或未管制人員進入測試區而發生感電。",
           "severity": 5,
           "controlRefs": [
             "A5",
@@ -1390,7 +1391,7 @@
       ]
     },
     {
-      "taskName": "人字臂起重機組裝與拆卸作業",
+      "taskName": "人字臂起重桿組裝與拆卸作業",
       "groupName": "物體倒塌、崩塌",
       "hazardControlMap": [
         {
@@ -1481,7 +1482,7 @@
       ]
     },
     {
-      "taskName": "人字臂起重機組裝與拆卸作業",
+      "taskName": "人字臂起重桿組裝與拆卸作業",
       "groupName": "物體飛落",
       "hazardControlMap": [
         {
@@ -1574,11 +1575,28 @@
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
+        },
+        {
+          "hazardId": "H6",
+          "hazardItem": "組裝完成後試運轉或試吊時，過捲預防裝置未設置、間距未調整或制動裝置失效，吊具捲過頭撞擊吊桿前端槽輪或荷物失控下降，造成鋼索斷裂及吊物飛落。",
+          "severity": 5,
+          "controlRefs": [
+            "A13",
+            "A14",
+            "A1",
+            "A8"
+          ],
+          "coreControlRefs": [
+            "A13",
+            "A8"
+          ],
+          "ruleSeverity": 4,
+          "ruleSeverityBasis": "110–114 年職災統計"
         }
       ]
     },
     {
-      "taskName": "人字臂起重機組裝與拆卸作業",
+      "taskName": "人字臂起重桿組裝與拆卸作業",
       "groupName": "職業病",
       "hazardControlMap": [
         {
@@ -1667,7 +1685,7 @@
       ]
     },
     {
-      "taskName": "人字臂起重機組裝與拆卸作業",
+      "taskName": "人字臂起重桿組裝與拆卸作業",
       "groupName": "被切、割、擦傷",
       "hazardControlMap": [
         {
@@ -1732,7 +1750,7 @@
       ]
     },
     {
-      "taskName": "人字臂起重機組裝與拆卸作業",
+      "taskName": "人字臂起重桿組裝與拆卸作業",
       "groupName": "被夾、被捲",
       "hazardControlMap": [
         {
@@ -1809,7 +1827,7 @@
       ]
     },
     {
-      "taskName": "人字臂起重機組裝與拆卸作業",
+      "taskName": "人字臂起重桿組裝與拆卸作業",
       "groupName": "被撞",
       "hazardControlMap": [
         {
@@ -1847,7 +1865,7 @@
       ]
     },
     {
-      "taskName": "人字臂起重機組裝與拆卸作業",
+      "taskName": "人字臂起重桿組裝與拆卸作業",
       "groupName": "跌倒",
       "hazardControlMap": [
         {
@@ -1956,7 +1974,7 @@
       ]
     },
     {
-      "taskName": "人字臂起重機組裝與拆卸作業",
+      "taskName": "人字臂起重桿組裝與拆卸作業",
       "groupName": "高低溫接觸",
       "hazardControlMap": [
         {
@@ -3362,10 +3380,26 @@
           "controlRefs": [
             "A5",
             "A7",
-            "A8"
+            "A8",
+            "A12"
           ],
           "coreControlRefs": [
             "A7"
+          ],
+          "ruleSeverity": 5,
+          "ruleSeverityBasis": "110–114 年職災統計"
+        },
+        {
+          "hazardId": "H5",
+          "hazardItem": "終點極限開關、緊急停止裝置或制動器失效時，車廂超越停止位置或無法及時停止，可能將裝卸人員夾於車廂與樓板或門框之間。",
+          "severity": 5,
+          "controlRefs": [
+            "A11",
+            "A1",
+            "A2"
+          ],
+          "coreControlRefs": [
+            "A11"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -3378,7 +3412,7 @@
       "hazardControlMap": [
         {
           "hazardId": "H1",
-          "hazardItem": "升降機未完全停妥、未平層或車門護門尚在動作時裝卸，車廂、門扇或料件意外移動可能撞擊作業人員。",
+          "hazardItem": "升降機未完全停妥、未平層或車門或護門尚在動作時裝卸，車廂、門扇或料件意外移動可能撞擊作業人員。",
           "severity": 5,
           "controlRefs": [
             "A1",
@@ -4169,7 +4203,7 @@
       ]
     },
     {
-      "taskName": "備料與簡易升降機操作作業",
+      "taskName": "備料與簡易提升機操作作業",
       "groupName": "不當動作",
       "hazardControlMap": [
         {
@@ -4202,7 +4236,7 @@
         },
         {
           "hazardId": "H3",
-          "hazardItem": "手推車或油壓車於斜坡、門檻、不平整或狹窄路面行進，或為配合升降機而急推急拉，可能失控造成扭挫傷。",
+          "hazardItem": "手推車或油壓車於斜坡、門檻、不平整或狹窄路面行進，或為配合簡易提升機而急推急拉，可能失控造成扭挫傷。",
           "severity": 3,
           "controlRefs": [
             "A3",
@@ -4231,7 +4265,7 @@
       ]
     },
     {
-      "taskName": "備料與簡易升降機操作作業",
+      "taskName": "備料與簡易提升機操作作業",
       "groupName": "墜落、滾落",
       "hazardControlMap": [
         {
@@ -4298,7 +4332,7 @@
       ]
     },
     {
-      "taskName": "備料與簡易升降機操作作業",
+      "taskName": "備料與簡易提升機操作作業",
       "groupName": "感電",
       "hazardControlMap": [
         {
@@ -4369,7 +4403,7 @@
       ]
     },
     {
-      "taskName": "備料與簡易升降機操作作業",
+      "taskName": "備料與簡易提升機操作作業",
       "groupName": "物體飛落",
       "hazardControlMap": [
         {
@@ -4391,7 +4425,7 @@
         },
         {
           "hazardId": "H2",
-          "hazardItem": "簡易升降機載荷超重、偏載、突出或未固定，升降震動時物料可能由平台邊緣掉落。",
+          "hazardItem": "簡易提升機載荷超重、偏載、突出或未固定，升降震動時物料可能由平台邊緣掉落。",
           "severity": 3,
           "controlRefs": [
             "A3",
@@ -4459,7 +4493,7 @@
       ]
     },
     {
-      "taskName": "備料與簡易升降機操作作業",
+      "taskName": "備料與簡易提升機操作作業",
       "groupName": "職業病",
       "hazardControlMap": [
         {
@@ -4480,7 +4514,7 @@
         },
         {
           "hazardId": "H2",
-          "hazardItem": "備料區及升降機周邊長期暴露於設備運轉或警報噪音，可能造成噪音性聽力損失。",
+          "hazardItem": "備料區及簡易提升機周邊長期暴露於設備運轉或警報噪音，可能造成噪音性聽力損失。",
           "severity": 5,
           "controlRefs": [
             "A3",
@@ -4530,12 +4564,12 @@
       ]
     },
     {
-      "taskName": "備料與簡易升降機操作作業",
+      "taskName": "備料與簡易提升機操作作業",
       "groupName": "被切、割、擦傷",
       "hazardControlMap": [
         {
           "hazardId": "H1",
-          "hazardItem": "物料、包裝鐵帶、金屬容器、破損棧板或升降機接觸面存在毛邊、尖角、木刺或外露鐵釘，取放搬運時可能割傷或刺傷。",
+          "hazardItem": "物料、包裝鐵帶、金屬容器、破損棧板或簡易提升機接觸面存在毛邊、尖角、木刺或外露鐵釘，取放搬運時可能割傷或刺傷。",
           "severity": 3,
           "controlRefs": [
             "A1",
@@ -4593,7 +4627,7 @@
       ]
     },
     {
-      "taskName": "備料與簡易升降機操作作業",
+      "taskName": "備料與簡易提升機操作作業",
       "groupName": "被夾、被捲",
       "hazardControlMap": [
         {
@@ -4646,11 +4680,14 @@
           "severity": 5,
           "controlRefs": [
             "A6",
-            "A9"
+            "A9",
+            "A12",
+            "A2"
           ],
           "coreControlRefs": [
             "A6",
-            "A9"
+            "A9",
+            "A12"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -4672,7 +4709,7 @@
         },
         {
           "hazardId": "H6",
-          "hazardItem": "人員搭乘平台或進入平台下方、升降通道時，平台或物料移動可能造成壓夾。",
+          "hazardItem": "人員違規搭乘搬器或進入平台下方、升降通道時，平台或物料移動可能造成壓夾。",
           "severity": 5,
           "controlRefs": [
             "A6",
@@ -4688,7 +4725,7 @@
       ]
     },
     {
-      "taskName": "備料與簡易升降機操作作業",
+      "taskName": "備料與簡易提升機操作作業",
       "groupName": "被撞",
       "hazardControlMap": [
         {
@@ -4707,7 +4744,7 @@
         },
         {
           "hazardId": "H2",
-          "hazardItem": "升降機到站開門時平台未平層、門口未淨空或有高低差，推車與物料可能撞擊人員。",
+          "hazardItem": "簡易提升機到站開門時平台未平層、門口未淨空或有高低差，推車與物料可能撞擊人員。",
           "severity": 3,
           "controlRefs": [
             "A3",
@@ -4736,7 +4773,7 @@
         },
         {
           "hazardId": "H4",
-          "hazardItem": "人員搭乘升降機或停留在平台、樓層開口及運行範圍時，可能被平台、推車或物料撞擊。",
+          "hazardItem": "人員違規搭乘簡易提升機或停留在平台、樓層開口及運行範圍時，可能被平台、推車或物料撞擊。",
           "severity": 5,
           "controlRefs": [
             "A3",
@@ -4752,7 +4789,7 @@
       ]
     },
     {
-      "taskName": "備料與簡易升降機操作作業",
+      "taskName": "備料與簡易提升機操作作業",
       "groupName": "跌倒",
       "hazardControlMap": [
         {
@@ -6643,7 +6680,8 @@
           "controlRefs": [
             "A1",
             "A2",
-            "A3"
+            "A3",
+            "A6"
           ],
           "coreControlRefs": [
             "A1",
@@ -7549,7 +7587,8 @@
           "severity": 5,
           "controlRefs": [
             "A1",
-            "A5"
+            "A5",
+            "A6"
           ],
           "coreControlRefs": [
             "A1"
@@ -7564,7 +7603,8 @@
           "controlRefs": [
             "A1",
             "A2",
-            "A5"
+            "A5",
+            "A6"
           ],
           "coreControlRefs": [
             "A2"
@@ -13046,7 +13086,8 @@
             "A7",
             "A8",
             "A5",
-            "A6"
+            "A6",
+            "A1"
           ],
           "coreControlRefs": [
             "A8",
@@ -13502,18 +13543,21 @@
       ]
     },
     {
-      "taskName": "吊籠作業",
+      "taskName": "移動式起重機搭乘設備載人高處作業",
       "groupName": "墜落、滾落",
       "hazardControlMap": [
         {
           "hazardId": "H1",
-          "hazardItem": "起重機外伸撐座、地基承載、作業半徑或額定荷重不符，或吊籠吊掛系統及防脫裝置失效，可能造成起重機失穩、吊籠傾覆或整體墜落。",
+          "hazardItem": "起重機外伸撐座未全部伸出、地盤不平或承載不足，或搭乘設備、人員及積載物合計超過作業半徑對應額定荷重的百分之五十，或懸掛裝置、吊鉤防脫裝置失效，可能造成起重機失穩、搭乘設備傾覆或整體墜落。",
           "severity": 5,
           "controlRefs": [
+            "A12",
             "A4",
             "A8",
-            "A10",
-            "A11"
+            "A1",
+            "A2",
+            "A11",
+            "A13"
           ],
           "coreControlRefs": [
             "A4"
@@ -13523,59 +13567,62 @@
         },
         {
           "hazardId": "H2",
-          "hazardItem": "起重機急升急降或急迴轉，或吊籠升降路徑遭建物、管線及其他障礙物勾掛碰撞，可能造成吊籠大幅擺盪、傾斜及人員失去平衡墜落。",
+          "hazardItem": "起重機載人時走行、急升急降、旋轉或改變伸臂長度，或搭乘設備升降路徑遭建物、管線及其他障礙物勾掛碰撞，可能造成搭乘設備大幅擺盪、傾斜及人員失去平衡墜落。",
           "severity": 5,
           "controlRefs": [
+            "A14",
             "A5",
             "A6",
-            "A9"
+            "A9",
+            "A12"
           ],
           "coreControlRefs": [
-            "A5"
+            "A14"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
         },
         {
           "hazardId": "H3",
-          "hazardItem": "吊籠護欄、門閂、底板或出入口防護失效，或吊籠與作業面存在未防護高差及間隙，可能造成踏空墜落。",
+          "hazardItem": "搭乘設備護欄、門閂或底板缺損，門扉可向外開啟，或人員未待搭乘設備降至地面或安全處所即進出、攀越扶手轉移至施工位置，可能造成踏空墜落。",
           "severity": 5,
           "controlRefs": [
             "A10",
             "A11",
+            "A15",
             "A6",
             "A7"
           ],
           "coreControlRefs": [
             "A10",
-            "A6",
-            "A7",
-            "A11"
+            "A11",
+            "A15",
+            "A6"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
         },
         {
           "hazardId": "H4",
-          "hazardItem": "未繫掛獨立安全母索、探身跨越護欄、攀爬護欄或站立於物料工具上作業，可能造成失去平衡或由吊籠開口墜落。",
+          "hazardItem": "未佩戴全身背負式安全帶或未鉤掛於規定位置，或升降中身體伸出、站立於扶手或物料工具上作業，可能造成失去平衡或由搭乘設備墜落。",
           "severity": 5,
           "controlRefs": [
             "A7",
+            "A15",
             "A6",
             "A10",
-            "A11"
+            "A13"
           ],
           "coreControlRefs": [
             "A7",
-            "A6",
-            "A10"
+            "A15"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
         },
         {
           "hazardId": "H5",
-          "hazardItem": "強風、降雨、照度不足或踏面濕滑，可能造成吊籠晃動、視距不足或滑倒，導致進出及高處作業墜落。",
+          "hazardItem": "強風、暴風雨、雪、冰雹、照度不足或踏面濕滑時仍載人作業，可能造成搭乘設備晃動、視距不足或滑倒，導致人員墜落。",
           "severity": 5,
           "controlRefs": [
             "A5",
@@ -13586,6 +13633,21 @@
             "A5",
             "A6",
             "A7"
+          ],
+          "ruleSeverity": 5,
+          "ruleSeverityBasis": "立即危險類型"
+        },
+        {
+          "hazardId": "H6",
+          "hazardItem": "起重機動力供給故障或發生緊急事件時，搭乘設備無法安全放下，人員受困高處，可能於自行攀爬脫困時墜落。",
+          "severity": 5,
+          "controlRefs": [
+            "A16",
+            "A2",
+            "A3"
+          ],
+          "coreControlRefs": [
+            "A16"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -13593,12 +13655,12 @@
       ]
     },
     {
-      "taskName": "吊籠作業",
+      "taskName": "移動式起重機搭乘設備載人高處作業",
       "groupName": "感電",
       "hazardControlMap": [
         {
           "hazardId": "H1",
-          "hazardItem": "吊籠或起重機於升降、迴轉及定位時侵入架空高壓線路或鄰近帶電設備的安全距離，可能造成導電、電弧或多人同時感電。",
+          "hazardItem": "搭乘設備或起重機伸臂於升降、旋轉及定位時侵入架空高壓線路或鄰近帶電設備的安全距離，可能造成導電、電弧或多人同時感電。",
           "severity": 5,
           "controlRefs": [
             "A1",
@@ -13612,7 +13674,7 @@
         },
         {
           "hazardId": "H2",
-          "hazardItem": "作業人員於吊籠內接觸帶電母線、配電箱或外牆電氣設備，或使用金屬工具接近帶電部位，可能導致電擊、灼傷及感電後墜落。",
+          "hazardItem": "作業人員於搭乘設備內接觸帶電母線、配電箱或外牆電氣設備，或使用金屬工具接近帶電部位，可能導致電擊、灼傷及感電後墜落。",
           "severity": 5,
           "controlRefs": [
             "A1",
@@ -13643,7 +13705,7 @@
         },
         {
           "hazardId": "H4",
-          "hazardItem": "起重機、吊籠或臨時配電設備接地及漏電保護失效，或檢修前未完成停電、上鎖、驗電及放電接地，可能造成金屬構件帶電或致命感電。",
+          "hazardItem": "起重機、搭乘設備或臨時配電設備接地及漏電保護失效，或檢修前未完成停電、上鎖、驗電及放電接地，可能造成金屬構件帶電或致命感電。",
           "severity": 5,
           "controlRefs": [
             "A4",
@@ -13659,12 +13721,12 @@
       ]
     },
     {
-      "taskName": "吊籠作業",
+      "taskName": "移動式起重機搭乘設備載人高處作業",
       "groupName": "有害物接觸",
       "hazardControlMap": [
         {
           "hazardId": "H1",
-          "hazardItem": "吊籠於通風不良、凹槽死角或噴塗、噴霧清洗時，揮發性化學品蒸氣、霧滴或氣膠可能累積或回飄，造成吸入性中毒、缺氧或呼吸道致敏。",
+          "hazardItem": "搭乘設備於通風不良、凹槽死角或噴塗、噴霧清洗時，揮發性化學品蒸氣、霧滴或氣膠可能累積或回飄，造成吸入性中毒、缺氧或呼吸道致敏。",
           "severity": 5,
           "controlRefs": [
             "A1",
@@ -13693,7 +13755,7 @@
         },
         {
           "hazardId": "H3",
-          "hazardItem": "化學品攜帶、轉移或存放固定不良，受吊籠擺動或碰撞可能潑濺、洩漏，造成皮膚、眼睛及黏膜傷害。",
+          "hazardItem": "化學品攜帶、轉移或存放固定不良，受搭乘設備擺動或碰撞可能潑濺、洩漏，造成皮膚、眼睛及黏膜傷害。",
           "severity": 3,
           "controlRefs": [
             "A2",
@@ -13707,15 +13769,17 @@
         },
         {
           "hazardId": "H4",
-          "hazardItem": "吊籠內使用易燃溶劑時，熱作業、火花工具、靜電或其他點火源可能引燃蒸氣，造成火災、爆炸、燒燙傷及有害煙霧吸入。",
+          "hazardItem": "搭乘設備內使用易燃溶劑或攜帶氧氣、乙炔鋼瓶時，熱作業、火花工具、靜電或其他點火源可能引燃蒸氣或洩漏氣體，造成火災、爆炸、燒燙傷及有害煙霧吸入。",
           "severity": 5,
           "controlRefs": [
             "A1",
             "A3",
-            "A4"
+            "A4",
+            "A6"
           ],
           "coreControlRefs": [
-            "A4"
+            "A4",
+            "A6"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -13723,12 +13787,12 @@
       ]
     },
     {
-      "taskName": "吊籠作業",
+      "taskName": "移動式起重機搭乘設備載人高處作業",
       "groupName": "物體飛落",
       "hazardControlMap": [
         {
           "hazardId": "H1",
-          "hazardItem": "吊籠內工具、材料、包材或小零件未固定，或底板、踢腳板、圍網及孔隙防落設施失效，於升降、振動或風力作用下掉落，可能擊傷下方人員。",
+          "hazardItem": "搭乘設備內工具、材料、包材或小零件未固定，或底板、腳趾板、網狀圍欄及孔隙防落設施失效，於升降、振動或風力作用下掉落，可能擊傷下方人員。",
           "severity": 5,
           "controlRefs": [
             "A1",
@@ -13747,15 +13811,17 @@
         },
         {
           "hazardId": "H2",
-          "hazardItem": "上方或鄰近區域進行拆除、安裝或敲擊等交叉作業，未有效隔離時碎片或零件可能落入吊籠或下方區域，造成重擊傷害。",
+          "hazardItem": "上方或鄰近區域進行拆除、安裝或敲擊等交叉作業，未有效隔離時碎片或零件可能落入搭乘設備或下方區域，造成重擊傷害。",
           "severity": 5,
           "controlRefs": [
             "A3",
+            "A8",
             "A5",
             "A6"
           ],
           "coreControlRefs": [
             "A3",
+            "A8",
             "A6",
             "A5"
           ],
@@ -13764,7 +13830,7 @@
         },
         {
           "hazardId": "H3",
-          "hazardItem": "吊籠內進行切割、敲擊或衝擊作業時，碎片或混凝土屑掉出吊籠，可能擊傷下方人員。",
+          "hazardItem": "搭乘設備內進行切割、敲擊或衝擊作業時，碎片或混凝土屑掉出搭乘設備，可能擊傷下方人員。",
           "severity": 3,
           "controlRefs": [
             "A5",
@@ -13781,11 +13847,12 @@
         },
         {
           "hazardId": "H4",
-          "hazardItem": "吊籠升降或定位時與建築物、突出物或外牆構件碰撞，可能造成窗件、附著物或外牆碎片鬆脫飛落，擊傷吊籠內或地面人員。",
+          "hazardItem": "搭乘設備升降或定位時與建築物、突出物或外牆構件碰撞，可能造成附著物或構件碎片鬆脫飛落，擊傷搭乘設備內或地面人員。",
           "severity": 5,
           "controlRefs": [
             "A5",
             "A7",
+            "A8",
             "A6"
           ],
           "coreControlRefs": [
@@ -13797,7 +13864,7 @@
         },
         {
           "hazardId": "H5",
-          "hazardItem": "起重機、吊具、吊點、吊鉤安全閂、鋼索或吊籠固定失效，可能造成吊籠或物料脫落，導致人員重傷或死亡。",
+          "hazardItem": "起重機、懸掛裝置、吊鉤防脫裝置、鋼索或搭乘設備連結失效，可能造成搭乘設備或物料脫落，導致人員重傷或死亡。",
           "severity": 5,
           "controlRefs": [
             "A4",
@@ -13815,12 +13882,12 @@
       ]
     },
     {
-      "taskName": "吊籠作業",
+      "taskName": "移動式起重機搭乘設備載人高處作業",
       "groupName": "職業病",
       "hazardControlMap": [
         {
           "hazardId": "H1",
-          "hazardItem": "吊籠內長時間或反覆採仰頭、前傾、扭轉、側身伸取等不良姿勢，並搬運工具、零件及材料，可能造成頸肩、上肢及下背肌肉骨骼疾病。",
+          "hazardItem": "搭乘設備內長時間或反覆採仰頭、前傾、扭轉、側身伸取等不良姿勢，並搬運工具、零件及材料，可能造成頸肩、上肢及下背肌肉骨骼疾病。",
           "severity": 4,
           "controlRefs": [
             "A1",
@@ -13837,7 +13904,7 @@
         },
         {
           "hazardId": "H2",
-          "hazardItem": "於吊籠內使用溶劑型塗料、清潔劑或除鏽劑時，蒸氣逸散控制不足可能造成有機溶劑暴露及神經、肝腎或呼吸系統健康損害。",
+          "hazardItem": "於搭乘設備內使用溶劑型塗料、清潔劑或除鏽劑時，蒸氣逸散控制不足可能造成有機溶劑暴露及神經、肝腎或呼吸系統健康損害。",
           "severity": 5,
           "controlRefs": [
             "A3",
@@ -13904,12 +13971,12 @@
       ]
     },
     {
-      "taskName": "吊籠作業",
+      "taskName": "移動式起重機搭乘設備載人高處作業",
       "groupName": "被夾、被捲",
       "hazardControlMap": [
         {
           "hazardId": "H1",
-          "hazardItem": "吊籠升降、迴轉或靠接時，運行路徑與外牆、鋼構、管架、平台或管線淨距不足，或人員進入夾點推擋，可能因誤動作、視線受阻或通訊中斷遭夾壓。",
+          "hazardItem": "搭乘設備升降或靠近構造物時，運行路徑與外牆、鋼構、管架、平台或管線淨距不足，或人員進入夾點推擋，可能因誤動作、視線受阻或通訊中斷遭夾壓。",
           "severity": 5,
           "controlRefs": [
             "A1",
@@ -13923,7 +13990,7 @@
         },
         {
           "hazardId": "H2",
-          "hazardItem": "人員進出或靠接平台時，吊籠尚未完全停止、制動、穩定及對位，或門閂、鉸鏈及限位裝置失效，可能遭吊籠、門片、樓板或平台夾傷。",
+          "hazardItem": "人員進出時，搭乘設備尚未下降置於地面或安全處所並完全停止，或門閂、鉸鏈失效，可能遭搭乘設備、門扉或周邊構造物夾傷。",
           "severity": 5,
           "controlRefs": [
             "A1",
@@ -13968,7 +14035,7 @@
         },
         {
           "hazardId": "H5",
-          "hazardItem": "電動工具、捲揚輔具及延長線未固定或收納不當，於吊籠升降、迴轉或靠接時可能勾掛纏繞並拉扯人員。",
+          "hazardItem": "電動工具、輔具及延長線未固定或收納不當，於搭乘設備升降時可能勾掛纏繞並拉扯人員。",
           "severity": 4,
           "controlRefs": [
             "A1",
@@ -16163,6 +16230,22 @@
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
+        },
+        {
+          "hazardId": "H5",
+          "hazardItem": "高位舉升、堆疊或取放貨物時，貨物自貨叉或堆疊處掉落，頂蓬缺失、拆除或強度不足，駕駛人頭部遭落物擊中。",
+          "severity": 5,
+          "controlRefs": [
+            "A10",
+            "A3",
+            "A1",
+            "A7"
+          ],
+          "coreControlRefs": [
+            "A10"
+          ],
+          "ruleSeverity": 4,
+          "ruleSeverityBasis": "110–114 年職災統計"
         }
       ]
     },
@@ -17970,7 +18053,8 @@
             "A5",
             "A10",
             "A11",
-            "A9"
+            "A9",
+            "A7"
           ],
           "coreControlRefs": [
             "A2",
@@ -18312,7 +18396,8 @@
             "A3",
             "A6",
             "A7",
-            "A12"
+            "A12",
+            "A9"
           ],
           "coreControlRefs": [
             "A1",
@@ -18417,7 +18502,8 @@
           "controlRefs": [
             "A1",
             "A2",
-            "A3"
+            "A3",
+            "A9"
           ],
           "coreControlRefs": [
             "A1",
@@ -19090,7 +19176,8 @@
             "A3",
             "A7",
             "A9",
-            "A13"
+            "A13",
+            "A2"
           ],
           "coreControlRefs": [
             "A14",
@@ -19108,7 +19195,8 @@
           "severity": 5,
           "controlRefs": [
             "A14",
-            "A3"
+            "A3",
+            "A2"
           ],
           "coreControlRefs": [
             "A14",
@@ -19143,7 +19231,8 @@
           "controlRefs": [
             "A3",
             "A5",
-            "A9"
+            "A9",
+            "A2"
           ],
           "coreControlRefs": [
             "A3",
@@ -19161,7 +19250,8 @@
             "A14",
             "A3",
             "A6",
-            "A13"
+            "A13",
+            "A2"
           ],
           "coreControlRefs": [
             "A14",
@@ -20409,7 +20499,7 @@
           "severity": 5,
           "controlRefs": [
             "A7",
-            "A13",
+            "A8",
             "A9",
             "A2",
             "A5",
@@ -20417,7 +20507,7 @@
             "A4"
           ],
           "coreControlRefs": [
-            "A13",
+            "A8",
             "A7",
             "A5"
           ],
@@ -23108,7 +23198,8 @@
           "severity": 5,
           "controlRefs": [
             "A1",
-            "A3"
+            "A3",
+            "A6"
           ],
           "coreControlRefs": [
             "A1"
@@ -23122,7 +23213,8 @@
           "severity": 5,
           "controlRefs": [
             "A3",
-            "A1"
+            "A1",
+            "A6"
           ],
           "coreControlRefs": [
             "A1"
@@ -23178,7 +23270,8 @@
           "severity": 5,
           "controlRefs": [
             "A3",
-            "A1"
+            "A1",
+            "A6"
           ],
           "coreControlRefs": [
             "A1"
@@ -24671,7 +24764,8 @@
           "severity": 5,
           "controlRefs": [
             "A10",
-            "A5"
+            "A5",
+            "A6"
           ],
           "coreControlRefs": [
             "A10"
@@ -25760,7 +25854,8 @@
           "severity": 5,
           "controlRefs": [
             "A2",
-            "A9"
+            "A9",
+            "A5"
           ],
           "coreControlRefs": [
             "A2"
@@ -28179,8 +28274,9 @@
           "severity": 5,
           "controlRefs": [
             "A7",
-            "A8",
-            "A5"
+            "A3",
+            "A5",
+            "A6"
           ],
           "coreControlRefs": [
             "A7",
@@ -28210,8 +28306,9 @@
           "controlRefs": [
             "A7",
             "A2",
-            "A8",
-            "A5"
+            "A3",
+            "A5",
+            "A6"
           ],
           "coreControlRefs": [
             "A7",
@@ -34937,7 +35034,9 @@
           "controlRefs": [
             "A1",
             "A4",
-            "A6"
+            "A6",
+            "A7",
+            "A8"
           ],
           "coreControlRefs": [
             "A1",
@@ -34952,7 +35051,9 @@
           "severity": 5,
           "controlRefs": [
             "A1",
-            "A6"
+            "A6",
+            "A7",
+            "A8"
           ],
           "coreControlRefs": [
             "A1",
@@ -34967,7 +35068,9 @@
           "severity": 5,
           "controlRefs": [
             "A1",
-            "A6"
+            "A6",
+            "A7",
+            "A8"
           ],
           "coreControlRefs": [
             "A1",
@@ -35000,7 +35103,9 @@
             "A1",
             "A4",
             "A5",
-            "A6"
+            "A6",
+            "A7",
+            "A8"
           ],
           "coreControlRefs": [
             "A1",
@@ -35015,7 +35120,9 @@
           "severity": 5,
           "controlRefs": [
             "A1",
-            "A5"
+            "A5",
+            "A7",
+            "A8"
           ],
           "coreControlRefs": [
             "A1",
@@ -35528,7 +35635,8 @@
           "controlRefs": [
             "A6",
             "A7",
-            "A8"
+            "A8",
+            "A4"
           ],
           "coreControlRefs": [
             "A8",
@@ -35545,7 +35653,8 @@
             "A2",
             "A6",
             "A7",
-            "A8"
+            "A8",
+            "A4"
           ],
           "coreControlRefs": [
             "A8",
@@ -35560,7 +35669,8 @@
           "severity": 3,
           "controlRefs": [
             "A9",
-            "A8"
+            "A8",
+            "A4"
           ],
           "coreControlRefs": [
             "A8",
@@ -41816,7 +41926,8 @@
           "controlRefs": [
             "A7",
             "A8",
-            "A9"
+            "A9",
+            "A6"
           ],
           "coreControlRefs": [
             "A7",
@@ -43060,14 +43171,14 @@
           "controlRefs": [
             "A1",
             "A2",
-            "A7",
+            "A4",
             "A5",
             "A6"
           ],
           "coreControlRefs": [
             "A1",
             "A2",
-            "A7",
+            "A4",
             "A5",
             "A6"
           ],
@@ -44325,7 +44436,8 @@
           "controlRefs": [
             "A1",
             "A2",
-            "A3"
+            "A3",
+            "A6"
           ],
           "coreControlRefs": [
             "A1",
@@ -44342,7 +44454,8 @@
             "A1",
             "A2",
             "A4",
-            "A5"
+            "A5",
+            "A6"
           ],
           "coreControlRefs": [
             "A1",
@@ -47569,7 +47682,8 @@
             "A1",
             "A2",
             "A3",
-            "A7"
+            "A7",
+            "A5"
           ],
           "coreControlRefs": [
             "A1",
@@ -52877,12 +52991,12 @@
           "severity": 5,
           "controlRefs": [
             "A5",
-            "A6",
+            "A2",
             "A3"
           ],
           "coreControlRefs": [
             "A5",
-            "A6"
+            "A2"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -52893,12 +53007,12 @@
           "severity": 5,
           "controlRefs": [
             "A5",
-            "A6",
+            "A2",
             "A3"
           ],
           "coreControlRefs": [
             "A5",
-            "A6"
+            "A2"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -52909,12 +53023,12 @@
           "severity": 5,
           "controlRefs": [
             "A5",
-            "A6",
+            "A2",
             "A3"
           ],
           "coreControlRefs": [
             "A5",
-            "A6"
+            "A2"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -52925,7 +53039,7 @@
           "severity": 5,
           "controlRefs": [
             "A5",
-            "A6",
+            "A2",
             "A4"
           ],
           "coreControlRefs": [
@@ -53466,7 +53580,8 @@
           "severity": 5,
           "controlRefs": [
             "A1",
-            "A3"
+            "A3",
+            "A7"
           ],
           "coreControlRefs": [
             "A1",
@@ -53521,7 +53636,7 @@
         },
         {
           "hazardId": "H5",
-          "hazardItem": "油壓缸、止回防墜閥或承載結構失效，造成平台突然下沉或傾斜，人員在平台、臨邊或救援時失衡墜落。",
+          "hazardItem": "油壓缸、止回防墜閥或承載結構失效，造成平台突然下沉或傾斜，人員在平台邊緣裝卸、臨邊或救援時失衡墜落。",
           "severity": 5,
           "controlRefs": [
             "A4",
@@ -53744,7 +53859,7 @@
         },
         {
           "hazardId": "H2",
-          "hazardItem": "平台長時間站立、震動或啟停衝擊，且油壓泵浦、導向或減振系統異常未改善，可能造成下肢疲勞及腰背慢性傷害。",
+          "hazardItem": "操作人員長時間站立操作及反覆在平台邊裝卸，且油壓泵浦、導向或減振系統異常造成啟停衝擊未改善，可能造成下肢疲勞及腰背慢性傷害。",
           "severity": 4,
           "controlRefs": [
             "A3"
@@ -53813,7 +53928,7 @@
         },
         {
           "hazardId": "H2",
-          "hazardItem": "人員搭乘平台或在平台內作業時，未確認上方及側方淨高與淨距，遭管線、門框或其他固定障礙物撞擊。",
+          "hazardItem": "人員違規搭乘平台隨物料升降，或於平台未停止時探身進入平台，遭管線、門框或其他固定障礙物撞擊。",
           "severity": 4,
           "controlRefs": [
             "A3",
@@ -53996,7 +54111,7 @@
         },
         {
           "hazardId": "H4",
-          "hazardItem": "檢查、清潔或故障處置時平台未停機隔離，或人員搭乘時平台突啟、急停及載物位移，遭活動部件或物料撞擊。",
+          "hazardItem": "檢查、清潔或故障處置時平台未停機隔離，或人員違規搭乘時平台突啟、急停及載物位移，遭活動部件或物料撞擊。",
           "severity": 4,
           "controlRefs": [
             "A2",
@@ -57535,14 +57650,14 @@
           "severity": 3,
           "controlRefs": [
             "A1",
-            "A7",
+            "A2",
             "A3",
             "A4",
             "A5",
             "A6"
           ],
           "coreControlRefs": [
-            "A7",
+            "A2",
             "A3",
             "A4",
             "A6",
@@ -57558,7 +57673,7 @@
           "severity": 4,
           "controlRefs": [
             "A1",
-            "A7",
+            "A2",
             "A3",
             "A4",
             "A5",
@@ -57567,7 +57682,7 @@
           "coreControlRefs": [
             "A1",
             "A4",
-            "A7",
+            "A2",
             "A3",
             "A5",
             "A6"
@@ -58500,7 +58615,7 @@
         },
         {
           "hazardId": "H2",
-          "hazardItem": "井道、吊籠頂部或狹小高處長時間彎腰、蹲跪、扭轉、抬臂或過度前伸，可能造成肩頸、上肢及下肢過度負荷並失去平衡。",
+          "hazardItem": "井道、搬器頂部或狹小高處長時間彎腰、蹲跪、扭轉、抬臂或過度前伸，可能造成肩頸、上肢及下肢過度負荷並失去平衡。",
           "severity": 5,
           "controlRefs": [
             "A2",
@@ -58548,7 +58663,7 @@
       "hazardControlMap": [
         {
           "hazardId": "H1",
-          "hazardItem": "導軌架加節、組拆、吊籠頂及井道或樓層臨邊作業時，工作面或臨邊防護不足，或攀爬構件、跨越落差及濕滑失足，可能造成墜落。",
+          "hazardItem": "導軌架加節、組拆、搬器頂及井道或樓層臨邊作業時，工作面或臨邊防護不足，或攀爬構件、跨越落差及濕滑失足，可能造成墜落。",
           "severity": 5,
           "controlRefs": [
             "A1",
@@ -58566,14 +58681,15 @@
         },
         {
           "hazardId": "H2",
-          "hazardItem": "吊籠頂維修、試車或校正時，吊籠突然升降、移動或誤啟動，可能使作業人員失衡墜落。",
+          "hazardItem": "搬器頂維修、試車或校正時，搬器突然升降、移動或誤啟動，可能使作業人員失衡墜落。",
           "severity": 5,
           "controlRefs": [
             "A4",
             "A5",
             "A6",
             "A7",
-            "A10"
+            "A10",
+            "A8"
           ],
           "coreControlRefs": [
             "A4",
@@ -58788,7 +58904,8 @@
           "controlRefs": [
             "A1",
             "A5",
-            "A7"
+            "A7",
+            "A2"
           ],
           "coreControlRefs": [
             "A1",
@@ -58815,7 +58932,7 @@
         },
         {
           "hazardId": "H3",
-          "hazardItem": "高處、吊籠頂部、井道口及樓層邊緣作業時，工具、螺栓、銷件或材料未固定或止擋，可能滾移並掉落。",
+          "hazardItem": "高處、搬器頂部、井道口及樓層邊緣作業時，工具、螺栓、銷件或材料未固定或止擋，可能滾移並掉落。",
           "severity": 4,
           "controlRefs": [
             "A4",
@@ -58927,7 +59044,7 @@
         },
         {
           "hazardId": "H2",
-          "hazardItem": "吊籠試運轉時，井道口、吊籠頂部或樓層出入口仍有人員，設備意外移動可能撞擊作業人員。",
+          "hazardItem": "搬器試運轉時，井道口、搬器頂部或樓層出入口仍有人員，設備意外移動可能撞擊作業人員。",
           "severity": 5,
           "controlRefs": [
             "A4",
@@ -58961,7 +59078,7 @@
       "hazardControlMap": [
         {
           "hazardId": "H1",
-          "hazardItem": "維修、調整或故障排除時，設備未完全停機隔離或控制系統誤啟動，吊籠突然移動可能將人員夾在吊籠與井道、導軌或樓層結構間。",
+          "hazardItem": "維修、調整或故障排除時，設備未完全停機隔離或控制系統誤啟動，搬器突然移動可能將人員夾在搬器與井道、導軌或樓層結構間。",
           "severity": 5,
           "controlRefs": [
             "A1",
@@ -58978,7 +59095,7 @@
         },
         {
           "hazardId": "H2",
-          "hazardItem": "吊籠、對重或承重構件因煞車、支撐或固定件失效，或殘留能量未釋放而下滑回落，可能造成人員夾壓。",
+          "hazardItem": "搬器、對重或承重構件因煞車、支撐或固定件失效，或殘留能量未釋放而下滑回落，可能造成人員夾壓。",
           "severity": 5,
           "controlRefs": [
             "A1",
@@ -59010,7 +59127,7 @@
         },
         {
           "hazardId": "H4",
-          "hazardItem": "測試吊籠門、樓層門及聯鎖機構時，門扇或機構突然動作，手部可能夾在門扇與框體或導軌間。",
+          "hazardItem": "測試搬器門、樓層門及聯鎖機構時，門扇或機構突然動作，手部可能夾在門扇與框體或導軌間。",
           "severity": 4,
           "controlRefs": [
             "A5",
@@ -59075,7 +59192,7 @@
         },
         {
           "hazardId": "H3",
-          "hazardItem": "夏季曝曬使金屬梯、吊籠頂板及控制箱外殼升溫，長時間接觸高溫表面可能造成燙傷。",
+          "hazardItem": "夏季曝曬使金屬梯、搬器頂板及控制箱外殼升溫，長時間接觸高溫表面可能造成燙傷。",
           "severity": 2,
           "controlRefs": [
             "A2",
@@ -62628,7 +62745,8 @@
           "severity": 3,
           "controlRefs": [
             "A6",
-            "A11"
+            "A11",
+            "A1"
           ],
           "coreControlRefs": [
             "A6",
@@ -63488,6 +63606,22 @@
           "severityReviewRequired": true,
           "ruleSeverity": 4,
           "ruleSeverityBasis": "職業病（待專家覆核）"
+        },
+        {
+          "hazardId": "H5",
+          "hazardItem": "壓縮機吸入口受污染或潤滑油霧、一氧化碳混入供氣，人員在艙內長時間吸入，可能造成呼吸道傷害或慢性中毒。",
+          "severity": 4,
+          "controlRefs": [
+            "A4",
+            "A16"
+          ],
+          "coreControlRefs": [
+            "A4"
+          ],
+          "ruleSeverity": 4,
+          "ruleSeverityBasis": "職業病（待專家覆核）",
+          "recoveryReview": "pending",
+          "severityReviewRequired": true
         }
       ]
     },
@@ -67498,7 +67632,8 @@
           "controlRefs": [
             "A8",
             "A3",
-            "A6"
+            "A6",
+            "A2"
           ],
           "coreControlRefs": [
             "A8",
@@ -67580,17 +67715,18 @@
         },
         {
           "hazardId": "H2",
-          "hazardItem": "起重機吊掛超過額定荷重，外伸撐座、煞車及過負載裝置失效，造成機體傾覆或起升失控而使伸臂及吊物墜落。",
+          "hazardItem": "起重機吊掛超過額定荷重，外伸撐座、煞車及過負荷預防裝置失效，造成機體傾覆或起升失控而使伸臂及吊物墜落。",
           "severity": 5,
           "controlRefs": [
-            "A13",
+            "A1",
             "A11",
             "A12",
             "A9",
-            "A10"
+            "A10",
+            "A3"
           ],
           "coreControlRefs": [
-            "A13",
+            "A1",
             "A10",
             "A9"
           ],
@@ -71757,7 +71893,8 @@
           "controlRefs": [
             "A2",
             "A3",
-            "A7"
+            "A7",
+            "A8"
           ],
           "coreControlRefs": [
             "A2"
@@ -71771,7 +71908,8 @@
           "severity": 5,
           "controlRefs": [
             "A4",
-            "A7"
+            "A7",
+            "A8"
           ],
           "coreControlRefs": [
             "A4"
@@ -77533,6 +77671,22 @@
           "severityReviewRequired": true,
           "ruleSeverity": 4,
           "ruleSeverityBasis": "職業病（待專家覆核）"
+        },
+        {
+          "hazardId": "H5",
+          "hazardItem": "高溫清洗液、蒸汽管線及清洗槽周邊高溫高濕，通風不足且長時間巡檢、接管或拆檢，熱負荷累積可能造成熱衰竭、熱痙攣等熱疾病。",
+          "severity": 4,
+          "controlRefs": [
+            "A2",
+            "A3"
+          ],
+          "coreControlRefs": [
+            "A2"
+          ],
+          "ruleSeverity": 4,
+          "ruleSeverityBasis": "職業病（待專家覆核）",
+          "recoveryReview": "pending",
+          "severityReviewRequired": true
         }
       ]
     },
@@ -85073,7 +85227,8 @@
           "controlRefs": [
             "A2",
             "A3",
-            "A4"
+            "A4",
+            "A5"
           ],
           "coreControlRefs": [
             "A2",
@@ -87091,6 +87246,23 @@
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
+        },
+        {
+          "hazardId": "H6",
+          "hazardItem": "起重機過捲預防裝置、制動器或過負荷警報失效時，吊具捲過頭撞擊伸臂前端或吊物失控下降，造成鋼筋束墜落擊中人員。",
+          "severity": 5,
+          "controlRefs": [
+            "A8",
+            "A6",
+            "A10",
+            "A9"
+          ],
+          "coreControlRefs": [
+            "A8",
+            "A10"
+          ],
+          "ruleSeverity": 4,
+          "ruleSeverityBasis": "110–114 年職災統計"
         }
       ]
     },
@@ -88908,7 +89080,8 @@
             "A8",
             "A2",
             "A9",
-            "A7"
+            "A7",
+            "A1"
           ],
           "coreControlRefs": [
             "A8",
@@ -90534,7 +90707,8 @@
           "controlRefs": [
             "A1",
             "A2",
-            "A7"
+            "A7",
+            "A6"
           ],
           "coreControlRefs": [
             "A1"
@@ -90549,7 +90723,8 @@
           "controlRefs": [
             "A1",
             "A8",
-            "A7"
+            "A7",
+            "A6"
           ],
           "coreControlRefs": [
             "A1"
@@ -91941,7 +92116,8 @@
           "severity": 5,
           "controlRefs": [
             "A7",
-            "A4"
+            "A4",
+            "A3"
           ],
           "coreControlRefs": [
             "A7",
@@ -94368,7 +94544,8 @@
           "controlRefs": [
             "A1",
             "A2",
-            "A7"
+            "A7",
+            "A6"
           ],
           "coreControlRefs": [
             "A1",
@@ -94654,13 +94831,13 @@
           "controlRefs": [
             "A7",
             "A9",
-            "A10",
+            "A8",
             "A5"
           ],
           "coreControlRefs": [
             "A7",
             "A9",
-            "A10"
+            "A8"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -96058,12 +96235,12 @@
           "hazardItem": "人工修坡、邊坡巡查或收工復原時接近泥濘坡面與未防護坑緣，可能失足墜落或滾落。",
           "severity": 3,
           "controlRefs": [
-            "A7",
+            "A6",
             "A2",
             "A4"
           ],
           "coreControlRefs": [
-            "A7",
+            "A6",
             "A2"
           ],
           "ruleSeverity": 5,
@@ -96539,7 +96716,8 @@
             "A1",
             "A2",
             "A3",
-            "A7"
+            "A7",
+            "A4"
           ],
           "coreControlRefs": [
             "A1",
@@ -96569,7 +96747,8 @@
           "severity": 5,
           "controlRefs": [
             "A1",
-            "A6"
+            "A6",
+            "A4"
           ],
           "coreControlRefs": [
             "A1",
@@ -105113,7 +105292,7 @@
       ]
     },
     {
-      "taskName": "高空作業車作業",
+      "taskName": "高空工作車作業",
       "groupName": "不當動作",
       "hazardControlMap": [
         {
@@ -105178,7 +105357,7 @@
       ]
     },
     {
-      "taskName": "高空作業車作業",
+      "taskName": "高空工作車作業",
       "groupName": "墜落、滾落",
       "hazardControlMap": [
         {
@@ -105187,20 +105366,20 @@
           "severity": 5,
           "controlRefs": [
             "A1",
-            "A10",
+            "A2",
             "A7",
             "A8"
           ],
           "coreControlRefs": [
             "A1",
-            "A10"
+            "A2"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
         },
         {
           "hazardId": "H2",
-          "hazardItem": "高空工作車停於坡地、鬆軟或承載力不足地面，或因煞車、外伸撐座、防失穩裝置失效及超載偏載而翻覆，可能造成平台人員墜落。",
+          "hazardItem": "高空工作車停於坡地、鬆軟或承載力不足地面，或因煞車、外伸撐座、傾斜警報或荷重限制等安全裝置失效及超載偏載而翻覆，可能造成平台人員墜落。",
           "severity": 5,
           "controlRefs": [
             "A2",
@@ -105247,7 +105426,7 @@
       ]
     },
     {
-      "taskName": "高空作業車作業",
+      "taskName": "高空工作車作業",
       "groupName": "感電",
       "hazardControlMap": [
         {
@@ -105297,7 +105476,7 @@
       ]
     },
     {
-      "taskName": "高空作業車作業",
+      "taskName": "高空工作車作業",
       "groupName": "物體飛落",
       "hazardControlMap": [
         {
@@ -105338,7 +105517,7 @@
         },
         {
           "hazardId": "H3",
-          "hazardItem": "長件、工具或吊運物料固定不良、超載或重心偏移時，平台移動或碰撞可能使物料掉落。",
+          "hazardItem": "長件、工具或搬上工作台的物料固定不良、超載或重心偏移時，平台移動或碰撞可能使物料掉落。",
           "severity": 5,
           "controlRefs": [
             "A1",
@@ -105375,7 +105554,7 @@
       ]
     },
     {
-      "taskName": "高空作業車作業",
+      "taskName": "高空工作車作業",
       "groupName": "職業病",
       "hazardControlMap": [
         {
@@ -105413,7 +105592,7 @@
       ]
     },
     {
-      "taskName": "高空作業車作業",
+      "taskName": "高空工作車作業",
       "groupName": "被夾、被捲",
       "hazardControlMap": [
         {
@@ -105480,7 +105659,7 @@
       ]
     },
     {
-      "taskName": "高空作業車作業",
+      "taskName": "高空工作車作業",
       "groupName": "被撞",
       "hazardControlMap": [
         {
@@ -105535,7 +105714,8 @@
           "severity": 5,
           "controlRefs": [
             "A6",
-            "A5"
+            "A5",
+            "A3"
           ],
           "coreControlRefs": [
             "A6"
@@ -105575,7 +105755,7 @@
       ]
     },
     {
-      "taskName": "高空作業車作業",
+      "taskName": "高空工作車作業",
       "groupName": "跌倒",
       "hazardControlMap": [
         {
@@ -105626,7 +105806,7 @@
       ]
     },
     {
-      "taskName": "高空作業車作業",
+      "taskName": "高空工作車作業",
       "groupName": "高低溫接觸",
       "hazardControlMap": [
         {
@@ -105913,16 +106093,16 @@
           "controlRefs": [
             "A1",
             "A3",
-            "A9",
-            "A10",
+            "A7",
+            "A8",
             "A4",
-            "A11"
+            "A9"
           ],
           "coreControlRefs": [
             "A1",
             "A3",
             "A4",
-            "A11"
+            "A9"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -105934,16 +106114,16 @@
           "controlRefs": [
             "A2",
             "A3",
-            "A9",
-            "A10",
+            "A7",
+            "A8",
             "A4",
-            "A11"
+            "A9"
           ],
           "coreControlRefs": [
             "A2",
             "A3",
             "A4",
-            "A11"
+            "A9"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -105954,15 +106134,15 @@
           "severity": 5,
           "controlRefs": [
             "A3",
-            "A9",
-            "A10",
+            "A7",
+            "A8",
             "A4",
-            "A11"
+            "A9"
           ],
           "coreControlRefs": [
             "A3",
             "A4",
-            "A11"
+            "A9"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -105975,18 +106155,18 @@
             "A1",
             "A2",
             "A3",
-            "A9",
-            "A10",
+            "A7",
+            "A8",
             "A4",
-            "A12",
-            "A11"
+            "A10",
+            "A9"
           ],
           "coreControlRefs": [
             "A1",
             "A2",
             "A3",
             "A4",
-            "A11"
+            "A9"
           ],
           "ruleSeverity": 4,
           "ruleSeverityBasis": "110–114 年職災統計"
@@ -106274,6 +106454,1236 @@
           "ruleSeverityBasis": "110–114 年職災統計"
         }
       ]
+    },
+    {
+      "taskName": "剪叉式升降台作業",
+      "groupName": "被夾、被捲",
+      "hazardControlMap": [
+        {
+          "hazardId": "H1",
+          "hazardItem": "平台下降時，人員手腳或身體位於剪叉臂交叉點、平台與底座或地面之間，遭剪切或夾壓。",
+          "severity": 5,
+          "controlRefs": [
+            "A1",
+            "A6",
+            "A7"
+          ],
+          "coreControlRefs": [
+            "A1"
+          ],
+          "ruleSeverity": 5,
+          "ruleSeverityBasis": "110–114 年職災統計"
+        },
+        {
+          "hazardId": "H2",
+          "hazardItem": "清潔、排除卡料或維修時，平台在升起狀態未以安全支撐桿或機械止擋支撐，油壓失壓或誤操作使平台突然下降，夾壓平台下方人員。",
+          "severity": 5,
+          "controlRefs": [
+            "A2",
+            "A3",
+            "A7"
+          ],
+          "coreControlRefs": [
+            "A2",
+            "A3"
+          ],
+          "ruleSeverity": 5,
+          "ruleSeverityBasis": "110–114 年職災統計"
+        },
+        {
+          "hazardId": "H3",
+          "hazardItem": "平台邊緣與鄰近輸送帶、機台或牆柱間距不足，升降時人員手部或身體被夾於平台與固定物之間。",
+          "severity": 4,
+          "controlRefs": [
+            "A4",
+            "A6"
+          ],
+          "coreControlRefs": [
+            "A4"
+          ],
+          "ruleSeverity": 5,
+          "ruleSeverityBasis": "110–114 年職災統計"
+        },
+        {
+          "hazardId": "H4",
+          "hazardItem": "控制按鈕或腳踏開關誤觸、卡滯，或多人作業未協調，平台突然升降夾傷正在放置物料的人員。",
+          "severity": 5,
+          "controlRefs": [
+            "A5",
+            "A6",
+            "A7"
+          ],
+          "coreControlRefs": [
+            "A5"
+          ],
+          "ruleSeverity": 5,
+          "ruleSeverityBasis": "110–114 年職災統計"
+        }
+      ]
+    },
+    {
+      "taskName": "剪叉式升降台作業",
+      "groupName": "物體飛落",
+      "hazardControlMap": [
+        {
+          "hazardId": "H1",
+          "hazardItem": "物料堆疊過高、偏載或未固定，平台升降或停止時晃動，物料由平台邊緣滑落擊中人員。",
+          "severity": 4,
+          "controlRefs": [
+            "A2",
+            "A1",
+            "A4"
+          ],
+          "coreControlRefs": [
+            "A2"
+          ],
+          "ruleSeverity": 4,
+          "ruleSeverityBasis": "110–114 年職災統計"
+        },
+        {
+          "hazardId": "H2",
+          "hazardItem": "超過額定載重或集中荷重置於平台邊緣，平台傾斜或油壓缸失效下沉，物料傾倒掉落。",
+          "severity": 4,
+          "controlRefs": [
+            "A1",
+            "A3",
+            "A4"
+          ],
+          "coreControlRefs": [
+            "A1"
+          ],
+          "ruleSeverity": 4,
+          "ruleSeverityBasis": "110–114 年職災統計"
+        },
+        {
+          "hazardId": "H3",
+          "hazardItem": "平台升起時，人員在下方或側邊取放物料，工具或零件由平台掉落擊中人員。",
+          "severity": 3,
+          "controlRefs": [
+            "A3",
+            "A4"
+          ],
+          "coreControlRefs": [
+            "A3"
+          ],
+          "ruleSeverity": 4,
+          "ruleSeverityBasis": "110–114 年職災統計"
+        }
+      ]
+    },
+    {
+      "taskName": "剪叉式升降台作業",
+      "groupName": "墜落、滾落",
+      "hazardControlMap": [
+        {
+          "hazardId": "H1",
+          "hazardItem": "人員站上平台搭乘升降或站在平台上取放高處物料，平台升降或晃動時失衡墜落。",
+          "severity": 4,
+          "controlRefs": [
+            "A1",
+            "A2"
+          ],
+          "coreControlRefs": [
+            "A1"
+          ],
+          "ruleSeverity": 5,
+          "ruleSeverityBasis": "立即危險類型"
+        },
+        {
+          "hazardId": "H2",
+          "hazardItem": "平台設於凹坑內，平台升起後凹坑周邊形成開口，人員行經時跌落凹坑。",
+          "severity": 3,
+          "controlRefs": [
+            "A3"
+          ],
+          "coreControlRefs": [
+            "A3"
+          ],
+          "ruleSeverity": 5,
+          "ruleSeverityBasis": "立即危險類型"
+        }
+      ]
+    },
+    {
+      "taskName": "剪叉式升降台作業",
+      "groupName": "不當動作",
+      "hazardControlMap": [
+        {
+          "hazardId": "H1",
+          "hazardItem": "平台高度未調整至適當工作高度，人員反覆彎腰、扭轉或伸臂搬移物料，造成腰背或肩部扭傷。",
+          "severity": 3,
+          "controlRefs": [
+            "A2",
+            "A1"
+          ],
+          "coreControlRefs": [
+            "A2"
+          ],
+          "ruleSeverity": 3,
+          "ruleSeverityBasis": "110–114 年職災統計"
+        },
+        {
+          "hazardId": "H2",
+          "hazardItem": "由平台推拉重物或棧板時施力過大或突然用力，造成急性肌肉拉傷。",
+          "severity": 3,
+          "controlRefs": [
+            "A3",
+            "A2"
+          ],
+          "coreControlRefs": [
+            "A3"
+          ],
+          "ruleSeverity": 3,
+          "ruleSeverityBasis": "110–114 年職災統計"
+        }
+      ]
+    },
+    {
+      "taskName": "剪叉式升降台作業",
+      "groupName": "感電",
+      "hazardControlMap": [
+        {
+          "hazardId": "H1",
+          "hazardItem": "控制箱、電纜或腳踏開關絕緣破損、受潮或遭輾壓，人員操作或清潔時接觸帶電部位而感電。",
+          "severity": 5,
+          "controlRefs": [
+            "A1",
+            "A2"
+          ],
+          "coreControlRefs": [
+            "A1"
+          ],
+          "ruleSeverity": 5,
+          "ruleSeverityBasis": "立即危險類型"
+        },
+        {
+          "hazardId": "H2",
+          "hazardItem": "維修油壓泵浦或電氣元件時未斷電上鎖，誤送電造成感電。",
+          "severity": 5,
+          "controlRefs": [
+            "A3"
+          ],
+          "coreControlRefs": [
+            "A3"
+          ],
+          "ruleSeverity": 5,
+          "ruleSeverityBasis": "立即危險類型"
+        }
+      ]
+    },
+    {
+      "taskName": "剪叉式升降台作業",
+      "groupName": "跌倒",
+      "hazardControlMap": [
+        {
+          "hazardId": "H1",
+          "hazardItem": "油壓油洩漏或地面散落包材、束帶，人員於升降台周邊行走或搬運時滑倒、絆倒。",
+          "severity": 3,
+          "controlRefs": [
+            "A1",
+            "A2"
+          ],
+          "coreControlRefs": [
+            "A1"
+          ],
+          "ruleSeverity": 5,
+          "ruleSeverityBasis": "110–114 年職災統計"
+        }
+      ]
+    },
+    {
+      "taskName": "建築物外牆吊籠清洗及維護作業",
+      "groupName": "墜落、滾落",
+      "hazardControlMap": [
+        {
+          "hazardId": "H1",
+          "hazardItem": "屋頂架設、移設或拆除卸放用鋼索及救命用纖維索時，人員站上女兒牆或探出未設護欄的屋頂臨邊，被下滑的鋼索或與其相連的移動繩拉扯，自屋頂邊緣墜落至地面。",
+          "severity": 5,
+          "controlRefs": [
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5"
+          ],
+          "coreControlRefs": [
+            "A2",
+            "A3",
+            "A4"
+          ],
+          "ruleSeverity": 5,
+          "ruleSeverityBasis": "立即危險類型"
+        },
+        {
+          "hazardId": "H2",
+          "hazardItem": "吊籠支撐裝置固定於強度未確認的屋頂欄杆、水管、通風管或設備基座，可搬型支架間距、配重及輔助鋼索未依組配圖安裝，或常設型軌道、台車與吊臂基礎座損壞鬆脫，受載後支撐脫落或翻覆，工作台連同搭乘人員自高處墜落至地面。",
+          "severity": 5,
+          "controlRefs": [
+            "A6",
+            "A7",
+            "A8",
+            "A9",
+            "A10",
+            "A11",
+            "A12",
+            "A13",
+            "A14",
+            "A55"
+          ],
+          "coreControlRefs": [
+            "A6",
+            "A7",
+            "A8",
+            "A9",
+            "A14"
+          ],
+          "ruleSeverity": 5,
+          "ruleSeverityBasis": "立即危險類型"
+        },
+        {
+          "hazardId": "H3",
+          "hazardItem": "卸放用鋼索有斷絲、直徑減少、扭結或腐蝕，與女兒牆轉角或固定金屬件等銳邊摩擦，或端部防脫設施不良，受載時斷裂或脫出使工作台傾斜，搭乘人員自高處工作台墜落。",
+          "severity": 5,
+          "controlRefs": [
+            "A15",
+            "A16",
+            "A17",
+            "A18",
+            "A19",
+            "A13",
+            "A14"
+          ],
+          "coreControlRefs": [
+            "A15",
+            "A17",
+            "A18",
+            "A14"
+          ],
+          "ruleSeverity": 5,
+          "ruleSeverityBasis": "立即危險類型"
+        },
+        {
+          "hazardId": "H4",
+          "hazardItem": "過捲預防裝置、制動器、自動控速或自動制止下降裝置、傾斜矯正裝置失效，或安全裝置被旁通、同步升降開關被工具固定，工作台過捲撞擊支架、下降失速或單側傾斜，搭乘人員自高處工作台墜落。",
+          "severity": 5,
+          "controlRefs": [
+            "A20",
+            "A21",
+            "A22",
+            "A23",
+            "A24",
+            "A13",
+            "A14"
+          ],
+          "coreControlRefs": [
+            "A20",
+            "A21",
+            "A14"
+          ],
+          "ruleSeverity": 5,
+          "ruleSeverityBasis": "立即危險類型"
+        },
+        {
+          "hazardId": "H5",
+          "hazardItem": "搭乘人員與工具、清潔用品及填縫材合計超過積載荷重，鋼索、支撐或升降裝置過載失效，工作台連同搭乘人員自高處墜落。",
+          "severity": 5,
+          "controlRefs": [
+            "A25",
+            "A26",
+            "A13",
+            "A14"
+          ],
+          "coreControlRefs": [
+            "A25",
+            "A14"
+          ],
+          "ruleSeverity": 5,
+          "ruleSeverityBasis": "立即危險類型"
+        },
+        {
+          "hazardId": "H6",
+          "hazardItem": "工作台未停妥或懸於半空時，人員跨越女兒牆或踩踏濕滑的工作台扶手爬進爬出，自工作台外側或屋頂邊緣墜落，頭胸部撞擊地面。",
+          "severity": 5,
+          "controlRefs": [
+            "A27",
+            "A28",
+            "A29",
+            "A30",
+            "A31",
+            "A32"
+          ],
+          "coreControlRefs": [
+            "A27",
+            "A28",
+            "A30"
+          ],
+          "ruleSeverity": 5,
+          "ruleSeverityBasis": "立即危險類型"
+        },
+        {
+          "hazardId": "H7",
+          "hazardItem": "在工作台上清洗或修繕時探身越過扶手、站上扶手或放置的腳墊、梯子取物，或解開防墜器移位，人員越過扶手自高處墜落；疲勞、酒醉或身體不適時更易發生。",
+          "severity": 5,
+          "controlRefs": [
+            "A33",
+            "A34",
+            "A13",
+            "A14",
+            "A35",
+            "A36",
+            "A32"
+          ],
+          "coreControlRefs": [
+            "A33",
+            "A34",
+            "A14"
+          ],
+          "ruleSeverity": 5,
+          "ruleSeverityBasis": "立即危險類型"
+        },
+        {
+          "hazardId": "H8",
+          "hazardItem": "強風、大雨或雷雨接近時仍繼續升降或作業，工作台擺盪撞擊外牆或人員失衡，搭乘人員自高處工作台墜落或撞擊外牆受傷。",
+          "severity": 5,
+          "controlRefs": [
+            "A37",
+            "A38",
+            "A39",
+            "A40",
+            "A13",
+            "A14"
+          ],
+          "coreControlRefs": [
+            "A37",
+            "A38",
+            "A14"
+          ],
+          "ruleSeverity": 5,
+          "ruleSeverityBasis": "立即危險類型"
+        },
+        {
+          "hazardId": "H9",
+          "hazardItem": "升降或常設型台車移位時，工作台或卸放用鋼索勾掛雨遮、冷氣機、招牌或窗台等外牆突出物，工作台傾斜或鋼索被捲入槽輪捲斷，搭乘人員自高處工作台墜落；夜間或光線不良時更難察覺。",
+          "severity": 5,
+          "controlRefs": [
+            "A41",
+            "A42",
+            "A43",
+            "A19",
+            "A13",
+            "A14"
+          ],
+          "coreControlRefs": [
+            "A41",
+            "A42",
+            "A43",
+            "A14"
+          ],
+          "ruleSeverity": 5,
+          "ruleSeverityBasis": "立即危險類型"
+        },
+        {
+          "hazardId": "H10",
+          "hazardItem": "停電、升降裝置故障或防墜器作動使工作台受困半空或人員懸吊，人員自行攀出工作台或懸吊等待過久，自高處墜落或因長時間懸吊受傷。",
+          "severity": 5,
+          "controlRefs": [
+            "A44",
+            "A45",
+            "A46",
+            "A47",
+            "A14"
+          ],
+          "coreControlRefs": [
+            "A44",
+            "A46",
+            "A47"
+          ],
+          "ruleSeverity": 5,
+          "ruleSeverityBasis": "立即危險類型"
+        },
+        {
+          "hazardId": "H11",
+          "hazardItem": "救命用纖維索固定於屋頂欄杆或設備基座、與吊籠共用固定點、多人共用一條、轉角未設護角或打結延長，工作台失效或人員失足時防墜系統一併斷脫，搭乘人員自高處墜落至地面。",
+          "severity": 5,
+          "controlRefs": [
+            "A13",
+            "A14",
+            "A48",
+            "A49"
+          ],
+          "coreControlRefs": [
+            "A13",
+            "A14",
+            "A48"
+          ],
+          "ruleSeverity": 5,
+          "ruleSeverityBasis": "立即危險類型"
+        },
+        {
+          "hazardId": "H12",
+          "hazardItem": "屋頂出入需經垂直固定梯或屋突爬梯時，人員手持或背負配重、支架或鋼索捲攀梯上下，失手失足自二公尺以上的梯上墜落至地板或屋面。",
+          "severity": 5,
+          "controlRefs": [
+            "A50",
+            "A51",
+            "A52",
+            "A53",
+            "A54"
+          ],
+          "coreControlRefs": [
+            "A50",
+            "A52",
+            "A53"
+          ],
+          "ruleSeverity": 5,
+          "ruleSeverityBasis": "立即危險類型"
+        }
+      ]
+    },
+    {
+      "taskName": "建築物外牆吊籠清洗及維護作業",
+      "groupName": "物體飛落",
+      "hazardControlMap": [
+        {
+          "hazardId": "H1",
+          "hazardItem": "工作台升降或在外牆清洗、修繕時，手工具、零件、刮刀、清潔用品或刮下的填縫殘料自扶手外、底板間隙或腳趾板缺口掉落，自數層樓高處落下擊中下方行人或地面作業人員頭部致死。",
+          "severity": 5,
+          "controlRefs": [
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6",
+            "A7",
+            "A8",
+            "A9",
+            "A10"
+          ],
+          "coreControlRefs": [
+            "A1",
+            "A3",
+            "A6",
+            "A7"
+          ],
+          "ruleSeverity": 4,
+          "ruleSeverityBasis": "110–114 年職災統計"
+        },
+        {
+          "hazardId": "H2",
+          "hazardItem": "屋頂架設或拆除支架、突樑與配重時，把配重塊、索夾、連結環或工具暫放在女兒牆頂或臨邊，被碰觸、風吹或振動而滑落，自屋頂落下擊中地面人員或下方吊籠工作台內人員頭部致死。",
+          "severity": 5,
+          "controlRefs": [
+            "A11",
+            "A12",
+            "A13",
+            "A6",
+            "A7",
+            "A14",
+            "A8",
+            "A9"
+          ],
+          "coreControlRefs": [
+            "A11",
+            "A13",
+            "A6"
+          ],
+          "ruleSeverity": 4,
+          "ruleSeverityBasis": "110–114 年職災統計"
+        },
+        {
+          "hazardId": "H3",
+          "hazardItem": "施放或收回卸放用鋼索與救命用纖維索時，把索捲自屋頂拋下，或收回時手未控住使索捲、索端與末端索夾滑落，自屋頂落下擊中下方地面人員頭部致死。",
+          "severity": 5,
+          "controlRefs": [
+            "A15",
+            "A16",
+            "A6",
+            "A7",
+            "A9"
+          ],
+          "coreControlRefs": [
+            "A15",
+            "A6"
+          ],
+          "ruleSeverity": 4,
+          "ruleSeverityBasis": "110–114 年職災統計"
+        },
+        {
+          "hazardId": "H4",
+          "hazardItem": "外牆有鬆動或劣化的磁磚、玻璃、窗件或附著物時，工作台升降定位碰撞牆面，或修繕刮除、鎖固時敲擊，使碎片剝落自高處落下擊中下方行人或工作台內人員頭部致死。",
+          "severity": 5,
+          "controlRefs": [
+            "A17",
+            "A18",
+            "A19",
+            "A20",
+            "A21",
+            "A6",
+            "A7",
+            "A8",
+            "A9"
+          ],
+          "coreControlRefs": [
+            "A17",
+            "A18",
+            "A19",
+            "A6",
+            "A9"
+          ],
+          "ruleSeverity": 4,
+          "ruleSeverityBasis": "110–114 年職災統計"
+        }
+      ]
+    },
+    {
+      "taskName": "建築物外牆吊籠清洗及維護作業",
+      "groupName": "被夾、被捲",
+      "hazardControlMap": [
+        {
+          "hazardId": "H1",
+          "hazardItem": "鋼索穿入升降裝置、在離地低處試升降或升降運轉時，手指、手套或袖口靠近升降裝置的鋼索入口與槽輪，被運轉中的鋼索帶入槽輪而夾捲手指。",
+          "severity": 4,
+          "controlRefs": [
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6"
+          ],
+          "coreControlRefs": [
+            "A1",
+            "A2",
+            "A3",
+            "A4"
+          ],
+          "ruleSeverity": 5,
+          "ruleSeverityBasis": "110–114 年職災統計"
+        },
+        {
+          "hazardId": "H2",
+          "hazardItem": "吊籠升降中搭乘人員將手臂伸出工作台扶手外扶牆或抓窗框，手臂被移動中的工作台與窗台、雨遮或冷氣機等外牆突出物壓夾。",
+          "severity": 4,
+          "controlRefs": [
+            "A7",
+            "A8",
+            "A2",
+            "A9"
+          ],
+          "coreControlRefs": [
+            "A7",
+            "A8"
+          ],
+          "ruleSeverity": 5,
+          "ruleSeverityBasis": "110–114 年職災統計"
+        },
+        {
+          "hazardId": "H3",
+          "hazardItem": "工作台在升降定位或外牆清洗中受風擺盪撞向外牆時，搭乘人員伸出扶手外的手臂或手部被夾於工作台扶手與外牆、窗框之間。",
+          "severity": 3,
+          "controlRefs": [
+            "A10",
+            "A11",
+            "A12",
+            "A13",
+            "A14",
+            "A15"
+          ],
+          "coreControlRefs": [
+            "A10",
+            "A12",
+            "A13"
+          ],
+          "ruleSeverity": 5,
+          "ruleSeverityBasis": "110–114 年職災統計"
+        },
+        {
+          "hazardId": "H4",
+          "hazardItem": "使用常設型吊籠時，台車在屋頂軌道走行或吊臂迴轉過程中，屋頂協助人員或操作人員站在走行路徑或迴轉範圍內，被台車撞擊或軀幹被夾於台車、吊臂與女兒牆、機房或屋頂設備之間。",
+          "severity": 5,
+          "controlRefs": [
+            "A16",
+            "A17",
+            "A8",
+            "A2",
+            "A18",
+            "A19",
+            "A20",
+            "A21"
+          ],
+          "coreControlRefs": [
+            "A16",
+            "A17",
+            "A8",
+            "A18",
+            "A19"
+          ],
+          "ruleSeverity": 5,
+          "ruleSeverityBasis": "110–114 年職災統計"
+        },
+        {
+          "hazardId": "H5",
+          "hazardItem": "測試或使用停電用手動升降裝置時，手動把手仍插在升降裝置上就恢復供電或誤按電動升降，把手隨升降裝置旋轉打擊握持或靠近的手、手臂。",
+          "severity": 3,
+          "controlRefs": [
+            "A22",
+            "A23",
+            "A24",
+            "A2",
+            "A25"
+          ],
+          "coreControlRefs": [
+            "A22",
+            "A23"
+          ],
+          "ruleSeverity": 5,
+          "ruleSeverityBasis": "110–114 年職災統計"
+        }
+      ]
+    },
+    {
+      "taskName": "建築物外牆吊籠清洗及維護作業",
+      "groupName": "感電",
+      "hazardControlMap": [
+        {
+          "hazardId": "H1",
+          "hazardItem": "升降裝置由現場電源經電源電纜供電時，電纜被夾於工作台與女兒牆或外牆之間、在建築物角落磨損，或插頭接頭進水，在清洗用水使工作台與電纜潮濕的狀態下漏電，電流經金屬工作台或鋼索通過懸吊在高處的人員而感電，並可能因驚嚇失足。",
+          "severity": 5,
+          "controlRefs": [
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6",
+            "A7",
+            "A8",
+            "A9",
+            "A10"
+          ],
+          "coreControlRefs": [
+            "A1",
+            "A2",
+            "A3"
+          ],
+          "ruleSeverity": 5,
+          "ruleSeverityBasis": "立即危險類型"
+        },
+        {
+          "hazardId": "H2",
+          "hazardItem": "在工作台上修繕使用手持電動工具，或在屋頂、地面使用電動高壓清洗機時，外殼或電源線絕緣破損，或延長線插座掉在積水處，在潮濕環境漏電，電流經濕手或金屬工作台通過人員而感電。",
+          "severity": 5,
+          "controlRefs": [
+            "A11",
+            "A12",
+            "A13",
+            "A14",
+            "A8",
+            "A25"
+          ],
+          "coreControlRefs": [
+            "A11",
+            "A14"
+          ],
+          "ruleSeverity": 5,
+          "ruleSeverityBasis": "立即危險類型"
+        },
+        {
+          "hazardId": "H3",
+          "hazardItem": "外牆附近有架空電線時，屋頂垂放卸放用鋼索或輔助鋼索擺盪，或升降、移位中鋼索與金屬工作台接近電線，接觸或閃絡使電流經鋼索與工作台通過人員而感電。",
+          "severity": 5,
+          "controlRefs": [
+            "A15",
+            "A16",
+            "A17",
+            "A18",
+            "A19",
+            "A20"
+          ],
+          "coreControlRefs": [
+            "A16",
+            "A18",
+            "A17"
+          ],
+          "ruleSeverity": 5,
+          "ruleSeverityBasis": "立即危險類型"
+        },
+        {
+          "hazardId": "H4",
+          "hazardItem": "外牆設有招牌、燈具、冷氣室外機等電氣設備時，清洗噴水或修繕碰觸其破損線路或露出的帶電部分，在潮濕狀態下電流經濕手或金屬工作台通過懸吊在高處的人員而感電。",
+          "severity": 5,
+          "controlRefs": [
+            "A21",
+            "A22",
+            "A23",
+            "A24"
+          ],
+          "coreControlRefs": [
+            "A22",
+            "A23"
+          ],
+          "ruleSeverity": 5,
+          "ruleSeverityBasis": "立即危險類型"
+        }
+      ]
+    },
+    {
+      "taskName": "建築物外牆吊籠清洗及維護作業",
+      "groupName": "被切、割、擦傷",
+      "hazardControlMap": [
+        {
+          "hazardId": "H1",
+          "hazardItem": "屋頂施放、檢查、穿索或收捲卸放用鋼索時徒手握持或讓鋼索在掌中滑行，鋼索上凸出的斷絲或散股的鋼索前端刺入手掌或手指造成刺割傷。",
+          "severity": 3,
+          "controlRefs": [
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6",
+            "A7"
+          ],
+          "coreControlRefs": [
+            "A1",
+            "A3"
+          ],
+          "ruleSeverity": 5,
+          "ruleSeverityBasis": "110–114 年職災統計"
+        },
+        {
+          "hazardId": "H2",
+          "hazardItem": "在工作台上以刀片刮除舊填縫或殘膠、切除舊墊條時刀具滑脫，刀刃劃向扶持的另一手或手腕造成割傷。",
+          "severity": 3,
+          "controlRefs": [
+            "A8",
+            "A9",
+            "A10",
+            "A3",
+            "A11",
+            "A7"
+          ],
+          "coreControlRefs": [
+            "A9",
+            "A3"
+          ],
+          "ruleSeverity": 5,
+          "ruleSeverityBasis": "110–114 年職災統計"
+        },
+        {
+          "hazardId": "H3",
+          "hazardItem": "清洗玻璃或更換墊條時手部碰觸已破裂或缺角玻璃的銳利邊緣造成割傷。",
+          "severity": 3,
+          "controlRefs": [
+            "A12",
+            "A13",
+            "A3",
+            "A7"
+          ],
+          "coreControlRefs": [
+            "A12",
+            "A3"
+          ],
+          "ruleSeverity": 5,
+          "ruleSeverityBasis": "110–114 年職災統計"
+        }
+      ]
+    },
+    {
+      "taskName": "建築物外牆吊籠清洗及維護作業",
+      "groupName": "跌倒",
+      "hazardControlMap": [
+        {
+          "hazardId": "H1",
+          "hazardItem": "屋頂架設、檢查鋼索或撤收時，鋼索、救命用纖維索、電源電纜或清洗水管橫越屋頂走道或纏繞支架基座，人員在離開臨邊的屋頂平面上行走或搬運時絆到而同平面跌倒，造成扭傷或骨折。",
+          "severity": 3,
+          "controlRefs": [
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5"
+          ],
+          "coreControlRefs": [
+            "A1",
+            "A2"
+          ],
+          "ruleSeverity": 5,
+          "ruleSeverityBasis": "110–114 年職災統計"
+        },
+        {
+          "hazardId": "H2",
+          "hazardItem": "屋頂面因降雨、露水或清洗水管滲漏而積水濕滑，人員在離開臨邊的屋頂平面上架設、搬運或收捲鋼索時滑倒，同平面跌倒造成扭傷或骨折。",
+          "severity": 3,
+          "controlRefs": [
+            "A6",
+            "A7",
+            "A8",
+            "A9",
+            "A10",
+            "A4",
+            "A5"
+          ],
+          "coreControlRefs": [
+            "A6",
+            "A10"
+          ],
+          "ruleSeverity": 5,
+          "ruleSeverityBasis": "110–114 年職災統計"
+        },
+        {
+          "hazardId": "H3",
+          "hazardItem": "外牆清洗時清洗水或清潔劑積留在工作台底板，或水管、水桶、電纜散置底板，人員在扶手內移動或轉身時滑倒或絆倒，撞擊扶手或底板造成挫傷、扭傷或骨折。",
+          "severity": 3,
+          "controlRefs": [
+            "A11",
+            "A12",
+            "A13",
+            "A14",
+            "A15",
+            "A10",
+            "A4",
+            "A16"
+          ],
+          "coreControlRefs": [
+            "A11",
+            "A12",
+            "A14",
+            "A10"
+          ],
+          "ruleSeverity": 5,
+          "ruleSeverityBasis": "110–114 年職災統計"
+        },
+        {
+          "hazardId": "H4",
+          "hazardItem": "設備進場、屋頂架設或撤收時，人員搬運支架零件、配重塊或鋼索捲上下樓梯或屋突出入口的階梯，搬運物遮擋腳下視線或踩空階級，自樓梯跌落造成扭傷或骨折。",
+          "severity": 3,
+          "controlRefs": [
+            "A17",
+            "A18",
+            "A19",
+            "A20",
+            "A21",
+            "A4",
+            "A22"
+          ],
+          "coreControlRefs": [
+            "A18",
+            "A19"
+          ],
+          "ruleSeverity": 5,
+          "ruleSeverityBasis": "110–114 年職災統計"
+        }
+      ]
+    },
+    {
+      "taskName": "建築物外牆吊籠清洗及維護作業",
+      "groupName": "不當動作",
+      "hazardControlMap": [
+        {
+          "hazardId": "H1",
+          "hazardItem": "進場卸貨、地面組裝及撤收裝車時，以人力抬舉工作台組件或升降裝置，彎腰或在負重下扭轉腰部，腰背過度負荷造成扭傷。",
+          "severity": 3,
+          "controlRefs": [
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6"
+          ],
+          "coreControlRefs": [
+            "A1",
+            "A3"
+          ],
+          "ruleSeverity": 3,
+          "ruleSeverityBasis": "110–114 年職災統計"
+        },
+        {
+          "hazardId": "H2",
+          "hazardItem": "將配重塊、支架或鋼索捲經樓梯或屋突出入口以人力搬上或搬下屋頂，負重上下階梯並在狹窄轉角轉身，腰背過度負荷造成扭傷。",
+          "severity": 3,
+          "controlRefs": [
+            "A7",
+            "A1",
+            "A9",
+            "A4",
+            "A8",
+            "A6",
+            "A10"
+          ],
+          "coreControlRefs": [
+            "A7",
+            "A9"
+          ],
+          "ruleSeverity": 3,
+          "ruleSeverityBasis": "110–114 年職災統計"
+        },
+        {
+          "hazardId": "H3",
+          "hazardItem": "在屋頂支架旁將配重塊逐塊放上或取下配重座、扶起或放倒支架與突樑、收捲鋼索時，彎腰伸手或負重扭轉，腰背過度負荷造成扭傷。",
+          "severity": 3,
+          "controlRefs": [
+            "A11",
+            "A12",
+            "A13",
+            "A4",
+            "A6",
+            "A10"
+          ],
+          "coreControlRefs": [
+            "A11",
+            "A12"
+          ],
+          "ruleSeverity": 3,
+          "ruleSeverityBasis": "110–114 年職災統計"
+        }
+      ]
+    },
+    {
+      "taskName": "建築物外牆吊籠清洗及維護作業",
+      "groupName": "有害物接觸",
+      "hazardControlMap": [
+        {
+          "hazardId": "H1",
+          "hazardItem": "使用酸性或鹼性清潔劑時，在懸吊工作台上噴灑或擦拭頭部以上的牆面、逆風噴灑或噴霧被風吹回，清潔劑飛濺入眼或吸入噴霧，人員在工作台上無法立即到沖洗設施沖洗，眼睛化學性灼傷可致視力受損。",
+          "severity": 4,
+          "controlRefs": [
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A11",
+            "A6",
+            "A7"
+          ],
+          "coreControlRefs": [
+            "A3",
+            "A5"
+          ],
+          "ruleSeverity": 5,
+          "ruleSeverityBasis": "110–114 年職災統計"
+        },
+        {
+          "hazardId": "H2",
+          "hazardItem": "使用酸性或鹼性清潔劑時，在懸吊工作台上分裝、沾取或擦拭使清潔劑沾到手臂，或未固定的容器隨工作台擺盪、傾斜翻倒，潑及腿腳並滲入鞋內，人員在工作台上無法立即脫除衣物沖洗，造成皮膚化學性灼傷。",
+          "severity": 3,
+          "controlRefs": [
+            "A1",
+            "A8",
+            "A9",
+            "A10",
+            "A5",
+            "A11",
+            "A6",
+            "A7"
+          ],
+          "coreControlRefs": [
+            "A9",
+            "A10",
+            "A5"
+          ],
+          "ruleSeverity": 5,
+          "ruleSeverityBasis": "110–114 年職災統計"
+        },
+        {
+          "hazardId": "H3",
+          "hazardItem": "使用引擎驅動的高壓清洗機時，將清洗機放在屋突、機房、地下室、停車場或室內陽台等通風不良處運轉，或排氣朝向門窗與通風口，引擎排出的一氧化碳累積，人員在旁操作、進入收拾或未戴呼吸防護具進入救人而接連吸入，可致意識不清、多人中毒甚至死亡。",
+          "severity": 5,
+          "controlRefs": [
+            "A12",
+            "A13",
+            "A14",
+            "A16",
+            "A15",
+            "A17"
+          ],
+          "coreControlRefs": [
+            "A13",
+            "A16",
+            "A15"
+          ],
+          "ruleSeverity": 5,
+          "ruleSeverityBasis": "110–114 年職災統計"
+        },
+        {
+          "hazardId": "H4",
+          "hazardItem": "使用酸性或鹼性清潔劑時，清潔劑或清洗污水自工作台滴落、沿外牆流下或被風吹散，濺及下方行人或地面管制人員的眼睛或皮膚，造成化學性刺激或灼傷。",
+          "severity": 3,
+          "controlRefs": [
+            "A18",
+            "A19",
+            "A2",
+            "A20",
+            "A21",
+            "A22",
+            "A6"
+          ],
+          "coreControlRefs": [
+            "A18",
+            "A19"
+          ],
+          "ruleSeverity": 5,
+          "ruleSeverityBasis": "110–114 年職災統計"
+        }
+      ]
+    },
+    {
+      "taskName": "建築物外牆吊籠清洗及維護作業",
+      "groupName": "高低溫接觸",
+      "hazardControlMap": [
+        {
+          "hazardId": "H1",
+          "hazardItem": "夏季或日曬強烈時，在屋頂架設或拆除支架、突樑、配重與鋼索，長時間曝曬且補水與休息不足，作業者體溫調節失效而發生熱衰竭或熱中暑，需送醫治療。",
+          "severity": 3,
+          "controlRefs": [
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A8",
+            "A9",
+            "A10",
+            "A11",
+            "A12",
+            "A13"
+          ],
+          "coreControlRefs": [
+            "A1",
+            "A3",
+            "A4"
+          ],
+          "ruleSeverity": 3,
+          "ruleSeverityBasis": "110–114 年職災統計"
+        },
+        {
+          "hazardId": "H2",
+          "hazardItem": "夏季或日曬強烈時，作業者在懸吊工作台上長時間清洗或修繕外牆，出現熱衰竭症狀後仍留在高處等待恢復，延誤降溫與送醫，惡化為熱中暑，嚴重時可致死。",
+          "severity": 5,
+          "controlRefs": [
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6",
+            "A7",
+            "A8",
+            "A9",
+            "A10",
+            "A11",
+            "A12",
+            "A13"
+          ],
+          "coreControlRefs": [
+            "A4",
+            "A5",
+            "A6",
+            "A8"
+          ],
+          "ruleSeverity": 3,
+          "ruleSeverityBasis": "110–114 年職災統計"
+        }
+      ]
+    },
+    {
+      "taskName": "建築物外牆吊籠清洗及維護作業",
+      "groupName": "火災",
+      "hazardControlMap": [
+        {
+          "hazardId": "H1",
+          "hazardItem": "以引火性有機溶劑擦拭玻璃或牆面時，在懸吊於高處的工作台上吸菸、點打火機，或手持電動工具與插頭產生電氣火花，引燃溶劑蒸氣或沾溶劑的破布，工作台起火燒及人員與救命用纖維索，人員在懸吊工作台上無法迅速撤離。",
+          "severity": 5,
+          "controlRefs": [
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6",
+            "A7",
+            "A8",
+            "A9"
+          ],
+          "coreControlRefs": [
+            "A2",
+            "A3",
+            "A6",
+            "A7"
+          ],
+          "ruleSeverity": 5,
+          "ruleSeverityBasis": "立即危險類型"
+        }
+      ]
+    },
+    {
+      "taskName": "建築物外牆吊籠清洗及維護作業",
+      "groupName": "被撞",
+      "hazardControlMap": [
+        {
+          "hazardId": "H1",
+          "hazardItem": "地面管制區鄰接道路、車道或停車場出入口時，來車未察覺管制區或駛入管制區，撞擊在管制區邊緣警戒的地面管制人員或交通引導人員。",
+          "severity": 5,
+          "controlRefs": [
+            "A1",
+            "A2",
+            "A3",
+            "A4",
+            "A5",
+            "A6",
+            "A7",
+            "A8",
+            "A9"
+          ],
+          "coreControlRefs": [
+            "A1",
+            "A5",
+            "A2"
+          ],
+          "ruleSeverity": 4,
+          "ruleSeverityBasis": "110–114 年職災統計"
+        },
+        {
+          "hazardId": "H2",
+          "hazardItem": "地面管制區鄰接道路、車道或停車場出入口時，進場卸下工作台組件、配重或鋼索捲，或撤收裝車時，人員站在車道上搬運，被行經或倒車的搬運車輛撞擊輾壓。",
+          "severity": 5,
+          "controlRefs": [
+            "A10",
+            "A11",
+            "A12",
+            "A1",
+            "A5",
+            "A9"
+          ],
+          "coreControlRefs": [
+            "A10",
+            "A11",
+            "A5"
+          ],
+          "ruleSeverity": 4,
+          "ruleSeverityBasis": "110–114 年職災統計"
+        },
+        {
+          "hazardId": "H3",
+          "hazardItem": "地面管制區鄰接道路、車道或停車場出入口時，撤收階段先拆除交通錐與柵欄，人員在車道上背對車流蹲下收拾管制設施，被後方來車撞擊。",
+          "severity": 5,
+          "controlRefs": [
+            "A13",
+            "A14",
+            "A5",
+            "A6"
+          ],
+          "coreControlRefs": [
+            "A13",
+            "A14",
+            "A5"
+          ],
+          "ruleSeverity": 4,
+          "ruleSeverityBasis": "110–114 年職災統計"
+        }
+      ]
     }
   ],
   "severityPolicyVersion": "20261011b",
@@ -106287,5 +107697,6 @@
   "expertApplied": "A01-2026-10-19 on 20261013 base",
   "termExtrapolated": "A01-general-terms-20261020",
   "a02Applied": "A02-2026-10-19",
-  "a03Sentences": "A03-2026-10-21 sentences"
+  "a03Sentences": "A03-2026-10-21 sentences",
+  "equipmentAudit": "20261104b：設備分類與必要設施稽核修正，見 docs/TOIRA_作業設備分類與必要設施稽核報告.md 與 audit/equipment_fixes_20261104b.json"
 }
