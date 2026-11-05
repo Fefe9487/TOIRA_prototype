@@ -37957,19 +37957,15 @@
           "hazardItem": "防墜系統錨錠點或安全母索承載力、位置及墜落淨空不足，墜落時可能造成防護失效或撞擊障礙物。",
           "severity": 5,
           "controlRefs": [
-            "A1",
             "A4",
-            "A12",
             "A13",
             "A14",
             "A17"
           ],
           "coreControlRefs": [
-            "A1",
-            "A12",
+            "A4",
             "A13",
-            "A14",
-            "A4"
+            "A14"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
