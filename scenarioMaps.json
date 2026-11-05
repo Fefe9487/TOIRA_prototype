@@ -37800,11 +37800,13 @@
           "severity": 5,
           "controlRefs": [
             "A1",
-            "A12"
+            "A12",
+            "A14"
           ],
           "coreControlRefs": [
             "A1",
-            "A12"
+            "A12",
+            "A14"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -37817,12 +37819,19 @@
             "A2",
             "A4",
             "A12",
-            "A8"
+            "A8",
+            "A13",
+            "A14",
+            "A17",
+            "A15",
+            "A16"
           ],
           "coreControlRefs": [
             "A2",
             "A4",
-            "A12"
+            "A12",
+            "A13",
+            "A14"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -37853,12 +37862,17 @@
           "controlRefs": [
             "A1",
             "A4",
-            "A12"
+            "A12",
+            "A13",
+            "A14",
+            "A17"
           ],
           "coreControlRefs": [
             "A1",
             "A4",
-            "A12"
+            "A12",
+            "A13",
+            "A14"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -37886,11 +37900,13 @@
           "severity": 5,
           "controlRefs": [
             "A1",
-            "A12"
+            "A12",
+            "A14"
           ],
           "coreControlRefs": [
             "A1",
-            "A12"
+            "A12",
+            "A14"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -37905,11 +37921,17 @@
             "A12",
             "A8",
             "A10",
-            "A11"
+            "A13",
+            "A14",
+            "A17",
+            "A15",
+            "A16"
           ],
           "coreControlRefs": [
             "A2",
-            "A4"
+            "A4",
+            "A13",
+            "A14"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -37937,11 +37959,17 @@
           "controlRefs": [
             "A1",
             "A4",
-            "A12"
+            "A12",
+            "A13",
+            "A14",
+            "A17"
           ],
           "coreControlRefs": [
             "A1",
-            "A12"
+            "A12",
+            "A13",
+            "A14",
+            "A4"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -38078,7 +38106,8 @@
           "controlRefs": [
             "A1",
             "A8",
-            "A12"
+            "A12",
+            "A16"
           ],
           "coreControlRefs": [
             "A1",
@@ -38095,7 +38124,8 @@
           "controlRefs": [
             "A2",
             "A3",
-            "A7"
+            "A7",
+            "A16"
           ],
           "coreControlRefs": [
             "A2",
@@ -38138,10 +38168,13 @@
           "hazardItem": "拆除未依自上而下、逐層逐跨順序進行，先拆主構件、斜撐或連牆件，使剩餘架體失去支撐而倒塌。",
           "severity": 5,
           "controlRefs": [
-            "A6"
+            "A6",
+            "A16",
+            "A3"
           ],
           "coreControlRefs": [
-            "A6"
+            "A6",
+            "A3"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -38171,7 +38204,8 @@
             "A3",
             "A7",
             "A11",
-            "A12"
+            "A12",
+            "A16"
           ],
           "coreControlRefs": [
             "A2",
@@ -38218,10 +38252,14 @@
           "severity": 5,
           "controlRefs": [
             "A6",
-            "A10"
+            "A10",
+            "A16",
+            "A3"
           ],
           "coreControlRefs": [
-            "A6"
+            "A6",
+            "A3",
+            "A10"
           ],
           "ruleSeverity": 5,
           "ruleSeverityBasis": "立即危險類型"
@@ -38266,7 +38304,7 @@
         },
         {
           "hazardId": "H2",
-          "hazardItem": "施工架組拆未依上而下、分層分段及先卸料後拆構件的順序作業，或直接向下拋擲構件，造成構件滑落或飛落。",
+          "hazardItem": "施工架拆除前未清除非待拆材料、拆卸時未支承待拆構件或未依逐層分段順序傳遞，亦可能向下拋擲構材，造成構件失控滑落或飛落。",
           "severity": 5,
           "controlRefs": [
             "A3",
